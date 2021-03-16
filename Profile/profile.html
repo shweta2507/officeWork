@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Profile | Axle</title>
+      <!-- skeleton ui -->
+      <!-- <link rel="stylesheet" href="./style/skeleton/normalize.css">
+         <link rel="stylesheet" href="./style/skeleton/skeleton.css">  -->
+      <!-- skeleton ui end -->
+      <!-- jQuery -->
+      <script src="./lib/jQuery.min.js"></script>
+      <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.0/js/bootstrap.min.js"></script>
+      <!-- Styles from old dashboard  -->
+      <link rel="stylesheet" href="css2/bootstrap.min.css">
+      <link rel="stylesheet" href="css2/font-awesome.css">
+      <link rel="stylesheet" href="css2/owl.carousel.css">
+      <link rel="stylesheet" href="css2/owl.theme.css">
+      <link rel="stylesheet" href="css2/owl.transitions.css">
+      <link rel="stylesheet" href="css2/animate.css">
+      <link rel="stylesheet" href="css2/normalize.css">
+      <link rel="stylesheet" href="css2/meanmenu.min.css">
+      <link rel="stylesheet" href="css2/main.css">
+      <link rel="stylesheet" href="css2/educate-custon-icon.css">
+      <link rel="stylesheet" href="css2/scrollbar/jquery.mCustomScrollbar.min.css">
+      <link rel="stylesheet" href="css2/metisMenu/metisMenu.min.css">
+      <link rel="stylesheet" href="css2/metisMenu/metisMenu-vertical.css">
+      <link rel="stylesheet" href="css2/calendar/fullcalendar.min.css">
+      <link rel="stylesheet" href="css2/calendar/fullcalendar.print.min.css">
+      <link rel="stylesheet" href="css2/style.css">
+      <link rel="stylesheet" href="css2/responsive.css">
+      <link rel="stylesheet" href="css2/color-style.css">
+      <link href="NewCSS/masterpage.css" rel="stylesheet">
+      <link href="NewCSS/page.css" rel="stylesheet">
+      <link href="style-dashboard/sb-admin.css" rel="stylesheet">
+      <!-- stylesheet  -->
+      <link rel="stylesheet" href="./style/style.css">
+      <!-- Favicon -->
+      <link rel="icon" type="image/x-icon" href="./assets/img/favicon.svg">
+   </head>
+   <body ng-app="axleApp">
+      <div class="layout-cell layout-scrollbar">
+         <!-- side navbar start-->
+         <div class="ba-sidenav">
+            <div class="ba-brand">
+               <img src="./assets/img/axle-x.svg" alt="" id="brand-icon">
+               <img src="./assets/img/axle-full.svg" alt="" id="brand-logo">
+            </div>
+            <nav class="ba-nav">
+               <div class="ba-nav-item has-tooltip">
+                  <a href="#" class="ba-nav-link">
+                  <img src="./assets/icons/analytics.svg" alt="analytics" srcset="">
+                  <span class="ba-link-title">Analytics</span>
+                  </a>
+                  <div class="ba-tooltip semibold-text">Analytics</div>
+               </div>
+               <div class="ba-nav-item has-tooltip">
+                  <a href="#" class="ba-nav-link">
+                  <img src="./assets/icons/collections.svg" alt="collections">
+                  <span class="ba-link-title">Collections</span>
+                  </a>
+                  <div class="ba-tooltip semibold-text">Collections</div>
+               </div>
+               <div class="ba-nav-item has-tooltip">
+                  <a href="#" class="ba-nav-link">
+                  <img src="./assets/icons/eligibility.svg" alt="eligibility">
+                  <span class="ba-link-title">Eligibility</span>
+                  </a>
+                  <div class="ba-tooltip semibold-text">Eligibility</div>
+               </div>
+               <div class="ba-nav-item has-tooltip">
+                  <a href="#" class="ba-nav-link">
+                     <img src="./assets/icons/user_icon.svg" alt="engagement">
+                     <span class="ba-link-title">Engagement</span>
+                     <div class="ba-tooltip semibold-text">Engagement</div>
+                  </a>
+               </div>
+               <div class="ba-nav-item has-tooltip">
+                  <a href="#" class="ba-nav-link">
+                     <img src="./assets/icons/messaging.svg" alt="messaging">
+                     <span class="ba-link-title">Messaging</span>
+                     <div class="ba-tooltip semibold-text">Messaging</div>
+                  </a>
+               </div>
+               <div class="ba-nav-item has-tooltip">
+                  <a href="#" class="ba-nav-link">
+                  <img src="./assets/icons/payments.svg" alt="payments">
+                  <span class="ba-link-title">Payments</span>
+                  </a>
+                  <div class="ba-tooltip semibold-text">Payments</div>
+               </div>
+               <div class="ba-nav-item has-tooltip">
+                  <a href="#" class="ba-nav-link">
+                  <img src="./assets/icons/payroll.svg" alt="payroll">
+                  <span class="ba-link-title">Payroll</span>
+                  </a>
+                  <div class="ba-tooltip semibold-text">Payroll</div>
+               </div>
+               <div class="ba-nav-item has-tooltip" data-tooltip="I am tooltip">
+                  <a href="#" class="ba-nav-link">
+                  <img src="./assets/icons/dashboard.svg" alt="dashboard">
+                  <span class="ba-link-title">Reviews</span>
+                  </a>
+                  <div class="ba-tooltip semibold-text">Reviews</div>
+               </div>
+               <div class="ba-nav-item has-tooltip">
+                  <a href="#" class="ba-nav-link">
+                  <img src="./assets/icons/treatment.svg" alt="treatment">
+                  <span class="ba-link-title">Treatment</span>
+                  </a>
+                  <div class="ba-tooltip semibold-text">Treatment</div>
+               </div>
+            </nav>
+         </div>
+         <!-- side navbar end -->
+         <main class="ba-main main-dashboard" ng-controller="reviewController">
+            <!-- topnav  -->
+            <!-- topnav  -->
+            <header class="ba-topnav">
+               <div class="ham-icon ">
+                  <svg id="_ham-open" xmlns="http://www.w3.org/2000/svg" width="18" height="12" viewBox="0 0 18 12">
+                     <defs>
+                        <style>
+                           ._ham {
+                           fill: #031926;
+                           opacity: 0.4;
+                           }
+                        </style>
+                     </defs>
+                     <path class="_ham" d="M3,18H21V16H3Zm0-5H21V11H3ZM3,6V8H21V6Z" transform="translate(-3 -6)" />
+                  </svg>
+                  <svg id="_ham-close" xmlns="http://www.w3.org/2000/svg" width="18" height="12" viewBox="0 0 18 12">
+                     <defs>
+                        <style>
+                           ._ham-close {
+                           fill: #031926;
+                           }
+                        </style>
+                     </defs>
+                     <path class="_ham-close"
+                        d="M3,18H16V16H3Zm0-5H13V11H3ZM3,6V8H16V6Zm18,9.59L17.42,12,21,8.41,19.59,7l-5,5,5,5Z"
+                        transform="translate(-3 -6)" />
+                  </svg>
+               </div>
+               <nav class="ba-nav-container">
+                  <ul class="ba-topnav-nav">
+                     <li class="ba-topnav-item _active">
+                        <a href="#" class="ba-topnav-link">Profile</a>
+                     </li>
+                     <li class="ba-topnav-item">
+                        <a href="#" class="ba-topnav-link">Users</a>
+                     </li>
+                     <li class="ba-topnav-item prac-border">
+                        <a href="#" class="ba-topnav-link">Practices</a>
+                     </li>
+                     <li class="ba-topnav-item">
+                        <a href="#" class="ba-topnav-link">Engagement</a>
+                     </li>
+                     <li class="ba-topnav-item">
+                        <a href="#" class="ba-topnav-link">Goals</a>
+                     </li>
+                     <li class="ba-topnav-item">
+                        <a href="#" class="ba-topnav-link">Payments</a>
+                     </li>
+                     <li class="ba-topnav-item">
+                        <a href="#" class="ba-topnav-link">Payroll</a>
+                     </li>
+                     <li class="ba-topnav-item">
+                        <a href="#" class="ba-topnav-link">Reviews</a>
+                     </li>
+                     <li class="ba-topnav-item">
+                        <a href="#" class="ba-topnav-link">Treatment</a>
+                     </li>
+                     <li class="ba-topnav-item ba-profile has-flyout">
+                        <div class="_avatar"></div>
+                        <div class="ba-username">Pedro Becker</div>
+                        <span class="ba-chevron-down">
+                        </span>
+                        <div class="flyout-menu _dark _bottom">
+                           <div class="_option">
+                              <img src="./assets/icons/settings.svg" alt="settings icon">
+                              <span>Settings</span>
+                           </div>
+                           <div class="_option"><img src="./assets/icons/logout.svg" alt="logout icon">
+                              <span>Logout</span>
+                           </div>
+                        </div>
+                     </li>
+                  </ul>
+               </nav>
+            </header>
+            <div class="body-container">
+               <div class="my-profile-wrapper">
+                  <h2>My Profile</h2>
+                  <div class="edit-profile-wrapper">
+                     <div class="profile-name">
+                        <div class="img-p"><img src="assets/img/edit-profile.svg" alt="Profile Image"></div>
+                        <div class="profile-name-id">
+                           <h5>Pedro Becker</h5>
+                           <a href="pedrobecker@meetaxle.com">pedrobecker@meetaxle.com</a>
+                        </div>
+                     </div>
+                     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                     <img src="assets/img/edit-profile-icon.svg"> Edit Profile
+                     </button>
+                  </div>
+               </div>
+               <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div class="modal-dialog" role="document">
+                     <div class="modal-content">
+                        <!--  Cross Icon -->
+                        <div class="closeIcon">
+                           <img src="assets/img/cross.svg" alt="Cross">
+                        </div>
+                        <!--  Edit Profile -->
+                        <div class="edit-profile">
+                           <h1 class="profile-title">Edit Profile</h1>
+                           <div class="profile-group">
+                              <div class="profile-name">
+                                 <div class="img-p"><img src="assets/img/popup-edit.svg" alt="Profile Photo"></div>
+                                 <div class="profile-name-id">
+                                    <h5>Pedro Becker</h5>
+                                    <a href="pedrobecker@meetaxle.com">pedrobecker@meetaxle.com</a>
+                                 </div>
+                              </div>
+                              <div class="edit-profile-drowpdown">
+                                 <ul class="drowpdown">
+                                    <li class="edit-menu">
+                                       <img src="assets/img/popup-droupdown-icon.svg" class="drowpdown-icon" alt="menu">
+                                       <ul>
+                                          <li class="change-pass">
+                                             <a href="#">Change Password</a>
+                                          </li>
+                                          <li class="remove-img">
+                                             <a href="#">Remove Image</a>
+                                          </li>
+                                          <li class="upload-img">
+                                             <a href="#">Upload Image</a>
+                                          </li>
+                                       </ul>
+                                    </li>
+                                 </ul>
+                              </div>
+                           </div>
+                           <div class="gernal-profile">
+                              <h1>General Profile</h1>
+                              <div class="gernal-profile-form">
+                                 <form class="form-feild">
+                                    <div class="feild-1 feild">
+                                       <div class="form-field">
+                                          <label for="first-name" class="form-label">First Name</label>
+                                          <div class="custom-input">
+                                             <input type="text" id="first-name" name="firstName" class="form-control">
+                                             <span class="error">Enter a valid first name.</span>
+                                          </div>
+                                       </div>
+                                       <div class="form-field">
+                                          <label for="Last-Name" class="form-label">Last Name</label>
+                                          <div class="custom-input">
+                                             <input type="text" id="last-name" name="lastName" class="form-control">
+                                             <span class="error">Enter a valid last name.</span>
+                                          </div>
+                                       </div>
+                                    </div>
+                                    <div class="feild-2 feild">
+                                       <div class="form-field">
+                                          <label for="email" class="form-label">Email Address</label>
+                                          <div class="custom-input">
+                                             <input type="email" id="email" name="email" class="form-control">
+                                             <span class="error">Enter a valid email address.</span>
+                                          </div>
+                                       </div>
+                                       <div class="form-field">
+                                          <label for="phone" class="form-label">Phone Number</label>
+                                          <div class="custom-input">
+                                             <input type="tel" id="phone" name="Phone" class="form-control">
+                                             <span class="error">Enter a valid phone number.</span>
+                                          </div>
+                                       </div>
+                                    </div>
+                                    <div class="form-button">
+                                       <a href="#" class="for-btn for-btn-primary">Cancel</a>
+                                       <a href="#" class="for-btn for-btn-primary btn-blue">Save Changes</a>
+                                    </div>
+                                 </form>
+                              </div>
+                           </div>
+                        </div>
+                        <!--  Upload Image -->
+                        <div class="upload-img-wrapper">
+                           <h1>Upload Image</h1>
+
+
+
+                           <!--
+                           <div class="profile-img-resize">
+                              <div class="img-resize-button">
+                                 <span class="resize-inc"><img src="assets/img/img-resize.svg" alt="+"></span>
+                                 <div class="resize-bar-g"><div class="resize-bar"></div></div>
+                                 <span class="resize-dec"><img src="assets/img/img-resize-down.svg" alt="-"></span>
+                              </div>
+                              <div class="profile-pic">
+                              </div>
+                           </div>
+                           -->
+
+
+
+
+                           <!--  ====================== Profile Photo Resize Crop Secetion =========================  -->
+
+
+
+
+      
+
+<div class="flex">
+  <div class="left">
+<div class="profile">
+        <div class="photo">
+            <input type="file" accept="image/*">
+                   <div class="photo__options hide">
+                <div class="photo__zoom">
+                    <input type="range" class="zoom-handler">
+                </div><a href="javascript:;" class="remove"><i class="fa fa-trash"></i></a>
+            </div>
+            <div class="photo__helper">
+                <div class="photo__frame photo__frame--circle">
+                    <canvas class="photo__canvas"></canvas>
+                    <div class="message is-empty">
+                        <p class="message--desktop">Drop your photo here or browse your computer.</p>
+                        <p class="message--mobile">Tap here to select your picture.</p>
+                    </div>
+                    <div class="message is-loading">
+                        <i class="fa fa-2x fa-spin fa-spinner"></i>
+                    </div>
+                    <div class="message is-dragover">
+                        <i class="fa fa-2x fa-cloud-upload"></i>
+                        <p>Drop your photo</p>
+                    </div>
+                    <div class="message is-wrong-file-type">
+                        <p>Only images allowed.</p>
+                        <p class="message--desktop">Drop your photo here or browse your computer.</p>
+                        <p class="message--mobile">Tap here to select your picture.</p>
+                    </div>
+                    <div class="message is-wrong-image-size">
+                        <p>Your photo must be larger than 350px.</p>
+                    </div>
+                </div>
+            </div>
+
+     
+        </div>
+    </div>
+ 
+    </div>
+</div>
+
+
+
+
+
+                           <div class="form-button">
+                              <a href="#" class="for-btn for-btn-primary">Cancel</a>
+                              <a href="#" class="for-btn for-btn-primary btn-blue">Save Changes</a>
+                           </div>
+                        </div>
+                        <!--  Password Change -->
+                        <div class="edit-profile password-change">
+                           <h1 class="profile-title">Edit Profile</h1>
+                           <div class="profile-group">
+                              <div class="profile-name">
+                                 <div class="img-p"><img src="assets/img/popup-edit.svg" alt="Profile Photo"></div>
+                                 <div class="profile-name-id">
+                                    <h5>Pedro Becker</h5>
+                                    <a href="pedrobecker@meetaxle.com">pedrobecker@meetaxle.com</a>
+                                 </div>
+                              </div>
+                              <div class="edit-profile-drowpdown">
+                                 <ul class="drowpdown">
+                                    <li class="edit-menu">
+                                       <img src="assets/img/popup-droupdown-icon.svg" class="drowpdown-icon" alt="menu">
+                                       <ul>
+                                          <li class="change-pass">
+                                             <a href="#">Change Password</a>
+                                          </li>
+                                          <li class="remove-img">
+                                             <a href="#">Remove Image</a>
+                                          </li>
+                                          <li class="upload-img">
+                                             <a href="#">Upload Image</a>
+                                          </li>
+                                       </ul>
+                                    </li>
+                                 </ul>
+                              </div>
+                           </div>
+                           <div class="gernal-profile password-change-wrapper">
+                              <h1>Change Password</h1>
+                              <div class="gernal-profile-form">
+                                 <form class="form-feild">
+                                    <div class="feild-1 feild">
+                                       <div class="form-field">
+                                          <label for="first-name" class="form-label">Email or Phone</label>
+                                          <div class="custom-input">
+                                             <input type="text" id="email" name="email" class="form-control">
+                                             <span class="error">Enter a valid email or phone.</span>
+                                          </div>
+                                       </div>
+                                       <div class="form-field">
+                                          <label for="current-password" class="form-label">Current Password</label>
+                                          <div class="custom-input">
+                                             <input type="password" id="password" name="password" class="form-control">
+                                             <span class="far fa-eye toggle"></span>
+                                             <span class="error">Enter a valid current password.</span>
+                                          </div>
+                                       </div>
+                                    </div>
+                                    <div class="feild-2 feild">
+                                       <div class="form-field">
+                                          <label for="new-password" class="form-label">New Password</label>
+                                          <div class="custom-input">
+                                             <input type="password" id="new-password" name="password" class="form-control no-required">
+                                             <span class="far fa-eye toggle"></span>
+                                          </div>
+                                       </div>
+                                       <div class="form-field">
+                                          <label for="re-password" class="form-label">Re-Enter Password</label>
+                                          <div class="custom-input">
+                                             <input type="password" id="re-password" name="password" class="form-control">
+                                             <span class="far fa-eye toggle"></span>
+                                             <span class="error">Enter a valid password.</span>
+                                          </div>
+                                       </div>
+                                    </div>
+                                    <div class="form-button">
+                                       <a href="#" class="for-btn for-btn-primary">Cancel</a>
+                                       <a href="#" class="for-btn for-btn-primary btn-blue">Save Changes</a>
+                                    </div>
+                                 </form>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+      </div>
+      </div>
+      </main>
+      </div>
+      <!-- imports for app and controllers  -->
+      <!-- controllers  -->
+      <!-- JS and JQuery from small interactions and logics  -->
+      <script src="js/custom-js/custom.js"></script>
+      <script>
+         $(document).ready(function () {
+             $('.ham-icon').click(function () {
+                 $('.ba-sidenav').toggleClass('expanded-nav')
+                 $('.ba-main').toggleClass('pull-right')
+                 // $('.ba-topnav').toggleClass('pull-right')
+                 $('.ham-icon').toggleClass('_close')
+         
+             })
+         
+       
+         
+         
+             $('.has-flyout').click(function () {
+                 $(this).toggleClass('_show-menu')
+             })
+             $('.has-flyout').on('blur', function () {
+                 $(this).removeClass('_show-menu')
+             })
+         
+             
+             $('.ba-topnav-item').click(function () {
+                 $(this).addClass('_active').siblings().removeClass('_active')
+             })
+             $('.filter_pill').click(function () {
+                 $(this).addClass('_active').siblings().removeClass('_active')
+             })
+         
+             // tree-select expand parent
+             $('.ba-option-parent ._parent ._chevron-down').click(function (params) {
+                 $(this).parent().parent().toggleClass('_show-children')
+                 $(this).parent().parent().siblings().removeClass('_show-children')
+             })
+             
+         });
+      </script>
+   </body>
+</html>

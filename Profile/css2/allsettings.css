@@ -1,0 +1,546 @@
+﻿ 
+        .practice-portion {
+            margin: 0 auto;
+            width: 100%;
+            max-width: 50%;
+            float: left;
+            color: #000;
+            font-size: 16px;
+            text-align: center;
+            border: 1px solid #dee2e6;
+            box-shadow: 0 0.46875rem 2.1875rem rgba(31,10,6,0.03), 0 0.9375rem 1.40625rem rgba(31,10,6,0.03), 0 0.25rem 0.53125rem rgba(31,10,6,0.05), 0 0.125rem 0.1875rem rgba(31,10,6,0.03);
+            margin: 0 0 0 100px;
+        }
+
+        .practice-page {
+            height: 100vh;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .practice-portion select {
+            padding: 3px;
+            max-width: 155px;
+            width: 100%;
+            border: 1px solid #999;
+            border-radius: 3px;
+            margin-bottom: 10px;
+        }
+        .select_update_btn button:hover {
+    background: none;
+    border: 2px solid #488a99;
+    color: #488a99;
+}
+        .select_update_btn button{
+    background: #488A9E;
+    text-transform: uppercase;
+    font-weight: 500;
+    border: 2px solid #488a99;
+}
+       .allsettingscolor .quality_search .verfication_outer.quality_table table tr td input[type=button]{
+            background: #488A9E;
+    text-transform: uppercase;
+    font-weight: 500;
+    border: 2px solid #488a99;
+        }
+         .allsettingscolor .quality_search .verfication_outer.quality_table table tr td input[type=button]:hover {
+    background: none !important;
+    border: 2px solid #488a99;
+    color: #488a99;
+}
+        .practice-portion div.practice-btn button {
+    background: #488A9E;
+    padding: 8px 30px;
+    margin: 15px auto;
+    text-transform: uppercase;
+    font-weight: 500;
+    border: 2px solid #488a99;
+}
+
+     .practice-portion div.practice-btn button:hover {
+    background: none;
+    border: 2px solid #488a99;
+    color: #488a99;
+}
+
+        .practice-msg label {
+            padding: 10px 0 0 0;
+            text-align: center;
+        }
+        /*----(09-12-2019)----*/
+        .practice-potion-left {
+            float: left;
+            width: 48%;
+            border: 2px solid #ccc;
+            margin: 0 15px 0 0;
+            background: #fff;
+        }
+
+            .practice-potion-left:nth-child(2) {
+                margin: 0;
+            }
+
+        .practice-portion {
+            max-width: 50%;
+            padding-left: 0 !important;
+            background: none !important;
+            box-shadow: none;
+            border: none;
+        }
+
+        .practice-potion-left h3 {
+            background: #ddd;
+            font-size: 16px;
+            padding: 10px 10px;
+            text-align: left;
+            color: #000;
+            font-weight: 500;
+        }
+
+        .practice-padding {
+            padding: 0 10px 10px;
+        }
+
+        .practice-potion-left p {
+            font-size: 14px;
+            line-height: 18px;
+        }
+
+        /*8.1.2020*/
+        .practice-portion.practise_settings {
+            max-width: 70%;
+            display: flex;
+        }
+
+            .practice-portion.practise_settings .practice-potion-left:nth-child(2) {
+                margin-right: 15px;
+            }
+
+            .practice-portion.practise_settings .practice-potion-left:nth-child(3) {
+                margin: 0;
+            }
+
+            .practice-portion.practise_settings .practice-potion-left {
+                width: 32%;
+            }
+
+        .practice-padding .outer_Date .label_left {
+            width: 35%;
+            float: left;
+            text-align: left;
+        }
+
+        .practice-padding .outer_Date .dates_right {
+            display: inline-block;
+            text-align: left;
+            width: 65%;
+        }
+
+            .practice-padding .outer_Date .dates_right p {
+                display: inline-block;
+                width: 50%;
+                float: left;
+                padding: 0 0 0 10px;
+                margin: 0;
+            }
+
+        .practice-padding .outer_Date {
+            display: flex;
+            align-items: flex-end;
+        }
+
+            .practice-padding .outer_Date:first-child {
+                margin-bottom: 10px;
+            }
+            .allsettingscolor .payroll_change {
+         padding-left: 205px;
+         padding-top: 60px;
+        position: absolute;
+        top: 30px;
+           }
+            .allsettingscolor .style_year_Select select {
+                 width: 100%;
+                 padding: 6px 12px;
+            }
+ .allsettingscolor .practice-padding {
+    padding: 0 10px 10px;
+    text-align: left;
+}
+ .allsettingscolor .practice-portion div.practice-btn button:active {
+    background: #488a99;
+}
+ .allsettingscolor .practice-portion select {
+    max-width: 40%;
+}
+ .allsettingscolor .practice-portion div.practice-btn button:focus {
+    outline: none;
+}
+ .payroll_change .select_update_btn button:active {
+    background: #488a99;
+}
+  .payroll_change .select_update_btn button:focus {
+    outline: none;
+}
+.allsettingscolor .practice-btn {
+    float: left;
+    width: 100%;
+    text-align:left;
+}
+.allsettingscolor .practice-btn.unscedule-btn button {
+    float: left;
+}
+  .practice-msg label {
+    float: left;
+    padding: 0 10px;
+}
+.practice-btn.unscedule-btn {
+    padding: 0 10px;
+}
+.allsettingscolor .practice-btn button {
+    border-radius: 7px !important;
+}
+   .allsettingscolor .quality_search {
+    padding-left: 205px !important;
+      position: absolute;
+    top: 0px;
+}
+     .allsettingscolor .practice-potion-left h3 {
+    background: none;
+}
+    .allsettingscolor .practice-portion select {
+    border: 2px solid #488a99;
+}
+    
+    /*.allsettingscolor .aging_border {
+    border: 1px solid #dee2e6 !important;
+    border-bottom: 5px solid #eeeeee !important;
+    padding: 10px;
+    margin-top: 4px;
+}*/
+ .allsettingscolor  .practice-potion-left {
+    width: 100%;
+}
+    .allsettingscolor .practice-portion {
+    margin: 0 !important;
+    max-width: 100%;
+    padding-left: 222px !important;
+    position: absolute;
+    top: 73px;
+}
+            .allsettingscolor .practice-potion-left {
+    border: none;
+}
+
+            /*shubham*/
+
+           .practice-padding textarea.textareass {
+           
+                padding: 3px;
+                max-width: 40% !important;
+                width: 100%;
+                height: 60px;
+                border-radius: 3px;
+                margin-bottom: 10px;
+                border: 2px solid #488a99;
+        }
+           .practice-padding input.SMSUrlss {
+           
+                padding: 3px;
+                max-width: 40% !important;
+                width: 100%;
+                border-radius: 3px;
+                margin-bottom: 10px;
+                border: 2px solid #488a99;
+        }
+            .nopadding
+            {
+                padding:0px !Important;
+            }
+            .practice-btn .save_date_error {
+            width: 100%;
+            text-align: left !important;
+        }
+        .practice-padding .accessToken_label {
+            margin-top:10px;
+        }
+        .practice-btn.unscedule-btn.settings_updateBtn {
+        padding:0;
+        }
+            .accountIdss{
+             /*height: 30px;
+            width: 578px;
+            border: 2px solid #488a99;*/
+                padding: 3px;
+                max-width: 40% !important;
+                width: 100%;
+                border-radius: 3px;
+                margin-bottom: 10px;
+                border: 2px solid #488a99;
+        }
+
+
+   
+
+
+             .AccessTokenss{
+             /*height: 30px;
+            width: 578px;
+            border: 2px solid #488a99;*/
+                padding: 3px;
+                max-width: 40% !important;
+                width: 100%;
+                border-radius: 3px;
+                margin-bottom: 10px;
+                border: 2px solid #488a99;
+        }
+/* 10-04-2020*/
+/*.AllSettings_common .practice-padding.dividetwo p {
+display:inline-block;
+width:100%;
+}
+.AllSettings_common .allSettings_left , .AllSettings_common .practice-padding.dividetwo{
+display:inline-block;
+width:48%;
+padding:0;
+text-align:left;
+}
+.AllSettings_common .practice-padding.dividetwo {
+float:left;
+margin-right:30px;
+}
+.AllSettings_common .uploadImage_left {
+    display: inline-block;
+    float: left;
+    margin-right: 20px;
+    max-width:56%;
+    width:100%;
+}
+.AllSettings_common .allSettings_right {
+     max-width:40%;
+    width:100%;
+    display: inline-block;
+}
+.AllSettings_common .allSettings_right img {
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+}
+.AllSettings_common .uploadImage_left input[type='file'] {
+margin-bottom:15px;
+}
+.AllSettings_common .uploadImage_left input{
+    padding: 2px;
+    width: 100%;
+    border: 1px solid #999;
+    border-radius: 3px;
+    margin-bottom: 10px;
+    border: 2px solid #488a99;
+}
+.AllSettings_common .uploadImage_left p, .AllSettings_common .practice-padding.dividetwo p{
+    margin:0 0 7px;
+}
+.practice-portion .practice-potion-left .AllSettings_common .practice-padding.dividetwo select, .practice-portion .practice-potion-left .AllSettings_common .uploadImage_left input, .practice-portion .practice-potion-left .AllSettings_common .practice-padding.dividetwo input , .practice-portion .practice-potion-left .AllSettings_common .uploadImage_left select, .practice-portion .practice-potion-left .AllSettings_common .practice-padding.dividetwo textarea{
+max-width:100% !important;
+}*/
+/* 10-04-2020*/
+
+/* 13-04-2020*/
+.treatment_button.settingPatientdetail {
+text-align:left;
+}
+.BG_SettingCustom label, .BG_SettingCustom input, .BG_SettingCustom textarea, .BG_SettingCustom select, .allsettingscolor .BG_SettingCustom .practiseName_num select {
+width:100%;
+max-width:100%;
+line-height: 2.15;
+    border-radius: 3px;
+
+}
+
+.BG_SettingCustom input, .BG_SettingCustom textarea, .BG_SettingCustom select, .allsettingscolor .BG_SettingCustom .practiseName_num select {
+    width: 100%;
+    max-width: 100%;
+    line-height: 2.15;
+    border: 2px solid #488a99;
+    color: #488a99;
+    background-color:#F7F6F7;
+        border-radius: 3px !important;
+}
+
+        .BG_SettingCustom input,   .BG_SettingCustom select, .allsettingscolor .BG_SettingCustom .practiseName_num select {
+            height: 44px;
+        }
+.BG_SettingCustom {
+    background: #F7F6F7;
+    display: inline-block;
+    width: 100%;
+    padding: 15px 0;
+    border-radius: 10px;
+    margin:5px;
+}
+.practiseLogo_address .filelog input[type=file]:active {
+background:#488a99;
+}
+.practise_patientSMS {
+    display: flex;
+    align-items:center;
+    margin-bottom: 10px;
+}
+
+    .practise_patientSMS .patientPrac_btns button {
+        width: 100%;
+        background: #488a99;
+        /*padding: 4px 12px;*/
+        padding: 12px 0px;
+        outline: none;
+        border-style: none;
+    }
+    .practise_patientSMS .patientPrac_btns {
+    /*max-width: 180px;
+    min-width: 170px;*/
+    width: 180px;
+    
+}
+    .practise_patientSMS .patientPrac_btns, .practise_patientSMS:last-child button {
+        /*margin-left: 20px;*/
+        outline: none;
+        border-style: none;
+    }
+
+.practise_patientSMS .patientPrac_btns button:first-child {
+margin-bottom:10px
+}
+    .practise_patientSMS:last-child button {
+        background: #488a99;
+        margin-right: 20px;
+    }
+.practise_patientSMS button img {
+    max-width: 30px;
+    width: 100%;
+}
+.allSettings_right img {
+    /*border-radius: 50%;
+    border-radius: 50%;*/
+    width: 220px;
+    height: 250px;
+    object-fit: cover;
+}
+.practiseLogo_address {
+    margin: 0 0 10px;
+}
+.allsettingscolor .BG_SettingCustom .practiseName_num select {
+    padding: 10px 3px;
+    border-radius: 0;
+    background-color:#F7F6F7;
+}
+ .practise_patientSMS:last-child {
+    align-items:flex-end;
+}
+.BG_SettingCustom label {
+    /*color: RGB(49, 62, 91);*/
+    color: #313e5b;
+    font-weight: normal;
+    line-height:normal;
+        padding-top: 10px;
+}
+.practiseLogo_address .filelog, .practiseLogo_address .filelog input[type=file] {
+  position:relative;
+}
+.practiseLogo_address .filelog p {
+    position: absolute;
+    margin: 0;
+    left: 7rem;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.practise_patientSMS .col_custom {
+    width: 42%;
+}
+.AllSettings_common.BG_SettingCustom .practiseName_num select, .AllSettings_common.BG_SettingCustom .practiseName_num input, .AllSettings_common.BG_SettingCustom .practiseLogo_address input {
+    height: 40px;
+    margin: 0;
+}
+.AllSettings_common.BG_SettingCustom .practiseName_num:first-child, .AllSettings_common.BG_SettingCustom .practiseLogo_address:first-child {
+    margin-bottom: 15px;
+}
+/* 13-04-2020*/
+
+/*17.4.2020*/
+.pracButtons_custom .SMS_label {
+    display: inline-block;
+    margin-right: 10px;
+}
+.pracButtons_custom .patientPrac_btns {
+    display: inline-block;
+}
+.hygiene_pracAddress .practiseLogo_address.arrowBtn button img {
+    max-width: 25px;
+}
+.hygiene_pracAddress .practiseLogo_address.arrowBtn {
+    margin: 43px 0 0;
+}
+.hygiene_pracAddress .practiseLogo_address.arrowBtn button {
+    padding:8px 10px;
+}
+.SMS_fields .phoneCustom {
+    margin-top: 18px;
+}
+.col-md-12.col-sm-12.pracButtons_custom button {
+    background-color: #488a99;
+    border: none;
+}
+.practiseLogo_address.arrowBtn button {
+    background-color: #488a99;
+    border: none;
+}
+/*17.4.2020*/
+
+
+        /* 8.1.2020 (end) */
+@media screen and (min-width:4000px) {
+    .header-right-info ul.header-right-menu > li > a .media {
+    width: 263px;
+}
+    .practiseLogo_address .filelog p {
+    left: 11rem;
+}
+
+}
+        @media screen and (max-width:991px) {
+            .practice-portion {
+                max-width: 70%;
+            }
+        }
+
+        @media screen and (max-width:767px) {
+            .practice-potion-left {
+                width: 100%;
+                margin: 15px 15px 15px 0px;
+            }
+
+                .practice-potion-left h3 {
+                    font-size: 14px;
+                    line-height: 18px;
+                }
+                .allsettingscolor .practice-portion {
+              top: 92px;
+                }
+        }
+@media screen and (max-width:480px) {
+    .allsettingscolor .practice-portion select {
+        max-width: 100%;
+    }
+}
+@media screen and (max-width:375px) {
+    .header-right-info ul.header-right-menu > li > a .media {
+    width: 100px;
+}
+    .allsettingscolor .practice-portion {
+    top: 107px;
+}
+    .allsettingscolor .quality_search {
+    top: 25px;
+}
+}

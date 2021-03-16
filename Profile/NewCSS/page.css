@@ -1,0 +1,4869 @@
+﻿/*----------- PATIENT TO BE VERIFIED PAGE BEGINS (15.5.2020) -------------*/
+/*16.5.2020*/
+
+/*css to be commonly used*/
+a:hover {
+    text-decoration: none;
+}
+
+.rightAlign_custom {
+    text-align: right;
+}
+
+.quality_search.quality-chngs {
+    padding: 110px 15px 55px 290px;
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+.mini-navbar .quality_search.quality-chngs {
+    padding: 110px 15px 55px 110px;
+}
+
+.quality_search.quality-chngs:after {
+    content: '';
+    height: 100%;
+    width: 260px;
+    position: absolute;
+    left: 0;
+    background: #343d56;
+    top: 0;
+}
+
+.mini-navbar .quality_search.quality-chngs:after {
+    width: 80px;
+}
+
+
+body input[type=checkbox]:focus, body input[type=file]:focus, body input[type=radio]:focus {
+    outline: 0;
+}
+
+.custom_checkbox {
+    display: inline-block;
+    width: 100%;
+    position: relative;
+}
+
+    .custom_checkbox input {
+        opacity: 0;
+        height: 16px;
+        width: 16px;
+        margin-right: 8px;
+    }
+
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 16px;
+    width: 16px;
+    background-color: #fff;
+    border: 1px solid #D9D9DB;
+    border-radius: 2px;
+}
+
+.custom_checkbox input:checked ~ .checkmark:after {
+    display: block;
+}
+
+.custom_checkbox .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+    left: 0;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    border-width: 0 3px 3px 0;
+    content: '\f00c';
+    font-family: 'FontAwesome';
+    color: #0ACADC;
+    text-align: center;
+    font-size: 10px;
+    font-weight: lighter;
+}
+
+
+/*.custom_popup {
+background-color: #FFFFFF;
+border: 1px solid rgba(52, 61, 86, 0.04);
+border-radius: 8px;
+box-shadow: 0 2px 4px 0 rgba(52, 61, 86, 0.04), 0 16px 24px 0 rgba(52, 61, 86, 0.1);
+padding: 15px !important;
+
+width: 500px !important;
+position: absolute;
+left: 50%;
+transform: translate(-50%,-50%);
+-webkit-transform: translate(-50%,-50%);
+-moz-transform: translate(-50%,-50%);
+-ms-transform: translate(-50%,-50%);
+-o-transform: translate(-50%,-50%);
+top: 50%;
+}*/
+
+
+.custom_popup .ui-dialog-buttonpane {
+    padding: 0;
+    margin: 0;
+    border: none;
+    background: transparent;
+}
+
+.customTable_boxshadow table tbody {
+    border: transparent;
+}
+
+.custom_popup .ui-dialog-titlebar.ui-widget-header {
+    background: transparent;
+    border: none;
+    padding: 0;
+    cursor: auto;
+}
+
+    .custom_popup .ui-dialog-titlebar.ui-widget-header span.ui-dialog-title {
+        margin: 0;
+        color: #031926;
+        font-family: 'eina_02bold';
+        font-size: 20px;
+        font-weight: 400;
+        letter-spacing: -0.25px;
+        line-height: 24px;
+    }
+
+.custom_popup .ui-dialog-content {
+    padding: 0;
+    /*overflow: initial;*/
+}
+    /*.custom_popup.ui-dialog{
+overflow:auto;
+}*/
+    .custom_popup .ui-dialog-content .customTable_boxshadow {
+        margin: 24px 0 30px;
+    }
+
+.custom_popup .ui-dialog-titlebar.ui-widget-header .ui-dialog-titlebar-close {
+    background: transparent;
+    color: #031926;
+    border: none;
+    padding: 0;
+    position: static;
+    float: right;
+}
+
+.custom_label label {
+    color: #363F57;
+    font-family: 'eina_02bold';
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: -0.15px;
+    line-height: 14px;
+    opacity: 0.5;
+    text-align: left;
+    margin-bottom: 16px !important;
+    margin-bottom: 16px !important;
+    width: 100%;
+}
+
+.quality_search_inner {
+    margin-bottom: 24px;
+    width: 100%;
+}
+
+.custom_checkbox label {
+    color: #031926;
+    font-family: 'eina_02bold';
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: -0.15px;
+    line-height: 14px;
+    position: relative;
+    display: flex;
+}
+
+.custom_select select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    display: block;
+    width: 100%;
+    height: 36px;
+    float: right;
+    padding: 0px 10px;
+    font-size: 12px;
+    line-height: 1.75;
+    color: #333;
+    background-color: #ffffff;
+    background-image: none;
+    -ms-word-break: normal;
+    word-break: normal;
+    background-color: rgba(243, 244, 244, 0.24);
+    color: #343d56bd;
+    border: 1px solid #EAEBEE;
+    /*  z-index: 11111; */
+    position: relative;
+    text-overflow: ellipsis;
+    word-break: break-all;
+}
+
+.custom_select {
+    position: relative;
+    width: 100%;
+}
+
+    .custom_select:after {
+        content: '\f107';
+        -webkit-transform: rotate(90deg);
+        -moz-transform: rotate(90deg);
+        -ms-transform: rotate(90deg);
+        transform: rotate(90deg);
+        right: 11px;
+        top: 10px;
+        padding: 0 0 2px;
+        position: absolute;
+        pointer-events: none;
+        font-family: "FontAwesome";
+        transform: rotate(0deg);
+        color: #0acadc;
+        font-weight: bold;
+        /*   z-index: 111111; */
+    }
+
+.customTable_boxshadow {
+    background-color: #FFFFFF;
+    border: 1px solid rgba(52, 61, 86, 0.04);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px 0 rgba(52, 61, 86, 0.04), 0 16px 24px 0 rgba(52, 61, 86, 0.1);
+    overflow: auto;
+}
+
+    .customTable_boxshadow table {
+        width: 100%;
+    }
+
+    .customTable_boxshadow td, .customTable_boxshadow th {
+        padding: 20px 12px;
+        border-color: transparent;
+        border-bottom: 1px solid #F3F4F6;
+        min-width: 100px;
+    }
+
+    .customTable_boxshadow table tr th {
+        color: #363F57;
+        font-family: 'eina_02semibold';
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 14px;
+        opacity: 0.5;
+    }
+
+        .customTable_boxshadow table tr th a {
+            color: #363F57;
+            transition: 0.3s;
+            position: relative;
+            font-family: 'eina_02semibold';
+        }
+
+        .customTable_boxshadow table tr th .arrow_anchor a {
+            display: flex;
+            align-items: center;
+        }
+
+            .customTable_boxshadow table tr th .arrow_anchor a i {
+                color: #0ACADC;
+                transition: 0.2s;
+                margin-left: 3px;
+            }
+
+        .customTable_boxshadow table tr th .arrow_anchor:hover i {
+            color: #000000;
+        }
+
+        .customTable_boxshadow table tr th a:hover {
+            color: #000000;
+        }
+
+    .customTable_boxshadow table tbody tr td {
+        color: #363F57;
+        font-family: 'eina_02semibold';
+        font-size: 13px;
+        font-weight: 400;
+        letter-spacing: -0.16px;
+        line-height: 16px;
+        opacity: 0.9;
+        word-break: break-word;
+    }
+
+        .customTable_boxshadow table tbody tr td input, .customTable_boxshadow table tbody tr td select, .customTable_boxshadow table tbody tr td textarea {
+            width: 100%;
+            margin: 0;
+        }
+
+.pagination_custom {
+    text-align: center;
+}
+
+    .pagination_custom ul.pagination {
+        background-color: #FFFFFF;
+        border: 1px solid rgba(52, 61, 86, 0.04);
+        border-radius: 8px;
+        box-shadow: 0 2px 4px 0 rgba(52, 61, 86, 0.04), 0 16px 24px 0 rgba(52, 61, 86, 0.1);
+    }
+
+    .pagination_custom .pagination li a:hover {
+        background: #f3f3f3;
+    }
+
+    .pagination_custom .pagination li a {
+        margin: 4px;
+        border: 1px solid transparent;
+        border-radius: 7px;
+        font-family: 'eina_02bold';
+        color: #0ACADC;
+    }
+
+    .pagination_custom .pagination li.active a, .pagination_custom .pagination li.active a:focus {
+        background-color: #0ACADC;
+        color: #fff;
+        border-color: #0ACADC;
+    }
+
+    .pagination_custom .pagination li.disabled a:focus, .pagination_custom .pagination li.disabled a:hover {
+        border-color: transparent;
+    }
+
+.custom_textarea {
+    background-color: rgba(243, 244, 244, 0.24);
+    border: 1px solid #EAEBEE;
+    font-size: 12px;
+    min-height: 40px;
+    width: 100%;
+    padding: 5px;
+}
+
+.custom_input {
+    font-size: 12px;
+    color: #343D56;
+    background-color: rgba(243, 244, 244, 0.24);
+    border: 1px solid #EAEBEE;
+    border-radius: 2px;
+    /*width: 255px;*/
+    height: 36px;
+    box-shadow: none;
+    transition: 0.2s;
+    width: 100%;
+    padding: 5px 10px;
+}
+
+.custom_chooseFile {
+    display: inline-block;
+    width: 100%;
+    position: relative;
+}
+
+    .custom_chooseFile input {
+        display: inline-block;
+        width: 100%;
+        /*padding-left: 60px;*/
+    }
+
+    .custom_chooseFile label p {
+        margin: 0;
+    }
+
+.custom_input, .custom_select select, .custom_textarea {
+    font-family: 'eina_02bold';
+}
+
+    .custom_input:focus, .custom_select select:focus, .custom_textarea:focus {
+        outline: 0;
+        box-shadow: none;
+        border-color: #ccc;
+    }
+
+.ui-dialog .ui-dialog-buttonpane .ui-dialog-buttonset .customBtn_blue, .customBtn_blue {
+    box-shadow: inset 0 3px 7px 0 rgba(75, 240, 255, 0.78);
+    background: #03C6D8 !important;
+    border-radius: 23px !important;
+    color: #fff !important;
+    transition: 0.4s;
+    padding: 7px 20px;
+    min-height: 40px;
+    margin: 0;
+    transition: 0.4s;
+    white-space: normal;
+    border: transparent;
+    font-family: 'eina_02bold';
+    text-transform: capitalize;
+}
+
+
+    .customBtn_blue:hover, .customBtn_blue:focus, .ui-dialog .ui-dialog-buttonpane .ui-dialog-buttonset .customBtn_blue:hover, .ui-dialog .ui-dialog-buttonpane .ui-dialog-buttonset .customBtn_blue:focus {
+        background: #06b1c1 !important;
+        border-color: #06b1c1 !important;
+        outline: 0;
+    }
+
+.custom_btnWhite {
+    /*border-color: #2f2f2f;
+    border-style: solid;
+    text-shadow: none;*/
+    border: 1px solid #343D56;
+    border-radius: 50px;
+    /*width: 142px;*/
+    min-height: 40px;
+    color: #031926;
+    font-family: 'eina_02bold';
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: -0.07px;
+    line-height: 16px;
+    transition: 0.4s;
+    background: transparent;
+    width: 100%;
+    white-space: normal;
+    padding: 5px 17px;
+}
+
+    .custom_btnWhite:hover, .custom_btnWhite:focus {
+        background: #03C6D8;
+        border-color: #03C6D8;
+        color: #fff;
+        outline: 0;
+    }
+
+.displayNone, body .manageUser_custom.flex_left_right .right_content ul li.displayNone {
+    display: none;
+}
+
+.height_bottom {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    width: 100%;
+}
+
+.custom-file-upload {
+    border: 1px solid #ccc;
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+}
+
+.marginBottom_38 {
+    margin-bottom: 38px;
+    width: 100%;
+}
+
+.marginBottom_20 {
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.marginTop_30 {
+    margin-top: 30px;
+    width: 100%;
+}
+
+.marginTop_20 {
+    margin-top: 20px;
+    width: 100%;
+}
+
+.marginTop_40 {
+    margin-top: 40px;
+    width: 100%;
+}
+
+.marginBottom_30 {
+    margin-bottom: 30px;
+    width: 100%;
+}
+
+.marginTop_0 {
+    margin-top: 0;
+}
+
+.marginTop_10 {
+    margin-top: 10px;
+    width: 100%;
+}
+
+.marginBottom_0, .custom_label label.marginBottom_0 {
+    margin-bottom: 0;
+}
+
+label.errorMsg {
+    font-size: 16px;
+    font-family: 'eina_02bold';
+}
+
+.custom_label label.opacity_1 {
+    opacity: 1;
+}
+
+.w-100 {
+    display: inline-block;
+    width: 100%;
+}
+/*css to be commonly used*/
+/*16.5.2020 ends*/
+/*22.5.2020*/
+.customTable_boxshadow table tbody tr td .one_updatepanel input {
+    max-width: 60%;
+    margin: 15px auto 0;
+    display: block;
+    text-align: center;
+}
+
+.patientVerified_popup .custom_Radio:last-child {
+    border-bottom: 1px solid transparent;
+}
+
+.custom_Radio input {
+    opacity: 0;
+    height: 16px;
+    width: 16px;
+    margin-right: 8px;
+}
+
+.circleRadio {
+    position: absolute;
+    top: 61%;
+    left: 0;
+    height: 18px;
+    width: 18px;
+    background-color: #fff;
+    border: 1px solid #EAEBEE;
+    border-radius: 50%;
+    transform: translateY(-47%);
+}
+
+.custom_Radio label {
+    position: relative;
+    margin: 0;
+    color: #363F57;
+    font-family: 'eina_02bold';
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: -0.17px;
+    line-height: 17px;
+}
+
+.custom_Radio .circleRadio:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.custom_Radio input:checked ~ .circleRadio:after {
+    display: block;
+}
+
+.custom_popup:focus {
+    outline: 0;
+}
+
+.custom_Radio .circleRadio:after {
+    left: 0;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    content: '';
+    text-align: center;
+    height: 8px;
+    width: 8px;
+    background: #0ACADC;
+    border-radius: 50%;
+    margin: 0 auto;
+}
+
+.patientVerified_popup .custom_Radio {
+    border-bottom: 1px solid #F3F4F6;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+}
+
+.custom_popup.patientVerified_popup .ui-dialog-buttonpane {
+    text-align: center;
+}
+
+    .custom_popup.patientVerified_popup .ui-dialog-buttonpane .ui-dialog-buttonset {
+        float: none;
+    }
+
+        .custom_popup.patientVerified_popup .ui-dialog-buttonpane .ui-dialog-buttonset .customBtn_blue {
+            background-color: #03C6D8;
+            border-radius: 23px;
+            box-shadow: inset 0 3px 7px 0 rgba(75, 240, 255, 0.78);
+            width: 123px;
+            height: 40px;
+            color: #FFFFFF;
+            font-family: 'eina_02bold';
+            font-size: 14px;
+            font-weight: 400;
+            letter-spacing: -0.08px;
+            line-height: 17px;
+        }
+
+.patientVerified_check .customTable_boxshadow tr td:first-child {
+    width: 15%;
+}
+
+.patientVerified_check .customTable_boxshadow tr td:last-child {
+    width: 85%;
+}
+
+.patientVerified_check .customTable_boxshadow {
+    height: 250px;
+    overflow: auto;
+}
+
+.patientVerified_popup .verifier_button {
+    text-align: center;
+}
+
+.custom_popup.patientVerified_popup .ui-dialog-content {
+    overflow: initial;
+}
+
+/*----------- PATIENT TO BE VERIFIED PAGE ENDS (15.5.2020) -------------*/
+/*ALLL SETTINGS PAGE BEGINS on 25.5.2020 */
+.btn_absolute {
+    width: 100%;
+    position: relative;
+}
+
+    .btn_absolute .customBtn_blue {
+        text-transform: capitalize;
+        position: absolute;
+        right: 5px;
+        font-size: 12px;
+        height: 28px;
+        top: 50%;
+        transform: translateY(-50%);
+        border-radius: 8px !important;
+        min-height: unset;
+    }
+
+    .btn_absolute input.custom_input {
+        padding-right: 78px;
+    }
+
+.custom_updateBtn .customBtn_blue {
+    font-size: 14px;
+    min-width: 167px;
+    text-transform: capitalize;
+}
+
+h3.allSettings_heading {
+    font-size: 20px;
+    margin-bottom: 25px;
+    font-family: 'eina_02bold';
+    text-transform: capitalize;
+    display: inline-block;
+    /* width:100%; */
+    margin-right: 10px;
+    color:#031926;
+}
+
+ul.allSettings_li_custom li {
+    margin-bottom: 24px;
+    width: 50%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    float: left;
+    position: relative;
+    align-content: flex-end;
+}
+
+    ul.allSettings_li_custom li:nth-child(odd) {
+        padding-right: 16px;
+    }
+
+    ul.allSettings_li_custom li:nth-child(even) {
+        padding-left: 16px;
+    }
+
+ul.allSettings_li_custom {
+    margin: 0;
+    max-width: 495px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+    ul.allSettings_li_custom li.custom_checkbox label {
+        margin: 0;
+    }
+
+    ul.allSettings_li_custom li .employee_ext {
+        margin-bottom: 25px;
+    }
+
+        ul.allSettings_li_custom li .employee_ext:last-child {
+            margin-bottom: 0;
+        }
+
+
+.hygeine_li_custom.allSettings_li_custom li.btn_hygeine_li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0;
+    width: 100%;
+}
+
+.allSettings_li_custom li .buttons_hygeine li {
+    width: auto;
+    padding: 0;
+    margin: 0 10px 0 0;
+}
+
+.hygeine_li_custom.allSettings_li_custom li.btn_hygeine_li label {
+    width: auto;
+    margin: 0px 0px -10px;
+}
+.hygautoIsms label {
+    width: 100% !important;
+}
+
+.allSettings_li_custom li .buttons_hygeine li button.custom_btnWhite {
+    padding: 5px 10px;
+    height: 28px;
+    font-size: 10px;
+    margin: 15px 0 0;
+}
+
+.custom_select.ConfLoc:after {
+    display: none;
+}
+
+
+.custom_select.ConfLoc .main_box:after {
+    content: '\f107';
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+    right: 11px;
+    top: 10px;
+    padding: 0 0 2px;
+    position: absolute;
+    pointer-events: none;
+    font-family: "FontAwesome";
+    transform: rotate(0deg);
+    color: #0acadc;
+    font-weight: bold;
+    /* z-index: 111111; */
+}
+#main_boxASV button::after {
+    content: unset !important;
+}
+
+.custom_select.ConfLoc .main_box {
+    padding: 0;
+    margin: 0 -15px 30px;
+    width: 225px;
+}
+
+
+
+.allSettings_li_custom li .buttons_hygeine li:last-child {
+    margin: 0;
+}
+
+ul.allSettings_li_custom li.full_widthLi {
+    width: 100%;
+    padding: 0;
+}
+
+ul.allSettings_li_custom.fullWidth_hygeine li, ul.allSettings_li_custom.hygeine_li_custom > li {
+    width: 100%;
+    padding: 0;
+}
+
+/*personal details (profileee) page*/
+.updateError_message label {
+    width: auto;
+    margin: 0 0 0 15px;
+}
+
+.updateError_message {
+    display: inline-block;
+    width: 100%;
+}
+
+.selectOptions_absolute {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+    .selectOptions_absolute .selectOpt_absolute {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: #fff;
+        box-shadow: 0 10px 15px 0px rgba(0,0,0,0.02);
+        z-index: 1;
+        padding: 5px 8px;
+    }
+
+.selectOpt_absolute .custom_checkbox label {
+    margin: 0;
+}
+
+.imgSquare_140 img {
+    height: 140px;
+    width: 140px;
+    object-fit: cover;
+    border-radius: 100%;
+    object-position: top;
+}
+
+.imgSquare_contain img {
+    height: 140px;
+    width: 140px;
+    object-fit: contain;
+    border-radius: 100%;
+    border: 1px solid #EBECEF;
+    padding: 10px;
+}
+
+ul.allSettings_li_custom li ul.show-pass {
+    min-width: 100%;
+}
+
+    ul.allSettings_li_custom li ul.show-pass li {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+    }
+
+.imgSquare_contain p.imagetext {
+    margin: 0;
+}
+
+.profileSettings_main ul.allSettings_li_custom li {
+    align-content: flex-start;
+}
+
+ul.allSettings_li_custom.custom_label.marginTop_30 {
+    margin-top: 30px;
+}
+
+.profileSettings_main ul.allSettings_li_custom li .rolesPayroll_check li {
+    width: 100%;
+    padding: 0;
+}
+
+.user_check_inner .user_check_custom input[type='text'] {
+    opacity: 1;
+    width: 100%;
+    margin: 0;
+    height: 36px;
+}
+
+.user_check_inner .select_result {
+    position: relative;
+}
+
+    .user_check_inner .select_result .select_result_inner {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: #fff;
+        box-shadow: 0 10px 15px 0px rgba(0,0,0,0.02);
+        z-index: 1;
+        padding: 5px 8px;
+    }
+
+.user_check_inner .user_check_custom {
+    margin-top: 15px;
+}
+
+.profileSettings_main ul.allSettings_li_custom li.custom_checkbox .user_check_inner .user_check_custom .compensation-radio label {
+    align-items: center;
+    opacity: 1;
+}
+
+ul.allSettings_li_custom li.custom_checkbox .user_check_inner {
+    display: inline-block;
+    width: 100%;
+    padding-left: 22px;
+}
+
+.profileSettings_main ul.allSettings_li_custom li .rolesPayroll_check li.custom_checkbox label, .profileSettings_main ul.allSettings_li_custom li.custom_checkbox .user_check_inner .select_result .custom_checkbox label {
+    opacity: 1;
+}
+
+.profileSettings_main ul.allSettings_li_custom li.custom_checkbox .user_check_inner .user_check_custom label {
+    margin: 5px 0;
+    opacity: 0.5;
+}
+
+.flex_left_right {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: flex-end;
+    align-content: flex-end;
+}
+
+    .flex_left_right .left_content {
+        width: 50%;
+    }
+
+        .flex_left_right .left_content .left_content_inner {
+            width: 100%;
+            max-width: 35%;
+        }
+
+    .flex_left_right .right_content {
+        width: 50%;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        height: 100%;
+        justify-content: flex-end;
+    }
+
+.unscheduledUser_settings .custom_select {
+    max-width: 55%;
+    width: 100%;
+}
+
+.unscheduledUser_settings .custom_ustinput {
+    max-width: 55%;
+    width: 100%;
+}
+
+.flex_left_right .right_content label {
+    width: auto;
+    /*margin: 0 15px 0 0;*/
+}
+
+.message.updateError_message label {
+    margin: 0;
+}
+
+.callCentral_emp {
+    display: inline-block;
+    width: 100%;
+}
+
+    .callCentral_emp .left {
+        padding-right: 16px;
+        width: 50%;
+    }
+
+    .callCentral_emp .right {
+        padding-left: 16px;
+        width: 50%;
+    }
+
+    .callCentral_emp .labelboxright {
+        display: flex;
+        margin-bottom: 24px;
+    }
+
+        .callCentral_emp .labelboxright:last-child {
+            margin-bottom: 0;
+        }
+
+.allSettings_wrapper .flex_left_right .right_content label.errorMsg {
+    margin: 0 15px 0 0;
+}
+/*ALLL SETTINGS PAGE ends here */
+/*MANAGE USERS PAGE  (3.6.2020) */
+.manageUser_custom .user_inputFields {
+    display: inline-block;
+    width: 100%;
+    max-width: 35%;
+    font-size: 12px;
+}
+
+    .manageUser_custom .user_inputFields:first-child {
+        margin-right: 1%;
+    }
+
+    .manageUser_custom .user_inputFields input {
+    }
+
+.manageUser_custom.flex_left_right .right_content ul {
+    width: 100%;
+    text-align: right;
+}
+
+    .manageUser_custom.flex_left_right .right_content ul li {
+        display: inline-block;
+        margin-right: 8px;
+    }
+
+        .manageUser_custom.flex_left_right .right_content ul li:last-child {
+            margin-right: 0;
+        }
+
+.manageUser_custom.flex_left_right .right_content .errorMsg_user label {
+    width: 100%;
+    display: inline-block;
+    margin: 10px 0 0;
+    text-align: right;
+}
+
+.manageUser_custom.flex_left_right .right_content .errorMsg_user {
+    width: 100%;
+    display: inline-block;
+    margin: 0;
+    text-align: right;
+}
+
+.manageUser_grid table tbody .edit_del_icon, .insuranceAR_grid table tbody .edit_del_icon, .conf_grid table tbody .edit_del_icon, .verf_grid table tbody .edit_del_icon {
+    position: relative;
+    float: left;
+}
+
+    .manageUser_grid table tbody .edit_del_icon i {
+        color: #0ACADC;
+        transition: 0.2s;
+        font-size: 18px;
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+
+    .manageUser_grid table tbody .edit_del_icon input, .insuranceAR_grid table tbody .edit_del_icon input, .conf_grid table tbody .edit_del_icon input, .verf_grid table tbody .edit_del_icon input {
+        width: 6px;
+        height: 16px;
+        z-index: 1;
+        position: relative;
+        opacity: 0;
+    }
+
+.customTable_boxshadow.manageUser_grid table tbody tr td .custom_checkbox input {
+    width: 16px;
+}
+
+.customTable_boxshadow.manageUser_grid table tbody tr td .custom_checkbox label {
+    margin: 0;
+    opacity: 1;
+}
+
+.manageUser_grid table tbody .edit_del_icon img, .insuranceAR_grid table tbody .edit_del_icon img, .conf_grid table tbody .edit_del_icon img, .verf_grid table tbody .edit_del_icon img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    max-width: 17px;
+}
+/*MANAGE USERS PAGE ends*/
+
+/*EDIT PRACTICES PAGE  (4.6.2020) */
+.editPrac_btn {
+    text-align: right;
+}
+
+.deletePopup_custom .popup-btn {
+    text-align: center;
+}
+
+    .deletePopup_custom .popup-btn input:first-child {
+        margin-right: 8px;
+    }
+
+.editPrac_custom {
+    text-align: right;
+}
+
+.editPrac_popup {
+    position: absolute;
+    width: 500px;
+    left: 50%;
+    top: 30%;
+    transform: translate(-50%,-30%);
+}
+
+    .editPrac_popup.custom_popup h2 {
+        margin: 0;
+        color: #031926;
+        font-family: 'eina_02bold';
+        font-size: 20px;
+        font-weight: 400;
+        letter-spacing: -0.25px;
+        line-height: 24px;
+    }
+
+/*EDIT PRACTICES PAGE ends */
+
+/* ADD LOCATION PAGE  (4.6.2020) */
+.addLocation_fields.allSettings_li_custom {
+    max-width: 300px;
+}
+
+/* ADD LOCATION PAGE ends */
+
+/* EMPLOYEE PAGE  (5.6.2020) */
+.employeePage_grid table tbody tr td .customBtn_blue {
+    min-width: 100px;
+    width: auto;
+    margin: 0 auto;
+    display: block;
+}
+/* EMPLOYEE PAGE ends */
+
+/* INSURANCE AR CALL PAGE  (6.6.2020) */
+.insuranceARCall_custom.flex_left_right .left_content label {
+    opacity: 1;
+    margin: 0;
+}
+
+.insuranceARCall_custom.flex_left_right .left_content .custom_checkbox {
+    display: inline-block;
+    width: auto;
+}
+
+.insuranceARCall_custom.flex_left_right .left_content {
+    display: flex;
+    justify-content: space-between;
+}
+
+.insuranceARCall_custom.flex_left_right {
+    align-items: center;
+}
+
+.insuranceARCall_table.customTable_boxshadow p.date {
+    margin: 8px 0 0;
+    color: #363F57;
+    font-family: 'eina_02semibold';
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: -0.16px;
+    line-height: 16px;
+    opacity: 0.9;
+    /*word-break: break-word;*/
+}
+/* INSURANCE AR CALL PAGE ends */
+
+/* INSURANCE AR PAGE  (6.6.2020) */
+.insuranceAR_grid.customTable_boxshadow input.custom_btnWhite {
+    min-width: 112px;
+    margin-top: 8px;
+}
+
+    .insuranceAR_grid.customTable_boxshadow input.custom_btnWhite:first-child {
+        margin-top: 0;
+    }
+
+.insuranceAR_grid.customTable_boxshadow tbody tr td .custom_checkbox {
+    width: auto;
+}
+
+    .insuranceAR_grid.customTable_boxshadow tbody tr td .custom_checkbox label {
+        opacity: 1;
+    }
+
+.insuranceAR_grid.customTable_boxshadow table tbody tr td .one_updatepanel input {
+    margin: 15px 0 0;
+    max-width: 100%;
+}
+/* INSURANCE AR PAGE ends */
+
+/*HYGEINE COMPLETED AND PENDING (10.6.2020)*/
+.rightAlign_custom.hygeinePending_completed {
+    display: flex;
+    justify-content: flex-end;
+}
+
+    .rightAlign_custom.hygeinePending_completed input {
+        width: 100%;
+    }
+
+.customTable_boxshadow.hygeine_grid .custom_checkbox label, .customTable_boxshadow.insuranceAR_grid .custom_checkbox label {
+    opacity: 1;
+    margin: 0;
+}
+
+.customTable_boxshadow.hygeine_grid .custom_checkbox, .customTable_boxshadow.insuranceAR_grid .custom_checkbox {
+    top: 6px;
+    left: 20px;
+}
+
+    .customTable_boxshadow.hygeine_grid .custom_checkbox label input, .customTable_boxshadow.insuranceAR_grid .custom_checkbox label input {
+        margin: 0;
+    }
+
+.manageUser_grid.hygeine_grid table tbody .edit_del_icon input, .conf_grid table tbody .edit_del_icon input, .verf_grid table tbody .edit_del_icon input {
+    width: 18px;
+    height: 16px;
+    min-height: auto;
+    padding: 0;
+    vertical-align: middle;
+}
+
+.manageUser_grid.hygeine_grid table tbody .edit_del_icon, .conf_grid table tbody .edit_del_icon, .verf_grid table tbody .edit_del_icon {
+    width: auto;
+    display: inline-block;
+    margin-right: 55px;
+    /*left: -18px;*/
+}
+
+    .manageUser_grid.hygeine_grid table tbody .edit_del_icon:last-child {
+        margin-right: 0;
+    }
+
+.manageUser_grid.hygeine_grid table tbody .success_msg {
+    margin-top: 10px;
+    font-size: 13px;
+}
+
+.custom_popup.ui-dialog .ui-dialog-content.hygeinePending_empty {
+    overflow: unset;
+}
+
+.custom_popup.hygeineCompleted_popup .title_pop span {
+    margin: 0;
+    color: #031926;
+    font-family: 'eina_02bold';
+    font-size: 20px;
+    font-weight: 400;
+    letter-spacing: -0.25px;
+    line-height: 24px;
+}
+/*.custom_popup.hygeineCompleted_popup .title_pop .cross label{
+background: transparent;
+color: #031926;
+border: none;
+padding: 0;
+position: static;
+float: right;
+margin: 0;
+cursor:pointer;
+}
+.custom_popup.hygeineCompleted_popup .title_pop .cross {
+display: inline-block;
+float: right;
+}*/
+.custom_popup.hygeineCompleted_popup .new_popup .padding_div_popup .popup_data {
+    padding: 24px 0 0;
+    display: inline-block;
+    width: 100%;
+}
+
+    .custom_popup.hygeineCompleted_popup .new_popup .padding_div_popup .popup_data .bottom_button {
+        margin-top: 10px;
+        text-align: right;
+    }
+/*HYGEINE COMPLETED AND PENDING ends */
+
+/* COLLECTION PAGE (12.6.2020) */
+.collectionPage .height_bottom_inner input[type=button] {
+    width: 100%;
+}
+
+.searchResult_custom .pract_name_label, .searchResult_custom .result_select {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 100%;
+    background: #fff;
+    box-shadow: 0 0 7px 10px rgba(0,0,0,0.04);
+    max-height: 250px;
+    overflow: auto;
+    z-index: 1;
+    padding: 0 5px;
+}
+
+.searchResult_custom {
+    position: relative;
+}
+
+    .searchResult_custom .pract_name_label div label {
+        margin-bottom: 7px;
+        border-bottom: 1px solid #f7f7f7;
+        padding-bottom: 7px;
+    }
+
+/*COLLECTION PAGE ends */
+
+/*INSURANCE AR PAGE (popup) */
+.insuranceAR_popup.ui-dialog.ui-widget-content {
+    top: 5% !important;
+    transform: translate(-50%,-5%);
+    background-color: #FFFFFF;
+    /* border-radius: 16px; */
+    /* box-shadow: 0 2px 4px 0 rgba(52, 61, 86, 0.04), 0 16px 32px 0 rgba(52, 61, 86, 0.2); */
+    border: 0px solid transparent;
+    border-radius: 16px !important;
+}
+
+.insuranceAR_popup .ui-dialog-titlebar {
+    background: transparent !important;
+}
+
+    .insuranceAR_popup .ui-dialog-titlebar .ui-dialog-title {
+        padding: 0;
+        margin: 0;
+        color: #031926;
+        font-family: 'eina_02semibold';
+        font-size: 20px;
+        font-weight: 400;
+    }
+
+    .insuranceAR_popup .ui-dialog-titlebar span.ui-button {
+        border: 1px solid transparent !important;
+        color: #031926;
+        background: transparent;
+    }
+
+.insuranceAR_popup .ui-dialog-content.ui-widget-content label {
+    color: #343D56;
+    font-family: 'eina_02semibold';
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 14px;
+}
+
+.insuranceAR_popup .ui-dialog-content.ui-widget-content input, .insuranceAR_popup .ui-dialog-content.ui-widget-content select {
+    border: 1px solid #EAEBEE;
+    border-radius: 2px;
+    width: 100%;
+    height: 44px;
+    padding: 5px 15px 5px 8px;
+    box-shadow: none;
+    background-color: #ffffff;
+}
+
+.insuranceAR_popup .ui-dialog-content.ui-widget-content .form-group .dropdown-box .dropdown {
+    border-color: transparent;
+    display: flex;
+    position: relative;
+}
+
+.insuranceAR_popup .ui-dialog-content.ui-widget-content .dropdown select {
+    margin: 0 12px 0 0;
+    /*-webkit-appearance: none;
+-moz-appearance: none;
+appearance: none;*/
+    background-size: 10px;
+    line-height: normal;
+}
+
+    .insuranceAR_popup .ui-dialog-content.ui-widget-content .dropdown select:last-child {
+        margin: 0;
+    }
+
+.insuranceAR_popup .ui-dialog-content.ui-widget-content .form-group .fake-input, .insuranceAR_popup .ui-dialog-content.ui-widget-content .input-box {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+    .insuranceAR_popup .ui-dialog-content.ui-widget-content .form-group .fake-input input, .insuranceAR_popup .ui-dialog-content.ui-widget-content .input-box input {
+        margin: 0 !important;
+        padding-right: 0px;
+    }
+
+.insuranceAR_popup .ui-dialog-content.ui-widget-content .form-group .input-box i {
+    position: absolute;
+    right: 15px;
+    top: 54%;
+    transform: translate(0,-55%);
+    font-size: 17px;
+    color: #777;
+}
+
+.insuranceAR_popup .ui-dialog-content.ui-widget-content .form-group .fake-input img {
+    max-width: 20px;
+    right: 10px;
+}
+
+.insuranceAR_popup .ui-dialog-content.ui-widget-content .form-group.btnCustom_next button {
+    background-color: #777777;
+    border-radius: 16px;
+    width: 100%;
+    color: #fff;
+    font-size: 17px;
+    font-weight: 400;
+    letter-spacing: -0.11px;
+    line-height: 24px;
+    border: 1px solid transparent;
+    font-family: 'eina_02semibold';
+    padding: 11px 15px;
+}
+
+.insuranceAR_popup .ui-dialog-buttonset button {
+    background: #5fa8c6 none repeat scroll 0 0 !important;
+    border: medium none !important;
+    border-radius: 20px !important;
+    color: #fff;
+    margin: 10px 0 10px 10px !important;
+    opacity: 1 !important;
+    padding: 6px 23px;
+    font-weight: bold;
+}
+
+.insuranceAR_popup .ui-dialog .ui-dialog-buttonpane .ui-dialog-buttonset {
+    float: none !important;
+    text-align: center;
+}
+
+.insuranceAR_popup .ui-dialog .ui-dialog-titlebar-close {
+    background-color: transparent !important;
+    background-image: url("../images/close.png");
+    background-repeat: no-repeat;
+    background-size: 18px auto;
+    border: medium none;
+    right: 8px !important;
+    top: 23% !important;
+}
+
+.insuranceAR_popup .form-box .fake-input {
+    position: relative;
+}
+
+.insuranceAR_popup .ui-dialog-content.ui-widget-content .dropdown select:focus {
+    outline: 0;
+}
+
+.insuranceAR_popup .fake-input img {
+    position: absolute;
+    top: 50%;
+    right: 5px;
+    transform: translate(0,-50%);
+}
+
+.insuranceAR_popup .ui-dialog-titlebar.ui-widget-header.ui-corner-all {
+    padding: 0;
+    position: relative;
+}
+
+    .insuranceAR_popup .ui-dialog-titlebar.ui-widget-header.ui-corner-all span.ui-button {
+        cursor: pointer;
+        position: absolute;
+        right: 0px;
+        top: -5px;
+        line-height: 0;
+        padding: 0;
+        display: inline-block;
+        height: auto;
+    }
+
+.insuranceAR_popup .red-text {
+    color: red;
+}
+
+.insuranceAR_popup .fottername {
+    color: #7F7F7F;
+    margin: 20px 0;
+}
+
+
+.insuranceAR_popup .form-horizontal .form-group {
+    margin: 0 0 10px 0;
+}
+
+.insuranceAR_popup .form-box h2 {
+    font-size: 18px;
+    text-align: center;
+    margin: 0;
+    padding-bottom: 15px;
+    color: #7f7f7f;
+    font-weight: 700;
+}
+
+
+.insuranceAR_popup .dropdown-box .dropdown select {
+    position: relative;
+    padding: 0 15px;
+    margin: 0px;
+    /*background-image: url(css2/img/Dashboard/arrow.png);*/
+    background-repeat: no-repeat;
+    background-position: 90% 50%;
+    background-size: 25px;
+}
+
+.insuranceAR_popup .dropdown-box .dropdown {
+    border: 2px solid #a6a6a6;
+    border-radius: 7px;
+}
+
+
+.insuranceAR_popup .form-box .form-group label {
+    font-weight: 400;
+    margin-bottom: 5px;
+    margin-top: 10px;
+    color: #7f7f7f;
+}
+
+.insuranceAR_popup .form-horizontal .form-group:last-child {
+    margin-bottom: 0;
+}
+
+.insuranceAR_popup .form-box .form-group button.submit {
+    /*  background: #777; */
+    border: none;
+    /* border-radius: 0; */
+    /*  width: 100%; */
+    padding: 15px;
+    /*  margin: 30px 0 0 0; */
+    color: #fff;
+    letter-spacing: -0.09px;
+    line-height: 28px;
+}
+
+.insuranceAR_popup .phone, .insuranceAR_popup .form-horizontal .form-group .input-box {
+    position: relative;
+}
+
+    .insuranceAR_popup .phone i, .insuranceAR_popup .form-horizontal .form-group .input-box i {
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translate(-50%,-50%);
+        -webkit-transform: translate(-50%,-50%);
+        -moz-transform: translate(-50%,-50%);
+        font-size: 20px;
+        color: #7f7f7f;
+    }
+
+.insuranceAR_popup .dropdown select#drop {
+    background: transparent;
+    border-radius: 6px;
+    padding: 0 15px;
+    height: 45px;
+    line-height: 45px;
+    border-color: #a6a6a6;
+    border-width: 1px;
+    width: 100%;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    position: relative;
+    /*background-image: url(css2/img/Dashboard/arrow.png);*/
+    background-repeat: no-repeat;
+    background-position: 97% 50%;
+    background-size: 25px;
+    color: #7F7F7F;
+    border: 2px solid #a6a6a6;
+}
+
+.insuranceAR_popup .payment-info .dropdown-box .dropdown select {
+    width: 48.5%;
+    padding: 0 5px;
+    border: 0px;
+    outline: 0px;
+}
+
+    .insuranceAR_popup .payment-info .dropdown-box .dropdown select:last-child {
+        margin-right: 0;
+    }
+
+
+
+.insuranceAR_popup .dropdown-box .dropdown select:last-child {
+    margin-right: 0;
+    border-right: none !important;
+}
+
+.insuranceAR_popup iframe {
+    border: none;
+}
+
+.insuranceAR_popup .footer-form {
+    display: inline-block;
+    /*float: left;
+background: #eee;*/
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.insuranceAR_popup .axle-ftr-logo {
+    width: 70px;
+}
+
+.insuranceAR_popup .controls_customForms {
+    text-align: center;
+}
+
+    .insuranceAR_popup .controls_customForms ul {
+        list-style: none;
+        padding: 0;
+    }
+
+        .insuranceAR_popup .controls_customForms ul li {
+            display: inline-block;
+            background: #f7f7f7;
+            height: 4px;
+            width: 30px;
+            margin-right: 3px;
+        }
+
+            .insuranceAR_popup .controls_customForms ul li:last-child {
+                margin-right: 0;
+            }
+
+.insuranceAR_popup .secure_payment {
+    margin-top: 30px;
+    text-align: center;
+}
+
+    .insuranceAR_popup .secure_payment p {
+        color: #7f7f7f;
+        font-size: 16px;
+        line-height: normal;
+        text-align: left;
+    }
+
+.insuranceAR_popup .secure_payment {
+    justify-content: center;
+    display: flex;
+    align-items: center;
+}
+
+    .insuranceAR_popup .secure_payment img {
+        margin-right: 7px;
+        position: relative;
+        top: -4px;
+    }
+
+.insuranceAR_popup div#confirmationmessage img {
+    max-width: 100px;
+}
+
+.insuranceAR_popup .loader_success h6 {
+    text-align: center;
+    color: #7f7f7f;
+    font-size: 16px;
+    margin: 20px 0 0;
+    font-weight: 400;
+}
+
+
+.insuranceAR_popup #confirmationmessage {
+    margin: 60px 0 0;
+}
+
+.insuranceAR_popup .main {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+}
+
+    .insuranceAR_popup .main .first {
+        width: 37px;
+        height: 4px;
+        background-color: gray;
+        margin: 1px;
+        border-radius: 4px;
+    }
+
+
+    .insuranceAR_popup .main .SecondHide {
+        width: 37px;
+        height: 2px;
+        background-color: #D3D3D3;
+        margin: 2px;
+        border-radius: 4px;
+    }
+
+/*INSURANCE AR PAGE (popup) end */
+.allSettings_li_custom li.chooseColor_50 .custom_input {
+    width: 50%;
+    display: inline-block;
+}
+
+.profileSettings_main .custom_updateBtn.updateError_message label {
+    font-size: 16px;
+}
+
+.mass_SMSwrapper .quality_search_inner {
+    margin-bottom: 0;
+}
+
+.mass_SMSwrapper .insuranceARCall_custom.flex_left_right .left_content {
+    justify-content: flex-start;
+}
+
+    .mass_SMSwrapper .insuranceARCall_custom.flex_left_right .left_content .custom_checkbox {
+        margin-right: 50px;
+    }
+
+        .mass_SMSwrapper .insuranceARCall_custom.flex_left_right .left_content .custom_checkbox:last-child {
+            margin-right: 0;
+        }
+
+.payment_transacGrid.customTable_boxshadow table tbody tr td span {
+    color: #363F57;
+    font-family: 'eina_02semibold';
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: -0.16px;
+    line-height: 16px;
+    opacity: 0.9;
+    word-break: break-word;
+}
+
+/*-- we pay API --*/
+.clientName_wepay {
+    display: flex;
+    align-items: center;
+}
+
+    .clientName_wepay span {
+        display: inline-block;
+        min-width: 100px;
+        font-family: 'eina_02semibold';
+    }
+
+.wePay_wrapper .customTable_boxshadow {
+    margin-top: 40px;
+}
+
+.wePay_wrapper .custom_btnWhite {
+    width: auto;
+}
+
+.wepay_popup .title_pop h4 {
+    font-family: 'eina_02bold';
+}
+
+.wePay_wrapper .custom_popup .custom_input {
+    margin-bottom: 15px;
+}
+
+.wepay_popup .title_pop {
+    position: relative;
+    margin-bottom: 25px;
+}
+
+    .wepay_popup .title_pop .cross {
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+
+.wePay_wrapper .custom_popup.custom_label label {
+    margin-bottom: 6px;
+}
+
+.wepay_popup .title_pop .cross label {
+    font-size: 20px;
+    cursor: pointer;
+}
+/*-- we pay API --*/
+
+/*UST pending*/
+.USTPending_grid.customTable_boxshadow table tr td .customBtn_blue.icon {
+    /*width: 40px;
+display: flex;
+align-items: baseline;
+justify-content: center;
+font-size: 20px;
+line-height: 8px;
+height: 40px;
+flex-shrink: 0;
+margin: 0 auto;
+padding:0;*/
+    padding: 0 15px 5px;
+    width: auto;
+    font-size: 20px;
+    margin: 0 auto;
+    display: block;
+}
+
+.UST_progressBar .md-thumb:after {
+    background-color: #0ACADC;
+    border-color: #0ACADC;
+}
+
+.UST_progressBar .md-sign, .UST_progressBar .md-track.md-track-fill {
+    background-color: #0ACADC;
+}
+
+    .UST_progressBar .md-sign:after {
+        border-top-color: #0ACADC;
+    }
+
+.customTable_boxshadow table tr th.arrow_order {
+    opacity: 1;
+}
+
+    .customTable_boxshadow table tr th.arrow_order a {
+        display: flex;
+        color: rgba(54, 63, 87, 0.5);
+    }
+
+        .customTable_boxshadow table tr th.arrow_order a span.arrow_icon {
+            font-weight: 600;
+            color: #363F57;
+        }
+/*UST pending ends */
+
+/*UST CALL LIST*/
+.USTCall_wrapper .error_msg label {
+    margin: 0;
+    font-size: 16px;
+}
+
+.USTCall_wrapper .UST_progressBar.height_bottom_inner ._md {
+    top: 4px;
+}
+
+.customTable_boxshadow.USTPending_grid table tbody.selected tr:first-child {
+    background: #0ACADC;
+}
+
+.USTPending_grid.customTable_boxshadow table tbody.selected tr:first-child td .customBtn_blue.icon {
+    background: #488a99 !important;
+}
+/*UST CALL LIST ends */
+
+/*-----(30-07-2020)----*/
+.terminal-btn {
+    width: 100%;
+    float: left;
+}
+
+    .terminal-btn button {
+        float: left;
+        width: 47%;
+        font-size: 16px !important;
+        margin-top: 10px;
+        margin-bottom: 15px;
+        /* margin-bottom: 15px; */
+        background-color: #03C6D8;
+        border-radius: 13px;
+        box-shadow: inset 0 3px 7px 0 rgba(75, 240, 255, 0.78);
+    }
+
+.amount-due {
+    color: #343D56;
+    font-family: 'eina_02semibold';
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 14px;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.amount-number {
+    color: #031926;
+    font-family: 'eina_02bold';
+    font-size: 35px;
+    font-weight: 400;
+    line-height: 40px;
+    margin-top: 11px;
+    text-align: center;
+}
+
+    .amount-number span {
+        font-size: 30px;
+        font-family: 'eina_02bold' !important;
+    }
+
+.terminaldropdown_custom {
+    position: relative;
+    width: 33.33%;
+    margin-right: 3%;
+    border-right: 1px solid #EAEEEB;
+}
+
+    .terminaldropdown_custom:last-child {
+        margin-right: 0;
+    }
+
+.custom_terminal-dropdown .terminaldropdown select, .custom_terminal-dropdown .input-box input, .custom_terminal-dropdown .terminaldropdown_custom select, .custom_terminal-dropdown .fake-input input, .custom_terminal-dropdown .terminalpaydropdown select, .custom_terminal-dropdown .input-box.phone input {
+    color: #333333;
+    font-family: 'eina_02regular';
+    font-size: 14px;
+}
+/* .terminaldropdown_custom select ,.terminaldropdown select {
+    color: #9a9fab;
+    font-family: 'eina_02regular';
+} */
+
+.terminaldropdown, .terminalpaydropdown {
+    position: relative;
+}
+
+.custom_terminal-dropdown select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.terminaldropdown_custom::after {
+    content: '';
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 6px 3px 0 3px;
+    border-color: #777777 transparent transparent transparent;
+    position: absolute;
+    right: 7px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/*.terminaldropdown::after, .terminalpaydropdown::after {
+    content: '';
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 6px 3px 0 3px;
+    border-color: #777777 transparent transparent transparent;
+    position: absolute;
+    right: 7px;
+    top: 50%;
+    transform: translateY(-50%);
+}*/
+
+ul.terminal_select li {
+    float: left;
+    width: 31.33%;
+    margin-right: 3%;
+}
+
+    ul.terminal_select li:last-child {
+        margin-right: 0;
+    }
+
+.custom_terminal-dropdown .payment-info {
+    float: left;
+    width: 100%;
+}
+
+/* .custom_terminal-dropdown button.submit {
+    margin-top: 20px !important;
+    border-radius: 28px !important;
+} */
+
+.terminal-btn button:focus, .terminalpaydropdown select:focus, .payButton_custom button:focus {
+    outline: 0;
+}
+
+/*----(4-8-2020)---*/
+.confirmations ul.confirmations-list li {
+    width: 33.33%;
+    padding: 0 15px;
+}
+
+    .confirmations ul.confirmations-list li:last-child {
+        padding-right: 0;
+    }
+
+    .confirmations ul.confirmations-list li:nth-child(1) {
+        padding-left: 0;
+    }
+
+/*----- transaction page -----*/
+
+.approvecheck {
+    width: 18px;
+    height: 18px;
+    margin: 4px;
+    float: left;
+}
+
+.approvestatus {
+    color: #0ADC8F;
+    font-family: eina_02bold;
+    font-size: 13px;
+    letter-spacing: -0.16px;
+    line-height: 17.94px;
+    padding: 4px 0;
+}
+
+.payment_approve {
+    background-color: #d3f9eb;
+    border-radius: 13px;
+    width: 101px;
+    height: 26px;
+}
+
+/* 09-04-2020*/
+ul.allSettings_li_custom li img, li#toggleshowhide a.dropdown-toggle .media-left img {
+    height: 140px;
+    width: 140px;
+    border-radius: 100%;
+}
+
+    /*li#toggleshowhide a.dropdown-toggle .media-left img {
+    height: 40px;
+    width: 40px;
+    border: 1px solid #EBECEF;
+    border-radius: 100%;
+    max-width: unset;
+}*/
+
+    ul.allSettings_li_custom li img[src="NewImages/defaultimg/x.svg"] {
+        height: 140px;
+        width: 140px;
+        object-fit: cover;
+        border-radius: 100%;
+        border: 1px solid #EBECEF;
+        /* padding: 0px; */
+        border: 1px solid #EAEBEE;
+        background-color: #FCFCFC;
+    }
+/* li#toggleshowhide .media .media-left img[src="NewImages/defaultimg/dummy_img.svg"] {
+    padding: 10px;
+} */
+
+/* payment popup background */
+.paymentcustom_popup {
+    width: 297px;
+    height: 550px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px 0 rgba(52, 61, 86, 0.04);
+    border: solid 1px rgba(52, 61, 86, 0.04);
+    background-color: #ffffff;
+    padding: 30px 0px 0px 0 !important;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    -webkit-transform: translate(-50%,-50%);
+    -moz-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    -o-transform: translate(-50%,-50%);
+    top: 35%;
+}
+/*.paymentcustom_popup:focus
+{
+border-color: transparent;
+    outline: none;
+}*/
+
+.paymentcustom_popup {
+    border-radius: 8px;
+    box-shadow: 0 2px 4px 0 rgba(52, 61, 86, 0.04);
+    border: solid 1px rgba(52, 61, 86, 0.04);
+}
+
+    .paymentcustom_popup div > h3 > img {
+        display: block;
+        margin: 0 auto;
+        width: 143px;
+        height: auto;
+    }
+
+.paymentcustom_popupdiv1 h2 {
+    font-family: 'eina_02semibold';
+    font-size: 16px;
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.38;
+    letter-spacing: normal;
+    color: #031926;
+    text-align: center;
+    margin: 30px 0 0 0;
+}
+
+.paymentcustom_popupdiv1 label {
+    opacity: 0.5;
+    font-family: 'eina_02semibold';
+    font-size: 8px;
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.38;
+    letter-spacing: normal;
+    text-align: center;
+    color: #363f57;
+    margin: 0px 0 5px 0;
+}
+
+.paymentcustom_popupdiv1 ul {
+    width: 80%;
+    margin: 30px auto;
+    padding: 0 0 0 33px;
+}
+
+.paymentcustom_popup ul > li {
+    font-size: 12px;
+    color: #363f57;
+    font-family: 'eina_02semibold';
+    margin-bottom: 25px;
+    position: relative;
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    font-size: 12px;
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    /* line-height: 3.75; */
+    letter-spacing: normal;
+    text-align: left;
+    color: #363f57;
+}
+
+
+.paymentcustom_popupdiv1 ul > li::before {
+    position: absolute;
+    content: "";
+    background-image: url("../NewImages/signup_popup/paymentcheck.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 12px;
+    height: 12px;
+    left: -10px;
+    top: 8px;
+    transform: translate(-50%,-50%);
+    -webkit-transform: translate(-50%,-50%);
+    -moz-transform: translate(-50%,-50%);
+}
+
+.paymentcustom_popup .verifier_button {
+    text-align: center;
+}
+
+    .paymentcustom_popup .verifier_button button.customBtn_blue {
+        min-width: 127px;
+    }
+
+.paymentcustom_popupdiv1 div > h3 {
+    margin: 4rem 0 0 0;
+}
+/*.paymentcustom_popupdiv2 
+{
+margin-left: 0px;
+}*/
+.paymentcustom_popupdiv2 h3 {
+    margin-bottom: 50px;
+    height: 22px;
+    font-family: 'eina_02bold';
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.38;
+    letter-spacing: normal;
+    text-align: left;
+    color: #031926;
+    margin-top: 20px;
+}
+
+.paymentcustom_popupdiv2 ul > li {
+    width: 202px;
+}
+
+.paymentcustom_popup::backdrop {
+    background: rgba(0, 0, 0, 0.5);
+}
+
+/*09-09-2020*/
+
+.paymentcustom_popupdiv2 ul {
+    max-width: unset;
+}
+    /*.paymentcustom_popupdiv2 ul li {
+    width: 33.3%;
+}*/
+    .paymentcustom_popupdiv2 ul li:nth-child(2) {
+        padding-left: 0px;
+    }
+
+    .paymentcustom_popupdiv2 ul li:nth-child(odd) {
+        padding-right: 0;
+    }
+
+    .paymentcustom_popupdiv2 ul > li {
+        margin-right: 40px;
+    }
+
+        .paymentcustom_popupdiv2 ul > li:last-child {
+            margin-right: 0px !important;
+        }
+
+.paymentcustom_popupdiv2 .custom_updateBtn {
+    margin-bottom: 30px;
+}
+
+.paymentcustom_popupdiv2 {
+    padding: 0px 30px;
+}
+
+    .paymentcustom_popupdiv2 button {
+        min-width: 127px !important;
+        height: 46px !important;
+        margin-top: 25px;
+    }
+
+.gate_pop_134 span a {
+    color: #031926 !important;
+    border-bottom: 1px solid #031926;
+}
+
+.paymentcustom_popup:focus {
+    outline: none;
+}
+
+.gate_pop_134 span {
+    width: 211px;
+    height: 28px;
+    font-family: 'eina_02regular';
+    font-size: 10px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.4;
+    letter-spacing: normal;
+    text-align: left;
+    color: #031926;
+}
+
+/*.fullscreen-container {
+    display: none;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(90, 90, 90, 0.5);
+    z-index: 9999;
+}*/
+
+#popupclosebtn h3 {
+    top: -34px;
+    position: relative;
+    left: 12px;
+    cursor: pointer;
+}
+
+/*.setting_reminds button {
+    width: 24px;
+    height: 24px;
+    border: solid 1px #031926;
+    border-radius: 50%;
+    background: transparent;
+    padding: 0px;
+    color: #fff;
+}*/
+
+/*.setting_reminds button span {
+        top: -4px;
+        font-size: 10px;
+        position: relative;
+        font-family: 'eina_02bold' !important;
+    }*/
+
+.setting_reminds button:focus {
+    outline: none;
+}
+
+/*.custom_popup {
+    padding: 19px 0px !important;
+}*/
+/*.appointment_reminder {
+    top: -16px;
+    position: absolute;
+    right: -23px;
+    font-size: 17px;
+    width: 8px;
+    height: 16px;
+}*/
+
+.active_name_pract button {
+    border-radius: 10px !important;
+    min-height: 28px !important;
+}
+
+.slider_practice div#slider {
+    margin-bottom: 30px;
+}
+
+.slider_practice .updateError_message button {
+    min-width: 127px !important;
+}
+
+    .slider_practice .updateError_message button:last-child {
+        background: transparent !important;
+        border: 1px solid #031926 !important;
+        color: #031926 !important;
+    }
+
+.slider_practice p label {
+    font-size: 25px;
+    text-align: center;
+    color: #031926 !important;
+    opacity: unset;
+}
+
+.slider_practice div#slider {
+    width: 40%;
+    margin: 0 auto;
+    display: inherit;
+    bottom: 13px;
+    height: 4px;
+}
+
+.custom_popup {
+    background-color: #FFFFFF;
+    border: 1px solid rgba(52, 61, 86, 0.04);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px 0 rgba(52, 61, 86, 0.04), 0 16px 24px 0 rgba(52, 61, 86, 0.1);
+    padding: 15px !important;
+    width: 500px !important;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    -webkit-transform: translate(-50%,-50%);
+    -moz-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    -o-transform: translate(-50%,-50%);
+    /*top: 50%;*/
+}
+
+.ui-widget input, .ui-widget select, .ui-widget textarea, .ui-widget button {
+    font-family: eina_02bold !important;
+    color: #031926;
+}
+
+.confirmed_checkbox span {
+    top: 3px;
+    position: relative;
+    left: 5px;
+    font-family: 'eina_02bold';
+    color: #363f57;
+    opacity: 0.5;
+    font-size: 12px;
+}
+
+.slider_practice span::after {
+    background: transparent !important;
+    box-shadow: unset !important;
+}
+
+.slider_practice span.ui-slider-handle.ui-corner-all.ui-state-default {
+    background: #0acadc;
+    width: 35px;
+    height: 18px;
+    border-radius: 10px;
+    box-shadow: none;
+}
+
+    .slider_practice span.ui-slider-handle.ui-corner-all.ui-state-default:focus {
+        outline: none !important;
+    }
+
+.slider_practice #slider span {
+    top: -9px;
+}
+
+.slider_practice .ui-widget.ui-widget-content {
+    border: 1px solid #ffffff !important;
+}
+
+.reminds_15 label {
+    margin-bottom: 5px;
+}
+
+.reminds_15 .edit_del_icon img {
+    width: 15px;
+    margin-right: 5px;
+    height: 15px;
+    cursor: pointer;
+}
+
+.off_on_12 .edit_del_icon {
+    float: left;
+    right: -100px;
+    position: relative;
+}
+
+.off_on_12 {
+    width: 50%;
+    top: -7px;
+    position: relative;
+    left: 0px;
+    display: flex;
+    flex-flow: column wrap;
+    align-content: flex-end;
+    height: 33px;
+}
+
+.reminds_15 textarea.custom_textarea {
+    margin-bottom: 7px;
+    height: 119px;
+}
+
+.off_on_12 label.switch {
+    width: 70%;
+    top: -3px;
+    opacity: unset;
+    padding: 20px 0;
+    float: right;
+    right: -108px;
+}
+
+.setting_reminds.reminds_15 {
+    border-radius: 8px;
+    box-shadow: 0 2px 4px 0 rgba(52, 61, 86, 0.04);
+    border: solid 1px rgba(52, 61, 86, 0.04);
+}
+/*.off_on_12 label.switch .slider:before {
+    background-color: #0acadc !important;
+        top: 8px;
+}*/
+.off_on_12 label.switch .slider.round {
+    background: #98d7de;
+    width: 87px;
+    height: 34px;
+}
+
+.slider .on {
+    position: absolute;
+    right: 24px;
+    float: none;
+    font-size: 12px;
+    font-weight: 600;
+    font-family: 'eina_02semibold';
+    transform: translate(50%,-50%);
+    -webkit-transform: translate(50%,-50%);
+    -moz-transform: translate(50%,-50%);
+    width: auto;
+    text-transform: lowercase;
+    text-align: center;
+    top: 16px;
+}
+
+.slider .off {
+    position: absolute;
+    left: 23px;
+    top: 16px;
+    display: block !important;
+    /*color: rgba(4, 137, 157, 0.56) !important;*/
+    font-size: 12px;
+    font-weight: 600;
+    font-family: 'eina_02semibold';
+    text-transform: lowercase;
+}
+
+.off_on_12 label.switch .slider:before {
+    background-color: #0acadc !important;
+    top: 3px;
+    width: 45px;
+    height: 28px;
+    border-radius: 10px;
+    border: solid 1px rgba(112, 112, 112, 0);
+    left: 2px;
+    color: #fff;
+}
+
+    .off_on_12 label.switch .slider:before .slider .on {
+        color: #fff;
+    }
+/*.slider::after {
+    position: absolute;
+    background: #98d7de;
+    height: 34px;
+    width: 87px;
+    content: "";
+    border-radius: 10px;
+    z-index: -1;
+    opacity: 0.5;
+}*/
+.reminds_15 h5 {
+    width: 45%;
+    float: left;
+    height: 16px;
+    font-family: 'eina_02bold';
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.33;
+    letter-spacing: normal;
+    text-align: left;
+    color: #343d56;
+}
+
+.reminds_15 ul:last-child li {
+    margin-bottom: 0px !important;
+}
+/*.reminds_15 {
+    border-radius: 8px;
+    box-shadow: 0 2px 4px 0 rgba(52, 61, 86, 0.04);
+    border: solid 1px rgba(52, 61, 86, 0.04);
+    padding: 35px 20px 0;
+    width: 538px;
+    height: 832px;
+    max-height:832px;
+
+}*/
+
+/*10-09-2020*/
+
+
+input:checked + .slider:before {
+    -webkit-transform: translateX(38px);
+    -ms-transform: translateX(38px);
+    transform: translateX(38px);
+    /*color:#fff;*/
+}
+
+
+
+
+/* Customize website's scrollbar like Mac OS
+Not supports in Firefox and IE */
+
+/* total width */
+.scrollbar::-webkit-scrollbar {
+    background-color: #fff;
+    width: 16px;
+}
+
+/* background of the scrollbar except button or resizer */
+.scrollbar::-webkit-scrollbar-track {
+    background-color: #fff;
+}
+
+    .scrollbar::-webkit-scrollbar-track:hover {
+        background-color: #f4f4f4;
+    }
+
+/* scrollbar itself */
+.scrollbar::-webkit-scrollbar-thumb {
+    background-color: #babac0;
+    border-radius: 16px;
+    border: 5px solid #fff;
+}
+
+    .scrollbar::-webkit-scrollbar-thumb:hover {
+        background-color: #a0a0a5;
+        border: 4px solid #f4f4f4;
+    }
+
+/* set button(top and bottom of the scrollbar) */
+.scrollbar::-webkit-scrollbar-button {
+    display: none;
+}
+
+/* div box */
+
+.scrollbar {
+    height: 882px;
+    width: 538px;
+    overflow-x: hidden;
+    background: #fff;
+    overflow-y: auto;
+    overflow-x: hidden;
+    background: #fff;
+    overflow-y: auto;
+    border-radius: 8px;
+    box-shadow: 0px 16px 24px #343D561A;
+    border: solid 1px rgba(52, 61, 86, 0.04);
+    padding: 31px 40px 35px;
+}
+
+.custom_popup {
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%);
+}
+/* 11-9*/
+/*12-09-2020*/
+.confirmationstab {
+    /*height: 839px;
+    width: 538px;
+    overflow-x: hidden;
+    background: #fff;
+    overflow-y: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px 0 rgba(52, 61, 86, 0.04);
+    border: solid 1px rgba(52, 61, 86, 0.04);
+    padding: 15px 20px 15px;*/
+    height: 882px;
+    width: 520px;
+    overflow-x: hidden;
+    background: #fff;
+    overflow-y: auto;
+    overflow-x: hidden;
+    background: #fff;
+    overflow-y: auto;
+    border-radius: 8px;
+    box-shadow: 0px 16px 24px #343D561A;
+    border: solid 1px rgba(52, 61, 86, 0.04);
+    padding: 31px 40px 35px;
+}
+
+.patient_verticatd {
+    margin-top: -4.5%;
+}
+
+.custom-sms-btn .custom_btnWhite {
+    padding: 0 10px !important;
+    min-height: 28px;
+    border-radius: 10px !important;
+}
+
+.confirmationstab .slider_practice label {
+    margin: 0;
+}
+
+.confirmationstab > .slider_practice {
+    margin: 0 0 20px;
+}
+
+/*.confirmationstab ul.allSettings_li_custom li {
+    margin-bottom: 6px;
+}*/
+.confirmations button.addnew:focus {
+    outline: none;
+}
+/*.confirmationstab p {
+    margin: 0;
+}*/
+.confirmationstab::-webkit-scrollbar {
+    background-color: #babac0;
+    border-radius: 16px;
+    border: 5px solid #fff;
+    width: 16px;
+}
+
+    .confirmationstab::-webkit-scrollbar:hover {
+        background-color: #a0a0a5;
+        border: 4px solid #f4f4f4;
+    }
+
+.confirmationstab_button label {
+    margin-bottom: 5px;
+}
+
+.confirmationstab_button .edit_del_icon img {
+    width: 15px;
+    margin-right: 5px;
+    height: 15px;
+    cursor: pointer;
+    margin-top: 0px;
+}
+
+.confirmationstab_button h5 {
+    width: 45%;
+    float: left;
+    height: 16px;
+    font-family: 'eina_02bold';
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.33;
+    letter-spacing: normal;
+    text-align: left;
+    color: #343d56;
+    margin-top: 0px;
+}
+/*.confirmationstab_button .off_on_12 {
+    width: 50%;
+    top: -7px;
+    position: relative;
+    left: 0px;
+    display: flex;
+    flex-flow: column wrap;
+    align-content: flex-end;
+    height: 33px;
+    margin-top: 0px;
+}*/
+/*.confirmationstab_button .off_on_12 label.switch {
+    width: 70%;
+    top: 10 px;
+    opacity: unset;
+    padding: 20px 0;
+    float: right;
+    right: -111px;
+}*/
+/*.confirmationstab_button  .off_on_12 .edit_del_icon {
+    float: left;
+    right: -100px;
+    position: relative;
+    margin-top: 15px;
+}*/
+/*.confirmationstab_button {
+    padding: 20px 0px 0px;
+}*/
+/*.confirmationstab_button .off_on_12 label.switch {
+        width: 70%;
+    top: -3px;
+    opacity: unset;
+    padding: 20px 0;
+    float: right;
+    right: -111px;
+}*/
+.confirmationstab_button {
+    margin: 0px 0 0 0;
+}
+
+    .confirmationstab_button textarea.custom_textarea {
+        /*margin-bottom: 7px;*/
+        height: 119px;
+    }
+/*.confirmationstab .custom_label label {
+    margin-top: 0px;
+}*/
+/*.confirmationstab_button ul:last-child li {
+    margin-bottom: 0px !important;
+}*/
+.slider_practice .ui-widget.ui-widget-content {
+    border: 1px solid #ffffff !important;
+    max-width: 255px;
+    margin: 0 auto;
+    display: inherit;
+    bottom: 10px;
+    height: 4px;
+    width: 87%;
+}
+
+/*.confirmations button.addnew {
+    width: 24px;
+    height: 24px;
+    border: solid 1px #031926;
+    border-radius: 50%;
+    background: transparent;
+    color: #fff;
+    padding: 0px;
+}
+
+    .confirmations button.addnew span {
+        top: -4px;
+        position: relative;
+        font-size: 10px;
+        font-family: 'eina_02bold' !important;
+    }*/
+
+
+
+
+.confirmationstab_button ul {
+    margin: 0 0 27px 0;
+}
+
+.notfoundcolor {
+    background-color: #FFEBEF;
+}
+
+/*2020-09-16*/
+.tooltipconfirmation {
+    position: relative;
+    display: inline-block;
+}
+
+    .tooltipconfirmation .tooltiptext {
+        visibility: hidden;
+        width: 206px;
+        opacity: 1;
+        color: #031926;
+        text-align: center;
+        border-radius: 4px;
+        padding: 8px 4px;
+        font-family: 'eina_02semibold';
+        font-weight: 600;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.38;
+        letter-spacing: normal;
+        /* max-width: 149px; */
+        position: absolute;
+        z-index: 1;
+        /* bottom: 100%; */
+        bottom: 14px;
+        left: 50%;
+        margin-left: -99px;
+        /* margin-top: 10px !important; */
+    }
+
+        .tooltipconfirmation .tooltiptext span::after {
+            content: "";
+            position: absolute;
+            /*top: 100%; 27th Nov 2020*/
+            top: 94%;
+            left: 48%;
+            margin-left: -5px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: #ffffff transparent transparent transparent;
+        }
+
+
+.tooltiptext span {
+    font-size: 11px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: rgba(52, 61, 86, 0.16) 0px 2px 4px 0px;
+    height: auto;
+    display: inline-block;
+    vertical-align: middle;
+    /*top: 5px; 27th Nov 2020*/
+    top: 0px;
+    position: relative;
+    padding: 6px 9px;
+    margin: 8px 0px 0px;
+    border-radius: 4px;
+}
+/*.tooltipconfirmation .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 48%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #ffffff transparent transparent transparent;
+}*/
+
+.tooltipconfirmation:hover .tooltiptext {
+    visibility: visible;
+}
+
+.tooltipconfirmation img {
+    max-width: inherit;
+}
+
+/*16-09-2020*/
+.confirmationstab .sliderDiv {
+    padding: 25px 0px 25px 0;
+}
+
+    .confirmationstab .sliderDiv .slider_practice {
+        padding: 0px 0px 15px 0;
+    }
+
+.confirmationstab ul li textarea.custom_textarea {
+    height: 119px;
+}
+
+.starttime {
+    margin: 0;
+    position: relative;
+    top: -30px;
+}
+
+label.endtime {
+    position: relative;
+    top: -15px;
+}
+
+label.custom-gap-Reschedule {
+    margin: 0 0 39px 0;
+}
+
+label.custom-gap-InvalidResp {
+    position: relative;
+    top: -10px;
+}
+
+textarea#textareaConfSMS {
+    margin: 12px 0 0 0;
+}
+
+.label_After_Confirmation label {
+    position: relative;
+    top: 12px;
+}
+
+.label_After_Confirmation textarea {
+    position: relative;
+    top: 34px;
+}
+
+ul.custom-ul {
+    margin: 0 0 15px 0;
+}
+
+/* 21-09-2020*/
+.wepayconfirmLast_step img {
+    width: 120px;
+    height: 120px
+}
+
+.wepaycongrats p {
+    font-family: 'eina_02bold';
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.38;
+    letter-spacing: normal;
+    text-align: center;
+    color: #031926;
+    margin: 37px 0 37px;
+    font-size: 18px;
+}
+
+.wepaycongrats2 p {
+    width: 470px;
+    height: 137px;
+    /* font-family: Eina02; */
+    font-size: 16px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.44;
+    letter-spacing: normal;
+    text-align: center;
+    color: #343d56;
+    margin: 0;
+}
+
+.wepaylastcongrats {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    /* text-align: center; */
+    align-items: center;
+    padding: 0;
+    margin: 0;
+}
+
+.crossspan {
+    right: 20px;
+    float: right;
+    /* position: relative; */
+    font-size: 20px;
+    color: #031926;
+    width: 11px;
+    height: 12px;
+    border: none;
+    padding: 0 10px 0 13px;
+    position: relative;
+    margin: 0;
+    cursor: pointer;
+    z-index: 1;
+    top: -10px;
+}
+
+/*22-09-2020*/
+
+.customwepaylabel {
+    display: flex;
+    width: 100%;
+    justify-content: stretch;
+    align-items: self-start;
+    padding: 0;
+    margin: 0;
+}
+
+    .customwepaylabel label {
+        width: auto;
+    }
+
+    .customwepaylabel a {
+        height: auto;
+        display: flex;
+        padding: 3px 0 0 6px;
+        position: relative;
+    }
+
+.customwepaydescription {
+    /* border: 5px solid red; */
+    position: absolute;
+    /* top: -50px; */
+    background-color: transparent;
+    width: 124px;
+    height: auto;
+    opacity: 1;
+    font-family: 'eina_02regular';
+    font-size: 8px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.38;
+    letter-spacing: normal;
+    text-align: left;
+    color: #031926;
+    border: none;
+    box-shadow: 0 2px 4px 0 rgba(52, 61, 86, 0.04);
+    padding: 4px;
+}
+
+/*.customwepaydescription span {
+        position: absolute;
+        z-index: 1;
+        top: -24px;
+        background-color: #ffffff;
+        width: auto;
+        height: auto;
+        opacity: 1;
+        font-family: 'eina_02regular';
+        font-size: 8px;
+        font-weight: normal;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.38;
+        letter-spacing: normal;
+        text-align: left;
+        color: #031926;
+        border: none;
+        box-shadow: 0 2px 4px 0 rgba(52, 61, 86, 0.04);
+        left: 1px;
+        padding: 4px;
+        display: inline-block;
+        vertical-align: bottom;
+    }*/
+
+.customwepaylabel a img {
+    position: relative;
+}
+
+
+
+
+
+
+
+
+
+
+
+td.custom_tbl.ng-binding {
+    font-family: 'eina_02regular';
+}
+
+.custom_tbl.custom_select select {
+    font-family: 'eina_02regular';
+    font-size: 12px;
+}
+/*.notesrectangle {
+  
+    border-radius: 2px;
+    width: 18px;
+    height: 16px;
+    cursor: pointer;
+}
+
+.verified {
+    width: 18px;
+    height: 16px;
+    cursor: pointer;
+}*/
+.tooltippendingconfirmation {
+    position: relative;
+    display: inline-block;
+    top: 1px;
+    left: 0px;
+}
+
+    .tooltippendingconfirmation .tooltiptextpending {
+        visibility: hidden;
+        width: 104px;
+        opacity: 1;
+        color: #fff;
+        text-align: center;
+        border-radius: 6px;
+        padding: 8px 0;
+        background-color: #031926;
+        font-family: 'eina_02regular';
+        font-size: 12px;
+        font-weight: 600;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.38;
+        letter-spacing: normal;
+        position: absolute;
+        z-index: 1;
+        bottom: 30px;
+        left: 0%;
+        margin-left: -44px;
+    }
+
+        .tooltippendingconfirmation .tooltiptextpending::after {
+            content: "";
+            position: absolute;
+            top: 27px;
+            left: 50%;
+            margin-left: -5px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: #031926;
+            transform: rotate(45deg);
+            z-index: -6;
+        }
+
+    .tooltippendingconfirmation:hover .tooltiptextpending {
+        visibility: visible;
+    }
+
+    .tooltippendingconfirmation img {
+        max-width: inherit;
+    }
+/* terminal page 30-09-2020 */
+.termialpagecustom_anchor {
+    color: #031926;
+    font-family: eina_02bold;
+    font-size: 18px;
+    letter-spacing: -0.23px;
+    line-height: 48px;
+    text-align: left;
+}
+
+.terminalpagecustom_popup {
+    max-width: 336px !important;
+    width: 100% !important;
+    max-height: 428px;
+    height: 100%;
+    position: absolute !important;
+    left: 50% !important;
+    transform: translate(-50%,-50%);
+    -webkit-transform: translate(-50%,-50%);
+    -moz-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    -o-transform: translate(-50%,-50%);
+    top: 50% !important;
+}
+
+.terminalpagecustomClient_first {
+    padding: 0px 8px 0px 15px;
+}
+
+.terminalpagecustomClient_last {
+    padding: 0px 15px 0px 8px;
+}
+
+/*24sep20 start*/
+/*.customTable_boxshadow .edit_del_icon {
+  
+    float: left;
+}*/
+/*.customTable_boxshadow .tooltippendingconfirmation {
+    left: 0;
+}*/
+
+/*10-01-2020*/
+
+.add_Practice .closebtn {
+    background: #fff;
+    border: none;
+    font-family: 'eina_02regular';
+    font-size: 12px;
+    color: #031926;
+    margin: -5px -15px;
+}
+
+    .add_Practice .closebtn:focus {
+        outline: none
+    }
+
+.add_Practice {
+    min-width: 531px;
+    min-height: 623px;
+}
+
+    .add_Practice .cancelbtn {
+        width: 116px;
+        margin-right: 15px
+    }
+
+    .add_Practice .row {
+        padding: 0 5px 0 5px
+    }
+
+    .add_Practice .savebtn {
+        width: 116px;
+    }
+
+    .add_Practice .pull-right {
+        padding-bottom: 20px;
+    }
+
+/*30-09-2020*/
+
+.custompaymentactiveinactive .payment_Inactive img {
+    width: 18px;
+    height: 18px;
+    margin: 4px;
+    float: left;
+    padding: 0px;
+    border: none;
+}
+
+.custompaymentactiveinactive .payment_approve img {
+    width: 18px;
+    height: 18px;
+    margin: 4px;
+    float: left;
+    padding: 0px;
+    border: none;
+}
+
+.Inactivestatus {
+    color: #dc0a52;
+    font-family: eina_02bold;
+    font-size: 13px;
+    letter-spacing: -0.16px;
+    line-height: 17.94px;
+    padding: 4px 0;
+}
+
+.payment_Inactive {
+    background-color: #F8CEDC;
+    border-radius: 13px;
+    width: 90px;
+    height: 26px;
+}
+
+.payment_activewidth {
+    width: 90px;
+}
+
+/*10-06-2020*/
+.addbtn {
+    width: 127px;
+    height: 40px;
+    border-radius: 16px;
+    border: solid 1px #343d56;
+}
+
+.editPractices_grid th {
+    border: none;
+}
+
+/*.editPractices_grid {
+    padding-left: 22px;
+}*/
+
+.colorpickercss {
+    width: 20px !important;
+    height: 20px;
+    margin-bottom: 10px;
+}
+
+
+
+
+li.custompaymentactiveinactive a {
+    top: -15px;
+    position: relative;
+}
+
+li.custompaymentactiveinactive label {
+    float: left;
+    width: 26%;
+}
+
+/*li.custompaymentactiveinactive a .customwepaydescription {
+    top: 9px;
+    left: 5px;
+}*/
+
+li.custompaymentactiveinactive a img {
+    border: none;
+}
+
+li.chooseColor_50 #val1 {
+    padding-left: 17%;
+}
+
+
+
+.relative_1312 input {
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0) 100%);
+    background-repeat: repeat-x;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#40FFFFFF', endColorstr='#00FFFFFF', GradientType=0);
+    background-color: #fff;
+    border-radius: 2px;
+    border: solid 1px #eee;
+    box-shadow: 0px 2px 5px 0px rgba(155, 155, 155, 0.5);
+    box-sizing: border-box;
+    cursor: pointer;
+    display: block;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 40px;
+    width: 100%;
+    outline: none;
+    padding-left: 18px;
+    padding-right: 30px;
+    position: relative;
+    text-align: left !important;
+    transition: all 0.2s ease-in-out;
+}
+
+.relative_1312 .dropdown_active_sms {
+    position: absolute;
+    z-index: 999;
+    background: #fff;
+    width: 90%;
+    overflow-y: scroll;
+    max-height: 220px;
+    border: 1px solid #e6e0e0;
+    padding: 10px;
+}
+
+    .relative_1312 .dropdown_active_sms .selecr_row {
+        margin-bottom: 10px;
+    }
+
+.inactiveclass {
+    position: absolute;
+    top: 30px;
+}
+
+.customTable_boxshadow table tbody tr td {
+    cursor: pointer;
+}
+
+
+
+/*.pracinfo {
+    padding-bottom: 50px;
+}*/
+
+/*dropdown*/
+
+
+/*Start 10-07-2020*/
+
+/*.pracinfo .State {
+    margin-left: 270px;
+    margin-top: -70px;
+}*/
+
+/*.pracinfo .makePaymentDropdownMainDiv {
+    width: 225px;
+}*/
+
+/*.makePaymentDropdownMainDiv button#individualDrop {
+    width: 100%;
+    height: 36px;
+    font-size: 12px;
+    line-height: 1.75;
+    background-color: #ffffff;
+    background-image: none;
+    -ms-word-break: normal;
+    word-break: normal;
+    background-color: rgba(243, 244, 244, 0.24);
+    color: #343d56bd;
+    border: 1px solid #EAEBEE;
+    position: relative;
+    text-overflow: ellipsis;
+    word-break: break-all;
+    text-align:left
+}
+
+    .makePaymentDropdownMainDiv button#individualDrop:focus {
+        outline: none;
+        border: 1px solid #0ACADC !important;
+        border-radius: 2px;
+        background: rgba(10, 202, 220, 0.05);
+    }*/
+
+/*.makePaymentDropdownMainDiv button#individualDrop:after {
+    content: '\f107';
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+    right: 11px;
+    top: 10px;
+    padding: 0 0 2px;
+    position: absolute;
+    pointer-events: none;
+    font-family: "FontAwesome";
+    transform: rotate(0deg);
+    color: #0acadc;
+    font-weight: bold;
+}*/
+
+/*.makePaymentDropdownMainDiv ul.dropdown-menu.makePaymentDropdownUlStyle {
+    width: 100%;
+    overflow-y: scroll;
+    max-height: 220px;
+    overflow-x: hidden;
+    margin-top: 0px;
+    border-radius: 0;
+    border: 1px solid black;
+}*/
+
+/*input.makePaymentDropdownSearchBox {
+    font-family: eina_02bold;
+    width: 91%;
+    background-color: #fff;
+    border-radius: 6px;
+    border: solid 1px #eee;
+    box-sizing: border-box;
+    height: 36px;
+    color: #343d56;
+}
+
+input.makePaymentDropdownSearchBox:focus {
+    outline: none;
+    width: 91%;
+}*/
+/*.margin_addbtn {
+    margin-bottom: 30px;
+    width: 100%;
+    margin-top: -90px
+}*/
+/*.pracinfo .dropdown-menu > li > a {
+    display: block;
+    padding: 3px 20px;
+    clear: both;
+    font-weight: normal;
+    line-height: 1.428571429;
+    color: #343d56bd;
+    white-space: nowrap;
+    font-family: eina_02regular;
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: -0.16px;
+    line-height: 16px;
+}*/
+
+.editPractices_grid {
+    /*padding-left: 0;*/
+    padding-top: 15px;
+}
+
+.imgSquare_contain .customwepaydescription {
+    width: 0px
+}
+
+
+div#ContentPlaceHolder1_PTname .result_select, .addaudit_outer .pract_name_label, .completionList {
+    position: absolute;
+    left: 16px;
+    right: 0;
+    top: 100%;
+    background: #fff;
+    box-shadow: 0 0 7px 10px rgba(0,0,0,0.04);
+    max-height: 250px;
+    overflow: auto;
+    z-index: 1;
+    padding: 0 5px;
+    width: 217px;
+    outline: none;
+}
+
+
+.quality_search_inner.mb-0 {
+    margin-bottom: 0;
+}
+/*End 10-07-2020*/
+
+
+/*Start 10-08-2020*/
+
+/*New Css*/
+/*.confirmationstab1 {
+    width: 100%;
+    min-height: 80px;
+    max-height: 200px;
+    overflow-x: hidden;
+    background: #fff;
+    overflow-y: auto;
+    overflow-x: hidden;
+    background: #fff;
+    overflow-y: auto;
+    border-radius: 0px !important;
+    box-shadow: 0 2px 4px 0 rgba(52, 61, 86, 0.04);
+    border: solid 1px #000 !important;
+    margin-top: 0px !important;
+}*/
+
+.confirmationstab1 a {
+    padding-left: 0px !IMPORTANT;
+}
+
+.confirmationstab1 input {
+    margin-left: 8px;
+    padding-left: 3px;
+}
+
+.pracinfo .dropdown-menu > li > a:hover {
+    background-color: #1E90FF;
+    color: #fff;
+}
+
+.customwepaydescription span::after {
+    content: "";
+    position: absolute;
+    top: 20px;
+    left: 45%;
+    margin-left: -3px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #fff;
+    transform: rotate(45deg);
+}
+
+/*End*/
+/*Start Old Css*/
+.makePaymentDropdownMainDiv button#individualDrop {
+    width: 100%;
+    height: 36px;
+    font-size: 12px;
+    /*line-height: 1.75;*/
+    line-height: 1.33;
+    background-color: #ffffff;
+    background-image: none;
+    -ms-word-break: normal;
+    word-break: normal;
+    background-color: rgba(243, 244, 244, 0.24);
+    color: #343d56;
+    border: 1px solid #EAEBEE;
+    position: relative;
+    text-overflow: ellipsis;
+    word-break: break-all;
+    text-align: left;
+    font-family: eina_02bold;
+    border-radius: 0px;
+}
+
+    .makePaymentDropdownMainDiv button#individualDrop:focus {
+        outline: none;
+        border: 1px solid #0ACADC !important;
+        border-radius: 2px;
+        background: rgba(10, 202, 220, 0.05);
+    }
+
+.pracinfo .dropdown-menu > li > a {
+    display: block;
+    padding: 0px 2px 1px;
+    clear: both;
+    font-weight: normal;
+    line-height: 1.428571429;
+    color: #343d56bd;
+    white-space: nowrap;
+    /*font-family: eina_02regular;*/
+    font-size: 12px;
+    font-weight: 400;
+}
+
+/*input.makePaymentDropdownSearchBox {
+    font-family: eina_02regular;
+    width: 93%;
+    background-color: #fff;
+    border-radius: 6px;
+    border: solid 1px #eee;
+    box-sizing: border-box;
+    height: 36px;
+    padding-left: 10px;
+    color: #343d56;
+    font-size: 12px;
+}*/
+
+input.makePaymentDropdownSearchBox:focus {
+    outline: none;
+    width: 93%;
+}
+
+li.custompaymentactiveinactive a .customwepaydescription {
+    top: -49px;
+    left: -67px;
+    box-shadow: 0 3px 6px 0 rgba(52, 61, 86, 0.16);
+    background-color: #ffffff;
+    width: 158px;
+    height: 42px;
+    border-radius: 8px;
+}
+
+.customwepaydescription span {
+    position: absolute;
+    z-index: 1;
+    top: 37%;
+    height: auto;
+    opacity: 1;
+    font-family: 'eina_02regular';
+    font-size: 12px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.33;
+    letter-spacing: normal;
+    color: #363f57;
+    border: none;
+    display: inline-block;
+    vertical-align: bottom;
+    text-align: center;
+    width: 100%;
+    left: 0;
+}
+
+.makePaymentDropdownMainDiv button#individualDrop:after {
+    content: '\f107';
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+    right: 11px;
+    top: 9px;
+    padding: 0 0 2px;
+    position: absolute;
+    pointer-events: none;
+    font-family: "FontAwesome";
+    transform: rotate(0deg);
+    color: #0acadc;
+    font-weight: bold;
+}
+/*End Old Css*/
+/*End  10-08-2020*/
+
+
+/*Start 10-08-2020*/
+/*  old */
+input.makePaymentDropdownSearchBox {
+    font-family: eina_02regular;
+    width: 93%;
+    background-color: #fff;
+    border-radius: 2px;
+    border: solid 1px #eee;
+    box-sizing: border-box;
+    height: 36px;
+    padding-left: 10px;
+    color: #343d56;
+    font-size: 12px;
+    margin-top: 8px;
+    margin-bottom: 5px;
+}
+
+/*.confirmationstab1 {
+    width: 100%;
+    min-height: 80px;
+    max-height: 300px;
+    overflow-x: hidden;
+    background: #fff;
+    overflow-y: auto;
+    overflow-x: hidden;
+    background: #fff;
+    overflow-y: auto;
+    border-radius: 0px !important;
+    box-shadow: 0 2px 4px 0 rgba(52, 61, 86, 0.04);
+    border: solid 1px #EAEBEE !important;
+    margin-top: 0px !important;
+}*/
+
+li#toggleshowhide a.dropdown-toggle .media-left img {
+    height: 40px;
+    width: 40px;
+    border: 1px solid #EBECEF;
+    border-radius: 100%;
+    max-width: unset;
+}
+/*  New 10-09-2020*/
+.table_trshadow table tbody tr:hover {
+    background-color: #0acadc0d;
+}
+
+.makePaymentDropdownMainDiv .confirmationstab1 li a {
+    margin: 0px 16px !important;
+    /*border-bottom: solid 1px #f3f3f3;*/
+    color: #343d56 !important;
+    height: 48px;
+    padding-top: 16px !important;
+    padding-left: 3px !important;
+}
+
+.makePaymentDropdownMainDiv .confirmationstab1 li:hover {
+    background-color: #F2FDFE !Important;
+}
+
+/*.makePaymentDropdownMainDiv .confirmationstab1 li a:hover {
+    background-color: unset !Important;
+}*/
+
+/*#first_allprac a {
+    color: #0acadc !important;
+    font-weight: 600;
+    letter-spacing: normal;
+}*/
+
+.custom_Table1 tr td, .custom_Table1 th {
+    width: 16%;
+    padding-left: 0px !important;
+}
+
+.custom_Table1 tr:last-child td {
+    border-bottom: unset;
+}
+
+.custom_Table1 tr {
+    padding: 0 32px !important;
+    float: left;
+    width: 100%;
+}
+
+    .custom_Table1 tr:last-child {
+        border-bottom: unset !important;
+    }
+/*End 10-09-2020*/
+
+
+/*Start 10 10 2020*/
+/*New*/
+/*#patientinfo input,
+#patientinfo select {
+    font-family: eina_02regular !important;
+}*/
+/*Old*/
+
+
+
+
+.pracinfo {
+    padding-bottom: 34px;
+    margin-top: -27.5px;
+}
+
+    .pracinfo .makePaymentDropdownMainDiv {
+        width: 225px;
+        margin-bottom: 34px;
+    }
+
+    .pracinfo .State {
+        margin-left: 270px;
+        margin-top: -104px;
+    }
+
+.margin_addbtn {
+    margin-bottom: 34px;
+    width: 100%;
+    margin-top: -108px;
+}
+/*.custom_Table1 tr td:last-child {
+    padding-right: 0;
+}
+.custom_Table1 tr td:last-child .payment_Inactive {
+    float: right;
+}
+    .custom_Table1 tr td:last-child .payment_activewidth {
+        float: right;
+    }
+.custom_Table1 th:last-child {
+    text-align: right;
+    padding-right: 0;
+}*/
+
+/*Start 12-10-2020*/
+
+.add_Practice li.chooseColor_50 span.color_pick {
+    position: absolute;
+    left: 60px;
+    bottom: 10px;
+    font-family: eina_02bold;
+    font-size: 12px;
+    color: #343D56;
+}
+
+.add_Practice li.chooseColor_50 input {
+    border: none;
+    padding: 0;
+    height: 35px;
+    width: 35px !important;
+    margin-top: -6px;
+}
+
+.add_Practice li.chooseColor_50 span#txtPracColorPref {
+    width: 100%;
+    background-color: rgba(243, 244, 244, 0.24);
+    border: 1px solid #EAEBEE;
+    border-radius: 2px;
+}
+
+/*.makePaymentDropdownMainDiv .confirmationstab1 li.pracSelected, .makePaymentDropdownMainDiv .confirmationstab1 li.stateSelected {
+    background-color: #F2FDFE !Important;
+}*/
+
+    /*.makePaymentDropdownMainDiv .confirmationstab1 li.pracSelected a, .makePaymentDropdownMainDiv .confirmationstab1 li.stateSelected a {
+        color: #0acadc !important;
+        font-family: 'eina_02semibold';
+        font-size: 12px;
+    }19nov20*/
+
+.relative_1312 label {
+    font-family: 'eina_02semibold';
+}
+
+.terminalinput input,
+.terminalinput select {
+    font-family: eina_02regular !important;
+    font-size: 13px !important;
+}
+/* Old */
+.makePaymentDropdownMainDiv button:after {
+    content: '\f107';
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+    right: 11px;
+    top: 8px;
+    padding: 0 0 2px;
+    position: absolute;
+    pointer-events: none;
+    font-family: "FontAwesome";
+    transform: rotate(0deg);
+    color: #0acadc;
+    font-weight: bold;
+    width: 7.4px;
+    height: 3.7px;
+}
+
+.makePaymentDropdownMainDiv .confirmationstab1 li:hover a {
+    color: #0acadc;
+    /*font-weight: 600;*/
+    letter-spacing: normal;
+    font-family: 'eina_02semibold';
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.33;
+    letter-spacing: normal;
+}
+.custom-popup2 .confirmationstab1 {
+    padding: 8px 0 0 0;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    box-shadow: 0px 16px 32px #343D5633;
+    border-radius: 8px;
+    opacity: 1;
+}
+.custom-popup2 .confirmationstab1  input.makePaymentDropdownSearchBox {
+        font-family: eina_02regular;
+        width: 86%;
+        background-color: #fff;
+        border-radius: 2px;
+        border: solid 1px #eee;
+        box-sizing: border-box;
+        height: 36px;
+        padding-left: 10px;
+        color: #343d56;
+        font-size: 12px;
+        margin-top: 8px;
+        margin-bottom: 8px;
+        margin-left: 16px;
+        /* left: 0; */
+        /* right: 0; */
+    }
+.first_allprac a {
+    /*color: #0acadc !important;
+    font-weight: 600;*/
+    letter-spacing: normal;
+    font-family: eina_02semibold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.33;
+    letter-spacing: normal;
+}
+/* End 12-10-2020*/
+
+/*#txtPracColorPref {
+  
+    background-color: transparent;
+}*/
+
+.terminaldropdown::after, .terminalpaydropdown::after {
+    /*content: '';
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 6px 3px 0 3px;
+    border-color: #777777 transparent transparent transparent;
+    position: absolute;
+    right: 7px;
+    top: 50%;
+    transform: translateY(-50%);*/
+    content: '\f107';
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+    right: 11px;
+    top: 8px;
+    padding: 0 0 2px;
+    position: absolute;
+    pointer-events: none;
+    font-family: "FontAwesome";
+    transform: rotate(0deg);
+    color: #0acadc;
+    font-weight: bold;
+    width: 7.4px;
+    height: 3.7px;
+}
+
+.termialpagecustom_anchorspace {
+    margin-bottom: 10px;
+}
+
+
+
+/*13-10-2020*/
+.terminalcustom_popup {
+    border-radius: 50% !important;
+    box-shadow: 0 16px 24px 0 rgba(52, 61, 86, 0.1);
+    border: solid 1px rgba(52, 61, 86, 0.04);
+    border-radius: 16px !important;
+}
+
+.Newloading {
+    display: none;
+    position: fixed;
+    top: 0px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #343d5630;
+    z-index: 9999;
+    height: 100%
+}
+
+/*.Hygerrormsg {
+    top: 0px !important;
+}*/
+
+    .Hygerrormsg input {
+        width: 65% !important;
+    }
+
+/*20th Oct 2020 START*/
+
+.constrained {
+    margin: 10px;
+    padding: 10px;
+    height: 400px;
+    overflow: auto;
+}
+/*20th Oct 2020  END*/
+/*26th Oct 2020  start*/
+.inserrmsg {
+    position: absolute;
+    left: 100px;
+}
+/*26th Oct 2020  END*/
+
+
+
+
+/*28/10/2020 start*/
+
+
+.manager_usera li {
+    width: 100% !important;
+    padding-left: 0px !important;
+}
+
+    .manager_usera li ul.list-unstyled.rolesPayroll_check li label {
+        padding-left: 16px;
+        opacity: 100%;
+        font-size: 14px;
+        font-family: eina_02semibold;
+        font-weight: 600;
+        color: #363f57;
+        height: 20px;
+    }
+
+    .manager_usera li ul.list-unstyled.rolesPayroll_check li {
+        width: 50% !important;
+        float: left;
+    }
+
+.manager_usera1 li ul.list-unstyled.rolesPayroll_check li {
+    width: 100%;
+    padding-left: 0;
+}
+
+    .manager_usera1 li ul.list-unstyled.rolesPayroll_check li label {
+        padding-left: 16px;
+        opacity: 100%;
+        font-size: 14px;
+        font-family: eina_02semibold;
+        font-weight: 600;
+        color: #363f57;
+        height: 20px;
+    }
+
+.manager_usera .user_check_inner .custom_checkbox {
+    padding: 5px 0;
+    display: inline-block;
+    width: 100%;
+    float: left;
+}
+
+    .manager_usera .user_check_inner .custom_checkbox label {
+        font-size: 12px !important;
+    }
+
+#ContentPlaceHolder1_divrole {
+    border-bottom: solid 1px #f3f4f6;
+    margin-bottom: 14px;
+}
+
+.manager_img img {
+    width: 70px !important;
+    height: 70px !important;
+}
+
+.center_button {
+    margin-bottom: 20px;
+}
+
+.imgSquare_contain12 label {
+    max-width: 128px;
+    border-radius: 16px;
+    border: solid 1px #343d56;
+    background: transparent;
+    padding: 13px 0px;
+    font-size: 13px;
+    text-align: center;
+    color: #031926;
+    box-shadow: unset;
+    margin-bottom: 0px;
+    opacity: 100%;
+    height: 40px;
+    line-height: 13px;
+}
+
+    .imgSquare_contain12 label:hover {
+        background: transparent;
+        border: solid 1px #343d56;
+    }
+
+.imgSquare_contain12 {
+    width: 30% !important;
+    height: 106px;
+}
+
+.manager_img {
+    width: 18% !important;
+    float: left;
+}
+
+
+.userimg img {
+    width: 36px;
+    height: 36px;
+    border-radius: 100%;
+}
+
+.userimg p {
+    margin: -28px 0 0 45px;
+    font-family: 'eina_02semibold';
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.pad-lt {
+    padding-left: 0 !important;
+}
+
+h3.allSettings_heading.custom-bottom {
+    margin-bottom: 20px;
+    color: #031926;
+    margin-top: 0;
+    display: inline-block;
+    width: 100%;
+}
+
+.compensationradio2 {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    text-align: left;
+    align-content: flex-start;
+}
+
+    .compensationradio2 .custom_Radio {
+        margin: 0 15px 0 0;
+    }
+
+        .compensationradio2 .custom_Radio label {
+            line-height: 24px;
+        }
+
+        .compensationradio2 .custom_Radio input {
+            width: 6px;
+        }
+
+.custom-boxshadow-otr .customTable_boxshadow table tbody tr
+
+td {
+    color: #363F57;
+    font-family: 'eina_02regular';
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: -0.16px;
+    line-height: 18px;
+    opacity: 0.9;
+    word-break: break-word;
+    text-align: right;
+    white-space: nowrap;
+    vertical-align: bottom;
+}
+
+.custom-boxshadow-otr .customTable_boxshadow table tr th {
+    text-align: right;
+    padding: 23px 5px;
+    white-space: nowrap;
+    width: 160px !important;
+}
+
+    .custom-boxshadow-otr .customTable_boxshadow table tr
+
+    th:first-child {
+        text-align: left;
+        padding: 0 0 0 20px;
+    }
+
+.custom-boxshadow-otr table {
+    table-layout: fixed;
+}
+
+.custom-boxshadow-otr .checkmark {
+    left: auto;
+    right: 0;
+}
+
+.custom-boxshadow-otr td:first-child {
+    text-align: left !important;
+}
+
+.custom-boxshadow-otr th:first-child {
+    text-align: left;
+}
+
+.custom_popup2.custom_popup {
+    padding: 31px 40px 35px !important;
+    ;
+}
+
+.Inactivestatus.enable {
+    position: relative;
+}
+
+    .Inactivestatus.enable .approvecheck {
+        position: absolute;
+        height: 18px;
+        width: 18px;
+        top: 0;
+    }
+
+    .Inactivestatus.enable .ng-binding {
+        margin: 0;
+        padding-left: 26px;
+        cursor: pointer;
+    }
+
+.custom_popup2.custom_popup.editPrac_popup.deletePopup_custom.add_Practice {
+    overflow-y: scroll;
+}
+
+ul.allSettings_li_custom.list-unstyled.custom_label.hygeine_li_custom.imgSquare_140.manager_img {
+    margin-right: 18px;
+}
+
+.user_check_inner .select_result .select_result_inner {
+    box-shadow: rgb(0 0 0 / 13%) 0px 10px 15px 0px;
+}
+
+
+.manageUser_custom .user_inputFields input {
+    height: 36px;
+    border-radius: 2px;
+    border: solid 1px #eaebee;
+    background-color: rgba(243, 244, 244, 0.24);
+    box-shadow: none;
+}
+
+
+.User-Name {
+    opacity: 0.5;
+    font-family: 'eina_02bold';
+    font-size: 12px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.33;
+    letter-spacing: normal;
+    text-align: left;
+    color: #363f57;
+}
+
+.Search {
+    width: 40px;
+    height: 16px;
+    opacity: 0.4;
+    font-family: Eina02;
+    font-size: 12px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.33;
+    letter-spacing: normal;
+    text-align: left;
+    color: #343d56;
+}
+
+.custom_popup2 li.custom_checkbox label {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    max-width: 205px;
+    width: 100%;
+}
+
+.fullscreen-container .custom_popup2.custom_popup.editPrac_popup.deletePopup_custom.add_Practice .row {
+    padding: 0;
+}
+
+ul.allSettings_li_custom.list-unstyled.custom_label.new-user-text-styling {
+    margin-top: 30px;
+    margin-bottom: 24px;
+}
+
+
+input.pull-right.closebtn {
+    position: absolute;
+    right: 12.7px;
+    top: -8.7px;
+}
+
+ul.allSettings_li_custom.list-unstyled.custom_label.hygeine_li_custom.imgSquare_contain.imgSquare_contain12 .custom_chooseFile {
+    display: inline-block;
+    width: 100%;
+    position: relative;
+    top: -16px;
+}
+
+.custom_input::placeholder {
+    font-family: 'eina_02regular';
+    opacity: 0.5;
+}
+
+.custom-boxshadow-otr .customTable_boxshadow table tr th:nth-child(2) {
+    width: 330px !important;
+    vertical-align: middle;
+}
+
+.custom-boxshadow-otr .customTable_boxshadow table tr th:last-child, .custom-boxshadow-otr .customTable_boxshadow table tr td:last-child {
+    padding-right: 57px;
+}
+
+/*28/10/2020 end*/
+/*31/10/2020 end*/
+
+.custom_popup2.custom_popup.editPrac_popup.deletePopup_custom.add_Practice {
+    max-height: 700px;
+}
+
+.custom_chooseFile label.modal-label {
+    font-family: 'eina_02bold' !important;
+    font-weight: bold;
+}
+
+ul.allSettings_li_custom.list-unstyled.custom_label.new-user-text-styling label {
+    font-family: 'eina_02semibold';
+}
+
+h3.allSettings_heading.new-head-main {
+    font-size: 16px;
+    font-family: 'eina_02semibold';
+    margin-top: 0;
+}
+
+div#ContentPlaceHolder1_PracAccess {
+    margin-top: 24px;
+}
+
+.custom_popup2 .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 16px;
+    width: 16px;
+    background-color: #fff;
+    border: 1px solid #eaebee;
+    border-radius: 2px;
+}
+
+.custom_popup2 .add_Practice .cancelbtn {
+    width: 120px;
+    margin-right: 15px;
+    border-radius: 23px;
+}
+
+.fullscreen-container .custom_popup2.custom_popup.editPrac_popup.deletePopup_custom.add_Practice input.customBtn_blue.savebtn {
+    width: 120px;
+    border-radius: 23px;
+    background: #03c6d8;
+    background-image: none;
+    box-shadow: none;
+}
+
+.select_result_inner {
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.fullscreen-container .custom_popup2.custom_popup .select_result_inner .custom_checkbox {
+    padding: 10px;
+    font-family: 'eina_02regular';
+}
+
+    .fullscreen-container .custom_popup2.custom_popup .select_result_inner .custom_checkbox input {
+        margin-right: 10px;
+    }
+
+    .fullscreen-container .custom_popup2.custom_popup .select_result_inner .custom_checkbox:hover {
+        background-color: rgb(243 244 244 / 0.5);
+        font-family: 'eina_02semibold';
+    }
+
+/*10th Nov 2020 start*/
+.Edit-runtimeStyle h3 {
+    width: 100%;
+    margin-bottom: 29.28px;
+    color: #031926;
+    opacity: 1;
+}
+
+.Edit-runtimeStyle.custom-width-new {
+    display: inline-block;
+    width: 100%;
+}
+
+.Edit-runtimeStyle img {
+    width: 13.8px;
+    height: 13.8px;
+    float: right;
+    cursor: pointer;
+    position: absolute;
+    right: 70px;
+}
+
+.Edit-runtimeStyle ul li {
+    width: 25%;
+    float: left;
+    font-size: 12px;
+}
+
+.Edit-runtimeStyle ul {
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    box-shadow: 0px 16px 24px #343D561A;
+    border: 1px solid #343D560B;
+    border-radius: 8px;
+    opacity: 1;
+    width: 416px;
+    height: 79px;
+    display: inline-block;
+    padding: 31px 40px 32px;
+}
+
+    .Edit-runtimeStyle ul li label {
+        margin-bottom: 0px;
+    }
+
+    .Edit-runtimeStyle ul li span {
+        color: #343D56;
+        opacity: 1;
+        font-family: 'eina_02bold';
+    }
+
+.Edit-runtimeStyle {
+    margin-bottom: 77px;
+}
+
+.edittime {
+    width: 625px;
+    height: 273px;
+    box-shadow: 0px 16px 24px #343D561A;
+    border: 1px solid #343D560A;
+    border-radius: 8px !important;
+    opacity: 1;
+}
+
+    .edittime .slider_practice {
+        width: 50%;
+        float: left;
+    }
+
+    .edittime .sliderDiv {
+        display: inline-block;
+        width: 100%;
+        min-height: 130px;
+    }
+
+    .edittime .ConfAtmptslider1-time2, .edittime .ConfAtmptslider2-time2 {
+        font-size: 20px;
+        color: #363F57;
+        opacity: 1;
+        opacity: unset;
+    }
+
+    .edittime h3.allSettings_heading {
+        display: inline-block;
+        width: 100%;
+        margin-bottom: 37px;
+    }
+
+    .edittime .slider_practice .starttime {
+        top: 0;
+        margin-bottom: 16px;
+        font-family: 'eina_02semibold';
+    }
+
+    .edittime .slider_practice .endtime {
+        top: 0;
+        margin-bottom: 16px;
+        font-family: 'eina_02semibold';
+    }
+
+/*.edittime .slider_practice .ui-widget.ui-widget-content {
+        margin: unset;
+        margin-top: 16px;
+    }*/
+
+.edit_run_time {
+    text-align: center;
+    margin-top: 24px;
+}
+
+.standardbtncance {
+    border: 1px solid #343D56;
+    border-radius: 23px;
+    opacity: 1;
+    background: #ffff;
+    margin-right: 8px;
+    outline: none;
+}
+
+.standardpopupbtnsize {
+    width: 120px;
+    height: 40px;
+}
+
+.standardbtnsave {
+    background: #03C6D8 0% 0% no-repeat padding-box;
+    border-radius: 23px;
+    opacity: 1;
+    border: transparent;
+    margin-left: 8px;
+    outline: none;
+    box-shadow: inset 0 3px 7px 0 rgba(75, 240, 255, 0.78);
+    color: #fff !important;
+}
+
+/*10th Nov 2020 end*/
+
+/*12th Nov 2020 start*/
+.popupoverlay {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: rgb(52 61 86 / 0.3);
+    left: 0;
+    top: 0;
+    z-index: 99999;
+    overflow: hidden !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+    .popupoverlay.patient-edit-run .custom_popup.edittime.patientVerified_popup.patientVerified_check {
+        padding: 32px 40px 35px !important;
+        width: 625px !important;
+        top: 50% !important;
+    }
+
+        .popupoverlay.patient-edit-run .custom_popup.edittime.patientVerified_popup.patientVerified_check .col-md-12.col-sm-12 {
+            padding: 0;
+        }
+
+.edittime .slider_practice:last-child {
+    max-width: 255px;
+    width: 100%;
+    float: right;
+}
+
+.edittime .slider_practice:first-child {
+    max-width: 255px;
+    width: 100%;
+}
+
+.postion-div {
+    max-width: 416px;
+    position: relative;
+    width: 100%;
+}
+
+.standardpopupbtnsize:hover {
+    color: #fff;
+    background: #03C6D8;
+    border-color: #03C6D8;
+}
+
+.hygiene_message_1 {
+    width: 625px !important;
+    height: 509px !important;
+    box-shadow: 0px 16px 24px #343D561A;
+    border: 1px solid #343D560A;
+    padding: 32px 40px 35px !important;
+    border-radius: 8px !Important;
+    opacity: 1;
+}
+
+    .hygiene_message_1 .allSettings_heading {
+        margin-bottom: 37px;
+    }
+
+    .hygiene_message_1 ul.allSettings_li_custom li:last-child {
+        margin-bottom: auto;
+    }
+
+    .hygiene_message_1 ul.allSettings_li_custom li {
+        margin-bottom: 0;
+    }
+
+    .hygiene_message_1 .allSettings_li_custom li .buttons_hygeine li button.custom_btnWhite {
+        padding: 5px 10px;
+        height: 28px;
+        font-size: 10px;
+        margin: 16px 0 20px;
+    }
+
+    .hygiene_message_1 .list-unstyled.buttons_hygeine li:last-child {
+        margin-right: 0;
+    }
+
+    .hygiene_message_1 .hygeine_li_custom.allSettings_li_custom li.btn_hygeine_li label {
+        margin: 0px 0px 0;
+    }
+    /*
+    .hygiene_message_1 .appointment_reminder {
+        top: 16px;
+        right: 18px;
+    }
+        */
+    .hygiene_message_1 ul.allSettings_li_custom {
+        max-width: unset;
+    }
+
+    .hygiene_message_1 textarea {
+        height: 173px;
+    }
+
+    .hygiene_message_1 .edit_run_time {
+        margin-top: 32px;
+    }
+/*.hygiene_message_12 {
+    height: auto !important;
+    }*/
+.hygiene_message_12 .allSettings_li_custom.list-unstyled.custom_label.confirmed_checkbox {
+    margin-top: 20px;
+}
+
+    .hygiene_message_12 .allSettings_li_custom.list-unstyled.custom_label.confirmed_checkbox span {
+        top: 0px;
+    }
+/* this gets chrome */
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+    .hygiene_message_12 .allSettings_li_custom.list-unstyled.custom_label.confirmed_checkbox span {
+        top: 1px;
+    }
+}
+.hygiene_message_12 .slider_practice {
+    margin-top: 24px;
+}
+
+.confirmationstab .switch {
+    width: 84% !important;
+}
+
+.confirmationstab .allSettings_li_custom.list-unstyled.custom_label.hygeine_li_custom.custom-ul.ng-scope li {
+    margin-bottom: 0px;
+}
+
+.confirmationstab .allSettings_li_custom.list-unstyled.custom_label.hygeine_li_custom.custom-ul .custom-gap-InvalidResp {
+    margin-bottom: 0 !important;
+}
+
+.confirmationstab .allSettings_li_custom.list-unstyled.custom_label.fullWidth_hygeine.custom-ul .label_After_Confirmation label {
+    margin-bottom: 0px !important;
+}
+
+.custom-ul2 {
+    margin-bottom: 0px !important;
+}
+
+    .custom-ul2 .textarea_Conf_SMS {
+        margin-bottom: 0;
+    }
+
+.custom-ul3 {
+    margin-bottom: 0px !important;
+}
+
+.custom-ul2 .btn_hygeine_li {
+    margin-bottom: 0;
+}
+
+.updateError_message12 {
+    margin: 20px 0 0 19px;
+    width: 95%;
+    display: inline-block;
+}
+
+/*12th Nov 2020 end*/
+
+
+/*16th Nov 2020 start*/
+
+.edittime .slider_practice .ui-widget.ui-widget-content {
+    margin: unset;
+    margin-top: 16px;
+    margin-left: 8px;
+}
+
+.confirmations button.addnew span {
+    top: -4px;
+    position: relative;
+    font-family: 'eina_02bold' !important;
+}
+
+.setting_reminds button span {
+    top: -4px;
+    position: relative;
+    font-family: 'eina_02bold' !important;
+}
+
+.confirmations button.addnew {
+    width: 15px;
+    height: 15px;
+    border: solid 1px #031926;
+    border-radius: 50%;
+    background: #031926;
+    color: #fff;
+    padding: 0px;
+}
+
+.setting_reminds button {
+    width: 15px;
+    height: 15px;
+    border: solid 1px #031926;
+    border-radius: 50%;
+    background: #031926;
+    padding: 0px;
+    color: #fff;
+}
+
+.patient_verticatd {
+    margin-top: -4.5%;
+}
+
+.hygiene_message_12 {
+    height: auto !important;
+}
+
+.appointment_reminder {
+    top: 14px;
+    position: absolute;
+    right: 24px;
+    font-size: 17px;
+    width: 11px;
+    height: 11px;
+}
+
+
+.patient-edit-run #AptReminderDialogDiv {
+    margin-top: 3%;
+}
+/*16th Nov 2020 end*/
+
+#confirmationstabAS li:hover {
+    background-color: rgb(234 235 238 / 0.4) !important
+}
+
+#main_boxASV li:hover {
+    background-color: rgb(234 235 238 / 0.4) !important
+}
+/*17th nov 2020 start*/
+
+
+
+.makePaymentDropdownMainDiv .confirmationstab1 li.pracSelected {
+    background-color: rgb(243 244 244 / 0.5);
+}
+
+.makePaymentDropdownMainDiv .confirmationstab1 li.pracSelected a {
+    font-family: 'eina_02semibold';
+    color: #343d56 !important;
+}
+
+
+/*li.pracli_7.pracli2 {
+    font-family: 'eina_02semibold' !important;
+    background-color: rgb(243 244 244 / 0.5);
+
+}
+
+    li.pracli_7.pracli2 a {
+        color: #343d56 !important;
+    }*/
+
+.standerd-box-shadow {
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    box-shadow: 0px 16px 32px #343D5633;
+    border-radius: 8px;
+    opacity: 1;
+}
+.lucid-selected-option {
+    text-align: left;
+    display: block;
+    cursor: pointer;
+    /*border-bottom: 1px solid #3d4752;*/
+    padding: 3px 18px 5px 0;
+}
+.Rectangle-426 {
+    height: 36px;
+    border-radius: 2px;
+    border: solid 1px #eaebee;
+    width: 156px; /*(176)*/
+    background: #fff;
+    font-family: 'eina_02semibold';
+    outline: none !important;
+    margin-left: 0px;
+    line-height: 15px;
+    font-size: 12px;
+    position: relative;
+}
+    .Rectangle-426 span {
+        font-family: 'eina_02semibold';
+    }
+.confirmationstab1 li:focus {
+    font-weight: 600;
+}
+
+.confirmationstab1 {
+    width: 100%;
+    min-height: 80px;
+    max-height: 300px;
+    overflow-x: hidden;
+    background: #fff;
+    overflow-y: auto;
+    overflow-x: hidden;
+    background: #fff;
+    overflow-y: auto;
+    border-radius: 3px;
+    /*box-shadow: 0 16px 24px 0 rgba(52, 61, 86, 0.1);*/
+    border: none;
+    padding: 0;
+}
+.bottomdropdownmargin {
+    margin-top: 6px;
+}
+ul.dropdown-menu.makePaymentDropdownUlStyle.confirmationstab1.custom-dropdown-status li a {
+    border: none;
+}
+
+.makePaymentDropdownMainDiv .confirmationstab1 li a:hover {
+    background-color: unset;
+
+}
+
+.makePaymentDropdownMainDiv .confirmationstab1 li.pracSelected, .makePaymentDropdownMainDiv .confirmationstab1 li.stateSelected {
+    background-color: rgb(243 244 244 / 0.5);
+}
+#confirmationstabAS li {
+    width: 100%;
+    display: inline-block;
+    flex-wrap: unset;
+    float: unset;
+}
+    #confirmationstabAS li:nth-child(even) {
+        padding-left: 0px;
+    }
+    #confirmationstabAS li:hover a {
+        color: #343d56;
+        font-weight: unset;
+        letter-spacing: normal;
+        /*font-family: 'eina_02bold';*/
+        font-stretch: normal;
+        font-style: normal;
+        line-height: normal;
+        letter-spacing: normal;
+    }
+.edit_run_time button {
+    font-family: 'eina_02semibold' !important;
+}
+.hygiene_message_1 .allSettings_li_custom.list-unstyled.custom_label button {
+    width: 100%;
+}
+.hygiene_message_1 .allSettings_li_custom.list-unstyled.custom_label .dropdown {
+    width: 100%;
+}
+.hygiene_message_1 label {
+    font-family: 'eina_02semibold';
+}
+.hygiene_message_1 span {
+    font-family: 'eina_02bold';
+}
+.edit_run_time button {
+    font-family: 'eina_02semibold';
+}
+
+.standard_add_img1 {
+    margin-top: -8px;
+    width: 16px;
+    cursor:pointer;
+}
+
+/*17th nov 2020 end*/
+
+.custom_select.ConfLoc .main_boxstandard .makePaymentDropdownMainDiv:after {
+    content: '\f107';
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+    right: 11px;
+    top: 9px;
+    padding: 0 0 2px;
+    position: absolute;
+    pointer-events: none;
+    font-family: "FontAwesome";
+    transform: rotate(0deg);
+    color: #0acadc;
+    font-weight: bold;
+}
+.custom_select.ConfLoc .main_boxstandard .open:after {
+    top: 7px;
+    transform: rotate(180deg);
+}
+.custom_select.ConfLoc .main_boxstandard {
+    padding: 0;
+    margin: 0 -15px 30px;
+    width: 225px;
+}
+.topdropdownmargin {
+    margin-top: 12px;
+}
+.dropdown.makePaymentDropdownMainDiv.open button#individualDrop:after {
+    top: 21px;
+    transform: rotate(180deg);
+}
+
+/*19nov2020*/
+.custom-popup2 li a {
+    font-size: 12px;
+    font-family:'eina_02regular';
+}
+    .custom-popup2 li a:hover {
+        font-family: 'eina_02bold';
+    }
+.dropdown.custom-popup2.makePaymentDropdownMainDiv.float-left-width.open li a:hover {
+    /* background: red; */
+    font-family: 'eina_02bold';
+}
+/*27th nov 2020 start*/
+.custom_checkbox label.marginBottom_0.opacity_1 {
+    position: relative;
+    top: 9px;
+}
+
+/*27th nov 2020 end*/
+
+
+

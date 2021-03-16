@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <meta content="width=device-width, initial-scale=1.0" name="viewport">
+      <title>Payment Test Page</title>
+      <meta content="" name="description">
+      <meta content="" name="keywords">
+      <!-- Main CSS File -->
+      <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+      <link rel="stylesheet" type="text/css" href="css/stylesheet.css">
+   </head>
+   <body>
+      <!-- Body Content -->
+      <div class="body-content">
+         <div class="container">
+            <!--  Virtual Terminal Content -->
+            <div class="virtual-terminal">
+               <div class="inner-container">
+                  <div class="relative-box">
+                     <div class="sticky-header">
+                        <div class="closeIcon">
+                           <img src="img/cross-icon.svg" alt="Cross">
+                        </div>
+                        <!--  Virtual Terminal Title -->
+                        <div class="title">
+                           <h3>Virtual Terminal</h3>
+                        </div>
+                     </div>
+                     <!--  Virtual Terminal Form -->
+                     <div class="form-wrapper">
+                        <form class="virtual-form layout-cell layout-scrollbar">
+                           <!--  Virtual Terminal Group 1 -->
+                           <div class="group group-1">
+                              <div class="form-field custom-select">
+                                 <label for="name" class="form-label">Practice Name</label>
+                                 <div class="custom-input dropdown-field">
+                                    <h3 class="selected data"></h3>
+                                    <input type="hidden" class="form-control select" />
+                                    <span class="error">Select a practice name.</span>
+                                    <ul id="cardName">
+                                       <li value="Fox Creek - Longmont">Fox Creek - Longmont</li>
+                                       <li value="Fox Creek -Braxtin">Fox Creek -Braxtin</li>
+                                       <li value="Fox Creek - Mountain Ridge">Fox Creek - Mountain Ridge</li>
+                                       <li value="Fox Creek - West Ave">Fox Creek - West Ave</li>
+                                       <li value="Fox Creek - West Minister">Fox Creek - West Minister</li>
+                                       <li value="Graxy Family Dental">Graxy Family Dental</li>
+                                       <li value="Virgina Dentistry">Virgina Dentistry</li>
+                                    </ul>
+                                 </div>
+                              </div>
+                              <div class="form-field">
+                                 <label for="pay-amount" class="form-label">
+                                 Pay Amount
+                                 </label>
+                                 <div class="custom-input">
+                                    <input type="text" name="pay-amount" class="form-control">
+                                    <span class="error">Enter a valid pay amount.</span>
+                                 </div>
+                              </div>
+                           </div>
+                           <!--  Virtual Terminal Group 2 of  Patient Information -->
+                           <div class="group group-2">
+                              <p>Patient Information:</p>
+                              <div class="form-field">
+                                 <label for="pay-amount" class="form-label">Patient Name</label>
+                                 <div class="custom-input">
+                                    <input type="text" name="name" class="form-control custom-patient">
+                                    <span class="error">Enter a valid patient name.</span>
+                                    <ul id="patientName">
+                                       <li value="Rachel Etherington">
+                                          <div class="names">
+                                             <span class="name">Rachel Etherington</span>
+                                             <span class="dob">03/16/1995</span>
+                                          </div>
+                                          <div class="phone">*****2234
+                                          </div>
+                                       </li>
+                                       <li value="Rachel Ethion">
+                                          <div class="names">
+                                             <span class="name">Rachel Ethion</span>
+                                             <span class="dob">02/19/2001</span>
+                                          </div>
+                                          <div class="phone">*****2234
+                                          </div>
+                                       </li>
+                                       <li value="Rachel Ethion">
+                                          <div class="names">
+                                             <span class="name">Rachel Ethion</span>
+                                             <span class="dob">02/19/2001</span>
+                                          </div>
+                                          <div class="phone">*****2234
+                                          </div>
+                                       </li>
+                                    </ul>
+                                 </div>
+                              </div>
+                              <div class="group group3">
+                                 <div class="form-field">
+                                    <label for="pay-amount" class="form-label">Date of Birth</label>
+                                    <div class="custom-input">
+                                       <input type="text" id="birthday" name="birthday" class="form-control no-required">
+                                    </div>
+                                 </div>
+                                 <div class="form-field">
+                                    <label for="pay-amount" class="form-label">SSN</label>
+                                    <div class="custom-input">
+                                       <input type="text" name="ssn" class="form-control no-required">
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                           <!--  Virtual Terminal Group 3 of  Contact Information -->
+                           <div class="group group-3">
+                              <p>Contact Information:</p>
+                              <div class="form-field">
+                                 <label for="pay-amount" class="form-label">
+                                 Email Address
+                                 </label>
+                                 <div class="custom-input">
+                                    <input type="email" name="email" id="email" class="form-control">
+                                    <span class="error">Enter a valid email address.</span>
+                                 </div>
+                              </div>
+                              <div class="form-field">
+                                 <label for="pay-amount" class="form-label">
+                                 Phone Number
+                                 </label>
+                                 <div class="custom-input">
+                                    <input type="tel" id="phone" name="phone" class="form-control">
+                                    <span class="error">Enter a valid phone number.</span>
+                                 </div>
+                              </div>
+                           </div>
+                           <!--  Virtual Terminal Group 4 of  Transaction Description -->
+                           <div class="group group-4">
+                              <p>Transaction Description:</p>
+                              <div class="form-field">
+                                 <label for="pay-amount" class="form-label">
+                                 Description
+                                 </label>
+                                 <div class="custom-input">
+                                    <textarea class="form-control description no-required" name="Description" style="resize: none;"></textarea>
+                                 </div>
+                              </div>
+                           </div>
+                        </form>
+                        <!-- Form Button -->
+                        <div class="btn-wrapper">
+                           <a class="btn btn-blue"> <img src="img/arrow-up.svg" alt="Arrow Up">Send Text Message</a>
+                           <div class="loader">
+                              <svg version="1.1" id="loader-1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="40px" height="40px" viewBox="0 0 50 50" style="enable-background:new 0 0 50 50;" xml:space="preserve">
+                                 <path fill="#000" d="M43.935,25.145c0-10.318-8.364-18.683-18.683-18.683c-10.318,0-18.683,8.365-18.683,18.683h4.068c0-8.071,6.543-14.615,14.615-14.615c8.072,0,14.615,6.543,14.615,14.615H43.935z">
+                                    <animateTransform attributeType="xml" attributeName="transform" type="rotate" from="0 25 25" to="360 25 25" dur="0.6s" repeatCount="indefinite"></animateTransform>
+                                 </path>
+                              </svg>
+                           </div>
+                           <a class="btn btn-white"> <i class="fa fa-usd" aria-hidden="true"></i>Credit or Debit Card</a>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <!-- Payment Approved! Content -->
+            <div class="Payment-approve-wrapper">
+               <div class="inner-container">
+                  <div class="closeIcon">
+                     <img src="img/cross-icon.svg" alt="Cross">
+                  </div>
+                  <!-- Payment Approved! Receipt -->
+                  <div class="payment-confirmation">
+                     <div class="checkbox-wrapper">
+                        <div class="circle">
+                           <img src="img/checkicon.svg">
+                        </div>
+                     </div>
+                     <div class="payment-receipt">
+                        <h5>Payment Approved!</h5>
+                        <p>Your payment was successful and a receipt was sent to the patient at <a href="brandon@beckeralliance.com.">brandon@beckeralliance.com.</a></p>
+                     </div>
+                     <div class="pay-details">
+                        <div class="pay-row-1 pay-row">
+                           <!-- Patient name -->
+                           <div class="patient-name pay-column">
+                              <span class="label">Patient Name</span>
+                              <strong>Pedro Becker</strong>
+                           </div>
+                           <!-- Patient pay amount -->
+                           <div class="pay-amount pay-column">
+                              <span class="label">Pay Amount</span>
+                              <strong>$150.00</strong>
+                           </div>
+                        </div>
+                        <div class="pay-row-2 pay-row">
+                           <!-- Patient bill name -->
+                           <div class="bill-to pay-column">
+                              <span class="label">Bill To</span>
+                              <strong>Pedro Becker</strong>
+                           </div>
+                           <!-- Patient card number -->
+                           <div class="card-number pay-column">
+                              <span class="label">Card Number</span>
+                              <strong> <img src="img/visaicon.svg"> 1234</strong>
+                           </div>
+                        </div>
+                        <!-- Patient accepted button -->
+                        <div class="btn-wrapper">
+                           <a class="btn btn-blue try">View Transaction</a>
+                           <a class="btn btn-white close">Close</a>
+                        </div>
+                     </div>
+                  </div>
+                  <!-- Payment Fail Details -->
+                  <div class="payment-fail-detail">
+                     <div class="checkbox-wrapper">
+                        <div class="circle">
+                           <img src="img/crossicon.svg">
+                        </div>
+                     </div>
+                     <div class="payment-receipt">
+                        <h5>Something went wrong</h5>
+                        <p>Check payment details for errors and try to submit your payment again or <a href="#">contact us</a> for technical support.</p>
+                     </div>
+                     <div class="pay-details">
+                        <div class="pay-row-1 pay-row">
+                           <!-- Patient name -->
+                           <div class="patient-name pay-column">
+                              <span class="label">Patient Name</span>
+                              <strong>Pedro Becker</strong>
+                           </div>
+                           <!-- Patient pay amount -->
+                           <div class="pay-amount pay-column">
+                              <span class="label">Pay Amount</span>
+                              <strong>$150.00</strong>
+                           </div>
+                        </div>
+                        <div class="pay-row-2 pay-row">
+                           <!-- Patient bill name -->
+                           <div class="bill-to pay-column">
+                              <span class="label">Bill To</span>
+                              <strong>Pedro Becker</strong>
+                           </div>
+                           <!-- Patient card number -->
+                           <div class="card-number pay-column">
+                              <span class="label">Card Number</span>
+                              <strong> <img src="img/visaicon.svg"> 1234</strong>
+                           </div>
+                        </div>
+                        <!-- Patient accepted button -->
+                        <div class="btn-wrapper cancelicon">
+                           <a class="btn btn-blue try">Try Again</a>
+                           <a class="btn btn-white close">Close</a>
+                        </div>
+                     </div>
+                  </div>
+                  <!-- Payment Details -->
+               </div>
+            </div>
+            <!-- Payment Info Page -->
+            <div class="Payment-info">
+               <div class="relative-box">
+                  <!-- Back to Patient Deatils And Cross Icon -->
+                  <div class="sticky-header">
+                     <div class="top-arrow-cross">
+                        <div class="back-to-patient">
+                           <span class="back-arrow"><img src="img/back-arrow.svg" alt="Back Arrow"></span>
+                           <span class="patient-details"> Patient Details </span>
+                        </div>
+                        <div class="closeIcon">
+                           <img src="img/cross-icon.svg" alt="Cross">
+                        </div>
+                     </div>
+                     <!-- Paitent Form Fill Info -->
+                     <div class="patient-info">
+                        <div class="pb">PB</div>
+                        <div class="area-detail">
+                           <h6>Pedro Becker</h6>
+                           <span>SEDA Dental - Pompano Beach</span>
+                        </div>
+                     </div>
+                  </div>
+                  <!-- Payment Card Details -->
+                  <div class="payment-information layout-cell layout-scrollbar">
+                     <p>Payment Information:</p>
+                     <div class="form-field">
+                        <label for="name" class="form-label">Name on Card</label>
+                        <div class="custom-input">
+                           <input type="text" id="name" name="name" class="form-control"/>
+                           <span class="error">Enter a valid name on card.</span>
+                        </div>
+                     </div>
+                     <div class="form-field">
+                        <label for="card" class="form-label">Card Number</label>
+                        <div class="custom-input">
+                           <input type="text" id="card" name="cardNumber" class="form-control"/>
+                           <span class="error">Enter a valid card number.</span>
+                        </div>
+                     </div>
+                     <div class="group group3">
+                        <div class="form-field">
+                           <label for="expiration" class="form-label">Expiration Date</label>
+                           <div class="custom-input">
+                              <input type="text" id="Expiration" name="expiryDate" class="form-control" />
+                              <span class="error">Enter a valid exp date.</span>
+                           </div>
+                        </div>
+                        <div class="form-field">
+                           <label for="cvv" class="form-label">CVV</label>
+                           <div class="custom-input">
+                              <input type="password" id="cvv" name="cvv" class="form-control"/>
+                              <span class="error">Enter a valid cvv.</span>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="form-field">
+                        <label for="zip" class="form-label">Zip Code</label>
+                        <div class="custom-input">
+                           <input type="text" id="myText" name="zip_code" class="form-control" />
+                           <span class="error">Enter a valid zip code.</span>
+                        </div>
+                     </div>
+                     <!-- Payment Button -->
+                     <div class="btn-wrapper">
+                        <a class="btn btn-blue pay">Confirm & Pay <span class="price">$150.00</span></a>
+                        <div class="loader">
+                           <svg version="1.1" id="loader-1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="40px" height="40px" viewBox="0 0 50 50" style="enable-background:new 0 0 50 50;" xml:space="preserve">
+                              <path fill="#000" d="M43.935,25.145c0-10.318-8.364-18.683-18.683-18.683c-10.318,0-18.683,8.365-18.683,18.683h4.068c0-8.071,6.543-14.615,14.615-14.615c8.072,0,14.615,6.543,14.615,14.615H43.935z">
+                                 <animateTransform attributeType="xml" attributeName="transform" type="rotate" from="0 25 25" to="360 25 25" dur="0.6s" repeatCount="indefinite"></animateTransform>
+                              </path>
+                           </svg>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <!-- Text Message Sent -->
+            <div class="text-send-wrapper">
+               <div class="inner-container">
+                  <div class="closeIcon">
+                     <img src="img/cross-icon.svg" alt="Cross">
+                  </div>
+                  <div class="checkbox-wrapper">
+                     <div class="circle">
+                        <img src="img/checkicon.svg">
+                     </div>
+                  </div>
+                  <div class="text-msg-receipt">
+                     <h5>Text Message Sent!</h5>
+                     <p>Your payment request was successfully sent via text to the patient at <a href="tel:+1(210)776-4511">+1(210) 776-4511</a>.</p>
+                  </div>
+                  <div class="pay-details">
+                     <div class="pay-row-1 pay-row">
+                        <!-- Patient name -->
+                        <div class="patient-name pay-column">
+                           <span class="label">Patient Name</span>
+                           <strong>Pedro Becker</strong>
+                        </div>
+                        <!-- Patient pay amount -->
+                        <div class="date-birth pay-column">
+                           <span class="label">Date of Birth</span>
+                           <strong>11/25/1995</strong>
+                        </div>
+                     </div>
+                     <div class="pay-row-2 pay-row">
+                        <!-- Patient bill name -->
+                        <div class="ssn pay-column">
+                           <span class="label">SSN</span>
+                           <strong>*****1234</strong>
+                        </div>
+                        <!-- Patient card number -->
+                        <div class="pay-amount pay-column">
+                           <span class="label">Pay Amount</span>
+                           <strong>$1550.00</strong>
+                        </div>
+                     </div>
+                     <!-- Patient accepted button -->
+                     <div class="btn-wrapper">
+                        <a class="btn btn-blue try">Send Another Request</a>
+                        <a class="btn btn-white close">Close</a>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <!-- Footer Icon --->
+            <div class="bottom-fixed-icon">
+               <div class="detailIcon">
+                  <img src="img/detailsIcon.svg">
+               </div>
+               <div class="tel-icon">
+                  <img src="img/mobile.svg">
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- Main Script -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      <script src="Js/custom.js"></script>
+      <script>
+         $(document).ready(function(){
+            var parent = document.createElement("div");
+            parent.setAttribute("style", "width:30px;height:30px;");
+            parent.classList.add('scrollbar-test');
+         
+            var child = document.createElement("div");
+            child.setAttribute("style", "width:100%;height:40px");
+            parent.appendChild(child);
+            document.body.appendChild(parent);
+         
+            // Measure the child element, if it is not
+            // 30px wide the scrollbars are obtrusive.
+            var scrollbarWidth = 30 - parent.firstChild.clientWidth;
+            if(scrollbarWidth) {
+            document.body.classList.add("layout-scrollbar-obtrusive");
+            }
+         
+            document.body.removeChild(parent);
+         });
+      </script>
+   </body>
+</html>

@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Users | Axle</title>
+      <!-- skeleton ui -->
+      <!-- <link rel="stylesheet" href="./style/skeleton/normalize.css">
+         <link rel="stylesheet" href="./style/skeleton/skeleton.css">  -->
+      <!-- skeleton ui end -->
+      <!-- jQuery -->
+      <script src="./lib/jQuery.min.js"></script>
+      <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.0/js/bootstrap.min.js"></script>
+      <!-- Styles from old dashboard  -->
+      <link rel="stylesheet" href="css2/bootstrap.min.css">
+      <link rel="stylesheet" href="css2/font-awesome.css">
+      <link rel="stylesheet" href="css2/owl.carousel.css">
+      <link rel="stylesheet" href="css2/owl.theme.css">
+      <link rel="stylesheet" href="css2/owl.transitions.css">
+      <link rel="stylesheet" href="css2/animate.css">
+      <link rel="stylesheet" href="css2/normalize.css">
+      <link rel="stylesheet" href="css2/meanmenu.min.css">
+      <link rel="stylesheet" href="css2/main.css">
+      <link rel="stylesheet" href="css2/educate-custon-icon.css">
+      <link rel="stylesheet" href="css2/scrollbar/jquery.mCustomScrollbar.min.css">
+      <link rel="stylesheet" href="css2/metisMenu/metisMenu.min.css">
+      <link rel="stylesheet" href="css2/metisMenu/metisMenu-vertical.css">
+      <link rel="stylesheet" href="css2/calendar/fullcalendar.min.css">
+      <link rel="stylesheet" href="css2/calendar/fullcalendar.print.min.css">
+      <link rel="stylesheet" href="css2/style.css">
+      <link rel="stylesheet" href="css2/responsive.css">
+      <link rel="stylesheet" href="css2/color-style.css">
+      <link href="NewCSS/masterpage.css" rel="stylesheet">
+      <link href="NewCSS/page.css" rel="stylesheet">
+      <link href="style-dashboard/sb-admin.css" rel="stylesheet">
+      <link href="style/customize.css" rel="stylesheet">
+      <!-- stylesheet  -->
+      <link rel="stylesheet" href="./style/style.css">
+      <!-- Favicon -->
+      <link rel="icon" type="image/x-icon" href="./assets/img/favicon.svg">
+   </head>
+   <body ng-app="axleApp">
+      <div class="layout-cell layout-scrollbar">
+         <!-- side navbar start-->
+         <div class="ba-sidenav">
+            <div class="ba-brand">
+               <img src="./assets/img/axle-x.svg" alt="" id="brand-icon">
+               <img src="./assets/img/axle-full.svg" alt="" id="brand-logo">
+            </div>
+            <nav class="ba-nav">
+               <div class="ba-nav-item has-tooltip">
+                  <a href="#" class="ba-nav-link">
+                  <img src="./assets/icons/analytics.svg" alt="analytics" srcset="">
+                  <span class="ba-link-title">Analytics</span>
+                  </a>
+                  <div class="ba-tooltip semibold-text">Analytics</div>
+               </div>
+               <div class="ba-nav-item has-tooltip">
+                  <a href="#" class="ba-nav-link">
+                  <img src="./assets/icons/collections.svg" alt="collections">
+                  <span class="ba-link-title">Collections</span>
+                  </a>
+                  <div class="ba-tooltip semibold-text">Collections</div>
+               </div>
+               <div class="ba-nav-item has-tooltip">
+                  <a href="#" class="ba-nav-link">
+                  <img src="./assets/icons/eligibility.svg" alt="eligibility">
+                  <span class="ba-link-title">Eligibility</span>
+                  </a>
+                  <div class="ba-tooltip semibold-text">Eligibility</div>
+               </div>
+               <div class="ba-nav-item has-tooltip">
+                  <a href="#" class="ba-nav-link">
+                     <img src="./assets/icons/user_icon.svg" alt="engagement">
+                     <span class="ba-link-title">Engagement</span>
+                     <div class="ba-tooltip semibold-text">Engagement</div>
+                  </a>
+               </div>
+               <div class="ba-nav-item has-tooltip">
+                  <a href="#" class="ba-nav-link">
+                     <img src="./assets/icons/messaging.svg" alt="messaging">
+                     <span class="ba-link-title">Messaging</span>
+                     <div class="ba-tooltip semibold-text">Messaging</div>
+                  </a>
+               </div>
+               <div class="ba-nav-item has-tooltip">
+                  <a href="#" class="ba-nav-link">
+                  <img src="./assets/icons/payments.svg" alt="payments">
+                  <span class="ba-link-title">Payments</span>
+                  </a>
+                  <div class="ba-tooltip semibold-text">Payments</div>
+               </div>
+               <div class="ba-nav-item has-tooltip">
+                  <a href="#" class="ba-nav-link">
+                  <img src="./assets/icons/payroll.svg" alt="payroll">
+                  <span class="ba-link-title">Payroll</span>
+                  </a>
+                  <div class="ba-tooltip semibold-text">Payroll</div>
+               </div>
+               <div class="ba-nav-item has-tooltip" data-tooltip="I am tooltip">
+                  <a href="#" class="ba-nav-link">
+                  <img src="./assets/icons/dashboard.svg" alt="dashboard">
+                  <span class="ba-link-title">Reviews</span>
+                  </a>
+                  <div class="ba-tooltip semibold-text">Reviews</div>
+               </div>
+               <div class="ba-nav-item has-tooltip">
+                  <a href="#" class="ba-nav-link">
+                  <img src="./assets/icons/treatment.svg" alt="treatment">
+                  <span class="ba-link-title">Treatment</span>
+                  </a>
+                  <div class="ba-tooltip semibold-text">Treatment</div>
+               </div>
+            </nav>
+         </div>
+         <!-- side navbar end -->
+         <main class="ba-main main-dashboard" ng-controller="reviewController">
+            <!-- topnav  -->
+            <!-- topnav  -->
+            <header class="ba-topnav">
+               <div class="ham-icon ">
+                  <svg id="_ham-open" xmlns="http://www.w3.org/2000/svg" width="18" height="12" viewBox="0 0 18 12">
+                     <defs>
+                        <style>
+                           ._ham {
+                           fill: #031926;
+                           opacity: 0.4;
+                           }
+                        </style>
+                     </defs>
+                     <path class="_ham" d="M3,18H21V16H3Zm0-5H21V11H3ZM3,6V8H21V6Z" transform="translate(-3 -6)" />
+                  </svg>
+                  <svg id="_ham-close" xmlns="http://www.w3.org/2000/svg" width="18" height="12" viewBox="0 0 18 12">
+                     <defs>
+                        <style>
+                           ._ham-close {
+                           fill: #031926;
+                           }
+                        </style>
+                     </defs>
+                     <path class="_ham-close"
+                        d="M3,18H16V16H3Zm0-5H13V11H3ZM3,6V8H16V6Zm18,9.59L17.42,12,21,8.41,19.59,7l-5,5,5,5Z"
+                        transform="translate(-3 -6)" />
+                  </svg>
+               </div>
+               <nav class="ba-nav-container">
+                  <ul class="ba-topnav-nav">
+                     <li class="ba-topnav-item">
+                        <a href="#" class="ba-topnav-link">Profile</a>
+                     </li>
+                     <li class="ba-topnav-item _active">
+                        <a href="#" class="ba-topnav-link">Users</a>
+                     </li>
+                     <li class="ba-topnav-item prac-border">
+                        <a href="#" class="ba-topnav-link">Practices</a>
+                     </li>
+                     <li class="ba-topnav-item">
+                        <a href="#" class="ba-topnav-link">Engagement</a>
+                     </li>
+                     <li class="ba-topnav-item">
+                        <a href="#" class="ba-topnav-link">Goals</a>
+                     </li>
+                     <li class="ba-topnav-item">
+                        <a href="#" class="ba-topnav-link">Payments</a>
+                     </li>
+                     <li class="ba-topnav-item">
+                        <a href="#" class="ba-topnav-link">Payroll</a>
+                     </li>
+                     <li class="ba-topnav-item">
+                        <a href="#" class="ba-topnav-link">Reviews</a>
+                     </li>
+                     <li class="ba-topnav-item">
+                        <a href="#" class="ba-topnav-link">Treatment</a>
+                     </li>
+                     <li class="ba-topnav-item ba-profile has-flyout">
+                        <div class="_avatar"></div>
+                        <div class="ba-username">Pedro Becker</div>
+                        <span class="ba-chevron-down">
+                        </span>
+                        <div class="flyout-menu _dark _bottom">
+                           <div class="_option">
+                              <img src="./assets/icons/settings.svg" alt="settings icon">
+                              <span>Settings</span>
+                           </div>
+                           <div class="_option"><img src="./assets/icons/logout.svg" alt="logout icon">
+                              <span>Logout</span>
+                           </div>
+                        </div>
+                     </li>
+                  </ul>
+               </nav>
+            </header>
+            <div class="body-container">
+
+
+
+               <!--   ===============   User Page Content   ================  -->
+        
+<div class="users-page-content">
+
+   <div class="top-row">
+        <div class="top-gutter">
+
+
+
+         <!--   ===============   Search Feild   ================  -->
+            <div class="search-bar"></div>
+
+
+            <!--       ======================    Practice Name    ========================= -->
+
+            <div class="ba-input-wrapper ba-multiselect">
+                <div class="ba-input-field">
+                    <span ng-show="practiceFilters.length == 0">All Practices</span>
+                    <span ng-show="practiceFilters.length == 1"></span>
+                    <span ng-show="practiceFilters.length > 1">
+                        
+                    </span>
+                </div>
+                <input type="hidden" class="ba-input-field-value" name="practiceFilters" id="practiceFilters">
+                <div class="ba-multiselect-options layout-cell layout-scrollbar">
+                    <div class="ba-option">
+                        <span class="ba-checkbox"></span>
+                        <span class="ba-option-label">All Practices</span>
+                    </div>
+                    <div class="ba-option">
+                        <span class="ba-checkbox">
+                        </span>
+                        <span class="ba-option-label">{{option}}</span>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            <!--        ====================================   Regions  =====================    -->
+            <div class="ba-input-wrapper ba-treeselect">
+                <div class="ba-input-field">
+                    <span ng-show="regionFilters.length == 0">All Regions</span>
+                    <span ng-show="regionFilters.length == 1"><span class="regionName"></span></span>
+                    <span ng-show="regionFilters.length > 1">
+                        <span class="regionName"></span>
+                        
+                    </span>
+                </div>
+                <input type="hidden" class="ba-input-field-value" name="reigons" id="regions">
+
+                <div class="ba-treeselect-options">
+                    <div class="ba-option-parent">
+                        <div class="ba-option">
+                            <span class="ba-checkbox"></span>
+                            <span class="ba-option-label">All Regions</span>
+                        </div>
+                    </div>
+                    <div class="ba-option-parent">
+                        <div class="ba-option _parent">
+                            <span class="ba-checkbox"></span>
+                                <span class="ba-option-label">{{ parent.category }}</span>
+                                <div class="_chevron-down">
+                                    <span></span>
+                                </div>
+                        </div>
+                        <div class="ba-option-children">
+                            <div class="ba-option _child">
+                                <span class="ba-checkbox"></span>
+                                <span class="ba-option-label">{{child}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+        </div>
+
+
+<div class="adduser-button">
+   <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                     Add User
+                     </button>
+</div>
+
+</div>
+
+</div>
+
+
+
+            </div>
+      </div>
+      </div>
+      </main>
+      </div>
+      <!-- imports for app and controllers  -->
+      <!-- controllers  -->
+      <!-- JS and JQuery from small interactions and logics  -->
+      <script src="js/custom-js/custom.js"></script>
+      <script>
+         $(document).ready(function () {
+             $('.ham-icon').click(function () {
+                 $('.ba-sidenav').toggleClass('expanded-nav')
+                 $('.ba-main').toggleClass('pull-right')
+                 // $('.ba-topnav').toggleClass('pull-right')
+                 $('.ham-icon').toggleClass('_close')
+         
+             })
+         
+             
+                      $('.edit-profile .gernal-profile .form-control:not(.no-required)').focusout(function(ele){
+                 setTimeout(function(){
+                     var $this = $(ele.currentTarget);
+                     if($this.val() === ''){
+                         $this.closest('.form-field').addClass('show-error');
+                     } else{
+                         $this.closest('.form-field').removeClass('show-error');
+                     }
+                 }, 100);
+             });
+         
+         
+             $('.has-flyout').click(function () {
+                 $(this).toggleClass('_show-menu')
+             })
+             $('.has-flyout').on('blur', function () {
+                 $(this).removeClass('_show-menu')
+             })
+         
+             
+             $('.ba-topnav-item').click(function () {
+                 $(this).addClass('_active').siblings().removeClass('_active')
+             })
+             $('.filter_pill').click(function () {
+                 $(this).addClass('_active').siblings().removeClass('_active')
+             })
+         
+             // tree-select expand parent
+             $('.ba-option-parent ._parent ._chevron-down').click(function (params) {
+                 $(this).parent().parent().toggleClass('_show-children')
+                 $(this).parent().parent().siblings().removeClass('_show-children')
+             })
+             
+         });
+      </script>
+   </body>
+</html>

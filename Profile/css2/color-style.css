@@ -1,0 +1,171 @@
+﻿body{
+    /* background:#f1f4f6;
+    color:#17191c;
+    display: inline-block;
+    width: 100%; */
+}
+.verfication_outer.quality_table table tr td textarea:focus {
+    outline: none !important;
+}
+select:focus{
+    outline: none !important;
+}
+
+.quality_search_inner input:focus {
+    border-color: #488a99;
+}
+
+* {
+    /* font-family:"Montserrat",sans-serif;
+    margin:0;
+    box-sizing:border-box; */
+}
+
+.master_color {
+    background:linear-gradient(to right, #0f2027, #203a43, #2c5364);
+}
+.btn-color {
+    background:#488a99;
+    border-color:transparent;
+    border-radius:7px !important;
+}
+.border-clr{
+    border-color:#488a99; 
+    padding:0 10px;
+}
+.icon-color{
+    color:#488a99; 
+}
+.thead-bg,.class-table tr {
+    background: #fff;
+    border-bottom: 5px solid #eee;
+}
+.ui-widget-header{
+    background:#488a99 !important;
+}
+.gridViewPager tr.gridHeader a {
+    color:#17191c !important;
+}
+table.ui-datepicker-calendar td:hover a {
+    color: #fff;
+}
+th,td{
+    border-color:#488a99;
+}
+div#ui-datepicker-div,#ContentPlaceHolder1_PTname > input {
+    border-color: #488a99;
+}
+/*.quality_table table tr th:nth-child(7) a::before {
+    color: #fff;
+    right: 0px;
+    top: 10px;
+}*/
+.verfication_outer.quality_table table tr td textarea{
+    border-color:#488a99;
+}
+div#ui-datepicker-div .ui-datepicker-header.ui-widget-header.ui-helper-clearfix.ui-corner-all,
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default{
+    background:#488a99 !important;
+    border-color:#7e909a !important;
+    background-image:none !important;
+}
+table.ui-datepicker-calendar td.ui-datepicker-current-day.ui-datepicker-today a {
+    color: #000;
+    background: #fff !important;
+}
+#sidebar.active .sidebar-nav .metismenu a:hover, #sidebar.active .sidebar-nav .metismenu a:focus, #sidebar.active .sidebar-nav .metismenu a:active {
+    background: #031926;
+}
+.menu-switcher-pro button.bar-button-pro:hover, .menu-switcher-pro button.bar-button-pro:focus {
+    background: #0ACADC;
+}
+.menu-switcher-pro .btn-info:active, .menu-switcher-pro .btn-info:focus, .menu-switcher-pro .btn-info:hover, .menu-switcher-pro .btn-info:visited, .header-drl-controller-btn.btn-info:active:focus {
+    background: #0ACADC;
+    outline: none;
+}
+    .menu-switcher-pro .btn-info:active i {
+        color: #fff;
+    }
+.login100-form .form-group input {
+	background-color: transparent;
+	border: 1px solid #000;
+	height: 40px;
+}
+.focus-input100 {
+    color: rgba(65,198,240, 0.4);
+}
+.input100:focus + .focus-input100 + .symbol-input100 {
+    color:rgb(65,198,240);
+}
+
+ul.pagination.ng-scope li.active a {
+    background: #488a99;
+    border: 1px solid #488a99;
+}
+option:hover{
+    background: #488a99 !important;
+}
+
+/*---Unable To Verify Graph----*/
+div#container4 rect.highcharts-point {
+        stroke-width: 17px;
+}
+div#container4 tspan {
+    font-size: 13px;
+    float:right;
+}
+div#container4 span.highcharts-title {
+    top: 0 !important;
+    left: 5px !important;
+    font-size: 46px !important;
+    padding: 0px 10px !important;
+    margin-top: 0 !important;
+    width:100% !important;
+}
+div#container4 span.highcharts-title{
+    font-family:"Montserrat",sans-serif !important;
+}
+#container4 g.highcharts-data-labels {
+    display: none;
+}
+span.highcharts-title {
+    color: #77797c !important;
+}
+
+/*---(24-02-2020)---*/
+.quality_table table td {
+    color: rgb(49, 62, 91);
+}
+/*
+.purple {
+    background-image: linear-gradient(120deg, #e0c3fc 0%, #8ec5fc 100%);;
+}
+.blue{
+    background-image:linear-gradient(45deg, #ff989c 0%, #d735bb 99%, #fad0c4 100%);
+}
+.yellow{
+    background-image:radial-gradient(circle 248px at center, #16d9e3 0%, #30c7ec 47%, #46aef7 100%);
+}
+.green {
+    background-image: linear-gradient(to bottom, #00b09b, #96c93d);
+}
+.purple {
+    background-image: linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%);
+}
+.blue{
+    background-image:radial-gradient(circle 248px at center, #16d9e3 0%, #30c7ec 47%, #46aef7 100%) !important
+}
+.yellow{
+    background-image:linear-gradient(to bottom, #00b09b, #96c93d);
+}
+
+   color: #488a99;
+    color: #7e909a;
+
+    */
+/*27 oct 2020 Start*/
+body, * {
+    font-family: 'eina_02regular';
+}
+
+/*27 oct 2020  end*/

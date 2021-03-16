@@ -1,0 +1,29 @@
+.Newloading {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(52 61 86 / 0.3);
+    background-image: url("images/loadergif-1.gif");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 80px;
+}
+
+.Newloading2 {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(192, 192, 192, 0.5);
+    background-image: url("images/success1.gif");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 150px;
+}
