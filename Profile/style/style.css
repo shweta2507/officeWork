@@ -3083,8 +3083,8 @@ span.error:before {
 .photo__zoom input[type=range].zoom--maxValue::after {
   color: #f8f8f8;
 }
-.photo__zoom input[type=range]::before,
-.photo__zoom input[type=range]::after {
+.upload-img-wrapper .photo.is-desktop .photo__options .photo__zoom::before,
+.upload-img-wrapper .photo.is-desktop .photo__options .photo__zoom::after {
     position: absolute;
     display: block;
     transition: color 0.3s ease;
@@ -3095,15 +3095,15 @@ span.error:before {
     background-position: center;
     background-repeat: no-repeat;
 }
-.photo__zoom input[type=range]::after {
+.upload-img-wrapper .photo.is-desktop .photo__options .photo__zoom::after {
   background-image: url(../assets/img/img-resize-down.svg);
-  bottom: -1px;
-  left: -16px;
-  transform: rotate(90deg);
+  bottom: -20px;
+  left: -3px;
+  transform: rotate(0deg);
 }
-.photo__zoom input[type=range]::before {
-  top: -5px;
-  right: -20px;
+.upload-img-wrapper .photo.is-desktop .photo__options .photo__zoom::before {
+  top: -20px;
+  right: -3px;
 }
 /**
 * FRAME STYLE
@@ -3404,6 +3404,7 @@ span.error:before {
   outline: none;
   border-radius: 4px !important;
   height: 8px;
+  box-shadow: none !important;
 }
 
 .photo__zoom {
@@ -3435,7 +3436,8 @@ span.error:before {
   border-color:#03C6D8;
   cursor: pointer; 
   position:relative;
-  top:-3px
+  top:0px;
+  left:-10px;
 }
 
 main.ba-main.main-dashboard.pull-right {
@@ -3473,6 +3475,10 @@ main.ba-main.main-dashboard.pull-right .ba-topnav {
 
 .modal-backdrop.in {
   opacity: 0.3;
+}
+
+span.far.fa-eye:before {
+  display: none !important;
 }
 
 /* ======================    Responsive Styling  ================= */

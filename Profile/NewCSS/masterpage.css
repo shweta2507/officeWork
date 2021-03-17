@@ -5,21 +5,33 @@ body, * {
 
 @font-face {
     font-family: 'eina_02bold';
-    src: url('../fonts/eina02-bold-webfont.woff2') format('woff2'), url('../fonts/eina02-bold-webfont.woff') format('woff');
+    src: url('../assets/fonts/Eina-Bold.eot');
+    src: url('../assets/fonts/Eina-Bold.eot') format('embedded-opentype'),
+      url('../assets/fonts/Eina-Bold.woff2') format('woff2'),
+      url('../assets/fonts/Eina-Bold.woff') format('woff'),
+      url('../assets/fonts/Eina-Bold.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'eina_02regular';
-    src: url('../fonts/eina02-regular-webfont.woff2') format('woff2'), url('../fonts/eina02-regular-webfont.woff') format('woff');
+    src: url('../assets/fonts/Eina02-Regular.eot');
+    src: url('../assets/fonts/Eina-Regular.eot') format('embedded-opentype'),
+      url('../assets/fonts/Eina-Regular.woff2') format('woff2'),
+      url('../assets/fonts/Eina-Regular.woff') format('woff'),
+      url('../assets/fonts/Eina-Regular.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'eina_02semibold';
-    src: url('../fonts/eina02-semibold-webfont.woff2') format('woff2'), url('../fonts/eina02-semibold-webfont.woff') format('woff');
+    src: url('../assets/fonts/Eina-SemiBold.eot');
+  src: url('../assets/fonts/Eina-SemiBold.eot') format('embedded-opentype'),
+    url('../assets/fonts/Eina-SemiBold.woff2') format('woff2'),
+    url('../assets/fonts/Eina-SemiBold.woff') format('woff'),
+    url('../assets/fonts/Eina-SemiBold.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
