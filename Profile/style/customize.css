@@ -1,40 +1,40 @@
 /* User Page Style */
 /* ======================   User Page Styling  ==================== */
-
 .users-page-content .top-gutter {
-    height: auto;
-    position: static;
-    display: unset;
-    background-color: transparent;
-    padding: 0;
-    width:auto;
-  }
-  
-  .users-page-content {
-    padding: 32px 56px 59px 48px;
-  }
-  
-  .users-page-content .top-row {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-            padding-bottom: 32px;
-  }
-
-  .ba-main .users-page-content .top-gutter {
-    background-color: transparent;
-    padding: 0;
-    height: auto;
-    position: static;
-    width: auto;
-    align-items: unset;
+  height: auto;
+  position: static;
+  display: unset;
+  background-color: transparent;
+  padding: 0;
+  width: auto;
 }
+
+.users-page-content {
+  padding: 32px 56px 59px 48px;
+}
+
+.users-page-content .top-row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding-bottom: 32px;
+}
+
+.ba-main .users-page-content .top-gutter {
+  background-color: transparent;
+  padding: 0;
+  height: auto;
+  position: static;
+  width: auto;
+  align-items: unset;
+}
+
 .adduser-button button.btn.btn-primary {
   border-radius: 8px;
   opacity: 1;
@@ -59,20 +59,22 @@
 .table-wrapper th.th-sm:after {
   display: none !important;
 }
-
-.users-page-content .table-wrapper {
-  background: #FFFFFF 0% 0% no-repeat padding-box;
+.users-page-content .table-wrapper{
+  position: relative;
+}
+.users-page-content .table-wrapper table#dtBasicExample {
+  background: #FFFFFF ;
   box-shadow: 0px 16px 24px #343D561A;
   border: 1px solid #343D560B;
   opacity: 1;
-  padding: 31px 57px 35px 32px;
+  padding: 31px 57px 35px 32px; 
+  margin-bottom: 24px !important;
 }
 
 .users-page-content .table-wrapper tbody tr {
   opacity: 1;
   background-color: white;
 }
-
 .users-page-content .table-wrapper tbody tr td {
   border: 0;
   padding: 0;
@@ -103,46 +105,6 @@
   display: none !important;
 }
 
-.users-page-content .table-wrapper {
-  background: #FFFFFF 0% 0% no-repeat padding-box;
-  box-shadow: 0px 16px 24px #343D561A;
-  border: 1px solid #343D560B;
-  opacity: 1;
-  padding: 31px 57px 35px 32px;
-}
-
-.users-page-content .table-wrapper tbody tr {
-  border-bottom: 1px solid #F3F4F6 !important;
-  opacity: 1;
-  background-color: white;
-}
-
-.users-page-content .table-wrapper thead > tr > th {
-  padding: 0 !important;
-  border: 0 !important;
-  letter-spacing: 0px;
-  color: #363F57;
-  opacity: 0.5;
-  font-family: 'Eina';
-  font-weight: 600;
-  font-size: 12px;
-  line-height: 16px;
-  padding-bottom: 32px !important;
-}
-
-.users-page-content .table-wrapper .col-sm-12 {
-  padding: 0;
-}
-
-.users-page-content .table-wrapper .table-bordered {
-  border: 0;
-  margin: 0 !important;
-}
-
-.users-page-content .table-wrapper .row {
-  margin: 0 !important;
-}
-
 .users-page-content .table-wrapper tbody tr td .user-pic {
   height: 36px;
   width: 36px;
@@ -154,19 +116,13 @@
   background-position: center;
   background-repeat: no-repeat;
 }
-  
-
-
 
 /* =========================  Gernal Profile Styling  ======================= */
-
-.adduser-wrapper,
-.feature-access-wrapper {
+.adduser-wrapper, .feature-access-wrapper {
   padding: 32px 40px 35px 40px;
 }
 
-.feature-access-wrapper h3,
-.adduser-wrapper h3 {
+.feature-access-wrapper h3, .adduser-wrapper h3 {
   letter-spacing: 0px;
   color: #031926;
   opacity: 1;
@@ -177,27 +133,24 @@
   margin-bottom: 32px;
 }
 
-.feature-access-wrapper > ul,
-.adduser-wrapper > ul {
+.feature-access-wrapper > ul, .adduser-wrapper > ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-.feature-access-wrapper > ul > li,
-.adduser-wrapper > ul > li {
+.feature-access-wrapper > ul > li, .adduser-wrapper > ul > li {
   list-style: none;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   width: 49%;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
-.feature-access-wrapper > ul > li > span:not(.list-name),
-.adduser-wrapper > ul > li > span:not(.list-name) {
+.feature-access-wrapper > ul > li > span:not(.list-name), .adduser-wrapper > ul > li > span:not(.list-name) {
   background: #EFF5F6 0% 0% no-repeat padding-box;
   opacity: 1;
   width: 38px;
@@ -207,11 +160,11 @@
   display: flex;
   border-radius: 100%;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   margin-right: 8px;
   font-size: 16px;
   line-height: 22px;
@@ -221,8 +174,7 @@
   font-family: 'Eina-Bold';
 }
 
-.feature-access-wrapper > ul > li .list-name,
-.adduser-wrapper > ul > li .list-name {
+.feature-access-wrapper > ul > li .list-name, .adduser-wrapper > ul > li .list-name {
   text-align: center;
   letter-spacing: 0px;
   color: #343D56;
@@ -234,8 +186,7 @@
   font-family: 'Eina';
 }
 
-.feature-access-wrapper > ul > li > span:not(.list-name) > span,
-.adduser-wrapper > ul > li > span:not(.list-name) > span {
+.feature-access-wrapper > ul > li > span:not(.list-name) > span, .adduser-wrapper > ul > li > span:not(.list-name) > span {
   font-size: 16px;
   line-height: 22px;
   color: #343D56;
@@ -251,8 +202,8 @@
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .upload-section .user-img {
@@ -268,10 +219,10 @@
   display: flex;
   -webkit-box-pack: center;
   -ms-flex-pack: center;
-          justify-content: center;
+  justify-content: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
 }
 
 .user-details form.add-user-details .feild {
@@ -380,9 +331,7 @@
   display: none;
 }
 
-
 /* =========================  Feature Access Styling  ======================= */
-
 .quicl-roll-wrapper {
   margin-top: 32px;
 }
@@ -461,8 +410,7 @@
   line-height: 22px;
   font-size: 16px;
   font-family: 'Eina-Bold';
-  margin-block: 16px;
-}
+  margin-block: 16px; }
 
 .user-access-details h3 {
   margin: 0;
@@ -532,4 +480,107 @@
   padding-top: 8px;
 }
 
-  
+.search-bar #dtBasicExample_filter > label {
+  font-size: 0;
+}
+
+.search-bar #dtBasicExample_filter > label:before {
+  content: "User Name";
+  font-size: 11px;
+  line-height: 15px;
+  position: absolute;
+  letter-spacing: 0px;
+  color: #363F57;
+  opacity: 0.5;
+  font-family: 'Eina';
+  left: 12px;
+  top: 14px;
+  pointer-events: none;
+}
+
+.search-bar #dtBasicExample_filter {
+  position: relative;
+}
+
+.search-bar #dtBasicExample_filter > label input[type=search] {
+  background: #F3F4F43D;
+  border: 1px solid #EAEBEE;
+  border-radius: 6px !important;
+  opacity: 1;
+  width: 223px;
+}
+.user-page .ba-input-wrapper {
+  margin-left: 41px !important;
+  height: 45px;
+  background: #F3F4F43D;
+}
+
+div.dataTables_wrapper div.dataTables_length select[name="dtBasicExample_length"] {
+  padding: 0 !important;
+}
+
+.users-page-content .table-wrapper div#dtBasicExample_length {
+  position: absolute;
+  bottom: 0;
+}
+
+.users-page-content .table-wrapper #dtBasicExample_wrapper .col-sm-6 {
+  position: static !important;
+}
+
+.users-page-content .table-wrapper #dtBasicExample_wrapper div.dataTables_info {
+  display: none !important;
+}
+
+.users-page-content .table-wrapper #dtBasicExample_wrapper .row:last-child .col-sm-7 {
+  width: 100% !important;
+  text-align: center;
+}
+
+.users-page-content .table-wrapper #dtBasicExample_wrapper .row:last-child .col-sm-7 div#dtBasicExample_paginate {
+  text-align: center;
+}
+
+.users-page-content .table-wrapper #dtBasicExample_wrapper .row:last-child .col-sm-7 div#dtBasicExample_paginate ul.pagination {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.users-page-content .table-wrapper #dtBasicExample_wrapper .row:last-child .col-sm-7 div#dtBasicExample_paginate ul.pagination li.previous {
+  margin-right: 23px;
+}
+.users-page-content .table-wrapper #dtBasicExample_wrapper .row:last-child .col-sm-7 div#dtBasicExample_paginate ul.pagination li.next {
+  margin-left: 23px;
+}
+.users-page-content .table-wrapper #dtBasicExample_wrapper .row:last-child .col-sm-7 div#dtBasicExample_paginate ul.pagination li a {
+  padding: 0;
+  width: 100%;
+  height: 24px;
+  border: none !important;
+  letter-spacing: 0px;
+  color: #0ACADC;
+  opacity: 1;
+  font-size: 12px;
+  line-height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Eina-Bold';
+}
+.users-page-content .table-wrapper #dtBasicExample_wrapper .row:last-child .col-sm-7 div#dtBasicExample_paginate ul.pagination li {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.users-page-content .table-wrapper #dtBasicExample_wrapper .row:last-child .col-sm-7 div#dtBasicExample_paginate ul.pagination li.active > a {
+  color: #fff;
+  background: #0ACADC;
+  border-radius: 7px;
+}
+.users-page-content .table-wrapper table#dtBasicExample thead tr th {
+  max-width: 400px;
+  width: 400px !important;
+}
