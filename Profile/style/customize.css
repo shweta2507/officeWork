@@ -1,1 +1,29 @@
 /* User Page Style */
+/* ======================   User Page Styling  ==================== */
+
+.users-page-content .top-gutter {
+    height: auto;
+    position: static;
+    display: unset;
+    background-color: transparent;
+    padding: 0;
+    width:auto;
+  }
+  
+  .users-page-content {
+    padding: 40px;
+  }
+  
+  .users-page-content .top-row {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  
+  

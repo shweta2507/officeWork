@@ -1089,6 +1089,7 @@ body>div.daterangepicker.ltr.show-calendar.opensright>div.drp-calendar.left>div.
   right: 0;
   background: #fff;
   z-index: 998;
+  border-bottom: 1px solid #F3F4F6;
 }
 
 main.ba-main.ng-scope.pull-right .ba-topnav,
@@ -1155,7 +1156,7 @@ main.ba-main.ng-scope.pull-right {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  margin-right: 48px;
+  margin-right: 40px;
   position: relative;
   cursor: pointer;
 }
@@ -1249,6 +1250,7 @@ main.ba-main.ng-scope.pull-right {
 
 .ba-topnav .ba-nav-container .ba-topnav-item:last-child {
   margin-left: auto;
+  margin-right: 58px;
 }
 
 .ba-main {
@@ -2424,7 +2426,7 @@ span.circle.green:before {
 }
 
 .my-profile-wrapper {
-  padding: 31px 48px;
+  padding: 32px 48px;
 }
 
 .my-profile-wrapper h2 {
@@ -2489,6 +2491,7 @@ span.circle.green:before {
   font-size: 13px;
   line-height: 18px;
   font-family: 'Eina';
+  display: block;
 }
 
 .edit-profile-wrapper button.btn.btn-primary {
@@ -2501,6 +2504,7 @@ span.circle.green:before {
   line-height: 18px;
   font-family: 'Eina-SemiBold';
   font-weight: 600;
+  padding: 0;
 }
 
 .edit-profile-wrapper button.btn.btn-primary img {
@@ -2572,6 +2576,7 @@ span.circle.green:before {
   padding: 10px 8px;
   border-radius: 10px;
   transition: all 0.5s;
+  margin-right: 9px;
 }
 
 .edit-profile-drowpdown>ul>li>ul>li a {
@@ -2594,7 +2599,7 @@ span.circle.green:before {
 }
 
 .gernal-profile {
-  padding-top: 29px;
+  padding-top: 24px;
 }
 
 .gernal-profile-form .feild {
@@ -2651,6 +2656,10 @@ span.circle.green:before {
   text-align: right;
 }
 
+.gernal-profile-form .form-button {
+  margin-top: 8px;
+}
+
 .upload-img-wrapper .form-button a.for-btn,
 .gernal-profile-form .form-button a.for-btn {
   padding: 11px 32px;
@@ -2661,18 +2670,19 @@ span.circle.green:before {
   opacity: 1;
   background-color: transparent;
   letter-spacing: 0px;
-  color: rgba(3, 25, 38, 1);
+  color: #031926;
   font-weight: 600;
   font-family: 'Eina-SemiBold';
   background-image: none;
   margin-right: 16px;
   display: inline-block;
+  padding-bottom: 12px;
 }
 
 .upload-img-wrapper .form-button a.for-btn.btn-blue,
 .gernal-profile-form .form-button a.for-btn.btn-blue {
   margin-right: 0;
-  background: rgba(3, 198, 216, 1) 0% 0% no-repeat padding-box;
+  background: #03c6d8 0% 0% no-repeat padding-box;
   border-radius: 8px;
   opacity: 1;
   border-color: #03C6D8;
@@ -2706,7 +2716,7 @@ span.circle.green:before {
   border-radius: 6px !important;
   opacity: 1;
   width: 100%;
-  padding: 13px 12px 6px 12px;
+  padding: 21px 12px 6px 12px;
   font-size: 13px;
   line-height: 18px;
   letter-spacing: 0px;
@@ -2730,8 +2740,6 @@ span.circle.green:before {
 .custom-input .form-control:focus {
   background: #F3F4F43D 0% 0% no-repeat padding-box;
   border: 1px solid #EAEBEE;
-  font-size: 11px;
-  line-height: 15px;
   color: #363F57;
 }
 
@@ -2865,17 +2873,19 @@ span.resize-dec {
   display: none;
 }
 span.far.fa-eye {
-  background: url(../assets/img/visibility_off-24px.svg);
-  width: 20px;
-  height: 20px;
+  background: url(../assets/img/visibility_offpsvg.svg);
+  width: 17px;
+  height: 17px;
   display: block;
   position: absolute;
   right: 16px;
-  top: 13px;
+  top: 14px;
   cursor: pointer;
+  background-position: center;
 }
 span.far.fa-eye.fa-eye-slash{
-  background: url(../assets/img/visibility-24px.svg) !important;
+  background-image: url(../assets/img/visibility-24px.svg) !important;
+  background-size: 17px !important;
 }
 
 span.error {
@@ -3052,7 +3062,7 @@ span.error:before {
   width: 100%;
   height: 1px;
   cursor: pointer;
-  background: #eee;
+  background: transparent;
   border: 0;
 }
 .photo__zoom input[type=range]::-moz-range-track {
@@ -3362,6 +3372,7 @@ span.error:before {
   color: #031926;
   opacity: 1;
   font-size: 20px;
+  font-weight: bold;
   line-height: 27px;
   font-family: 'Eina-Bold';
   margin: 0 0 32px;
@@ -3370,7 +3381,7 @@ span.error:before {
 .upload-img-wrapper .photo.is-desktop .photo__options .photo__zoom {
   width: 8px !important;
   padding: 0;
-  height: 180px;
+  height: 176px;
   position: relative;
   display: flex;
   left: -3px;
@@ -3435,34 +3446,34 @@ main.ba-main.main-dashboard.pull-right .ba-topnav {
   left: 180px;
 }
 
-/* ======================   User Page Styling  ==================== */
-
-.users-page-content .top-gutter {
-  height: auto;
-  position: static;
-  display: unset;
-  background-color: transparent;
-  padding: 0;
-  width:auto;
+.modal-open{
+  position:fixed;
+  overflow:hidden;
+}
+.modal-open .modal.in {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
 }
 
-.users-page-content {
-  padding: 40px;
+.modal-content {
+  box-shadow: 0px 16px 24px #343d561a !important;
+  border: 1px solid #343D560A !important;
+  border-radius: 8px !important;
+  background: #FFFFFF 0% 0% no-repeat padding-box;
 }
 
-.users-page-content .top-row {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+.edit-profile .profile-name {
+  margin-bottom: 32px;
 }
 
+.modal-backdrop {
+  background: #343D56 0% 0% no-repeat padding-box !important;
+}
 
+.modal-backdrop.in {
+  opacity: 0.3;
+}
 
 /* ======================    Responsive Styling  ================= */
 
