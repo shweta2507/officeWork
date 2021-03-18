@@ -8,6 +8,8 @@
       <!-- <link rel="stylesheet" href="./style/skeleton/normalize.css">
          <link rel="stylesheet" href="./style/skeleton/skeleton.css">  -->
       <!-- skeleton ui end -->
+      <!-- angular -->
+      <script src="./lib/angular.min.js"></script>
       <!-- jQuery -->
       <script src="./lib/jQuery.min.js"></script>
       <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
@@ -16,6 +18,11 @@
       <script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
       <script src="https://cdn.datatables.net/1.10.24/js/dataTables.bootstrap.min.js"></script>
       <link rel="stylesheet" href="https://cdn.datatables.net/1.10.24/css/dataTables.bootstrap.min.css">
+
+      <!-- highcharts  -->
+      <script src="https://code.highcharts.com/highcharts.src.js" defer></script>
+      <!-- custom select -->
+      <script src="./js/custom-select/select.js" type="module"></script>
       <!-- Styles from old dashboard  -->
       <link rel="stylesheet" href="css2/bootstrap.min.css">
       <link rel="stylesheet" href="css2/font-awesome.css">
@@ -37,737 +44,736 @@
       <link rel="stylesheet" href="css2/color-style.css">
       <link href="NewCSS/masterpage.css" rel="stylesheet">
       <link href="NewCSS/page.css" rel="stylesheet">
-      <link href="style-dashboard/sb-admin.css" rel="stylesheet">
-      <link href="style/customize.css" rel="stylesheet">
+      <link href="css/style-dashboard/sb-admin.css" rel="stylesheet">
       <!-- stylesheet  -->
       <link rel="stylesheet" href="./style/style.css">
+      <link rel="stylesheet" href="./style/customize.css">
+
+      <!-- custom select style  -->
+      <link rel="stylesheet" href="./style/custom-select/select.css">
       <!-- Favicon -->
       <link rel="icon" type="image/x-icon" href="./assets/img/favicon.svg">
    </head>
-   <body ng-app="axleApp" class="user-page">
-      <div class="layout-cell layout-scrollbar">
-         <!-- side navbar start-->
-         <div class="ba-sidenav">
-            <div class="ba-brand">
-               <img src="./assets/img/axle-x.svg" alt="" id="brand-icon">
-               <img src="./assets/img/axle-full.svg" alt="" id="brand-logo">
-            </div>
-            <nav class="ba-nav">
-               <div class="ba-nav-item has-tooltip">
-                  <a href="#" class="ba-nav-link">
-                  <img src="./assets/icons/analytics.svg" alt="analytics" srcset="">
-                  <span class="ba-link-title">Analytics</span>
-                  </a>
-                  <div class="ba-tooltip semibold-text">Analytics</div>
-               </div>
-               <div class="ba-nav-item has-tooltip">
-                  <a href="#" class="ba-nav-link">
-                  <img src="./assets/icons/collections.svg" alt="collections">
-                  <span class="ba-link-title">Collections</span>
-                  </a>
-                  <div class="ba-tooltip semibold-text">Collections</div>
-               </div>
-               <div class="ba-nav-item has-tooltip">
-                  <a href="#" class="ba-nav-link">
-                  <img src="./assets/icons/eligibility.svg" alt="eligibility">
-                  <span class="ba-link-title">Eligibility</span>
-                  </a>
-                  <div class="ba-tooltip semibold-text">Eligibility</div>
-               </div>
-               <div class="ba-nav-item has-tooltip">
-                  <a href="#" class="ba-nav-link">
-                     <img src="./assets/icons/user_icon.svg" alt="engagement">
-                     <span class="ba-link-title">Engagement</span>
-                     <div class="ba-tooltip semibold-text">Engagement</div>
-                  </a>
-               </div>
-               <div class="ba-nav-item has-tooltip">
-                  <a href="#" class="ba-nav-link">
-                     <img src="./assets/icons/messaging.svg" alt="messaging">
-                     <span class="ba-link-title">Messaging</span>
-                     <div class="ba-tooltip semibold-text">Messaging</div>
-                  </a>
-               </div>
-               <div class="ba-nav-item has-tooltip">
-                  <a href="#" class="ba-nav-link">
-                  <img src="./assets/icons/payments.svg" alt="payments">
-                  <span class="ba-link-title">Payments</span>
-                  </a>
-                  <div class="ba-tooltip semibold-text">Payments</div>
-               </div>
-               <div class="ba-nav-item has-tooltip">
-                  <a href="#" class="ba-nav-link">
-                  <img src="./assets/icons/payroll.svg" alt="payroll">
-                  <span class="ba-link-title">Payroll</span>
-                  </a>
-                  <div class="ba-tooltip semibold-text">Payroll</div>
-               </div>
-               <div class="ba-nav-item has-tooltip" data-tooltip="I am tooltip">
-                  <a href="#" class="ba-nav-link">
-                  <img src="./assets/icons/dashboard.svg" alt="dashboard">
-                  <span class="ba-link-title">Reviews</span>
-                  </a>
-                  <div class="ba-tooltip semibold-text">Reviews</div>
-               </div>
-               <div class="ba-nav-item has-tooltip">
-                  <a href="#" class="ba-nav-link">
-                  <img src="./assets/icons/treatment.svg" alt="treatment">
-                  <span class="ba-link-title">Treatment</span>
-                  </a>
-                  <div class="ba-tooltip semibold-text">Treatment</div>
-               </div>
-            </nav>
+   <body ng-app="axleApp" class="layout-cell layout-scrollbar">
+      <!-- side navbar start-->
+      <div class="ba-sidenav">
+         <div class="ba-brand">
+            <img src="./assets/img/axle-x.svg" alt="" id="brand-icon">
+            <img src="./assets/img/axle-full.svg" alt="" id="brand-logo">
          </div>
-         <!-- side navbar end -->
-         <main class="ba-main main-dashboard" ng-controller="reviewController">
-            <!-- topnav  -->
-            <!-- topnav  -->
-            <header class="ba-topnav">
-               <div class="ham-icon ">
-                  <svg id="_ham-open" xmlns="http://www.w3.org/2000/svg" width="18" height="12" viewBox="0 0 18 12">
-                     <defs>
-                        <style>
-                           ._ham {
-                           fill: #031926;
-                           opacity: 0.4;
-                           }
-                        </style>
-                     </defs>
-                     <path class="_ham" d="M3,18H21V16H3Zm0-5H21V11H3ZM3,6V8H21V6Z" transform="translate(-3 -6)" />
-                  </svg>
-                  <svg id="_ham-close" xmlns="http://www.w3.org/2000/svg" width="18" height="12" viewBox="0 0 18 12">
-                     <defs>
-                        <style>
-                           ._ham-close {
-                           fill: #031926;
-                           }
-                        </style>
-                     </defs>
-                     <path class="_ham-close"
-                        d="M3,18H16V16H3Zm0-5H13V11H3ZM3,6V8H16V6Zm18,9.59L17.42,12,21,8.41,19.59,7l-5,5,5,5Z"
-                        transform="translate(-3 -6)" />
-                  </svg>
-               </div>
-               <nav class="ba-nav-container">
-                  <ul class="ba-topnav-nav">
-                     <li class="ba-topnav-item">
-                        <a href="#" class="ba-topnav-link">Profile</a>
-                     </li>
-                     <li class="ba-topnav-item _active">
-                        <a href="#" class="ba-topnav-link">Users</a>
-                     </li>
-                     <li class="ba-topnav-item prac-border">
-                        <a href="#" class="ba-topnav-link">Practices</a>
-                     </li>
-                     <li class="ba-topnav-item">
-                        <a href="#" class="ba-topnav-link">Engagement</a>
-                     </li>
-                     <li class="ba-topnav-item">
-                        <a href="#" class="ba-topnav-link">Goals</a>
-                     </li>
-                     <li class="ba-topnav-item">
-                        <a href="#" class="ba-topnav-link">Payments</a>
-                     </li>
-                     <li class="ba-topnav-item">
-                        <a href="#" class="ba-topnav-link">Payroll</a>
-                     </li>
-                     <li class="ba-topnav-item">
-                        <a href="#" class="ba-topnav-link">Reviews</a>
-                     </li>
-                     <li class="ba-topnav-item">
-                        <a href="#" class="ba-topnav-link">Treatment</a>
-                     </li>
-                     <li class="ba-topnav-item ba-profile has-flyout">
-                        <div class="_avatar"></div>
-                        <div class="ba-username">Pedro Becker</div>
-                        <span class="ba-chevron-down">
+         <nav class="ba-nav">
+            <div class="ba-nav-item has-tooltip _active">
+               <a href="#" class="ba-nav-link">
+               <img src="./assets/icons/analytics.svg" alt="analytics" srcset="">
+               <span class="ba-link-title">Analytics</span>
+               </a>
+               <div class="ba-tooltip semibold-text">Analytics</div>
+            </div>
+            <div class="ba-nav-item has-tooltip">
+               <a href="#" class="ba-nav-link">
+               <img src="./assets/icons/collections.svg" alt="collections">
+               <span class="ba-link-title">Collections</span>
+               </a>
+               <div class="ba-tooltip semibold-text">Collections</div>
+            </div>
+            <div class="ba-nav-item has-tooltip">
+               <a href="#" class="ba-nav-link">
+               <img src="./assets/icons/eligibility.svg" alt="eligibility">
+               <span class="ba-link-title">Eligibility</span>
+               </a>
+               <div class="ba-tooltip semibold-text">Eligibility</div>
+            </div>
+            <div class="ba-nav-item has-tooltip">
+               <a href="#" class="ba-nav-link">
+                  <img src="./assets/icons/user_icon.svg" alt="engagement">
+                  <span class="ba-link-title">Engagement</span>
+                  <div class="ba-tooltip semibold-text">Engagement</div>
+               </a>
+            </div>
+            <div class="ba-nav-item has-tooltip">
+               <a href="#" class="ba-nav-link">
+                  <img src="./assets/icons/messaging.svg" alt="messaging">
+                  <span class="ba-link-title">Messaging</span>
+                  <div class="ba-tooltip semibold-text">Messaging</div>
+               </a>
+            </div>
+            <div class="ba-nav-item has-tooltip">
+               <a href="#" class="ba-nav-link">
+               <img src="./assets/icons/payments.svg" alt="payments">
+               <span class="ba-link-title">Payments</span>
+               </a>
+               <div class="ba-tooltip semibold-text">Payments</div>
+            </div>
+            <div class="ba-nav-item has-tooltip">
+               <a href="#" class="ba-nav-link">
+               <img src="./assets/icons/payroll.svg" alt="payroll">
+               <span class="ba-link-title">Payroll</span>
+               </a>
+               <div class="ba-tooltip semibold-text">Payroll</div>
+            </div>
+            <div class="ba-nav-item has-tooltip" data-tooltip="I am tooltip">
+               <a href="#" class="ba-nav-link">
+               <img src="./assets/icons/dashboard.svg" alt="dashboard">
+               <span class="ba-link-title">Reviews</span>
+               </a>
+               <div class="ba-tooltip semibold-text">Reviews</div>
+            </div>
+            <div class="ba-nav-item has-tooltip">
+               <a href="#" class="ba-nav-link">
+               <img src="./assets/icons/treatment.svg" alt="treatment">
+               <span class="ba-link-title">Treatment</span>
+               </a>
+               <div class="ba-tooltip semibold-text">Treatment</div>
+            </div>
+         </nav>
+      </div>
+      <!-- side navbar end -->
+      <main class="ba-main main-dashboard" ng-controller="userController">
+         <!-- topnav  -->
+         <!-- topnav  -->
+         <header class="ba-topnav">
+            <div class="ham-icon ">
+               <svg id="_ham-open" xmlns="http://www.w3.org/2000/svg" width="18" height="12" viewBox="0 0 18 12">
+                  <defs>
+                     <style>
+                        ._ham {
+                        fill: #031926;
+                        opacity: 0.4;
+                        }
+                     </style>
+                  </defs>
+                  <path class="_ham" d="M3,18H21V16H3Zm0-5H21V11H3ZM3,6V8H21V6Z" transform="translate(-3 -6)" />
+               </svg>
+               <svg id="_ham-close" xmlns="http://www.w3.org/2000/svg" width="18" height="12" viewBox="0 0 18 12">
+                  <defs>
+                     <style>
+                        ._ham-close {
+                        fill: #031926;
+                        }
+                     </style>
+                  </defs>
+                  <path class="_ham-close"
+                     d="M3,18H16V16H3Zm0-5H13V11H3ZM3,6V8H16V6Zm18,9.59L17.42,12,21,8.41,19.59,7l-5,5,5,5Z"
+                     transform="translate(-3 -6)" />
+               </svg>
+            </div>
+            <nav class="ba-nav-container">
+               <ul class="ba-topnav-nav">
+                  <li class="ba-topnav-item">
+                     <a href="#" class="ba-topnav-link">Profile</a>
+                  </li>
+                  <li class="ba-topnav-item _active">
+                     <a href="#" class="ba-topnav-link">Users</a>
+                  </li>
+                  <li class="ba-topnav-item prac-border">
+                     <a href="#" class="ba-topnav-link">Practices</a>
+                  </li>
+                  <li class="ba-topnav-item">
+                     <a href="#" class="ba-topnav-link">Engagement</a>
+                  </li>
+                  <li class="ba-topnav-item">
+                     <a href="#" class="ba-topnav-link">Goals</a>
+                  </li>
+                  <li class="ba-topnav-item">
+                     <a href="#" class="ba-topnav-link">Payments</a>
+                  </li>
+                  <li class="ba-topnav-item">
+                     <a href="#" class="ba-topnav-link">Payroll</a>
+                  </li>
+                  <li class="ba-topnav-item">
+                     <a href="#" class="ba-topnav-link">Reviews</a>
+                  </li>
+                  <li class="ba-topnav-item">
+                     <a href="#" class="ba-topnav-link">Treatment</a>
+                  </li>
+                  <li class="ba-topnav-item ba-profile has-flyout">
+                     <div class="_avatar"></div>
+                     <div class="ba-username">Pedro Becker</div>
+                     <span class="ba-chevron-down">
+                     </span>
+                     <div class="flyout-menu _dark _bottom">
+                        <div class="_option">
+                           <img src="./assets/icons/settings.svg" alt="settings icon">
+                           <span>Settings</span>
+                        </div>
+                        <div class="_option"><img src="./assets/icons/logout.svg" alt="logout icon">
+                           <span>Logout</span>
+                        </div>
+                     </div>
+                  </li>
+               </ul>
+            </nav>
+         </header>
+         
+         <div class="top-row">
+            <div class="top-gutter">
+               <div class="search-bar"></div>
+               <div class="ba-input-wrapper ba-multiselect">
+                  <div class="ba-input-field">
+                     <span ng-show="practiceFilters.length == 0">All Practices</span>
+                     <span ng-show="practiceFilters.length == 1">{{ practiceFilters[0] }}</span>
+                     <span ng-show="practiceFilters.length > 1">
+                     {{ practiceFilters[0]+' (+' + (practiceFilters.length-1) +')' }}
+                     </span>
+                  </div>
+                  <input type="hidden" class="ba-input-field-value" name="practiceFilters" id="practiceFilters"
+                     ng-model="practiceFilters">
+                  <div class="ba-multiselect-options layout-cell layout-scrollbar">
+                     <div class="ba-option" ng-click="selectAllMultiSelect('practiceOptions','practiceFilters' )">
+                        <span class="ba-checkbox"
+                           ng-class="{__checked : isChecked('all','practiceOptions','practiceFilters')}"></span>
+                        <span class="ba-option-label">All Practices</span>
+                     </div>
+                     <div class="ba-option" ng-repeat="option in practiceOptions"
+                        ng-click="toggleMultiSelect('practiceFilters', option )">
+                        <span class="ba-checkbox"
+                           ng-class="{__checked : isChecked(option,'practiceOptions','practiceFilters')}">
                         </span>
-                        <div class="flyout-menu _dark _bottom">
-                           <div class="_option">
-                              <img src="./assets/icons/settings.svg" alt="settings icon">
-                              <span>Settings</span>
-                           </div>
-                           <div class="_option"><img src="./assets/icons/logout.svg" alt="logout icon">
-                              <span>Logout</span>
-                           </div>
-                        </div>
-                     </li>
-                  </ul>
-               </nav>
-            </header>
-            <div class="body-container">
-               <!--   ===============   User Page Content   ================  -->
-               <div class="users-page-content">
-                  <div class="top-row">
-                     <div class="top-gutter">
-                        <!--   ===============   Search Feild   ================  -->
-                        <div class="search-bar"></div>
-                        <!--       ======================    Practice Name    ========================= -->
-                        <div class="ba-input-wrapper ba-multiselect" tabindex="0">
-                           <div class="ba-input-field">
-                              <span>All Practices</span>
-                              <span></span>
-                              <span>
-                              </span>
-                           </div>
-                           <input type="hidden" class="ba-input-field-value" name="practiceFilters" id="practiceFilters">
-                           <div class="ba-multiselect-options layout-cell layout-scrollbar">
-                              <div class="ba-option">
-                                 <span class="ba-checkbox"></span>
-                                 <span class="ba-option-label">All Practices</span>
-                              </div>
-                              <div class="ba-option">
-                                 <span class="ba-checkbox">
-                                 </span>
-                                 <span class="ba-option-label">All Practices Dummy 1</span>
-                              </div>
-                           </div>
-                        </div>
-                        <!--        ====================================   Regions  =====================    -->
-                        <div class="ba-input-wrapper ba-treeselect" tabindex="0">
-                           <div class="ba-input-field">
-                              <span>All Regions</span>
-                              <span><span class="regionName"></span></span>
-                              <span">
-                              <span class="regionName"></span>
-                              </span>
-                           </div>
-                           <input type="hidden" class="ba-input-field-value" name="reigons" id="regions">
-                           <div class="ba-treeselect-options">
-                              <div class="ba-option-parent">
-                                 <div class="ba-option">
-                                    <span class="ba-checkbox"></span>
-                                    <span class="ba-option-label">All Regions</span>
-                                 </div>
-                              </div>
-                              <div class="ba-option">
-                                 <span class="ba-checkbox">
-                                 </span>
-                                 <span class="ba-option-label"></span>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                     <div class="adduser-button">
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-                        Add User
-                        </button>
+                        <span class="ba-option-label">{{option}}</span>
                      </div>
                   </div>
-                  <div class="table-wrapper">
-                     <table id="dtBasicExample" class="table table-striped table-bordered table-sm" cellspacing="0" width="100%">
-                        <thead>
-                           <tr>
-                              <th class="th-sm">User Full Name
-                              </th>
-                              <th class="th-sm">Email Address
-                              </th>
-                              <th class="th-sm">Phone Number
-                              </th>
-                              <th></th>
-                              <th></th>
-                           </tr>
-                        </thead>
-                        <tbody>
-                           <tr>
-                              <td class="table-user-name"><span class="user-pic"></span> Pedro Becker</td>
-                              <td class="table-user-email">pedro@iconfamilydentistry.com</td>
-                              <td class="table-user-no">(210) 274-4350</td>
-                              <td></td><td></td>
-                           </tr>
-                           <tr>
-                              <td class="table-user-name"><span class="user-pic"></span> Pedro Becker</td>
-                              <td class="table-user-email">pedro@iconfamilydentistry.com</td>
-                              <td class="table-user-no">(210) 274-4350</td>
-                              <td></td><td></td>
-                           </tr>
-                           <tr>
-                              <td class="table-user-name"><span class="user-pic"></span> Pedro Becker</td>
-                              <td class="table-user-email">pedro@iconfamilydentistry.com</td>
-                              <td class="table-user-no">(210) 274-4350</td>
-                              <td></td><td></td>
-                           </tr>
-                           <tr>
-                              <td class="table-user-name"><span class="user-pic"></span> Pedro Becker</td>
-                              <td class="table-user-email">pedro@iconfamilydentistry.com</td>
-                              <td class="table-user-no">(210) 274-4350</td><td></td><td></td>
-                           </tr>
-                           <tr>
-                              <td class="table-user-name"><span class="user-pic"></span> Pedro Becker</td>
-                              <td class="table-user-email">pedro@iconfamilydentistry.com</td>
-                              <td class="table-user-no">(210) 274-4350</td><td></td><td></td>
-                           </tr>
-                           <tr>
-                              <td class="table-user-name"><span class="user-pic"></span> Pedro Becker</td>
-                              <td class="table-user-email">pedro@iconfamilydentistry.com</td>
-                              <td class="table-user-no">(210) 274-4350</td><td></td><td></td>
-                           </tr>
-                           <tr>
-                              <td class="table-user-name"><span class="user-pic"></span> Pedro Becker</td>
-                              <td class="table-user-email">pedro@iconfamilydentistry.com</td>
-                              <td class="table-user-no">(210) 274-4350</td><td></td><td></td>
-                           </tr>
-                           <tr>
-                              <td class="table-user-name"><span class="user-pic"></span> Pedro Becker</td>
-                              <td class="table-user-email">pedro@iconfamilydentistry.com</td>
-                              <td class="table-user-no">(210) 274-4350</td><td></td><td></td>
-                           </tr>
-                           <tr>
-                              <td class="table-user-name"><span class="user-pic"></span> Pedro Becker</td>
-                              <td class="table-user-email">pedro@iconfamilydentistry.com</td>
-                              <td class="table-user-no">(210) 274-4350</td><td></td><td></td>
-                           </tr>
-                           <tr>
-                              <td class="table-user-name"><span class="user-pic"></span> Pedro Becker</td>
-                              <td class="table-user-email">pedro@iconfamilydentistry.com</td>
-                              <td class="table-user-no">(210) 274-4350</td><td></td><td></td>
-                           </tr>
-                           <tr>
-                              <td class="table-user-name"><span class="user-pic"></span> Pedro Becker</td>
-                              <td class="table-user-email">pedro@iconfamilydentistry.com</td>
-                              <td class="table-user-no">(210) 274-4350</td><td></td><td></td>
-                           </tr>
-                           <tr>
-                              <td class="table-user-name"><span class="user-pic"></span> Pedro Becker</td>
-                              <td class="table-user-email">pedro@iconfamilydentistry.com</td>
-                              <td class="table-user-no">(210) 274-4350</td><td></td><td></td>
-                           </tr>
-                           <tr>
-                              <td class="table-user-name"><span class="user-pic"></span> Pedro Becker</td>
-                              <td class="table-user-email">pedro@iconfamilydentistry.com</td>
-                              <td class="table-user-no">(210) 274-4350</td><td></td><td></td>
-                           </tr>
-                           <tr>
-                              <td class="table-user-name"><span class="user-pic"></span> Pedro Becker</td>
-                              <td class="table-user-email">pedro@iconfamilydentistry.com</td>
-                              <td class="table-user-no">(210) 274-4350</td><td></td><td></td>
-                           </tr>
-                           <tr>
-                              <td class="table-user-name"><span class="user-pic"></span> Pedro Becker</td>
-                              <td class="table-user-email">pedro@iconfamilydentistry.com</td>
-                              <td class="table-user-no">(210) 274-4350</td><td></td><td></td>
-                           </tr>
-                           <tr>
-                              <td class="table-user-name"><span class="user-pic"></span> Pedro Becker</td>
-                              <td class="table-user-email">pedro@iconfamilydentistry.com</td>
-                              <td class="table-user-no">(210) 274-4350</td><td></td><td></td>
-                           </tr>
-                        </tbody>
-                     </table>
+               </div>
+               <div class="ba-input-wrapper ba-multiselect">
+                  <div class="ba-input-field">
+                     <span ng-show="regionFilters.length == 0">All Regions</span>
+                     <span ng-show="regionFilters.length == 1">{{ regionFilters[0] }}</span>
+                     <span ng-show="regionFilters.length > 1">
+                     {{ regionFilters[0]+' (+' + (regionFilters.length-1) +')' }}
+                     </span>
                   </div>
-                  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                     <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                           <div class="adduser-wrapper">
-                              <div class="closeIcon">
-                                 <img src="assets/img/cross.svg" alt="Cross">
-                              </div>
-                              <h3>Add User</h3>
-                              <ul>
-                                 <li class="active"><span><span>1</span></span><span class="list-name">GENERAL PROFILE</span></li>
-                                 <li><span><span>2</span></span><span class="list-name">FEATURE ACCESS</span></li>
-                              </ul>
-                              <div class="upload-section">
-                                 <div class="user-img">
-                                    <img src="assets/img/edit-profile.svg" alt="Profile Image">
+                  <input type="hidden" class="ba-input-field-value" name="regionFilters" id="regionFilters"
+                     ng-model="regionFilters">
+                  <div class="ba-multiselect-options layout-cell layout-scrollbar">
+                     <div class="ba-option" ng-click="selectAllMultiSelect('regionOptions','regionFilters' )">
+                        <span class="ba-checkbox"
+                           ng-class="{__checked : isChecked('all','regionOptions','regionFilters')}"></span>
+                        <span class="ba-option-label">All Practices</span>
+                     </div>
+                     <div class="ba-option" ng-repeat="option in regionOptions"
+                        ng-click="toggleMultiSelect('regionFilters', option )">
+                        <span class="ba-checkbox"
+                           ng-class="{__checked : isChecked(option,'regionOptions','regionFilters')}">
+                        </span>
+                        <span class="ba-option-label">{{option}}</span>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="adduser-button">
+               <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#userModal">Add User</button>
+            </div>
+         </div>
+                 
+         <section class="ba-content">
+            <div class="table-wrapper ba-widget-box">
+               <table id="dtBasicExample" class="ba-table-widget table table-striped table-bordered table-sm" cellspacing="0" width="100%">
+                  <thead>
+                     <tr>
+                        <th class="th-sm">User Full Name</th>
+                        <th class="th-sm">Email Address</th>
+                        <th class="th-sm">Phone Number</th>
+                        <th></th>
+                        <th></th>
+                     </tr>
+                  </thead>
+                  <tbody>
+                     <tr>
+                        <td class="table-user-name"><span class="user-pic"></span> Pedro Becker</td>
+                        <td class="table-user-email">pedro@iconfamilydentistry.com</td>
+                        <td class="table-user-no">(210) 274-4350</td>
+                        <td></td><td></td>
+                     </tr>
+                     <tr>
+                        <td class="table-user-name"><span class="user-pic"></span> Pedro Becker</td>
+                        <td class="table-user-email">pedro@iconfamilydentistry.com</td>
+                        <td class="table-user-no">(210) 274-4350</td>
+                        <td></td><td></td>
+                     </tr>
+                     <tr>
+                        <td class="table-user-name"><span class="user-pic"></span> Pedro Becker</td>
+                        <td class="table-user-email">pedro@iconfamilydentistry.com</td>
+                        <td class="table-user-no">(210) 274-4350</td>
+                        <td></td><td></td>
+                     </tr>
+                     <tr>
+                        <td class="table-user-name"><span class="user-pic"></span> Pedro Becker</td>
+                        <td class="table-user-email">pedro@iconfamilydentistry.com</td>
+                        <td class="table-user-no">(210) 274-4350</td><td></td><td></td>
+                     </tr>
+                     <tr>
+                        <td class="table-user-name"><span class="user-pic"></span> Pedro Becker</td>
+                        <td class="table-user-email">pedro@iconfamilydentistry.com</td>
+                        <td class="table-user-no">(210) 274-4350</td><td></td><td></td>
+                     </tr>
+                     <tr>
+                        <td class="table-user-name"><span class="user-pic"></span> Pedro Becker</td>
+                        <td class="table-user-email">pedro@iconfamilydentistry.com</td>
+                        <td class="table-user-no">(210) 274-4350</td><td></td><td></td>
+                     </tr>
+                     <tr>
+                        <td class="table-user-name"><span class="user-pic"></span> Pedro Becker</td>
+                        <td class="table-user-email">pedro@iconfamilydentistry.com</td>
+                        <td class="table-user-no">(210) 274-4350</td><td></td><td></td>
+                     </tr>
+                     <tr>
+                        <td class="table-user-name"><span class="user-pic"></span> Pedro Becker</td>
+                        <td class="table-user-email">pedro@iconfamilydentistry.com</td>
+                        <td class="table-user-no">(210) 274-4350</td><td></td><td></td>
+                     </tr>
+                     <tr>
+                        <td class="table-user-name"><span class="user-pic"></span> Pedro Becker</td>
+                        <td class="table-user-email">pedro@iconfamilydentistry.com</td>
+                        <td class="table-user-no">(210) 274-4350</td><td></td><td></td>
+                     </tr>
+                     <tr>
+                        <td class="table-user-name"><span class="user-pic"></span> Pedro Becker</td>
+                        <td class="table-user-email">pedro@iconfamilydentistry.com</td>
+                        <td class="table-user-no">(210) 274-4350</td><td></td><td></td>
+                     </tr>
+                     <tr>
+                        <td class="table-user-name"><span class="user-pic"></span> Pedro Becker</td>
+                        <td class="table-user-email">pedro@iconfamilydentistry.com</td>
+                        <td class="table-user-no">(210) 274-4350</td><td></td><td></td>
+                     </tr>
+                     <tr>
+                        <td class="table-user-name"><span class="user-pic"></span> Pedro Becker</td>
+                        <td class="table-user-email">pedro@iconfamilydentistry.com</td>
+                        <td class="table-user-no">(210) 274-4350</td><td></td><td></td>
+                     </tr>
+                     <tr>
+                        <td class="table-user-name"><span class="user-pic"></span> Pedro Becker</td>
+                        <td class="table-user-email">pedro@iconfamilydentistry.com</td>
+                        <td class="table-user-no">(210) 274-4350</td><td></td><td></td>
+                     </tr>
+                     <tr>
+                        <td class="table-user-name"><span class="user-pic"></span> Pedro Becker</td>
+                        <td class="table-user-email">pedro@iconfamilydentistry.com</td>
+                        <td class="table-user-no">(210) 274-4350</td><td></td><td></td>
+                     </tr>
+                     <tr>
+                        <td class="table-user-name"><span class="user-pic"></span> Pedro Becker</td>
+                        <td class="table-user-email">pedro@iconfamilydentistry.com</td>
+                        <td class="table-user-no">(210) 274-4350</td><td></td><td></td>
+                     </tr>
+                     <tr>
+                        <td class="table-user-name"><span class="user-pic"></span> Pedro Becker</td>
+                        <td class="table-user-email">pedro@iconfamilydentistry.com</td>
+                        <td class="table-user-no">(210) 274-4350</td><td></td><td></td>
+                     </tr>
+                  </tbody>
+               </table>
+            </div>
+            <div class="modal fade" id="userModal" tabindex="-1" role="dialog" aria-labelledby="userModalLabel" aria-hidden="true">
+               <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                     <div class="adduser-wrapper">
+                        <div class="closeIcon">
+                           <img src="assets/img/cross.svg" alt="Cross">
+                        </div>
+                        <h3>Add User</h3>
+                        <ul>
+                           <li class="active"><span><span>1</span></span><span class="list-name">GENERAL PROFILE</span></li>
+                           <li><span><span>2</span></span><span class="list-name">FEATURE ACCESS</span></li>
+                        </ul>
+                        <div class="upload-section">
+                           <div class="user-img">
+                              <img src="assets/img/edit-profile.svg" alt="Profile Image">
+                           </div>
+                           <div class="uploadImg">
+                              <input type="file" class="custom-file-input">
+                           </div>
+                        </div>
+                        <div class="user-details">
+                           <form class="add-user-details">
+                              <div class="feild-1 feild">
+                                 <div class="form-field">
+                                    <label for="first-name" class="form-label">First Name</label>
+                                    <div class="custom-input">
+                                       <input type="text" id="firstName" name="firstName" class="form-control">
+                                       <span class="error">Enter a valid user first name.</span>
+                                    </div>
                                  </div>
-                                 <div class="uploadImg">
-                                    <input type="file" class="custom-file-input">
+                                 <div class="form-field">
+                                    <label for="last-name" class="form-label">Last Name</label>
+                                    <div class="custom-input">
+                                       <input type="text" id="lastName" name="lastName" class="form-control">
+                                       <span class="error">Enter a valid user last name.</span>
+                                    </div>
                                  </div>
                               </div>
-                              <div class="user-details">
-                                 <form class="add-user-details">
-                                    <div class="feild-1 feild">
-                                       <div class="form-field">
-                                          <label for="first-name" class="form-label">First Name</label>
-                                          <div class="custom-input">
-                                             <input type="text" id="firstName" name="firstName" class="form-control">
-                                             <span class="error">Enter a valid user first name.</span>
-                                          </div>
+                              <div class="feild-2 feild">
+                                 <div class="ba-input-wrapper ba-multiselect custom-select-wrapper" tabindex="0" >
+                                    <div class="ba-input-field">
+                                       <span>Practice Access</span>
+                                    </div>
+                                    <input type="hidden" class="ba-input-field-value" name="practiceFilters" id="practiceFilters">
+                                    <span class="error">Enter a minimum of 1 practice.</span>
+                                    <div class="ba-multiselect-options layout-cell layout-scrollbar">
+                                       <div class="ba-option">
+                                          <span class="ba-checkbox"></span>
+                                          <span class="ba-option-label">Practice Access</span>
                                        </div>
-                                       <div class="form-field">
-                                          <label for="last-name" class="form-label">Last Name</label>
-                                          <div class="custom-input">
-                                             <input type="text" id="lastName" name="lastName" class="form-control">
-                                             <span class="error">Enter a valid user last name.</span>
-                                          </div>
+                                       <div class="ba-option">
+                                          <span class="ba-checkbox"></span>
+                                          <span class="ba-option-label">All Practices Dummy 1</span>
+                                       </div>
+                                       <div class="ba-option">
+                                          <span class="ba-checkbox"></span>
+                                          <span class="ba-option-label">All Practices Dummy 2</span>
                                        </div>
                                     </div>
-                                    <div class="feild-2 feild">
-                                       <div class="ba-input-wrapper ba-multiselect custom-select-wrapper" tabindex="0" >
-                                          <div class="ba-input-field">
-                                             <span>Practice Access</span>
-                                          </div>
-                                          <input type="hidden" class="ba-input-field-value" name="practiceFilters" id="practiceFilters">
-                                          <span class="error">Enter a minimum of 1 practice.</span>
-                                          <div class="ba-multiselect-options layout-cell layout-scrollbar">
-                                             <div class="ba-option">
-                                                <span class="ba-checkbox"></span>
-                                                <span class="ba-option-label">Practice Access</span>
-                                             </div>
-                                             <div class="ba-option">
-                                                <span class="ba-checkbox"></span>
-                                                <span class="ba-option-label">All Practices Dummy 1</span>
-                                             </div>
-                                             <div class="ba-option">
-                                                <span class="ba-checkbox"></span>
-                                                <span class="ba-option-label">All Practices Dummy 2</span>
-                                             </div>
-                                          </div>
+                                 </div>
+                                 <div class="ba-input-wrapper ba-multiselect custom-select-wrapper" tabindex="0">
+                                    <div class="ba-input-field">
+                                       <span>Region Access</span>
+                                    </div>
+                                    <input type="hidden" class="ba-input-field-value">
+                                    <span class="error">Enter a minimum of 1 region.</span>
+                                    <div class="ba-multiselect-options layout-cell layout-scrollbar">
+                                       <div class="ba-option">
+                                          <span class="ba-checkbox"></span>
+                                          <span class="ba-option-label">Region Access</span>
                                        </div>
-                                       <div class="ba-input-wrapper ba-multiselect custom-select-wrapper" tabindex="0">
-                                          <div class="ba-input-field">
-                                             <span>Region Access</span>
-                                          </div>
-                                          <input type="hidden" class="ba-input-field-value">
-                                          <span class="error">Enter a minimum of 1 region.</span>
-                                          <div class="ba-multiselect-options layout-cell layout-scrollbar">
-                                             <div class="ba-option">
-                                                <span class="ba-checkbox"></span>
-                                                <span class="ba-option-label">Region Access</span>
-                                             </div>
-                                             <div class="ba-option">
-                                                <span class="ba-checkbox"></span>
-                                                <span class="ba-option-label">Region Access 1</span>
-                                             </div>
-                                             <div class="ba-option">
-                                                <span class="ba-checkbox"></span>
-                                                <span class="ba-option-label">Region Access 2</span>
-                                             </div>
-                                          </div>
+                                       <div class="ba-option">
+                                          <span class="ba-checkbox"></span>
+                                          <span class="ba-option-label">Region Access 1</span>
+                                       </div>
+                                       <div class="ba-option">
+                                          <span class="ba-checkbox"></span>
+                                          <span class="ba-option-label">Region Access 2</span>
                                        </div>
                                     </div>
-                                    <div class="feild-3 feild">
-                                       <div class="form-field">
-                                          <label for="email-address" class="form-label">Email Address</label>
-                                          <div class="custom-input">
-                                             <input type="text" id="email" name="email" class="form-control">
-                                             <span class="error">Enter valid email address.</span>
-                                          </div>
-                                       </div>
-                                       <div class="form-field">
-                                          <label for="mobile-phone" class="form-label">Mobile Phone</label>
-                                          <div class="custom-input">
-                                             <input type="tel" id="phone" name="phone" class="form-control">
-                                             <span class="error">Enter valid mobile phone.</span>
-                                          </div>
-                                       </div>
+                                 </div>
+                              </div>
+                              <div class="feild-3 feild">
+                                 <div class="form-field">
+                                    <label for="email-address" class="form-label">Email Address</label>
+                                    <div class="custom-input">
+                                       <input type="text" id="email" name="email" class="form-control">
+                                       <span class="error">Enter valid email address.</span>
                                     </div>
-                                    <div class="cta-wrapper">
-                                       <a class="cta cta-white cancel">Cancel</a>
-                                       <a class="cta cta-blue saveContinue">Save & Continue</a>
+                                 </div>
+                                 <div class="form-field">
+                                    <label for="mobile-phone" class="form-label">Mobile Phone</label>
+                                    <div class="custom-input">
+                                       <input type="tel" id="phone" name="phone" class="form-control">
+                                       <span class="error">Enter valid mobile phone.</span>
                                     </div>
-                                 </form>
+                                 </div>
+                              </div>
+                              <div class="cta-wrapper">
+                                 <a class="cta cta-white cancel">Cancel</a>
+                                 <a class="cta cta-blue saveContinue">Save & Continue</a>
+                              </div>
+                           </form>
+                        </div>
+                     </div>
+                     <div class="feature-access-wrapper">
+                        <div class="closeIcon">
+                           <img src="assets/img/cross.svg" alt="Cross">
+                        </div>
+                        <h3>Add User</h3>
+                        <ul>
+                           <li class="active"><span><span>1</span></span><span class="list-name">GENERAL PROFILE</span></li>
+                           <li class="active"><span><span>2</span></span><span class="list-name">FEATURE ACCESS</span></li>
+                        </ul>
+                        <div class="quicl-roll-wrapper">
+                           <h3>User Quick Roll</h3>
+                           <div class="main-access-wrapper">
+                              <div class="ba-input-wrapper ba-multiselect custom-select-wrapper" tabindex="0" >
+                                 <div class="ba-input-field">
+                                    <span>Admin</span>
+                                 </div>
+                                 <input type="hidden" class="ba-input-field-value" name="practiceFilters" id="practiceFilters">
+                                 <div class="ba-multiselect-options layout-cell layout-scrollbar">
+                                    <div class="ba-option">
+                                       <span class="ba-checkbox"></span>
+                                       <span class="ba-option-label">Admin</span>
+                                    </div>
+                                    <div class="ba-option">
+                                       <span class="ba-checkbox"></span>
+                                       <span class="ba-option-label">Enable</span>
+                                    </div>
+                                    <div class="ba-option">
+                                       <span class="ba-checkbox"></span>
+                                       <span class="ba-option-label">Disable</span>
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="ba-input-wrapper ba-multiselect custom-select-wrapper" tabindex="0">
+                                 <div class="ba-input-field">
+                                    <span>Region Access</span>
+                                 </div>
+                                 <input type="hidden" class="ba-input-field-value">
+                                 <div class="ba-multiselect-options layout-cell layout-scrollbar">
+                                    <div class="ba-option">
+                                       <span class="ba-checkbox"></span>
+                                       <span class="ba-option-label">Region Access</span>
+                                    </div>
+                                    <div class="ba-option">
+                                       <span class="ba-checkbox"></span>
+                                       <span class="ba-option-label">Enable</span>
+                                    </div>
+                                    <div class="ba-option">
+                                       <span class="ba-checkbox"></span>
+                                       <span class="ba-option-label">Disable</span>
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="ba-input-wrapper ba-multiselect custom-select-wrapper" tabindex="0">
+                                 <div class="ba-input-field">
+                                    <span>Region Access</span>
+                                 </div>
+                                 <input type="hidden" class="ba-input-field-value">
+                                 <div class="ba-multiselect-options layout-cell layout-scrollbar">
+                                    <div class="ba-option">
+                                       <span class="ba-checkbox"></span>
+                                       <span class="ba-option-label">Region Access</span>
+                                    </div>
+                                    <div class="ba-option">
+                                       <span class="ba-checkbox"></span>
+                                       <span class="ba-option-label">Enable</span>
+                                    </div>
+                                    <div class="ba-option">
+                                       <span class="ba-checkbox"></span>
+                                       <span class="ba-option-label">Disable</span>
+                                    </div>
+                                 </div>
                               </div>
                            </div>
-                           <div class="feature-access-wrapper">
-                              <div class="closeIcon">
-                                 <img src="assets/img/cross.svg" alt="Cross">
-                              </div>
-                              <h3>Add User</h3>
-                              <ul>
-                                 <li class="active"><span><span>1</span></span><span class="list-name">GENERAL PROFILE</span></li>
-                                 <li class="active"><span><span>2</span></span><span class="list-name">FEATURE ACCESS</span></li>
-                              </ul>
-                              <div class="quicl-roll-wrapper">
-                                 <h3>User Quick Roll</h3>
-                                 <div class="main-access-wrapper">
-                                    <div class="ba-input-wrapper ba-multiselect custom-select-wrapper" tabindex="0" >
-                                       <div class="ba-input-field">
-                                          <span>Admin</span>
+                        </div>
+                        <div class="user-access-details">
+                           <h3>Feature Access</h3>
+                           <form class="add-user-details">
+                              <div class="feild-1 feild">
+                                 <div class="ba-input-wrapper ba-multiselect custom-select-wrapper" tabindex="0" >
+                                    <div class="ba-input-field">
+                                       <span>Analytics</span>
+                                    </div>
+                                    <input type="hidden" class="ba-input-field-value" name="practiceFilters" id="practiceFilters">
+                                    <div class="ba-multiselect-options layout-cell layout-scrollbar">
+                                       <div class="ba-option">
+                                          <span class="ba-checkbox"></span>
+                                          <span class="ba-option-label">Practice Dashboard</span>
                                        </div>
-                                       <input type="hidden" class="ba-input-field-value" name="practiceFilters" id="practiceFilters">
-                                       <div class="ba-multiselect-options layout-cell layout-scrollbar">
-                                          <div class="ba-option">
-                                             <span class="ba-checkbox"></span>
-                                             <span class="ba-option-label">Admin</span>
-                                          </div>
-                                          <div class="ba-option">
-                                             <span class="ba-checkbox"></span>
-                                             <span class="ba-option-label">Enable</span>
-                                          </div>
-                                          <div class="ba-option">
-                                             <span class="ba-checkbox"></span>
-                                             <span class="ba-option-label">Disable</span>
-                                          </div>
+                                       <div class="ba-option">
+                                          <span class="ba-checkbox"></span>
+                                          <span class="ba-option-label">Provider Dashboard</span>
+                                       </div>
+                                       <div class="ba-option">
+                                          <span class="ba-checkbox"></span>
+                                          <span class="ba-option-label">Region Dashboard</span>
                                        </div>
                                     </div>
-                                    <div class="ba-input-wrapper ba-multiselect custom-select-wrapper" tabindex="0">
-                                       <div class="ba-input-field">
-                                          <span>Region Access</span>
-                                       </div>
-                                       <input type="hidden" class="ba-input-field-value">
-                                       <div class="ba-multiselect-options layout-cell layout-scrollbar">
-                                          <div class="ba-option">
-                                             <span class="ba-checkbox"></span>
-                                             <span class="ba-option-label">Region Access</span>
-                                          </div>
-                                          <div class="ba-option">
-                                             <span class="ba-checkbox"></span>
-                                             <span class="ba-option-label">Enable</span>
-                                          </div>
-                                          <div class="ba-option">
-                                             <span class="ba-checkbox"></span>
-                                             <span class="ba-option-label">Disable</span>
-                                          </div>
-                                       </div>
+                                 </div>
+                                 <div class="ba-input-wrapper ba-multiselect custom-select-wrapper" tabindex="0">
+                                    <div class="ba-input-field">
+                                       <span>Collections</span>
                                     </div>
-                                    <div class="ba-input-wrapper ba-multiselect custom-select-wrapper" tabindex="0">
-                                       <div class="ba-input-field">
-                                          <span>Region Access</span>
+                                    <input type="hidden" class="ba-input-field-value">
+                                    <div class="ba-multiselect-options layout-cell layout-scrollbar">
+                                       <div class="ba-option">
+                                          <span class="ba-checkbox"></span>
+                                          <span class="ba-option-label">Dashboard</span>
                                        </div>
-                                       <input type="hidden" class="ba-input-field-value">
-                                       <div class="ba-multiselect-options layout-cell layout-scrollbar">
-                                          <div class="ba-option">
-                                             <span class="ba-checkbox"></span>
-                                             <span class="ba-option-label">Region Access</span>
-                                          </div>
-                                          <div class="ba-option">
-                                             <span class="ba-checkbox"></span>
-                                             <span class="ba-option-label">Enable</span>
-                                          </div>
-                                          <div class="ba-option">
-                                             <span class="ba-checkbox"></span>
-                                             <span class="ba-option-label">Disable</span>
-                                          </div>
+                                       <div class="ba-option">
+                                          <span class="ba-checkbox"></span>
+                                          <span class="ba-option-label">Collections</span>
                                        </div>
                                     </div>
                                  </div>
                               </div>
-                              <div class="user-access-details">
-                                 <h3>Feature Access</h3>
-                                 <form class="add-user-details">
-                                    <div class="feild-1 feild">
-                                       <div class="ba-input-wrapper ba-multiselect custom-select-wrapper" tabindex="0" >
-                                          <div class="ba-input-field">
-                                             <span>Analytics</span>
-                                          </div>
-                                          <input type="hidden" class="ba-input-field-value" name="practiceFilters" id="practiceFilters">
-                                          <div class="ba-multiselect-options layout-cell layout-scrollbar">
-                                             <div class="ba-option">
-                                                <span class="ba-checkbox"></span>
-                                                <span class="ba-option-label">Practice Dashboard</span>
-                                             </div>
-                                             <div class="ba-option">
-                                                <span class="ba-checkbox"></span>
-                                                <span class="ba-option-label">Provider Dashboard</span>
-                                             </div>
-                                             <div class="ba-option">
-                                                <span class="ba-checkbox"></span>
-                                                <span class="ba-option-label">Region Dashboard</span>
-                                             </div>
-                                          </div>
+                              <div class="feild-2 feild">
+                                 <div class="ba-input-wrapper ba-multiselect custom-select-wrapper" tabindex="0" >
+                                    <div class="ba-input-field">
+                                       <span>Eligibility</span>
+                                    </div>
+                                    <input type="hidden" class="ba-input-field-value" name="practiceFilters" id="practiceFilters">
+                                    <div class="ba-multiselect-options layout-cell layout-scrollbar">
+                                       <div class="ba-option">
+                                          <span class="ba-checkbox"></span>
+                                          <span class="ba-option-label">Dashboard</span>
                                        </div>
-                                       <div class="ba-input-wrapper ba-multiselect custom-select-wrapper" tabindex="0">
-                                          <div class="ba-input-field">
-                                             <span>Collections</span>
-                                          </div>
-                                          <input type="hidden" class="ba-input-field-value">
-                                          <div class="ba-multiselect-options layout-cell layout-scrollbar">
-                                             <div class="ba-option">
-                                                <span class="ba-checkbox"></span>
-                                                <span class="ba-option-label">Dashboard</span>
-                                             </div>
-                                             <div class="ba-option">
-                                                <span class="ba-checkbox"></span>
-                                                <span class="ba-option-label">Collections</span>
-                                             </div>
-                                          </div>
+                                       <div class="ba-option">
+                                          <span class="ba-checkbox"></span>
+                                          <span class="ba-option-label">Pending</span>
+                                       </div>
+                                       <div class="ba-option">
+                                          <span class="ba-checkbox"></span>
+                                          <span class="ba-option-label">Verify Patient</span>
+                                       </div>
+                                       <div class="ba-option">
+                                          <span class="ba-checkbox"></span>
+                                          <span class="ba-option-label">View Insurance Breakdown</span>
                                        </div>
                                     </div>
-                                    <div class="feild-2 feild">
-                                       <div class="ba-input-wrapper ba-multiselect custom-select-wrapper" tabindex="0" >
-                                          <div class="ba-input-field">
-                                             <span>Eligibility</span>
-                                          </div>
-                                          <input type="hidden" class="ba-input-field-value" name="practiceFilters" id="practiceFilters">
-                                          <div class="ba-multiselect-options layout-cell layout-scrollbar">
-                                             <div class="ba-option">
-                                                <span class="ba-checkbox"></span>
-                                                <span class="ba-option-label">Dashboard</span>
-                                             </div>
-                                             <div class="ba-option">
-                                                <span class="ba-checkbox"></span>
-                                                <span class="ba-option-label">Pending</span>
-                                             </div>
-                                             <div class="ba-option">
-                                                <span class="ba-checkbox"></span>
-                                                <span class="ba-option-label">Verify Patient</span>
-                                             </div>
-                                             <div class="ba-option">
-                                                <span class="ba-checkbox"></span>
-                                                <span class="ba-option-label">View Insurance Breakdown</span>
-                                             </div>
-                                          </div>
+                                 </div>
+                                 <div class="ba-input-wrapper ba-multiselect custom-select-wrapper" tabindex="0">
+                                    <div class="ba-input-field">
+                                       <span>Engagement</span>
+                                    </div>
+                                    <input type="hidden" class="ba-input-field-value">
+                                    <div class="ba-multiselect-options layout-cell layout-scrollbar">
+                                       <div class="ba-option">
+                                          <span class="ba-checkbox"></span>
+                                          <span class="ba-option-label">Dashboard</span>
                                        </div>
-                                       <div class="ba-input-wrapper ba-multiselect custom-select-wrapper" tabindex="0">
-                                          <div class="ba-input-field">
-                                             <span>Engagement</span>
-                                          </div>
-                                          <input type="hidden" class="ba-input-field-value">
-                                          <div class="ba-multiselect-options layout-cell layout-scrollbar">
-                                             <div class="ba-option">
-                                                <span class="ba-checkbox"></span>
-                                                <span class="ba-option-label">Dashboard</span>
-                                             </div>
-                                             <div class="ba-option">
-                                                <span class="ba-checkbox"></span>
-                                                <span class="ba-option-label">Confirmation Pending</span>
-                                             </div>
-                                             <div class="ba-option">
-                                                <span class="ba-checkbox"></span>
-                                                <span class="ba-option-label">Confirmation Completed</span>
-                                             </div>
-                                             <div class="ba-option">
-                                                <span class="ba-checkbox"></span>
-                                                <span class="ba-option-label">Hygiene Pending</span>
-                                             </div>
-                                             <div class="ba-option">
-                                                <span class="ba-checkbox"></span>
-                                                <span class="ba-option-label">Hygiene Completed</span>
-                                             </div>
-                                          </div>
+                                       <div class="ba-option">
+                                          <span class="ba-checkbox"></span>
+                                          <span class="ba-option-label">Confirmation Pending</span>
+                                       </div>
+                                       <div class="ba-option">
+                                          <span class="ba-checkbox"></span>
+                                          <span class="ba-option-label">Confirmation Completed</span>
+                                       </div>
+                                       <div class="ba-option">
+                                          <span class="ba-checkbox"></span>
+                                          <span class="ba-option-label">Hygiene Pending</span>
+                                       </div>
+                                       <div class="ba-option">
+                                          <span class="ba-checkbox"></span>
+                                          <span class="ba-option-label">Hygiene Completed</span>
                                        </div>
                                     </div>
-                                    <div class="feild-3 feild">
-                                       <div class="ba-input-wrapper ba-multiselect custom-select-wrapper" tabindex="0" >
-                                          <div class="ba-input-field">
-                                             <span>Messaging</span>
-                                          </div>
-                                          <input type="hidden" class="ba-input-field-value" name="practiceFilters" id="practiceFilters">
-                                          <div class="ba-multiselect-options layout-cell layout-scrollbar">
-                                             <div class="ba-option">
-                                                <span class="ba-checkbox"></span>
-                                                <span class="ba-option-label">Inbox</span>
-                                             </div>
-                                             <div class="ba-option">
-                                                <span class="ba-checkbox"></span>
-                                                <span class="ba-option-label">Mass SMS</span>
-                                             </div>
-                                          </div>
-                                       </div>
-                                       <div class="ba-input-wrapper ba-multiselect custom-select-wrapper" tabindex="0">
-                                          <div class="ba-input-field">
-                                             <span>Payments</span>
-                                          </div>
-                                          <input type="hidden" class="ba-input-field-value">
-                                          <div class="ba-multiselect-options layout-cell layout-scrollbar">
-                                             <div class="ba-option">
-                                                <span class="ba-checkbox"></span>
-                                                <span class="ba-option-label">Dashboard</span>
-                                             </div>
-                                             <div class="ba-option">
-                                                <span class="ba-checkbox"></span>
-                                                <span class="ba-option-label">Pending</span>
-                                             </div>
-                                             <div class="ba-option">
-                                                <span class="ba-checkbox"></span>
-                                                <span class="ba-option-label">Completed</span>
-                                             </div>
-                                             <div class="ba-option">
-                                                <span class="ba-checkbox"></span>
-                                                <span class="ba-option-label">Create Payment</span>
-                                             </div>
-                                             <div class="ba-option">
-                                                <span class="ba-checkbox"></span>
-                                                <span class="ba-option-label">Issue Refund</span>
-                                             </div>
-                                             <div class="ba-option">
-                                                <span class="ba-checkbox"></span>
-                                                <span class="ba-option-label">Recurring</span>
-                                             </div>
-                                             <div class="ba-option">
-                                                <span class="ba-checkbox"></span>
-                                                <span class="ba-option-label">Transactions</span>
-                                             </div>
-                                          </div>
-                                       </div>
-                                    </div>
-                                    <div class="feild-4 feild">
-                                       <div class="ba-input-wrapper ba-multiselect custom-select-wrapper" tabindex="0" >
-                                          <div class="ba-input-field">
-                                             <span>Payroll</span>
-                                          </div>
-                                          <input type="hidden" class="ba-input-field-value" name="practiceFilters" id="practiceFilters">
-                                          <div class="ba-multiselect-options layout-cell layout-scrollbar">
-                                             <div class="ba-option">
-                                                <span class="ba-checkbox"></span>
-                                                <span class="ba-option-label">Dashboard</span>
-                                             </div>
-                                             <div class="ba-option">
-                                                <span class="ba-checkbox"></span>
-                                                <span class="ba-option-label">Payroll</span>
-                                             </div>
-                                          </div>
-                                       </div>
-                                       <div class="ba-input-wrapper ba-multiselect custom-select-wrapper" tabindex="0">
-                                          <div class="ba-input-field">
-                                             <span>Reviews</span>
-                                          </div>
-                                          <input type="hidden" class="ba-input-field-value">
-                                          <div class="ba-multiselect-options layout-cell layout-scrollbar">
-                                             <div class="ba-option">
-                                                <span class="ba-checkbox"></span>
-                                                <span class="ba-option-label">Dashboard</span>
-                                             </div>
-                                             <div class="ba-option">
-                                                <span class="ba-checkbox"></span>
-                                                <span class="ba-option-label">Write Response</span>
-                                             </div>
-                                          </div>
-                                       </div>
-                                    </div>
-                                    <div class="feild-5 feild">
-                                       <div class="ba-input-wrapper ba-multiselect custom-select-wrapper" tabindex="0" >
-                                          <div class="ba-input-field">
-                                             <span>Treatment</span>
-                                          </div>
-                                          <input type="hidden" class="ba-input-field-value" name="practiceFilters" id="practiceFilters">
-                                          <div class="ba-multiselect-options layout-cell layout-scrollbar">
-                                             <div class="ba-option">
-                                                <span class="ba-checkbox"></span>
-                                                <span class="ba-option-label">Call List</span>
-                                             </div>
-                                             <div class="ba-option">
-                                                <span class="ba-checkbox"></span>
-                                                <span class="ba-option-label">Pending</span>
-                                             </div>
-                                             <div class="ba-option">
-                                                <span class="ba-checkbox"></span>
-                                                <span class="ba-option-label">Completed</span>
-                                             </div>
-                                          </div>
-                                       </div>
-                                       <div class="ba-input-wrapper ba-multiselect custom-select-wrapper" tabindex="0">
-                                          <div class="ba-input-field">
-                                             <span>Virtual Terminal</span>
-                                          </div>
-                                          <input type="hidden" class="ba-input-field-value">
-                                          <div class="ba-multiselect-options layout-cell layout-scrollbar">
-                                             <div class="ba-option">
-                                                <span class="ba-checkbox"></span>
-                                                <span class="ba-option-label">Virtual Terminal</span>
-                                             </div>
-                                          </div>
-                                       </div>
-                                    </div>
-                                    <div class="cta-wrapper">
-                                       <a class="cta cta-white cancel">Cancel</a>
-                                       <a class="cta cta-blue saveContinue">Confirm & Add User</a>
-                                    </div>
-                                 </form>
+                                 </div>
                               </div>
-                           </div>
+                              <div class="feild-3 feild">
+                                 <div class="ba-input-wrapper ba-multiselect custom-select-wrapper" tabindex="0" >
+                                    <div class="ba-input-field">
+                                       <span>Messaging</span>
+                                    </div>
+                                    <input type="hidden" class="ba-input-field-value" name="practiceFilters" id="practiceFilters">
+                                    <div class="ba-multiselect-options layout-cell layout-scrollbar">
+                                       <div class="ba-option">
+                                          <span class="ba-checkbox"></span>
+                                          <span class="ba-option-label">Inbox</span>
+                                       </div>
+                                       <div class="ba-option">
+                                          <span class="ba-checkbox"></span>
+                                          <span class="ba-option-label">Mass SMS</span>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <div class="ba-input-wrapper ba-multiselect custom-select-wrapper" tabindex="0">
+                                    <div class="ba-input-field">
+                                       <span>Payments</span>
+                                    </div>
+                                    <input type="hidden" class="ba-input-field-value">
+                                    <div class="ba-multiselect-options layout-cell layout-scrollbar">
+                                       <div class="ba-option">
+                                          <span class="ba-checkbox"></span>
+                                          <span class="ba-option-label">Dashboard</span>
+                                       </div>
+                                       <div class="ba-option">
+                                          <span class="ba-checkbox"></span>
+                                          <span class="ba-option-label">Pending</span>
+                                       </div>
+                                       <div class="ba-option">
+                                          <span class="ba-checkbox"></span>
+                                          <span class="ba-option-label">Completed</span>
+                                       </div>
+                                       <div class="ba-option">
+                                          <span class="ba-checkbox"></span>
+                                          <span class="ba-option-label">Create Payment</span>
+                                       </div>
+                                       <div class="ba-option">
+                                          <span class="ba-checkbox"></span>
+                                          <span class="ba-option-label">Issue Refund</span>
+                                       </div>
+                                       <div class="ba-option">
+                                          <span class="ba-checkbox"></span>
+                                          <span class="ba-option-label">Recurring</span>
+                                       </div>
+                                       <div class="ba-option">
+                                          <span class="ba-checkbox"></span>
+                                          <span class="ba-option-label">Transactions</span>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="feild-4 feild">
+                                 <div class="ba-input-wrapper ba-multiselect custom-select-wrapper" tabindex="0" >
+                                    <div class="ba-input-field">
+                                       <span>Payroll</span>
+                                    </div>
+                                    <input type="hidden" class="ba-input-field-value" name="practiceFilters" id="practiceFilters">
+                                    <div class="ba-multiselect-options layout-cell layout-scrollbar">
+                                       <div class="ba-option">
+                                          <span class="ba-checkbox"></span>
+                                          <span class="ba-option-label">Dashboard</span>
+                                       </div>
+                                       <div class="ba-option">
+                                          <span class="ba-checkbox"></span>
+                                          <span class="ba-option-label">Payroll</span>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <div class="ba-input-wrapper ba-multiselect custom-select-wrapper" tabindex="0">
+                                    <div class="ba-input-field">
+                                       <span>Reviews</span>
+                                    </div>
+                                    <input type="hidden" class="ba-input-field-value">
+                                    <div class="ba-multiselect-options layout-cell layout-scrollbar">
+                                       <div class="ba-option">
+                                          <span class="ba-checkbox"></span>
+                                          <span class="ba-option-label">Dashboard</span>
+                                       </div>
+                                       <div class="ba-option">
+                                          <span class="ba-checkbox"></span>
+                                          <span class="ba-option-label">Write Response</span>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="feild-5 feild">
+                                 <div class="ba-input-wrapper ba-multiselect custom-select-wrapper" tabindex="0" >
+                                    <div class="ba-input-field">
+                                       <span>Treatment</span>
+                                    </div>
+                                    <input type="hidden" class="ba-input-field-value" name="practiceFilters" id="practiceFilters">
+                                    <div class="ba-multiselect-options layout-cell layout-scrollbar">
+                                       <div class="ba-option">
+                                          <span class="ba-checkbox"></span>
+                                          <span class="ba-option-label">Call List</span>
+                                       </div>
+                                       <div class="ba-option">
+                                          <span class="ba-checkbox"></span>
+                                          <span class="ba-option-label">Pending</span>
+                                       </div>
+                                       <div class="ba-option">
+                                          <span class="ba-checkbox"></span>
+                                          <span class="ba-option-label">Completed</span>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <div class="ba-input-wrapper ba-multiselect custom-select-wrapper" tabindex="0">
+                                    <div class="ba-input-field">
+                                       <span>Virtual Terminal</span>
+                                    </div>
+                                    <input type="hidden" class="ba-input-field-value">
+                                    <div class="ba-multiselect-options layout-cell layout-scrollbar">
+                                       <div class="ba-option">
+                                          <span class="ba-checkbox"></span>
+                                          <span class="ba-option-label">Virtual Terminal</span>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="cta-wrapper">
+                                 <a class="cta cta-white cancel">Cancel</a>
+                                 <a class="cta cta-blue saveContinue">Confirm & Add User</a>
+                              </div>
+                           </form>
                         </div>
                      </div>
                   </div>
                </div>
             </div>
-      </div>
-      </div>
+         </section>
       </main>
-      </div>
       <!-- imports for app and controllers  -->
+      <!-- app js for angular modulea -->
+      <script src="./app/user.js" defer></script>
       <!-- controllers  -->
       <!-- JS and JQuery from small interactions and logics  -->
       <script>
@@ -777,18 +783,11 @@
                  $('.ba-main').toggleClass('pull-right')
                  // $('.ba-topnav').toggleClass('pull-right')
                  $('.ham-icon').toggleClass('_close')
-         
              })
-            $('.edit-profile .gernal-profile .form-control:not(.no-required)').focusout(function(ele){
-                 setTimeout(function(){
-                     var $this = $(ele.currentTarget);
-                     if($this.val() === ''){
-                         $this.closest('.form-field').addClass('show-error');
-                     } else{
-                         $this.closest('.form-field').removeClass('show-error');
-                     }
-                 }, 100);
-             });
+             // adding tab index to custom input and popover menus
+             $('.has-flyout').attr('tabindex', '0');
+             $('.ba-input-wrapper').attr('tabindex', '0');
+             $('.ba-filter-select').attr('tabindex', '0');
          
          
              $('.has-flyout').click(function () {
@@ -798,7 +797,14 @@
                  $(this).removeClass('_show-menu')
              })
          
-             
+             $('.filter-single-select').click(function () {
+                 $(this).toggleClass('_show-options')
+             })
+         
+             $('.filter-single-select').on('blur', function () {
+                 $(this).removeClass('_show-options')
+             })
+         
              $('.ba-topnav-item').click(function () {
                  $(this).addClass('_active').siblings().removeClass('_active')
              })
@@ -811,11 +817,6 @@
                  $(this).parent().parent().toggleClass('_show-children')
                  $(this).parent().parent().siblings().removeClass('_show-children')
              })
-            $('#dtBasicExample').DataTable();
-            $('.dataTables_length').addClass('bs-select');
-         
-            $('.table-wrapper .dataTables_filter').addClass('show-search').appendTo('.top-gutter .search-bar');
-             
          });
       </script>
    </body>
