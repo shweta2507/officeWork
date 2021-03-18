@@ -772,7 +772,26 @@ $('.edit-profile .gernal-profile .form-control:not(.no-required)').focusout(func
 })(window, jQuery);
 
 
-
+function checkInpuVal() {
+    $('.custom-edit-pp .gernal-profile-form .form-control:not(.no-required)').each(function(i, ele){
+        var $this = $(ele);
+        if($this.val() === ''){
+            $this.closest('.form-field').addClass('show-error');
+        } else{
+            $this.closest('.form-field').removeClass('show-error');
+        }
+    });
+}
+function checkInpuVal2() {
+    $('.password-change .password-change-wrapper .form-control:not(.no-required)').each(function(i, ele){
+        var $this = $(ele);
+        if($this.val() === ''){
+            $this.closest('.form-field').addClass('show-error');
+        } else{
+            $this.closest('.form-field').removeClass('show-error');
+        }
+    });
+}
 
 $(function() {
 
@@ -795,3 +814,48 @@ $(function() {
     });
 
 });
+$(document).ready(function(){
+    $('.edit-profile-drowpdown>ul>li>ul>li.upload-img').click(function(){
+        $('.photo__frame')[0].click();
+    });
+    $('.edit-profile-wrapper button.btn.btn-primary').click(function(){
+        $('.form-field').removeClass('show-error');
+    });
+    $('.custom-edit-pp .gernal-profile-form .form-button .btn-blue').click(function(ele){
+        var $this = $(ele.currentTarget);
+        checkInpuVal();
+        setTimeout(function(){
+            if($this.closest('.form-feild').find('.show-error').length === 0){
+                $this.parent().addClass('show-loader');
+                setTimeout(function(){
+                    $this.parent().removeClass('show-loader');
+                }, 3000);
+            }
+        }, 0);
+    });
+    $('.password-change .password-change-wrapper .form-button .btn-blue').click(function(ele){
+        var $this = $(ele.currentTarget);
+        checkInpuVal2();
+        setTimeout(function(){
+            if($this.closest('.form-feild').find('.show-error').length === 0){
+                $this.parent().addClass('show-loader');
+                setTimeout(function(){
+                    $this.parent().removeClass('show-loader');
+                }, 3000);
+            }
+        }, 0);
+    });
+    $('.edit-profile-drowpdown>ul>li.edit-menu img.drowpdown-icon').click(function(ele){
+        ele.stopPropagation();
+        $(this).next('ul').show();
+    });
+    $('.edit-profile-drowpdown>ul>li.edit-menu ul li').click(function(ele){
+        ele.stopPropagation();
+        $(this).parent('ul').hide();
+    });
+    $('.modal-content').click(function(ele){
+        ele.stopPropagation();
+        $('.edit-profile-drowpdown>ul>li.edit-menu ul').hide();
+    });    
+});
+

@@ -2544,8 +2544,6 @@ span.circle.green:before {
 
 .edit-profile-drowpdown>ul>li>ul {
   position: absolute;
-  opacity: 0;
-  visibility: hidden;
   width: 138px;
   height: 129px;
   background: #FFFFFF 0% 0% no-repeat padding-box;
@@ -2554,15 +2552,16 @@ span.circle.green:before {
   right: 0;
   left: auto;
   z-index: 99;
+  display:none;
 }
 
 .edit-profile-drowpdown>ul>li.edit-menu {
   position: relative;
+  cursor: pointer;
 }
 
-.edit-profile-drowpdown>ul>li.edit-menu:hover>ul {
-  opacity: 1;
-  visibility: visible;
+.edit-profile-drowpdown>ul>li.edit-menu.clicked >ul {
+  display: block;
 }
 
 .edit-profile-drowpdown>ul>li>ul>li {
@@ -3453,9 +3452,6 @@ main.ba-main.main-dashboard.pull-right .ba-topnav {
   overflow:hidden;
 }
 .modal-open .modal.in {
-  display: flex !important;
-  align-items: center;
-  justify-content: center;
 }
 
 .modal-content {
@@ -3480,6 +3476,56 @@ main.ba-main.main-dashboard.pull-right .ba-topnav {
 span.far.fa-eye:before {
   display: none !important;
 }
+
+.form-button {
+  position: relative;
+}
+.loader svg#loader-1 path {
+  fill: #FFFFFFB3;
+}
+.loader svg {
+  max-width: 20px;
+  max-height: 20px;
+}
+.form-button .loader {
+  position: absolute;
+  right: 0;
+  top: 11px;
+  opacity: 0;
+  visibility: hidden;
+  max-width: 160px;
+  width: 100%;
+  text-align: center;
+}
+
+.form-button.show-loader .btn-blue {color: #03C6D8 !important;}
+.form-button.show-loader .btn-blue+.loader {
+    opacity: 1;
+    visibility: visible;
+}
+
+.form-field.show-error label.form-label {
+  color: #FF7596;
+  opacity: 1;
+}
+
+.form-control {
+  background-color: #F3F4F43D;
+}
+
+.form-button.show-loader a.for-btn.btn-blue {
+  background-color: #03C6D8 !important;
+  border-color: #03C6D8 !important;
+}
+
+.modal.fade .modal-dialog {
+  transform: none !important;
+}
+
+.modal.in .modal-dialog {
+  transform: none !important;
+}
+
 
 /* ======================    Responsive Styling  ================= */
 
@@ -3513,5 +3559,8 @@ span.far.fa-eye:before {
 @media (min-width: 768px) {
   .modal-dialog {
     width: 625px !important;
+  }
+  .modal-dialog {
+    margin-top: 230px !important;
   }
 }

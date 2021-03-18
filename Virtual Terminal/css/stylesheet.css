@@ -692,10 +692,11 @@ span.error:before {
     height: 12px;
     margin-right: 5px;
     vertical-align: text-bottom;
+
+}
     .loader svg {
     max-width: 20px;
     max-height: 20px;
-}
 }
 input#card.show-card {
     background: url(../img/visaicon.svg);
