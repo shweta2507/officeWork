@@ -212,9 +212,9 @@
                   <div class="top-gutter">
                      <div class="search-bar"></div>
                      <div class="ba-input-wrapper ba-multiselect">
-                        <div class="ba-input-field">
-                           <span ng-show="practiceFilters.length == 0">All Practices</span>
-                           <span ng-show="practiceFilters.length == 1">{{ practiceFilters[0] }}</span>
+                        <div class="ba-input-field" title="Practice Name">
+                           <span ng-show="practiceFilters.length == 0"></span>
+                           <span ng-show="practiceFilters.length == 1" class="check-select">{{ practiceFilters[0] }}</span>
                            <span ng-show="practiceFilters.length > 1">
                            {{ practiceFilters[0]+' (+' + (practiceFilters.length-1) +')' }}
                            </span>
@@ -237,29 +237,29 @@
                         </div>
                      </div>
                      <div class="ba-input-wrapper ba-multiselect">
-                        <div class="ba-input-field">
-                           <span ng-show="regionFilters.length == 0">All Regions</span>
-                           <span ng-show="regionFilters.length == 1">{{ regionFilters[0] }}</span>
+                        <div class="ba-input-field" title="Region">
+                           <span ng-show="regionFilters.length == 0"></span>
+                           <span ng-show="regionFilters.length == 1" class="check-select">{{ regionFilters[0] }}</span>
                            <span ng-show="regionFilters.length > 1">
                            {{ regionFilters[0]+' (+' + (regionFilters.length-1) +')' }}
                            </span>
                         </div>
                         <input type="hidden" class="ba-input-field-value" name="regionFilters" id="regionFilters"
                            ng-model="regionFilters">
-                        <div class="ba-multiselect-options layout-cell layout-scrollbar">
-                           <div class="ba-option" ng-click="selectAllMultiSelect('regionOptions','regionFilters' )">
-                              <span class="ba-checkbox"
-                                 ng-class="{__checked : isChecked('all','regionOptions','regionFilters')}"></span>
-                              <span class="ba-option-label">All Practices</span>
+                           <div class="ba-multiselect-options layout-cell layout-scrollbar">
+                              <div class="ba-option" ng-click="selectAllMultiSelect('regionOptions','regionFilters' )">
+                                 <span class="ba-checkbox"
+                                    ng-class="{__checked : isChecked('all','regionOptions','regionFilters')}"></span>
+                                 <span class="ba-option-label">All Practices</span>
+                              </div>
+                              <div class="ba-option" ng-repeat="option in regionOptions"
+                                 ng-click="toggleMultiSelect('regionFilters', option )">
+                                 <span class="ba-checkbox"
+                                    ng-class="{__checked : isChecked(option,'regionOptions','regionFilters')}">
+                                 </span>
+                                 <span class="ba-option-label">{{option}}</span>
+                              </div>
                            </div>
-                           <div class="ba-option" ng-repeat="option in regionOptions"
-                              ng-click="toggleMultiSelect('regionFilters', option )">
-                              <span class="ba-checkbox"
-                                 ng-class="{__checked : isChecked(option,'regionOptions','regionFilters')}">
-                              </span>
-                              <span class="ba-option-label">{{option}}</span>
-                           </div>
-                        </div>
                      </div>
                   </div>
                   <div class="adduser-button">
@@ -405,45 +405,53 @@
                                     </div>
                                  </div>
                                  <div class="feild-2 feild">
-                                    <div class="ba-input-wrapper ba-multiselect custom-select-wrapper" tabindex="0" >
-                                       <div class="ba-input-field">
-                                          <span>Practice Access</span>
+                                    <div class="ba-input-wrapper ba-multiselect">
+                                       <div class="ba-input-field" title="Practice Access">
+                                          <span ng-show="practiceAccessFilters.length == 0"></span>
+                                          <span ng-show="practiceAccessFilters.length == 1" class="check-select">{{ practiceAccessFilters[0] }}</span>
+                                          <span ng-show="practiceAccessFilters.length > 1">
+                                          {{ practiceAccessFilters[0]+' (+' + (practiceAccessFilters.length-1) +')' }}
+                                          </span>
                                        </div>
-                                       <input type="hidden" class="ba-input-field-value" name="practiceFilters" id="practiceFilters">
-                                       <span class="error">Enter a minimum of 1 practice.</span>
+                                       <input type="hidden" class="ba-input-field-value" name="practiceAccessFilters" id="practiceAccessFilters"
+                                       ng-model="practiceAccessFilters">
                                        <div class="ba-multiselect-options layout-cell layout-scrollbar">
-                                          <div class="ba-option">
-                                             <span class="ba-checkbox"></span>
-                                             <span class="ba-option-label">Practice Access</span>
+                                          <div class="ba-option" ng-click="selectAllMultiSelect('practiceAccessOptions','practiceAccessFilters' )">
+                                             <span class="ba-checkbox"
+                                             ng-class="{__checked : isChecked('all','practiceAccessOptions','practiceAccessFilters')}"></span>
+                                             <span class="ba-option-label">All Practices</span>
                                           </div>
-                                          <div class="ba-option">
-                                             <span class="ba-checkbox"></span>
-                                             <span class="ba-option-label">All Practices Dummy 1</span>
-                                          </div>
-                                          <div class="ba-option">
-                                             <span class="ba-checkbox"></span>
-                                             <span class="ba-option-label">All Practices Dummy 2</span>
+                                          <div class="ba-option" ng-repeat="option in practiceAccessOptions"
+                                          ng-click="toggleMultiSelect('practiceAccessFilters', option )">
+                                             <span class="ba-checkbox"
+                                             ng-class="{__checked : isChecked(option,'practiceAccessOptions','practiceAccessFilters')}">
+                                             </span>
+                                             <span class="ba-option-label">{{option}}</span>
                                           </div>
                                        </div>
                                     </div>
-                                    <div class="ba-input-wrapper ba-multiselect custom-select-wrapper" tabindex="0">
-                                       <div class="ba-input-field">
-                                          <span>Region Access</span>
+                                    <div class="ba-input-wrapper ba-multiselect">
+                                       <div class="ba-input-field" title="Region Access">
+                                          <span ng-show="regionAccessFilters.length == 0"></span>
+                                          <span ng-show="regionAccessFilters.length == 1" class="check-select">{{ regionAccessFilters[0] }}</span>
+                                          <span ng-show="regionAccessFilters.length > 1">
+                                          {{ regionAccessFilters[0]+' (+' + (regionAccessFilters.length-1) +')' }}
+                                          </span>
                                        </div>
-                                       <input type="hidden" class="ba-input-field-value">
-                                       <span class="error">Enter a minimum of 1 region.</span>
+                                       <input type="hidden" class="ba-input-field-value" name="regionAccessFilters" id="regionAccessFilters"
+                                       ng-model="regionAccessFilters">
                                        <div class="ba-multiselect-options layout-cell layout-scrollbar">
-                                          <div class="ba-option">
-                                             <span class="ba-checkbox"></span>
-                                             <span class="ba-option-label">Region Access</span>
+                                          <div class="ba-option" ng-click="selectAllMultiSelect('regionAccessOptions','regionAccessFilters' )">
+                                             <span class="ba-checkbox"
+                                             ng-class="{__checked : isChecked('all','regionAccessOptions','regionAccessFilters')}"></span>
+                                             <span class="ba-option-label">All Practices</span>
                                           </div>
-                                          <div class="ba-option">
-                                             <span class="ba-checkbox"></span>
-                                             <span class="ba-option-label">Region Access 1</span>
-                                          </div>
-                                          <div class="ba-option">
-                                             <span class="ba-checkbox"></span>
-                                             <span class="ba-option-label">Region Access 2</span>
+                                          <div class="ba-option" ng-repeat="option in regionAccessOptions"
+                                          ng-click="toggleMultiSelect('regionAccessFilters', option )">
+                                             <span class="ba-checkbox"
+                                             ng-class="{__checked : isChecked(option,'regionAccessOptions','regionAccessFilters')}">
+                                             </span>
+                                             <span class="ba-option-label">{{option}}</span>
                                           </div>
                                        </div>
                                     </div>
@@ -490,10 +498,6 @@
                                     </div>
                                     <input type="hidden" class="ba-input-field-value" name="practiceFilters" id="practiceFilters">
                                     <div class="ba-multiselect-options layout-cell layout-scrollbar">
-                                       <div class="ba-option">
-                                          <span class="ba-checkbox"></span>
-                                          <span class="ba-option-label">Admin</span>
-                                       </div>
                                        <div class="ba-option">
                                           <span class="ba-checkbox"></span>
                                           <span class="ba-option-label">Enable</span>
@@ -551,9 +555,9 @@
                               <form class="add-user-details">
                                  <div class="feild-1 feild">
                                     <div class="ba-input-wrapper ba-multiselect">
-                                       <div class="ba-input-field">
-                                          <span ng-show="analyticsFilters.length == 0">Analytics</span>
-                                          <span ng-show="analyticsFilters.length == 1">{{ analyticsFilters[0] }}</span>
+                                       <div class="ba-input-field" title="Analytics">
+                                          <span ng-show="analyticsFilters.length == 0"></span>
+                                          <span ng-show="analyticsFilters.length == 1" class="check-select">{{ analyticsFilters[0] }}</span>
                                           <span ng-show="analyticsFilters.length > 1">
                                           {{ analyticsFilters[0]+' (+' + (analyticsFilters.length-1) +')' }}
                                           </span>
@@ -576,9 +580,9 @@
                                        </div>
                                     </div>
                                     <div class="ba-input-wrapper ba-multiselect">
-                                       <div class="ba-input-field">
-                                          <span ng-show="collectionsFilters.length == 0">Collections</span>
-                                          <span ng-show="collectionsFilters.length == 1">{{ collectionsFilters[0] }}</span>
+                                       <div class="ba-input-field" title="Collections">
+                                          <span ng-show="collectionsFilters.length == 0"></span>
+                                          <span ng-show="collectionsFilters.length == 1" class="check-select">{{ collectionsFilters[0] }}</span>
                                           <span ng-show="collectionsFilters.length > 1">
                                           {{ collectionsFilters[0]+' (+' + (collectionsFilters.length-1) +')' }}
                                           </span>
@@ -603,9 +607,9 @@
                                  </div>
                                  <div class="feild-2 feild">
                                     <div class="ba-input-wrapper ba-multiselect">
-                                       <div class="ba-input-field">
-                                          <span ng-show="eligibilityFilters.length == 0">Eligibility</span>
-                                          <span ng-show="eligibilityFilters.length == 1">{{ eligibilityFilters[0] }}</span>
+                                       <div class="ba-input-field" title="Eligibility">
+                                          <span ng-show="eligibilityFilters.length == 0"></span>
+                                          <span ng-show="eligibilityFilters.length == 1" class="check-select">{{ eligibilityFilters[0] }}</span>
                                           <span ng-show="eligibilityFilters.length > 1">
                                           {{ eligibilityFilters[0]+' (+' + (eligibilityFilters.length-1) +')' }}
                                           </span>
@@ -628,9 +632,9 @@
                                        </div>
                                      </div>
                                      <div class="ba-input-wrapper ba-multiselect">
-                                       <div class="ba-input-field">
-                                          <span ng-show="engagementFilters.length == 0">Engagement</span>
-                                          <span ng-show="engagementFilters.length == 1">{{ engagementFilters[0] }}</span>
+                                       <div class="ba-input-field" title="Engagement">
+                                          <span ng-show="engagementFilters.length == 0"></span>
+                                          <span ng-show="engagementFilters.length == 1" class="check-select">{{ engagementFilters[0] }}</span>
                                           <span ng-show="engagementFilters.length > 1">
                                           {{ engagementFilters[0]+' (+' + (engagementFilters.length-1) +')' }}
                                           </span>
@@ -655,9 +659,9 @@
                                  </div>
                                  <div class="feild-3 feild">
                                     <div class="ba-input-wrapper ba-multiselect">
-                                       <div class="ba-input-field">
-                                          <span ng-show="messagingFilters.length == 0">Messaging</span>
-                                          <span ng-show="messagingFilters.length == 1">{{ messagingFilters[0] }}</span>
+                                       <div class="ba-input-field" title="Messaging">
+                                          <span ng-show="messagingFilters.length == 0"></span>
+                                          <span ng-show="messagingFilters.length == 1" class="check-select">{{ messagingFilters[0] }}</span>
                                           <span ng-show="messagingFilters.length > 1">
                                           {{ messagingFilters[0]+' (+' + (messagingFilters.length-1) +')' }}
                                           </span>
@@ -680,9 +684,9 @@
                                        </div>
                                      </div>
                                      <div class="ba-input-wrapper ba-multiselect">
-                                       <div class="ba-input-field">
-                                          <span ng-show="paymentsFilters.length == 0">Payments</span>
-                                          <span ng-show="paymentsFilters.length == 1">{{ paymentsFilters[0] }}</span>
+                                       <div class="ba-input-field" title="Payments">
+                                          <span ng-show="paymentsFilters.length == 0"></span>
+                                          <span ng-show="paymentsFilters.length == 1" class="check-select">{{ paymentsFilters[0] }}</span>
                                           <span ng-show="paymentsFilters.length > 1">
                                           {{ paymentsFilters[0]+' (+' + (paymentsFilters.length-1) +')' }}
                                           </span>
@@ -707,9 +711,9 @@
                                  </div>
                                  <div class="feild-4 feild">
                                     <div class="ba-input-wrapper ba-multiselect">
-                                       <div class="ba-input-field">
-                                          <span ng-show="payrollFilters.length == 0">Payroll</span>
-                                          <span ng-show="payrollFilters.length == 1">{{ payrollFilters[0] }}</span>
+                                       <div class="ba-input-field" title="Payroll">
+                                          <span ng-show="payrollFilters.length == 0"></span>
+                                          <span ng-show="payrollFilters.length == 1" class="check-select">{{ payrollFilters[0] }}</span>
                                           <span ng-show="payrollFilters.length > 1">
                                           {{ payrollFilters[0]+' (+' + (payrollFilters.length-1) +')' }}
                                           </span>
@@ -732,9 +736,9 @@
                                        </div>
                                      </div>
                                      <div class="ba-input-wrapper ba-multiselect">
-                                       <div class="ba-input-field">
-                                          <span ng-show="reviewsFilters.length == 0">Reviews</span>
-                                          <span ng-show="reviewsFilters.length == 1">{{ reviewsFilters[0] }}</span>
+                                       <div class="ba-input-field" title="Reviews">
+                                          <span ng-show="reviewsFilters.length == 0"></span>
+                                          <span ng-show="reviewsFilters.length == 1" class="check-select">{{ reviewsFilters[0] }}</span>
                                           <span ng-show="reviewsFilters.length > 1">
                                           {{ reviewsFilters[0]+' (+' + (reviewsFilters.length-1) +')' }}
                                           </span>
@@ -759,9 +763,9 @@
                                  </div>
                                  <div class="feild-5 feild">
                                     <div class="ba-input-wrapper ba-multiselect">
-                                       <div class="ba-input-field">
-                                          <span ng-show="treatmentFilters.length == 0">Treatment</span>
-                                          <span ng-show="treatmentFilters.length == 1">{{ treatmentFilters[0] }}</span>
+                                       <div class="ba-input-field" title="Treatment">
+                                          <span ng-show="treatmentFilters.length == 0"></span>
+                                          <span ng-show="treatmentFilters.length == 1" class="check-select">{{ treatmentFilters[0] }}</span>
                                           <span ng-show="treatmentFilters.length > 1">
                                           {{ treatmentFilters[0]+' (+' + (treatmentFilters.length-1) +')' }}
                                           </span>
@@ -784,9 +788,9 @@
                                        </div>
                                      </div>
                                      <div class="ba-input-wrapper ba-multiselect">
-                                       <div class="ba-input-field">
-                                          <span ng-show="virtualTerminalFilters.length == 0">Virtual Terminal</span>
-                                          <span ng-show="virtualTerminalFilters.length == 1">{{ virtualTerminalFilters[0] }}</span>
+                                       <div class="ba-input-field" title="Virtual Terminal">
+                                          <span ng-show="virtualTerminalFilters.length == 0"></span>
+                                          <span ng-show="virtualTerminalFilters.length == 1" class="check-select">{{ virtualTerminalFilters[0] }}</span>
                                           <span ng-show="virtualTerminalFilters.length > 1">
                                           {{ virtualTerminalFilters[0]+' (+' + (virtualTerminalFilters.length-1) +')' }}
                                           </span>
@@ -868,9 +872,99 @@
                $(this).parent().parent().toggleClass('_show-children')
                $(this).parent().parent().siblings().removeClass('_show-children')
             })
-            $('#dtBasicExample').DataTable();
+            $('#dtBasicExample').DataTable( {
+                  "lengthMenu": [[18, 36, 54, 72], [18, 36, 54, 72]]
+            });
             $('.dataTables_length').addClass('bs-select');
             $('.table-wrapper .dataTables_filter').addClass('show-search').appendTo('.top-gutter .search-bar');
+
+            $(".form-control").on("blur input focus", function() {
+            var $field = $(this).closest(".form-field");
+               if (this.value) {
+                  $field.addClass("custom-filled");
+               } else {
+                  $field.removeClass("custom-filled");
+               }
+            });
+            $(".form-control").on("focus", function() {
+               var $field = $(this).closest(".form-field");
+               if (this) {
+                  $field.addClass("custom-filled");
+               } else {
+                  $field.removeClass("custom-filled");
+               }
+            });
+            $(".dataTables_filter .form-control").on("blur input focus", function() {
+               var $field = $(this).closest(".dataTables_filter");
+               if (this.value) {
+                  $field.addClass("custom-filled");
+               } else {
+                  $field.removeClass("custom-filled");
+               }
+            });
+            $(".dataTables_filter .form-control").on("focus", function() {
+               var $field = $(this).closest(".dataTables_filter");
+               if (this) {
+                  $field.addClass("custom-filled");
+               } else {
+                  $field.removeClass("custom-filled");
+               }
+            });
+            $('.form-control:not(.no-required)').focusout(function(ele) {
+               setTimeout(function() {
+                  var $this = $(ele.currentTarget);
+                  if ($this.val() === '') {
+                        $this.closest('.form-field').addClass('show-error');
+                  } else {
+                        $this.closest('.form-field').removeClass('show-error');
+                  }
+               }, 100);
+            });
+            function checkInpuVal(){
+               $('.form-control:not(.no-required)').each(function(i, ele){
+                  var $this = $(ele);
+                  if($this.val() === ''){
+                        $this.closest('.form-field').addClass('show-error');
+                  } else{
+                        $this.closest('.form-field').removeClass('show-error');
+                  }
+               });
+            }
+            $(".ba-multiselect").on("blur input focus", function() {
+                  var $field = $(this);
+                  if ($(this).find('.check-select').text() !== "") {
+                     $field.addClass("custom-filled");
+                  } else {
+                     $field.removeClass("custom-filled");
+                  }
+               });
+               $(".ba-multiselect").on("focus", function() {
+                  console.log('work2');
+                  var $field = $(this).closest(".ba-multiselect");
+                  if ($(this).find('.ng-not-empty')) {
+                     $field.addClass("custom-filled");
+                  } else {
+                     $field.removeClass("custom-filled");
+                  }
+               });
+            $('.cta-wrapper a.cta .cancel').click(function(){
+               $('.adduser-button button.btn.btn-primary[data-target="#userModal"]')[0].click();
+            });
+            $('.adduser-wrapper .user-details .cta-wrapper .saveContinue').click(function(ele){
+               ele.stopPropagation();
+               var $this = $(ele.currentTarget);
+               checkInpuVal();
+               setTimeout(function(){
+                     if($('.show-error').length === 0){
+                        $this.parent().addClass('show-loader');
+                        setTimeout(function(){
+                           $this.parent().removeClass('show-loader');
+                           $('.adduser-wrapper').hide();
+                           $('.feature-access-wrapper').show();
+                        }, 3000);
+                     }
+               }, 0);
+            });
          });
       </script>
    </body>

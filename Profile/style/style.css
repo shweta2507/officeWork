@@ -2905,9 +2905,9 @@ span.error {
 }
 
 .form-field.show-error .form-control {
-    background: #FF75961A 0% 0% no-repeat padding-box;
-    border: 2px solid #FF7596;
-    opacity: 1;
+    background: #FF75961A !important;
+    border: 2px solid #FF7596 !important;
+    opacity: 1  !important;
 }
 
 span.error:before {

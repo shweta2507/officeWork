@@ -28,7 +28,23 @@ axleApp.controller('userController', function ($scope) {
     $scope.reviewsFilters = []
     $scope.treatmentFilters = []
     $scope.virtualTerminalFilters = []
+    $scope.practiceAccessFilters = []
+    $scope.regionAccessFilters = []
     
+    $scope.practiceAccessOptions = [
+        'Practices1',
+        'Practices2',
+        'Practices3',
+        'Practices4',
+        'Practices5'
+    ]
+    $scope.regionAccessOptions = [
+        'Practices1',
+        'Practices2',
+        'Practices3',
+        'Practices4',
+        'Practices5'
+    ]
     $scope.practiceOptions = [
         'Practices1',
         'Practices2',
