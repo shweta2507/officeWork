@@ -700,8 +700,7 @@ span.active-bar {
 .search-bar #dtBasicExample_filter.custom-filled > label input[type=search] {
   font-size: 13px;
   letter-spacing: 0px;
-  color: #343D56;
-  opacity: 0.4;
+  color: rgb(52 61 86 / 50%);
   line-height: 18px;
   font-family: 'Eina';
 }
