@@ -1,0 +1,1116 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Users | Axle</title>
+      <!-- skeleton ui -->
+      <!-- <link rel="stylesheet" href="./style/skeleton/normalize.css">
+         <link rel="stylesheet" href="./style/skeleton/skeleton.css">  -->
+      <!-- skeleton ui end -->
+      <!-- angular -->
+      <script src="./lib/angular.min.js"></script>
+      <!-- jQuery -->
+      <script src="./lib/jQuery.min.js"></script>
+      <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.0/js/bootstrap.min.js"></script>
+      <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+      <script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
+      <script src="https://cdn.datatables.net/1.10.24/js/dataTables.bootstrap.min.js"></script>
+      <link rel="stylesheet" href="https://cdn.datatables.net/1.10.24/css/dataTables.bootstrap.min.css">
+
+      <!-- highcharts  -->
+      <script src="https://code.highcharts.com/highcharts.src.js" defer></script>
+      <!-- custom select -->
+      <script src="./js/custom-select/select.js" type="module"></script>
+
+      <!-- Styles from old dashboard  -->
+      <link rel="stylesheet" href="css2/bootstrap.min.css">
+      <link rel="stylesheet" href="css2/font-awesome.css">
+      <link rel="stylesheet" href="css2/owl.carousel.css">
+      <link rel="stylesheet" href="css2/owl.theme.css">
+      <link rel="stylesheet" href="css2/owl.transitions.css">
+      <link rel="stylesheet" href="css2/animate.css">
+      <link rel="stylesheet" href="css2/normalize.css">
+      <link rel="stylesheet" href="css2/meanmenu.min.css">
+      <link rel="stylesheet" href="css2/main.css">
+      <link rel="stylesheet" href="css2/educate-custon-icon.css">
+      <link rel="stylesheet" href="css2/scrollbar/jquery.mCustomScrollbar.min.css">
+      <link rel="stylesheet" href="css2/metisMenu/metisMenu.min.css">
+      <link rel="stylesheet" href="css2/metisMenu/metisMenu-vertical.css">
+      <link rel="stylesheet" href="css2/calendar/fullcalendar.min.css">
+      <link rel="stylesheet" href="css2/calendar/fullcalendar.print.min.css">
+      <link rel="stylesheet" href="css2/style.css">
+      <link rel="stylesheet" href="css2/responsive.css">
+      <link rel="stylesheet" href="css2/color-style.css">
+      <link href="NewCSS/masterpage.css" rel="stylesheet">
+      <link href="NewCSS/page.css" rel="stylesheet">
+      <link href="./style-dashboard/sb-admin.css" rel="stylesheet">
+      <!-- stylesheet  -->
+      <link rel="stylesheet" href="./style/style.css">
+      <link rel="stylesheet" href="./style/customize.css">
+
+      <!-- custom select style  -->
+      <link rel="stylesheet" href="./style/custom-select/select.css">
+      <!-- Favicon -->
+      <link rel="icon" type="image/x-icon" href="./assets/img/favicon.svg">
+   </head>
+   <body ng-app="axleApp" class="user-page layout-cell layout-scrollbar">
+      <!-- side navbar start-->
+      <div class="ba-sidenav">
+         <div class="ba-brand">
+            <img src="./assets/img/axle-x.svg" alt="" id="brand-icon">
+            <img src="./assets/img/axle-full.svg" alt="" id="brand-logo">
+         </div>
+         <nav class="ba-nav">
+            <div class="ba-nav-item has-tooltip _active">
+               <a href="#" class="ba-nav-link">
+               <img src="./assets/icons/analytics.svg" alt="analytics" srcset="">
+               <span class="ba-link-title">Analytics</span>
+               </a>
+               <div class="ba-tooltip semibold-text">Analytics</div>
+            </div>
+            <div class="ba-nav-item has-tooltip">
+               <a href="#" class="ba-nav-link">
+               <img src="./assets/icons/collections.svg" alt="collections">
+               <span class="ba-link-title">Collections</span>
+               </a>
+               <div class="ba-tooltip semibold-text">Collections</div>
+            </div>
+            <div class="ba-nav-item has-tooltip">
+               <a href="#" class="ba-nav-link">
+               <img src="./assets/icons/eligibility.svg" alt="eligibility">
+               <span class="ba-link-title">Eligibility</span>
+               </a>
+               <div class="ba-tooltip semibold-text">Eligibility</div>
+            </div>
+            <div class="ba-nav-item has-tooltip">
+               <a href="#" class="ba-nav-link">
+                  <img src="./assets/icons/user_icon.svg" alt="engagement">
+                  <span class="ba-link-title">Engagement</span>
+                  <div class="ba-tooltip semibold-text">Engagement</div>
+               </a>
+            </div>
+            <div class="ba-nav-item has-tooltip">
+               <a href="#" class="ba-nav-link">
+                  <img src="./assets/icons/messaging.svg" alt="messaging">
+                  <span class="ba-link-title">Messaging</span>
+                  <div class="ba-tooltip semibold-text">Messaging</div>
+               </a>
+            </div>
+            <div class="ba-nav-item has-tooltip">
+               <a href="#" class="ba-nav-link">
+               <img src="./assets/icons/payments.svg" alt="payments">
+               <span class="ba-link-title">Payments</span>
+               </a>
+               <div class="ba-tooltip semibold-text">Payments</div>
+            </div>
+            <div class="ba-nav-item has-tooltip">
+               <a href="#" class="ba-nav-link">
+               <img src="./assets/icons/payroll.svg" alt="payroll">
+               <span class="ba-link-title">Payroll</span>
+               </a>
+               <div class="ba-tooltip semibold-text">Payroll</div>
+            </div>
+            <div class="ba-nav-item has-tooltip" data-tooltip="I am tooltip">
+               <a href="#" class="ba-nav-link">
+               <img src="./assets/icons/dashboard.svg" alt="dashboard">
+               <span class="ba-link-title">Reviews</span>
+               </a>
+               <div class="ba-tooltip semibold-text">Reviews</div>
+            </div>
+            <div class="ba-nav-item has-tooltip">
+               <a href="#" class="ba-nav-link">
+               <img src="./assets/icons/treatment.svg" alt="treatment">
+               <span class="ba-link-title">Treatment</span>
+               </a>
+               <div class="ba-tooltip semibold-text">Treatment</div>
+            </div>
+         </nav>
+      </div>
+      <!-- side navbar end -->
+      <main class="ba-main main-dashboard" ng-controller="userController">
+         <!-- topnav  -->
+         <!-- topnav  -->
+         <header class="ba-topnav">
+            <div class="ham-icon ">
+               <svg id="_ham-open" xmlns="http://www.w3.org/2000/svg" width="18" height="12" viewBox="0 0 18 12">
+                  <defs>
+                     <style>
+                        ._ham {
+                        fill: #031926;
+                        opacity: 0.4;
+                        }
+                     </style>
+                  </defs>
+                  <path class="_ham" d="M3,18H21V16H3Zm0-5H21V11H3ZM3,6V8H21V6Z" transform="translate(-3 -6)" />
+               </svg>
+               <svg id="_ham-close" xmlns="http://www.w3.org/2000/svg" width="18" height="12" viewBox="0 0 18 12">
+                  <defs>
+                     <style>
+                        ._ham-close {
+                        fill: #031926;
+                        }
+                     </style>
+                  </defs>
+                  <path class="_ham-close"
+                     d="M3,18H16V16H3Zm0-5H13V11H3ZM3,6V8H16V6Zm18,9.59L17.42,12,21,8.41,19.59,7l-5,5,5,5Z"
+                     transform="translate(-3 -6)" />
+               </svg>
+            </div>
+            <nav class="ba-nav-container">
+               <ul class="ba-topnav-nav">
+                  <li class="ba-topnav-item">
+                     <a href="#" class="ba-topnav-link">Profile</a>
+                  </li>
+                  <li class="ba-topnav-item">
+                     <a href="#" class="ba-topnav-link">Users</a>
+                  </li>
+                  <li class="ba-topnav-item prac-border _active">
+                     <a href="#" class="ba-topnav-link">Practices</a>
+                  </li>
+                  <li class="ba-topnav-item">
+                     <a href="#" class="ba-topnav-link">Engagement</a>
+                  </li>
+                  <li class="ba-topnav-item">
+                     <a href="#" class="ba-topnav-link">Goals</a>
+                  </li>
+                  <li class="ba-topnav-item">
+                     <a href="#" class="ba-topnav-link">Payments</a>
+                  </li>
+                  <li class="ba-topnav-item">
+                     <a href="#" class="ba-topnav-link">Payroll</a>
+                  </li>
+                  <li class="ba-topnav-item">
+                     <a href="#" class="ba-topnav-link">Reviews</a>
+                  </li>
+                  <li class="ba-topnav-item">
+                     <a href="#" class="ba-topnav-link">Treatment</a>
+                  </li>
+                  <li class="ba-topnav-item ba-profile has-flyout">
+                     <div class="_avatar"></div>
+                     <div class="ba-username">Pedro Becker</div>
+                     <span class="ba-chevron-down">
+                     </span>
+                     <div class="flyout-menu _dark _bottom">
+                        <div class="_option">
+                           <img src="./assets/icons/settings.svg" alt="settings icon">
+                           <span>Settings</span>
+                        </div>
+                        <div class="_option"><img src="./assets/icons/logout.svg" alt="logout icon">
+                           <span>Logout</span>
+                        </div>
+                     </div>
+                  </li>
+               </ul>
+            </nav>
+         </header>
+         <div class="body-container">
+            <!--   ===============   User Page Content   ================  -->
+            <div class="users-page-content">
+               <div class="top-row">
+                  <div class="top-gutter">
+                     <div class="search-bar"></div>
+                     <div class="ba-input-wrapper ba-multiselect">
+                        <div class="ba-input-field" title="Practice Name">
+                           <span ng-show="practiceFilters.length == 0"></span>
+                           <span ng-show="practiceFilters.length == 1" class="check-select">{{ practiceFilters[0] }}</span>
+                           <span ng-show="practiceFilters.length > 1">
+                           {{ practiceFilters[0]+' (+' + (practiceFilters.length-1) +')' }}
+                           </span>
+                        </div>
+                        <input type="hidden" class="ba-input-field-value" name="practiceFilters" id="practiceFilters"
+                           ng-model="practiceFilters">
+                        <div class="ba-multiselect-options layout-cell layout-scrollbar">
+                           <div class="ba-option" ng-click="selectAllMultiSelect('practiceOptions','practiceFilters' )">
+                              <span class="ba-checkbox"
+                                 ng-class="{__checked : isChecked('all','practiceOptions','practiceFilters')}"></span>
+                              <span class="ba-option-label">All Practices</span>
+                           </div>
+                           <div class="ba-option" ng-repeat="option in practiceOptions"
+                              ng-click="toggleMultiSelect('practiceFilters', option )">
+                              <span class="ba-checkbox"
+                                 ng-class="{__checked : isChecked(option,'practiceOptions','practiceFilters')}">
+                              </span>
+                              <span class="ba-option-label">{{option}}</span>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="ba-input-wrapper ba-multiselect">
+                        <div class="ba-input-field" title="Region">
+                           <span ng-show="regionFilters.length == 0"></span>
+                           <span ng-show="regionFilters.length == 1" class="check-select">{{ regionFilters[0] }}</span>
+                           <span ng-show="regionFilters.length > 1">
+                           {{ regionFilters[0]+' (+' + (regionFilters.length-1) +')' }}
+                           </span>
+                        </div>
+                        <input type="hidden" class="ba-input-field-value" name="regionFilters" id="regionFilters"
+                           ng-model="regionFilters">
+                           <div class="ba-multiselect-options layout-cell layout-scrollbar">
+                              <div class="ba-option" ng-click="selectAllMultiSelect('regionOptions','regionFilters' )">
+                                 <span class="ba-checkbox"
+                                    ng-class="{__checked : isChecked('all','regionOptions','regionFilters')}"></span>
+                                 <span class="ba-option-label">All Practices</span>
+                              </div>
+                              <div class="ba-option" ng-repeat="option in regionOptions"
+                                 ng-click="toggleMultiSelect('regionFilters', option )">
+                                 <span class="ba-checkbox"
+                                    ng-class="{__checked : isChecked(option,'regionOptions','regionFilters')}">
+                                 </span>
+                                 <span class="ba-option-label">{{option}}</span>
+                              </div>
+                           </div>
+                     </div>
+                  </div>
+                  <div class="adduser-button">
+                     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#userModal">Add User</button>
+                  </div>
+               </div>
+
+               <div class="table-wrapper">
+                  <table id="dtBasicExample" class="ba-table-widget table table-striped table-bordered table-sm" cellspacing="0" width="100%">
+                     <thead>
+                        <tr>
+                           <th class="th-sm">Practice Name</th>
+                           <th class="th-sm">Email Address</th>
+                           <th class="th-sm">Phone Number</th>
+                           <th class="th-sm">Region</th>
+                           <th class="th-sm">Location</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr>
+                           <td class="table-user-name"><span class="user-pic"></span> Pedro Becker</td>
+                           <td class="table-user-email">pedro@iconfamilydentistry.com</td>
+                           <td class="table-user-no">(210) 274-4350</td>
+                           <td></td><td></td>
+                        </tr>
+                        <tr>
+                           <td class="table-user-name"><span class="user-pic"></span> Pedro Becker</td>
+                           <td class="table-user-email">pedro@iconfamilydentistry.com</td>
+                           <td class="table-user-no">(210) 274-4350</td>
+                           <td></td><td></td>
+                        </tr>
+                        <tr>
+                           <td class="table-user-name"><span class="user-pic"></span> Pedro Becker</td>
+                           <td class="table-user-email">pedro@iconfamilydentistry.com</td>
+                           <td class="table-user-no">(210) 274-4350</td>
+                           <td></td><td></td>
+                        </tr>
+                        <tr>
+                           <td class="table-user-name"><span class="user-pic"></span> Pedro Becker</td>
+                           <td class="table-user-email">pedro@iconfamilydentistry.com</td>
+                           <td class="table-user-no">(210) 274-4350</td><td></td><td></td>
+                        </tr>
+                        <tr>
+                           <td class="table-user-name"><span class="user-pic"></span> Pedro Becker</td>
+                           <td class="table-user-email">pedro@iconfamilydentistry.com</td>
+                           <td class="table-user-no">(210) 274-4350</td><td></td><td></td>
+                        </tr>
+                        <tr>
+                           <td class="table-user-name"><span class="user-pic"></span> Pedro Becker</td>
+                           <td class="table-user-email">pedro@iconfamilydentistry.com</td>
+                           <td class="table-user-no">(210) 274-4350</td><td></td><td></td>
+                        </tr>
+                        <tr>
+                           <td class="table-user-name"><span class="user-pic"></span> Pedro Becker</td>
+                           <td class="table-user-email">pedro@iconfamilydentistry.com</td>
+                           <td class="table-user-no">(210) 274-4350</td><td></td><td></td>
+                        </tr>
+                        <tr>
+                           <td class="table-user-name"><span class="user-pic"></span> Pedro Becker</td>
+                           <td class="table-user-email">pedro@iconfamilydentistry.com</td>
+                           <td class="table-user-no">(210) 274-4350</td><td></td><td></td>
+                        </tr>
+                        <tr>
+                           <td class="table-user-name"><span class="user-pic"></span> Pedro Becker</td>
+                           <td class="table-user-email">pedro@iconfamilydentistry.com</td>
+                           <td class="table-user-no">(210) 274-4350</td><td></td><td></td>
+                        </tr>
+                        <tr>
+                           <td class="table-user-name"><span class="user-pic"></span> Pedro Becker</td>
+                           <td class="table-user-email">pedro@iconfamilydentistry.com</td>
+                           <td class="table-user-no">(210) 274-4350</td><td></td><td></td>
+                        </tr>
+                        <tr>
+                           <td class="table-user-name"><span class="user-pic"></span> Pedro Becker</td>
+                           <td class="table-user-email">pedro@iconfamilydentistry.com</td>
+                           <td class="table-user-no">(210) 274-4350</td><td></td><td></td>
+                        </tr>
+                        <tr>
+                           <td class="table-user-name"><span class="user-pic"></span> Pedro Becker</td>
+                           <td class="table-user-email">pedro@iconfamilydentistry.com</td>
+                           <td class="table-user-no">(210) 274-4350</td><td></td><td></td>
+                        </tr>
+                        <tr>
+                           <td class="table-user-name"><span class="user-pic"></span> Pedro Becker</td>
+                           <td class="table-user-email">pedro@iconfamilydentistry.com</td>
+                           <td class="table-user-no">(210) 274-4350</td><td></td><td></td>
+                        </tr>
+                        <tr>
+                           <td class="table-user-name"><span class="user-pic"></span> Pedro Becker</td>
+                           <td class="table-user-email">pedro@iconfamilydentistry.com</td>
+                           <td class="table-user-no">(210) 274-4350</td><td></td><td></td>
+                        </tr>
+                        <tr>
+                           <td class="table-user-name"><span class="user-pic"></span> Pedro Becker</td>
+                           <td class="table-user-email">pedro@iconfamilydentistry.com</td>
+                           <td class="table-user-no">(210) 274-4350</td><td></td><td></td>
+                        </tr>
+                        <tr>
+                           <td class="table-user-name"><span class="user-pic"></span> Pedro Becker</td>
+                           <td class="table-user-email">pedro@iconfamilydentistry.com</td>
+                           <td class="table-user-no">(210) 274-4350</td><td></td><td></td>
+                        </tr>
+                        <tr>
+                           <td class="table-user-name"><span class="user-pic"></span> Pedro Becker</td>
+                           <td class="table-user-email">pedro@iconfamilydentistry.com</td>
+                           <td class="table-user-no">(210) 274-4350</td><td></td><td></td>
+                        </tr>
+                        <tr>
+                           <td class="table-user-name"><span class="user-pic"></span> Pedro Becker</td>
+                           <td class="table-user-email">pedro@iconfamilydentistry.com</td>
+                           <td class="table-user-no">(210) 274-4350</td><td></td><td></td>
+                        </tr>
+                        <tr>
+                           <td class="table-user-name"><span class="user-pic"></span> Pedro Becker</td>
+                           <td class="table-user-email">pedro@iconfamilydentistry.com</td>
+                           <td class="table-user-no">(210) 274-4350</td><td></td><td></td>
+                        </tr>
+                        <tr>
+                           <td class="table-user-name"><span class="user-pic"></span> Pedro Becker</td>
+                           <td class="table-user-email">pedro@iconfamilydentistry.com</td>
+                           <td class="table-user-no">(210) 274-4350</td><td></td><td></td>
+                        </tr>
+                        <tr>
+                           <td class="table-user-name"><span class="user-pic"></span> Pedro Becker</td>
+                           <td class="table-user-email">pedro@iconfamilydentistry.com</td>
+                           <td class="table-user-no">(210) 274-4350</td><td></td><td></td>
+                        </tr>
+                        <tr>
+                           <td class="table-user-name"><span class="user-pic"></span> Pedro Becker</td>
+                           <td class="table-user-email">pedro@iconfamilydentistry.com</td>
+                           <td class="table-user-no">(210) 274-4350</td><td></td><td></td>
+                        </tr>
+                        <tr>
+                           <td class="table-user-name"><span class="user-pic"></span> Pedro Becker</td>
+                           <td class="table-user-email">pedro@iconfamilydentistry.com</td>
+                           <td class="table-user-no">(210) 274-4350</td><td></td><td></td>
+                        </tr>
+                        <tr>
+                           <td class="table-user-name"><span class="user-pic"></span> Pedro Becker</td>
+                           <td class="table-user-email">pedro@iconfamilydentistry.com</td>
+                           <td class="table-user-no">(210) 274-4350</td><td></td><td></td>
+                        </tr>
+                        <tr>
+                           <td class="table-user-name"><span class="user-pic"></span> Pedro Becker</td>
+                           <td class="table-user-email">pedro@iconfamilydentistry.com</td>
+                           <td class="table-user-no">(210) 274-4350</td><td></td><td></td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </div>
+               <div class="modal fade" id="userModal" tabindex="-1" role="dialog" aria-labelledby="userModalLabel" aria-hidden="true">
+                  <div class="modal-dialog" role="document">
+                     <div class="modal-content">
+                        <div class="adduser-wrapper">
+                           <div class="closeIcon">
+                              <img src="assets/img/cross.svg" alt="Cross">
+                           </div>
+                           <h3>Add User</h3>
+                           <ul>
+                              <li class="active"><span><span>1</span></span><span class="list-name">GENERAL PROFILE</span></li>
+                              <span class="active-bar active-form-bar"></span>
+                              <li><span><span>2</span></span><span class="list-name">FEATURE ACCESS</span></li>
+                           </ul>
+                           <div class="upload-section">
+                              <div class="user-img">
+                                 <img src="assets/img/edit-profile.svg" alt="Profile Image">
+                              </div>
+                              <div class="uploadImg">
+                                 <input type="file" class="custom-file-input">
+                              </div>
+                           </div>
+                           <div class="user-details">
+                              <form class="add-user-details">
+                                 <div class="feild-1 feild">
+                                    <div class="form-field">
+                                       <label for="first-name" class="form-label">First Name</label>
+                                       <div class="custom-input">
+                                          <input type="text" id="firstName" name="firstName" class="form-control">
+                                          <span class="error">Enter a valid user first name.</span>
+                                       </div>
+                                    </div>
+                                    <div class="form-field">
+                                       <label for="last-name" class="form-label">Last Name</label>
+                                       <div class="custom-input">
+                                          <input type="text" id="lastName" name="lastName" class="form-control">
+                                          <span class="error">Enter a valid user last name.</span>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <div class="feild-2 feild">
+                                    <div class="ba-input-wrapper ba-multiselect">
+                                       <div class="ba-input-field" title="Practice Access">
+                                          <span ng-show="practiceAccessFilters.length == 0"></span>
+                                          <span ng-show="practiceAccessFilters.length == 1" class="check-select">{{ practiceAccessFilters[0] }}</span>
+                                          <span ng-show="practiceAccessFilters.length > 1">
+                                          {{ practiceAccessFilters[0]+' (+' + (practiceAccessFilters.length-1) +')' }}
+                                          </span>
+                                       </div>
+                                       <input type="hidden" class="ba-input-field-value" name="practiceAccessFilters" id="practiceAccessFilters"
+                                       ng-model="practiceAccessFilters">
+                                       <span class="error">Enter a valid practice access.</span>
+                                       <div class="ba-multiselect-options layout-cell layout-scrollbar">
+                                          <div class="ba-option" ng-click="selectAllMultiSelect('practiceAccessOptions','practiceAccessFilters' )">
+                                             <span class="ba-checkbox"
+                                             ng-class="{__checked : isChecked('all','practiceAccessOptions','practiceAccessFilters')}"></span>
+                                             <span class="ba-option-label">All Practices</span>
+                                          </div>
+                                          <div class="ba-option" ng-repeat="option in practiceAccessOptions"
+                                          ng-click="toggleMultiSelect('practiceAccessFilters', option )">
+                                             <span class="ba-checkbox"
+                                             ng-class="{__checked : isChecked(option,'practiceAccessOptions','practiceAccessFilters')}">
+                                             </span>
+                                             <span class="ba-option-label">{{option}}</span>
+                                          </div>
+                                       </div>
+                                    </div>
+                                    <div class="ba-input-wrapper ba-multiselect">
+                                       <div class="ba-input-field" title="Region Access">
+                                          <span ng-show="regionAccessFilters.length == 0"></span>
+                                          <span ng-show="regionAccessFilters.length == 1" class="check-select">{{ regionAccessFilters[0] }}</span>
+                                          <span ng-show="regionAccessFilters.length > 1">
+                                          {{ regionAccessFilters[0]+' (+' + (regionAccessFilters.length-1) +')' }}
+                                          </span>
+                                       </div>
+                                       <input type="hidden" class="ba-input-field-value" name="regionAccessFilters" id="regionAccessFilters"
+                                       ng-model="regionAccessFilters">
+                                       <span class="error">Enter a valid region access.</span>
+                                       <div class="ba-multiselect-options layout-cell layout-scrollbar">
+                                          <div class="ba-option" ng-click="selectAllMultiSelect('regionAccessOptions','regionAccessFilters' )">
+                                             <span class="ba-checkbox"
+                                             ng-class="{__checked : isChecked('all','regionAccessOptions','regionAccessFilters')}"></span>
+                                             <span class="ba-option-label">All Practices</span>
+                                          </div>
+                                          <div class="ba-option" ng-repeat="option in regionAccessOptions"
+                                          ng-click="toggleMultiSelect('regionAccessFilters', option )">
+                                             <span class="ba-checkbox"
+                                             ng-class="{__checked : isChecked(option,'regionAccessOptions','regionAccessFilters')}">
+                                             </span>
+                                             <span class="ba-option-label">{{option}}</span>
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <div class="feild-3 feild">
+                                    <div class="form-field">
+                                       <label for="email-address" class="form-label">Email Address</label>
+                                       <div class="custom-input">
+                                          <input type="text" id="email" name="email" class="form-control">
+                                          <span class="error">Enter valid email address.</span>
+                                       </div>
+                                    </div>
+                                    <div class="form-field">
+                                       <label for="mobile-phone" class="form-label">Mobile Phone</label>
+                                       <div class="custom-input">
+                                          <input type="tel" id="phone" name="phone" class="form-control">
+                                          <span class="error">Enter valid mobile phone.</span>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <div class="cta-wrapper">
+                                    <a class="cta cta-white cancel">Cancel</a>
+                                    <a class="cta cta-blue saveContinue">Save & Continue</a>
+                                    <div class="loader">
+                                       <svg version="1.1" id="loader-1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="40px" height="40px" viewBox="0 0 50 50" style="enable-background:new 0 0 50 50;" xml:space="preserve">
+                                          <path fill="#000" d="M43.935,25.145c0-10.318-8.364-18.683-18.683-18.683c-10.318,0-18.683,8.365-18.683,18.683h4.068c0-8.071,6.543-14.615,14.615-14.615c8.072,0,14.615,6.543,14.615,14.615H43.935z">
+                                             <animateTransform attributeType="xml" attributeName="transform" type="rotate" from="0 25 25" to="360 25 25" dur="0.6s" repeatCount="indefinite"></animateTransform>
+                                          </path>
+                                       </svg>
+                                    </div>
+                                 </div>
+                              </form>
+                           </div>
+                        </div>
+                        <div class="feature-access-wrapper">
+                           <div class="closeIcon">
+                              <img src="assets/img/cross.svg" alt="Cross">
+                           </div>
+                           <h3>Add User</h3>
+                           <ul>
+                              <li class="active"><span><span>1</span></span><span class="list-name">GENERAL PROFILE</span></li>
+                              <span class="active-bar active-form-bar"></span>
+                              <li class="active"><span><span>2</span></span><span class="list-name">FEATURE ACCESS</span></li>
+                           </ul>
+                           <div class="quicl-roll-wrapper">
+                              <h3>User Quick Roll</h3>
+                              <div class="main-access-wrapper">
+                                 <div class="ba-input-wrapper ba-multiselect custom-enable custom-select-wrapper" tabindex="0" >
+                                    <div class="ba-input-field" title="Admin">
+                                       <div class="ba-option enable custom-radion-select">
+                                          <input type="radio" id="enable" name="option" value="enable">
+                                          <span class="radiobtn"></span>
+                                          <span class="ba-option-label">Enable</span>
+                                       </div>
+                                       <div class="ba-option disable custom-radion-select">
+                                          <input type="radio" id="disable" name="option" value="disable">
+                                          <span class="radiobtn"></span>
+                                          <span class="ba-option-label">Disable</span>
+                                       </div>
+                                    </div>
+                                    <input type="hidden" class="ba-input-field-value" name="practiceFilters" id="practiceFilters">
+                                    <div class="ba-multiselect-options layout-cell layout-scrollbar">
+                                       <div class="ba-option enable">
+                                          <input type="radio" id="enable" name="option" value="enable">
+                                          <span class="radiobtn"></span>
+                                          <span class="ba-option-label">Enable</span>
+                                       </div>
+                                       <div class="ba-option disable">
+                                          <input type="radio" id="disable" name="option" value="disable">
+                                          <span class="radiobtn"></span>
+                                          <span class="ba-option-label">Disable</span>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <div class="ba-input-wrapper ba-multiselect custom-enable custom-select-wrapper" tabindex="0">
+                                    <div class="ba-input-field" title="Employee">
+                                       <div class="ba-option enable custom-radion-select">
+                                          <input type="radio" id="enable" name="option" value="enable">
+                                          <span class="radiobtn"></span>
+                                          <span class="ba-option-label">Enable</span>
+                                       </div>
+                                       <div class="ba-option disable custom-radion-select">
+                                          <input type="radio" id="disable" name="option" value="disable">
+                                          <span class="radiobtn"></span>
+                                          <span class="ba-option-label">Disable</span>
+                                       </div>
+                                    </div>
+                                    <input type="hidden" class="ba-input-field-value">
+                                    <div class="ba-multiselect-options layout-cell layout-scrollbar">
+                                       <div class="ba-option enable">
+                                          <input type="radio" id="enable" name="option" value="enable">
+                                          <span class="radiobtn"></span>
+                                          <span class="ba-option-label">Enable</span>
+                                       </div>
+                                       <div class="ba-option disable">
+                                          <input type="radio" id="disable" name="option" value="disable">
+                                          <span class="radiobtn"></span>
+                                          <span class="ba-option-label">Disable</span>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <div class="ba-input-wrapper ba-multiselect custom-enable custom-select-wrapper" tabindex="0">
+                                    <div class="ba-input-field" title="Provider">
+                                       <div class="ba-option enable custom-radion-select">
+                                          <input type="radio" id="enable" name="option" value="enable">
+                                          <span class="radiobtn"></span>
+                                          <span class="ba-option-label">Enable</span>
+                                       </div>
+                                       <div class="ba-option disable custom-radion-select">
+                                          <input type="radio" id="disable" name="option" value="disable">
+                                          <span class="radiobtn"></span>
+                                          <span class="ba-option-label">Disable</span>
+                                       </div>
+                                    </div>
+                                    <input type="hidden" class="ba-input-field-value">
+                                    <div class="ba-multiselect-options layout-cell layout-scrollbar">
+                                       <div class="ba-option enable">
+                                          <input type="radio" id="enable" name="option" value="enable">
+                                          <span class="radiobtn"></span>
+                                          <span class="ba-option-label">Enable</span>
+                                       </div>
+                                       <div class="ba-option disable">
+                                          <input type="radio" id="disable" name="option" value="disable">
+                                          <span class="radiobtn"></span>
+                                          <span class="ba-option-label">Disable</span>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="user-access-details">
+                              <h3>Feature Access</h3>
+                              <form class="add-user-details access-features">
+                                 <div class="feild-1 feild">
+                                    <div class="ba-input-wrapper ba-multiselect">
+                                       <div class="ba-input-field" title="Analytics">
+                                          <span ng-show="analyticsFilters.length == 0"></span>
+                                          <span ng-show="analyticsFilters.length == 1" class="check-select">{{ analyticsFilters[0] }}</span>
+                                          <span ng-show="analyticsFilters.length > 1">
+                                          {{ analyticsFilters[0]+' (+' + (analyticsFilters.length-1) +')' }}
+                                          </span>
+                                       </div>
+                                       <input type="hidden" class="ba-input-field-value" name="analyticsFilters" id="analyticsFilters"
+                                          ng-model="analyticsFilters">
+                                       <div class="ba-multiselect-options layout-cell layout-scrollbar">
+                                          <div class="ba-option" ng-click="selectAllMultiSelect('analyticsOptions','analyticsFilters' )">
+                                             <span class="ba-checkbox"
+                                                ng-class="{__checked : isChecked('all','analyticsOptions','analyticsFilters')}"></span>
+                                             <span class="ba-option-label">All Practices</span>
+                                          </div>
+                                          <div class="ba-option" ng-repeat="option in analyticsOptions"
+                                             ng-click="toggleMultiSelect('analyticsFilters', option )">
+                                             <span class="ba-checkbox"
+                                                ng-class="{__checked : isChecked(option,'analyticsOptions','analyticsFilters')}">
+                                             </span>
+                                             <span class="ba-option-label">{{option}}</span>
+                                          </div>
+                                       </div>
+                                    </div>
+                                    <div class="ba-input-wrapper ba-multiselect">
+                                       <div class="ba-input-field" title="Collections">
+                                          <span ng-show="collectionsFilters.length == 0"></span>
+                                          <span ng-show="collectionsFilters.length == 1" class="check-select">{{ collectionsFilters[0] }}</span>
+                                          <span ng-show="collectionsFilters.length > 1">
+                                          {{ collectionsFilters[0]+' (+' + (collectionsFilters.length-1) +')' }}
+                                          </span>
+                                       </div>
+                                       <input type="hidden" class="ba-input-field-value" name="collectionsFilters" id="collectionsFilters"
+                                          ng-model="collectionsFilters">
+                                       <div class="ba-multiselect-options layout-cell layout-scrollbar">
+                                          <div class="ba-option" ng-click="selectAllMultiSelect('collectionsOptions','collectionsFilters' )">
+                                             <span class="ba-checkbox"
+                                                ng-class="{__checked : isChecked('all','collectionsOptions','collectionsFilters')}"></span>
+                                             <span class="ba-option-label">All Practices</span>
+                                          </div>
+                                          <div class="ba-option" ng-repeat="option in collectionsOptions"
+                                             ng-click="toggleMultiSelect('collectionsFilters', option )">
+                                             <span class="ba-checkbox"
+                                                ng-class="{__checked : isChecked(option,'collectionsOptions','collectionsFilters')}">
+                                             </span>
+                                             <span class="ba-option-label">{{option}}</span>
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <div class="feild-2 feild">
+                                    <div class="ba-input-wrapper ba-multiselect">
+                                       <div class="ba-input-field" title="Eligibility">
+                                          <span ng-show="eligibilityFilters.length == 0"></span>
+                                          <span ng-show="eligibilityFilters.length == 1" class="check-select">{{ eligibilityFilters[0] }}</span>
+                                          <span ng-show="eligibilityFilters.length > 1">
+                                          {{ eligibilityFilters[0]+' (+' + (eligibilityFilters.length-1) +')' }}
+                                          </span>
+                                       </div>
+                                       <input type="hidden" class="ba-input-field-value" name="eligibilityFilters" id="eligibilityFilters"
+                                          ng-model="eligibilityFilters">
+                                       <div class="ba-multiselect-options layout-cell layout-scrollbar">
+                                          <div class="ba-option" ng-click="selectAllMultiSelect('eligibilityOptions','eligibilityFilters' )">
+                                             <span class="ba-checkbox"
+                                                ng-class="{__checked : isChecked('all','eligibilityOptions','eligibilityFilters')}"></span>
+                                             <span class="ba-option-label">All Practices</span>
+                                          </div>
+                                          <div class="ba-option" ng-repeat="option in eligibilityOptions"
+                                             ng-click="toggleMultiSelect('eligibilityFilters', option )">
+                                             <span class="ba-checkbox"
+                                                ng-class="{__checked : isChecked(option,'eligibilityOptions','eligibilityFilters')}">
+                                             </span>
+                                             <span class="ba-option-label">{{option}}</span>
+                                          </div>
+                                       </div>
+                                     </div>
+                                     <div class="ba-input-wrapper ba-multiselect">
+                                       <div class="ba-input-field" title="Engagement">
+                                          <span ng-show="engagementFilters.length == 0"></span>
+                                          <span ng-show="engagementFilters.length == 1" class="check-select">{{ engagementFilters[0] }}</span>
+                                          <span ng-show="engagementFilters.length > 1">
+                                          {{ engagementFilters[0]+' (+' + (engagementFilters.length-1) +')' }}
+                                          </span>
+                                       </div>
+                                       <input type="hidden" class="ba-input-field-value" name="engagementFilters" id="engagementFilters"
+                                          ng-model="engagementFilters">
+                                       <div class="ba-multiselect-options layout-cell layout-scrollbar">
+                                          <div class="ba-option" ng-click="selectAllMultiSelect('engagementOptions','engagementFilters' )">
+                                             <span class="ba-checkbox"
+                                                ng-class="{__checked : isChecked('all','engagementOptions','engagementFilters')}"></span>
+                                             <span class="ba-option-label">All Practices</span>
+                                          </div>
+                                          <div class="ba-option" ng-repeat="option in engagementOptions"
+                                             ng-click="toggleMultiSelect('engagementFilters', option )">
+                                             <span class="ba-checkbox"
+                                                ng-class="{__checked : isChecked(option,'engagementOptions','engagementFilters')}">
+                                             </span>
+                                             <span class="ba-option-label">{{option}}</span>
+                                          </div>
+                                       </div>
+                                     </div>
+                                 </div>
+                                 <div class="feild-3 feild">
+                                    <div class="ba-input-wrapper ba-multiselect">
+                                       <div class="ba-input-field" title="Messaging">
+                                          <span ng-show="messagingFilters.length == 0"></span>
+                                          <span ng-show="messagingFilters.length == 1" class="check-select">{{ messagingFilters[0] }}</span>
+                                          <span ng-show="messagingFilters.length > 1">
+                                          {{ messagingFilters[0]+' (+' + (messagingFilters.length-1) +')' }}
+                                          </span>
+                                       </div>
+                                       <input type="hidden" class="ba-input-field-value" name="messagingFilters" id="messagingFilters"
+                                          ng-model="messagingFilters">
+                                       <div class="ba-multiselect-options layout-cell layout-scrollbar">
+                                          <div class="ba-option" ng-click="selectAllMultiSelect('messagingOptions','messagingFilters' )">
+                                             <span class="ba-checkbox"
+                                                ng-class="{__checked : isChecked('all','messagingOptions','messagingFilters')}"></span>
+                                             <span class="ba-option-label">All Practices</span>
+                                          </div>
+                                          <div class="ba-option" ng-repeat="option in messagingOptions"
+                                             ng-click="toggleMultiSelect('messagingFilters', option )">
+                                             <span class="ba-checkbox"
+                                                ng-class="{__checked : isChecked(option,'messagingOptions','messagingFilters')}">
+                                             </span>
+                                             <span class="ba-option-label">{{option}}</span>
+                                          </div>
+                                       </div>
+                                     </div>
+                                     <div class="ba-input-wrapper ba-multiselect">
+                                       <div class="ba-input-field" title="Payments">
+                                          <span ng-show="paymentsFilters.length == 0"></span>
+                                          <span ng-show="paymentsFilters.length == 1" class="check-select">{{ paymentsFilters[0] }}</span>
+                                          <span ng-show="paymentsFilters.length > 1">
+                                          {{ paymentsFilters[0]+' (+' + (paymentsFilters.length-1) +')' }}
+                                          </span>
+                                       </div>
+                                       <input type="hidden" class="ba-input-field-value" name="paymentsFilters" id="paymentsFilters"
+                                          ng-model="paymentsFilters">
+                                       <div class="ba-multiselect-options layout-cell layout-scrollbar">
+                                          <div class="ba-option" ng-click="selectAllMultiSelect('paymentsOptions','paymentsFilters' )">
+                                             <span class="ba-checkbox"
+                                                ng-class="{__checked : isChecked('all','paymentsOptions','paymentsFilters')}"></span>
+                                             <span class="ba-option-label">All Practices</span>
+                                          </div>
+                                          <div class="ba-option" ng-repeat="option in paymentsOptions"
+                                             ng-click="toggleMultiSelect('paymentsFilters', option )">
+                                             <span class="ba-checkbox"
+                                                ng-class="{__checked : isChecked(option,'paymentsOptions','paymentsFilters')}">
+                                             </span>
+                                             <span class="ba-option-label">{{option}}</span>
+                                          </div>
+                                       </div>
+                                     </div>
+                                 </div>
+                                 <div class="feild-4 feild">
+                                    <div class="ba-input-wrapper ba-multiselect">
+                                       <div class="ba-input-field" title="Payroll">
+                                          <span ng-show="payrollFilters.length == 0"></span>
+                                          <span ng-show="payrollFilters.length == 1" class="check-select">{{ payrollFilters[0] }}</span>
+                                          <span ng-show="payrollFilters.length > 1">
+                                          {{ payrollFilters[0]+' (+' + (payrollFilters.length-1) +')' }}
+                                          </span>
+                                       </div>
+                                       <input type="hidden" class="ba-input-field-value" name="payrollFilters" id="payrollFilters"
+                                          ng-model="payrollFilters">
+                                       <div class="ba-multiselect-options layout-cell layout-scrollbar">
+                                          <div class="ba-option" ng-click="selectAllMultiSelect('payrollOptions','payrollFilters' )">
+                                             <span class="ba-checkbox"
+                                                ng-class="{__checked : isChecked('all','payrollOptions','payrollFilters')}"></span>
+                                             <span class="ba-option-label">All Practices</span>
+                                          </div>
+                                          <div class="ba-option" ng-repeat="option in payrollOptions"
+                                             ng-click="toggleMultiSelect('payrollFilters', option )">
+                                             <span class="ba-checkbox"
+                                                ng-class="{__checked : isChecked(option,'payrollOptions','payrollFilters')}">
+                                             </span>
+                                             <span class="ba-option-label">{{option}}</span>
+                                          </div>
+                                       </div>
+                                     </div>
+                                     <div class="ba-input-wrapper ba-multiselect">
+                                       <div class="ba-input-field" title="Reviews">
+                                          <span ng-show="reviewsFilters.length == 0"></span>
+                                          <span ng-show="reviewsFilters.length == 1" class="check-select">{{ reviewsFilters[0] }}</span>
+                                          <span ng-show="reviewsFilters.length > 1">
+                                          {{ reviewsFilters[0]+' (+' + (reviewsFilters.length-1) +')' }}
+                                          </span>
+                                       </div>
+                                       <input type="hidden" class="ba-input-field-value" name="reviewsFilters" id="reviewsFilters"
+                                          ng-model="reviewsFilters">
+                                       <div class="ba-multiselect-options layout-cell layout-scrollbar">
+                                          <div class="ba-option" ng-click="selectAllMultiSelect('reviewsOptions','reviewsFilters' )">
+                                             <span class="ba-checkbox"
+                                                ng-class="{__checked : isChecked('all','reviewsOptions','reviewsFilters')}"></span>
+                                             <span class="ba-option-label">All Practices</span>
+                                          </div>
+                                          <div class="ba-option" ng-repeat="option in reviewsOptions"
+                                             ng-click="toggleMultiSelect('reviewsFilters', option )">
+                                             <span class="ba-checkbox"
+                                                ng-class="{__checked : isChecked(option,'reviewsOptions','reviewsFilters')}">
+                                             </span>
+                                             <span class="ba-option-label">{{option}}</span>
+                                          </div>
+                                       </div>
+                                     </div>
+                                 </div>
+                                 <div class="feild-5 feild">
+                                    <div class="ba-input-wrapper ba-multiselect">
+                                       <div class="ba-input-field" title="Treatment">
+                                          <span ng-show="treatmentFilters.length == 0"></span>
+                                          <span ng-show="treatmentFilters.length == 1" class="check-select">{{ treatmentFilters[0] }}</span>
+                                          <span ng-show="treatmentFilters.length > 1">
+                                          {{ treatmentFilters[0]+' (+' + (treatmentFilters.length-1) +')' }}
+                                          </span>
+                                       </div>
+                                       <input type="hidden" class="ba-input-field-value" name="treatmentFilters" id="treatmentFilters"
+                                          ng-model="treatmentFilters">
+                                       <div class="ba-multiselect-options layout-cell layout-scrollbar">
+                                          <div class="ba-option" ng-click="selectAllMultiSelect('treatmentOptions','treatmentFilters' )">
+                                             <span class="ba-checkbox"
+                                                ng-class="{__checked : isChecked('all','treatmentOptions','treatmentFilters')}"></span>
+                                             <span class="ba-option-label">All Practices</span>
+                                          </div>
+                                          <div class="ba-option" ng-repeat="option in treatmentOptions"
+                                             ng-click="toggleMultiSelect('treatmentFilters', option )">
+                                             <span class="ba-checkbox"
+                                                ng-class="{__checked : isChecked(option,'treatmentOptions','treatmentFilters')}">
+                                             </span>
+                                             <span class="ba-option-label">{{option}}</span>
+                                          </div>
+                                       </div>
+                                     </div>
+                                     <div class="ba-input-wrapper ba-multiselect">
+                                       <div class="ba-input-field" title="Virtual Terminal">
+                                          <span ng-show="virtualTerminalFilters.length == 0"></span>
+                                          <span ng-show="virtualTerminalFilters.length == 1" class="check-select">{{ virtualTerminalFilters[0] }}</span>
+                                          <span ng-show="virtualTerminalFilters.length > 1">
+                                          {{ virtualTerminalFilters[0]+' (+' + (virtualTerminalFilters.length-1) +')' }}
+                                          </span>
+                                       </div>
+                                       <input type="hidden" class="ba-input-field-value" name="virtualTerminalFilters" id="virtualTerminalFilters"
+                                          ng-model="virtualTerminalFilters">
+                                       <div class="ba-multiselect-options layout-cell layout-scrollbar">
+                                          <div class="ba-option" ng-click="selectAllMultiSelect('virtualTerminalOptions','virtualTerminalFilters' )">
+                                             <span class="ba-checkbox"
+                                                ng-class="{__checked : isChecked('all','virtualTerminalOptions','virtualTerminalFilters')}"></span>
+                                             <span class="ba-option-label">All Practices</span>
+                                          </div>
+                                          <div class="ba-option" ng-repeat="option in virtualTerminalOptions"
+                                             ng-click="toggleMultiSelect('virtualTerminalFilters', option )">
+                                             <span class="ba-checkbox"
+                                                ng-class="{__checked : isChecked(option,'virtualTerminalOptions','virtualTerminalFilters')}">
+                                             </span>
+                                             <span class="ba-option-label">{{option}}</span>
+                                          </div>
+                                       </div>
+                                     </div>
+                                 </div>
+                                 <div class="cta-wrapper">
+                                    <a class="cta cta-white cancel">Cancel</a>
+                                    <a class="cta cta-blue saveContinue confirmCta">Confirm & Add User</a>
+                                    <div class="loader">
+                                       <svg version="1.1" id="loader-1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="40px" height="40px" viewBox="0 0 50 50" style="enable-background:new 0 0 50 50;" xml:space="preserve">
+                                          <path fill="#000" d="M43.935,25.145c0-10.318-8.364-18.683-18.683-18.683c-10.318,0-18.683,8.365-18.683,18.683h4.068c0-8.071,6.543-14.615,14.615-14.615c8.072,0,14.615,6.543,14.615,14.615H43.935z">
+                                             <animateTransform attributeType="xml" attributeName="transform" type="rotate" from="0 25 25" to="360 25 25" dur="0.6s" repeatCount="indefinite"></animateTransform>
+                                          </path>
+                                       </svg>
+                                    </div>
+                                 </div>
+                              </form>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="min-feature-error">
+                  <img src="assets/img/error-closs.svg" alt="close"> <span class="error-text">A minimum of 1 feature is required.</span> <span class="error-clos-top"><img src="assets/img/error-ri-closs.svg" alt="close"></span>
+               </div>
+            </div>
+         </div>
+      </main>
+      <!-- imports for app and controllers  -->
+      <!-- app js for angular modulea -->
+      <script src="./app/user.js" defer></script>
+      <!-- controllers  -->
+      <!-- JS and JQuery from small interactions and logics  -->
+      <script>
+         $(document).ready(function () {
+             $('.ham-icon').click(function () {
+                 $('.ba-sidenav').toggleClass('expanded-nav')
+                 $('.ba-main').toggleClass('pull-right')
+                 // $('.ba-topnav').toggleClass('pull-right')
+                 $('.ham-icon').toggleClass('_close')
+             })
+             // adding tab index to custom input and popover menus
+             $('.has-flyout').attr('tabindex', '0');
+             $('.ba-input-wrapper').attr('tabindex', '0');
+             $('.ba-filter-select').attr('tabindex', '0');
+
+
+             $('.has-flyout').click(function () {
+                 $(this).toggleClass('_show-menu')
+             })
+             $('.has-flyout').on('blur', function () {
+                 $(this).removeClass('_show-menu')
+             })
+
+             $('.filter-single-select').click(function () {
+                 $(this).toggleClass('_show-options')
+             })
+
+             $('.filter-single-select').on('blur', function () {
+                 $(this).removeClass('_show-options')
+             })
+
+             $('.ba-topnav-item').click(function () {
+                 $(this).addClass('_active').siblings().removeClass('_active')
+             })
+             $('.filter_pill').click(function () {
+                 $(this).addClass('_active').siblings().removeClass('_active')
+             })
+
+             // tree-select expand parent
+             $('.ba-option-parent ._parent ._chevron-down').click(function (params) {
+               $(this).parent().parent().toggleClass('_show-children')
+               $(this).parent().parent().siblings().removeClass('_show-children')
+            })
+            $('#dtBasicExample').DataTable( {
+                  "lengthMenu": [[18, 36, 54, 72], [18, 36, 54, 72]]
+            });
+            $('.dataTables_length').addClass('bs-select');
+            $('.table-wrapper .dataTables_filter').addClass('show-search').appendTo('.top-gutter .search-bar');
+
+            $(".form-control").on("blur input focus", function() {
+            var $field = $(this).closest(".form-field");
+               if (this.value) {
+                  $field.addClass("custom-filled");
+               } else {
+                  $field.removeClass("custom-filled");
+               }
+            });
+            $(".form-control").on("focus", function() {
+               var $field = $(this).closest(".form-field");
+               if (this) {
+                  $field.addClass("custom-filled");
+               } else {
+                  $field.removeClass("custom-filled");
+               }
+            });
+            $(".dataTables_filter .form-control").on("blur input focus", function() {
+               var $field = $(this).closest(".dataTables_filter");
+               if (this.value) {
+                  $field.addClass("custom-filled");
+               } else {
+                  $field.removeClass("custom-filled");
+               }
+            });
+            $(".dataTables_filter .form-control").on("focus", function() {
+               var $field = $(this).closest(".dataTables_filter");
+               if (this) {
+                  $field.addClass("custom-filled");
+               } else {
+                  $field.removeClass("custom-filled");
+               }
+            });
+            $('.form-control:not(.no-required)').focusout(function(ele) {
+               setTimeout(function() {
+                  var $this = $(ele.currentTarget);
+                  if ($this.val() === '') {
+                        $this.closest('.form-field').addClass('show-error');
+                  } else {
+                        $this.closest('.form-field').removeClass('show-error');
+                  }
+               }, 100);
+            });
+            $('.adduser-wrapper .user-details .ba-multiselect').focusout(function(ele){
+               setTimeout(function() {
+                  var $this = $(ele.currentTarget);
+                  if($this.find('.check-select').text() === ""){
+                     $this.addClass('show-error');
+                  } else{
+                     $this.removeClass('show-error');
+                  }
+               }, 100);
+               });
+            function checkInpuVal(){
+               $('.form-control:not(.no-required)').each(function(i, ele){
+                  var $this = $(ele);
+                  if($this.val() === ''){
+                        $this.closest('.form-field').addClass('show-error');
+                  } else{
+                        $this.closest('.form-field').removeClass('show-error');
+                  }
+               });
+
+               $('.adduser-wrapper .user-details .ba-multiselect').each(function(i, ele){
+                  var $this = $(ele);
+                  if($this.find('.check-select').text() === ""){
+                        $this.addClass('show-error');
+                  } else{
+                        $this.removeClass('show-error');
+                  }
+               });
+            }
+            $(".ba-multiselect").on("blur input focus", function() {
+               var $field = $(this);
+               if ($(this).find('.check-select').text() !== "") {
+                  $field.addClass("custom-filled");
+               } else {
+                  $field.removeClass("custom-filled");
+               }
+            });
+            $(".access-features .ba-multiselect").on("blur input focus", function() {
+               if($('.access-features .ba-input-wrapper.ba-multiselect.custom-filled').length === 0){
+                  $('body').addClass('custom-show-error');
+               } else {
+                  $('body').removeClass('custom-show-error');
+               }
+            });
+            $(".access-features .confirmCta").on("click", function(ele) {
+               ele.stopPropagation();
+               var $this = $(ele.currentTarget);
+               if($('.access-features .ba-input-wrapper.ba-multiselect.custom-filled').length === 0){
+                  $('body').addClass('custom-show-error');
+               } else {
+                  $('body').removeClass('custom-show-error');
+                  if($('.access-features .ba-input-wrapper.ba-multiselect.custom-filled').length > 0){
+                        $this.parent().addClass('show-loader');
+                        setTimeout(function(){
+                           $this.parent().removeClass('show-loader');
+                        }, 3000);
+                     }
+               }
+            });
+            
+               $(".ba-multiselect").on("focus", function() {
+                  var $field = $(this).closest(".ba-multiselect");
+                  if ($(this).find('.ng-not-empty')) {
+                     $field.addClass("custom-filled");
+                  } else {
+                     $field.removeClass("custom-filled");
+                  }
+               });
+            $('.cta-wrapper a.cta .cancel, .closeIcon').click(function(){
+               $('.adduser-button button.btn.btn-primary[data-target="#userModal"]')[0].click();
+            });
+            $('.adduser-button button.btn.btn-primary[data-target="#userModal"]').click(function(){
+               $('.form-field').removeClass('show-error');
+               $('.ba-multiselect').removeClass('show-error');
+            });
+            $('.custom-enable .ba-option').click(function(){
+               var abc = $(this).find('span.ba-option-label').text();
+               $(this).closest('.custom-enable').removeClass('Enable Disable');
+               $(this).closest('.custom-enable').addClass(abc);
+               var $field = $(this).closest('.custom-enable');
+               if ($field.hasClass('Enable') || $field.hasClass('Disable')) {
+                  $field.addClass("custom-filled");
+               } else {
+                  $field.removeClass("custom-filled");
+               }
+            });
+            $('.adduser-wrapper .user-details .cta-wrapper .saveContinue').click(function(ele){console.log('work');
+               ele.stopPropagation();
+               var $this = $(ele.currentTarget);
+               checkInpuVal();
+               setTimeout(function(){
+                     if($('.show-error').length === 0){
+                        $this.parent().addClass('show-loader');
+                        setTimeout(function(){
+                           $this.parent().removeClass('show-loader');
+                           $('.adduser-wrapper').hide();
+                           $('.feature-access-wrapper').show();
+                        }, 3000);
+                     }
+               }, 0);
+            });
+         });
+      </script>
+   </body>
+</html>

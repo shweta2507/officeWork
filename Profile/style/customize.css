@@ -1228,3 +1228,6 @@ div.dataTables_wrapper div.dataTables_length select:focus {
 table.ba-table-widget tbody tr td:first-child {
   line-height: 20px;
 }
+.users-page-content .table-wrapper table#dtBasicExample thead tr th:first-child {
+  padding-left: 16px !important;
+}
