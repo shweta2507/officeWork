@@ -82,7 +82,7 @@
   border: 0 !important;
   padding: 0;
   padding-bottom: 12.5px;
-  border-bottom: 1px solid #F3F4F6 !important;
+  border-bottom: 0px !important;
   padding-top: 12.5px;
 }
 
@@ -522,11 +522,13 @@
 
 div.dataTables_wrapper div.dataTables_length select[name="dtBasicExample_length"] {
   padding: 0 !important;
+  padding-left: 12px !important;
+  line-height: 18px !important;
 }
 
 .users-page-content .table-wrapper div#dtBasicExample_length {
   position: absolute;
-  bottom: -5px;
+  bottom: -21px;
   z-index: 999;
   cursor: pointer;
   left: 0;
@@ -621,7 +623,7 @@ div.dataTables_wrapper div.dataTables_length select[name="dtBasicExample_length"
 
 .users-page-content .table-wrapper tbody tr td {
   padding: 0;
-  height: 59px;
+  height: 60px;
   vertical-align: middle;
 }
 
@@ -1077,10 +1079,136 @@ span.radiobtn:after {
   display: none;
 }
 .quicl-roll-wrapper .main-access-wrapper .ba-input-wrapper.Enable .ba-option.enable.custom-radion-select {
-  display: block;
+  display: flex;
   padding: 0 !important;
+  flex-wrap: nowrap;
 }
-.quicl-roll-wrapper .main-access-wrapper .ba-input-wrapper.Disable .ba-option.enable.custom-radion-select {
-  display: block;
+.quicl-roll-wrapper .main-access-wrapper .ba-input-wrapper.Disable .ba-option.disable.custom-radion-select {
+  display: flex;
   padding: 0 !important;
+  flex-wrap: nowrap;
 }
+.quicl-roll-wrapper .main-access-wrapper .ba-input-wrapper.Enable .ba-input-field::before,
+.quicl-roll-wrapper .main-access-wrapper .ba-input-wrapper.Disable .ba-input-field::before {
+  top: 6px;
+}
+.ba-option.enable.custom-radion-select > span {
+  position: static !important;
+}
+.min-feature-error {
+  position: fixed;
+  top: 0;
+  width: 310px;
+  background: #FF7596 0% 0% no-repeat padding-box;
+  border-radius: 0px 0px 8px 8px;
+  opacity: 1;
+  z-index: 9999;
+  height: 50px;
+  padding: 16px 10.8px 18px 20.6px;
+  font-size: 12px;
+  line-height: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  display:none;
+}
+
+.min-feature-error span.error-text {
+  letter-spacing: 0px;
+  color: #FFFFFF;
+  opacity: 1;
+  font-size: 12px;
+  line-height: 16px;
+  font-family: 'Eina-SemiBold';
+  vertical-align: top;
+  padding-right: 21.8px;
+  position: relative;
+  margin-right: 7.8px;
+}
+
+.min-feature-error > img {
+  vertical-align: top;
+  height: 16px;
+  width: 16px;
+  margin-right: 7px;
+}
+
+.min-feature-error span.error-clos-top {
+  width: 20px;
+  height: 20px;
+  background-color: #f3f4f680;
+  opacity: 0.5;
+  border-radius: 100%;
+  display: inline-block;
+  text-align: center;
+  position: relative;
+  top: -3px;
+}
+
+.min-feature-error span.error-clos-top img {
+  height: 9.7px;
+  width: 9.7px;
+  position: absolute;
+  z-index: 99;
+  top: 5.2px;
+  right: 5.2px;
+}
+
+.min-feature-error span.error-text:after {
+  border-right: 1px solid #F3F4F6;
+  opacity: 0.6;
+  content: "";
+  position: absolute;
+  right: 0;
+  height: 12px;
+  top: 2px;
+}
+.custom-show-error .min-feature-error {
+  display: block;
+}
+div.dataTables_wrapper div.dataTables_length select {
+  width: 76px;
+  height: 45px;
+}
+.users-page-content .table-wrapper div#dtBasicExample_length select:focus {
+  border: 2px solid #0ACADC !important;
+  border-radius: 6px !important;
+  opacity: 1;
+  background-color: #F3F4F43D !important;
+}
+div.dataTables_wrapper div.dataTables_length select {
+  background-repeat: no-repeat;
+  -webkit-appearance: none;
+  background-image: url(../assets/icons/arrow.svg);
+  background-size: 8px 5px;
+  background-position: 57px 20px;
+}
+
+.ba-option.disable.custom-radion-select > span {
+  position: static !important;
+}
+
+table.ba-table-widget tbody tr td {
+  position: relative;
+}
+
+table.ba-table-widget tbody tr td:after {
+  content: "";
+  border-bottom: 1px solid #F3F4F6 !important;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+table.ba-table-widget tbody tr td:first-child:after {
+  left: 15px;
+}
+
+table.ba-table-widget tbody tr td:last-child:after {
+  right: 24px;
+}
+
+.users-page-content .table-wrapper tbody tr:first-child td:after {
+  display: none;
+}
+

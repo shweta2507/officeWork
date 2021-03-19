@@ -631,7 +631,7 @@
                            </div>
                            <div class="user-access-details">
                               <h3>Feature Access</h3>
-                              <form class="add-user-details">
+                              <form class="add-user-details access-features">
                                  <div class="feild-1 feild">
                                     <div class="ba-input-wrapper ba-multiselect">
                                        <div class="ba-input-field" title="Analytics">
@@ -894,7 +894,7 @@
                                  </div>
                                  <div class="cta-wrapper">
                                     <a class="cta cta-white cancel">Cancel</a>
-                                    <a class="cta cta-blue saveContinue">Confirm & Add User</a>
+                                    <a class="cta cta-blue saveContinue confirmCta">Confirm & Add User</a>
                                     <div class="loader">
                                        <svg version="1.1" id="loader-1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="40px" height="40px" viewBox="0 0 50 50" style="enable-background:new 0 0 50 50;" xml:space="preserve">
                                           <path fill="#000" d="M43.935,25.145c0-10.318-8.364-18.683-18.683-18.683c-10.318,0-18.683,8.365-18.683,18.683h4.068c0-8.071,6.543-14.615,14.615-14.615c8.072,0,14.615,6.543,14.615,14.615H43.935z">
@@ -908,6 +908,9 @@
                         </div>
                      </div>
                   </div>
+               </div>
+               <div class="min-feature-error">
+                  <img src="assets/img/error-closs.svg" alt="close"> <span class="error-text">A minimum of 1 feature is required.</span> <span class="error-clos-top"><img src="assets/img/error-ri-closs.svg" alt="close"></span>
                </div>
             </div>
          </div>
@@ -1036,13 +1039,36 @@
                });
             }
             $(".ba-multiselect").on("blur input focus", function() {
-                  var $field = $(this);
-                  if ($(this).find('.check-select').text() !== "") {
-                     $field.addClass("custom-filled");
-                  } else {
-                     $field.removeClass("custom-filled");
-                  }
-               });
+               var $field = $(this);
+               if ($(this).find('.check-select').text() !== "") {
+                  $field.addClass("custom-filled");
+               } else {
+                  $field.removeClass("custom-filled");
+               }
+            });
+            $(".access-features .ba-multiselect").on("blur input focus", function() {
+               if($('.access-features .ba-input-wrapper.ba-multiselect.custom-filled').length === 0){
+                  $('body').addClass('custom-show-error');
+               } else {
+                  $('body').removeClass('custom-show-error');
+               }
+            });
+            $(".access-features .confirmCta").on("click", function(ele) {
+               ele.stopPropagation();
+               var $this = $(ele.currentTarget);
+               if($('.access-features .ba-input-wrapper.ba-multiselect.custom-filled').length === 0){
+                  $('body').addClass('custom-show-error');
+               } else {
+                  $('body').removeClass('custom-show-error');
+                  if($('.access-features .ba-input-wrapper.ba-multiselect.custom-filled').length > 0){
+                        $this.parent().addClass('show-loader');
+                        setTimeout(function(){
+                           $this.parent().removeClass('show-loader');
+                        }, 3000);
+                     }
+               }
+            });
+            
                $(".ba-multiselect").on("focus", function() {
                   var $field = $(this).closest(".ba-multiselect");
                   if ($(this).find('.ng-not-empty')) {
@@ -1083,6 +1109,14 @@
                         }, 3000);
                      }
                }, 0);
+            });
+            $("div.dataTables_wrapper div.dataTables_length select").on("focus", function() {
+               var $field = $(this).closest(".users-page-content .table-wrapper div#dtBasicExample_length");
+               if (this) {
+                  $field.addClass("focus-custom-filled");
+               } else {
+                  $field.removeClass("focuscustom-filled");
+               }
             });
          });
       </script>
