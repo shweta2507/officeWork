@@ -10,7 +10,7 @@
 }
 
 .users-page-content {
-  padding: 32px 56px 59px 48px;
+  padding: 32px 56px 48px 48px;
 }
 
 .users-page-content .top-row {
@@ -69,7 +69,7 @@
   box-shadow: 0px 16px 24px #343D561A;
   border: 1px solid #343D560B;
   opacity: 1;
-  padding: 31px 57px 35px 32px;
+  padding: 31px 16px 35px 16px;
   margin-bottom: 24px !important;
 }
 
@@ -79,7 +79,7 @@
 }
 
 .users-page-content .table-wrapper tbody tr td {
-  border: 0;
+  border: 0 !important;
   padding: 0;
   padding-bottom: 12.5px;
   border-bottom: 1px solid #F3F4F6 !important;
@@ -529,6 +529,7 @@ div.dataTables_wrapper div.dataTables_length select[name="dtBasicExample_length"
   bottom: -5px;
   z-index: 999;
   cursor: pointer;
+  left: 0;
 }
 
 .users-page-content .table-wrapper #dtBasicExample_wrapper .col-sm-6 {
@@ -542,6 +543,7 @@ div.dataTables_wrapper div.dataTables_length select[name="dtBasicExample_length"
 .users-page-content .table-wrapper #dtBasicExample_wrapper .row:last-child .col-sm-7 {
   width: 100% !important;
   text-align: center;
+  padding: 0 !important;
 }
 
 .users-page-content .table-wrapper #dtBasicExample_wrapper .row:last-child .col-sm-7 div#dtBasicExample_paginate {
@@ -619,7 +621,7 @@ div.dataTables_wrapper div.dataTables_length select[name="dtBasicExample_length"
 
 .users-page-content .table-wrapper tbody tr td {
   padding: 0;
-  height: 60px;
+  height: 59px;
   vertical-align: middle;
 }
 
@@ -751,6 +753,7 @@ span.active-bar {
   color: #363F57;
   opacity: 0.5;
   margin-right: 16px;
+  font-family: 'Eina';
 }
 
 .users-page-content .table-wrapper div#dtBasicExample_length label {
@@ -799,6 +802,9 @@ li#dtBasicExample_previous > a:before {
 table.ba-table-widget tbody tr:last-child > td {
   border-bottom: 0 !important;
 }
+table.ba-table-widget tbody tr{
+  border: 0px !important;
+}
 .user-page .ba-input-field:before {
   content: attr(title);
   font-size: 11px;
@@ -821,3 +827,189 @@ table.ba-table-widget tbody tr:last-child > td {
 .user-page .ba-input-wrapper.ba-multiselect.custom-filled  .ba-input-field {
   padding: 21px 12px 6px 12px;
 }
+.cta-wrapper {
+  position: relative;
+}
+.loader svg#loader-1 path {
+  fill: #FFFFFFB3;
+}
+.loader svg {
+  max-width: 20px;
+  max-height: 20px;
+}
+.cta-wrapper .loader {
+  position: absolute;
+  right: 20px;
+  top: 18px;
+  opacity: 0;
+  visibility: hidden;
+  max-width: 160px;
+  width: 100%;
+  text-align: center;
+}
+
+.cta-wrapper.show-loader .cta-blue {
+  color: #03C6D8 !important;
+}
+.cta-wrapper.show-loader .cta-blue+.loader {
+    opacity: 1;
+    visibility: visible;
+}
+
+.feature-access-wrapper span.active-bar {
+  border-color: #0ACADC;
+  opacity: 1;
+}
+
+.users-page-content .table-wrapper tbody tr {
+  padding-left: 32px;
+  padding-right: 32px;
+  border-radius: 18px !important;
+}
+.users-page-content .table-wrapper tbody tr:hover {
+  background-color: #f3f4f680;
+  border-radius: 18px !important;
+}
+table.ba-table-widget tbody tr td:first-child {
+  margin-left: 16px;
+}
+
+.users-page-content .table-wrapper table.ba-table-widget td {
+  background:transparent !important;
+}
+.users-page-content .table-wrapper #dtBasicExample_wrapper .row:last-child .col-sm-7 div#dtBasicExample_paginate ul.pagination li {
+  margin-right: 9px;
+}
+
+.user-details form.add-user-details .feild .ba-input-field:before {
+text-align: left;
+    font-size: 13px;
+    letter-spacing: 0px;
+    color: #363F57;
+    opacity: 0.5;
+    line-height: 18px;
+    position: absolute;
+    left: 12px;
+    top: 13px;
+    font-family: "Eina", sans-serif;
+    font-weight: normal;
+}
+
+.user-details form.add-user-details .feild .ba-input-wrapper.custom-filled .ba-input-field:before{
+font-size: 11px;
+line-height: 15px;
+color: #363F57;
+opacity: 0.5;
+left: 12px;
+top: 6px;
+transition: all 0.2s ease;
+}
+
+.user-details form.add-user-details .feild .ba-input-wrapper .ba-input-field span {
+  font-size: 13px;
+  line-height: 18px;
+  letter-spacing: 0px;
+  color: #363F57;
+  font-family: 'Eina-SemiBold';
+  opacity: 1;
+  top: 21px;
+}
+
+.user-details .cta-wrapper .loader {
+  right: 9px;
+}
+
+.cta-wrapper.show-loader a.cta.cta-blue:hover {
+  background-color: #03C6D8;
+}
+
+.feature-access-wrapper .user-access-details .ba-input-field:before {
+  text-align: left;
+  font-size: 13px;
+  letter-spacing: 0px;
+  color: #363F57;
+  opacity: 0.5;
+  line-height: 18px;
+  position: absolute;
+  left: 12px;
+  top: 13px;
+  font-family: "Eina", sans-serif;
+  font-weight: normal;
+}
+
+.feature-access-wrapper .user-access-details .ba-input-wrapper.ba-multiselect.custom-filled .ba-input-field:before {
+  font-size: 11px;
+  line-height: 15px;
+  color: #363F57;
+  opacity: 0.5;
+  left: 12px;
+  top: 6px;
+  transition: all 0.2s ease;
+}
+
+.feature-access-wrapper .user-access-details .feild .ba-input-wrapper .ba-input-field span {
+    font-size: 13px;
+  line-height: 18px;
+  letter-spacing: 0px;
+  color: #363F57;
+  font-family: 'Eina-SemiBold';
+  opacity: 1;
+  top: 21px;
+}
+
+
+.user-details form.add-user-details .feild .ba-input-wrapper.ba-multiselect.show-error span.error {
+  display: block;
+  margin-top: 5px;
+}
+
+.user-details form.add-user-details .feild .ba-input-wrapper.show-error .ba-input-field {
+  background: #FF75961A !important;
+  border: 2px solid #FF7596 !important;
+  opacity: 1 !important;
+}
+
+.user-details form.add-user-details .feild .ba-input-wrapper.show-error .ba-input-field:before {
+  color: #FF7596;
+  opacity: 1;
+}
+
+.quicl-roll-wrapper .main-access-wrapper .ba-input-wrapper.custom-filled .ba-input-field span {
+  font-size: 11px;
+  line-height: 15px;
+  color: #363F57;
+  opacity: 0.5;
+  left: 12px;
+  top: 6px;
+  transition: all 0.2s ease;
+}
+
+
+.ba-input-wrapper .ba-option input[type=radio]#enable {
+  margin: 0 !important;
+  border: 1px solid #0ADC8F !important;
+  opacity: 1 !important;
+  margin-right: 7px !important;
+  height: 12px !important;
+  width: 12px !important;
+  color: #0ADC8F !important;
+}
+
+.ba-input-wrapper .ba-option.enable span.ba-option-label {
+  letter-spacing: 0px;
+  color: #0ADC8F;
+  opacity: 1;
+  font-size: 13px;
+  line-height: 18px;
+  font-family: 'Eina-SemiBold';
+}
+
+.ba-input-wrapper .ba-option.disable span.ba-option-label {
+  letter-spacing: 0px;
+  color: #343D56;
+  opacity: 1;
+  font-size: 13px;
+  line-height: 18px;
+  font-family: 'Eina-SemiBold';
+}
+
