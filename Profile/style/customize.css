@@ -1156,9 +1156,7 @@ span.radiobtn:after {
   height: 12px;
   top: 2px;
 }
-.custom-show-error .min-feature-error {
-  display: block;
-}
+
 div.dataTables_wrapper div.dataTables_length select {
   width: 76px;
   height: 45px;

@@ -1046,18 +1046,24 @@
                   $field.removeClass("custom-filled");
                }
             });
-            $(".access-features .ba-multiselect").on("blur input focus", function() {
-               if($('.access-features .ba-input-wrapper.ba-multiselect.custom-filled').length === 0){
-                  $('body').addClass('custom-show-error');
-               } else {
-                  $('body').removeClass('custom-show-error');
-               }
-            });
+            // $(".access-features .ba-multiselect").on("blur input focus", function() {
+            //    if($('.access-features .ba-input-wrapper.ba-multiselect.custom-filled').length === 0){
+            //          $('.min-feature-error').show();
+            //       setTimeout(() => {
+            //          $('.min-feature-error').hide();     
+            //       }, 1000);
+            //    } else {
+            //       $('body').removeClass('custom-show-error');
+            //    }
+            // });
             $(".access-features .confirmCta").on("click", function(ele) {
                ele.stopPropagation();
                var $this = $(ele.currentTarget);
                if($('.access-features .ba-input-wrapper.ba-multiselect.custom-filled').length === 0){
-                  $('body').addClass('custom-show-error');
+                  $('.min-feature-error').show();
+                  setTimeout(() => {
+                     $('.min-feature-error').hide();     
+                  }, 1000);
                } else {
                   $('body').removeClass('custom-show-error');
                   if($('.access-features .ba-input-wrapper.ba-multiselect.custom-filled').length > 0){
@@ -1088,12 +1094,7 @@
                var abc = $(this).find('span.ba-option-label').text();
                $(this).closest('.custom-enable').removeClass('Enable Disable');
                $(this).closest('.custom-enable').addClass(abc);
-               var $field = $(this).closest('.custom-enable');
-               if ($field.hasClass('Enable') || $field.hasClass('Disable')) {
-                  $field.addClass("custom-filled");
-               } else {
-                  $field.removeClass("custom-filled");
-               }
+               $(this).closest('.custom-enable')[0].blur();
             });
             $('.adduser-wrapper .user-details .cta-wrapper .saveContinue').click(function(ele){console.log('work');
                ele.stopPropagation();
