@@ -39,11 +39,11 @@ axleApp.controller('userController', function ($scope) {
         'Practices5'
     ]
     $scope.regionAccessOptions = [
-        'Practices1',
-        'Practices2',
-        'Practices3',
-        'Practices4',
-        'Practices5'
+        'Region1',
+        'Region2',
+        'Region3',
+        'Region4',
+        'Region5'
     ]
     $scope.practiceOptions = [
         'Practices1',

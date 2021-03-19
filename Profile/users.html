@@ -250,7 +250,7 @@
                               <div class="ba-option" ng-click="selectAllMultiSelect('regionOptions','regionFilters' )">
                                  <span class="ba-checkbox"
                                     ng-class="{__checked : isChecked('all','regionOptions','regionFilters')}"></span>
-                                 <span class="ba-option-label">All Practices</span>
+                                 <span class="ba-option-label">All Region</span>
                               </div>
                               <div class="ba-option" ng-repeat="option in regionOptions"
                                  ng-click="toggleMultiSelect('regionFilters', option )">
@@ -487,11 +487,12 @@
                                        <input type="hidden" class="ba-input-field-value" name="regionAccessFilters" id="regionAccessFilters"
                                        ng-model="regionAccessFilters">
                                        <span class="error">Enter a valid region access.</span>
+                                       
                                        <div class="ba-multiselect-options layout-cell layout-scrollbar">
                                           <div class="ba-option" ng-click="selectAllMultiSelect('regionAccessOptions','regionAccessFilters' )">
                                              <span class="ba-checkbox"
                                              ng-class="{__checked : isChecked('all','regionAccessOptions','regionAccessFilters')}"></span>
-                                             <span class="ba-option-label">All Practices</span>
+                                             <span class="ba-option-label">All Region</span>
                                           </div>
                                           <div class="ba-option" ng-repeat="option in regionAccessOptions"
                                           ng-click="toggleMultiSelect('regionAccessFilters', option )">

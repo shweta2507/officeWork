@@ -1209,16 +1209,18 @@ table.ba-table-widget tbody tr td:last-child:after {
 div.dataTables_wrapper div.dataTables_length select:focus {
   background-image: url(../assets/img/dropdown-arrow-top.svg) !important;
 }
+/*
 .quicl-roll-wrapper .main-access-wrapper .ba-input-wrapper .ba-multiselect-options .ba-option.enable span.radiobtn {
   border-color: #343D56;
   color: #343D56;
 }
 .quicl-roll-wrapper .main-access-wrapper .ba-input-wrapper .ba-multiselect-options .ba-option.enable span.radiobtn:after {
   background: #343D56;
-}
+}*/
+/*
 .quicl-roll-wrapper .main-access-wrapper .ba-input-wrapper .ba-multiselect-options .ba-option.enable .ba-option-label {
   color: #343D56;
-}
+}*/
 .feature-access-wrapper > ul > li .list-name {
   opacity: 1;
 }
