@@ -642,7 +642,7 @@ div.dataTables_wrapper div.dataTables_length label {
   z-index: 9999;
 }
 
-.users-page-content .table-wrapper #dtBasicExample_wrapper .row:last-child .col-sm-7 div#dtBasicExample_paginate ul.pagination li.next.disabled, 
+.users-page-content .table-wrapper #dtBasicExample_wrapper .row:last-child .col-sm-7 div#dtBasicExample_paginate ul.pagination li.next.disabled,
 .users-page-content .table-wrapper #dtBasicExample_wrapper .row:last-child .col-sm-7 div#dtBasicExample_paginate ul.pagination li.previous.disabled {
   letter-spacing: 0px;
   color: #0ACADC;
@@ -655,7 +655,7 @@ div.dataTables_wrapper div.dataTables_length label {
   border-radius: 7px;
 }
 
-.users-page-content .table-wrapper #dtBasicExample_wrapper .row:last-child .col-sm-7 div#dtBasicExample_paginate ul.pagination li.previous a:hover, 
+.users-page-content .table-wrapper #dtBasicExample_wrapper .row:last-child .col-sm-7 div#dtBasicExample_paginate ul.pagination li.previous a:hover,
 .users-page-content .table-wrapper #dtBasicExample_wrapper .row:last-child .col-sm-7 div#dtBasicExample_paginate ul.pagination li.next a:hover {
   color: #0ACADC;
   background: transparent;
@@ -729,7 +729,7 @@ span.active-bar {
 .custom-file-input::before {
   content: 'Upload Image';
   display: inline-block;
-  padding: 11px 24px;
+  padding: 11px 22px;
   outline: none;
   white-space: nowrap;
   -webkit-user-select: none;
@@ -866,12 +866,12 @@ table.ba-table-widget tbody tr{
   padding-right: 32px;
   border-radius: 18px !important;
 }
-.users-page-content .table-wrapper tbody tr:hover {
-  background-color: #f3f4f680;
-  border-radius: 18px !important;
+.users-page-content .table-wrapper tbody tr:hover > td {
+  background-color: #f3f4f680 !important;
 }
+
 table.ba-table-widget tbody tr td:first-child {
-  margin-left: 16px;
+  padding-left: 16px;
 }
 
 .users-page-content .table-wrapper table.ba-table-widget td {
@@ -988,7 +988,6 @@ transition: all 0.2s ease;
 .ba-input-wrapper .ba-option input[type=radio]#enable {
   margin: 0 !important;
   border: 1px solid #0ADC8F !important;
-  opacity: 1 !important;
   margin-right: 7px !important;
   height: 12px !important;
   width: 12px !important;
@@ -1012,4 +1011,76 @@ transition: all 0.2s ease;
   line-height: 18px;
   font-family: 'Eina-SemiBold';
 }
+.users-page-content .table-wrapper tbody tr:hover > td:first-child {
+  border-radius: 18px 0px 0px 18px;
+}
+.users-page-content .table-wrapper tbody tr:hover > td:last-child {
+  border-radius: 0px 18px 18px 0px;
+}
+li#dtBasicExample_previous > a:after {
+  content: "Prev";
+  padding: 0;
+  width: 100%;
+  height: 24px;
+  border: none !important;
+  letter-spacing: 0px;
+  color: #0ACADC;
+  opacity: 1;
+  font-size: 12px;
+  line-height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Eina-Bold';
+}
+.users-page-content .table-wrapper #dtBasicExample_wrapper .row:last-child .col-sm-7 div#dtBasicExample_paginate ul.pagination li#dtBasicExample_previous a {
+  font-size: 0;
+}
+input.custom-file-input {
+  max-width: 135px;
+}
+span.radiobtn {
+  border: 1px solid #343D56;
+  width: 13px !important;
+  height: 13px !important;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 8px;
+}
 
+span.radiobtn:after {
+  content: "";
+  background: #343D56;
+  width: 6px;
+  height: 6px;
+  display: block;
+  border-radius: 6px;
+}
+.ba-option {
+  display: block;
+  position: relative;
+}
+.ba-option input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+.ba-option.enable span.radiobtn {
+  border-color: #0ADC8F;
+}
+.ba-option.enable span.radiobtn:after {
+  background: #0ADC8F;
+}
+.ba-option.custom-radion-select {
+  display: none;
+}
+.quicl-roll-wrapper .main-access-wrapper .ba-input-wrapper.Enable .ba-option.enable.custom-radion-select {
+  display: block;
+  padding: 0 !important;
+}
+.quicl-roll-wrapper .main-access-wrapper .ba-input-wrapper.Disable .ba-option.enable.custom-radion-select {
+  display: block;
+  padding: 0 !important;
+}

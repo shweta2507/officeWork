@@ -266,7 +266,7 @@
                      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#userModal">Add User</button>
                   </div>
                </div>
-                  
+
                <div class="table-wrapper">
                   <table id="dtBasicExample" class="ba-table-widget table table-striped table-bordered table-sm" cellspacing="0" width="100%">
                      <thead>
@@ -546,58 +546,83 @@
                            <div class="quicl-roll-wrapper">
                               <h3>User Quick Roll</h3>
                               <div class="main-access-wrapper">
-                                 <div class="ba-input-wrapper ba-multiselect custom-select-wrapper" tabindex="0" >
-                                    <div class="ba-input-field">
-                                       <span>Admin</span>
+                                 <div class="ba-input-wrapper ba-multiselect custom-enable custom-select-wrapper" tabindex="0" >
+                                    <div class="ba-input-field" title="Admin">
+                                       <div class="ba-option enable custom-radion-select">
+                                          <input type="radio" id="enable" name="option" value="enable">
+                                          <span class="radiobtn"></span>
+                                          <span class="ba-option-label">Enable</span>
+                                       </div>
+                                       <div class="ba-option disable custom-radion-select">
+                                          <input type="radio" id="disable" name="option" value="disable">
+                                          <span class="radiobtn"></span>
+                                          <span class="ba-option-label">Disable</span>
+                                       </div>
                                     </div>
                                     <input type="hidden" class="ba-input-field-value" name="practiceFilters" id="practiceFilters">
                                     <div class="ba-multiselect-options layout-cell layout-scrollbar">
                                        <div class="ba-option enable">
                                           <input type="radio" id="enable" name="option" value="enable">
+                                          <span class="radiobtn"></span>
                                           <span class="ba-option-label">Enable</span>
                                        </div>
                                        <div class="ba-option disable">
                                           <input type="radio" id="disable" name="option" value="disable">
+                                          <span class="radiobtn"></span>
                                           <span class="ba-option-label">Disable</span>
                                        </div>
                                     </div>
                                  </div>
-                                 <div class="ba-input-wrapper ba-multiselect custom-select-wrapper" tabindex="0">
-                                    <div class="ba-input-field">
-                                       <span>Employee</span>
+                                 <div class="ba-input-wrapper ba-multiselect custom-enable custom-select-wrapper" tabindex="0">
+                                    <div class="ba-input-field" title="Employee">
+                                       <div class="ba-option enable custom-radion-select">
+                                          <input type="radio" id="enable" name="option" value="enable">
+                                          <span class="radiobtn"></span>
+                                          <span class="ba-option-label">Enable</span>
+                                       </div>
+                                       <div class="ba-option disable custom-radion-select">
+                                          <input type="radio" id="disable" name="option" value="disable">
+                                          <span class="radiobtn"></span>
+                                          <span class="ba-option-label">Disable</span>
+                                       </div>
                                     </div>
                                     <input type="hidden" class="ba-input-field-value">
                                     <div class="ba-multiselect-options layout-cell layout-scrollbar">
-                                       <div class="ba-option">
-                                          <span class="ba-checkbox"></span>
-                                          <span class="ba-option-label">Employee</span>
-                                       </div>
                                        <div class="ba-option enable">
                                           <input type="radio" id="enable" name="option" value="enable">
+                                          <span class="radiobtn"></span>
                                           <span class="ba-option-label">Enable</span>
                                        </div>
                                        <div class="ba-option disable">
                                           <input type="radio" id="disable" name="option" value="disable">
+                                          <span class="radiobtn"></span>
                                           <span class="ba-option-label">Disable</span>
                                        </div>
                                     </div>
                                  </div>
-                                 <div class="ba-input-wrapper ba-multiselect custom-select-wrapper" tabindex="0">
-                                    <div class="ba-input-field">
-                                       <span>Provider</span>
+                                 <div class="ba-input-wrapper ba-multiselect custom-enable custom-select-wrapper" tabindex="0">
+                                    <div class="ba-input-field" title="Provider">
+                                       <div class="ba-option enable custom-radion-select">
+                                          <input type="radio" id="enable" name="option" value="enable">
+                                          <span class="radiobtn"></span>
+                                          <span class="ba-option-label">Enable</span>
+                                       </div>
+                                       <div class="ba-option disable custom-radion-select">
+                                          <input type="radio" id="disable" name="option" value="disable">
+                                          <span class="radiobtn"></span>
+                                          <span class="ba-option-label">Disable</span>
+                                       </div>
                                     </div>
                                     <input type="hidden" class="ba-input-field-value">
                                     <div class="ba-multiselect-options layout-cell layout-scrollbar">
-                                       <div class="ba-option">
-                                          <span class="ba-checkbox"></span>
-                                          <span class="ba-option-label">Provider</span>
-                                       </div>
                                        <div class="ba-option enable">
                                           <input type="radio" id="enable" name="option" value="enable">
+                                          <span class="radiobtn"></span>
                                           <span class="ba-option-label">Enable</span>
                                        </div>
                                        <div class="ba-option disable">
                                           <input type="radio" id="disable" name="option" value="disable">
+                                          <span class="radiobtn"></span>
                                           <span class="ba-option-label">Disable</span>
                                        </div>
                                     </div>
@@ -904,30 +929,30 @@
              $('.has-flyout').attr('tabindex', '0');
              $('.ba-input-wrapper').attr('tabindex', '0');
              $('.ba-filter-select').attr('tabindex', '0');
-         
-         
+
+
              $('.has-flyout').click(function () {
                  $(this).toggleClass('_show-menu')
              })
              $('.has-flyout').on('blur', function () {
                  $(this).removeClass('_show-menu')
              })
-         
+
              $('.filter-single-select').click(function () {
                  $(this).toggleClass('_show-options')
              })
-         
+
              $('.filter-single-select').on('blur', function () {
                  $(this).removeClass('_show-options')
              })
-         
+
              $('.ba-topnav-item').click(function () {
                  $(this).addClass('_active').siblings().removeClass('_active')
              })
              $('.filter_pill').click(function () {
                  $(this).addClass('_active').siblings().removeClass('_active')
              })
-         
+
              // tree-select expand parent
              $('.ba-option-parent ._parent ._chevron-down').click(function (params) {
                $(this).parent().parent().toggleClass('_show-children')
@@ -982,7 +1007,7 @@
                }, 100);
             });
             $('.adduser-wrapper .user-details .ba-multiselect').focusout(function(ele){
-               setTimeout(function() {   
+               setTimeout(function() {
                   var $this = $(ele.currentTarget);
                   if($this.find('.check-select').text() === ""){
                      $this.addClass('show-error');
@@ -1000,7 +1025,7 @@
                         $this.closest('.form-field').removeClass('show-error');
                   }
                });
-               
+
                $('.adduser-wrapper .user-details .ba-multiselect').each(function(i, ele){
                   var $this = $(ele);
                   if($this.find('.check-select').text() === ""){
@@ -1026,8 +1051,23 @@
                      $field.removeClass("custom-filled");
                   }
                });
-            $('.cta-wrapper a.cta .cancel').click(function(){
+            $('.cta-wrapper a.cta .cancel, .closeIcon').click(function(){
                $('.adduser-button button.btn.btn-primary[data-target="#userModal"]')[0].click();
+            });
+            $('.adduser-button button.btn.btn-primary[data-target="#userModal"]').click(function(){
+               $('.form-field').removeClass('show-error');
+               $('.ba-multiselect').removeClass('show-error');
+            });
+            $('.custom-enable .ba-option').click(function(){
+               var abc = $(this).find('span.ba-option-label').text();
+               $(this).closest('.custom-enable').removeClass('Enable Disable');
+               $(this).closest('.custom-enable').addClass(abc);
+               var $field = $(this).closest('.custom-enable');
+               if ($field.hasClass('Enable') || $field.hasClass('Disable')) {
+                  $field.addClass("custom-filled");
+               } else {
+                  $field.removeClass("custom-filled");
+               }
             });
             $('.adduser-wrapper .user-details .cta-wrapper .saveContinue').click(function(ele){console.log('work');
                ele.stopPropagation();
