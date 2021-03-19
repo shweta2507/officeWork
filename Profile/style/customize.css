@@ -403,6 +403,10 @@
   font-weight: normal;
 }
 
+.quicl-roll-wrapper .main-access-wrapper .ba-input-wrapper .ba-input-field span.radiobtn {
+  opacity: 1;
+}
+
 .user-access-details h3 {
   margin: 0;
   letter-spacing: 0px;
@@ -976,15 +980,6 @@ transition: all 0.2s ease;
   opacity: 1;
 }
 
-.quicl-roll-wrapper .main-access-wrapper .ba-input-wrapper.custom-filled .ba-input-field span {
-  font-size: 11px;
-  line-height: 15px;
-  color: #363F57;
-  opacity: 0.5;
-  left: 12px;
-  top: 6px;
-  transition: all 0.2s ease;
-}
 
 
 .ba-input-wrapper .ba-option input[type=radio]#enable {
@@ -1211,4 +1206,25 @@ table.ba-table-widget tbody tr td:last-child:after {
 .users-page-content .table-wrapper tbody tr:first-child td:after {
   display: none;
 }
-
+.adduser-wrapper > ul > li:first-child .list-name {
+  opacity: 1;
+}
+div.dataTables_wrapper div.dataTables_length select:focus {
+  background-image: url(../assets/img/dropdown-arrow-top.svg) !important;
+}
+.quicl-roll-wrapper .main-access-wrapper .ba-input-wrapper .ba-multiselect-options .ba-option.enable span.radiobtn {
+  border-color: #343D56;
+  color: #343D56;
+}
+.quicl-roll-wrapper .main-access-wrapper .ba-input-wrapper .ba-multiselect-options .ba-option.enable span.radiobtn:after {
+  background: #343D56;
+}
+.quicl-roll-wrapper .main-access-wrapper .ba-input-wrapper .ba-multiselect-options .ba-option.enable .ba-option-label {
+  color: #343D56;
+}
+.feature-access-wrapper > ul > li .list-name {
+  opacity: 1;
+}
+table.ba-table-widget tbody tr td:first-child {
+  line-height: 20px;
+}
