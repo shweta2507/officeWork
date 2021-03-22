@@ -18,11 +18,14 @@
       <script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
       <script src="https://cdn.datatables.net/1.10.24/js/dataTables.bootstrap.min.js"></script>
       <link rel="stylesheet" href="https://cdn.datatables.net/1.10.24/css/dataTables.bootstrap.min.css">
+      <script src="./js/custom-js/spectrum.js"></script>
       <!-- highcharts  -->
       <script src="https://code.highcharts.com/highcharts.src.js" defer></script>
+
       <!-- custom select -->
       <script src="./js/custom-select/select.js" type="module"></script>
       <script src="./js/custom-js/upload-photo.js" type="module"></script>
+
       <!-- Styles from old dashboard  -->
       <link rel="stylesheet" href="css2/bootstrap.min.css">
       <link rel="stylesheet" href="css2/font-awesome.css">
@@ -42,6 +45,7 @@
       <link rel="stylesheet" href="css2/style.css">
       <link rel="stylesheet" href="css2/responsive.css">
       <link rel="stylesheet" href="css2/color-style.css">
+      <link rel="stylesheet" href="css2/spectrum.css">
       <link href="NewCSS/masterpage.css" rel="stylesheet">
       <link href="NewCSS/page.css" rel="stylesheet">
       <link href="./style-dashboard/sb-admin.css" rel="stylesheet">
@@ -1004,10 +1008,10 @@
                                                       <span class="error">Enter a Phone number.</span>
                                                    </div>
                                                 </div>
-                                                <div class="form-field">
+                                                <div class="form-field custom-color-input">
                                                    <label for="state" class="form-label">Practice Color Scheme</label>
                                                    <div class="custom-input">
-                                                      <input type="state" class="form-control" id="inputState" name="state">
+                                                      <input type='text' class="form-control" id="custom" name="Color"/>
                                                       <span class="error">Enter a valid state.</span>
                                                    </div>
                                                 </div>
@@ -1064,7 +1068,6 @@
              $('.ba-input-wrapper').attr('tabindex', '0');
              $('.ba-filter-select').attr('tabindex', '0');
          
-         
              $('.has-flyout').click(function () {
                  $(this).toggleClass('_show-menu')
              })
@@ -1099,7 +1102,7 @@
             $('.table-wrapper .dataTables_filter').addClass('show-search').appendTo('.top-gutter .search-bar');
             
             $(".form-control").on("blur input focus", function() {
-            var $field = $(this).closest(".form-field");
+               var $field = $(this).closest(".form-field");
                if (this.value) {
                   $field.addClass("custom-filled");
                } else {
@@ -1117,7 +1120,7 @@
            
             $(".dataTables_filter").addClass("custom-filled");
             $(".search-bar #dtBasicExample_filter.custom-filled > label input[type=search]").attr('placeholder', 'Search');
-            $('.form-control:not(.no-required)').focusout(function(ele) {
+            $('.practice-profile .form-control:not(.no-required)').focusout(function(ele) {
                setTimeout(function() {
                   var $this = $(ele.currentTarget);
                   if ($this.val() === '') {
@@ -1127,18 +1130,19 @@
                   }
                }, 100);
             });
-            $('.adduser-wrapper .user-details .ba-multiselect').focusout(function(ele){
+            $('.technical-information .form-control:not(.no-required)').focusout(function(ele) {
                setTimeout(function() {
                   var $this = $(ele.currentTarget);
-                  if($this.find('.check-select').text() === ""){
-                     $this.addClass('show-error');
-                  } else{
-                     $this.removeClass('show-error');
+                  if ($this.val() === '') {
+                        $this.closest('.form-field').addClass('show-error');
+                  } else {
+                        $this.closest('.form-field').removeClass('show-error');
                   }
                }, 100);
-               });
+            });
+         
             function checkInpuVal(){
-               $('.form-control:not(.no-required)').each(function(i, ele){
+               $('.technical-information .form-control:not(.no-required)').each(function(i, ele){
                   var $this = $(ele);
                   if($this.val() === ''){
                         $this.closest('.form-field').addClass('show-error');
@@ -1146,81 +1150,27 @@
                         $this.closest('.form-field').removeClass('show-error');
                   }
                });
-         
-               $('.adduser-wrapper .user-details .ba-multiselect').each(function(i, ele){
+            }
+            function checkInpuVal2(){
+               $('.practice-profile .form-control:not(.no-required)').each(function(i, ele){
                   var $this = $(ele);
-                  if($this.find('.check-select').text() === ""){
-                        $this.addClass('show-error');
+                  if($this.val() === ''){
+                        $this.closest('.form-field').addClass('show-error');
                   } else{
-                        $this.removeClass('show-error');
+                        $this.closest('.form-field').removeClass('show-error');
                   }
                });
             }
             
-            $(".ba-multiselect:not(.nochange)").on("blur input focus", function() {
-               var $field = $(this);
-               if ($(this).find('.check-select').text() !== "") {
-                  $field.addClass("custom-filled");
-               } else {
-                  $field.removeClass("custom-filled");
-               }
-            });
-            
-            $(".access-features .confirmCta").on("click", function(ele) {
-               ele.stopPropagation();
-               var $this = $(ele.currentTarget);
-               if($('.access-features .ba-input-wrapper.ba-multiselect.custom-filled').length === 0){
-                  $('.min-feature-error').show();
-                  setTimeout(() => {
-                     $('.min-feature-error').hide();     
-                  }, 1000);
-               } else {
-                  $('body').removeClass('custom-show-error');
-                  if($('.access-features .ba-input-wrapper.ba-multiselect.custom-filled').length > 0){
-                        $this.parent().addClass('show-loader');
-                        setTimeout(function(){
-                           $this.parent().removeClass('show-loader');
-                        }, 3000);
-                     }
-               }
-            });
-            
-               $(".ba-multiselect:not(.nochange)").on("focus", function() {
-                  var $field = $(this).closest(".ba-multiselect");
-                  if ($(this).find('.ng-not-empty')) {
-                     $field.addClass("custom-filled");
-                  } else {
-                     $field.removeClass("custom-filled");
-                  }
-               });
             $('.form-button .for-btn.for-btn-primary.cancel, .closeIcon').click(function(){
                $('.users-page-content .table-wrapper tbody tr[data-target="#userModal"]')[0].click();
             });
-            $('.adduser-button button.btn.btn-primary[data-target="#userModal"]').click(function(){
+            $('.users-page-content .table-wrapper tbody tr[data-target="#userModal"]').click(function(){
                $('.form-field').removeClass('show-error');
-               $('.ba-multiselect').removeClass('show-error');
+               $('.edit-profile.edit-practice').show();
+               $('.upload-img-wrapper').hide();
             });
-            $('.custom-enable .ba-option').click(function(){
-               var abc = $(this).find('span.ba-option-label').text();
-               $(this).closest('.custom-enable').removeClass('Enable Disable');
-               $(this).closest('.custom-enable').addClass(abc);
-               $(this).closest('.custom-enable')[0].blur();
-            });
-            $('.adduser-wrapper .user-details .cta-wrapper .saveContinue').click(function(ele){
-               ele.stopPropagation();
-               var $this = $(ele.currentTarget);
-               checkInpuVal();
-               setTimeout(function(){
-                     if($('.show-error').length === 0){
-                        $this.parent().addClass('show-loader');
-                        setTimeout(function(){
-                           $this.parent().removeClass('show-loader');
-                           $('.adduser-wrapper').hide();
-                           $('.feature-access-wrapper').show();
-                        }, 3000);
-                     }
-               }, 0);
-            });
+          
             $('.option-wrapper h4').click(function(ele){
                ele.stopPropagation();
                $(this).next('.custom-dropdown').show();
@@ -1246,9 +1196,9 @@
                $(this).parent().addClass("active").siblings().removeClass("active");
                $(ID).fadeIn().siblings().hide();}});});
             });
-               $('.edit-profile-drowpdown>ul>li.edit-menu img.drowpdown-icon').click(function(ele){
-            ele.stopPropagation();
-            $(this).next('ul').show();
+            $('.edit-profile-drowpdown>ul>li.edit-menu img.drowpdown-icon').click(function(ele){
+               ele.stopPropagation();
+               $(this).next('ul').show();
             });
             $('.edit-profile-drowpdown>ul>li.edit-menu ul li').click(function(ele){
                ele.stopPropagation();
@@ -1258,38 +1208,39 @@
                ele.stopPropagation();
                $('.edit-profile-drowpdown>ul>li.edit-menu ul').hide();
             });    
-            
-            
-            
-               $('.edit-profile-drowpdown>ul>li>ul>li.upload-img').click(function() {
-            $('.edit-profile').hide();
-            $('.upload-img-wrapper').show();
+      
+            $('.edit-profile-drowpdown>ul>li>ul>li.upload-img').click(function() {
+               $('.edit-profile').hide();
+               $('.upload-img-wrapper').show();
             });
-            
-            $('button.btn.btn-primary[data-target="#exampleModal"]').click(function() {
-            $('.edit-profile').show();
-            $('.upload-img-wrapper, .edit-profile.password-change').hide();
+            $('.upload-img-wrapper .form-button .btn-blue').click(function(ele){
+               var $this = $(ele.currentTarget);
+               setTimeout(function(){
+                  if($this.closest('.upload-img-wrapper').find('.show-error').length === 0){
+                     $this.parent().addClass('show-loader');
+                     setTimeout(function(){
+                        $this.parent().removeClass('show-loader');
+                     }, 3000);
+                  }
+               }, 0);
             });
-            
-            
-            
-            $('.custom-edit-pp .gernal-profile-form .form-button .btn-blue').click(function(ele){
-            var $this = $(ele.currentTarget);
-            checkInpuVal();
-            setTimeout(function(){
-               if($this.closest('.form-feild').find('.show-error').length === 0){
-                  $this.parent().addClass('show-loader');
-                  setTimeout(function(){
-                     $this.parent().removeClass('show-loader');
-                  }, 3000);
-               }
-            }, 0);
-            });
-            $('.password-change .password-change-wrapper .form-button .btn-blue').click(function(ele){
+            $('.practice-profile .custom-edit-pp .gernal-profile-form .form-button .btn-blue').click(function(ele){
                var $this = $(ele.currentTarget);
                checkInpuVal2();
                setTimeout(function(){
-                  if($this.closest('.form-feild').find('.show-error').length === 0){
+                  if($this.closest('.practice-profile').find('.show-error').length === 0){
+                     $this.parent().addClass('show-loader');
+                     setTimeout(function(){
+                        $this.parent().removeClass('show-loader');
+                     }, 3000);
+                  }
+               }, 0);
+            });
+            $('.technical-information .custom-edit-pp .gernal-profile-form .form-button .btn-blue').click(function(ele){
+               var $this = $(ele.currentTarget);
+               checkInpuVal();
+               setTimeout(function(){
+                  if($this.closest('.technical-information').find('.show-error').length === 0){
                      $this.parent().addClass('show-loader');
                      setTimeout(function(){
                         $this.parent().removeClass('show-loader');
@@ -1301,6 +1252,9 @@
                $('html, body').animate({
                   scrollTop: $('.body-container').offset().top
                }, 1000);
+            });
+            $("#custom").spectrum({
+               color: "#0ACADC"
             });
          });
       </script>
