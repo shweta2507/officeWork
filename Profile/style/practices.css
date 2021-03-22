@@ -1,0 +1,137 @@
+/*   ======================  Practice Page PopUp Styling  ======================   */
+
+.edit-practice .profile-name .profile-name-id span {
+	letter-spacing: 0px;
+	color: #363F57;
+	opacity: 1;
+	font-size: 13px;
+	line-height: 18px;
+	font-family: 'Eina';
+}
+
+.tabber-wrap.blog-tabber ul {
+	list-style: none;
+	padding: 0;
+}
+
+.edit-practice .profile-group {
+	margin-bottom: 24px;
+}
+
+.tabber-wrap.blog-tabber ul li {
+	list-style: none;
+	display: inline-block;
+}
+
+.tabber-wrap.blog-tabber ul li a {
+	font-size: 12px;
+	line-height: 16px;
+	font-family: 'Eina-SemiBold';
+	color: #363F57;
+	opacity: 0.5;
+	padding: 5px 16px 7px 16px;
+	border-radius: 10px;
+	display: inline-block;
+}
+
+.tabber-wrap.blog-tabber ul li.active a {
+	background: #0ACADC 0% 0% no-repeat padding-box;
+	opacity: 1;
+	letter-spacing: 0px;
+	color: #FFFFFF;
+}
+
+.tabber-content {
+	margin-top: 24px;
+	border-top: 1px solid #EAEBEE;
+	padding-top: 24px;
+}
+
+.tabber-wrap.blog-tabber .gernal-profile {
+	padding: 0;
+}
+
+.tabber-wrap.blog-tabber div#tab-0 .feild-2.feild .form-field {
+	-webkit-box-flex: 0;
+	-ms-flex: 0 0 100%;
+	flex: 0 0 100%;
+	max-width: 100%;
+}
+
+.tabber-wrap.blog-tabber div#tab-0 .feild-3.feild .form-field {
+	-webkit-box-flex: 0;
+	-ms-flex: 0 0 calc(32.23% - 17px);
+	flex: 0 0 calc(32.23% - 17px);
+	max-width: calc(32.23% - 17px);
+}
+
+.practice-page .practices-page-content .search-bar {
+	display: none;
+}
+
+.online-payment-option p {
+	margin: 0;
+	letter-spacing: 0px;
+	color: #363F57;
+	opacity: 0.5;
+	font-size: 11px;
+	line-height: 15px;
+	font-family: 'Eina';
+	margin-bottom: 5px;
+}
+
+span.inactive {
+	background: #DC0A5233 0% 0% no-repeat padding-box;
+	border-radius: 6px;
+	opacity: 1;
+	padding: 8px 15px 9px 12px;
+	margin-right: 10px;
+	letter-spacing: 0px;
+	color: #DC0A52;
+	opacity: 1;
+	font-size: 13px;
+	line-height: 18px;
+	font-weight: 600;
+	font-family: 'Eina-SemiBold';
+}
+
+.inactive-button span {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	cursor: pointer;
+}
+
+.inactive-button {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+}
+
+.online-payment-option {
+	margin-bottom: 24px;
+}
+
+span.inactive img {
+	margin-right: 6px;
+}
+
+.inactive-button span.activate {
+    letter-spacing: 0px;
+    color: #03C6D8;
+    opacity: 1;
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 600;
+    font-family: 'Eina-SemiBold';
+}
+
+.edit-profile.edit-practice .edit-profile-drowpdown>ul>li>ul {
+    height: 89px;
+}
