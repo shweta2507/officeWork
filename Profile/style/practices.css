@@ -135,3 +135,14 @@ span.inactive img {
 .edit-profile.edit-practice .edit-profile-drowpdown>ul>li>ul {
     height: 89px;
 }
+.users-page-content.practices-page-content .table-wrapper tbody tr td:last-child {
+    padding-right: 42px;
+}
+
+.practices-page-content table.ba-table-widget tbody tr td:last-child:after {
+    right: 42px;
+}
+
+.users-page-content.practices-page-content .table-wrapper table#dtBasicExample > thead > tr > th:last-child {
+    padding-right: 42px !important;
+}

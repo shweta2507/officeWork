@@ -22,6 +22,7 @@
       <script src="https://code.highcharts.com/highcharts.src.js" defer></script>
       <!-- custom select -->
       <script src="./js/custom-select/select.js" type="module"></script>
+      <script src="./js/custom-js/upload-photo.js" type="module"></script>
       <!-- Styles from old dashboard  -->
       <link rel="stylesheet" href="css2/bootstrap.min.css">
       <link rel="stylesheet" href="css2/font-awesome.css">
@@ -288,474 +289,474 @@
                      <thead>
                         <tr>
                            <th class="th-sm">Practice Name</th>
-                           <th class="th-sm">Email Address</th>
-                           <th class="th-sm">Phone Number</th>
-                           <th class="th-sm">Region</th>
-                           <th class="th-sm">Location</th>
+                           <th class="th-sm" ng-show="showThisWidget('Email Address', 'filterDashboardSelected')">Email Address</th>
+                           <th class="th-sm" ng-show="showThisWidget('Phone Number', 'filterDashboardSelected')">Phone Number</th>
+                           <th class="th-sm" ng-show="showThisWidget('Region', 'filterDashboardSelected')">Region</th>
+                           <th class="th-sm" ng-show="showThisWidget('Location', 'filterDashboardSelected')">Location</th>
                         </tr>
                      </thead>
                      <tbody>
                         <tr data-toggle="modal" data-target="#userModal">
-                           <td class="table-user-name">Icon Family Dentistry</td>
-                           <td class="table-user-email">hi@iconfamilydentistry.com</td>
-                           <td class="table-user-no">(210) 274-4350</td>
-                           <td class="table-user-region">North Carolina</td>
-                           <td class="table-user-location">Longmont, CO</td>
+                           <td class="table-user-name" >Icon Family Dentistry</td>
+                           <td class="table-user-email" ng-show="showThisWidget('Email Address', 'filterDashboardSelected')">hi@iconfamilydentistry.com</td>
+                           <td class="table-user-no" ng-show="showThisWidget('Phone Number', 'filterDashboardSelected')">(210) 274-4350</td>
+                           <td class="table-user-region" ng-show="showThisWidget('Region', 'filterDashboardSelected')">North Carolina</td>
+                           <td class="table-user-location" ng-show="showThisWidget('Location', 'filterDashboardSelected')">Longmont, CO</td>
                         </tr>
                         <tr data-toggle="modal" data-target="#userModal">
                            <td class="table-user-name">Icon Family Dentistry</td>
-                           <td class="table-user-email">hi@iconfamilydentistry.com</td>
-                           <td class="table-user-no">(210) 274-4350</td>
-                           <td class="table-user-region">North Carolina</td>
-                           <td class="table-user-location">Longmont, CO</td>
+                           <td class="table-user-email" ng-show="showThisWidget('Email Address', 'filterDashboardSelected')">hi@iconfamilydentistry.com</td>
+                           <td class="table-user-no" ng-show="showThisWidget('Phone Number', 'filterDashboardSelected')">(210) 274-4350</td>
+                           <td class="table-user-region" ng-show="showThisWidget('Region', 'filterDashboardSelected')">North Carolina</td>
+                           <td class="table-user-location" ng-show="showThisWidget('Location', 'filterDashboardSelected')">Longmont, CO</td>
                         </tr>
                         <tr data-toggle="modal" data-target="#userModal">
                            <td class="table-user-name">Icon Family Dentistry</td>
-                           <td class="table-user-email">hi@iconfamilydentistry.com</td>
-                           <td class="table-user-no">(210) 274-4350</td>
-                           <td class="table-user-region">North Carolina</td>
-                           <td class="table-user-location">Longmont, CO</td>
+                           <td class="table-user-email" ng-show="showThisWidget('Email Address', 'filterDashboardSelected')">hi@iconfamilydentistry.com</td>
+                           <td class="table-user-no" ng-show="showThisWidget('Phone Number', 'filterDashboardSelected')">(210) 274-4350</td>
+                           <td class="table-user-region" ng-show="showThisWidget('Region', 'filterDashboardSelected')">North Carolina</td>
+                           <td class="table-user-location" ng-show="showThisWidget('Location', 'filterDashboardSelected')">Longmont, CO</td>
                         </tr>
-                        <tr>
+                        <tr data-toggle="modal" data-target="#userModal">
                            <td class="table-user-name">Icon Family Dentistry</td>
-                           <td class="table-user-email">hi@iconfamilydentistry.com</td>
-                           <td class="table-user-no">(210) 274-4350</td>
-                           <td class="table-user-region">North Carolina</td>
-                           <td class="table-user-location">Longmont, CO</td>
+                           <td class="table-user-email" ng-show="showThisWidget('Email Address', 'filterDashboardSelected')">hi@iconfamilydentistry.com</td>
+                           <td class="table-user-no" ng-show="showThisWidget('Phone Number', 'filterDashboardSelected')">(210) 274-4350</td>
+                           <td class="table-user-region" ng-show="showThisWidget('Region', 'filterDashboardSelected')">North Carolina</td>
+                           <td class="table-user-location" ng-show="showThisWidget('Location', 'filterDashboardSelected')">Longmont, CO</td>
                         </tr>
-                        <tr>
+                        <tr data-toggle="modal" data-target="#userModal">
                            <td class="table-user-name">Icon Family Dentistry</td>
-                           <td class="table-user-email">hi@iconfamilydentistry.com</td>
-                           <td class="table-user-no">(210) 274-4350</td>
-                           <td class="table-user-region">North Carolina</td>
-                           <td class="table-user-location">Longmont, CO</td>
+                           <td class="table-user-email" ng-show="showThisWidget('Email Address', 'filterDashboardSelected')">hi@iconfamilydentistry.com</td>
+                           <td class="table-user-no" ng-show="showThisWidget('Phone Number', 'filterDashboardSelected')">(210) 274-4350</td>
+                           <td class="table-user-region" ng-show="showThisWidget('Region', 'filterDashboardSelected')">North Carolina</td>
+                           <td class="table-user-location" ng-show="showThisWidget('Location', 'filterDashboardSelected')">Longmont, CO</td>
                         </tr>
-                        <tr>
+                        <tr data-toggle="modal" data-target="#userModal">
                            <td class="table-user-name">Icon Family Dentistry</td>
-                           <td class="table-user-email">hi@iconfamilydentistry.com</td>
-                           <td class="table-user-no">(210) 274-4350</td>
-                           <td class="table-user-region">North Carolina</td>
-                           <td class="table-user-location">Longmont, CO</td>
+                           <td class="table-user-email" ng-show="showThisWidget('Email Address', 'filterDashboardSelected')">hi@iconfamilydentistry.com</td>
+                           <td class="table-user-no" ng-show="showThisWidget('Phone Number', 'filterDashboardSelected')">(210) 274-4350</td>
+                           <td class="table-user-region" ng-show="showThisWidget('Region', 'filterDashboardSelected')">North Carolina</td>
+                           <td class="table-user-location" ng-show="showThisWidget('Location', 'filterDashboardSelected')">Longmont, CO</td>
                         </tr>
-                        <tr>
+                        <tr data-toggle="modal" data-target="#userModal">
                            <td class="table-user-name">Icon Family Dentistry</td>
-                           <td class="table-user-email">hi@iconfamilydentistry.com</td>
-                           <td class="table-user-no">(210) 274-4350</td>
-                           <td class="table-user-region">North Carolina</td>
-                           <td class="table-user-location">Longmont, CO</td>
+                           <td class="table-user-email" ng-show="showThisWidget('Email Address', 'filterDashboardSelected')">hi@iconfamilydentistry.com</td>
+                           <td class="table-user-no" ng-show="showThisWidget('Phone Number', 'filterDashboardSelected')">(210) 274-4350</td>
+                           <td class="table-user-region" ng-show="showThisWidget('Region', 'filterDashboardSelected')">North Carolina</td>
+                           <td class="table-user-location" ng-show="showThisWidget('Location', 'filterDashboardSelected')">Longmont, CO</td>
                         </tr>
-                        <tr>
+                        <tr data-toggle="modal" data-target="#userModal">
                            <td class="table-user-name">Icon Family Dentistry</td>
-                           <td class="table-user-email">hi@iconfamilydentistry.com</td>
-                           <td class="table-user-no">(210) 274-4350</td>
-                           <td class="table-user-region">North Carolina</td>
-                           <td class="table-user-location">Longmont, CO</td>
+                           <td class="table-user-email" ng-show="showThisWidget('Email Address', 'filterDashboardSelected')">hi@iconfamilydentistry.com</td>
+                           <td class="table-user-no" ng-show="showThisWidget('Phone Number', 'filterDashboardSelected')">(210) 274-4350</td>
+                           <td class="table-user-region" ng-show="showThisWidget('Region', 'filterDashboardSelected')">North Carolina</td>
+                           <td class="table-user-location" ng-show="showThisWidget('Location', 'filterDashboardSelected')">Longmont, CO</td>
                         </tr>
-                        <tr>
+                        <tr data-toggle="modal" data-target="#userModal">
                            <td class="table-user-name">Icon Family Dentistry</td>
-                           <td class="table-user-email">hi@iconfamilydentistry.com</td>
-                           <td class="table-user-no">(210) 274-4350</td>
-                           <td class="table-user-region">North Carolina</td>
-                           <td class="table-user-location">Longmont, CO</td>
+                           <td class="table-user-email" ng-show="showThisWidget('Email Address', 'filterDashboardSelected')">hi@iconfamilydentistry.com</td>
+                           <td class="table-user-no" ng-show="showThisWidget('Phone Number', 'filterDashboardSelected')">(210) 274-4350</td>
+                           <td class="table-user-region" ng-show="showThisWidget('Region', 'filterDashboardSelected')">North Carolina</td>
+                           <td class="table-user-location" ng-show="showThisWidget('Location', 'filterDashboardSelected')">Longmont, CO</td>
                         </tr>
-                        <tr>
+                        <tr data-toggle="modal" data-target="#userModal">
                            <td class="table-user-name">Icon Family Dentistry</td>
-                           <td class="table-user-email">hi@iconfamilydentistry.com</td>
-                           <td class="table-user-no">(210) 274-4350</td>
-                           <td class="table-user-region">North Carolina</td>
-                           <td class="table-user-location">Longmont, CO</td>
+                           <td class="table-user-email" ng-show="showThisWidget('Email Address', 'filterDashboardSelected')">hi@iconfamilydentistry.com</td>
+                           <td class="table-user-no" ng-show="showThisWidget('Phone Number', 'filterDashboardSelected')">(210) 274-4350</td>
+                           <td class="table-user-region" ng-show="showThisWidget('Region', 'filterDashboardSelected')">North Carolina</td>
+                           <td class="table-user-location" ng-show="showThisWidget('Location', 'filterDashboardSelected')">Longmont, CO</td>
                         </tr>
-                        <tr>
+                        <tr data-toggle="modal" data-target="#userModal">
                            <td class="table-user-name">Icon Family Dentistry</td>
-                           <td class="table-user-email">hi@iconfamilydentistry.com</td>
-                           <td class="table-user-no">(210) 274-4350</td>
-                           <td class="table-user-region">North Carolina</td>
-                           <td class="table-user-location">Longmont, CO</td>
+                           <td class="table-user-email" ng-show="showThisWidget('Email Address', 'filterDashboardSelected')">hi@iconfamilydentistry.com</td>
+                           <td class="table-user-no" ng-show="showThisWidget('Phone Number', 'filterDashboardSelected')">(210) 274-4350</td>
+                           <td class="table-user-region" ng-show="showThisWidget('Region', 'filterDashboardSelected')">North Carolina</td>
+                           <td class="table-user-location" ng-show="showThisWidget('Location', 'filterDashboardSelected')">Longmont, CO</td>
                         </tr>
-                        <tr>
+                        <tr data-toggle="modal" data-target="#userModal">
                            <td class="table-user-name">Icon Family Dentistry</td>
-                           <td class="table-user-email">hi@iconfamilydentistry.com</td>
-                           <td class="table-user-no">(210) 274-4350</td>
-                           <td class="table-user-region">North Carolina</td>
-                           <td class="table-user-location">Longmont, CO</td>
+                           <td class="table-user-email" ng-show="showThisWidget('Email Address', 'filterDashboardSelected')">hi@iconfamilydentistry.com</td>
+                           <td class="table-user-no" ng-show="showThisWidget('Phone Number', 'filterDashboardSelected')">(210) 274-4350</td>
+                           <td class="table-user-region" ng-show="showThisWidget('Region', 'filterDashboardSelected')">Texas</td>
+                           <td class="table-user-location" ng-show="showThisWidget('Location', 'filterDashboardSelected')">Longmont, CO</td>
                         </tr>
-                        <tr>
+                        <tr data-toggle="modal" data-target="#userModal">
                            <td class="table-user-name">Icon Family Dentistry</td>
-                           <td class="table-user-email">hi@iconfamilydentistry.com</td>
-                           <td class="table-user-no">(210) 274-4350</td>
-                           <td class="table-user-region">North Carolina</td>
-                           <td class="table-user-location">Longmont, CO</td>
+                           <td class="table-user-email" ng-show="showThisWidget('Email Address', 'filterDashboardSelected')">hi@iconfamilydentistry.com</td>
+                           <td class="table-user-no" ng-show="showThisWidget('Phone Number', 'filterDashboardSelected')">(210) 274-4350</td>
+                           <td class="table-user-region" ng-show="showThisWidget('Region', 'filterDashboardSelected')">Texas</td>
+                           <td class="table-user-location" ng-show="showThisWidget('Location', 'filterDashboardSelected')">Longmont, CO</td>
                         </tr>
-                        <tr>
+                        <tr data-toggle="modal" data-target="#userModal">
                            <td class="table-user-name">Icon Family Dentistry</td>
-                           <td class="table-user-email">hi@iconfamilydentistry.com</td>
-                           <td class="table-user-no">(210) 274-4350</td>
-                           <td class="table-user-region">North Carolina</td>
-                           <td class="table-user-location">Longmont, CO</td>
+                           <td class="table-user-email" ng-show="showThisWidget('Email Address', 'filterDashboardSelected')">hi@iconfamilydentistry.com</td>
+                           <td class="table-user-no" ng-show="showThisWidget('Phone Number', 'filterDashboardSelected')">(210) 274-4350</td>
+                           <td class="table-user-region" ng-show="showThisWidget('Region', 'filterDashboardSelected')">Texas</td>
+                           <td class="table-user-location" ng-show="showThisWidget('Location', 'filterDashboardSelected')">Longmont, CO</td>
                         </tr>
-                        <tr>
+                        <tr data-toggle="modal" data-target="#userModal">
                            <td class="table-user-name">Icon Family Dentistry</td>
-                           <td class="table-user-email">hi@iconfamilydentistry.com</td>
-                           <td class="table-user-no">(210) 274-4350</td>
-                           <td class="table-user-region">North Carolina</td>
-                           <td class="table-user-location">Longmont, CO</td>
+                           <td class="table-user-email" ng-show="showThisWidget('Email Address', 'filterDashboardSelected')">hi@iconfamilydentistry.com</td>
+                           <td class="table-user-no" ng-show="showThisWidget('Phone Number', 'filterDashboardSelected')">(210) 274-4350</td>
+                           <td class="table-user-region" ng-show="showThisWidget('Region', 'filterDashboardSelected')">Texas</td>
+                           <td class="table-user-location" ng-show="showThisWidget('Location', 'filterDashboardSelected')">Longmont, CO</td>
                         </tr>
-                        <tr>
+                        <tr data-toggle="modal" data-target="#userModal">
                            <td class="table-user-name">Icon Family Dentistry</td>
-                           <td class="table-user-email">hi@iconfamilydentistry.com</td>
-                           <td class="table-user-no">(210) 274-4350</td>
-                           <td class="table-user-region">North Carolina</td>
-                           <td class="table-user-location">Longmont, CO</td>
+                           <td class="table-user-email" ng-show="showThisWidget('Email Address', 'filterDashboardSelected')">hi@iconfamilydentistry.com</td>
+                           <td class="table-user-no" ng-show="showThisWidget('Phone Number', 'filterDashboardSelected')">(210) 274-4350</td>
+                           <td class="table-user-region" ng-show="showThisWidget('Region', 'filterDashboardSelected')">Texas</td>
+                           <td class="table-user-location" ng-show="showThisWidget('Location', 'filterDashboardSelected')">Longmont, CO</td>
                         </tr>
-                        <tr>
+                        <tr data-toggle="modal" data-target="#userModal">
                            <td class="table-user-name">Icon Family Dentistry</td>
-                           <td class="table-user-email">hi@iconfamilydentistry.com</td>
-                           <td class="table-user-no">(210) 274-4350</td>
-                           <td class="table-user-region">North Carolina</td>
-                           <td class="table-user-location">Longmont, CO</td>
+                           <td class="table-user-email" ng-show="showThisWidget('Email Address', 'filterDashboardSelected')">hi@iconfamilydentistry.com</td>
+                           <td class="table-user-no" ng-show="showThisWidget('Phone Number', 'filterDashboardSelected')">(210) 274-4350</td>
+                           <td class="table-user-region" ng-show="showThisWidget('Region', 'filterDashboardSelected')">Texas</td>
+                           <td class="table-user-location" ng-show="showThisWidget('Location', 'filterDashboardSelected')">Longmont, CO</td>
                         </tr>
-                        <tr>
+                        <tr data-toggle="modal" data-target="#userModal">
                            <td class="table-user-name">Icon Family Dentistry</td>
-                           <td class="table-user-email">hi@iconfamilydentistry.com</td>
-                           <td class="table-user-no">(210) 274-4350</td>
-                           <td class="table-user-region">North Carolina</td>
-                           <td class="table-user-location">Longmont, CO</td>
+                           <td class="table-user-email" ng-show="showThisWidget('Email Address', 'filterDashboardSelected')">hi@iconfamilydentistry.com</td>
+                           <td class="table-user-no" ng-show="showThisWidget('Phone Number', 'filterDashboardSelected')">(210) 274-4350</td>
+                           <td class="table-user-region" ng-show="showThisWidget('Region', 'filterDashboardSelected')">Texas</td>
+                           <td class="table-user-location" ng-show="showThisWidget('Location', 'filterDashboardSelected')">Longmont, CO</td>
                         </tr>
-                        <tr>
+                        <tr data-toggle="modal" data-target="#userModal">
                            <td class="table-user-name">Icon Family Dentistry</td>
-                           <td class="table-user-email">hi@iconfamilydentistry.com</td>
-                           <td class="table-user-no">(210) 274-4350</td>
-                           <td class="table-user-region">North Carolina</td>
-                           <td class="table-user-location">Longmont, CO</td>
+                           <td class="table-user-email" ng-show="showThisWidget('Email Address', 'filterDashboardSelected')">hi@iconfamilydentistry.com</td>
+                           <td class="table-user-no" ng-show="showThisWidget('Phone Number', 'filterDashboardSelected')">(210) 274-4350</td>
+                           <td class="table-user-region" ng-show="showThisWidget('Region', 'filterDashboardSelected')">Texas</td>
+                           <td class="table-user-location" ng-show="showThisWidget('Location', 'filterDashboardSelected')">Longmont, CO</td>
                         </tr>
-                        <tr>
+                        <tr data-toggle="modal" data-target="#userModal">
                            <td class="table-user-name">Icon Family Dentistry</td>
-                           <td class="table-user-email">hi@iconfamilydentistry.com</td>
-                           <td class="table-user-no">(210) 274-4350</td>
-                           <td class="table-user-region">North Carolina</td>
-                           <td class="table-user-location">Longmont, CO</td>
+                           <td class="table-user-email" ng-show="showThisWidget('Email Address', 'filterDashboardSelected')">hi@iconfamilydentistry.com</td>
+                           <td class="table-user-no" ng-show="showThisWidget('Phone Number', 'filterDashboardSelected')">(210) 274-4350</td>
+                           <td class="table-user-region" ng-show="showThisWidget('Region', 'filterDashboardSelected')">Texas</td>
+                           <td class="table-user-location" ng-show="showThisWidget('Location', 'filterDashboardSelected')">Longmont, CO</td>
                         </tr>
-                        <tr>
+                        <tr data-toggle="modal" data-target="#userModal">
                            <td class="table-user-name">Icon Family Dentistry</td>
-                           <td class="table-user-email">hi@iconfamilydentistry.com</td>
-                           <td class="table-user-no">(210) 274-4350</td>
-                           <td class="table-user-region">North Carolina</td>
-                           <td class="table-user-location">Longmont, CO</td>
+                           <td class="table-user-email" ng-show="showThisWidget('Email Address', 'filterDashboardSelected')">hi@iconfamilydentistry.com</td>
+                           <td class="table-user-no" ng-show="showThisWidget('Phone Number', 'filterDashboardSelected')">(210) 274-4350</td>
+                           <td class="table-user-region" ng-show="showThisWidget('Region', 'filterDashboardSelected')">North Carolina</td>
+                           <td class="table-user-location" ng-show="showThisWidget('Location', 'filterDashboardSelected')">Longmont, CO</td>
                         </tr>
-                        <tr>
+                        <tr data-toggle="modal" data-target="#userModal">
                            <td class="table-user-name">Icon Family Dentistry</td>
-                           <td class="table-user-email">hi@iconfamilydentistry.com</td>
-                           <td class="table-user-no">(210) 274-4350</td>
-                           <td class="table-user-region">North Carolina</td>
-                           <td class="table-user-location">Longmont, CO</td>
+                           <td class="table-user-email" ng-show="showThisWidget('Email Address', 'filterDashboardSelected')">hi@iconfamilydentistry.com</td>
+                           <td class="table-user-no" ng-show="showThisWidget('Phone Number', 'filterDashboardSelected')">(210) 274-4350</td>
+                           <td class="table-user-region" ng-show="showThisWidget('Region', 'filterDashboardSelected')">North Carolina</td>
+                           <td class="table-user-location" ng-show="showThisWidget('Location', 'filterDashboardSelected')">Longmont, CO</td>
                         </tr>
-                        <tr>
+                        <tr data-toggle="modal" data-target="#userModal">
                            <td class="table-user-name">Icon Family Dentistry</td>
-                           <td class="table-user-email">hi@iconfamilydentistry.com</td>
-                           <td class="table-user-no">(210) 274-4350</td>
-                           <td class="table-user-region">North Carolina</td>
-                           <td class="table-user-location">Longmont, CO</td>
+                           <td class="table-user-email" ng-show="showThisWidget('Email Address', 'filterDashboardSelected')">hi@iconfamilydentistry.com</td>
+                           <td class="table-user-no" ng-show="showThisWidget('Phone Number', 'filterDashboardSelected')">(210) 274-4350</td>
+                           <td class="table-user-region" ng-show="showThisWidget('Region', 'filterDashboardSelected')">North Carolina</td>
+                           <td class="table-user-location" ng-show="showThisWidget('Location', 'filterDashboardSelected')">Longmont, CO</td>
                         </tr>
-                        <tr>
+                        <tr data-toggle="modal" data-target="#userModal">
                            <td class="table-user-name">Icon Family Dentistry</td>
-                           <td class="table-user-email">hi@iconfamilydentistry.com</td>
-                           <td class="table-user-no">(210) 274-4350</td>
-                           <td class="table-user-region">North Carolina</td>
-                           <td class="table-user-location">Longmont, CO</td>
+                           <td class="table-user-email" ng-show="showThisWidget('Email Address', 'filterDashboardSelected')">hi@iconfamilydentistry.com</td>
+                           <td class="table-user-no" ng-show="showThisWidget('Phone Number', 'filterDashboardSelected')">(210) 274-4350</td>
+                           <td class="table-user-region" ng-show="showThisWidget('Region', 'filterDashboardSelected')">North Carolina</td>
+                           <td class="table-user-location" ng-show="showThisWidget('Location', 'filterDashboardSelected')">Longmont, CO</td>
                         </tr>
-                        <tr>
+                        <tr data-toggle="modal" data-target="#userModal">
                            <td class="table-user-name">Icon Family Dentistry</td>
-                           <td class="table-user-email">hi@iconfamilydentistry.com</td>
-                           <td class="table-user-no">(210) 274-4350</td>
-                           <td class="table-user-region">North Carolina</td>
-                           <td class="table-user-location">Longmont, CO</td>
+                           <td class="table-user-email" ng-show="showThisWidget('Email Address', 'filterDashboardSelected')">hi@iconfamilydentistry.com</td>
+                           <td class="table-user-no" ng-show="showThisWidget('Phone Number', 'filterDashboardSelected')">(210) 274-4350</td>
+                           <td class="table-user-region" ng-show="showThisWidget('Region', 'filterDashboardSelected')">North Carolina</td>
+                           <td class="table-user-location" ng-show="showThisWidget('Location', 'filterDashboardSelected')">Longmont, CO</td>
                         </tr>
-                        <tr>
+                        <tr data-toggle="modal" data-target="#userModal">
                            <td class="table-user-name">Icon Family Dentistry</td>
-                           <td class="table-user-email">hi@iconfamilydentistry.com</td>
-                           <td class="table-user-no">(210) 274-4350</td>
-                           <td class="table-user-region">North Carolina</td>
-                           <td class="table-user-location">Longmont, CO</td>
+                           <td class="table-user-email" ng-show="showThisWidget('Email Address', 'filterDashboardSelected')">hi@iconfamilydentistry.com</td>
+                           <td class="table-user-no" ng-show="showThisWidget('Phone Number', 'filterDashboardSelected')">(210) 274-4350</td>
+                           <td class="table-user-region" ng-show="showThisWidget('Region', 'filterDashboardSelected')">North Carolina</td>
+                           <td class="table-user-location" ng-show="showThisWidget('Location', 'filterDashboardSelected')">Longmont, CO</td>
                         </tr>
-                        <tr>
+                        <tr data-toggle="modal" data-target="#userModal">
                            <td class="table-user-name">Icon Family Dentistry</td>
-                           <td class="table-user-email">hi@iconfamilydentistry.com</td>
-                           <td class="table-user-no">(210) 274-4350</td>
-                           <td class="table-user-region">North Carolina</td>
-                           <td class="table-user-location">Longmont, CO</td>
+                           <td class="table-user-email" ng-show="showThisWidget('Email Address', 'filterDashboardSelected')">hi@iconfamilydentistry.com</td>
+                           <td class="table-user-no" ng-show="showThisWidget('Phone Number', 'filterDashboardSelected')">(210) 274-4350</td>
+                           <td class="table-user-region" ng-show="showThisWidget('Region', 'filterDashboardSelected')">North Carolina</td>
+                           <td class="table-user-location" ng-show="showThisWidget('Location', 'filterDashboardSelected')">Longmont, CO</td>
                         </tr>
-                        <tr>
+                        <tr data-toggle="modal" data-target="#userModal">
                            <td class="table-user-name">Icon Family Dentistry</td>
-                           <td class="table-user-email">hi@iconfamilydentistry.com</td>
-                           <td class="table-user-no">(210) 274-4350</td>
-                           <td class="table-user-region">North Carolina</td>
-                           <td class="table-user-location">Longmont, CO</td>
+                           <td class="table-user-email" ng-show="showThisWidget('Email Address', 'filterDashboardSelected')">hi@iconfamilydentistry.com</td>
+                           <td class="table-user-no" ng-show="showThisWidget('Phone Number', 'filterDashboardSelected')">(210) 274-4350</td>
+                           <td class="table-user-region" ng-show="showThisWidget('Region', 'filterDashboardSelected')">North Carolina</td>
+                           <td class="table-user-location" ng-show="showThisWidget('Location', 'filterDashboardSelected')">Longmont, CO</td>
                         </tr>
-                        <tr>
+                        <tr data-toggle="modal" data-target="#userModal">
                            <td class="table-user-name">Icon Family Dentistry</td>
-                           <td class="table-user-email">hi@iconfamilydentistry.com</td>
-                           <td class="table-user-no">(210) 274-4350</td>
-                           <td class="table-user-region">North Carolina</td>
-                           <td class="table-user-location">Longmont, CO</td>
+                           <td class="table-user-email" ng-show="showThisWidget('Email Address', 'filterDashboardSelected')">hi@iconfamilydentistry.com</td>
+                           <td class="table-user-no" ng-show="showThisWidget('Phone Number', 'filterDashboardSelected')">(210) 274-4350</td>
+                           <td class="table-user-region" ng-show="showThisWidget('Region', 'filterDashboardSelected')">North Carolina</td>
+                           <td class="table-user-location" ng-show="showThisWidget('Location', 'filterDashboardSelected')">Longmont, CO</td>
                         </tr>
-                        <tr>
+                        <tr data-toggle="modal" data-target="#userModal">
                            <td class="table-user-name">Icon Family Dentistry</td>
-                           <td class="table-user-email">hi@iconfamilydentistry.com</td>
-                           <td class="table-user-no">(210) 274-4350</td>
-                           <td class="table-user-region">North Carolina</td>
-                           <td class="table-user-location">Longmont, CO</td>
+                           <td class="table-user-email" ng-show="showThisWidget('Email Address', 'filterDashboardSelected')">hi@iconfamilydentistry.com</td>
+                           <td class="table-user-no" ng-show="showThisWidget('Phone Number', 'filterDashboardSelected')">(210) 274-4350</td>
+                           <td class="table-user-region" ng-show="showThisWidget('Region', 'filterDashboardSelected')">North Carolina</td>
+                           <td class="table-user-location" ng-show="showThisWidget('Location', 'filterDashboardSelected')">Longmont, CO</td>
                         </tr>
-                        <tr>
+                        <tr data-toggle="modal" data-target="#userModal">
                            <td class="table-user-name">Icon Family Dentistry</td>
-                           <td class="table-user-email">hi@iconfamilydentistry.com</td>
-                           <td class="table-user-no">(210) 274-4350</td>
-                           <td class="table-user-region">North Carolina</td>
-                           <td class="table-user-location">Longmont, CO</td>
+                           <td class="table-user-email" ng-show="showThisWidget('Email Address', 'filterDashboardSelected')">hi@iconfamilydentistry.com</td>
+                           <td class="table-user-no" ng-show="showThisWidget('Phone Number', 'filterDashboardSelected')">(210) 274-4350</td>
+                           <td class="table-user-region" ng-show="showThisWidget('Region', 'filterDashboardSelected')">North Carolina</td>
+                           <td class="table-user-location" ng-show="showThisWidget('Location', 'filterDashboardSelected')">Longmont, CO</td>
                         </tr>
-                        <tr>
+                        <tr data-toggle="modal" data-target="#userModal">
                            <td class="table-user-name">Icon Family Dentistry</td>
-                           <td class="table-user-email">hi@iconfamilydentistry.com</td>
-                           <td class="table-user-no">(210) 274-4350</td>
-                           <td class="table-user-region">North Carolina</td>
-                           <td class="table-user-location">Longmont, CO</td>
+                           <td class="table-user-email" ng-show="showThisWidget('Email Address', 'filterDashboardSelected')">hi@iconfamilydentistry.com</td>
+                           <td class="table-user-no" ng-show="showThisWidget('Phone Number', 'filterDashboardSelected')">(210) 274-4350</td>
+                           <td class="table-user-region" ng-show="showThisWidget('Region', 'filterDashboardSelected')">North Carolina</td>
+                           <td class="table-user-location" ng-show="showThisWidget('Location', 'filterDashboardSelected')">Longmont, CO</td>
                         </tr>
-                        <tr>
+                        <tr data-toggle="modal" data-target="#userModal">
                            <td class="table-user-name">Icon Family Dentistry</td>
-                           <td class="table-user-email">hi@iconfamilydentistry.com</td>
-                           <td class="table-user-no">(210) 274-4350</td>
-                           <td class="table-user-region">North Carolina</td>
-                           <td class="table-user-location">Longmont, CO</td>
+                           <td class="table-user-email" ng-show="showThisWidget('Email Address', 'filterDashboardSelected')">hi@iconfamilydentistry.com</td>
+                           <td class="table-user-no" ng-show="showThisWidget('Phone Number', 'filterDashboardSelected')">(210) 274-4350</td>
+                           <td class="table-user-region" ng-show="showThisWidget('Region', 'filterDashboardSelected')">North Carolina</td>
+                           <td class="table-user-location" ng-show="showThisWidget('Location', 'filterDashboardSelected')">Longmont, CO</td>
                         </tr>
-                        <tr>
+                        <tr data-toggle="modal" data-target="#userModal">
                            <td class="table-user-name">Icon Family Dentistry</td>
-                           <td class="table-user-email">hi@iconfamilydentistry.com</td>
-                           <td class="table-user-no">(210) 274-4350</td>
-                           <td class="table-user-region">North Carolina</td>
-                           <td class="table-user-location">Longmont, CO</td>
+                           <td class="table-user-email" ng-show="showThisWidget('Email Address', 'filterDashboardSelected')">hi@iconfamilydentistry.com</td>
+                           <td class="table-user-no" ng-show="showThisWidget('Phone Number', 'filterDashboardSelected')">(210) 274-4350</td>
+                           <td class="table-user-region" ng-show="showThisWidget('Region', 'filterDashboardSelected')">North Carolina</td>
+                           <td class="table-user-location" ng-show="showThisWidget('Location', 'filterDashboardSelected')">Longmont, CO</td>
                         </tr>
-                        <tr>
+                        <tr data-toggle="modal" data-target="#userModal">
                            <td class="table-user-name">Icon Family Dentistry</td>
-                           <td class="table-user-email">hi@iconfamilydentistry.com</td>
-                           <td class="table-user-no">(210) 274-4350</td>
-                           <td class="table-user-region">North Carolina</td>
-                           <td class="table-user-location">Longmont, CO</td>
+                           <td class="table-user-email" ng-show="showThisWidget('Email Address', 'filterDashboardSelected')">hi@iconfamilydentistry.com</td>
+                           <td class="table-user-no" ng-show="showThisWidget('Phone Number', 'filterDashboardSelected')">(210) 274-4350</td>
+                           <td class="table-user-region" ng-show="showThisWidget('Region', 'filterDashboardSelected')">North Carolina</td>
+                           <td class="table-user-location" ng-show="showThisWidget('Location', 'filterDashboardSelected')">Longmont, CO</td>
                         </tr>
-                        <tr>
+                        <tr data-toggle="modal" data-target="#userModal">
                            <td class="table-user-name">Icon Family Dentistry</td>
-                           <td class="table-user-email">hi@iconfamilydentistry.com</td>
-                           <td class="table-user-no">(210) 274-4350</td>
-                           <td class="table-user-region">North Carolina</td>
-                           <td class="table-user-location">Longmont, CO</td>
+                           <td class="table-user-email" ng-show="showThisWidget('Email Address', 'filterDashboardSelected')">hi@iconfamilydentistry.com</td>
+                           <td class="table-user-no" ng-show="showThisWidget('Phone Number', 'filterDashboardSelected')">(210) 274-4350</td>
+                           <td class="table-user-region" ng-show="showThisWidget('Region', 'filterDashboardSelected')">North Carolina</td>
+                           <td class="table-user-location" ng-show="showThisWidget('Location', 'filterDashboardSelected')">Longmont, CO</td>
                         </tr>
-                        <tr>
+                        <tr data-toggle="modal" data-target="#userModal">
                            <td class="table-user-name">Icon Family Dentistry</td>
-                           <td class="table-user-email">hi@iconfamilydentistry.com</td>
-                           <td class="table-user-no">(210) 274-4350</td>
-                           <td class="table-user-region">North Carolina</td>
-                           <td class="table-user-location">Longmont, CO</td>
+                           <td class="table-user-email" ng-show="showThisWidget('Email Address', 'filterDashboardSelected')">hi@iconfamilydentistry.com</td>
+                           <td class="table-user-no" ng-show="showThisWidget('Phone Number', 'filterDashboardSelected')">(210) 274-4350</td>
+                           <td class="table-user-region" ng-show="showThisWidget('Region', 'filterDashboardSelected')">North Carolina</td>
+                           <td class="table-user-location" ng-show="showThisWidget('Location', 'filterDashboardSelected')">Longmont, CO</td>
                         </tr>
-                        <tr>
+                        <tr data-toggle="modal" data-target="#userModal">
                            <td class="table-user-name">Icon Family Dentistry</td>
-                           <td class="table-user-email">hi@iconfamilydentistry.com</td>
-                           <td class="table-user-no">(210) 274-4350</td>
-                           <td class="table-user-region">North Carolina</td>
-                           <td class="table-user-location">Longmont, CO</td>
+                           <td class="table-user-email" ng-show="showThisWidget('Email Address', 'filterDashboardSelected')">hi@iconfamilydentistry.com</td>
+                           <td class="table-user-no" ng-show="showThisWidget('Phone Number', 'filterDashboardSelected')">(210) 274-4350</td>
+                           <td class="table-user-region" ng-show="showThisWidget('Region', 'filterDashboardSelected')">North Carolina</td>
+                           <td class="table-user-location" ng-show="showThisWidget('Location', 'filterDashboardSelected')">Longmont, CO</td>
                         </tr>
-                        <tr>
+                        <tr data-toggle="modal" data-target="#userModal">
                            <td class="table-user-name">Icon Family Dentistry</td>
-                           <td class="table-user-email">hi@iconfamilydentistry.com</td>
-                           <td class="table-user-no">(210) 274-4350</td>
-                           <td class="table-user-region">North Carolina</td>
-                           <td class="table-user-location">Longmont, CO</td>
+                           <td class="table-user-email" ng-show="showThisWidget('Email Address', 'filterDashboardSelected')">hi@iconfamilydentistry.com</td>
+                           <td class="table-user-no" ng-show="showThisWidget('Phone Number', 'filterDashboardSelected')">(210) 274-4350</td>
+                           <td class="table-user-region" ng-show="showThisWidget('Region', 'filterDashboardSelected')">North Carolina</td>
+                           <td class="table-user-location" ng-show="showThisWidget('Location', 'filterDashboardSelected')">Longmont, CO</td>
                         </tr>
-                        <tr>
+                        <tr data-toggle="modal" data-target="#userModal">
                            <td class="table-user-name">Icon Family Dentistry</td>
-                           <td class="table-user-email">hi@iconfamilydentistry.com</td>
-                           <td class="table-user-no">(210) 274-4350</td>
-                           <td class="table-user-region">North Carolina</td>
-                           <td class="table-user-location">Longmont, CO</td>
+                           <td class="table-user-email" ng-show="showThisWidget('Email Address', 'filterDashboardSelected')">hi@iconfamilydentistry.com</td>
+                           <td class="table-user-no" ng-show="showThisWidget('Phone Number', 'filterDashboardSelected')">(210) 274-4350</td>
+                           <td class="table-user-region" ng-show="showThisWidget('Region', 'filterDashboardSelected')">North Carolina</td>
+                           <td class="table-user-location" ng-show="showThisWidget('Location', 'filterDashboardSelected')">Longmont, CO</td>
                         </tr>
-                        <tr>
+                        <tr data-toggle="modal" data-target="#userModal">
                            <td class="table-user-name">Icon Family Dentistry</td>
-                           <td class="table-user-email">hi@iconfamilydentistry.com</td>
-                           <td class="table-user-no">(210) 274-4350</td>
-                           <td class="table-user-region">North Carolina</td>
-                           <td class="table-user-location">Longmont, CO</td>
+                           <td class="table-user-email" ng-show="showThisWidget('Email Address', 'filterDashboardSelected')">hi@iconfamilydentistry.com</td>
+                           <td class="table-user-no" ng-show="showThisWidget('Phone Number', 'filterDashboardSelected')">(210) 274-4350</td>
+                           <td class="table-user-region" ng-show="showThisWidget('Region', 'filterDashboardSelected')">North Carolina</td>
+                           <td class="table-user-location" ng-show="showThisWidget('Location', 'filterDashboardSelected')">Longmont, CO</td>
                         </tr>
-                        <tr>
+                        <tr data-toggle="modal" data-target="#userModal">
                            <td class="table-user-name">Icon Family Dentistry</td>
-                           <td class="table-user-email">hi@iconfamilydentistry.com</td>
-                           <td class="table-user-no">(210) 274-4350</td>
-                           <td class="table-user-region">North Carolina</td>
-                           <td class="table-user-location">Longmont, CO</td>
+                           <td class="table-user-email" ng-show="showThisWidget('Email Address', 'filterDashboardSelected')">hi@iconfamilydentistry.com</td>
+                           <td class="table-user-no" ng-show="showThisWidget('Phone Number', 'filterDashboardSelected')">(210) 274-4350</td>
+                           <td class="table-user-region" ng-show="showThisWidget('Region', 'filterDashboardSelected')">North Carolina</td>
+                           <td class="table-user-location" ng-show="showThisWidget('Location', 'filterDashboardSelected')">Longmont, CO</td>
                         </tr>
-                        <tr>
+                        <tr data-toggle="modal" data-target="#userModal">
                            <td class="table-user-name">Icon Family Dentistry</td>
-                           <td class="table-user-email">hi@iconfamilydentistry.com</td>
-                           <td class="table-user-no">(210) 274-4350</td>
-                           <td class="table-user-region">North Carolina</td>
-                           <td class="table-user-location">Longmont, CO</td>
+                           <td class="table-user-email" ng-show="showThisWidget('Email Address', 'filterDashboardSelected')">hi@iconfamilydentistry.com</td>
+                           <td class="table-user-no" ng-show="showThisWidget('Phone Number', 'filterDashboardSelected')">(210) 274-4350</td>
+                           <td class="table-user-region" ng-show="showThisWidget('Region', 'filterDashboardSelected')">North Carolina</td>
+                           <td class="table-user-location" ng-show="showThisWidget('Location', 'filterDashboardSelected')">Longmont, CO</td>
                         </tr>
-                        <tr>
+                        <tr data-toggle="modal" data-target="#userModal">
                            <td class="table-user-name">Icon Family Dentistry</td>
-                           <td class="table-user-email">hi@iconfamilydentistry.com</td>
-                           <td class="table-user-no">(210) 274-4350</td>
-                           <td class="table-user-region">North Carolina</td>
-                           <td class="table-user-location">Longmont, CO</td>
+                           <td class="table-user-email" ng-show="showThisWidget('Email Address', 'filterDashboardSelected')">hi@iconfamilydentistry.com</td>
+                           <td class="table-user-no" ng-show="showThisWidget('Phone Number', 'filterDashboardSelected')">(210) 274-4350</td>
+                           <td class="table-user-region" ng-show="showThisWidget('Region', 'filterDashboardSelected')">North Carolina</td>
+                           <td class="table-user-location" ng-show="showThisWidget('Location', 'filterDashboardSelected')">Longmont, CO</td>
                         </tr>
-                        <tr>
+                        <tr data-toggle="modal" data-target="#userModal">
                            <td class="table-user-name">Icon Family Dentistry</td>
-                           <td class="table-user-email">hi@iconfamilydentistry.com</td>
-                           <td class="table-user-no">(210) 274-4350</td>
-                           <td class="table-user-region">North Carolina</td>
-                           <td class="table-user-location">Longmont, CO</td>
+                           <td class="table-user-email" ng-show="showThisWidget('Email Address', 'filterDashboardSelected')">hi@iconfamilydentistry.com</td>
+                           <td class="table-user-no" ng-show="showThisWidget('Phone Number', 'filterDashboardSelected')">(210) 274-4350</td>
+                           <td class="table-user-region" ng-show="showThisWidget('Region', 'filterDashboardSelected')">North Carolina</td>
+                           <td class="table-user-location" ng-show="showThisWidget('Location', 'filterDashboardSelected')">Longmont, CO</td>
                         </tr>
-                        <tr>
+                        <tr data-toggle="modal" data-target="#userModal">
                            <td class="table-user-name">Icon Family Dentistry</td>
-                           <td class="table-user-email">hi@iconfamilydentistry.com</td>
-                           <td class="table-user-no">(210) 274-4350</td>
-                           <td class="table-user-region">North Carolina</td>
-                           <td class="table-user-location">Longmont, CO</td>
+                           <td class="table-user-email" ng-show="showThisWidget('Email Address', 'filterDashboardSelected')">hi@iconfamilydentistry.com</td>
+                           <td class="table-user-no" ng-show="showThisWidget('Phone Number', 'filterDashboardSelected')">(210) 274-4350</td>
+                           <td class="table-user-region" ng-show="showThisWidget('Region', 'filterDashboardSelected')">North Carolina</td>
+                           <td class="table-user-location" ng-show="showThisWidget('Location', 'filterDashboardSelected')">Longmont, CO</td>
                         </tr>
-                        <tr>
+                        <tr data-toggle="modal" data-target="#userModal">
                            <td class="table-user-name">Icon Family Dentistry</td>
-                           <td class="table-user-email">hi@iconfamilydentistry.com</td>
-                           <td class="table-user-no">(210) 274-4350</td>
-                           <td class="table-user-region">North Carolina</td>
-                           <td class="table-user-location">Longmont, CO</td>
+                           <td class="table-user-email" ng-show="showThisWidget('Email Address', 'filterDashboardSelected')">hi@iconfamilydentistry.com</td>
+                           <td class="table-user-no" ng-show="showThisWidget('Phone Number', 'filterDashboardSelected')">(210) 274-4350</td>
+                           <td class="table-user-region" ng-show="showThisWidget('Region', 'filterDashboardSelected')">North Carolina</td>
+                           <td class="table-user-location" ng-show="showThisWidget('Location', 'filterDashboardSelected')">Longmont, CO</td>
                         </tr>
-                        <tr>
+                        <tr data-toggle="modal" data-target="#userModal">
                            <td class="table-user-name">Icon Family Dentistry</td>
-                           <td class="table-user-email">hi@iconfamilydentistry.com</td>
-                           <td class="table-user-no">(210) 274-4350</td>
-                           <td class="table-user-region">North Carolina</td>
-                           <td class="table-user-location">Longmont, CO</td>
+                           <td class="table-user-email" ng-show="showThisWidget('Email Address', 'filterDashboardSelected')">hi@iconfamilydentistry.com</td>
+                           <td class="table-user-no" ng-show="showThisWidget('Phone Number', 'filterDashboardSelected')">(210) 274-4350</td>
+                           <td class="table-user-region" ng-show="showThisWidget('Region', 'filterDashboardSelected')">North Carolina</td>
+                           <td class="table-user-location" ng-show="showThisWidget('Location', 'filterDashboardSelected')">Longmont, CO</td>
                         </tr>
-                        <tr>
+                        <tr data-toggle="modal" data-target="#userModal">
                            <td class="table-user-name">Icon Family Dentistry</td>
-                           <td class="table-user-email">hi@iconfamilydentistry.com</td>
-                           <td class="table-user-no">(210) 274-4350</td>
-                           <td class="table-user-region">North Carolina</td>
-                           <td class="table-user-location">Longmont, CO</td>
+                           <td class="table-user-email" ng-show="showThisWidget('Email Address', 'filterDashboardSelected')">hi@iconfamilydentistry.com</td>
+                           <td class="table-user-no" ng-show="showThisWidget('Phone Number', 'filterDashboardSelected')">(210) 274-4350</td>
+                           <td class="table-user-region" ng-show="showThisWidget('Region', 'filterDashboardSelected')">North Carolina</td>
+                           <td class="table-user-location" ng-show="showThisWidget('Location', 'filterDashboardSelected')">Longmont, CO</td>
                         </tr>
-                        <tr>
+                        <tr data-toggle="modal" data-target="#userModal">
                            <td class="table-user-name">Icon Family Dentistry</td>
-                           <td class="table-user-email">hi@iconfamilydentistry.com</td>
-                           <td class="table-user-no">(210) 274-4350</td>
-                           <td class="table-user-region">North Carolina</td>
-                           <td class="table-user-location">Longmont, CO</td>
+                           <td class="table-user-email" ng-show="showThisWidget('Email Address', 'filterDashboardSelected')">hi@iconfamilydentistry.com</td>
+                           <td class="table-user-no" ng-show="showThisWidget('Phone Number', 'filterDashboardSelected')">(210) 274-4350</td>
+                           <td class="table-user-region" ng-show="showThisWidget('Region', 'filterDashboardSelected')">North Carolina</td>
+                           <td class="table-user-location" ng-show="showThisWidget('Location', 'filterDashboardSelected')">Longmont, CO</td>
                         </tr>
-                        <tr>
+                        <tr data-toggle="modal" data-target="#userModal">
                            <td class="table-user-name">Icon Family Dentistry</td>
-                           <td class="table-user-email">hi@iconfamilydentistry.com</td>
-                           <td class="table-user-no">(210) 274-4350</td>
-                           <td class="table-user-region">North Carolina</td>
-                           <td class="table-user-location">Longmont, CO</td>
+                           <td class="table-user-email" ng-show="showThisWidget('Email Address', 'filterDashboardSelected')">hi@iconfamilydentistry.com</td>
+                           <td class="table-user-no" ng-show="showThisWidget('Phone Number', 'filterDashboardSelected')">(210) 274-4350</td>
+                           <td class="table-user-region" ng-show="showThisWidget('Region', 'filterDashboardSelected')">North Carolina</td>
+                           <td class="table-user-location" ng-show="showThisWidget('Location', 'filterDashboardSelected')">Longmont, CO</td>
                         </tr>
-                        <tr>
+                        <tr data-toggle="modal" data-target="#userModal">
                            <td class="table-user-name">Icon Family Dentistry</td>
-                           <td class="table-user-email">hi@iconfamilydentistry.com</td>
-                           <td class="table-user-no">(210) 274-4350</td>
-                           <td class="table-user-region">North Carolina</td>
-                           <td class="table-user-location">Longmont, CO</td>
+                           <td class="table-user-email" ng-show="showThisWidget('Email Address', 'filterDashboardSelected')">hi@iconfamilydentistry.com</td>
+                           <td class="table-user-no" ng-show="showThisWidget('Phone Number', 'filterDashboardSelected')">(210) 274-4350</td>
+                           <td class="table-user-region" ng-show="showThisWidget('Region', 'filterDashboardSelected')">North Carolina</td>
+                           <td class="table-user-location" ng-show="showThisWidget('Location', 'filterDashboardSelected')">Longmont, CO</td>
                         </tr>
-                        <tr>
+                        <tr data-toggle="modal" data-target="#userModal">
                            <td class="table-user-name">Icon Family Dentistry</td>
-                           <td class="table-user-email">hi@iconfamilydentistry.com</td>
-                           <td class="table-user-no">(210) 274-4350</td>
-                           <td class="table-user-region">North Carolina</td>
-                           <td class="table-user-location">Longmont, CO</td>
+                           <td class="table-user-email" ng-show="showThisWidget('Email Address', 'filterDashboardSelected')">hi@iconfamilydentistry.com</td>
+                           <td class="table-user-no" ng-show="showThisWidget('Phone Number', 'filterDashboardSelected')">(210) 274-4350</td>
+                           <td class="table-user-region" ng-show="showThisWidget('Region', 'filterDashboardSelected')">North Carolina</td>
+                           <td class="table-user-location" ng-show="showThisWidget('Location', 'filterDashboardSelected')">Longmont, CO</td>
                         </tr>
-                        <tr>
+                        <tr data-toggle="modal" data-target="#userModal">
                            <td class="table-user-name">Icon Family Dentistry</td>
-                           <td class="table-user-email">hi@iconfamilydentistry.com</td>
-                           <td class="table-user-no">(210) 274-4350</td>
-                           <td class="table-user-region">North Carolina</td>
-                           <td class="table-user-location">Longmont, CO</td>
+                           <td class="table-user-email" ng-show="showThisWidget('Email Address', 'filterDashboardSelected')">hi@iconfamilydentistry.com</td>
+                           <td class="table-user-no" ng-show="showThisWidget('Phone Number', 'filterDashboardSelected')">(210) 274-4350</td>
+                           <td class="table-user-region" ng-show="showThisWidget('Region', 'filterDashboardSelected')">North Carolina</td>
+                           <td class="table-user-location" ng-show="showThisWidget('Location', 'filterDashboardSelected')">Longmont, CO</td>
                         </tr>
-                        <tr>
+                        <tr data-toggle="modal" data-target="#userModal">
                            <td class="table-user-name">Icon Family Dentistry</td>
-                           <td class="table-user-email">hi@iconfamilydentistry.com</td>
-                           <td class="table-user-no">(210) 274-4350</td>
-                           <td class="table-user-region">North Carolina</td>
-                           <td class="table-user-location">Longmont, CO</td>
+                           <td class="table-user-email" ng-show="showThisWidget('Email Address', 'filterDashboardSelected')">hi@iconfamilydentistry.com</td>
+                           <td class="table-user-no" ng-show="showThisWidget('Phone Number', 'filterDashboardSelected')">(210) 274-4350</td>
+                           <td class="table-user-region" ng-show="showThisWidget('Region', 'filterDashboardSelected')">North Carolina</td>
+                           <td class="table-user-location" ng-show="showThisWidget('Location', 'filterDashboardSelected')">Longmont, CO</td>
                         </tr>
-                        <tr>
+                        <tr data-toggle="modal" data-target="#userModal">
                            <td class="table-user-name">Icon Family Dentistry</td>
-                           <td class="table-user-email">hi@iconfamilydentistry.com</td>
-                           <td class="table-user-no">(210) 274-4350</td>
-                           <td class="table-user-region">North Carolina</td>
-                           <td class="table-user-location">Longmont, CO</td>
+                           <td class="table-user-email" ng-show="showThisWidget('Email Address', 'filterDashboardSelected')">hi@iconfamilydentistry.com</td>
+                           <td class="table-user-no" ng-show="showThisWidget('Phone Number', 'filterDashboardSelected')">(210) 274-4350</td>
+                           <td class="table-user-region" ng-show="showThisWidget('Region', 'filterDashboardSelected')">North Carolina</td>
+                           <td class="table-user-location" ng-show="showThisWidget('Location', 'filterDashboardSelected')">Longmont, CO</td>
                         </tr>
-                        <tr>
+                        <tr data-toggle="modal" data-target="#userModal">
                            <td class="table-user-name">Icon Family Dentistry</td>
-                           <td class="table-user-email">hi@iconfamilydentistry.com</td>
-                           <td class="table-user-no">(210) 274-4350</td>
-                           <td class="table-user-region">North Carolina</td>
-                           <td class="table-user-location">Longmont, CO</td>
+                           <td class="table-user-email" ng-show="showThisWidget('Email Address', 'filterDashboardSelected')">hi@iconfamilydentistry.com</td>
+                           <td class="table-user-no" ng-show="showThisWidget('Phone Number', 'filterDashboardSelected')">(210) 274-4350</td>
+                           <td class="table-user-region" ng-show="showThisWidget('Region', 'filterDashboardSelected')">North Carolina</td>
+                           <td class="table-user-location" ng-show="showThisWidget('Location', 'filterDashboardSelected')">Longmont, CO</td>
                         </tr>
-                        <tr>
+                        <tr data-toggle="modal" data-target="#userModal">
                            <td class="table-user-name">Icon Family Dentistry</td>
-                           <td class="table-user-email">hi@iconfamilydentistry.com</td>
-                           <td class="table-user-no">(210) 274-4350</td>
-                           <td class="table-user-region">North Carolina</td>
-                           <td class="table-user-location">Longmont, CO</td>
+                           <td class="table-user-email" ng-show="showThisWidget('Email Address', 'filterDashboardSelected')">hi@iconfamilydentistry.com</td>
+                           <td class="table-user-no" ng-show="showThisWidget('Phone Number', 'filterDashboardSelected')">(210) 274-4350</td>
+                           <td class="table-user-region" ng-show="showThisWidget('Region', 'filterDashboardSelected')">North Carolina</td>
+                           <td class="table-user-location" ng-show="showThisWidget('Location', 'filterDashboardSelected')">Longmont, CO</td>
                         </tr>
-                        <tr>
+                        <tr data-toggle="modal" data-target="#userModal">
                            <td class="table-user-name">Icon Family Dentistry</td>
-                           <td class="table-user-email">hi@iconfamilydentistry.com</td>
-                           <td class="table-user-no">(210) 274-4350</td>
-                           <td class="table-user-region">North Carolina</td>
-                           <td class="table-user-location">Longmont, CO</td>
+                           <td class="table-user-email" ng-show="showThisWidget('Email Address', 'filterDashboardSelected')">hi@iconfamilydentistry.com</td>
+                           <td class="table-user-no" ng-show="showThisWidget('Phone Number', 'filterDashboardSelected')">(210) 274-4350</td>
+                           <td class="table-user-region" ng-show="showThisWidget('Region', 'filterDashboardSelected')">North Carolina</td>
+                           <td class="table-user-location" ng-show="showThisWidget('Location', 'filterDashboardSelected')">Longmont, CO</td>
                         </tr>
-                        <tr>
+                        <tr data-toggle="modal" data-target="#userModal">
                            <td class="table-user-name">Icon Family Dentistry</td>
-                           <td class="table-user-email">hi@iconfamilydentistry.com</td>
-                           <td class="table-user-no">(210) 274-4350</td>
-                           <td class="table-user-region">North Carolina</td>
-                           <td class="table-user-location">Longmont, CO</td>
+                           <td class="table-user-email" ng-show="showThisWidget('Email Address', 'filterDashboardSelected')">hi@iconfamilydentistry.com</td>
+                           <td class="table-user-no" ng-show="showThisWidget('Phone Number', 'filterDashboardSelected')">(210) 274-4350</td>
+                           <td class="table-user-region" ng-show="showThisWidget('Region', 'filterDashboardSelected')">North Carolina</td>
+                           <td class="table-user-location" ng-show="showThisWidget('Location', 'filterDashboardSelected')">Longmont, CO</td>
                         </tr>
-                        <tr>
+                        <tr data-toggle="modal" data-target="#userModal">
                            <td class="table-user-name">Icon Family Dentistry</td>
-                           <td class="table-user-email">hi@iconfamilydentistry.com</td>
-                           <td class="table-user-no">(210) 274-4350</td>
-                           <td class="table-user-region">North Carolina</td>
-                           <td class="table-user-location">Longmont, CO</td>
+                           <td class="table-user-email" ng-show="showThisWidget('Email Address', 'filterDashboardSelected')">hi@iconfamilydentistry.com</td>
+                           <td class="table-user-no" ng-show="showThisWidget('Phone Number', 'filterDashboardSelected')">(210) 274-4350</td>
+                           <td class="table-user-region" ng-show="showThisWidget('Region', 'filterDashboardSelected')">North Carolina</td>
+                           <td class="table-user-location" ng-show="showThisWidget('Location', 'filterDashboardSelected')">Longmont, CO</td>
                         </tr>
-                        <tr>
+                        <tr data-toggle="modal" data-target="#userModal">
                            <td class="table-user-name">Icon Family Dentistry</td>
-                           <td class="table-user-email">hi@iconfamilydentistry.com</td>
-                           <td class="table-user-no">(210) 274-4350</td>
-                           <td class="table-user-region">North Carolina</td>
-                           <td class="table-user-location">Longmont, CO</td>
+                           <td class="table-user-email" ng-show="showThisWidget('Email Address', 'filterDashboardSelected')">hi@iconfamilydentistry.com</td>
+                           <td class="table-user-no" ng-show="showThisWidget('Phone Number', 'filterDashboardSelected')">(210) 274-4350</td>
+                           <td class="table-user-region" ng-show="showThisWidget('Region', 'filterDashboardSelected')">North Carolina</td>
+                           <td class="table-user-location" ng-show="showThisWidget('Location', 'filterDashboardSelected')">Longmont, CO</td>
                         </tr>
-                        <tr>
+                        <tr data-toggle="modal" data-target="#userModal">
                            <td class="table-user-name">Icon Family Dentistry</td>
-                           <td class="table-user-email">hi@iconfamilydentistry.com</td>
-                           <td class="table-user-no">(210) 274-4350</td>
-                           <td class="table-user-region">North Carolina</td>
-                           <td class="table-user-location">Longmont, CO</td>
+                           <td class="table-user-email" ng-show="showThisWidget('Email Address', 'filterDashboardSelected')">hi@iconfamilydentistry.com</td>
+                           <td class="table-user-no" ng-show="showThisWidget('Phone Number', 'filterDashboardSelected')">(210) 274-4350</td>
+                           <td class="table-user-region" ng-show="showThisWidget('Region', 'filterDashboardSelected')">North Carolina</td>
+                           <td class="table-user-location" ng-show="showThisWidget('Location', 'filterDashboardSelected')">Longmont, CO</td>
                         </tr>
-                        <tr>
+                        <tr data-toggle="modal" data-target="#userModal">
                            <td class="table-user-name">Icon Family Dentistry</td>
-                           <td class="table-user-email">hi@iconfamilydentistry.com</td>
-                           <td class="table-user-no">(210) 274-4350</td>
-                           <td class="table-user-region">North Carolina</td>
-                           <td class="table-user-location">Longmont, CO</td>
+                           <td class="table-user-email" ng-show="showThisWidget('Email Address', 'filterDashboardSelected')">hi@iconfamilydentistry.com</td>
+                           <td class="table-user-no" ng-show="showThisWidget('Phone Number', 'filterDashboardSelected')">(210) 274-4350</td>
+                           <td class="table-user-region" ng-show="showThisWidget('Region', 'filterDashboardSelected')">North Carolina</td>
+                           <td class="table-user-location" ng-show="showThisWidget('Location', 'filterDashboardSelected')">Longmont, CO</td>
                         </tr>
-                        <tr>
+                        <tr data-toggle="modal" data-target="#userModal">
                            <td class="table-user-name">Icon Family Dentistry</td>
-                           <td class="table-user-email">hi@iconfamilydentistry.com</td>
-                           <td class="table-user-no">(210) 274-4350</td>
-                           <td class="table-user-region">North Carolina</td>
-                           <td class="table-user-location">Longmont, CO</td>
+                           <td class="table-user-email" ng-show="showThisWidget('Email Address', 'filterDashboardSelected')">hi@iconfamilydentistry.com</td>
+                           <td class="table-user-no" ng-show="showThisWidget('Phone Number', 'filterDashboardSelected')">(210) 274-4350</td>
+                           <td class="table-user-region" ng-show="showThisWidget('Region', 'filterDashboardSelected')">North Carolina</td>
+                           <td class="table-user-location" ng-show="showThisWidget('Location', 'filterDashboardSelected')">Longmont, CO</td>
                         </tr>
-                        <tr>
+                        <tr data-toggle="modal" data-target="#userModal">
                            <td class="table-user-name">Icon Family Dentistry</td>
-                           <td class="table-user-email">hi@iconfamilydentistry.com</td>
-                           <td class="table-user-no">(210) 274-4350</td>
-                           <td class="table-user-region">North Carolina</td>
-                           <td class="table-user-location">Longmont, CO</td>
+                           <td class="table-user-email" ng-show="showThisWidget('Email Address', 'filterDashboardSelected')">hi@iconfamilydentistry.com</td>
+                           <td class="table-user-no" ng-show="showThisWidget('Phone Number', 'filterDashboardSelected')">(210) 274-4350</td>
+                           <td class="table-user-region" ng-show="showThisWidget('Region', 'filterDashboardSelected')">North Carolina</td>
+                           <td class="table-user-location" ng-show="showThisWidget('Location', 'filterDashboardSelected')">Longmont, CO</td>
                         </tr>
                      </tbody>
                   </table>
