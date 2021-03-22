@@ -19,14 +19,14 @@ axleApp.controller('userController', function ($scope) {
     $scope.practiceFilters = []
     $scope.regionFilters = []
     
-    $scope.practiceAccessOptions = [
+    $scope.practiceOptions = [
         'Practices1',
         'Practices2',
         'Practices3',
         'Practices4',
         'Practices5'
     ]
-    $scope.regionAccessOptions = [
+    $scope.regionOptions = [
         'Region1',
         'Region2',
         'Region3',
@@ -35,16 +35,16 @@ axleApp.controller('userController', function ($scope) {
     ]
     $scope.filterDashboardSelected = [
         'Email Address',
-        'Adjusted Production',
-        'Total Income',
-        'Insurance Income'
+        'Phone Number',
+        'Region',
+        'Location'
     ]
     
     $scope.filterDashboardOptions = [
         'Email Address',
-        'Adjusted Production',
-        'Total Income',
-        'Insurance Income'
+        'Phone Number',
+        'Region',
+        'Location'
     ]    
 
     $scope.selectAllTreeSelect = function (options, model) {

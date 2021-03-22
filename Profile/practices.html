@@ -1096,11 +1096,7 @@
             });
             $('.dataTables_length').addClass('bs-select');
             $('.table-wrapper .dataTables_filter').addClass('show-search').appendTo('.top-gutter .search-bar');
-            $('#dtBasicExample_paginate ul.pagination li').click(function() {
-               $('html, body').animate({
-                  scrollTop: $(".users-page-content").offset().top
-               }, 1000);
-            })
+            
             $(".form-control").on("blur input focus", function() {
             var $field = $(this).closest(".form-field");
                if (this.value) {
@@ -1252,55 +1248,59 @@
                $('.edit-profile-drowpdown>ul>li.edit-menu img.drowpdown-icon').click(function(ele){
             ele.stopPropagation();
             $(this).next('ul').show();
-         });
-         $('.edit-profile-drowpdown>ul>li.edit-menu ul li').click(function(ele){
-            ele.stopPropagation();
-            $(this).parent('ul').hide();
-         });
-         $('.modal-content').click(function(ele){
-            ele.stopPropagation();
-            $('.edit-profile-drowpdown>ul>li.edit-menu ul').hide();
-         });    
-         
-         
-         
-            $('.edit-profile-drowpdown>ul>li>ul>li.upload-img').click(function() {
-         $('.edit-profile').hide();
-         $('.upload-img-wrapper').show();
-         });
-         
-         $('button.btn.btn-primary[data-target="#exampleModal"]').click(function() {
-         $('.edit-profile').show();
-         $('.upload-img-wrapper, .edit-profile.password-change').hide();
-         });
-         
-         
-         
-         $('.custom-edit-pp .gernal-profile-form .form-button .btn-blue').click(function(ele){
-         var $this = $(ele.currentTarget);
-         checkInpuVal();
-         setTimeout(function(){
-            if($this.closest('.form-feild').find('.show-error').length === 0){
-                $this.parent().addClass('show-loader');
-                setTimeout(function(){
-                    $this.parent().removeClass('show-loader');
-                }, 3000);
-            }
-         }, 0);
-         });
-         $('.password-change .password-change-wrapper .form-button .btn-blue').click(function(ele){
-         var $this = $(ele.currentTarget);
-         checkInpuVal2();
-         setTimeout(function(){
-            if($this.closest('.form-feild').find('.show-error').length === 0){
-                $this.parent().addClass('show-loader');
-                setTimeout(function(){
-                    $this.parent().removeClass('show-loader');
-                }, 3000);
-            }
-         }, 0);
-         });
-         
+            });
+            $('.edit-profile-drowpdown>ul>li.edit-menu ul li').click(function(ele){
+               ele.stopPropagation();
+               $(this).parent('ul').hide();
+            });
+            $('.modal-content').click(function(ele){
+               ele.stopPropagation();
+               $('.edit-profile-drowpdown>ul>li.edit-menu ul').hide();
+            });    
+            
+            
+            
+               $('.edit-profile-drowpdown>ul>li>ul>li.upload-img').click(function() {
+            $('.edit-profile').hide();
+            $('.upload-img-wrapper').show();
+            });
+            
+            $('button.btn.btn-primary[data-target="#exampleModal"]').click(function() {
+            $('.edit-profile').show();
+            $('.upload-img-wrapper, .edit-profile.password-change').hide();
+            });
+            
+            
+            
+            $('.custom-edit-pp .gernal-profile-form .form-button .btn-blue').click(function(ele){
+            var $this = $(ele.currentTarget);
+            checkInpuVal();
+            setTimeout(function(){
+               if($this.closest('.form-feild').find('.show-error').length === 0){
+                  $this.parent().addClass('show-loader');
+                  setTimeout(function(){
+                     $this.parent().removeClass('show-loader');
+                  }, 3000);
+               }
+            }, 0);
+            });
+            $('.password-change .password-change-wrapper .form-button .btn-blue').click(function(ele){
+               var $this = $(ele.currentTarget);
+               checkInpuVal2();
+               setTimeout(function(){
+                  if($this.closest('.form-feild').find('.show-error').length === 0){
+                     $this.parent().addClass('show-loader');
+                     setTimeout(function(){
+                        $this.parent().removeClass('show-loader');
+                     }, 3000);
+                  }
+               }, 0);
+            });
+            $(document).on('click', 'ul.pagination li > a', function() {
+               $('html, body').animate({
+                  scrollTop: $('.body-container').offset().top
+               }, 1000);
+            });
          });
       </script>
    </body>
