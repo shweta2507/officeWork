@@ -281,3 +281,90 @@ span.inactive img {
 .form-field .form-option-wrapper .form-custom-dropdown ul li img {
     margin-right: 8px;
 }
+
+
+/* Color Panel css */
+
+.sp-picker-container {
+    border: none !important;
+    width: 255px !important;
+}
+
+.sp-container {
+    border: none !important;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    box-shadow: 0px 16px 32px #343D5633;
+    border-radius: 8px;
+    opacity: 1;
+    overflow: visible !important;
+}
+
+.custom-input {
+    width: 100%;
+}
+
+.sp-replacer {
+    width: 100%;
+    background: transparent !important;
+    border: none !important;
+    padding: 0 !important;
+    height: 45px;
+    border: 1px solid #EAEBEE !important;
+    border-radius: 6px !important;
+    position: relative;
+    top: 0px !important;
+}
+
+.sp-replacer .sp-dd {
+    display: none !important;
+}
+
+.sp-replacer .sp-preview {
+    float: right !important;
+    border: none !important;
+    border-radius: 2px !important;
+    opacity: 1;
+    width: 20px !important;
+    top: 11px !important;
+    right: 40px;
+}
+
+.sp-replacer .sp-preview .sp-preview-inner {
+    top: 0px;
+    border-radius: 2px !important;
+}
+
+.sp-top-inner .sp-hue {
+    width: 10px !important;
+    border: none !important;
+    border-radius: 8px !important;
+    left: 90%;
+}
+
+.sp-top-inner .sp-hue .sp-slider {
+    height: 10px;
+    border-radius: 15px;
+    width: 10px;
+    left: -2px;
+    border: 2px solid #fff;
+    background: transparent;
+}
+
+.sp-top-inner .sp-color {
+    border: none !important;
+    border-radius: 4px !important;
+}
+
+.sp-dragger {
+    border: 2px solid #fff;
+    background: transparent !important;
+    height: 15px;
+    width: 15px;
+    border-radius: 15px !important;
+}
+
+.sp-picker-container .sp-button-container.sp-cf {
+    display: none !important;
+}
+
+/* Color panel css End */

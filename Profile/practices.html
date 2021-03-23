@@ -1063,11 +1063,11 @@
                                                       <h4><img src="assets/icons/outlook.svg" alt="Outlook.com" class="email-img"><span class="email-names">Outlook.com</span></h4>
                                                       <div class="form-custom-dropdown">
                                                          <ul class="email-provider-g">
-                                                            <li class="icloud"><img src="assets/icons/icload.svg" alt="iCloud">iCloud</li>
-                                                            <li class="micro"><img src="assets/icons/microsoft.svg" alt="Microsoft Exchange">Microsoft Exchange</li>
-                                                            <li class="gmail-google"><img src="assets/icons/gmail.svg" alt="Google Gmail">Google Gmail</li>
-                                                            <li class="aol"><img src="assets/icons/aol.svg" alt="Aol.">Aol.</li>
-                                                            <li class="outlook"><img src="assets/icons/outlook.svg" alt="Outlook.com">Outlook.com</li>
+                                                            <li class="icloud"><img src="assets/icons/icload.svg" alt="iCloud"><span>iCloud</span></li>
+                                                            <li class="micro"><img src="assets/icons/microsoft.svg" alt="Microsoft Exchange"><span>Microsoft Exchange</span></li>
+                                                            <li class="gmail-google"><img src="assets/icons/gmail.svg" alt="Google Gmail"><span>Google Gmail</span></li>
+                                                            <li class="aol"><img src="assets/icons/aol.svg" alt="Aol."><span>Aol.</span></li>
+                                                            <li class="outlook"><img src="assets/icons/outlook.svg" alt="Outlook.com"><span>Outlook.com</span></li>
                                                          </ul>
                                                       </div>
                                                    </div>
@@ -1303,9 +1303,10 @@
                $(this).addClass('active');
             });
             $('.technical-information-group.active-technical .form-field .form-option-wrapper .form-custom-dropdown ul li').click(function(){
-               var dataValue =  $(this).text().trim();
-               var dataValue =  $(this).text().trim();
-               $('.technical-information-group.active-technical .form-field .form-option-wrapper h4').text(dataValue);
+               var dataValue =  $(this).find('span').text().trim();
+               var dataImg =  $(this).find('img').attr('src');
+               $('.technical-information-group.active-technical .form-field .form-option-wrapper h4 > span').text(dataValue);
+               $('.technical-information-group.active-technical .form-field .form-option-wrapper h4 > img').attr('src', dataImg)
                $(this).closest('.technical-information-group.active-technical .form-custom-dropdown').hide();
                $(this).closest('.technical-information-group.active-technical .form-option-wrapper').find('h4').removeClass('active');
             });
@@ -1382,6 +1383,10 @@
             });
             $("#custom").spectrum({
                color: "#0ACADC"
+            });
+            $('.gernal-profile-form.technical-information-form').click(function(ele){
+               ele.stopPropagation();
+               $('.sp-replacer .sp-dd')[0].click();
             });
          });
       </script>
