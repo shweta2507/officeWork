@@ -963,17 +963,29 @@
                                  </div>
                                  <!-- ============================= Technical Tabber HTML ============================ -->
                                  <div class="tab-pane technical-information" id="tab-2">
-                                    <div class="gernal-profile custom-edit-pp technical-information-group">
+                                    <div class="gernal-profile custom-edit-pp technical-information-group inactivate-technical">
                                        <h1>Technical Information</h1>
                                        <div class="gernal-profile-form technical-information-form">
                                           <form class="form-feild">
                                              <div class="feild-1 feild">
-                                                <div class="form-field">
-                                                   <label for="display-name" class="form-label">Email Provider</label>
-                                                   <div class="custom-input">
-                                                      <input type="text" id="display-name" name="DisplayName" class="form-control">
-                                                      <span class="error">Enter a valid email provider name.</span>
+                                                <div class="form-field custom-filled">
+
+
+                                                   <div class="form-option-wrapper">
+                                                      <label for="display-name" class="form-label">Email Provider</label>
+                                                      <h4> Microsoft Exchange</h4>
+                                                      <div class="form-custom-dropdown">
+                                                         <ul class="email-provider-g">
+                                                            <li class="icloud">iCloud</li>
+                                                            <li class="micro">Microsoft Exchange</li>
+                                                            <li class="gmail-google">Google Gmail</li>
+                                                            <li class="aol">Aol.</li>
+                                                            <li class="outlook">Outlook.com</li>
+                                                         </ul>
+                                                      </div>
                                                    </div>
+
+
                                                 </div>
                                                 <div class="form-field">
                                                    <label for="Email-Subject" class="form-label">Email Subject Description</label>
@@ -996,7 +1008,8 @@
                                                    <label for="email-password" class="form-label">Email Password</label>
                                                    <div class="custom-input">
                                                       <input type="password" class="form-control" id="email-password" name="password">
-                                                      <span class="error">Enter a email password.</span>
+                                                      <span class="far fa-eye toggle"></span>
+                                                      <span class="error">Enter a valid email password.</span>
                                                    </div>
                                                 </div>
                                              </div>
@@ -1019,8 +1032,94 @@
                                              <div class="online-payment-option">
                                                 <p>Online Payments</p>
                                                 <div class="inactive-button">
-                                                   <span class="inactive"><img src="" alt="close-icon">Inactive</span>
-                                                   <span class="activate">Activate <img src="" alt="side-arrow"></span>
+                                                   <span class="inactive"><img src="assets/icons/inactive-icon.svg" alt="close-icon">Inactive</span>
+                                                   <span class="activate">Activate <img src="assets/icons/activate.icon.svg" alt="side-arrow"></span>
+                                                </div>
+                                             </div>
+                                             <div class="form-button">
+                                                <a href="#" class="for-btn for-btn-primary cancel">Cancel</a>
+                                                <a href="#" class="for-btn for-btn-primary btn-blue">Save Changes</a>
+                                                <div class="loader">
+                                                   <svg version="1.1" id="loader-1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="40px" height="40px" viewBox="0 0 50 50" style="enable-background:new 0 0 50 50;" xml:space="preserve">
+                                                      <path fill="#000" d="M43.935,25.145c0-10.318-8.364-18.683-18.683-18.683c-10.318,0-18.683,8.365-18.683,18.683h4.068c0-8.071,6.543-14.615,14.615-14.615c8.072,0,14.615,6.543,14.615,14.615H43.935z">
+                                                         <animateTransform attributeType="xml" attributeName="transform" type="rotate" from="0 25 25" to="360 25 25" dur="0.6s" repeatCount="indefinite"></animateTransform>
+                                                      </path>
+                                                   </svg>
+                                                </div>
+                                             </div>
+                                          </form>
+                                       </div>
+                                    </div>
+                                    <div class="gernal-profile custom-edit-pp technical-information-group active-technical">
+                                       <h1>Technical Information</h1>
+                                       <div class="gernal-profile-form technical-information-form">
+                                          <form class="form-feild">
+                                             <div class="feild-1 feild">
+                                                <div class="form-field custom-filled">
+
+
+                                                   <div class="form-option-wrapper">
+                                                      <label for="display-name" class="form-label">Email Provider</label>
+                                                      <h4><img src="assets/icons/outlook.svg" alt="Outlook.com" class="email-img"><span class="email-names">Outlook.com</span></h4>
+                                                      <div class="form-custom-dropdown">
+                                                         <ul class="email-provider-g">
+                                                            <li class="icloud"><img src="assets/icons/icload.svg" alt="iCloud">iCloud</li>
+                                                            <li class="micro"><img src="assets/icons/microsoft.svg" alt="Microsoft Exchange">Microsoft Exchange</li>
+                                                            <li class="gmail-google"><img src="assets/icons/gmail.svg" alt="Google Gmail">Google Gmail</li>
+                                                            <li class="aol"><img src="assets/icons/aol.svg" alt="Aol.">Aol.</li>
+                                                            <li class="outlook"><img src="assets/icons/outlook.svg" alt="Outlook.com">Outlook.com</li>
+                                                         </ul>
+                                                      </div>
+                                                   </div>
+
+
+                                                </div>
+                                                <div class="form-field">
+                                                   <label for="Email-Subject" class="form-label">Email Subject Description</label>
+                                                   <div class="custom-input">
+                                                      <input type="text" id="email-subject" name="Email-Subject" class="form-control">
+                                                      <span class="error">Enter a valid email subject.</span>
+                                                   </div>
+                                                </div>
+                                             </div>
+                                             <div class="feild-2 feild">
+                                                <div class="form-field">
+                                                   <label for="email" class="form-label">Email Address</label>
+                                                   <div class="custom-input">
+                                                      <!-- <input type="text" id="first-name" name="firstName" class="form-control">-->
+                                                      <input type="email" class="form-control" name="email" id="email">
+                                                      <span class="error">Enter a valid email.</span>
+                                                   </div>
+                                                </div>
+                                                <div class="form-field">
+                                                   <label for="email-password" class="form-label">Email Password</label>
+                                                   <div class="custom-input">
+                                                      <input type="password" class="form-control" id="email-password" name="password">
+                                                      <span class="far fa-eye toggle"></span>
+                                                      <span class="error">Enter a valid email password.</span>
+                                                   </div>
+                                                </div>
+                                             </div>
+                                             <div class="feild-3 feild">
+                                                <div class="form-field">
+                                                   <label for="phone-number" class="form-label">Phone Number</label>
+                                                   <div class="custom-input">
+                                                      <input type="tel" class="form-control" id="phone-number" name="phone-number">
+                                                      <span class="error">Enter a Phone number.</span>
+                                                   </div>
+                                                </div>
+                                                <div class="form-field custom-color-input">
+                                                   <label for="state" class="form-label">Practice Color Scheme</label>
+                                                   <div class="custom-input">
+                                                      <input type='text' class="form-control" id="custom" name="Color"/>
+                                                      <span class="error">Enter a valid state.</span>
+                                                   </div>
+                                                </div>
+                                             </div>
+                                             <div class="online-payment-option">
+                                                <p>Online Payments <img src="assets/icons/tooltip.svg" alt="Tooltip"></p>
+                                                <div class="active-button">
+                                                   <span class="active"><img src="assets/icons/active-icon.svg" alt="side-arrow">Active</span>
                                                 </div>
                                              </div>
                                              <div class="form-button">
@@ -1183,6 +1282,34 @@
                $(this).closest('.custom-dropdown').hide();
                $(this).closest('.option-wrapper').find('h4').removeClass('active');
             });
+
+            /* ========= Email Provider Js ============== */
+
+            $('.technical-information-group.inactivate-technical .form-field .form-option-wrapper h4').click(function(ele){
+               ele.stopPropagation();
+               $(this).next('.technical-information-group.inactivate-technical .form-custom-dropdown').show();
+               $(this).addClass('active');
+            });
+            $('.technical-information-group.inactivate-technical .form-field .form-option-wrapper .form-custom-dropdown ul li').click(function(){
+               var dataValue =  $(this).text().trim();
+               $('.technical-information-group.inactivate-technical .form-field .form-option-wrapper h4').text(dataValue);
+               $(this).closest('.technical-information-group.inactivate-technical .form-custom-dropdown').hide();
+               $(this).closest('.technical-information-group.inactivate-technical .form-option-wrapper').find('h4').removeClass('active');
+            });
+
+            $('.technical-information-group.active-technical .form-field .form-option-wrapper h4').click(function(ele){
+               ele.stopPropagation();
+               $(this).next('.technical-information-group.active-technical .form-custom-dropdown').show();
+               $(this).addClass('active');
+            });
+            $('.technical-information-group.active-technical .form-field .form-option-wrapper .form-custom-dropdown ul li').click(function(){
+               var dataValue =  $(this).text().trim();
+               var dataValue =  $(this).text().trim();
+               $('.technical-information-group.active-technical .form-field .form-option-wrapper h4').text(dataValue);
+               $(this).closest('.technical-information-group.active-technical .form-custom-dropdown').hide();
+               $(this).closest('.technical-information-group.active-technical .form-option-wrapper').find('h4').removeClass('active');
+            });
+
             $(function(){
                $(".tab-pane").not(".active").hide();
                $('.tabber-content .tab-pane').each(function(i,el){

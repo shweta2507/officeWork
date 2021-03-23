@@ -1384,3 +1384,8 @@ font-family: 'Eina';
 .option-wrapper h4.active {
   border: 2px solid #0ACADC;
 }
+
+.users-page-content .table-wrapper #dtBasicExample_wrapper .row:last-child .col-sm-7 div#dtBasicExample_paginate ul.pagination li#dtBasicExample_previous a:focus, 
+.users-page-content .table-wrapper #dtBasicExample_wrapper .row:last-child .col-sm-7 div#dtBasicExample_paginate ul.pagination li#dtBasicExample_next a:focus {
+  background-color: transparent;
+}
