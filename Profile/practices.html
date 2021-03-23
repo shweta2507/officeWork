@@ -21,11 +21,9 @@
       <link rel="stylesheet" href="https://cdn.datatables.net/1.10.24/css/dataTables.bootstrap.min.css">
       <!-- highcharts  -->
       <script src="https://code.highcharts.com/highcharts.src.js" defer></script>
-
       <!-- custom select -->
       <script src="./js/custom-select/select.js" type="module"></script>
       <script src="./js/custom-js/upload-photo.js" type="module"></script>
-
       <!-- Styles from old dashboard  -->
       <link rel="stylesheet" href="css2/bootstrap.min.css">
       <link rel="stylesheet" href="css2/font-awesome.css">
@@ -50,7 +48,6 @@
       <link href="NewCSS/page.css" rel="stylesheet">
       <link href="./style-dashboard/sb-admin.css" rel="stylesheet">
       <!-- stylesheet  -->
-      
       <link rel="stylesheet" href="./style/customize.css">
       <link rel="stylesheet" href="./style/style.css">
       <link rel="stylesheet" href="./style/practices.css">
@@ -269,23 +266,22 @@
                   <div class="filters-colum">
                      <div class="ba-filter-select filter-multiselect _outlined" style="width: 175px;">
                         <div class="ba-filter-field">
-                            <span ng-show="filterDashboardSelected.length == 0">Filter Dashboard</span>
-                            <span ng-show="filterDashboardSelected.length == 1">Filter Dashboard</span>
-                            <span ng-show="filterDashboardSelected.length > 1">
-                                Filter Dashboard  <!--  {{ filterDashboardSelected[0] }} +' (+' + (filterDashboardSelected.length-1) +')' -->
-                            </span>
+                           <span ng-show="filterDashboardSelected.length == 0">Filter Dashboard</span>
+                           <span ng-show="filterDashboardSelected.length == 1">Filter Dashboard</span>
+                           <span ng-show="filterDashboardSelected.length > 1">
+                              Filter Dashboard  <!--  {{ filterDashboardSelected[0] }} +' (+' + (filterDashboardSelected.length-1) +')' -->
+                           </span>
                         </div>
                         <input type="hidden" name="filterDashboardSelected" id="filterDashboardSelected"
-                            ng-model="filterDashboardSelected">
-        
+                           ng-model="filterDashboardSelected">
                         <div class="filter-multiselect-options">
-                            <div class="ba-option" ng-repeat="option in filterDashboardOptions" ng-click="toggleMultiSelect('filterDashboardSelected', option)">
-                                <span class="ba-checkbox" ng-class="{__checked : isChecked(option,'filterDashboardOptions','filterDashboardSelected')}">
-                                </span>
-                                <span class="ba-option-label">{{ option }}</span>
-                            </div>
+                           <div class="ba-option" ng-repeat="option in filterDashboardOptions" ng-click="toggleMultiSelect('filterDashboardSelected', option)">
+                              <span class="ba-checkbox" ng-class="{__checked : isChecked(option,'filterDashboardOptions','filterDashboardSelected')}">
+                              </span>
+                              <span class="ba-option-label">{{ option }}</span>
+                           </div>
                         </div>
-                    </div>
+                     </div>
                   </div>
                </div>
                <div class="table-wrapper">
@@ -898,50 +894,50 @@
                                        <div class="gernal-profile-form practice-profile-form">
                                           <form class="form-feild">
                                              <div class="feild-1 feild">
-                                                <div class="form-field">
+                                                <div class="form-field custom-filled">
                                                    <label for="display-name" class="form-label">Display Name</label>
                                                    <div class="custom-input">
-                                                      <input type="text" id="display-name" name="DisplayName" class="form-control">
+                                                      <input type="text" id="display-name" name="DisplayName" class="form-control" value="FC Family Dental - Broomfield">
                                                       <span class="error">Enter a valid display name.</span>
                                                    </div>
                                                 </div>
-                                                <div class="form-field">
+                                                <div class="form-field custom-filled">
                                                    <label for="Display-Name" class="form-label">Display Name</label>
                                                    <div class="custom-input">
-                                                      <input type="text" id="display-name" name="DisplayName" class="form-control">
+                                                      <input type="text" id="display-name" name="DisplayName" class="form-control" value="FC Family Dental - Broomfield">
                                                       <span class="error">Enter a valid display name.</span>
                                                    </div>
                                                 </div>
                                              </div>
                                              <div class="feild-2 feild">
-                                                <div class="form-field">
+                                                <div class="form-field custom-filled">
                                                    <label for="street-address" class="form-label">Street Address</label>
                                                    <div class="custom-input">
                                                       <!-- <input type="text" id="first-name" name="firstName" class="form-control">-->
-                                                      <input type="street" class="form-control" name="streetAddress" id="street-Address">
+                                                      <input type="street" class="form-control" name="streetAddress" id="street-Address" value="1234 West Coast Dr St #342">
                                                       <span class="error">Enter a valid street address.</span>
                                                    </div>
                                                 </div>
                                              </div>
                                              <div class="feild-3 feild">
-                                                <div class="form-field">
+                                                <div class="form-field custom-filled">
                                                    <label for="city" class="form-label">City</label>
                                                    <div class="custom-input">
-                                                      <input type="city" class="form-control" id="inputCity" name="city">
+                                                      <input type="city" class="form-control" id="inputCity" name="city" value="Dallas">
                                                       <span class="error">Enter a valid city.</span>
                                                    </div>
                                                 </div>
-                                                <div class="form-field">
+                                                <div class="form-field custom-filled">
                                                    <label for="state" class="form-label">State</label>
                                                    <div class="custom-input">
-                                                      <input type="state" class="form-control" id="inputState" name="state">
+                                                      <input type="state" class="form-control" id="inputState" name="state" value="Texas (TX)">
                                                       <span class="error">Enter a valid state.</span>
                                                    </div>
                                                 </div>
-                                                <div class="form-field">
+                                                <div class="form-field custom-filled">
                                                    <label for="zip-code" class="form-label">Zip Code</label>
                                                    <div class="custom-input">
-                                                      <input type="zip" class="form-control" id="inputZip" name="zip">
+                                                      <input type="zip" class="form-control" id="inputZip" name="zip" value="78247">
                                                       <span class="error">Enter a valid zip code.</span>
                                                    </div>
                                                 </div>
@@ -969,8 +965,6 @@
                                           <form class="form-feild">
                                              <div class="feild-1 feild">
                                                 <div class="form-field custom-filled">
-
-
                                                    <div class="form-option-wrapper">
                                                       <label for="display-name" class="form-label">Email Provider</label>
                                                       <h4> Microsoft Exchange</h4>
@@ -984,48 +978,46 @@
                                                          </ul>
                                                       </div>
                                                    </div>
-
-
                                                 </div>
-                                                <div class="form-field">
+                                                <div class="form-field custom-filled">
                                                    <label for="Email-Subject" class="form-label">Email Subject Description</label>
                                                    <div class="custom-input">
-                                                      <input type="text" id="email-subject" name="Email-Subject" class="form-control">
+                                                      <input type="text" id="email-subject" name="Email-Subject" class="form-control" value="Fox Creek Family Dental">
                                                       <span class="error">Enter a valid email subject.</span>
                                                    </div>
                                                 </div>
                                              </div>
                                              <div class="feild-2 feild">
-                                                <div class="form-field">
+                                                <div class="form-field custom-filled">
                                                    <label for="email" class="form-label">Email Address</label>
                                                    <div class="custom-input">
                                                       <!-- <input type="text" id="first-name" name="firstName" class="form-control">-->
-                                                      <input type="email" class="form-control" name="email" id="email">
+                                                      <input type="email" class="form-control" name="email" id="email" value="pedrobecker@meetaxle.com">
                                                       <span class="error">Enter a valid email.</span>
                                                    </div>
                                                 </div>
-                                                <div class="form-field">
+                                                <div class="form-field custom-filled">
                                                    <label for="email-password" class="form-label">Email Password</label>
                                                    <div class="custom-input">
-                                                      <input type="password" class="form-control" id="email-password" name="password">
+                                                      <input type="password" class="form-control" id="email-password" name="password" value="abcdefghi">
                                                       <span class="far fa-eye toggle"></span>
                                                       <span class="error">Enter a valid email password.</span>
                                                    </div>
                                                 </div>
                                              </div>
                                              <div class="feild-3 feild">
-                                                <div class="form-field">
+                                                <div class="form-field custom-filled">
                                                    <label for="phone-number" class="form-label">Phone Number</label>
                                                    <div class="custom-input">
-                                                      <input type="tel" class="form-control" id="phone-number" name="phone-number">
+                                                      <input type="tel" class="form-control" id="phone-number" name="phone-number" value="(877) 123-6565">
                                                       <span class="error">Enter a Phone number.</span>
                                                    </div>
                                                 </div>
                                                 <div class="form-field custom-color-input input-color1 custom-filled">
                                                    <label for="state" class="form-label">Practice Color Scheme</label>
                                                    <span id='basic-log'>#0ACADC</span>
-                                                      <!-- <input type='text' class="form-control custom-color" id="custom" name="Color"/> -->
-                                                      <input type='text' class="custom-color" />
+                                                   <!-- <input type='text' class="form-control custom-color" id="custom" name="Color"/> -->
+                                                   <input type='text' class="custom-color" />
                                                 </div>
                                              </div>
                                              <div class="online-payment-option">
@@ -1055,8 +1047,6 @@
                                           <form class="form-feild">
                                              <div class="feild-1 feild">
                                                 <div class="form-field custom-filled">
-
-
                                                    <div class="form-option-wrapper">
                                                       <label for="display-name" class="form-label">Email Provider</label>
                                                       <h4><img src="assets/icons/outlook.svg" alt="Outlook.com" class="email-img"><span class="email-names">Outlook.com</span></h4>
@@ -1070,8 +1060,6 @@
                                                          </ul>
                                                       </div>
                                                    </div>
-
-
                                                 </div>
                                                 <div class="form-field">
                                                    <label for="Email-Subject" class="form-label">Email Subject Description</label>
@@ -1282,9 +1270,9 @@
                $(this).closest('.custom-dropdown').hide();
                $(this).closest('.option-wrapper').find('h4').removeClass('active');
             });
-
+         
             /* ========= Email Provider Js ============== */
-
+         
             $('.technical-information-group.inactivate-technical .form-field .form-option-wrapper h4').click(function(ele){
                ele.stopPropagation();
                $(this).next('.technical-information-group.inactivate-technical .form-custom-dropdown').show();
@@ -1296,7 +1284,7 @@
                $(this).closest('.technical-information-group.inactivate-technical .form-custom-dropdown').hide();
                $(this).closest('.technical-information-group.inactivate-technical .form-option-wrapper').find('h4').removeClass('active');
             });
-
+         
             $('.technical-information-group.active-technical .form-field .form-option-wrapper h4').click(function(ele){
                ele.stopPropagation();
                $(this).next('.technical-information-group.active-technical .form-custom-dropdown').show();
@@ -1310,7 +1298,7 @@
                $(this).closest('.technical-information-group.active-technical .form-custom-dropdown').hide();
                $(this).closest('.technical-information-group.active-technical .form-option-wrapper').find('h4').removeClass('active');
             });
-
+         
             $(function(){
                $(".tab-pane").not(".active").hide();
                $('.tabber-content .tab-pane').each(function(i,el){
@@ -1336,7 +1324,7 @@
                ele.stopPropagation();
                $('.edit-profile-drowpdown>ul>li.edit-menu ul').hide();
             });    
-      
+         
             $('.edit-profile-drowpdown>ul>li>ul>li.upload-img').click(function() {
                $('.edit-profile').hide();
                $('.upload-img-wrapper').show();

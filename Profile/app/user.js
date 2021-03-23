@@ -112,6 +112,102 @@ axleApp.controller('userController', function ($scope) {
     ]
 
   
+$scope.practiceFilters1 = []
+$scope.regionFilters1 = []
+$scope.analyticsFilters1 = []
+$scope.collectionsFilters1 = []
+$scope.eligibilityFilters1 = []
+$scope.engagementFilters1 = []
+$scope.messagingFilters1 = []
+$scope.paymentsFilters1 = []
+$scope.payrollFilters1 = []
+$scope.reviewsFilters1 = []
+$scope.treatmentFilters1 = []
+$scope.virtualTerminalFilters1 = []
+$scope.practiceAccessFilters1 = []
+$scope.regionAccessFilters1 = []
+
+$scope.practiceAccessOptions1 = [
+    'Practices1',
+    'Practices2',
+    'Practices3',
+    'Practices4',
+    'Practices5'
+]
+$scope.regionAccessOptions1 = [
+    'Region1',
+    'Region2',
+    'Region3',
+    'Region4',
+    'Region5'
+]
+$scope.practiceOptions1 = [
+    'Practices1',
+    'Practices2',
+    'Practices3',
+    'Practices4',
+    'Practices5'
+]
+$scope.regionOptions1 = [
+    'Region1',
+    'Region2',
+    'Region3',
+    'Region4',
+    'Region5'
+]
+$scope.analyticsOptions1 = [
+    'Practice Dashboard',
+    'Provider Dashboard',
+    'Region Dashboard'
+]
+$scope.collectionsOptions1 = [
+    'Dashboard',
+    'Collections'
+]
+$scope.eligibilityOptions1 = [
+    'Dashboard',
+    'Pending',
+    'Verify Patient',
+    'View Insurance Breakdown'
+]
+$scope.engagementOptions1 = [
+    'Dashboard',
+    'Confirmation Pending',
+    'Confirmation Completed',
+    'Hygiene Pending',
+    'Hygiene Completed'
+]
+$scope.messagingOptions1 = [
+    'Inbox',
+    'Mass SMS'
+]
+$scope.paymentsOptions1 = [
+    'Dashboard',
+    'Pending',
+    'Completed',
+    'Create Payment',
+    'Issue Refund',
+    'Recurring',
+    'Transactions'
+]
+$scope.payrollOptions1 = [
+    'Dashboard',
+    'Payroll'
+]
+$scope.reviewsOptions1 = [
+    'Dashboard',
+    'Write Response'
+]
+$scope.treatmentOptions1 = [
+    'Call List',
+    'Pending',
+    'Completed'
+]
+$scope.virtualTerminalOptions1 = [
+    'Virtual Terminal'
+]
+
+
 
     $scope.selectAllTreeSelect = function (options, model) {
         let allOptionsArray = Object.getObjValue($scope, options);
