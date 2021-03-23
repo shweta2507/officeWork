@@ -15,10 +15,10 @@
       <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
       <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.0/js/bootstrap.min.js"></script>
       <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+      <script src="./js/custom-js/spectrum.js"></script>
       <script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
       <script src="https://cdn.datatables.net/1.10.24/js/dataTables.bootstrap.min.js"></script>
       <link rel="stylesheet" href="https://cdn.datatables.net/1.10.24/css/dataTables.bootstrap.min.css">
-      <script src="./js/custom-js/spectrum.js"></script>
       <!-- highcharts  -->
       <script src="https://code.highcharts.com/highcharts.src.js" defer></script>
 
@@ -1021,12 +1021,11 @@
                                                       <span class="error">Enter a Phone number.</span>
                                                    </div>
                                                 </div>
-                                                <div class="form-field custom-color-input">
+                                                <div class="form-field custom-color-input input-color1 custom-filled">
                                                    <label for="state" class="form-label">Practice Color Scheme</label>
-                                                   <div class="custom-input">
-                                                      <input type='text' class="form-control" id="custom" name="Color"/>
-                                                      <span class="error">Enter a valid state.</span>
-                                                   </div>
+                                                   <span id='basic-log'>#0ACADC</span>
+                                                      <!-- <input type='text' class="form-control custom-color" id="custom" name="Color"/> -->
+                                                      <input type='text' class="custom-color" />
                                                 </div>
                                              </div>
                                              <div class="online-payment-option">
@@ -1108,10 +1107,11 @@
                                                       <span class="error">Enter a Phone number.</span>
                                                    </div>
                                                 </div>
-                                                <div class="form-field custom-color-input">
+                                                <div class="form-field custom-color-input input-color2 custom-filled">
                                                    <label for="state" class="form-label">Practice Color Scheme</label>
+                                                   <span id='basic-log'>#0ACADC</span>
                                                    <div class="custom-input">
-                                                      <input type='text' class="form-control" id="custom" name="Color"/>
+                                                      <input type='text' class="form-control custom-color1" id="custom2" name="Color"/>
                                                       <span class="error">Enter a valid state.</span>
                                                    </div>
                                                 </div>
@@ -1381,13 +1381,28 @@
                   scrollTop: $('.body-container').offset().top
                }, 1000);
             });
-            $("#custom").spectrum({
-               color: "#0ACADC"
+            $(".custom-color").spectrum({
+               color: "#0ACADC",
+               showInput: true,
+               preferredFormat: "hex",
+               change: function(color) {
+                  $(".input-color1 #basic-log").text(color.toHexString());
+               }
             });
-            $('.gernal-profile-form.technical-information-form').click(function(ele){
-               ele.stopPropagation();
-               $('.sp-replacer .sp-dd')[0].click();
+            $("#custom2").spectrum({
+               change: function(color) {
+                  $("#basic-log2").text(color.toHexString());
+               },
+               color: "#0ACADC",
             });
+            $('.sp-val').click(function(){
+               $('.sp-container button.sp-choose')[0].click();
+            });
+            // $('.gernal-profile-form.technical-information-form').click(function(ele){
+            //    ele.stopPropagation();
+            //    $('.sp-container').addClass('sp-hidden');
+            //    $('.sp-replacer.sp-light').removeClass('sp-active');
+            // });
          });
       </script>
    </body>

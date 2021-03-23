@@ -288,6 +288,8 @@ span.inactive img {
 .sp-picker-container {
     border: none !important;
     width: 255px !important;
+    padding-bottom: 0 !important;
+    margin-bottom: 0 !important;
 }
 
 .sp-container {
@@ -366,5 +368,15 @@ span.inactive img {
 .sp-picker-container .sp-button-container.sp-cf {
     display: none !important;
 }
-
+span#basic-log {
+    position: absolute;
+    letter-spacing: 0px;
+    color: #363F57;
+    opacity: 1;
+    font-size: 13px;
+    top: 23px;
+    line-height: 18px;
+    font-family: 'Eina-SemiBold';
+    left: 12px;
+}
 /* Color panel css End */
