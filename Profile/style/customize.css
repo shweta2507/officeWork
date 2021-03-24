@@ -1667,3 +1667,6 @@ main.ba-main.main-dashboard.pull-right .users-page-content .top-row {
 .tabber-content .user-details .cta-wrapper .loader {
 	right: 0px;
 }
+.ba-topnav {
+	z-index: 9988 !important;
+}

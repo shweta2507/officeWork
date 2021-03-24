@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Settings | Axle</title>
+      <!-- skeleton ui -->
+      <!-- <link rel="stylesheet" href="./style/skeleton/normalize.css">
+         <link rel="stylesheet" href="./style/skeleton/skeleton.css">  -->
+      <!-- skeleton ui end -->
+      <!-- angular -->
+      <script src="./lib/angular.min.js"></script>
+      <!-- jQuery -->
+      <script src="./lib/jQuery.min.js"></script>
+      <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.0/js/bootstrap.min.js"></script>
+      <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+      <script src="./js/custom-js/spectrum.js"></script>
+      <script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
+      <script src="https://cdn.datatables.net/1.10.24/js/dataTables.bootstrap.min.js"></script>
+      <link rel="stylesheet" href="https://cdn.datatables.net/1.10.24/css/dataTables.bootstrap.min.css">
+      <!-- highcharts  -->
+      <script src="https://code.highcharts.com/highcharts.src.js" defer></script>
+      <!-- custom select -->
+      <script src="./js/custom-select/select.js" type="module"></script>
+      <script src="./js/custom-js/upload-photo.js" type="module"></script>
+      <!-- Styles from old dashboard  -->
+      <link rel="stylesheet" href="css2/bootstrap.min.css">
+      <link rel="stylesheet" href="css2/font-awesome.css">
+      <link rel="stylesheet" href="css2/owl.carousel.css">
+      <link rel="stylesheet" href="css2/owl.theme.css">
+      <link rel="stylesheet" href="css2/owl.transitions.css">
+      <link rel="stylesheet" href="css2/animate.css">
+      <link rel="stylesheet" href="css2/normalize.css">
+      <link rel="stylesheet" href="css2/meanmenu.min.css">
+      <link rel="stylesheet" href="css2/main.css">
+      <link rel="stylesheet" href="css2/educate-custon-icon.css">
+      <link rel="stylesheet" href="css2/scrollbar/jquery.mCustomScrollbar.min.css">
+      <link rel="stylesheet" href="css2/metisMenu/metisMenu.min.css">
+      <link rel="stylesheet" href="css2/metisMenu/metisMenu-vertical.css">
+      <link rel="stylesheet" href="css2/calendar/fullcalendar.min.css">
+      <link rel="stylesheet" href="css2/calendar/fullcalendar.print.min.css">
+      <link rel="stylesheet" href="css2/style.css">
+      <link rel="stylesheet" href="css2/responsive.css">
+      <link rel="stylesheet" href="css2/color-style.css">
+      <link rel="stylesheet" href="css2/spectrum.css">
+      <link href="NewCSS/masterpage.css" rel="stylesheet">
+      <link href="NewCSS/page.css" rel="stylesheet">
+      <link href="./style-dashboard/sb-admin.css" rel="stylesheet">
+      <!-- stylesheet  -->
+      <link rel="stylesheet" href="./style/customize.css">
+      <link rel="stylesheet" href="./style/style.css">
+      <link rel="stylesheet" href="./style/practices.css">
+      <!-- custom select style  -->
+      <link rel="stylesheet" href="./style/custom-select/select.css">
+      <!-- Favicon -->
+      <link rel="icon" type="image/x-icon" href="./assets/img/favicon.svg">
+   </head>
+   <body ng-app="axleApp" class="user-page practice-page layout-cell layout-scrollbar">
+      <!-- side navbar start-->
+      <div class="ba-sidenav">
+         <div class="ba-brand">
+            <img src="./assets/img/axle-x.svg" alt="" id="brand-icon">
+            <img src="./assets/img/axle-full.svg" alt="" id="brand-logo">
+         </div>
+         <nav class="ba-nav">
+            <div class="ba-nav-item has-tooltip">
+               <a href="#" class="ba-nav-link">
+               <img src="./assets/icons/analytics.svg" alt="analytics" srcset="">
+               <span class="ba-link-title">Analytics</span>
+               </a>
+               <div class="ba-tooltip semibold-text">Analytics</div>
+            </div>
+            <div class="ba-nav-item has-tooltip">
+               <a href="#" class="ba-nav-link">
+               <img src="./assets/icons/collections.svg" alt="collections">
+               <span class="ba-link-title">Collections</span>
+               </a>
+               <div class="ba-tooltip semibold-text">Collections</div>
+            </div>
+            <div class="ba-nav-item has-tooltip">
+               <a href="#" class="ba-nav-link">
+               <img src="./assets/icons/eligibility.svg" alt="eligibility">
+               <span class="ba-link-title">Eligibility</span>
+               </a>
+               <div class="ba-tooltip semibold-text">Eligibility</div>
+            </div>
+            <div class="ba-nav-item has-tooltip">
+               <a href="#" class="ba-nav-link">
+                  <img src="./assets/icons/user_icon.svg" alt="engagement">
+                  <span class="ba-link-title">Engagement</span>
+                  <div class="ba-tooltip semibold-text">Engagement</div>
+               </a>
+            </div>
+            <div class="ba-nav-item has-tooltip">
+               <a href="#" class="ba-nav-link">
+                  <img src="./assets/icons/messaging.svg" alt="messaging">
+                  <span class="ba-link-title">Messaging</span>
+                  <div class="ba-tooltip semibold-text">Messaging</div>
+               </a>
+            </div>
+            <div class="ba-nav-item has-tooltip">
+               <a href="#" class="ba-nav-link">
+               <img src="./assets/icons/payments.svg" alt="payments">
+               <span class="ba-link-title">Payments</span>
+               </a>
+               <div class="ba-tooltip semibold-text">Payments</div>
+            </div>
+            <div class="ba-nav-item has-tooltip">
+               <a href="#" class="ba-nav-link">
+               <img src="./assets/icons/payroll.svg" alt="payroll">
+               <span class="ba-link-title">Payroll</span>
+               </a>
+               <div class="ba-tooltip semibold-text">Payroll</div>
+            </div>
+            <div class="ba-nav-item has-tooltip" data-tooltip="I am tooltip">
+               <a href="#" class="ba-nav-link">
+               <img src="./assets/icons/dashboard.svg" alt="dashboard">
+               <span class="ba-link-title">Reviews</span>
+               </a>
+               <div class="ba-tooltip semibold-text">Reviews</div>
+            </div>
+            <div class="ba-nav-item has-tooltip">
+               <a href="#" class="ba-nav-link">
+               <img src="./assets/icons/treatment.svg" alt="treatment">
+               <span class="ba-link-title">Treatment</span>
+               </a>
+               <div class="ba-tooltip semibold-text">Treatment</div>
+            </div>
+         </nav>
+      </div>
+      <!-- side navbar end -->
+      <main class="ba-main main-dashboard" ng-controller="userController">
+         <!-- topnav  -->
+         <!-- topnav  -->
+         <header class="ba-topnav">
+            <div class="ham-icon ">
+               <svg id="_ham-open" xmlns="http://www.w3.org/2000/svg" width="18" height="12" viewBox="0 0 18 12">
+                  <defs>
+                     <style>
+                        ._ham {
+                        fill: #031926;
+                        opacity: 0.4;
+                        }
+                     </style>
+                  </defs>
+                  <path class="_ham" d="M3,18H21V16H3Zm0-5H21V11H3ZM3,6V8H21V6Z" transform="translate(-3 -6)" />
+               </svg>
+               <svg id="_ham-close" xmlns="http://www.w3.org/2000/svg" width="18" height="12" viewBox="0 0 18 12">
+                  <defs>
+                     <style>
+                        ._ham-close {
+                        fill: #031926;
+                        }
+                     </style>
+                  </defs>
+                  <path class="_ham-close"
+                     d="M3,18H16V16H3Zm0-5H13V11H3ZM3,6V8H16V6Zm18,9.59L17.42,12,21,8.41,19.59,7l-5,5,5,5Z"
+                     transform="translate(-3 -6)" />
+               </svg>
+            </div>
+            <nav class="ba-nav-container">
+               <ul class="ba-topnav-nav">
+                  <li class="ba-topnav-item">
+                     <a href="#" class="ba-topnav-link">Profile</a>
+                  </li>
+                  <li class="ba-topnav-item">
+                     <a href="#" class="ba-topnav-link">Users</a>
+                  </li>
+                  <li class="ba-topnav-item prac-border">
+                     <a href="#" class="ba-topnav-link">Practices</a>
+                  </li>
+                  <li class="ba-topnav-item _active">
+                     <a href="#" class="ba-topnav-link">Engagement</a>
+                  </li>
+                  <li class="ba-topnav-item">
+                     <a href="#" class="ba-topnav-link">Goals</a>
+                  </li>
+                  <li class="ba-topnav-item">
+                     <a href="#" class="ba-topnav-link">Payments</a>
+                  </li>
+                  <li class="ba-topnav-item">
+                     <a href="#" class="ba-topnav-link">Payroll</a>
+                  </li>
+                  <li class="ba-topnav-item">
+                     <a href="#" class="ba-topnav-link">Reviews</a>
+                  </li>
+                  <li class="ba-topnav-item">
+                     <a href="#" class="ba-topnav-link">Treatment</a>
+                  </li>
+                  <li class="ba-topnav-item ba-profile has-flyout">
+                     <div class="_avatar"></div>
+                     <div class="ba-username">Pedro Becker</div>
+                     <span class="ba-chevron-down">
+                     </span>
+                     <div class="flyout-menu _dark _bottom">
+                        <div class="_option">
+                           <img src="./assets/icons/settings.svg" alt="settings icon">
+                           <span>Settings</span>
+                        </div>
+                        <div class="_option"><img src="./assets/icons/logout.svg" alt="logout icon">
+                           <span>Logout</span>
+                        </div>
+                     </div>
+                  </li>
+               </ul>
+            </nav>
+         </header>
+         <div class="body-container">
+
+            
+           
+         </div>
+      </main>
+      <!-- imports for app and controllers  -->
+      <!-- app js for angular modulea -->
+      <script src="./app/practices.js" defer></script>
+      <!-- controllers  -->
+      <!-- JS and JQuery from small interactions and logics  -->
+      <script>
+         $(document).ready(function () {
+             $('.ham-icon').click(function () {
+                 $('.ba-sidenav').toggleClass('expanded-nav')
+                 $('.ba-main').toggleClass('pull-right')
+                 // $('.ba-topnav').toggleClass('pull-right')
+                 $('.ham-icon').toggleClass('_close')
+             })
+             // adding tab index to custom input and popover menus
+             $('.has-flyout').attr('tabindex', '0');
+             $('.ba-input-wrapper').attr('tabindex', '0');
+             $('.ba-filter-select').attr('tabindex', '0');
+         
+             $('.has-flyout').click(function () {
+                 $(this).toggleClass('_show-menu')
+             })
+             $('.has-flyout').on('blur', function () {
+                 $(this).removeClass('_show-menu')
+             })
+         
+             $('.filter-single-select').click(function () {
+                 $(this).toggleClass('_show-options')
+             })
+         
+             $('.filter-single-select').on('blur', function () {
+                 $(this).removeClass('_show-options')
+             })
+         
+             $('.ba-topnav-item').click(function () {
+                 $(this).addClass('_active').siblings().removeClass('_active')
+             })
+             $('.filter_pill').click(function () {
+                 $(this).addClass('_active').siblings().removeClass('_active')
+             })
+         
+             // tree-select expand parent
+             $('.ba-option-parent ._parent ._chevron-down').click(function (params) {
+               $(this).parent().parent().toggleClass('_show-children')
+               $(this).parent().parent().siblings().removeClass('_show-children')
+            })
+            $('#dtBasicExample').DataTable( {
+                  "lengthMenu": [[18, 36, 54, 72, 90, 108], [18, 36, 54, 72, 90, 108]]
+            });
+            $('.dataTables_length').addClass('bs-select');
+            $('.table-wrapper .dataTables_filter').addClass('show-search').appendTo('.top-gutter .search-bar');
+            
+            $(".form-control").on("blur input focus", function() {
+               var $field = $(this).closest(".form-field");
+               if (this.value) {
+                  $field.addClass("custom-filled");
+               } else {
+                  $field.removeClass("custom-filled");
+               }
+            });
+            $(".form-control").on("focus", function() {
+               var $field = $(this).closest(".form-field");
+               if (this) {
+                  $field.addClass("custom-filled");
+               } else {
+                  $field.removeClass("custom-filled");
+               }
+            });
+           
+            $(".dataTables_filter").addClass("custom-filled");
+            $(".search-bar #dtBasicExample_filter.custom-filled > label input[type=search]").attr('placeholder', 'Search');
+            $('.practice-profile .form-control:not(.no-required)').focusout(function(ele) {
+               setTimeout(function() {
+                  var $this = $(ele.currentTarget);
+                  if ($this.val() === '') {
+                        $this.closest('.form-field').addClass('show-error');
+                  } else {
+                        $this.closest('.form-field').removeClass('show-error');
+                  }
+               }, 100);
+            });
+            $('.technical-information .form-control:not(.no-required)').focusout(function(ele) {
+               setTimeout(function() {
+                  var $this = $(ele.currentTarget);
+                  if ($this.val() === '') {
+                        $this.closest('.form-field').addClass('show-error');
+                  } else {
+                        $this.closest('.form-field').removeClass('show-error');
+                  }
+               }, 100);
+            });
+            $('#add-practice-popup .form-control:not(.no-required)').focusout(function(ele) {
+               setTimeout(function() {
+                  var $this = $(ele.currentTarget);
+                  if ($this.val() === '') {
+                        $this.closest('.form-field').addClass('show-error');
+                  } else {
+                        $this.closest('.form-field').removeClass('show-error');
+                  }
+               }, 100);
+            });
+            $('#add-technical-form-group .form-control:not(.no-required)').focusout(function(ele) {
+               setTimeout(function() {
+                  var $this = $(ele.currentTarget);
+                  if ($this.val() === '') {
+                        $this.closest('.form-field').addClass('show-error');
+                  } else {
+                        $this.closest('.form-field').removeClass('show-error');
+                  }
+               }, 100);
+            });
+         
+            function checkInpuVal(){
+               $('.technical-information .form-control:not(.no-required)').each(function(i, ele){
+                  var $this = $(ele);
+                  if($this.val() === ''){
+                        $this.closest('.form-field').addClass('show-error');
+                  } else{
+                        $this.closest('.form-field').removeClass('show-error');
+                  }
+               });
+            }
+            function checkInpuVal2(){
+               $('.practice-profile .form-control:not(.no-required)').each(function(i, ele){
+                  var $this = $(ele);
+                  if($this.val() === ''){
+                        $this.closest('.form-field').addClass('show-error');
+                  } else{
+                        $this.closest('.form-field').removeClass('show-error');
+                  }
+               });
+            }
+            function checkInpuVal3(){
+               $('#add-practice-popup .form-control:not(.no-required)').each(function(i, ele){
+                  var $this = $(ele);
+                  if($this.val() === ''){
+                        $this.closest('.form-field').addClass('show-error');
+                  } else{
+                        $this.closest('.form-field').removeClass('show-error');
+                  }
+               });
+            }
+            function checkInpuVal4(){
+               $('#add-technical-form-group .form-control:not(.no-required)').each(function(i, ele){
+                  var $this = $(ele);
+                  if($this.val() === ''){
+                        $this.closest('.form-field').addClass('show-error');
+                  } else{
+                        $this.closest('.form-field').removeClass('show-error');
+                  }
+               });
+            }
+            $('#userModal .form-button .for-btn.for-btn-primary.cancel, #userModal .closeIcon').click(function(){
+               $('.users-page-content .table-wrapper tbody tr[data-target="#userModal"]')[0].click();
+            });
+            $('.users-page-content .table-wrapper tbody tr[data-target="#userModal"]').click(function(){
+               $('.form-field').removeClass('show-error');
+               $('.edit-profile.edit-practice').show();
+               $('.upload-img-wrapper').hide();
+            });
+          
+            $('.option-wrapper h4').click(function(ele){
+               ele.stopPropagation();
+               $(this).next('.custom-dropdown').show();
+               $(this).addClass('active');
+            });
+            $('.option-wrapper .custom-dropdown ul li').click(function(){
+               var dataValue =  $(this).text().trim();
+               $('.option-wrapper h4').text(dataValue);
+               $('div.dataTables_wrapper div.dataTables_length select[name="dtBasicExample_length"]').val(dataValue).change();
+               $(this).closest('.custom-dropdown').hide();
+               $(this).closest('.option-wrapper').find('h4').removeClass('active');
+            });
+            $('#userModal2 .form-button .for-btn.for-btn-primary.cancel, #userModal2 .closeIcon').click(function(){
+               $('.filters-colum .addpractices-button button.btn.btn-primary[data-target="#userModal2"]')[0].click();
+            });
+            $('.filters-colum .addpractices-button button.btn.btn-primary[data-target="#userModal2"]').click(function(){
+               $('.form-field').removeClass('show-error');
+               $('#add-practice').show();
+               $('#upload-add-practice').hide();
+               $('#add-technical-group').hide();
+            });
+          
+            
+            /* ========= Email Provider Js ============== */
+         
+            $('.technical-information-group.inactivate-technical .form-field .form-option-wrapper h4').click(function(ele){
+               ele.stopPropagation();
+               $(this).next('.technical-information-group.inactivate-technical .form-custom-dropdown').show();
+               $(this).addClass('active');
+            });
+            $('.technical-information-group.inactivate-technical .form-field .form-option-wrapper .form-custom-dropdown ul li').click(function(){
+               var dataValue =  $(this).text().trim();
+               $('.technical-information-group.inactivate-technical .form-field .form-option-wrapper h4').text(dataValue);
+               $(this).closest('.technical-information-group.inactivate-technical .form-custom-dropdown').hide();
+               $(this).closest('.technical-information-group.inactivate-technical .form-option-wrapper').find('h4').removeClass('active');
+            });
+         
+            $('.technical-information-group.active-technical .form-field .form-option-wrapper h4').click(function(ele){
+               ele.stopPropagation();
+               $(this).next('.technical-information-group.active-technical .form-custom-dropdown').show();
+               $(this).addClass('active');
+            });
+            $('.technical-information-group.active-technical .form-field .form-option-wrapper .form-custom-dropdown ul li').click(function(){
+               var dataValue =  $(this).find('span').text().trim();
+               var dataImg =  $(this).find('img').attr('src');
+               $('.technical-information-group.active-technical .form-field .form-option-wrapper h4 > span').text(dataValue);
+               $('.technical-information-group.active-technical .form-field .form-option-wrapper h4 > img').attr('src', dataImg)
+               $(this).closest('.technical-information-group.active-technical .form-custom-dropdown').hide();
+               $(this).closest('.technical-information-group.active-technical .form-option-wrapper').find('h4').removeClass('active');
+            });
+            
+            // Add partices Form
+            $('#add-technical-group .technical-information-group.inactivate-technical .form-field .form-option-wrapper h4').click(function(ele){
+               ele.stopPropagation();
+               $(this).next('.technical-information-group.inactivate-technical .form-custom-dropdown').show();
+               $(this).addClass('active');
+            });
+            $('#add-technical-group .technical-information-group.inactivate-technical .form-field .form-option-wrapper .form-custom-dropdown ul li').click(function(){
+               var dataValue =  $(this).text().trim();
+               $('.technical-information-group.inactivate-technical .form-field .form-option-wrapper h4').text(dataValue);
+               $(this).closest('.technical-information-group.inactivate-technical .form-custom-dropdown').hide();
+               $(this).closest('.technical-information-group.inactivate-technical .form-option-wrapper').find('h4').removeClass('active');
+            });
+         
+            $('#add-technical-group .technical-information-group.active-technical .form-field .form-option-wrapper h4').click(function(ele){
+               ele.stopPropagation();
+               $(this).next('.technical-information-group.active-technical .form-custom-dropdown').show();
+               $(this).addClass('active');
+            });
+            $('#add-technical-group .technical-information-group.active-technical .form-field .form-option-wrapper .form-custom-dropdown ul li').click(function(){
+               var dataValue =  $(this).find('span').text().trim();
+               var dataImg =  $(this).find('img').attr('src');
+               $('#add-technical-group .technical-information-group.active-technical .form-field .form-option-wrapper h4 > span').text(dataValue);
+               $('#add-technical-group .technical-information-group.active-technical .form-field .form-option-wrapper h4 > img').attr('src', dataImg)
+               $(this).closest('.technical-information-group.active-technical .form-custom-dropdown').hide();
+               $(this).closest('.technical-information-group.active-technical .form-option-wrapper').find('h4').removeClass('active');
+            });
+         
+
+            $(function(){
+               $(".tab-pane").not(".active").hide();
+               $('.tabber-content .tab-pane').each(function(i,el){
+               $(el).attr("id","tab-"+i);});
+               $(".tabber-tabs a").each(function(i,el){
+               $(el).attr("href","#tab-"+i);
+               var ID=$(el).attr("href");
+               $(this).click(function(e){
+               e.preventDefault();
+               if(!$(this).parent().hasClass("active")){
+               $(this).parent().addClass("active").siblings().removeClass("active");
+               $(ID).fadeIn().siblings().hide();}});});
+            });
+            $('.edit-profile-drowpdown>ul>li.edit-menu img.drowpdown-icon').click(function(ele){
+               ele.stopPropagation();
+               $(this).next('ul').show();
+            });
+            $('.edit-profile-drowpdown>ul>li.edit-menu ul li').click(function(ele){
+               ele.stopPropagation();
+               $(this).parent('ul').hide();
+            });
+            $('.modal-content').click(function(ele){
+               ele.stopPropagation();
+               $('.edit-profile-drowpdown>ul>li.edit-menu ul').hide();
+            });    
+         
+            $('.edit-profile-drowpdown>ul>li>ul>li.upload-img').click(function() {
+               $('.edit-profile').hide();
+               $('.upload-img-wrapper').show();
+            });
+            $('.upload-img-wrapper .form-button .btn-blue').click(function(ele){
+               var $this = $(ele.currentTarget);
+               setTimeout(function(){
+                  if($this.closest('.upload-img-wrapper').find('.show-error').length === 0){
+                     $this.parent().addClass('show-loader');
+                     setTimeout(function(){
+                        $this.parent().removeClass('show-loader');
+                     }, 3000);
+                  }
+               }, 0);
+            });
+            $('.practice-profile .custom-edit-pp .gernal-profile-form .form-button .btn-blue').click(function(ele){
+               var $this = $(ele.currentTarget);
+               checkInpuVal2();
+               setTimeout(function(){
+                  if($this.closest('.practice-profile').find('.show-error').length === 0){
+                     $this.parent().addClass('show-loader');
+                     setTimeout(function(){
+                        $this.parent().removeClass('show-loader');
+                     }, 3000);
+                  }
+               }, 0);
+            });
+            $('.technical-information .custom-edit-pp .gernal-profile-form .form-button .btn-blue').click(function(ele){
+               var $this = $(ele.currentTarget);
+               checkInpuVal();
+               setTimeout(function(){
+                  if($this.closest('.technical-information').find('.show-error').length === 0){
+                     $this.parent().addClass('show-loader');
+                     setTimeout(function(){
+                        $this.parent().removeClass('show-loader');
+                     }, 3000);
+                  }
+               }, 0);
+            });
+            $(document).on('click', 'ul.pagination li > a', function() {
+               $('html, body').animate({
+                  scrollTop: $('.body-container').offset().top
+               }, 500);
+            });
+            $(".custom-color").spectrum({
+               color: "#0ACADC",
+               showInput: true,
+               preferredFormat: "hex",
+               change: function(color) {
+                  $(".input-color1 #basic-log").text(color.toHexString());
+               }
+            });
+            $("#custom2").spectrum({
+               change: function(color) {
+                  $("#basic-log2").text(color.toHexString());
+               },
+               color: "#0ACADC",
+            });
+            $('.sp-val').click(function(){
+               $('.sp-container button.sp-choose')[0].click();
+            });
+            
+            // ========== Add Popup forword JS =================
+            $('#add-practice-popup .form-button .btn-blue').click(function(ele){
+                  var $this = $(ele.currentTarget);
+                  checkInpuVal3();
+                  setTimeout(function(){
+                     if($this.closest('#add-practice-popup').find('.show-error').length === 0){
+                        $this.parent().addClass('show-loader');
+                        setTimeout(function(){
+                           $this.parent().removeClass('show-loader');
+                           $('.adduser-wrapper').hide();
+                           $('.feature-access-wrapper').show();
+                        }, 3000);
+                     }
+                  }, 0);
+               });
+            $('#add-technical-form-group .form-button .btn-blue').click(function(ele){
+               var $this = $(ele.currentTarget);
+               checkInpuVal4();
+               setTimeout(function(){
+                  if($this.closest('#add-technical-form-group').find('.show-error').length === 0){
+                     $this.parent().addClass('show-loader');
+                     setTimeout(function(){
+                        $this.parent().removeClass('show-loader');
+                        $('.adduser-wrapper').hide();
+                        $('.feature-access-wrapper').show();
+                     }, 3000);
+                  }
+               }, 0);
+            });
+            $('#userModal .inactivate-technical .btn-blue').click(function(ele){
+               var $this = $(ele.currentTarget);
+               checkInpuVal4();
+               setTimeout(function(){
+                  if($this.closest('#userModal .inactivate-technical').find('.show-error').length === 0){
+                     $this.parent().addClass('show-loader');
+                     setTimeout(function(){
+                        $this.parent().removeClass('show-loader');
+                     }, 3000);
+                  }
+               }, 0);
+            });
+             // =======================  Upload button click function ====================
+             $('.upload-section .uploadImg').click(function( ele) {
+               ele.stopPropagation();
+               ele.preventDefault();
+               $('#add-practice').hide();
+               $('#upload-add-practice').show();
+            });
+            $('.upload-img-wrapper .btn-blue').click(function(ele){
+               var $this = $(ele.currentTarget);
+               setTimeout(function(){
+                  $this.parent().addClass('show-loader');
+                  setTimeout(function(){
+                     $this.parent().removeClass('show-loader');
+                  }, 3000);
+            }, 0);
+            });
+            
+         });
+      </script>
+   </body>
+</html>
