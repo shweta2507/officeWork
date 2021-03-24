@@ -423,7 +423,7 @@ background-image: url(../assets/img/dropdown-arrow-top.svg);
 }
 
 .filters-colum .addpractices-button {
-    margin-right: 30px;
+    margin-right: 0;
 }
 
 .filters-colum .addpractices-button button.btn.btn-primary {
