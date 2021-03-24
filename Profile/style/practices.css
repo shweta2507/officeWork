@@ -412,3 +412,116 @@ background-image: url(../assets/img/dropdown-arrow-top.svg);
 
 
 /* Color panel css End */
+
+.filters-colum {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+}
+
+.filters-colum .addpractices-button {
+    margin-right: 30px;
+}
+
+.filters-colum .addpractices-button button.btn.btn-primary {
+    border-radius: 8px;
+    opacity: 1;
+    min-width: 125px;
+    background: #03C6D8 0% 0% no-repeat padding-box;
+    border: 0;
+    padding: 11px 32px 14px 32px;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+    font-size: 14px;
+    line-height: 20px;
+    outline: none;
+    font-weight: 600;
+    font-family: 'Eina-SemiBold';
+    transition: all 0.5s;
+}
+
+.filters-colum .addpractices-button button.btn.btn-primary:hover {
+    background-color: #03D0E3;
+}
+
+/* =========================  ADD PRACTICE POPUP STYLING ======================= */
+
+div#add-practice-popup .feild-2.feild .form-field {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%;
+    max-width: 100%;
+}
+
+div#add-practice-popup .feild-3.feild .form-field {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 calc(32.23% - 17px);
+    flex: 0 0 calc(32.23% - 17px);
+    max-width: calc(32.23% - 17px);
+}
+
+div#add-practice-popup .form-button {
+    margin-top: 8px;
+}
+
+div#add-practice-popup .form-button a.for-btn {
+    padding: 11px 32px;
+    font-size: 14px;
+    line-height: 20px;
+    border: 1px solid rgba(52, 61, 86, 1);
+    border-radius: 8px;
+    opacity: 1;
+    background-color: transparent;
+    letter-spacing: 0px;
+    color: #031926;
+    font-weight: 600;
+    font-family: 'Eina-SemiBold';
+    background-image: none;
+    margin-right: 16px;
+    display: inline-block;
+    padding-bottom: 12px;
+}
+
+div#add-practice-popup .form-button a.for-btn:hover {
+    background: #343D560D;
+}
+
+div#add-practice-popup .form-button a.for-btn.btn-blue {
+    margin-right: 0;
+    background: #03c6d8 0% 0% no-repeat padding-box;
+    border-radius: 8px;
+    opacity: 1;
+    border-color: #03C6D8;
+    color: #fff;
+}
+
+div#add-practice-popup .form-button a.for-btn.btn-blue:hover {
+    background: #03D0E3;
+    border-color: #03D0E3 !important;
+}
+
+input.custom-file-input {
+    pointer-events: none;
+}
+
+.gernal-profile.custom-edit-pp.technical-information-group.active-technical {
+    display: none;
+}
+
+#add-technical-form-group .form-button .loader,
+#add-practice-popup .form-button .loader {
+    right: 8px;
+    top: 10px;
+}
+
+div#add-practice-popup .form-button {
+    margin-top: 32px;
+}
+
+#add-technical-group {
+    max-height: initial;
+    overflow: inherit;
+}

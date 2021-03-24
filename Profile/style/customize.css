@@ -13,7 +13,7 @@
 }
 
 .users-page-content {
-	padding: 32px 56px 48px 48px;
+	padding: 32px 48px 48px 48px;
 }
 
 .users-page-content .top-row {
@@ -67,16 +67,30 @@
 .users-page-content .table-wrapper {
 	position: relative;
 }
-
+.users-page-content .table-wrapper #dtBasicExample_wrapper {
+    max-height: 600px;
+    overflow-y: auto;
+    padding-top: 0 !important;
+}
+.users-page-content .table-wrapper #dtBasicExample_wrapper table#dtBasicExample thead {
+    position: relative;
+}
+.users-page-content .table-wrapper #dtBasicExample_wrapper table#dtBasicExample thead tr > th {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    background: #fff;
+    z-index: 99;
+    padding-top: 31px !important;
+}
 .users-page-content .table-wrapper #dtBasicExample_wrapper {
 	background: #FFFFFF;
 	box-shadow: 0px 16px 24px #343D561A;
 	border: 1px solid #343D560B;
 	opacity: 1;
-	padding: 31px 16px 35px 16px;
+	padding: 0px 16px 35px 16px;
 	margin-bottom: 70px !important;
 	border-radius: 8px;
-	min-height: 1186px;
 }
 
 .users-page-content .table-wrapper tbody tr {
@@ -1554,15 +1568,17 @@ table.ba-table-widget tbody tr td:first-child {
 .users-page-content .top-row {
 	position: fixed;
 	top: 78px;
-	width: 93.88%;
-	right: 42px;
+	width: calc(100% - 80px);
+	right: 0;
 	left: 80px;
 	background-color: #fff;
-	z-index: 99;
+	z-index: 998;
 	padding-top: 34px;
 	padding-left: 48px;
-	padding-right: 43px;
+	padding-right: 48px;
 	padding-bottom: 26px;
+	-webkit-transition: all 0.2s ease;
+	transition: all 0.2s ease;
 }
 
 .users-page-content .table-wrapper {
@@ -1570,7 +1586,7 @@ table.ba-table-widget tbody tr td:first-child {
 }
 
 .users-page-content {
-	padding: 0 56px 48px 48px;
+	padding: 0 48px 48px 48px;
 }
 
 .edit-profile.edit-user-group .edit-profile-drowpdown>ul>li>ul {
@@ -1627,4 +1643,27 @@ table.ba-table-widget tbody tr td:first-child {
 
 .edit-profile.edit-user-group .profile-name .profile-name-id a {
 	opacity: 1;
+}
+
+.feature-access-wrapper {
+	max-height: 550px;
+	overflow-y: auto;
+}
+
+input.custom-file-input {
+	pointer-events: none;
+}
+
+.uploadImg {
+	cursor: pointer;
+}
+
+main.ba-main.main-dashboard.pull-right .users-page-content .top-row {
+	left: 180px;
+	width: calc(100% - 180px);
+}
+
+.tabber-content .cta-wrapper .loader,
+.tabber-content .user-details .cta-wrapper .loader {
+	right: 0px;
 }

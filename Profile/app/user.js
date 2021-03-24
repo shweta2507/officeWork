@@ -103,6 +103,7 @@ axleApp.controller('userController', function ($scope) {
         'Write Response'
     ]
     $scope.treatmentOptions = [
+        'Dashboard',
         'Call List',
         'Pending',
         'Completed'
@@ -199,6 +200,7 @@ $scope.reviewsOptions1 = [
     'Write Response'
 ]
 $scope.treatmentOptions1 = [
+    'Dashboard',
     'Call List',
     'Pending',
     'Completed'

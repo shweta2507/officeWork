@@ -759,3 +759,9 @@ $(document).ready(function(){
     });
 });
 
+$(document).ready(function(){
+    $('.upload-section .uploadImg').click(function(){
+        $('.photo__frame')[0].click();
+    });
+});
+

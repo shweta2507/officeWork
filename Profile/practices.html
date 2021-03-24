@@ -264,6 +264,9 @@
                      </div>
                   </div>
                   <div class="filters-colum">
+                     <div class="addpractices-button">
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#userModal2">Add Practice</button>
+                     </div>
                      <div class="ba-filter-select filter-multiselect _outlined" style="width: 175px;">
                         <div class="ba-filter-field">
                            <span ng-show="filterDashboardSelected.length == 0">Filter Dashboard</span>
@@ -778,6 +781,7 @@
                      <div class="total-number">of 786 Records</div>
                   </div>
                </div>
+               <!-- ===================================== Edit Practice Popup Module HTML =============================== -->
                <div class="modal fade" id="userModal" tabindex="-1" role="dialog" aria-labelledby="userModalLabel" aria-hidden="true">
                   <div class="modal-dialog" role="document">
                      <div class="modal-content">
@@ -850,7 +854,7 @@
                               </div>
                            </div>
                         </div>
-                        <!--  Edit Practice -->
+                        <!-- =============================== Edit Practice ============================== -->
                         <div class="edit-profile edit-practice">
                            <div class="closeIcon">
                               <img src="assets/img/cross.svg" alt="Cross">
@@ -897,7 +901,7 @@
                                                 <div class="form-field custom-filled">
                                                    <label for="display-name" class="form-label">Display Name</label>
                                                    <div class="custom-input">
-                                                      <input type="text" id="display-name" name="DisplayName" class="form-control" value="FC Family Dental - Broomfield">
+                                                      <input type="text" id="display-name1" name="DisplayName" class="form-control" value="FC Family Dental - Broomfield">
                                                       <span class="error">Enter a valid display name.</span>
                                                    </div>
                                                 </div>
@@ -1131,6 +1135,346 @@
                      </div>
                   </div>
                </div>
+               <!-- ========================================== Add Practice Popup Module HTML ============================ -->
+               <div class="modal fade" id="userModal2" tabindex="-1" role="dialog" aria-labelledby="userModal2Label" aria-hidden="true">
+                  <div class="modal-dialog" role="document">
+                     <div class="modal-content">
+
+                        <!--  Upload Image -->
+                        <div class="upload-img-wrapper" id="upload-add-practice">
+                           <div class="closeIcon">
+                              <img src="assets/img/cross.svg" alt="Cross">
+                           </div>
+                           <h1>Upload Image</h1>
+                           <!--
+                              <div class="profile-img-resize">
+                                 <div class="img-resize-button">
+                                    <span class="resize-inc"><img src="assets/img/img-resize.svg" alt="+"></span>
+                                    <div class="resize-bar-g"><div class="resize-bar"></div></div>
+                                    <span class="resize-dec"><img src="assets/img/img-resize-down.svg" alt="-"></span>
+                                 </div>
+                                 <div class="profile-pic">
+                                 </div>
+                              </div>
+                              -->
+                           <!--  ====================== Profile Photo Resize Crop Secetion =========================  -->
+                           <div class="flex">
+                              <div class="left">
+                                 <div class="profile">
+                                    <div class="photo">
+                                       <input type="file" accept="image/*">
+                                       <div class="photo__options hide">
+                                          <div class="photo__zoom">
+                                             <input type="range" class="zoom-handler">
+                                          </div>
+                                          <a href="javascript:;" class="remove"><i class="fa fa-trash"></i></a>
+                                       </div>
+                                       <div class="photo__helper">
+                                          <div class="photo__frame photo__frame--circle">
+                                             <canvas class="photo__canvas"></canvas>
+                                             <div class="message is-empty">
+                                                <p class="message--desktop">Drop your photo here or browse your computer.</p>
+                                                <p class="message--mobile">Tap here to select your picture.</p>
+                                             </div>
+                                             <div class="message is-loading">
+                                                <i class="fa fa-2x fa-spin fa-spinner"></i>
+                                             </div>
+                                             <div class="message is-dragover">
+                                                <i class="fa fa-2x fa-cloud-upload"></i>
+                                                <p>Drop your photo</p>
+                                             </div>
+                                             <div class="message is-wrong-file-type">
+                                                <p>Only images allowed.</p>
+                                                <p class="message--desktop">Drop your photo here or browse your computer.</p>
+                                                <p class="message--mobile">Tap here to select your picture.</p>
+                                             </div>
+                                             <div class="message is-wrong-image-size">
+                                                <p>Your photo must be larger than 350px.</p>
+                                             </div>
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="form-button">
+                              <a href="#" class="for-btn for-btn-primary cancel">Cancel</a>
+                              <a href="#" class="for-btn for-btn-primary btn-blue">Save Changes</a>
+                              <div class="loader">
+                                 <svg version="1.1" id="loader-1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="40px" height="40px" viewBox="0 0 50 50" style="enable-background:new 0 0 50 50;" xml:space="preserve">
+                                    <path fill="#000" d="M43.935,25.145c0-10.318-8.364-18.683-18.683-18.683c-10.318,0-18.683,8.365-18.683,18.683h4.068c0-8.071,6.543-14.615,14.615-14.615c8.072,0,14.615,6.543,14.615,14.615H43.935z">
+                                       <animateTransform attributeType="xml" attributeName="transform" type="rotate" from="0 25 25" to="360 25 25" dur="0.6s" repeatCount="indefinite"></animateTransform>
+                                    </path>
+                                 </svg>
+                              </div>
+                           </div>
+                        </div>
+
+
+                        <!-- ========================================== Add Practice Profile HTML ============================ -->
+                        <div class="adduser-wrapper add-practice-profile-group" id="add-practice">
+                           <div class="closeIcon">
+                              <img src="assets/img/cross.svg" alt="Cross">
+                           </div>
+                           <h3>Add Practice</h3>
+                           <ul>
+                              <li class="active"><span><span>1</span></span><span class="list-name">Add Practice</span></li>
+                              <span class="active-bar active-form-bar"></span>
+                              <li><span><span>2</span></span><span class="list-name">TECHNICAL DETAILS</span></li>
+                           </ul>
+                           <div class="upload-section add-practice-section">
+                              <div class="user-img">
+                                 <img src="assets/img/edit-profile.svg" alt="Profile Image">
+                              </div>
+                              <div class="uploadImg">
+                                 <input type="file" class="custom-file-input">
+                              </div>
+                           </div>
+                           <div class="user-details add-practice-details" id="add-practice-popup">
+                              <form class="add-user-details add-details-form form-feild">
+                                 <div class="feild-1 feild">
+                                    <div class="form-field">
+                                       <label for="display-name" class="form-label">Display Name</label>
+                                       <div class="custom-input">
+                                          <input type="text" id="display-name2" name="DisplayName" class="form-control">
+                                          <span class="error">Enter a valid display name.</span>
+                                       </div>
+                                    </div>
+                                    <div class="form-field">
+                                       <label for="Display-Name" class="form-label">Display Name</label>
+                                       <div class="custom-input">
+                                          <input type="text" id="display-name3" name="DisplayName" class="form-control">
+                                          <span class="error">Enter a valid display name.</span>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <div class="feild-2 feild">
+                                    <div class="form-field">
+                                       <label for="street-address" class="form-label">Street Address</label>
+                                       <div class="custom-input">
+                                          <!-- <input type="text" id="first-name" name="firstName" class="form-control">-->
+                                          <input type="street" class="form-control" name="streetAddress" id="street-Address">
+                                          <span class="error">Enter a valid street address.</span>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <div class="feild-3 feild">
+                                    <div class="form-field">
+                                       <label for="city" class="form-label">City</label>
+                                       <div class="custom-input">
+                                          <input type="city" class="form-control" id="inputCity" name="city">
+                                          <span class="error">Enter a valid city.</span>
+                                       </div>
+                                    </div>
+                                    <div class="form-field">
+                                       <label for="state" class="form-label">State</label>
+                                       <div class="custom-input">
+                                          <input type="state" class="form-control" id="inputState" name="state">
+                                          <span class="error">Enter a valid state.</span>
+                                       </div>
+                                    </div>
+                                    <div class="form-field">
+                                       <label for="zip-code" class="form-label">Zip Code</label>
+                                       <div class="custom-input">
+                                          <input type="zip" class="form-control" id="inputZip" name="zip">
+                                          <span class="error">Enter a valid zip code.</span>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <div class="form-button">
+                                    <a href="#" class="for-btn for-btn-primary cancel">Cancel</a>
+                                    <a href="#" class="for-btn for-btn-primary btn-blue">Save & Continue</a>
+                                    <div class="loader">
+                                       <svg version="1.1" id="loader-1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="40px" height="40px" viewBox="0 0 50 50" style="enable-background:new 0 0 50 50;" xml:space="preserve">
+                                          <path fill="#000" d="M43.935,25.145c0-10.318-8.364-18.683-18.683-18.683c-10.318,0-18.683,8.365-18.683,18.683h4.068c0-8.071,6.543-14.615,14.615-14.615c8.072,0,14.615,6.543,14.615,14.615H43.935z">
+                                             <animateTransform attributeType="xml" attributeName="transform" type="rotate" from="0 25 25" to="360 25 25" dur="0.6s" repeatCount="indefinite"></animateTransform>
+                                          </path>
+                                       </svg>
+                                    </div>
+                                 </div>
+                              </form>
+                           </div>
+                        </div>
+                        <!-- ========================================== Add Technical Details HTML ============================ -->
+                        <div class="feature-access-wrapper" id="add-technical-group">
+                           <div class="closeIcon">
+                              <img src="assets/img/cross.svg" alt="Cross">
+                           </div>
+                           <h3>Add Practice</h3>
+                           <ul>
+                              <li class="active"><span><span>1</span></span><span class="list-name">GENERAL PROFILE</span></li>
+                              <span class="active-bar active-form-bar"></span>
+                              <li class="active"><span><span>2</span></span><span class="list-name">TECHNICAL DETAILS</span></li>
+                           </ul>
+                           <div class="gernal-profile custom-edit-pp technical-information-group inactivate-technical" id="add-technical-info">
+                              <h1>Technical Information</h1>
+                              <div class="gernal-profile-form technical-information-form" id="add-technical-form-group">
+                                 <form class="form-feild"  id="add-technical-form">
+                                    <div class="feild-1 feild">
+                                       <div class="form-field custom-filled">
+                                          <div class="form-option-wrapper">
+                                             <label for="display-name" class="form-label">Email Provider</label>
+                                             <h4>Microsoft Exchange</h4>
+                                             <div class="form-custom-dropdown">
+                                                <ul class="email-provider-g">
+                                                   <li class="icloud">iCloud</li>
+                                                   <li class="micro">Microsoft Exchange</li>
+                                                   <li class="gmail-google">Google Gmail</li>
+                                                   <li class="aol">Aol.</li>
+                                                   <li class="outlook">Outlook.com</li>
+                                                </ul>
+                                             </div>
+                                          </div>
+                                       </div>
+                                       <div class="form-field">
+                                          <label for="Email-Subject" class="form-label">Email Subject Description</label>
+                                          <div class="custom-input">
+                                             <input type="text" id="email-subject" name="Email-Subject" class="form-control">
+                                             <span class="error">Enter a valid email subject.</span>
+                                          </div>
+                                       </div>
+                                    </div>
+                                    <div class="feild-2 feild">
+                                       <div class="form-field">
+                                          <label for="email" class="form-label">Email Address</label>
+                                          <div class="custom-input">
+                                             <!-- <input type="text" id="first-name" name="firstName" class="form-control">-->
+                                             <input type="email" class="form-control" name="email" id="email">
+                                             <span class="error">Enter a valid email.</span>
+                                          </div>
+                                       </div>
+                                       <div class="form-field">
+                                          <label for="email-password" class="form-label">Email Password</label>
+                                          <div class="custom-input">
+                                             <input type="password" class="form-control" id="email-password" name="password">
+                                             <span class="far fa-eye toggle"></span>
+                                             <span class="error">Enter a valid email password.</span>
+                                          </div>
+                                       </div>
+                                    </div>
+                                    <div class="feild-3 feild">
+                                       <div class="form-field">
+                                          <label for="phone-number" class="form-label">Phone Number</label>
+                                          <div class="custom-input">
+                                             <input type="tel" class="form-control" id="phone-number" name="phone-number">
+                                             <span class="error">Enter a Phone number.</span>
+                                          </div>
+                                       </div>
+                                       <div class="form-field custom-color-input input-color1 custom-filled">
+                                          <label for="state" class="form-label">Practice Color Scheme</label>
+                                          <span id='basic-log'>#0ACADC</span>
+                                          <!-- <input type='text' class="form-control custom-color" id="custom" name="Color"/> -->
+                                          <input type='text' class="custom-color" />
+                                       </div>
+                                    </div>
+                                    <div class="online-payment-option">
+                                       <p>Online Payments</p>
+                                       <div class="inactive-button">
+                                          <span class="inactive"><img src="assets/icons/inactive-icon.svg" alt="close-icon">Inactive</span>
+                                          <span class="activate">Activate <img src="assets/icons/activate.icon.svg" alt="side-arrow"></span>
+                                       </div>
+                                    </div>
+                                    <div class="form-button">
+                                       <a href="#" class="for-btn for-btn-primary cancel">Cancel</a>
+                                       <a href="#" class="for-btn for-btn-primary btn-blue">Save & Continue</a>
+                                       <div class="loader">
+                                          <svg version="1.1" id="loader-1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="40px" height="40px" viewBox="0 0 50 50" style="enable-background:new 0 0 50 50;" xml:space="preserve">
+                                             <path fill="#000" d="M43.935,25.145c0-10.318-8.364-18.683-18.683-18.683c-10.318,0-18.683,8.365-18.683,18.683h4.068c0-8.071,6.543-14.615,14.615-14.615c8.072,0,14.615,6.543,14.615,14.615H43.935z">
+                                                <animateTransform attributeType="xml" attributeName="transform" type="rotate" from="0 25 25" to="360 25 25" dur="0.6s" repeatCount="indefinite"></animateTransform>
+                                             </path>
+                                          </svg>
+                                       </div>
+                                    </div>
+                                 </form>
+                              </div>
+                           </div>
+                           <div class="gernal-profile custom-edit-pp technical-information-group active-technical">
+                              <h1>Technical Information</h1>
+                              <div class="gernal-profile-form technical-information-form">
+                                 <form class="form-feild">
+                                    <div class="feild-1 feild">
+                                       <div class="form-field custom-filled">
+                                          <div class="form-option-wrapper">
+                                             <label for="display-name" class="form-label">Email Provider</label>
+                                             <h4><img src="assets/icons/outlook.svg" alt="Outlook.com" class="email-img"><span class="email-names">Outlook.com</span></h4>
+                                             <div class="form-custom-dropdown">
+                                                <ul class="email-provider-g">
+                                                   <li class="icloud"><img src="assets/icons/icload.svg" alt="iCloud"><span>iCloud</span></li>
+                                                   <li class="micro"><img src="assets/icons/microsoft.svg" alt="Microsoft Exchange"><span>Microsoft Exchange</span></li>
+                                                   <li class="gmail-google"><img src="assets/icons/gmail.svg" alt="Google Gmail"><span>Google Gmail</span></li>
+                                                   <li class="aol"><img src="assets/icons/aol.svg" alt="Aol."><span>Aol.</span></li>
+                                                   <li class="outlook"><img src="assets/icons/outlook.svg" alt="Outlook.com"><span>Outlook.com</span></li>
+                                                </ul>
+                                             </div>
+                                          </div>
+                                       </div>
+                                       <div class="form-field">
+                                          <label for="Email-Subject" class="form-label">Email Subject Description</label>
+                                          <div class="custom-input">
+                                             <input type="text" id="email-subject" name="Email-Subject" class="form-control">
+                                             <span class="error">Enter a valid email subject.</span>
+                                          </div>
+                                       </div>
+                                    </div>
+                                    <div class="feild-2 feild">
+                                       <div class="form-field">
+                                          <label for="email" class="form-label">Email Address</label>
+                                          <div class="custom-input">
+                                             <!-- <input type="text" id="first-name" name="firstName" class="form-control">-->
+                                             <input type="email" class="form-control" name="email" id="email">
+                                             <span class="error">Enter a valid email.</span>
+                                          </div>
+                                       </div>
+                                       <div class="form-field">
+                                          <label for="email-password" class="form-label">Email Password</label>
+                                          <div class="custom-input">
+                                             <input type="password" class="form-control" id="email-password" name="password">
+                                             <span class="far fa-eye toggle"></span>
+                                             <span class="error">Enter a valid email password.</span>
+                                          </div>
+                                       </div>
+                                    </div>
+                                    <div class="feild-3 feild">
+                                       <div class="form-field">
+                                          <label for="phone-number" class="form-label">Phone Number</label>
+                                          <div class="custom-input">
+                                             <input type="tel" class="form-control" id="phone-number" name="phone-number">
+                                             <span class="error">Enter a Phone number.</span>
+                                          </div>
+                                       </div>
+                                       <div class="form-field custom-color-input input-color2 custom-filled">
+                                          <label for="state" class="form-label">Practice Color Scheme</label>
+                                          <span id='basic-log'>#0ACADC</span>
+                                          <div class="custom-input">
+                                             <input type='text' class="form-control custom-color1" id="custom2" name="Color"/>
+                                             <span class="error">Enter a valid state.</span>
+                                          </div>
+                                       </div>
+                                    </div>
+                                    <div class="online-payment-option">
+                                       <p>Online Payments <img src="assets/icons/tooltip.svg" alt="Tooltip"></p>
+                                       <div class="active-button">
+                                          <span class="active"><img src="assets/icons/active-icon.svg" alt="side-arrow">Active</span>
+                                       </div>
+                                    </div>
+                                    <div class="form-button">
+                                       <a href="#" class="for-btn for-btn-primary cancel">Cancel</a>
+                                       <a href="#" class="for-btn for-btn-primary btn-blue">Save Changes</a>
+                                       <div class="loader">
+                                          <svg version="1.1" id="loader-1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="40px" height="40px" viewBox="0 0 50 50" style="enable-background:new 0 0 50 50;" xml:space="preserve">
+                                             <path fill="#000" d="M43.935,25.145c0-10.318-8.364-18.683-18.683-18.683c-10.318,0-18.683,8.365-18.683,18.683h4.068c0-8.071,6.543-14.615,14.615-14.615c8.072,0,14.615,6.543,14.615,14.615H43.935z">
+                                                <animateTransform attributeType="xml" attributeName="transform" type="rotate" from="0 25 25" to="360 25 25" dur="0.6s" repeatCount="indefinite"></animateTransform>
+                                             </path>
+                                          </svg>
+                                       </div>
+                                    </div>
+                                 </form>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
                <div class="min-feature-error">
                   <img src="assets/img/error-closs.svg" alt="close"> <span class="error-text">A minimum of 1 feature is required.</span> <span class="error-clos-top"><img src="assets/img/error-ri-closs.svg" alt="close"></span>
                </div>
@@ -1227,6 +1571,26 @@
                   }
                }, 100);
             });
+            $('#add-practice-popup .form-control:not(.no-required)').focusout(function(ele) {
+               setTimeout(function() {
+                  var $this = $(ele.currentTarget);
+                  if ($this.val() === '') {
+                        $this.closest('.form-field').addClass('show-error');
+                  } else {
+                        $this.closest('.form-field').removeClass('show-error');
+                  }
+               }, 100);
+            });
+            $('#add-technical-form-group .form-control:not(.no-required)').focusout(function(ele) {
+               setTimeout(function() {
+                  var $this = $(ele.currentTarget);
+                  if ($this.val() === '') {
+                        $this.closest('.form-field').addClass('show-error');
+                  } else {
+                        $this.closest('.form-field').removeClass('show-error');
+                  }
+               }, 100);
+            });
          
             function checkInpuVal(){
                $('.technical-information .form-control:not(.no-required)').each(function(i, ele){
@@ -1248,8 +1612,27 @@
                   }
                });
             }
-            
-            $('.form-button .for-btn.for-btn-primary.cancel, .closeIcon').click(function(){
+            function checkInpuVal3(){
+               $('#add-practice-popup .form-control:not(.no-required)').each(function(i, ele){
+                  var $this = $(ele);
+                  if($this.val() === ''){
+                        $this.closest('.form-field').addClass('show-error');
+                  } else{
+                        $this.closest('.form-field').removeClass('show-error');
+                  }
+               });
+            }
+            function checkInpuVal4(){
+               $('#add-technical-form-group .form-control:not(.no-required)').each(function(i, ele){
+                  var $this = $(ele);
+                  if($this.val() === ''){
+                        $this.closest('.form-field').addClass('show-error');
+                  } else{
+                        $this.closest('.form-field').removeClass('show-error');
+                  }
+               });
+            }
+            $('#userModal .form-button .for-btn.for-btn-primary.cancel, #userModal .closeIcon').click(function(){
                $('.users-page-content .table-wrapper tbody tr[data-target="#userModal"]')[0].click();
             });
             $('.users-page-content .table-wrapper tbody tr[data-target="#userModal"]').click(function(){
@@ -1270,7 +1653,17 @@
                $(this).closest('.custom-dropdown').hide();
                $(this).closest('.option-wrapper').find('h4').removeClass('active');
             });
-         
+            $('#userModal2 .form-button .for-btn.for-btn-primary.cancel, #userModal2 .closeIcon').click(function(){
+               $('.filters-colum .addpractices-button button.btn.btn-primary[data-target="#userModal2"]')[0].click();
+            });
+            $('.filters-colum .addpractices-button button.btn.btn-primary[data-target="#userModal2"]').click(function(){
+               $('.form-field').removeClass('show-error');
+               $('#add-practice').show();
+               $('#upload-add-practice').hide();
+               $('#add-technical-group').hide();
+            });
+          
+            
             /* ========= Email Provider Js ============== */
          
             $('.technical-information-group.inactivate-technical .form-field .form-option-wrapper h4').click(function(ele){
@@ -1298,7 +1691,35 @@
                $(this).closest('.technical-information-group.active-technical .form-custom-dropdown').hide();
                $(this).closest('.technical-information-group.active-technical .form-option-wrapper').find('h4').removeClass('active');
             });
+            
+            // Add partices Form
+            $('#add-technical-group .technical-information-group.inactivate-technical .form-field .form-option-wrapper h4').click(function(ele){
+               ele.stopPropagation();
+               $(this).next('.technical-information-group.inactivate-technical .form-custom-dropdown').show();
+               $(this).addClass('active');
+            });
+            $('#add-technical-group .technical-information-group.inactivate-technical .form-field .form-option-wrapper .form-custom-dropdown ul li').click(function(){
+               var dataValue =  $(this).text().trim();
+               $('.technical-information-group.inactivate-technical .form-field .form-option-wrapper h4').text(dataValue);
+               $(this).closest('.technical-information-group.inactivate-technical .form-custom-dropdown').hide();
+               $(this).closest('.technical-information-group.inactivate-technical .form-option-wrapper').find('h4').removeClass('active');
+            });
          
+            $('#add-technical-group .technical-information-group.active-technical .form-field .form-option-wrapper h4').click(function(ele){
+               ele.stopPropagation();
+               $(this).next('.technical-information-group.active-technical .form-custom-dropdown').show();
+               $(this).addClass('active');
+            });
+            $('#add-technical-group .technical-information-group.active-technical .form-field .form-option-wrapper .form-custom-dropdown ul li').click(function(){
+               var dataValue =  $(this).find('span').text().trim();
+               var dataImg =  $(this).find('img').attr('src');
+               $('#add-technical-group .technical-information-group.active-technical .form-field .form-option-wrapper h4 > span').text(dataValue);
+               $('#add-technical-group .technical-information-group.active-technical .form-field .form-option-wrapper h4 > img').attr('src', dataImg)
+               $(this).closest('.technical-information-group.active-technical .form-custom-dropdown').hide();
+               $(this).closest('.technical-information-group.active-technical .form-option-wrapper').find('h4').removeClass('active');
+            });
+         
+
             $(function(){
                $(".tab-pane").not(".active").hide();
                $('.tabber-content .tab-pane').each(function(i,el){
@@ -1367,7 +1788,7 @@
             $(document).on('click', 'ul.pagination li > a', function() {
                $('html, body').animate({
                   scrollTop: $('.body-container').offset().top
-               }, 1000);
+               }, 500);
             });
             $(".custom-color").spectrum({
                color: "#0ACADC",
@@ -1386,11 +1807,65 @@
             $('.sp-val').click(function(){
                $('.sp-container button.sp-choose')[0].click();
             });
-            // $('.gernal-profile-form.technical-information-form').click(function(ele){
-            //    ele.stopPropagation();
-            //    $('.sp-container').addClass('sp-hidden');
-            //    $('.sp-replacer.sp-light').removeClass('sp-active');
-            // });
+            
+            // ========== Add Popup forword JS =================
+            $('#add-practice-popup .form-button .btn-blue').click(function(ele){
+                  var $this = $(ele.currentTarget);
+                  checkInpuVal3();
+                  setTimeout(function(){
+                     if($this.closest('#add-practice-popup').find('.show-error').length === 0){
+                        $this.parent().addClass('show-loader');
+                        setTimeout(function(){
+                           $this.parent().removeClass('show-loader');
+                           $('.adduser-wrapper').hide();
+                           $('.feature-access-wrapper').show();
+                        }, 3000);
+                     }
+                  }, 0);
+               });
+            $('#add-technical-form-group .form-button .btn-blue').click(function(ele){
+               var $this = $(ele.currentTarget);
+               checkInpuVal4();
+               setTimeout(function(){
+                  if($this.closest('#add-technical-form-group').find('.show-error').length === 0){
+                     $this.parent().addClass('show-loader');
+                     setTimeout(function(){
+                        $this.parent().removeClass('show-loader');
+                        $('.adduser-wrapper').hide();
+                        $('.feature-access-wrapper').show();
+                     }, 3000);
+                  }
+               }, 0);
+            });
+            $('#userModal .inactivate-technical .btn-blue').click(function(ele){
+               var $this = $(ele.currentTarget);
+               checkInpuVal4();
+               setTimeout(function(){
+                  if($this.closest('#userModal .inactivate-technical').find('.show-error').length === 0){
+                     $this.parent().addClass('show-loader');
+                     setTimeout(function(){
+                        $this.parent().removeClass('show-loader');
+                     }, 3000);
+                  }
+               }, 0);
+            });
+             // =======================  Upload button click function ====================
+             $('.upload-section .uploadImg').click(function( ele) {
+               ele.stopPropagation();
+               ele.preventDefault();
+               $('#add-practice').hide();
+               $('#upload-add-practice').show();
+            });
+            $('.upload-img-wrapper .btn-blue').click(function(ele){
+               var $this = $(ele.currentTarget);
+               setTimeout(function(){
+                  $this.parent().addClass('show-loader');
+                  setTimeout(function(){
+                     $this.parent().removeClass('show-loader');
+                  }, 3000);
+            }, 0);
+            });
+            
          });
       </script>
    </body>

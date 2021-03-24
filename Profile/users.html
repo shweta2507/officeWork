@@ -22,6 +22,7 @@
       <script src="https://code.highcharts.com/highcharts.src.js" defer></script>
       <!-- custom select -->
       <script src="./js/custom-select/select.js" type="module"></script>
+      <script src="./js/custom-js/upload-photo.js" type="module"></script>
       <!-- Styles from old dashboard  -->
       <link rel="stylesheet" href="css2/bootstrap.min.css">
       <link rel="stylesheet" href="css2/font-awesome.css">
@@ -697,6 +698,7 @@
                <div class="modal fade" id="userModal" tabindex="-1" role="dialog" aria-labelledby="userModalLabel" aria-hidden="true">
                   <div class="modal-dialog" role="document">
                      <div class="modal-content">
+                        <!-- ========================= Add User Gernal Profile ===================== -->
                         <div class="adduser-wrapper">
                            <div class="closeIcon">
                               <img src="assets/img/cross.svg" alt="Cross">
@@ -817,6 +819,7 @@
                               </form>
                            </div>
                         </div>
+                        <!-- =========================== Add User Feature Access =================== -->
                         <div class="feature-access-wrapper">
                            <div class="closeIcon">
                               <img src="assets/img/cross.svg" alt="Cross">
@@ -1164,6 +1167,75 @@
                               </form>
                            </div>
                         </div>
+                        <!-- ==================================  Upload Image ========================== -->
+                        <div class="upload-img-wrapper">
+                           <div class="closeIcon">
+                              <img src="assets/img/cross.svg" alt="Cross">
+                           </div>
+                           <h1>Upload Image</h1>
+                           <!--
+                              <div class="profile-img-resize">
+                                 <div class="img-resize-button">
+                                    <span class="resize-inc"><img src="assets/img/img-resize.svg" alt="+"></span>
+                                    <div class="resize-bar-g"><div class="resize-bar"></div></div>
+                                    <span class="resize-dec"><img src="assets/img/img-resize-down.svg" alt="-"></span>
+                                 </div>
+                                 <div class="profile-pic">
+                                 </div>
+                              </div>
+                              -->
+                           <!--  ====================== Profile Photo Resize Crop Secetion =========================  -->
+                           <div class="flex">
+                              <div class="left">
+                                 <div class="profile">
+                                    <div class="photo">
+                                       <input type="file" accept="image/*">
+                                       <div class="photo__options hide">
+                                          <div class="photo__zoom">
+                                             <input type="range" class="zoom-handler">
+                                          </div>
+                                          <a href="javascript:;" class="remove"><i class="fa fa-trash"></i></a>
+                                       </div>
+                                       <div class="photo__helper">
+                                          <div class="photo__frame photo__frame--circle">
+                                             <canvas class="photo__canvas"></canvas>
+                                             <div class="message is-empty">
+                                                <p class="message--desktop">Drop your photo here or browse your computer.</p>
+                                                <p class="message--mobile">Tap here to select your picture.</p>
+                                             </div>
+                                             <div class="message is-loading">
+                                                <i class="fa fa-2x fa-spin fa-spinner"></i>
+                                             </div>
+                                             <div class="message is-dragover">
+                                                <i class="fa fa-2x fa-cloud-upload"></i>
+                                                <p>Drop your photo</p>
+                                             </div>
+                                             <div class="message is-wrong-file-type">
+                                                <p>Only images allowed.</p>
+                                                <p class="message--desktop">Drop your photo here or browse your computer.</p>
+                                                <p class="message--mobile">Tap here to select your picture.</p>
+                                             </div>
+                                             <div class="message is-wrong-image-size">
+                                                <p>Your photo must be larger than 350px.</p>
+                                             </div>
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="form-button">
+                              <a href="#" class="for-btn for-btn-primary cancel">Cancel</a>
+                              <a href="#" class="for-btn for-btn-primary btn-blue">Save Changes</a>
+                              <div class="loader">
+                                 <svg version="1.1" id="loader-1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="40px" height="40px" viewBox="0 0 50 50" style="enable-background:new 0 0 50 50;" xml:space="preserve">
+                                    <path fill="#000" d="M43.935,25.145c0-10.318-8.364-18.683-18.683-18.683c-10.318,0-18.683,8.365-18.683,18.683h4.068c0-8.071,6.543-14.615,14.615-14.615c8.072,0,14.615,6.543,14.615,14.615H43.935z">
+                                       <animateTransform attributeType="xml" attributeName="transform" type="rotate" from="0 25 25" to="360 25 25" dur="0.6s" repeatCount="indefinite"></animateTransform>
+                                    </path>
+                                 </svg>
+                              </div>
+                           </div>
+                        </div>
                      </div>
                   </div>
                </div>
@@ -1302,7 +1374,7 @@
                                                 </div>
                                                 <div class="cta-wrapper">
                                                    <a class="cta cta-white cancel">Cancel</a>
-                                                   <a class="cta cta-blue saveContinue">Save & Continue</a>
+                                                   <a class="cta cta-blue saveContinue">Save Changes</a>
                                                    <div class="loader">
                                                       <svg version="1.1" id="loader-1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="40px" height="40px" viewBox="0 0 50 50" style="enable-background:new 0 0 50 50;" xml:space="preserve">
                                                          <path fill="#000" d="M43.935,25.145c0-10.318-8.364-18.683-18.683-18.683c-10.318,0-18.683,8.365-18.683,18.683h4.068c0-8.071,6.543-14.615,14.615-14.615c8.072,0,14.615,6.543,14.615,14.615H43.935z">
@@ -1645,7 +1717,7 @@
                                                 </div>
                                                 <div class="cta-wrapper">
                                                    <a class="cta cta-white cancel">Cancel</a>
-                                                   <a class="cta cta-blue saveContinue confirmCta">Confirm & Add User</a>
+                                                   <a class="cta cta-blue saveContinue confirmCta">Save Changes</a>
                                                    <div class="loader">
                                                       <svg version="1.1" id="loader-1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="40px" height="40px" viewBox="0 0 50 50" style="enable-background:new 0 0 50 50;" xml:space="preserve">
                                                          <path fill="#000" d="M43.935,25.145c0-10.318-8.364-18.683-18.683-18.683c-10.318,0-18.683,8.365-18.683,18.683h4.068c0-8.071,6.543-14.615,14.615-14.615c8.072,0,14.615,6.543,14.615,14.615H43.935z">
@@ -1827,6 +1899,16 @@
                      }
                }
             });
+            $("#userModaledit .access-features .confirmCta").on("click", function(ele) {
+               ele.stopPropagation();
+               var $this = $(ele.currentTarget);
+               if($('#userModaledit .access-features .ba-input-wrapper.ba-multiselect.custom-filled').length > 0){
+                  $this.parent().addClass('show-loader');
+                  setTimeout(function(){
+                     $this.parent().removeClass('show-loader');
+                  }, 3000);
+               }
+            });
             
             $(".ba-multiselect:not(.nochange)").on("focus", function() {
                var $field = $(this).closest(".ba-multiselect");
@@ -1836,7 +1918,7 @@
                   $field.removeClass("custom-filled");
                }
             });
-            $('#userModal .cta-wrapper a.cta.cancel, #userModal .closeIcon').click(function(){
+            $('#userModal .cta-wrapper a.cta.cancel, #userModal .form-button .cancel, #userModal .closeIcon').click(function(){
                $('.adduser-button button.btn.btn-primary[data-target="#userModal"]')[0].click();
             });
             $('#userModaledit .cta-wrapper a.cta.cancel, #userModaledit .closeIcon').click(function(){
@@ -1845,6 +1927,9 @@
             $('.adduser-button button.btn.btn-primary[data-target="#userModal"]').click(function(){
                $('.form-field').removeClass('show-error');
                $('.ba-multiselect').removeClass('show-error');
+               $('#userModal .adduser-wrapper').show();
+               $('.upload-img-wrapper').hide();
+               $('#userModal .feature-access-wrapper').hide();
             });
             $('.custom-enable .ba-option').click(function(){
                var abc = $(this).find('span.ba-option-label').text();
@@ -1923,7 +2008,21 @@
             $('.modal-content').click(function(ele){
                ele.stopPropagation();
                $('.edit-profile-drowpdown>ul>li.edit-menu ul').hide();
-            });    
+            }); 
+            // =======================  Upload button click function ====================
+            $('.upload-section .uploadImg').click(function() {
+               $('.adduser-wrapper').hide();
+               $('.upload-img-wrapper').show();
+            });
+            $('.upload-img-wrapper .btn-blue').click(function(ele){
+               var $this = $(ele.currentTarget);
+               setTimeout(function(){
+                  $this.parent().addClass('show-loader');
+                  setTimeout(function(){
+                     $this.parent().removeClass('show-loader');
+                  }, 3000);
+            }, 0);
+            });
          });
       </script>
    </body>
