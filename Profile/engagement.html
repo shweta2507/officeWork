@@ -51,12 +51,13 @@
       <link rel="stylesheet" href="./style/customize.css">
       <link rel="stylesheet" href="./style/style.css">
       <link rel="stylesheet" href="./style/practices.css">
+      <link rel="stylesheet" href="./style/engagement.css">
       <!-- custom select style  -->
       <link rel="stylesheet" href="./style/custom-select/select.css">
       <!-- Favicon -->
       <link rel="icon" type="image/x-icon" href="./assets/img/favicon.svg">
    </head>
-   <body ng-app="axleApp" class="user-page practice-page layout-cell layout-scrollbar">
+   <body ng-app="axleApp" class="user-page practice-page layout-cell layout-scrollbar enagagement-page">
       <!-- side navbar start-->
       <div class="ba-sidenav">
          <div class="ba-brand">
@@ -207,9 +208,72 @@
             </nav>
          </header>
          <div class="body-container">
+            <!-- ========================== Engagement Page Content ============================ -->
+            <div class="custom-engagement-wrapper" id="custom-engagement">
+               <div class="custom-engagement-group" id="custom-engagement-group-wrapper">
+                  <div class="engagement-group1" id="all-information">
+                     <!-- ======================= Practice Name Droupdown ================================= -->
+                     <div class="practice-name-group" id="practice-name-group">
+                        <div class="group group-1">
+                           <div class="form-field custom-select">
+                              <label for="name" class="form-label">Practice Name</label>
+                              <div class="custom-input dropdown-field">
+                                 <h3 class="selected data"></h3>
+                                 <input type="hidden" class="form-control select" />
+                                 <span class="error">Select a practice name.</span>
+                                 <ul id="cardName">
+                                    <li value="Fox Creek - Longmont">Smile Teeth Dental</li>
+                                    <li value="Fox Creek -Braxtin">Fox Creek -Braxtin</li>
+                                    <li value="Fox Creek - Mountain Ridge">Fox Creek - Mountain Ridge</li>
+                                    <li value="Fox Creek - West Ave">Fox Creek - West Ave</li>
+                                    <li value="Fox Creek - West Minister">Fox Creek - West Minister</li>
+                                    <li value="Graxy Family Dental">Graxy Family Dental</li>
+                                    <li value="Virgina Dentistry">Virgina Dentistry</li>
+                                 </ul>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <!-- ======================= Run Time ================================= -->
+                     <div class="run-time-group" id="run-time-group">
+                        <h6>Run Time</h6>
+                        <div class="run-timer" id="run-timer-box">
+                           <ul class="time-zone" id="time-zone-d">
+                              <li class="time-update" id="time-update"><span class="start-time" id="start-time-zone">Start Time</span><span class="time-display" id="time-display-hr">12:00 AM CST</span></li>
+                              <li class="time-update time-update-2" id="time-update-two"><span class="end-time" id="end-time-zone">Start Time</span><span class="time-display-s" id="time-display-hrs">12:00 AM CST</span></li>
+                           </ul>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="engagement-group2" id="all-informationgroup2">
+                     <!-- ======================= Features Group ================================= -->
+                     <div class="features-group" id="features-group-all">
+                        <h4>Features</h4>
+                        <!-- ======================= Features Name ================================= -->
+                        <ul class="few-features" id="features-name">
+                           <li class="list-item confirmations-name" id="features-name feature-list">Confirmations</li>
+                           <li class="list-item hygiene-name" id="features-name-1 feature-list">Hygiene</li>
+                           <li class="list-item reminders-name" id="features-name-2 feature-list">Reminders</li>
+                        </ul>
+                     </div>
+                  </div>
+               </div>
+               <!-- ======================= Confirmations Group ================================= -->
+               <div class="engagement-right-box" id="confirmations-details">
+                  <div class="confirmation-group" id="add-confirmation">
+                     <div class="confirmation-title" id="title-top">
+                        <h2>Confirmations</h2>
+                        <a href="#" class="confirmation-link"><span class="icon"></span><span class="title">Add Confirmation</span></a>
+                     </div>
+                     <div class="confirmation-fill" id="confirmation-fill-up">
+                        <div class="confirmation-fill-content" id="confirmation-conten">
 
-            
-           
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
          </div>
       </main>
       <!-- imports for app and controllers  -->
@@ -450,7 +514,7 @@
                $(this).closest('.technical-information-group.active-technical .form-option-wrapper').find('h4').removeClass('active');
             });
          
-
+         
             $(function(){
                $(".tab-pane").not(".active").hide();
                $('.tabber-content .tab-pane').each(function(i,el){
