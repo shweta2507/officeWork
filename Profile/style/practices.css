@@ -788,3 +788,7 @@ ul.email-provider-g li span {
     font-family: 'Eina' !important;
     text-transform: unset !important;
 }
+
+.uploadImg2 {
+    cursor: pointer;
+}

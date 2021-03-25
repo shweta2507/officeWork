@@ -1163,7 +1163,7 @@
                               <div class="user-img">
                                  <img src="assets/img/edit-profile.svg" alt="Profile Image">
                               </div>
-                              <div class="uploadImg">
+                              <div class="uploadImg2">
                                  <div class="custom-file-inputl"></div>
                               </div>
                            </div>
@@ -1857,6 +1857,17 @@
             }
          
             document.body.removeChild(parent);
+         });
+
+         $('.uploadImg2').click(function(){
+            $('.filters-colum .addpractices-button button.btn.btn-primary[data-target="#userModal2"]')[0].click();
+            $('.users-page-content .table-wrapper tbody tr[data-target="#userModal"]')[0].click();
+            $('.upload-img-wrapper').show();
+            $('.edit-profile.edit-practice').hide();
+            $('.photo__frame')[0].click();
+            setTimeout(() => {
+               $('body').addClass('modal-open');  
+            }, 2000);
          });
       </script>
    </body>
