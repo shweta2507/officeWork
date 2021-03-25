@@ -792,3 +792,47 @@ ul.email-provider-g li span {
 .uploadImg2 {
     cursor: pointer;
 }
+
+#add-practice-popup div#state-wrapper-group-1 {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    margin-top: 12px;
+    width: 100%;
+    max-height: 400px;
+    overflow-y: auto;
+    background: #ffffff 0% 0% no-repeat padding-box;
+    -webkit-box-shadow: 0px 16px 32px #343d5633;
+    box-shadow: 0px 16px 32px #343d5633;
+    border-radius: 8px;
+    padding: 8px;
+    z-index: 99;
+    max-height: 250px;
+    width: 158px;
+    display: none;
+}
+
+#add-practice-popup ul#state-name {
+    display: block;
+}
+#add-practice-popup ul#state-name li {
+    padding: 10px 8px;
+    -webkit-transition: background 0.2s ease;
+    transition: background 0.2s ease;
+    border-radius: 8px;
+    cursor: pointer;
+    letter-spacing: 0px;
+    color: #343D56;
+    opacity: 1;
+    font-size: 12px;
+    line-height: 16px;
+	margin-right: 0 !important;
+    font-family: 'Eina';
+}
+
+.upload-scroll-fixed.layout-cell.layout-scrollbar {
+    overflow-y: unset !important;
+}
+.sp-val {
+    border-radius: 4px !important;
+}

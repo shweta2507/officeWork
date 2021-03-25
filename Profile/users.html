@@ -22,7 +22,6 @@
       <script src="https://code.highcharts.com/highcharts.src.js" defer></script>
       <!-- custom select -->
       <script src="./js/custom-select/select.js" type="module"></script>
-      
       <!-- Styles from old dashboard  -->
       <link rel="stylesheet" href="css2/bootstrap.min.css">
       <link rel="stylesheet" href="css2/font-awesome.css">
@@ -210,32 +209,49 @@
                <div class="top-row">
                   <div class="top-gutter">
                      <div class="search-bar"></div>
-
-
                      <div class="form-field search-bar-dr">
                         <label for="pay-amount" class="form-label">User Name</label>
                         <div class="custom-input">
                            <input type="text" name="name" class="form-control custom-patient" placeholder="Search">
-                           
                            <ul id="patientName">
-                              <li value="Rachel Etherington">
+                              <li value="Pedro Becker">
                                  <div class="names">
                                     <span class="name"> Pedro Becker</span>
-                                    
                                  </div>
-                                 
+                              </li>
+                              <li value="AG">
+                                 <div class="names">
+                                    <span class="name">AG</span>
+                                 </div>
+                              </li>
+                              <li value="AL">
+                                 <div class="names">
+                                    <span class="name">AL</span>
+                                 </div>
+                              </li>
+                              <li value="Amber Hyg">
+                                 <div class="names">
+                                    <span class="name">Amber Hyg</span>
+                                 </div>
                               </li>
                               <li value="Rachel Ethion">
                                  <div class="names">
-                                    <span class="name"> Pedro Becker</span>
+                                    <span class="name">Ashley</span>
+                                 </div>
+                              </li>
+                              <li value="Ashley">
+                                 <div class="names">
+                                    <span class="name">AXLE</span>
+                                 </div>
+                              </li>
+                              <li value="Dr. Adam">
+                                 <div class="names">
+                                    <span class="name">Dr. Adam</span>
                                  </div>
                               </li>
                            </ul>
                         </div>
                      </div>
-
-
-
                      <div class="ba-input-wrapper ba-multiselect custom-filled nochange">
                         <div class="ba-input-field" title="Practice Name">
                            <span ng-show="practiceFilters.length == 0">All Practices</span>
@@ -728,478 +744,478 @@
                         <!-- ========================= Add User Gernal Profile ===================== -->
                         <div class="adduser-wrapper">
                            <div class="adduser-wrapper-scroll-fixed">
-                           <div class="closeIcon">
-                              <img src="assets/img/cross.svg" alt="Cross">
+                              <div class="closeIcon">
+                                 <img src="assets/img/cross.svg" alt="Cross">
+                              </div>
+                              <h3>Add User</h3>
+                              <ul>
+                                 <li class="active"><span><span>1</span></span><span class="list-name">GENERAL PROFILE</span></li>
+                                 <span class="active-bar active-form-bar"></span>
+                                 <li><span><span>2</span></span><span class="list-name">FEATURE ACCESS</span></li>
+                              </ul>
                            </div>
-                           <h3>Add User</h3>
-                           <ul>
-                              <li class="active"><span><span>1</span></span><span class="list-name">GENERAL PROFILE</span></li>
-                              <span class="active-bar active-form-bar"></span>
-                              <li><span><span>2</span></span><span class="list-name">FEATURE ACCESS</span></li>
-                           </ul>
-                        </div>
                            <div class="upload-scroll-fixed layout-cell layout-scrollbar">
-                           <div class="upload-section">
-                              <div class="user-img">
-                                 <img src="assets/img/edit-profile.svg" alt="Profile Image">
+                              <div class="upload-section">
+                                 <div class="user-img">
+                                    <img src="assets/img/edit-profile.svg" alt="Profile Image">
+                                 </div>
+                                 <div class="uploadImg">
+                                    <input type="file" class="custom-file-input">
+                                 </div>
                               </div>
-                              <div class="uploadImg">
-                                 <input type="file" class="custom-file-input">
+                              <div class="user-details">
+                                 <form class="add-user-details">
+                                    <div class="feild-1 feild">
+                                       <div class="form-field">
+                                          <label for="first-name" class="form-label">First Name</label>
+                                          <div class="custom-input">
+                                             <input type="text" id="firstName" name="firstName" class="form-control">
+                                             <span class="error">Enter a valid user first name.</span>
+                                          </div>
+                                       </div>
+                                       <div class="form-field">
+                                          <label for="last-name" class="form-label">Last Name</label>
+                                          <div class="custom-input">
+                                             <input type="text" id="lastName" name="lastName" class="form-control">
+                                             <span class="error">Enter a valid user last name.</span>
+                                          </div>
+                                       </div>
+                                    </div>
+                                    <div class="feild-2 feild">
+                                       <div class="ba-input-wrapper ba-multiselect">
+                                          <div class="ba-input-field" title="Practice Access">
+                                             <span ng-show="practiceAccessFilters.length == 0"></span>
+                                             <span ng-show="practiceAccessFilters.length == 1" class="check-select">{{ practiceAccessFilters[0] }}</span>
+                                             <span ng-show="practiceAccessFilters.length > 1">
+                                             {{ practiceAccessFilters[0]+' (+' + (practiceAccessFilters.length-1) +')' }}
+                                             </span>
+                                          </div>
+                                          <input type="hidden" class="ba-input-field-value" name="practiceAccessFilters" id="practiceAccessFilters"
+                                             ng-model="practiceAccessFilters">
+                                          <span class="error">Enter a minimum of 1 practice.</span>
+                                          <div class="ba-multiselect-options layout-cell layout-scrollbar">
+                                             <div class="ba-option" ng-click="selectAllMultiSelect('practiceAccessOptions','practiceAccessFilters' )">
+                                                <span class="ba-checkbox"
+                                                   ng-class="{__checked : isChecked('all','practiceAccessOptions','practiceAccessFilters')}"></span>
+                                                <span class="ba-option-label">All Practices</span>
+                                             </div>
+                                             <div class="ba-option" ng-repeat="option in practiceAccessOptions"
+                                                ng-click="toggleMultiSelect('practiceAccessFilters', option )">
+                                                <span class="ba-checkbox"
+                                                   ng-class="{__checked : isChecked(option,'practiceAccessOptions','practiceAccessFilters')}">
+                                                </span>
+                                                <span class="ba-option-label">{{option}}</span>
+                                             </div>
+                                          </div>
+                                       </div>
+                                       <div class="ba-input-wrapper ba-multiselect">
+                                          <div class="ba-input-field" title="Region Access">
+                                             <span ng-show="regionAccessFilters.length == 0"></span>
+                                             <span ng-show="regionAccessFilters.length == 1" class="check-select">{{ regionAccessFilters[0] }}</span>
+                                             <span ng-show="regionAccessFilters.length > 1">
+                                             {{ regionAccessFilters[0]+' (+' + (regionAccessFilters.length-1) +')' }}
+                                             </span>
+                                          </div>
+                                          <input type="hidden" class="ba-input-field-value" name="regionAccessFilters" id="regionAccessFilters"
+                                             ng-model="regionAccessFilters">
+                                          <span class="error">Enter a minimum of 1 region.</span>
+                                          <div class="ba-multiselect-options layout-cell layout-scrollbar">
+                                             <div class="ba-option" ng-click="selectAllMultiSelect('regionAccessOptions','regionAccessFilters' )">
+                                                <span class="ba-checkbox"
+                                                   ng-class="{__checked : isChecked('all','regionAccessOptions','regionAccessFilters')}"></span>
+                                                <span class="ba-option-label">All Region</span>
+                                             </div>
+                                             <div class="ba-option" ng-repeat="option in regionAccessOptions"
+                                                ng-click="toggleMultiSelect('regionAccessFilters', option )">
+                                                <span class="ba-checkbox"
+                                                   ng-class="{__checked : isChecked(option,'regionAccessOptions','regionAccessFilters')}">
+                                                </span>
+                                                <span class="ba-option-label">{{option}}</span>
+                                             </div>
+                                          </div>
+                                       </div>
+                                    </div>
+                                    <div class="feild-3 feild">
+                                       <div class="form-field">
+                                          <label for="email-address" class="form-label">Email Address</label>
+                                          <div class="custom-input">
+                                             <input type="text" id="email" name="email" class="form-control">
+                                             <span class="error">Enter a valid email address.</span>
+                                          </div>
+                                       </div>
+                                       <div class="form-field">
+                                          <label for="mobile-phone" class="form-label">Mobile Phone</label>
+                                          <div class="custom-input">
+                                             <input type="tel" id="phone" name="phone" class="form-control">
+                                             <span class="error">Enter a valid mobile phone.</span>
+                                          </div>
+                                       </div>
+                                    </div>
+                                    <div class="cta-wrapper extra">
+                                       <a class="cta cta-white cancel">Cancel</a>
+                                       <a class="cta cta-blue saveContinue">Save & Continue</a>
+                                       <div class="loader">
+                                          <svg version="1.1" id="loader-1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="40px" height="40px" viewBox="0 0 50 50" style="enable-background:new 0 0 50 50;" xml:space="preserve">
+                                             <path fill="#000" d="M43.935,25.145c0-10.318-8.364-18.683-18.683-18.683c-10.318,0-18.683,8.365-18.683,18.683h4.068c0-8.071,6.543-14.615,14.615-14.615c8.072,0,14.615,6.543,14.615,14.615H43.935z">
+                                                <animateTransform attributeType="xml" attributeName="transform" type="rotate" from="0 25 25" to="360 25 25" dur="0.6s" repeatCount="indefinite"></animateTransform>
+                                             </path>
+                                          </svg>
+                                       </div>
+                                    </div>
+                                 </form>
                               </div>
                            </div>
-                           <div class="user-details">
-                              <form class="add-user-details">
-                                 <div class="feild-1 feild">
-                                    <div class="form-field">
-                                       <label for="first-name" class="form-label">First Name</label>
-                                       <div class="custom-input">
-                                          <input type="text" id="firstName" name="firstName" class="form-control">
-                                          <span class="error">Enter a valid user first name.</span>
-                                       </div>
-                                    </div>
-                                    <div class="form-field">
-                                       <label for="last-name" class="form-label">Last Name</label>
-                                       <div class="custom-input">
-                                          <input type="text" id="lastName" name="lastName" class="form-control">
-                                          <span class="error">Enter a valid user last name.</span>
-                                       </div>
-                                    </div>
-                                 </div>
-                                 <div class="feild-2 feild">
-                                    <div class="ba-input-wrapper ba-multiselect">
-                                       <div class="ba-input-field" title="Practice Access">
-                                          <span ng-show="practiceAccessFilters.length == 0"></span>
-                                          <span ng-show="practiceAccessFilters.length == 1" class="check-select">{{ practiceAccessFilters[0] }}</span>
-                                          <span ng-show="practiceAccessFilters.length > 1">
-                                          {{ practiceAccessFilters[0]+' (+' + (practiceAccessFilters.length-1) +')' }}
-                                          </span>
-                                       </div>
-                                       <input type="hidden" class="ba-input-field-value" name="practiceAccessFilters" id="practiceAccessFilters"
-                                          ng-model="practiceAccessFilters">
-                                       <span class="error">Enter a minimum of 1 practice.</span>
-                                       <div class="ba-multiselect-options layout-cell layout-scrollbar">
-                                          <div class="ba-option" ng-click="selectAllMultiSelect('practiceAccessOptions','practiceAccessFilters' )">
-                                             <span class="ba-checkbox"
-                                                ng-class="{__checked : isChecked('all','practiceAccessOptions','practiceAccessFilters')}"></span>
-                                             <span class="ba-option-label">All Practices</span>
-                                          </div>
-                                          <div class="ba-option" ng-repeat="option in practiceAccessOptions"
-                                             ng-click="toggleMultiSelect('practiceAccessFilters', option )">
-                                             <span class="ba-checkbox"
-                                                ng-class="{__checked : isChecked(option,'practiceAccessOptions','practiceAccessFilters')}">
-                                             </span>
-                                             <span class="ba-option-label">{{option}}</span>
-                                          </div>
-                                       </div>
-                                    </div>
-                                    <div class="ba-input-wrapper ba-multiselect">
-                                       <div class="ba-input-field" title="Region Access">
-                                          <span ng-show="regionAccessFilters.length == 0"></span>
-                                          <span ng-show="regionAccessFilters.length == 1" class="check-select">{{ regionAccessFilters[0] }}</span>
-                                          <span ng-show="regionAccessFilters.length > 1">
-                                          {{ regionAccessFilters[0]+' (+' + (regionAccessFilters.length-1) +')' }}
-                                          </span>
-                                       </div>
-                                       <input type="hidden" class="ba-input-field-value" name="regionAccessFilters" id="regionAccessFilters"
-                                          ng-model="regionAccessFilters">
-                                       <span class="error">Enter a minimum of 1 region.</span>
-                                       <div class="ba-multiselect-options layout-cell layout-scrollbar">
-                                          <div class="ba-option" ng-click="selectAllMultiSelect('regionAccessOptions','regionAccessFilters' )">
-                                             <span class="ba-checkbox"
-                                                ng-class="{__checked : isChecked('all','regionAccessOptions','regionAccessFilters')}"></span>
-                                             <span class="ba-option-label">All Region</span>
-                                          </div>
-                                          <div class="ba-option" ng-repeat="option in regionAccessOptions"
-                                             ng-click="toggleMultiSelect('regionAccessFilters', option )">
-                                             <span class="ba-checkbox"
-                                                ng-class="{__checked : isChecked(option,'regionAccessOptions','regionAccessFilters')}">
-                                             </span>
-                                             <span class="ba-option-label">{{option}}</span>
-                                          </div>
-                                       </div>
-                                    </div>
-                                 </div>
-                                 <div class="feild-3 feild">
-                                    <div class="form-field">
-                                       <label for="email-address" class="form-label">Email Address</label>
-                                       <div class="custom-input">
-                                          <input type="text" id="email" name="email" class="form-control">
-                                          <span class="error">Enter a valid email address.</span>
-                                       </div>
-                                    </div>
-                                    <div class="form-field">
-                                       <label for="mobile-phone" class="form-label">Mobile Phone</label>
-                                       <div class="custom-input">
-                                          <input type="tel" id="phone" name="phone" class="form-control">
-                                          <span class="error">Enter a valid mobile phone.</span>
-                                       </div>
-                                    </div>
-                                 </div>
-                                 <div class="cta-wrapper extra">
-                                    <a class="cta cta-white cancel">Cancel</a>
-                                    <a class="cta cta-blue saveContinue">Save & Continue</a>
-                                    <div class="loader">
-                                       <svg version="1.1" id="loader-1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="40px" height="40px" viewBox="0 0 50 50" style="enable-background:new 0 0 50 50;" xml:space="preserve">
-                                          <path fill="#000" d="M43.935,25.145c0-10.318-8.364-18.683-18.683-18.683c-10.318,0-18.683,8.365-18.683,18.683h4.068c0-8.071,6.543-14.615,14.615-14.615c8.072,0,14.615,6.543,14.615,14.615H43.935z">
-                                             <animateTransform attributeType="xml" attributeName="transform" type="rotate" from="0 25 25" to="360 25 25" dur="0.6s" repeatCount="indefinite"></animateTransform>
-                                          </path>
-                                       </svg>
-                                    </div>
-                                 </div>
-                              </form>
-                           </div>
-                        </div>
                         </div>
                         <!-- =========================== Add User Feature Access =================== -->
                         <div class="feature-access-wrapper">
                            <div class="adduser-wrapper-scroll-fixed">
-                           <div class="closeIcon">
-                              <img src="assets/img/cross.svg" alt="Cross">
+                              <div class="closeIcon">
+                                 <img src="assets/img/cross.svg" alt="Cross">
+                              </div>
+                              <h3>Add User</h3>
+                              <ul>
+                                 <li class="active"><span><span>1</span></span><span class="list-name">GENERAL PROFILE</span></li>
+                                 <span class="active-bar active-form-bar"></span>
+                                 <li class="active"><span><span>2</span></span><span class="list-name">FEATURE ACCESS</span></li>
+                              </ul>
                            </div>
-                           <h3>Add User</h3>
-                           <ul>
-                              <li class="active"><span><span>1</span></span><span class="list-name">GENERAL PROFILE</span></li>
-                              <span class="active-bar active-form-bar"></span>
-                              <li class="active"><span><span>2</span></span><span class="list-name">FEATURE ACCESS</span></li>
-                           </ul>
-                        </div>
-                        <div class="upload-scroll-fixed layout-cell layout-scrollbar">
-                           <div class="quicl-roll-wrapper">
-                              <h3>User Quick Roll</h3>
-                              <div class="main-access-wrapper">
-                                 <div class="ba-input-wrapper ba-multiselect custom-enable custom-select-wrapper" tabindex="0" >
-                                    <div class="ba-input-field" title="Admin">
-                                       <div class="ba-option enable custom-radion-select">
-                                          <input type="radio" id="enable" name="option" value="enable">
-                                          <span class="radiobtn">
-                                          <img src="assets/icons/enable.icon.svg" alt="radio button">
-                                          </span>
-                                          <span class="ba-option-label">Enable</span>
+                           <div class="upload-scroll-fixed layout-cell layout-scrollbar">
+                              <div class="quicl-roll-wrapper">
+                                 <h3>User Quick Roll</h3>
+                                 <div class="main-access-wrapper">
+                                    <div class="ba-input-wrapper ba-multiselect custom-enable custom-select-wrapper" tabindex="0" >
+                                       <div class="ba-input-field" title="Admin">
+                                          <div class="ba-option enable custom-radion-select">
+                                             <input type="radio" id="enable" name="option" value="enable">
+                                             <span class="radiobtn">
+                                             <img src="assets/icons/enable.icon.svg" alt="radio button">
+                                             </span>
+                                             <span class="ba-option-label">Enable</span>
+                                          </div>
+                                          <div class="ba-option disable custom-radion-select">
+                                             <input type="radio" id="disable" name="option" value="disable">
+                                             <span class="radiobtn">
+                                             <img src="assets/icons/disable.icon.svg" alt="radio button">
+                                             </span>
+                                             <span class="ba-option-label">Disable</span>
+                                          </div>
                                        </div>
-                                       <div class="ba-option disable custom-radion-select">
-                                          <input type="radio" id="disable" name="option" value="disable">
-                                          <span class="radiobtn">
-                                          <img src="assets/icons/disable.icon.svg" alt="radio button">
-                                          </span>
-                                          <span class="ba-option-label">Disable</span>
-                                       </div>
-                                    </div>
-                                    <input type="hidden" class="ba-input-field-value" name="practiceFilters" id="practiceFilters">
-                                    <div class="ba-multiselect-options layout-cell layout-scrollbar">
-                                       <div class="ba-option enable">
-                                          <input type="radio" id="enable" name="option" value="enable">
-                                          <span class="radiobtn">
-                                          <img src="assets/icons/enable.icon.svg" alt="radio button">
-                                          </span>
-                                          <span class="ba-option-label">Enable</span>
-                                       </div>
-                                       <div class="ba-option disable">
-                                          <input type="radio" id="disable" name="option" value="disable">
-                                          <span class="radiobtn">
-                                          <img src="assets/icons/disable.icon.svg" alt="radio button">
-                                          </span>
-                                          <span class="ba-option-label">Disable</span>
+                                       <input type="hidden" class="ba-input-field-value" name="practiceFilters" id="practiceFilters">
+                                       <div class="ba-multiselect-options layout-cell layout-scrollbar">
+                                          <div class="ba-option enable">
+                                             <input type="radio" id="enable" name="option" value="enable">
+                                             <span class="radiobtn">
+                                             <img src="assets/icons/enable.icon.svg" alt="radio button">
+                                             </span>
+                                             <span class="ba-option-label">Enable</span>
+                                          </div>
+                                          <div class="ba-option disable">
+                                             <input type="radio" id="disable" name="option" value="disable">
+                                             <span class="radiobtn">
+                                             <img src="assets/icons/disable.icon.svg" alt="radio button">
+                                             </span>
+                                             <span class="ba-option-label">Disable</span>
+                                          </div>
                                        </div>
                                     </div>
-                                 </div>
-                                 <div class="ba-input-wrapper ba-multiselect custom-enable custom-select-wrapper" tabindex="0">
-                                    <div class="ba-input-field" title="Employee">
-                                       <div class="ba-option enable custom-radion-select">
-                                          <input type="radio" id="enable" name="option" value="enable">
-                                          <span class="radiobtn">
-                                          <img src="assets/icons/enable.icon.svg" alt="radio button">
-                                          </span>
-                                          <span class="ba-option-label">Enable</span>
+                                    <div class="ba-input-wrapper ba-multiselect custom-enable custom-select-wrapper" tabindex="0">
+                                       <div class="ba-input-field" title="Employee">
+                                          <div class="ba-option enable custom-radion-select">
+                                             <input type="radio" id="enable" name="option" value="enable">
+                                             <span class="radiobtn">
+                                             <img src="assets/icons/enable.icon.svg" alt="radio button">
+                                             </span>
+                                             <span class="ba-option-label">Enable</span>
+                                          </div>
+                                          <div class="ba-option disable custom-radion-select">
+                                             <input type="radio" id="disable" name="option" value="disable">
+                                             <span class="radiobtn">
+                                             <img src="assets/icons/disable.icon.svg" alt="radio button">
+                                             </span>
+                                             <span class="ba-option-label">Disable</span>
+                                          </div>
                                        </div>
-                                       <div class="ba-option disable custom-radion-select">
-                                          <input type="radio" id="disable" name="option" value="disable">
-                                          <span class="radiobtn">
-                                          <img src="assets/icons/disable.icon.svg" alt="radio button">
-                                          </span>
-                                          <span class="ba-option-label">Disable</span>
-                                       </div>
-                                    </div>
-                                    <input type="hidden" class="ba-input-field-value">
-                                    <div class="ba-multiselect-options layout-cell layout-scrollbar">
-                                       <div class="ba-option enable">
-                                          <input type="radio" id="enable" name="option" value="enable">
-                                          <span class="radiobtn">
-                                          <img src="assets/icons/enable.icon.svg" alt="radio button">
-                                          </span>
-                                          <span class="ba-option-label">Enable</span>
-                                       </div>
-                                       <div class="ba-option disable">
-                                          <input type="radio" id="disable" name="option" value="disable">
-                                          <span class="radiobtn">
-                                          <img src="assets/icons/disable.icon.svg" alt="radio button">
-                                          </span>
-                                          <span class="ba-option-label">Disable</span>
-                                       </div>
-                                    </div>
-                                 </div>
-                                 <div class="ba-input-wrapper ba-multiselect custom-enable custom-select-wrapper" tabindex="0">
-                                    <div class="ba-input-field" title="Provider">
-                                       <div class="ba-option enable custom-radion-select">
-                                          <input type="radio" id="enable" name="option" value="enable">
-                                          <span class="radiobtn">
-                                          <img src="assets/icons/enable.icon.svg" alt="radio button">
-                                          </span>
-                                          <span class="ba-option-label">Enable</span>
-                                       </div>
-                                       <div class="ba-option disable custom-radion-select">
-                                          <input type="radio" id="disable" name="option" value="disable">
-                                          <span class="radiobtn">
-                                          <img src="assets/icons/disable.icon.svg" alt="radio button">
-                                          </span>
-                                          <span class="ba-option-label">Disable</span>
+                                       <input type="hidden" class="ba-input-field-value">
+                                       <div class="ba-multiselect-options layout-cell layout-scrollbar">
+                                          <div class="ba-option enable">
+                                             <input type="radio" id="enable" name="option" value="enable">
+                                             <span class="radiobtn">
+                                             <img src="assets/icons/enable.icon.svg" alt="radio button">
+                                             </span>
+                                             <span class="ba-option-label">Enable</span>
+                                          </div>
+                                          <div class="ba-option disable">
+                                             <input type="radio" id="disable" name="option" value="disable">
+                                             <span class="radiobtn">
+                                             <img src="assets/icons/disable.icon.svg" alt="radio button">
+                                             </span>
+                                             <span class="ba-option-label">Disable</span>
+                                          </div>
                                        </div>
                                     </div>
-                                    <input type="hidden" class="ba-input-field-value">
-                                    <div class="ba-multiselect-options layout-cell layout-scrollbar">
-                                       <div class="ba-option enable">
-                                          <input type="radio" id="enable" name="option" value="enable">
-                                          <span class="radiobtn">
-                                          <img src="assets/icons/enable.icon.svg" alt="radio button">
-                                          </span>
-                                          <span class="ba-option-label">Enable</span>
+                                    <div class="ba-input-wrapper ba-multiselect custom-enable custom-select-wrapper" tabindex="0">
+                                       <div class="ba-input-field" title="Provider">
+                                          <div class="ba-option enable custom-radion-select">
+                                             <input type="radio" id="enable" name="option" value="enable">
+                                             <span class="radiobtn">
+                                             <img src="assets/icons/enable.icon.svg" alt="radio button">
+                                             </span>
+                                             <span class="ba-option-label">Enable</span>
+                                          </div>
+                                          <div class="ba-option disable custom-radion-select">
+                                             <input type="radio" id="disable" name="option" value="disable">
+                                             <span class="radiobtn">
+                                             <img src="assets/icons/disable.icon.svg" alt="radio button">
+                                             </span>
+                                             <span class="ba-option-label">Disable</span>
+                                          </div>
                                        </div>
-                                       <div class="ba-option disable">
-                                          <input type="radio" id="disable" name="option" value="disable">
-                                          <span class="radiobtn">
-                                          <img src="assets/icons/disable.icon.svg" alt="radio button">
-                                          </span>
-                                          <span class="ba-option-label">Disable</span>
+                                       <input type="hidden" class="ba-input-field-value">
+                                       <div class="ba-multiselect-options layout-cell layout-scrollbar">
+                                          <div class="ba-option enable">
+                                             <input type="radio" id="enable" name="option" value="enable">
+                                             <span class="radiobtn">
+                                             <img src="assets/icons/enable.icon.svg" alt="radio button">
+                                             </span>
+                                             <span class="ba-option-label">Enable</span>
+                                          </div>
+                                          <div class="ba-option disable">
+                                             <input type="radio" id="disable" name="option" value="disable">
+                                             <span class="radiobtn">
+                                             <img src="assets/icons/disable.icon.svg" alt="radio button">
+                                             </span>
+                                             <span class="ba-option-label">Disable</span>
+                                          </div>
                                        </div>
                                     </div>
                                  </div>
                               </div>
-                           </div>
-                           <div class="user-access-details">
-                              <h3>Feature Access</h3>
-                              <form class="add-user-details access-features">
-                                 <div class="feild-1 feild">
-                                    <div class="ba-input-wrapper ba-multiselect">
-                                       <div class="ba-input-field" title="Analytics">
-                                          <span ng-show="analyticsFilters.length == 0"></span>
-                                          <span ng-show="analyticsFilters.length == 1" class="check-select">{{ analyticsFilters[0] }}</span>
-                                          <span ng-show="analyticsFilters.length > 1">
-                                          {{ analyticsFilters[0]+' (+' + (analyticsFilters.length-1) +')' }}
-                                          </span>
-                                       </div>
-                                       <input type="hidden" class="ba-input-field-value" name="analyticsFilters" id="analyticsFilters"
-                                          ng-model="analyticsFilters">
-                                       <div class="ba-multiselect-options layout-cell layout-scrollbar">
-                                          <div class="ba-option" ng-repeat="option in analyticsOptions"
-                                             ng-click="toggleMultiSelect('analyticsFilters', option )">
-                                             <span class="ba-checkbox"
-                                                ng-class="{__checked : isChecked(option,'analyticsOptions','analyticsFilters')}">
+                              <div class="user-access-details">
+                                 <h3>Feature Access</h3>
+                                 <form class="add-user-details access-features">
+                                    <div class="feild-1 feild">
+                                       <div class="ba-input-wrapper ba-multiselect">
+                                          <div class="ba-input-field" title="Analytics">
+                                             <span ng-show="analyticsFilters.length == 0"></span>
+                                             <span ng-show="analyticsFilters.length == 1" class="check-select">{{ analyticsFilters[0] }}</span>
+                                             <span ng-show="analyticsFilters.length > 1">
+                                             {{ analyticsFilters[0]+' (+' + (analyticsFilters.length-1) +')' }}
                                              </span>
-                                             <span class="ba-option-label">{{option}}</span>
+                                          </div>
+                                          <input type="hidden" class="ba-input-field-value" name="analyticsFilters" id="analyticsFilters"
+                                             ng-model="analyticsFilters">
+                                          <div class="ba-multiselect-options layout-cell layout-scrollbar">
+                                             <div class="ba-option" ng-repeat="option in analyticsOptions"
+                                                ng-click="toggleMultiSelect('analyticsFilters', option )">
+                                                <span class="ba-checkbox"
+                                                   ng-class="{__checked : isChecked(option,'analyticsOptions','analyticsFilters')}">
+                                                </span>
+                                                <span class="ba-option-label">{{option}}</span>
+                                             </div>
+                                          </div>
+                                       </div>
+                                       <div class="ba-input-wrapper ba-multiselect">
+                                          <div class="ba-input-field" title="Collections">
+                                             <span ng-show="collectionsFilters.length == 0"></span>
+                                             <span ng-show="collectionsFilters.length == 1" class="check-select">{{ collectionsFilters[0] }}</span>
+                                             <span ng-show="collectionsFilters.length > 1">
+                                             {{ collectionsFilters[0]+' (+' + (collectionsFilters.length-1) +')' }}
+                                             </span>
+                                          </div>
+                                          <input type="hidden" class="ba-input-field-value" name="collectionsFilters" id="collectionsFilters"
+                                             ng-model="collectionsFilters">
+                                          <div class="ba-multiselect-options layout-cell layout-scrollbar">
+                                             <div class="ba-option" ng-repeat="option in collectionsOptions"
+                                                ng-click="toggleMultiSelect('collectionsFilters', option )">
+                                                <span class="ba-checkbox"
+                                                   ng-class="{__checked : isChecked(option,'collectionsOptions','collectionsFilters')}">
+                                                </span>
+                                                <span class="ba-option-label">{{option}}</span>
+                                             </div>
                                           </div>
                                        </div>
                                     </div>
-                                    <div class="ba-input-wrapper ba-multiselect">
-                                       <div class="ba-input-field" title="Collections">
-                                          <span ng-show="collectionsFilters.length == 0"></span>
-                                          <span ng-show="collectionsFilters.length == 1" class="check-select">{{ collectionsFilters[0] }}</span>
-                                          <span ng-show="collectionsFilters.length > 1">
-                                          {{ collectionsFilters[0]+' (+' + (collectionsFilters.length-1) +')' }}
-                                          </span>
-                                       </div>
-                                       <input type="hidden" class="ba-input-field-value" name="collectionsFilters" id="collectionsFilters"
-                                          ng-model="collectionsFilters">
-                                       <div class="ba-multiselect-options layout-cell layout-scrollbar">
-                                          <div class="ba-option" ng-repeat="option in collectionsOptions"
-                                             ng-click="toggleMultiSelect('collectionsFilters', option )">
-                                             <span class="ba-checkbox"
-                                                ng-class="{__checked : isChecked(option,'collectionsOptions','collectionsFilters')}">
+                                    <div class="feild-2 feild">
+                                       <div class="ba-input-wrapper ba-multiselect">
+                                          <div class="ba-input-field" title="Eligibility">
+                                             <span ng-show="eligibilityFilters.length == 0"></span>
+                                             <span ng-show="eligibilityFilters.length == 1" class="check-select">{{ eligibilityFilters[0] }}</span>
+                                             <span ng-show="eligibilityFilters.length > 1">
+                                             {{ eligibilityFilters[0]+' (+' + (eligibilityFilters.length-1) +')' }}
                                              </span>
-                                             <span class="ba-option-label">{{option}}</span>
+                                          </div>
+                                          <input type="hidden" class="ba-input-field-value" name="eligibilityFilters" id="eligibilityFilters"
+                                             ng-model="eligibilityFilters">
+                                          <div class="ba-multiselect-options layout-cell layout-scrollbar">
+                                             <div class="ba-option" ng-repeat="option in eligibilityOptions"
+                                                ng-click="toggleMultiSelect('eligibilityFilters', option )">
+                                                <span class="ba-checkbox"
+                                                   ng-class="{__checked : isChecked(option,'eligibilityOptions','eligibilityFilters')}">
+                                                </span>
+                                                <span class="ba-option-label">{{option}}</span>
+                                             </div>
+                                          </div>
+                                       </div>
+                                       <div class="ba-input-wrapper ba-multiselect">
+                                          <div class="ba-input-field" title="Engagement">
+                                             <span ng-show="engagementFilters.length == 0"></span>
+                                             <span ng-show="engagementFilters.length == 1" class="check-select">{{ engagementFilters[0] }}</span>
+                                             <span ng-show="engagementFilters.length > 1">
+                                             {{ engagementFilters[0]+' (+' + (engagementFilters.length-1) +')' }}
+                                             </span>
+                                          </div>
+                                          <input type="hidden" class="ba-input-field-value" name="engagementFilters" id="engagementFilters"
+                                             ng-model="engagementFilters">
+                                          <div class="ba-multiselect-options layout-cell layout-scrollbar">
+                                             <div class="ba-option" ng-repeat="option in engagementOptions"
+                                                ng-click="toggleMultiSelect('engagementFilters', option )">
+                                                <span class="ba-checkbox"
+                                                   ng-class="{__checked : isChecked(option,'engagementOptions','engagementFilters')}">
+                                                </span>
+                                                <span class="ba-option-label">{{option}}</span>
+                                             </div>
                                           </div>
                                        </div>
                                     </div>
-                                 </div>
-                                 <div class="feild-2 feild">
-                                    <div class="ba-input-wrapper ba-multiselect">
-                                       <div class="ba-input-field" title="Eligibility">
-                                          <span ng-show="eligibilityFilters.length == 0"></span>
-                                          <span ng-show="eligibilityFilters.length == 1" class="check-select">{{ eligibilityFilters[0] }}</span>
-                                          <span ng-show="eligibilityFilters.length > 1">
-                                          {{ eligibilityFilters[0]+' (+' + (eligibilityFilters.length-1) +')' }}
-                                          </span>
-                                       </div>
-                                       <input type="hidden" class="ba-input-field-value" name="eligibilityFilters" id="eligibilityFilters"
-                                          ng-model="eligibilityFilters">
-                                       <div class="ba-multiselect-options layout-cell layout-scrollbar">
-                                          <div class="ba-option" ng-repeat="option in eligibilityOptions"
-                                             ng-click="toggleMultiSelect('eligibilityFilters', option )">
-                                             <span class="ba-checkbox"
-                                                ng-class="{__checked : isChecked(option,'eligibilityOptions','eligibilityFilters')}">
+                                    <div class="feild-3 feild">
+                                       <div class="ba-input-wrapper ba-multiselect">
+                                          <div class="ba-input-field" title="Messaging">
+                                             <span ng-show="messagingFilters.length == 0"></span>
+                                             <span ng-show="messagingFilters.length == 1" class="check-select">{{ messagingFilters[0] }}</span>
+                                             <span ng-show="messagingFilters.length > 1">
+                                             {{ messagingFilters[0]+' (+' + (messagingFilters.length-1) +')' }}
                                              </span>
-                                             <span class="ba-option-label">{{option}}</span>
+                                          </div>
+                                          <input type="hidden" class="ba-input-field-value" name="messagingFilters" id="messagingFilters"
+                                             ng-model="messagingFilters">
+                                          <div class="ba-multiselect-options layout-cell layout-scrollbar">
+                                             <div class="ba-option" ng-repeat="option in messagingOptions"
+                                                ng-click="toggleMultiSelect('messagingFilters', option )">
+                                                <span class="ba-checkbox"
+                                                   ng-class="{__checked : isChecked(option,'messagingOptions','messagingFilters')}">
+                                                </span>
+                                                <span class="ba-option-label">{{option}}</span>
+                                             </div>
+                                          </div>
+                                       </div>
+                                       <div class="ba-input-wrapper ba-multiselect">
+                                          <div class="ba-input-field" title="Payments">
+                                             <span ng-show="paymentsFilters.length == 0"></span>
+                                             <span ng-show="paymentsFilters.length == 1" class="check-select">{{ paymentsFilters[0] }}</span>
+                                             <span ng-show="paymentsFilters.length > 1">
+                                             {{ paymentsFilters[0]+' (+' + (paymentsFilters.length-1) +')' }}
+                                             </span>
+                                          </div>
+                                          <input type="hidden" class="ba-input-field-value" name="paymentsFilters" id="paymentsFilters"
+                                             ng-model="paymentsFilters">
+                                          <div class="ba-multiselect-options layout-cell layout-scrollbar">
+                                             <div class="ba-option" ng-repeat="option in paymentsOptions"
+                                                ng-click="toggleMultiSelect('paymentsFilters', option )">
+                                                <span class="ba-checkbox"
+                                                   ng-class="{__checked : isChecked(option,'paymentsOptions','paymentsFilters')}">
+                                                </span>
+                                                <span class="ba-option-label">{{option}}</span>
+                                             </div>
                                           </div>
                                        </div>
                                     </div>
-                                    <div class="ba-input-wrapper ba-multiselect">
-                                       <div class="ba-input-field" title="Engagement">
-                                          <span ng-show="engagementFilters.length == 0"></span>
-                                          <span ng-show="engagementFilters.length == 1" class="check-select">{{ engagementFilters[0] }}</span>
-                                          <span ng-show="engagementFilters.length > 1">
-                                          {{ engagementFilters[0]+' (+' + (engagementFilters.length-1) +')' }}
-                                          </span>
-                                       </div>
-                                       <input type="hidden" class="ba-input-field-value" name="engagementFilters" id="engagementFilters"
-                                          ng-model="engagementFilters">
-                                       <div class="ba-multiselect-options layout-cell layout-scrollbar">
-                                          <div class="ba-option" ng-repeat="option in engagementOptions"
-                                             ng-click="toggleMultiSelect('engagementFilters', option )">
-                                             <span class="ba-checkbox"
-                                                ng-class="{__checked : isChecked(option,'engagementOptions','engagementFilters')}">
+                                    <div class="feild-4 feild">
+                                       <div class="ba-input-wrapper ba-multiselect">
+                                          <div class="ba-input-field" title="Payroll">
+                                             <span ng-show="payrollFilters.length == 0"></span>
+                                             <span ng-show="payrollFilters.length == 1" class="check-select">{{ payrollFilters[0] }}</span>
+                                             <span ng-show="payrollFilters.length > 1">
+                                             {{ payrollFilters[0]+' (+' + (payrollFilters.length-1) +')' }}
                                              </span>
-                                             <span class="ba-option-label">{{option}}</span>
+                                          </div>
+                                          <input type="hidden" class="ba-input-field-value" name="payrollFilters" id="payrollFilters"
+                                             ng-model="payrollFilters">
+                                          <div class="ba-multiselect-options layout-cell layout-scrollbar">
+                                             <div class="ba-option" ng-repeat="option in payrollOptions"
+                                                ng-click="toggleMultiSelect('payrollFilters', option )">
+                                                <span class="ba-checkbox"
+                                                   ng-class="{__checked : isChecked(option,'payrollOptions','payrollFilters')}">
+                                                </span>
+                                                <span class="ba-option-label">{{option}}</span>
+                                             </div>
+                                          </div>
+                                       </div>
+                                       <div class="ba-input-wrapper ba-multiselect">
+                                          <div class="ba-input-field" title="Reviews">
+                                             <span ng-show="reviewsFilters.length == 0"></span>
+                                             <span ng-show="reviewsFilters.length == 1" class="check-select">{{ reviewsFilters[0] }}</span>
+                                             <span ng-show="reviewsFilters.length > 1">
+                                             {{ reviewsFilters[0]+' (+' + (reviewsFilters.length-1) +')' }}
+                                             </span>
+                                          </div>
+                                          <input type="hidden" class="ba-input-field-value" name="reviewsFilters" id="reviewsFilters"
+                                             ng-model="reviewsFilters">
+                                          <div class="ba-multiselect-options layout-cell layout-scrollbar">
+                                             <div class="ba-option" ng-repeat="option in reviewsOptions"
+                                                ng-click="toggleMultiSelect('reviewsFilters', option )">
+                                                <span class="ba-checkbox"
+                                                   ng-class="{__checked : isChecked(option,'reviewsOptions','reviewsFilters')}">
+                                                </span>
+                                                <span class="ba-option-label">{{option}}</span>
+                                             </div>
                                           </div>
                                        </div>
                                     </div>
-                                 </div>
-                                 <div class="feild-3 feild">
-                                    <div class="ba-input-wrapper ba-multiselect">
-                                       <div class="ba-input-field" title="Messaging">
-                                          <span ng-show="messagingFilters.length == 0"></span>
-                                          <span ng-show="messagingFilters.length == 1" class="check-select">{{ messagingFilters[0] }}</span>
-                                          <span ng-show="messagingFilters.length > 1">
-                                          {{ messagingFilters[0]+' (+' + (messagingFilters.length-1) +')' }}
-                                          </span>
-                                       </div>
-                                       <input type="hidden" class="ba-input-field-value" name="messagingFilters" id="messagingFilters"
-                                          ng-model="messagingFilters">
-                                       <div class="ba-multiselect-options layout-cell layout-scrollbar">
-                                          <div class="ba-option" ng-repeat="option in messagingOptions"
-                                             ng-click="toggleMultiSelect('messagingFilters', option )">
-                                             <span class="ba-checkbox"
-                                                ng-class="{__checked : isChecked(option,'messagingOptions','messagingFilters')}">
+                                    <div class="feild-5 feild">
+                                       <div class="ba-input-wrapper ba-multiselect">
+                                          <div class="ba-input-field" title="Treatment">
+                                             <span ng-show="treatmentFilters.length == 0"></span>
+                                             <span ng-show="treatmentFilters.length == 1" class="check-select">{{ treatmentFilters[0] }}</span>
+                                             <span ng-show="treatmentFilters.length > 1">
+                                             {{ treatmentFilters[0]+' (+' + (treatmentFilters.length-1) +')' }}
                                              </span>
-                                             <span class="ba-option-label">{{option}}</span>
+                                          </div>
+                                          <input type="hidden" class="ba-input-field-value" name="treatmentFilters" id="treatmentFilters"
+                                             ng-model="treatmentFilters">
+                                          <div class="ba-multiselect-options layout-cell layout-scrollbar">
+                                             <div class="ba-option" ng-repeat="option in treatmentOptions"
+                                                ng-click="toggleMultiSelect('treatmentFilters', option )">
+                                                <span class="ba-checkbox"
+                                                   ng-class="{__checked : isChecked(option,'treatmentOptions','treatmentFilters')}">
+                                                </span>
+                                                <span class="ba-option-label">{{option}}</span>
+                                             </div>
+                                          </div>
+                                       </div>
+                                       <div class="ba-input-wrapper ba-multiselect">
+                                          <div class="ba-input-field" title="Virtual Terminal">
+                                             <span ng-show="virtualTerminalFilters.length == 0"></span>
+                                             <span ng-show="virtualTerminalFilters.length == 1" class="check-select">{{ virtualTerminalFilters[0] }}</span>
+                                             <span ng-show="virtualTerminalFilters.length > 1">
+                                             {{ virtualTerminalFilters[0]+' (+' + (virtualTerminalFilters.length-1) +')' }}
+                                             </span>
+                                          </div>
+                                          <input type="hidden" class="ba-input-field-value" name="virtualTerminalFilters" id="virtualTerminalFilters"
+                                             ng-model="virtualTerminalFilters">
+                                          <div class="ba-multiselect-options layout-cell layout-scrollbar">
+                                             <div class="ba-option" ng-repeat="option in virtualTerminalOptions"
+                                                ng-click="toggleMultiSelect('virtualTerminalFilters', option )">
+                                                <span class="ba-checkbox"
+                                                   ng-class="{__checked : isChecked(option,'virtualTerminalOptions','virtualTerminalFilters')}">
+                                                </span>
+                                                <span class="ba-option-label">{{option}}</span>
+                                             </div>
                                           </div>
                                        </div>
                                     </div>
-                                    <div class="ba-input-wrapper ba-multiselect">
-                                       <div class="ba-input-field" title="Payments">
-                                          <span ng-show="paymentsFilters.length == 0"></span>
-                                          <span ng-show="paymentsFilters.length == 1" class="check-select">{{ paymentsFilters[0] }}</span>
-                                          <span ng-show="paymentsFilters.length > 1">
-                                          {{ paymentsFilters[0]+' (+' + (paymentsFilters.length-1) +')' }}
-                                          </span>
-                                       </div>
-                                       <input type="hidden" class="ba-input-field-value" name="paymentsFilters" id="paymentsFilters"
-                                          ng-model="paymentsFilters">
-                                       <div class="ba-multiselect-options layout-cell layout-scrollbar">
-                                          <div class="ba-option" ng-repeat="option in paymentsOptions"
-                                             ng-click="toggleMultiSelect('paymentsFilters', option )">
-                                             <span class="ba-checkbox"
-                                                ng-class="{__checked : isChecked(option,'paymentsOptions','paymentsFilters')}">
-                                             </span>
-                                             <span class="ba-option-label">{{option}}</span>
-                                          </div>
+                                    <div class="cta-wrapper">
+                                       <a class="cta cta-white cancel">Cancel</a>
+                                       <a class="cta cta-blue saveContinue confirmCta">Confirm & Add User</a>
+                                       <div class="loader">
+                                          <svg version="1.1" id="loader-1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="40px" height="40px" viewBox="0 0 50 50" style="enable-background:new 0 0 50 50;" xml:space="preserve">
+                                             <path fill="#000" d="M43.935,25.145c0-10.318-8.364-18.683-18.683-18.683c-10.318,0-18.683,8.365-18.683,18.683h4.068c0-8.071,6.543-14.615,14.615-14.615c8.072,0,14.615,6.543,14.615,14.615H43.935z">
+                                                <animateTransform attributeType="xml" attributeName="transform" type="rotate" from="0 25 25" to="360 25 25" dur="0.6s" repeatCount="indefinite"></animateTransform>
+                                             </path>
+                                          </svg>
                                        </div>
                                     </div>
-                                 </div>
-                                 <div class="feild-4 feild">
-                                    <div class="ba-input-wrapper ba-multiselect">
-                                       <div class="ba-input-field" title="Payroll">
-                                          <span ng-show="payrollFilters.length == 0"></span>
-                                          <span ng-show="payrollFilters.length == 1" class="check-select">{{ payrollFilters[0] }}</span>
-                                          <span ng-show="payrollFilters.length > 1">
-                                          {{ payrollFilters[0]+' (+' + (payrollFilters.length-1) +')' }}
-                                          </span>
-                                       </div>
-                                       <input type="hidden" class="ba-input-field-value" name="payrollFilters" id="payrollFilters"
-                                          ng-model="payrollFilters">
-                                       <div class="ba-multiselect-options layout-cell layout-scrollbar">
-                                          <div class="ba-option" ng-repeat="option in payrollOptions"
-                                             ng-click="toggleMultiSelect('payrollFilters', option )">
-                                             <span class="ba-checkbox"
-                                                ng-class="{__checked : isChecked(option,'payrollOptions','payrollFilters')}">
-                                             </span>
-                                             <span class="ba-option-label">{{option}}</span>
-                                          </div>
-                                       </div>
-                                    </div>
-                                    <div class="ba-input-wrapper ba-multiselect">
-                                       <div class="ba-input-field" title="Reviews">
-                                          <span ng-show="reviewsFilters.length == 0"></span>
-                                          <span ng-show="reviewsFilters.length == 1" class="check-select">{{ reviewsFilters[0] }}</span>
-                                          <span ng-show="reviewsFilters.length > 1">
-                                          {{ reviewsFilters[0]+' (+' + (reviewsFilters.length-1) +')' }}
-                                          </span>
-                                       </div>
-                                       <input type="hidden" class="ba-input-field-value" name="reviewsFilters" id="reviewsFilters"
-                                          ng-model="reviewsFilters">
-                                       <div class="ba-multiselect-options layout-cell layout-scrollbar">
-                                          <div class="ba-option" ng-repeat="option in reviewsOptions"
-                                             ng-click="toggleMultiSelect('reviewsFilters', option )">
-                                             <span class="ba-checkbox"
-                                                ng-class="{__checked : isChecked(option,'reviewsOptions','reviewsFilters')}">
-                                             </span>
-                                             <span class="ba-option-label">{{option}}</span>
-                                          </div>
-                                       </div>
-                                    </div>
-                                 </div>
-                                 <div class="feild-5 feild">
-                                    <div class="ba-input-wrapper ba-multiselect">
-                                       <div class="ba-input-field" title="Treatment">
-                                          <span ng-show="treatmentFilters.length == 0"></span>
-                                          <span ng-show="treatmentFilters.length == 1" class="check-select">{{ treatmentFilters[0] }}</span>
-                                          <span ng-show="treatmentFilters.length > 1">
-                                          {{ treatmentFilters[0]+' (+' + (treatmentFilters.length-1) +')' }}
-                                          </span>
-                                       </div>
-                                       <input type="hidden" class="ba-input-field-value" name="treatmentFilters" id="treatmentFilters"
-                                          ng-model="treatmentFilters">
-                                       <div class="ba-multiselect-options layout-cell layout-scrollbar">
-                                          <div class="ba-option" ng-repeat="option in treatmentOptions"
-                                             ng-click="toggleMultiSelect('treatmentFilters', option )">
-                                             <span class="ba-checkbox"
-                                                ng-class="{__checked : isChecked(option,'treatmentOptions','treatmentFilters')}">
-                                             </span>
-                                             <span class="ba-option-label">{{option}}</span>
-                                          </div>
-                                       </div>
-                                    </div>
-                                    <div class="ba-input-wrapper ba-multiselect">
-                                       <div class="ba-input-field" title="Virtual Terminal">
-                                          <span ng-show="virtualTerminalFilters.length == 0"></span>
-                                          <span ng-show="virtualTerminalFilters.length == 1" class="check-select">{{ virtualTerminalFilters[0] }}</span>
-                                          <span ng-show="virtualTerminalFilters.length > 1">
-                                          {{ virtualTerminalFilters[0]+' (+' + (virtualTerminalFilters.length-1) +')' }}
-                                          </span>
-                                       </div>
-                                       <input type="hidden" class="ba-input-field-value" name="virtualTerminalFilters" id="virtualTerminalFilters"
-                                          ng-model="virtualTerminalFilters">
-                                       <div class="ba-multiselect-options layout-cell layout-scrollbar">
-                                          <div class="ba-option" ng-repeat="option in virtualTerminalOptions"
-                                             ng-click="toggleMultiSelect('virtualTerminalFilters', option )">
-                                             <span class="ba-checkbox"
-                                                ng-class="{__checked : isChecked(option,'virtualTerminalOptions','virtualTerminalFilters')}">
-                                             </span>
-                                             <span class="ba-option-label">{{option}}</span>
-                                          </div>
-                                       </div>
-                                    </div>
-                                 </div>
-                                 <div class="cta-wrapper">
-                                    <a class="cta cta-white cancel">Cancel</a>
-                                    <a class="cta cta-blue saveContinue confirmCta">Confirm & Add User</a>
-                                    <div class="loader">
-                                       <svg version="1.1" id="loader-1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="40px" height="40px" viewBox="0 0 50 50" style="enable-background:new 0 0 50 50;" xml:space="preserve">
-                                          <path fill="#000" d="M43.935,25.145c0-10.318-8.364-18.683-18.683-18.683c-10.318,0-18.683,8.365-18.683,18.683h4.068c0-8.071,6.543-14.615,14.615-14.615c8.072,0,14.615,6.543,14.615,14.615H43.935z">
-                                             <animateTransform attributeType="xml" attributeName="transform" type="rotate" from="0 25 25" to="360 25 25" dur="0.6s" repeatCount="indefinite"></animateTransform>
-                                          </path>
-                                       </svg>
-                                    </div>
-                                 </div>
-                              </form>
-                           </div>
+                                 </form>
+                              </div>
                            </div>
                         </div>
                         <!-- ==================================  Upload Image ========================== -->
@@ -1280,35 +1296,35 @@
                      <div class="modal-content">
                         <div class="edit-profile edit-user-group">
                            <div class="edit-profile-fixed-scroll">
-                           <div class="closeIcon">
-                              <img src="assets/img/cross.svg" alt="Cross">
-                           </div>
-                           <h1 class="profile-title">Edit User</h1>
-                           <div class="profile-group">
-                              <div class="profile-name">
-                                 <div class="img-p"><img src="assets/img/popup-edit.svg" alt="Profile Photo"></div>
-                                 <div class="profile-name-id">
-                                    <h5>Pedro Becker</h5>
-                                    <a href="pedrobecker@meetaxle.com">pedrobecker@meetaxle.com</a>
+                              <div class="closeIcon">
+                                 <img src="assets/img/cross.svg" alt="Cross">
+                              </div>
+                              <h1 class="profile-title">Edit User</h1>
+                              <div class="profile-group">
+                                 <div class="profile-name">
+                                    <div class="img-p"><img src="assets/img/popup-edit.svg" alt="Profile Photo"></div>
+                                    <div class="profile-name-id">
+                                       <h5>Pedro Becker</h5>
+                                       <a href="pedrobecker@meetaxle.com">pedrobecker@meetaxle.com</a>
+                                    </div>
+                                 </div>
+                                 <div class="edit-profile-drowpdown">
+                                    <ul class="drowpdown">
+                                       <li class="edit-menu">
+                                          <img src="assets/img/popup-droupdown-icon.svg" class="drowpdown-icon" alt="menu">
+                                          <ul>
+                                             <li class="remove-img">
+                                                <a href="#">Delete User</a>
+                                             </li>
+                                             <li class="upload-img">
+                                                <a href="#">Disable User</a>
+                                             </li>
+                                          </ul>
+                                       </li>
+                                    </ul>
                                  </div>
                               </div>
-                              <div class="edit-profile-drowpdown">
-                                 <ul class="drowpdown">
-                                    <li class="edit-menu">
-                                       <img src="assets/img/popup-droupdown-icon.svg" class="drowpdown-icon" alt="menu">
-                                       <ul>
-                                          <li class="remove-img">
-                                             <a href="#">Delete User</a>
-                                          </li>
-                                          <li class="upload-img">
-                                             <a href="#">Disable User</a>
-                                          </li>
-                                       </ul>
-                                    </li>
-                                 </ul>
-                              </div>
                            </div>
-                        </div>
                            <!-- ============================= Profile And Feature Access Tabber HTML ============================ -->
                            <div class="tabber-wrap blog-tabber edit-user-tabber">
                               <ul class="clearfix tabber-tabs">
@@ -1783,7 +1799,6 @@
       <!-- imports for app and controllers  -->
       <!-- app js for angular modulea -->
       <script src="./app/user.js" defer></script>
-      
       <!-- controllers  -->
       <!-- JS and JQuery from small interactions and logics  -->
       <script>
@@ -2083,10 +2098,10 @@
          
             document.body.removeChild(parent);
          });
-
+         
          $('.search-bar-dr .custom-patient').keyup(function(ele){
             ele.stopPropagation();
-            if($(this).val().length > 3){
+            if($(this).val().length > 1){
                $('#patientName').show();
             } else {
                $('#patientName').hide();
@@ -2096,7 +2111,7 @@
             ele.stopPropagation();
             $('#patientName').hide();
          })
-
+         
       </script>
    </body>
 </html>
