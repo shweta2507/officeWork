@@ -23,7 +23,7 @@
 	display: inline-block;
 }
 
-.tabber-wrap.blog-tabber ul li a {
+.tabber-wrap.blog-tabber > ul li a {
 	font-size: 12px;
 	line-height: 16px;
 	font-family: 'Eina-SemiBold';
@@ -34,7 +34,7 @@
 	display: inline-block;
 }
 
-.tabber-wrap.blog-tabber ul li.active a {
+.tabber-wrap.blog-tabber > ul li.active a {
 	background: #0ACADC 0% 0% no-repeat padding-box;
 	opacity: 1;
 	letter-spacing: 0px;
@@ -503,8 +503,23 @@ div#add-practice-popup .form-button a.for-btn.btn-blue:hover {
     border-color: #03D0E3 !important;
 }
 
-input.custom-file-input {
+.custom-file-inputl {
     pointer-events: none;
+}
+.custom-file-inputl::before {
+    content: 'Upload Image';
+    display: inline-block;
+    padding: 11px 22px;
+    outline: none;
+    white-space: nowrap;
+    -webkit-user-select: none;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 10pt;
+    border: 1px solid #343D56;
+    border-radius: 16px;
+    opacity: 1;
+    font-family: 'Eina-SemiBold';
 }
 
 .gernal-profile.custom-edit-pp.technical-information-group.active-technical {
@@ -524,4 +539,252 @@ div#add-practice-popup .form-button {
 #add-technical-group {
     max-height: initial;
     overflow: inherit;
+}
+
+.edit-profile.edit-practice {
+    height: 598px;
+    position: relative;
+    padding-left: 0;
+    padding-right: 10px;
+}
+
+.tabber-wrap.blog-tabber {
+    margin-top: 212px;
+    /* max-height: 221px; */
+    background-color: #fff;
+    margin-bottom: 0;
+}
+
+.tabber-content {
+    margin-top: 0;
+    border-top: 0;
+}
+
+.tabber-wrap.blog-tabber > ul {
+    padding-bottom: 24px;
+    top: 191px;
+}
+
+div#tab-1 .gernal-profile-form .form-button,
+div#tab-0 .gernal-profile-form .form-button {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 0px 40px 35px 40px;
+    background-color: #fff;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    padding-top: 10px;
+}
+
+.tabber-content {
+    max-height: 266px;
+}
+
+div#add-practice-popup .form-button {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 0px 40px 35px 40px;
+    background-color: #fff;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    padding-top: 10px;
+}
+
+/*
+
+div#add-practice-popup .form-button {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 0px 40px 35px 40px;
+    background-color: #fff;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    padding-top: 10px;
+}
+
+div#add-practice {
+    max-height: 598px;
+}
+
+.upload-scroll-fixed {
+    margin-top: 97px;
+    overflow-y: auto;
+    max-height: 332px;
+    margin-bottom: 52px;
+    padding: 0px 24px 0px 40px;
+}
+
+*/
+
+div#add-practice {
+    max-height: 598px;
+    padding: 32px 40px 35px 40px;
+}
+
+.adduser-wrapper-scroll-fixed {
+    position: static;
+    padding: 0;
+}
+
+.upload-scroll-fixed.layout-cell.layout-scrollbar {
+    margin-top: 0;
+    overflow-y: auto;
+    max-height: unset;
+    margin-bottom: 0;
+    padding: 0;
+}
+
+div#add-practice-popup .form-button {
+    position: relative;
+    padding: 0;
+}
+
+div#add-technical-group {
+    max-height: 598px;
+    padding: 32px 40px 35px 40px;
+}
+
+.gernal-profile-form .form-button {
+    position: relative;
+    padding: 0;
+}
+
+span#basic-log {
+    opacity: 1;
+    color: #363F57;
+}
+
+.form-field.custom-color-input.input-color1.custom-filled {
+    color: #363F57;
+    opacity: 1;
+}
+
+span#basic-log {
+    opacity: 1;
+    color: #363F57;
+}
+
+.form-field.custom-color-input.input-color1.custom-filled {
+    color: #363F57;
+    opacity: 1;
+}
+
+.sp-initial-disabled .sp-input-container {
+    display: none !important;
+}
+
+.sp-container {
+    width: 255px !important;
+    border-radius: 8px;
+}
+
+.sp-picker-container {
+    padding: 16px !important;
+}
+
+.sp-top.sp-cf {
+    margin: 0 !important;
+}
+
+.sp-top-inner .sp-hue {
+    left: 86%;
+}
+
+ul.email-provider-g {
+    display: block;
+}
+
+.form-field .form-option-wrapper.custom-filled label.form-label {
+    font-size: 11px;
+    line-height: 15px;
+    color: #363F57;
+    opacity: 0.5;
+    left: 12px;
+    top: 6px;
+    transition: all 0.2s ease;
+}
+
+.feature-access-wrapper > ul>li>span:not(.list-name),
+.adduser-wrapper > ul>li>span:not(.list-name) {
+	background: #EFF5F6 0% 0% no-repeat padding-box;
+	opacity: 1;
+	width: 38px;
+	height: 38px;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	border-radius: 100%;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	margin-right: 8px;
+	font-size: 16px;
+	line-height: 22px;
+	color: #343D56;
+	text-transform: uppercase;
+	font-weight: bold;
+	font-family: 'Eina-Bold';
+}
+
+.feature-access-wrapper > ul>li, .adduser-wrapper > ul > li {
+    list-style: none;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.feature-access-wrapper > ul>li:first-child, .adduser-wrapper > ul>li:first-child {
+    margin-right: 16px;
+}
+
+.feature-access-wrapper > ul > li > span:not(.list-name), .adduser-wrapper > ul>li>span:not(.list-name) {
+    background: #EFF5F6 0% 0% no-repeat padding-box;
+    opacity: 1;
+    width: 38px;
+    height: 38px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    border-radius: 100%;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    margin-right: 8px;
+    font-size: 16px;
+    line-height: 22px;
+    color: #343D56;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-family: 'Eina-Bold';
+}
+
+ul.email-provider-g li {
+    margin: 0 !important;
+}
+
+ul.email-provider-g li span {
+    width: auto !important;
+    display: inline-block !important;
+    background-color: transparent !important;
+    height: auto !important;
+    color: #343D56 !important;
+    font-size: 12px !important;
+    line-height: 16px !important;
+    font-family: 'Eina' !important;
+    text-transform: unset !important;
 }
