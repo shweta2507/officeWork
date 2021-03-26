@@ -851,3 +851,8 @@ textarea {
 .frequency-hours-group .form-field.custom-select.custom-filled.active {
     border: 2px solid #0ACADC;
 }
+
+#text-area-group .form-field:focus {
+    border: 2px solid #0ACADC;
+    outline: none;
+}
