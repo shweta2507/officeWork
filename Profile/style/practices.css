@@ -382,7 +382,21 @@ span#basic-log {
 	font-family: 'Eina-SemiBold';
 	left: 12px;
 }
-
+input.basiclog {
+    border: none !important;
+    position: absolute;
+    bottom: 0;
+    letter-spacing: 0px;
+    color: #363F57;
+    opacity: 1;
+    font-size: 13px;
+    top: 18px;
+    line-height: 18px;
+    font-family: 'Eina-SemiBold';
+    left: 12px;
+    z-index: 99;
+    background: transparent;
+}
 .sp-replacer.sp-active {
 	border: 2px solid #0ACADC !important;
 }

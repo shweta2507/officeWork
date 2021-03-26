@@ -1275,7 +1275,7 @@
                                                 </div>
                                                 <div class="form-field custom-color-input input-color1 custom-filled" id="input-color1">
                                                    <label for="state" class="form-label">Practice Color Scheme</label>
-                                                   <span id='basic-log'>#0ACADC</span>
+                                                   <input class="basic-log1 basiclog" type="text" value="#0ACADC">
                                                    <input type='text' class="custom-color" />
                                                 </div>
                                              </div>
@@ -1356,7 +1356,7 @@
                                                 </div>
                                                 <div class="form-field custom-color-input input-color2 custom-filled" id="input-color4">
                                                    <label for="state" class="form-label">Practice Color Scheme</label>
-                                                   <span id='basic-log'>#0ACADC</span>
+                                                   <input class="basic-log4 basiclog" type="text" value="#0ACADC">
                                                    <input type='text' class="custom-color" />
                                                 </div>
                                              </div>
@@ -1800,7 +1800,7 @@
                                        </div>
                                        <div class="form-field custom-color-input input-color1 custom-filled" id="input-color2">
                                           <label for="state" class="form-label">Practice Color Scheme</label>
-                                          <span id='basic-log'>#0ACADC</span>
+                                          <input class="basic-log2 basiclog" type="text" value="#0ACADC">
                                           <input type='text' class="custom-color" />
                                        </div>
                                     </div>
@@ -1881,7 +1881,7 @@
                                        </div>
                                        <div class="form-field custom-color-input input-color2 custom-filled" id="input-color3">
                                           <label for="state" class="form-label">Practice Color Scheme</label>
-                                          <span id='basic-log'>#0ACADC</span>
+                                          <input class="basic-log3 basiclog" type="text" value="#0ACADC">
                                           <input type='text' class="custom-color"/>
                                        </div>
                                     </div>
@@ -2178,7 +2178,7 @@
                preferredFormat: "hex",
                containerClassName: 'awesome',
                change: function(color) {
-                  $(".input-color1 #basic-log").text(color.toHexString());
+                  $(".basic-log1").val(color.toHexString());
                }
             });
             $("#input-color2 .custom-color").spectrum({
@@ -2189,7 +2189,7 @@
                preferredFormat: "hex",
                containerClassName: 'awesome2',
                change: function(color) {
-                  $(".input-color1 #basic-log").text(color.toHexString());
+                  $(".basic-log2").val(color.toHexString());
                }
             });
             $("#input-color3 .custom-color").spectrum({
@@ -2200,7 +2200,7 @@
                preferredFormat: "hex",
                containerClassName: 'awesome3',
                change: function(color) {
-                  $(".input-color1 #basic-log").text(color.toHexString());
+                  $(".basic-log3").val(color.toHexString());
                }
             });
             $("#input-color4 .custom-color").spectrum({
@@ -2211,7 +2211,7 @@
                preferredFormat: "hex",
                containerClassName: 'awesome4',
                change: function(color) {
-                  $(".input-color1 #basic-log").text(color.toHexString());
+                  $(".basic-log4").val(color.toHexString());
                }
             });
             $('.awesome .sp-val').click(function(){
@@ -2363,7 +2363,43 @@
                   });
                }         
                mailiddropdown ();            
-            
+               
+               var e = jQuery.Event("keydown", {
+                  keyCode: 13
+               });
+               $('.basic-log1').keyup(function(){
+                  var values = $(this).val();
+                  if(values.length === 7){
+                     $('.awesome input.sp-input').val(values).focus();
+                     $('.awesome input.sp-input').trigger(e);
+                  }
+               });
+               $('.basic-log2').keyup(function(){
+                  var values = $(this).val();
+                  if(values.length === 7){
+                     $('.awesome2 input.sp-input').val(values).focus();
+                     $('.awesome2 input.sp-input').trigger(e);
+                  }
+               });
+               $('.basic-log3').keyup(function(){
+                  var values = $(this).val();
+                  if(values.length === 7){
+                     $('.awesome3 input.sp-input').val(values).focus();
+                     $('.awesome3 input.sp-input').trigger(e);
+                  }
+               });
+               $('.basic-log4').keyup(function(){
+                  var values = $(this).val();
+                  if(values.length === 7){
+                     $('.awesome4 input.sp-input.focus-visible').val(values).focus();
+                     $('.awesome4 input.sp-input.focus-visible').trigger(e);
+                  }
+               });
+               $('.technical-information-form').click(function(ele){
+                  ele.stopPropagation();
+                  $('.sp-container').addClass('sp-hidden');
+                  $('.sp-replacer').removeClass('sp-active');
+               });
          });
       </script>
       <script>
