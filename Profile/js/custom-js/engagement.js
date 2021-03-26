@@ -129,3 +129,15 @@ $('#insert-variable-group ul#insert-variable > li').click(function(){
 $('#Confirmation-button a#button-cancel, .closeIcon').click(function(){
     $('#add-confirmation a.confirmation-link[data-target="#userModal"]')[0].click();
  });
+
+ $('#add-conf-popup #Confirmation-button .btn-blue').click(function(ele){
+    var $this = $(ele.currentTarget);
+    setTimeout(function(){
+       if($this.closest('.upload-img-wrapper').find('.show-error').length === 0){
+          $this.parent().addClass('show-loader');
+          setTimeout(function(){
+             $this.parent().removeClass('show-loader');
+          }, 3000);
+       }
+    }, 0);
+ });

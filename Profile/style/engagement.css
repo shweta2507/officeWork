@@ -840,3 +840,14 @@ span.error {
 textarea {
     resize: none;
   }
+
+  #Confirmation-button .loader {
+    right: 10px;
+}
+
+#insert-variable-group .group.group-4.active .form-field.custom-select,
+.frequency-days-group .form-field.custom-select.custom-filled.active, 
+.days-hours-group .form-field.custom-select.custom-filled.active,
+.frequency-hours-group .form-field.custom-select.custom-filled.active {
+    border: 2px solid #0ACADC;
+}
