@@ -933,7 +933,7 @@
                                                       <span class="error">Enter a valid city.</span>
                                                    </div>
                                                 </div>
-                                                <div class="form-field custom-filled">
+                                                <div class="form-field custom-filled state-label">
                                                    <label for="state" class="form-label">State</label>
                                                    <div class="custom-input">
                                                       <input type="state" class="form-control" id="inputState" name="state" value="Texas (TX)">
@@ -1449,11 +1449,11 @@
                                              <span class="error">Enter a valid city.</span>
                                           </div>
                                        </div>
-                                       <div class="form-field">
+                                       <div class="form-field state-lavel">
                                           <label for="state" class="form-label">State</label>
                                           <div class="custom-input">
-                                             <input type="state" class="form-control" id="inputState" name="state">
-                                             <div class="state-wrapper-group layout-cell layout-scrollbar" id="state-wrapper-group-1">
+                                             <input type="state" class="form-control" id="inputState1" name="state" value="">
+                                             <div class="state-wrapper-group layout-cell layout-scrollbar" id="state-wrapper-group-2">
                                           <ul id="state-name" class="state-name-droup-down">
                                              <li value="Alabama (AL)">
                                                 <div class="state-name-dd">
@@ -2077,8 +2077,8 @@
           
             $('.option-wrapper h4').click(function(ele){
                ele.stopPropagation();
-               $(this).next('.custom-dropdown').show();
-               $(this).addClass('active');
+               $(this).next('.custom-dropdown').toggle();
+               $(this).toggleClass('active');
             });
             $('.option-wrapper .custom-dropdown ul li').click(function(){
                var dataValue =  $(this).text().trim();
@@ -2432,6 +2432,76 @@
             setTimeout(() => {
                $('body').addClass('modal-open');  
             }, 2000);
+         });
+         $('#inputState').click(function(ele){
+            ele.stopPropagation();
+            $(this).next('#state-wrapper-group-1').show();
+            $(this).closest('.form-field').addClass('activeted');
+         });
+         $('#state-wrapper-group-1 > ul > li').click(function(ele){
+            ele.stopPropagation();
+            var currentVal = $(this).attr('value');
+            $(this).closest('.custom-input').find('#inputState').val(currentVal);
+            $(this).closest('#state-wrapper-group-1').hide();
+            $(this).closest('.form-field').removeClass('activeted');
+         });
+         jQuery("#inputState").keyup(function () {
+            var filter = jQuery(this).val();
+            jQuery("#state-wrapper-group-1 ul li").each(function () {
+               if (jQuery(this).text().trim().search(new RegExp(filter, "i")) < 0) {
+                     jQuery(this).hide();
+               } else {
+                     jQuery(this).show()
+               }
+            });
+         });
+         $('.gernal-profile-form').click(function(ele){
+            ele.stopPropagation();
+            $('#state-wrapper-group-1').hide();
+            $('.state-label').removeClass('activeted');
+         });
+
+
+         // Add Practice State js
+
+         $('#inputState1').click(function(ele){
+            ele.stopPropagation();
+            $(this).next('#state-wrapper-group-2').show();
+            $(this).closest('.form-field').addClass('activeted');
+         });
+         $('#state-wrapper-group-2 > ul > li').click(function(ele){
+            ele.stopPropagation();
+            var $this = $(ele.currentTarget);
+            var currentVal = $(this).attr('value');
+            $(this).closest('.custom-input').find('#inputState1').val(currentVal);
+            $(this).closest('#state-wrapper-group-2').hide();
+            $(this).closest('.form-field').removeClass('activeted');
+            setTimeout(() => {
+               if($('#inputState1').val().length > 0){
+                  $this.closest('.form-field').addClass('custom-filled');
+                  $this.closest('.form-field').removeClass('show-error');
+               }
+            }, 0);
+         });
+         jQuery("#inputState1").keyup(function () {
+            var filter = jQuery(this).val();
+            jQuery("#state-wrapper-group-2 ul li").each(function () {
+               if (jQuery(this).text().trim().search(new RegExp(filter, "i")) < 0) {
+                     jQuery(this).hide();
+               } else {
+                     jQuery(this).show()
+               }
+            });
+         });
+         $('.add-practice-profile-group').click(function(ele){
+            ele.stopPropagation();
+            $('#state-wrapper-group-2').hide();
+            $('.state-lavel').removeClass('activeted');
+         });
+         $('.custom-data-show').click(function(ele){
+            ele.stopPropagation();
+            $('.option-wrapper .custom-dropdown').hide();
+            $('.option-wrapper h4').removeClass('active');
          });
       </script>
    </body>

@@ -2022,8 +2022,8 @@
             });
             $('.option-wrapper h4').click(function(ele){
                ele.stopPropagation();
-               $(this).next('.custom-dropdown').show();
-               $(this).addClass('active');
+               $(this).next('.custom-dropdown').toggle();
+               $(this).toggleClass('active');
             });
             $('.option-wrapper .custom-dropdown ul li').click(function(){
                var dataValue =  $(this).text().trim();
@@ -2111,6 +2111,11 @@
             ele.stopPropagation();
             $('#patientName').hide();
          })
+         $('.custom-data-show').click(function(ele){
+            ele.stopPropagation();
+            $('.option-wrapper .custom-dropdown').hide();
+            $('.option-wrapper h4').removeClass('active');
+         });
          
       </script>
    </body>

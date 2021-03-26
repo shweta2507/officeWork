@@ -1,7 +1,7 @@
 #practice-name-group .form-field.custom-select {
     margin-bottom: 32px;
     width: 233px;
-    padding: 13px 16px 13px 16px;
+    padding: 13px 12px 13px 12px;
     font-size: 13px;
     line-height: 18px;
     letter-spacing: 0px;
@@ -271,6 +271,7 @@ div#add-reminders {
 }
 
 .days-hours-group .form-field:after,
+.frequency-days-group .form-field:after,
 #practice-name-group .form-field.custom-select:after {
     content: "";
     position: absolute;
@@ -363,7 +364,7 @@ div#add-reminders {
     max-width: 100%;
     margin-bottom: 0px;
     width: 233px;
-    padding: 13px 16px 13px 16px;
+    padding: 13px 12px 13px 12px;
     font-size: 13px;
     line-height: 18px;
     letter-spacing: 0px;
@@ -750,3 +751,92 @@ background-color: #343D560D;
 #Confirmation-button #add-confirmation-button:hover {
     background-color: #03D0E3;
 }
+
+#practice-name-group .form-field.custom-select.custom-filled label.form-label {
+    top: 6px;
+    left: 12px;
+    font-size: 11px;
+    line-height: 15px;
+}
+
+#practice-name-group .form-field.custom-select.active.custom-filled{
+    border: 2px solid #0ACADC;
+}
+
+.frequency-days-group .form-field.custom-select.active:after,
+#practice-name-group .form-field.custom-select.active.custom-filled:after {
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
+    margin-top: -3px;
+}
+
+span.error {
+    margin-top: 37px !important;
+    margin-left: -14px;
+}
+
+.form-field.custom-select.show-error {
+    background: #FF75961A !important;
+    border: 2px solid #FF7596 !important;
+    margin-bottom: 42px !important;
+}
+
+.days-hours-group .form-field.custom-select.active.custom-filled:after, 
+#practice-name-group .form-field.custom-select.active.custom-filled:after {
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
+    margin-top: -3px;
+}
+
+.frequency-hours-group .form-field.show-error, 
+.frequency-days-group .form-field.show-error, 
+.days-hours-group .form-field.show-error {
+    margin-bottom: 10px !important;
+}
+
+
+#add-confirmation {
+    display: none;
+}
+
+#features-group-all ul li.current {
+    border: 2px solid #0ACADC;
+    opacity: 1;
+}
+
+#add-confirmation.current,
+#add-hygiene.current,
+#add-reminders.current {
+    display: block;
+}
+
+#practice-name-group .form-field.custom-select.show-error label.form-label {
+    color: #FF7596;
+    opacity: 1;
+}
+#insert-variable-group > .active #insert-variable {
+    display: block !important;
+}
+
+#confirmation-insert-variable .form-field h3 {
+    margin: 0;
+    font-size: 13px;
+    line-height: 18px;
+    font-family: 'Eina-SemiBold';
+    letter-spacing: 0px;
+    color: #031926;
+}
+
+#insert-variable-group > .active .form-field:after {
+    -webkit-transform: rotate(
+180deg
+);
+    transform: rotate(
+180deg
+);
+    margin-top: -3px;
+}
+
+textarea {
+    resize: none;
+  }

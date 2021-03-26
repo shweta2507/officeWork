@@ -1391,7 +1391,7 @@ table.ba-table-widget tbody tr td:first-child {
 .custom-data-show {
 	position: absolute;
 	bottom: -71px;
-	z-index: 999;
+	z-index: 99;
 	cursor: pointer;
 	left: 0;
 	display: flex;
@@ -1413,6 +1413,7 @@ table.ba-table-widget tbody tr td:first-child {
 .option-wrapper {
 	position: relative;
 	margin-right: 16px;
+	outline: none !important;
 }
 
 .option-wrapper .custom-dropdown {

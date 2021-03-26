@@ -165,6 +165,7 @@ span.inactive img {
 	background: transparent;
 	position: relative;
 	background-color: #F3F4F43D;
+    cursor: pointer;
 }
 
 .form-field .form-option-wrapper .form-custom-dropdown {
@@ -397,6 +398,11 @@ input.basiclog {
     z-index: 99;
     background: transparent;
 }
+
+input.basiclog:focus {
+    background: transparent;
+}
+
 .sp-replacer.sp-active {
 	border: 2px solid #0ACADC !important;
 }
@@ -807,6 +813,7 @@ ul.email-provider-g li span {
     cursor: pointer;
 }
 
+/*
 #add-practice-popup div#state-wrapper-group-1 {
     position: absolute;
     top: 100%;
@@ -824,7 +831,7 @@ ul.email-provider-g li span {
     max-height: 250px;
     width: 158px;
     display: none;
-}
+}*/
 
 #add-practice-popup ul#state-name {
     display: block;
@@ -849,4 +856,124 @@ ul.email-provider-g li span {
 }
 .sp-val {
     border-radius: 4px !important;
+}
+
+#add-practice-popup ul#state-name li {
+    transition: all .5s;
+}
+
+#add-practice-popup ul#state-name li:hover {
+    background-color: rgb(243 244 246 / 50%);
+}
+
+div#state-wrapper-group-2,
+div#state-wrapper-group-1 {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    margin-top: 12px;
+    width: 100%;
+    max-height: 400px;
+    overflow-y: auto;
+    background: #ffffff 0% 0% no-repeat padding-box;
+    -webkit-box-shadow: 0px 16px 32px #343d5633;
+    box-shadow: 0px 16px 32px #343d5633;
+    border-radius: 8px;
+    padding: 8px;
+    z-index: 99;
+    max-height: 250px;
+    width: 158px;
+    display: none;
+}
+
+div#state-wrapper-group-2 ul,
+div#state-wrapper-group-1 ul {
+    display: block;
+}
+
+div#state-wrapper-group-2 ul li,
+div#state-wrapper-group-1 ul li {
+    padding: 10px 8px;
+    -webkit-transition: background 0.2s ease;
+    transition: background 0.2s ease;
+    border-radius: 8px;
+    cursor: pointer;
+    letter-spacing: 0px;
+    color: #343D56;
+    opacity: 1;
+    font-size: 12px;
+    line-height: 16px;
+    margin-right: 0 !important;
+    font-family: 'Eina';
+    transition: all 0.5s;
+    width: 100%;
+}
+
+div#state-wrapper-group-2 ul li:hover,
+div#state-wrapper-group-1 ul li:hover {
+    background-color: rgb(243 244 246 / 50%);
+}
+
+div#add-practice-popup .feild-3.feild .form-field.state-lavel:after,
+.form-field.custom-filled.state-label:after {
+    content: "";
+    position: absolute;
+    background-image: url(../assets/icons/common/chevron-down.svg);
+    padding: 0;
+    right: 16.5px;
+    -webkit-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+    -webkit-transform-origin: center;
+    transform-origin: center;
+    top: 24px;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    width: 8px;
+    height: 5px;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.form-field .form-option-wrapper h4 span.email-names {
+    font-family: 'Eina-SemiBold';
+}
+
+input.basiclog:focus {
+    background: transparent;
+}
+
+.sp-input-container.sp-cf {
+    display: none;
+}
+
+.sp-initial.sp-thumb.sp-cf {
+    display: none;
+}
+
+.sp-clear.sp-clear-display {
+    display: none !important;
+}
+
+.sp-clear-enabled .sp-hue {
+    top: 0px;
+    height: 100%;
+}
+
+.edit-profile.edit-practice #tab-1 .form-button .loader,
+.edit-profile.edit-practice #tab-0 .form-button .loader {
+    right: 40px;
+    top: 19px;
+}
+
+
+div#add-practice-popup .feild-3.feild .form-field.activeted.state-lavel:after, 
+.form-field.activeted.custom-filled.state-label:after {
+    -webkit-transform: rotate(
+        180deg
+        );
+            transform: rotate(
+        180deg
+        );
+            margin-top: -3px;
 }

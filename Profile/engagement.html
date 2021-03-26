@@ -23,7 +23,7 @@
       <script src="https://code.highcharts.com/highcharts.src.js" defer></script>
       <!-- custom select -->
       <script src="./js/custom-select/select.js" type="module"></script>
-      <script src="./js/custom-js/upload-photo.js" type="module"></script>
+      <script src="./js/custom-js/engagement.js" type="module"></script>
       <!-- Styles from old dashboard  -->
       <link rel="stylesheet" href="css2/bootstrap.min.css">
       <link rel="stylesheet" href="css2/font-awesome.css">
@@ -220,7 +220,6 @@
                               <div class="custom-input dropdown-field">
                                  <h3 class="selected data"></h3>
                                  <input type="hidden" class="form-control select" />
-                                 <span class="error">Select a practice name.</span>
                                  <ul id="cardName">
                                     <li value="Fox Creek - Longmont">Smile Teeth Dental</li>
                                     <li value="Fox Creek -Braxtin">Fox Creek -Braxtin</li>
@@ -231,6 +230,7 @@
                                     <li value="Virgina Dentistry">Virgina Dentistry</li>
                                  </ul>
                               </div>
+                              <span class="error">Select a practice name.</span>
                            </div>
                         </div>
                      </div>
@@ -254,7 +254,7 @@
                         <h4>Features</h4>
                         <!-- ======================= Features Name ================================= -->
                         <ul class="few-features" id="features-name">
-                           <li class="list-item confirmations-name" id="features-name feature-list">Confirmations</li>
+                           <li class="list-item confirmations-name current" id="features-name feature-list">Confirmations</li>
                            <li class="list-item hygiene-name" id="features-name-1 feature-list">Hygiene</li>
                            <li class="list-item reminders-name" id="features-name-2 feature-list">Reminders</li>
                         </ul>
@@ -264,13 +264,13 @@
                <!-- =======================  Engagement Right Box Group ================================= -->
                <div class="engagement-right-box" id="confirmations-details">
                   <!-- =======================  Confirmations Group ================================= -->
-                  <div class="confirmation-group group-tabber-open" id="add-confirmation">
+                  <div class="confirmation-group group-tabber-open current" id="add-confirmation">
                      <div class="confirmation-title" id="title-top">
                         <h2>Confirmations</h2>
                         <a href="#" class="confirmation-link" data-toggle="modal" data-target="#userModal"><span class="icon"></span><span class="title">Add Confirmation</span></a>
                      </div>
                      <div class="confirmation-fill" id="confirmation-fill-up">
-                        <div class="confirmation-fill-content" id="confirmation-conten">
+                        <div class="confirmation-fill-content layout-cell layout-scrollbar" id="confirmation-conten">
                            <div class="inner-content" id="inner-content-1">
                               <p class="inner-content-sub-head">Auto Invalid Response</p>
                               <h4 class="inner-content-head">Instant Reply</h4>
@@ -296,7 +296,7 @@
                         <a href="#" class="hygiene-link" data-toggle="modal" data-target="#userModal2"><span class="icon"></span><span class="title">Add Hygiene</span></a>
                      </div>
                      <div class="hygiene-fill" id="hygiene-fill-up">
-                        <div class="hygiene-fill-content" id="hygiene-conten">
+                        <div class="hygiene-fill-content layout-cell layout-scrollbar" id="hygiene-conten">
                            <div class="inner-content" id="inner-content-1">
                               <p class="inner-content-sub-head">Auto Invalid Response</p>
                               <h4 class="inner-content-head">Instant Reply</h4>
@@ -322,7 +322,7 @@
                         <a href="#" class="reminders-link" data-toggle="modal" data-target="#userModal3"><span class="icon"></span><span class="title">Add Reminders</span></a>
                      </div>
                      <div class="reminders-fill" id="reminders-fill-up">
-                        <div class="reminders-fill-content" id="reminders-conten">
+                        <div class="reminders-fill-content layout-cell layout-scrollbar" id="reminders-conten">
                            <div class="inner-content" id="inner-content-1">
                               <p class="inner-content-sub-head">Auto Invalid Response</p>
                               <h4 class="inner-content-head">Instant Reply</h4>
@@ -454,9 +454,9 @@
                            <div class="insert-variable-group" id="insert-variable-group">
                               <div class="group group-4">
                                  <div class="form-field custom-select">
-                                    <label for="name" class="form-label">Insert Variable</label>
+                                    <!--<label for="name" class="form-label">Insert Variable</label>-->
                                     <div class="custom-input dropdown-field">
-                                       <h3 class="selected data"></h3>
+                                       <h3 class="selected data">Insert Variable</h3>
                                        <input type="hidden" class="form-control select" autocomplete="off">
                                        <span class="error">Select a insert variable.</span>
                                        <ul id="insert-variable">
@@ -478,7 +478,7 @@
                                  <div class="form-field custom-select">
                                     <label for="name" class="form-label">Type your Message</label>
                                     <div class="custom-input">
-                                       <input type="textarea" class="form-control select">
+                                       <textarea type="text" class="form-control select"></textarea>
                                     </div>
                                  </div>
                               </div>
@@ -551,342 +551,7 @@
                   "lengthMenu": [[18, 36, 54, 72, 90, 108], [18, 36, 54, 72, 90, 108]]
             });
             $('.dataTables_length').addClass('bs-select');
-            $('.table-wrapper .dataTables_filter').addClass('show-search').appendTo('.top-gutter .search-bar');
-            
-            $(".form-control").on("blur input focus", function() {
-               var $field = $(this).closest(".form-field");
-               if (this.value) {
-                  $field.addClass("custom-filled");
-               } else {
-                  $field.removeClass("custom-filled");
-               }
-            });
-            $(".form-control").on("focus", function() {
-               var $field = $(this).closest(".form-field");
-               if (this) {
-                  $field.addClass("custom-filled");
-               } else {
-                  $field.removeClass("custom-filled");
-               }
-            });
-           
-            $(".dataTables_filter").addClass("custom-filled");
-            $(".search-bar #dtBasicExample_filter.custom-filled > label input[type=search]").attr('placeholder', 'Search');
-            $('.practice-profile .form-control:not(.no-required)').focusout(function(ele) {
-               setTimeout(function() {
-                  var $this = $(ele.currentTarget);
-                  if ($this.val() === '') {
-                        $this.closest('.form-field').addClass('show-error');
-                  } else {
-                        $this.closest('.form-field').removeClass('show-error');
-                  }
-               }, 100);
-            });
-            $('.technical-information .form-control:not(.no-required)').focusout(function(ele) {
-               setTimeout(function() {
-                  var $this = $(ele.currentTarget);
-                  if ($this.val() === '') {
-                        $this.closest('.form-field').addClass('show-error');
-                  } else {
-                        $this.closest('.form-field').removeClass('show-error');
-                  }
-               }, 100);
-            });
-            $('#add-practice-popup .form-control:not(.no-required)').focusout(function(ele) {
-               setTimeout(function() {
-                  var $this = $(ele.currentTarget);
-                  if ($this.val() === '') {
-                        $this.closest('.form-field').addClass('show-error');
-                  } else {
-                        $this.closest('.form-field').removeClass('show-error');
-                  }
-               }, 100);
-            });
-            $('#add-technical-form-group .form-control:not(.no-required)').focusout(function(ele) {
-               setTimeout(function() {
-                  var $this = $(ele.currentTarget);
-                  if ($this.val() === '') {
-                        $this.closest('.form-field').addClass('show-error');
-                  } else {
-                        $this.closest('.form-field').removeClass('show-error');
-                  }
-               }, 100);
-            });
-         
-            function checkInpuVal(){
-               $('.technical-information .form-control:not(.no-required)').each(function(i, ele){
-                  var $this = $(ele);
-                  if($this.val() === ''){
-                        $this.closest('.form-field').addClass('show-error');
-                  } else{
-                        $this.closest('.form-field').removeClass('show-error');
-                  }
-               });
-            }
-            function checkInpuVal2(){
-               $('.practice-profile .form-control:not(.no-required)').each(function(i, ele){
-                  var $this = $(ele);
-                  if($this.val() === ''){
-                        $this.closest('.form-field').addClass('show-error');
-                  } else{
-                        $this.closest('.form-field').removeClass('show-error');
-                  }
-               });
-            }
-            function checkInpuVal3(){
-               $('#add-practice-popup .form-control:not(.no-required)').each(function(i, ele){
-                  var $this = $(ele);
-                  if($this.val() === ''){
-                        $this.closest('.form-field').addClass('show-error');
-                  } else{
-                        $this.closest('.form-field').removeClass('show-error');
-                  }
-               });
-            }
-            function checkInpuVal4(){
-               $('#add-technical-form-group .form-control:not(.no-required)').each(function(i, ele){
-                  var $this = $(ele);
-                  if($this.val() === ''){
-                        $this.closest('.form-field').addClass('show-error');
-                  } else{
-                        $this.closest('.form-field').removeClass('show-error');
-                  }
-               });
-            }
-            $('#userModal .form-button .for-btn.for-btn-primary.cancel, #userModal .closeIcon').click(function(){
-               $('.users-page-content .table-wrapper tbody tr[data-target="#userModal"]')[0].click();
-            });
-            $('.users-page-content .table-wrapper tbody tr[data-target="#userModal"]').click(function(){
-               $('.form-field').removeClass('show-error');
-               $('.edit-profile.edit-practice').show();
-               $('.upload-img-wrapper').hide();
-            });
-          
-            $('.option-wrapper h4').click(function(ele){
-               ele.stopPropagation();
-               $(this).next('.custom-dropdown').show();
-               $(this).addClass('active');
-            });
-            $('.option-wrapper .custom-dropdown ul li').click(function(){
-               var dataValue =  $(this).text().trim();
-               $('.option-wrapper h4').text(dataValue);
-               $('div.dataTables_wrapper div.dataTables_length select[name="dtBasicExample_length"]').val(dataValue).change();
-               $(this).closest('.custom-dropdown').hide();
-               $(this).closest('.option-wrapper').find('h4').removeClass('active');
-            });
-            $('#userModal2 .form-button .for-btn.for-btn-primary.cancel, #userModal2 .closeIcon').click(function(){
-               $('.filters-colum .addpractices-button button.btn.btn-primary[data-target="#userModal2"]')[0].click();
-            });
-            $('.filters-colum .addpractices-button button.btn.btn-primary[data-target="#userModal2"]').click(function(){
-               $('.form-field').removeClass('show-error');
-               $('#add-practice').show();
-               $('#upload-add-practice').hide();
-               $('#add-technical-group').hide();
-            });
-          
-            
-            /* ========= Email Provider Js ============== */
-         
-            $('.technical-information-group.inactivate-technical .form-field .form-option-wrapper h4').click(function(ele){
-               ele.stopPropagation();
-               $(this).next('.technical-information-group.inactivate-technical .form-custom-dropdown').show();
-               $(this).addClass('active');
-            });
-            $('.technical-information-group.inactivate-technical .form-field .form-option-wrapper .form-custom-dropdown ul li').click(function(){
-               var dataValue =  $(this).text().trim();
-               $('.technical-information-group.inactivate-technical .form-field .form-option-wrapper h4').text(dataValue);
-               $(this).closest('.technical-information-group.inactivate-technical .form-custom-dropdown').hide();
-               $(this).closest('.technical-information-group.inactivate-technical .form-option-wrapper').find('h4').removeClass('active');
-            });
-         
-            $('.technical-information-group.active-technical .form-field .form-option-wrapper h4').click(function(ele){
-               ele.stopPropagation();
-               $(this).next('.technical-information-group.active-technical .form-custom-dropdown').show();
-               $(this).addClass('active');
-            });
-            $('.technical-information-group.active-technical .form-field .form-option-wrapper .form-custom-dropdown ul li').click(function(){
-               var dataValue =  $(this).find('span').text().trim();
-               var dataImg =  $(this).find('img').attr('src');
-               $('.technical-information-group.active-technical .form-field .form-option-wrapper h4 > span').text(dataValue);
-               $('.technical-information-group.active-technical .form-field .form-option-wrapper h4 > img').attr('src', dataImg)
-               $(this).closest('.technical-information-group.active-technical .form-custom-dropdown').hide();
-               $(this).closest('.technical-information-group.active-technical .form-option-wrapper').find('h4').removeClass('active');
-            });
-            
-            // Add partices Form
-            $('#add-technical-group .technical-information-group.inactivate-technical .form-field .form-option-wrapper h4').click(function(ele){
-               ele.stopPropagation();
-               $(this).next('.technical-information-group.inactivate-technical .form-custom-dropdown').show();
-               $(this).addClass('active');
-            });
-            $('#add-technical-group .technical-information-group.inactivate-technical .form-field .form-option-wrapper .form-custom-dropdown ul li').click(function(){
-               var dataValue =  $(this).text().trim();
-               $('.technical-information-group.inactivate-technical .form-field .form-option-wrapper h4').text(dataValue);
-               $(this).closest('.technical-information-group.inactivate-technical .form-custom-dropdown').hide();
-               $(this).closest('.technical-information-group.inactivate-technical .form-option-wrapper').find('h4').removeClass('active');
-            });
-         
-            $('#add-technical-group .technical-information-group.active-technical .form-field .form-option-wrapper h4').click(function(ele){
-               ele.stopPropagation();
-               $(this).next('.technical-information-group.active-technical .form-custom-dropdown').show();
-               $(this).addClass('active');
-            });
-            $('#add-technical-group .technical-information-group.active-technical .form-field .form-option-wrapper .form-custom-dropdown ul li').click(function(){
-               var dataValue =  $(this).find('span').text().trim();
-               var dataImg =  $(this).find('img').attr('src');
-               $('#add-technical-group .technical-information-group.active-technical .form-field .form-option-wrapper h4 > span').text(dataValue);
-               $('#add-technical-group .technical-information-group.active-technical .form-field .form-option-wrapper h4 > img').attr('src', dataImg)
-               $(this).closest('.technical-information-group.active-technical .form-custom-dropdown').hide();
-               $(this).closest('.technical-information-group.active-technical .form-option-wrapper').find('h4').removeClass('active');
-            });
-         
-         
-            $(function(){
-               $(".tab-pane").not(".active").hide();
-               $('.tabber-content .tab-pane').each(function(i,el){
-               $(el).attr("id","tab-"+i);});
-               $(".tabber-tabs a").each(function(i,el){
-               $(el).attr("href","#tab-"+i);
-               var ID=$(el).attr("href");
-               $(this).click(function(e){
-               e.preventDefault();
-               if(!$(this).parent().hasClass("active")){
-               $(this).parent().addClass("active").siblings().removeClass("active");
-               $(ID).fadeIn().siblings().hide();}});});
-            });
-            $('.edit-profile-drowpdown>ul>li.edit-menu img.drowpdown-icon').click(function(ele){
-               ele.stopPropagation();
-               $(this).next('ul').show();
-            });
-            $('.edit-profile-drowpdown>ul>li.edit-menu ul li').click(function(ele){
-               ele.stopPropagation();
-               $(this).parent('ul').hide();
-            });
-            $('.modal-content').click(function(ele){
-               ele.stopPropagation();
-               $('.edit-profile-drowpdown>ul>li.edit-menu ul').hide();
-            });    
-         
-            $('.edit-profile-drowpdown>ul>li>ul>li.upload-img').click(function() {
-               $('.edit-profile').hide();
-               $('.upload-img-wrapper').show();
-            });
-            $('.upload-img-wrapper .form-button .btn-blue').click(function(ele){
-               var $this = $(ele.currentTarget);
-               setTimeout(function(){
-                  if($this.closest('.upload-img-wrapper').find('.show-error').length === 0){
-                     $this.parent().addClass('show-loader');
-                     setTimeout(function(){
-                        $this.parent().removeClass('show-loader');
-                     }, 3000);
-                  }
-               }, 0);
-            });
-            $('.practice-profile .custom-edit-pp .gernal-profile-form .form-button .btn-blue').click(function(ele){
-               var $this = $(ele.currentTarget);
-               checkInpuVal2();
-               setTimeout(function(){
-                  if($this.closest('.practice-profile').find('.show-error').length === 0){
-                     $this.parent().addClass('show-loader');
-                     setTimeout(function(){
-                        $this.parent().removeClass('show-loader');
-                     }, 3000);
-                  }
-               }, 0);
-            });
-            $('.technical-information .custom-edit-pp .gernal-profile-form .form-button .btn-blue').click(function(ele){
-               var $this = $(ele.currentTarget);
-               checkInpuVal();
-               setTimeout(function(){
-                  if($this.closest('.technical-information').find('.show-error').length === 0){
-                     $this.parent().addClass('show-loader');
-                     setTimeout(function(){
-                        $this.parent().removeClass('show-loader');
-                     }, 3000);
-                  }
-               }, 0);
-            });
-            $(document).on('click', 'ul.pagination li > a', function() {
-               $('html, body').animate({
-                  scrollTop: $('.body-container').offset().top
-               }, 500);
-            });
-            $(".custom-color").spectrum({
-               color: "#0ACADC",
-               showInput: true,
-               preferredFormat: "hex",
-               change: function(color) {
-                  $(".input-color1 #basic-log").text(color.toHexString());
-               }
-            });
-            $("#custom2").spectrum({
-               change: function(color) {
-                  $("#basic-log2").text(color.toHexString());
-               },
-               color: "#0ACADC",
-            });
-            $('.sp-val').click(function(){
-               $('.sp-container button.sp-choose')[0].click();
-            });
-            
-            // ========== Add Popup forword JS =================
-            $('#add-practice-popup .form-button .btn-blue').click(function(ele){
-                  var $this = $(ele.currentTarget);
-                  checkInpuVal3();
-                  setTimeout(function(){
-                     if($this.closest('#add-practice-popup').find('.show-error').length === 0){
-                        $this.parent().addClass('show-loader');
-                        setTimeout(function(){
-                           $this.parent().removeClass('show-loader');
-                           $('.adduser-wrapper').hide();
-                           $('.feature-access-wrapper').show();
-                        }, 3000);
-                     }
-                  }, 0);
-               });
-            $('#add-technical-form-group .form-button .btn-blue').click(function(ele){
-               var $this = $(ele.currentTarget);
-               checkInpuVal4();
-               setTimeout(function(){
-                  if($this.closest('#add-technical-form-group').find('.show-error').length === 0){
-                     $this.parent().addClass('show-loader');
-                     setTimeout(function(){
-                        $this.parent().removeClass('show-loader');
-                        $('.adduser-wrapper').hide();
-                        $('.feature-access-wrapper').show();
-                     }, 3000);
-                  }
-               }, 0);
-            });
-            $('#userModal .inactivate-technical .btn-blue').click(function(ele){
-               var $this = $(ele.currentTarget);
-               checkInpuVal4();
-               setTimeout(function(){
-                  if($this.closest('#userModal .inactivate-technical').find('.show-error').length === 0){
-                     $this.parent().addClass('show-loader');
-                     setTimeout(function(){
-                        $this.parent().removeClass('show-loader');
-                     }, 3000);
-                  }
-               }, 0);
-            });
-             // =======================  Upload button click function ====================
-             $('.upload-section .uploadImg').click(function( ele) {
-               ele.stopPropagation();
-               ele.preventDefault();
-               $('#add-practice').hide();
-               $('#upload-add-practice').show();
-            });
-            $('.upload-img-wrapper .btn-blue').click(function(ele){
-               var $this = $(ele.currentTarget);
-               setTimeout(function(){
-                  $this.parent().addClass('show-loader');
-                  setTimeout(function(){
-                     $this.parent().removeClass('show-loader');
-                  }, 3000);
-            }, 0);
-            });
-            
+            $('.table-wrapper .dataTables_filter').addClass('show-search').appendTo('.top-gutter .search-bar');            
          });
       </script>
    </body>
