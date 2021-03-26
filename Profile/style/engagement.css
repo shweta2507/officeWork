@@ -1,8 +1,5 @@
-div#practice-name-group .form-field.custom-select {
+#practice-name-group .form-field.custom-select {
     margin-bottom: 32px;
-    border: 1px solid #EAEBEE;
-    border-radius: 6px;
-    opacity: 1;
     width: 233px;
     padding: 13px 16px 13px 16px;
     font-size: 13px;
@@ -11,68 +8,273 @@ div#practice-name-group .form-field.custom-select {
     color: #363F57;
     font-family: 'Eina02-semibold';
     height: 45px;
-    background: transparent;
     position: relative;
     cursor: pointer;
     flex: 0 0 100%;
     max-width: 100%;
-}
-
-div#practice-name-group .form-field.custom-select label.form-label {
-    text-align: left;
-    font-size: 13px;
-    letter-spacing: 0px;
-    color: #363F57;
-    opacity: 0.5;
-    line-height: 18px;
-    position: absolute;
-    left: 16px;
-    top: 13px;
-    font-family: "Eina02-regular", sans-serif;
-    left: 16px;
-    top: 12px;
-}
-
-div#practice-name-group h3.selected.data {
-    font-family: 'Eina02-semibold' , sans-serif;
-    letter-spacing: 0px;
-    color: #363F57;
+    background: #F3F4F43D 0% 0% no-repeat padding-box;
+    border: 1px solid #EAEBEE;
+    border-radius: 6px;
     opacity: 1;
-    font-size: 13px;
-    line-height: 18px;
-    margin: 8px 0 0;
 }
 
-div#practice-name-group ul#cardName {
-    padding: 9px;
-    background: #fff;
-    position: absolute;
-    z-index: 999;
-    width: 100%;
-    margin: 6px 0 0;
-    box-shadow: 0px 16px 32px #343d5633;
-    border-radius: 8px;
+#practice-name-group .form-field.custom-select label.form-label {
+	text-align: left;
+	font-size: 13px;
+	letter-spacing: 0px;
+	color: #363F57;
+	opacity: 0.5;
+	line-height: 18px;
+	position: absolute;
+	left: 16px;
+	top: 13px;
+	font-family: "Eina02-regular", sans-serif;
+	left: 16px;
+	top: 12px;
+}
+
+#practice-name-group h3.selected.data {
+	font-family: 'Eina02-semibold', sans-serif;
+	letter-spacing: 0px;
+	color: #363F57;
+	opacity: 1;
+	font-size: 13px;
+	line-height: 18px;
+	margin: 8px 0 0;
+}
+
+#practice-name-group ul#cardName {
+	padding: 9px;
+	background: #fff;
+	position: absolute;
+	z-index: 999;
+	width: 100%;
+	margin: 6px 0 0;
+	box-shadow: 0px 16px 32px #343d5633;
+	border-radius: 8px;
+	display: none;
+	list-style: none;
+	top: 45px;
+	left: 0;
+}
+
+#practice-name-group ul#cardName li {
+	cursor: pointer;
+	padding: 10px 8px;
+	letter-spacing: 0px;
+	color: #343D56;
+	font-size: 12px;
+	line-height: 16px;
+	font-family: "Eina02-regular", sans-serif;
+	border-radius: 8px;
+}
+
+#all-information {
+	padding: 32px 40px 32px 48px;
+	border-bottom: 1px solid #F3F4F6;
+	opacity: 1;
+}
+
+#custom-engagement-group-wrapper {
+	border-right: 1px solid #F3F4F6;
+	opacity: 1;
+}
+
+#run-time-group h6,
+#features-group-all h4,
+#title-top h2 {
+	margin: 0;
+	letter-spacing: 0px;
+	color: #031926;
+	opacity: 1;
+	font-size: 20px;
+	line-height: 27px;
+	font-family: 'Eina-Bold';
+	margin-bottom: 24px;
+}
+
+div#run-timer-box {
+	background: #FFFFFF 0% 0% no-repeat padding-box;
+	box-shadow: 0px 16px 24px #343D561A;
+	border: 1px solid #343D560B;
+	border-radius: 8px;
+	opacity: 1;
+	padding: 32px 40px 35px 40px;
+	width: 327px;
+}
+
+ul#time-zone-d {
+	list-style: none;
+	display: flex;
+	justify-content: space-around;
+}
+
+ul#time-zone-d li {}
+
+ul#time-zone-d li span#start-time-zone,
+ul#time-zone-d li span#end-time-zone {
+	letter-spacing: 0px;
+	color: #363F57;
+	opacity: 0.5;
+	font-size: 13px;
+	line-height: 18px;
+	font-family: 'Eina';
+	display: block;
+	margin-bottom: 8px;
+}
+
+ul#time-zone-d li span#time-display-hr,
+ul#time-zone-d li span#time-display-hrs {
+	letter-spacing: 0px;
+	color: #363F57;
+	opacity: 1;
+	font-size: 16px;
+	line-height: 22px;
+	font-family: 'Eina-Bold';
+	display: block;
+}
+
+.ba-main {
+	height: 100%;
+}
+
+.body-container {
+	height: 100%;
+}
+
+#custom-engagement {
+	display: flex;
+}
+
+#all-informationgroup2 {
+	padding: 32px 40px 32px 48px;
+}
+
+#features-group-all ul li {
+	list-style: none;
+	margin-bottom: 24px;
+	width: 100%;
+	padding: 32px 40px 32px 40px;
+	background: #FFFFFF 0% 0% no-repeat padding-box;
+	box-shadow: 0px 16px 24px #343D561A;
+	border: 1px solid #343D560B;
+	border-radius: 8px;
+	letter-spacing: 0px;
+	color: #031926;
+	opacity: 1;
+	font-size: 20px;
+	line-height: 27px;
+	font-family: 'Eina-Bold';
+	display: block;
+	cursor: pointer;
+}
+
+#features-group-all ul {
+	list-style: none;
+}
+
+#confirmations-details {
+	padding: 109px 40px 40px 40px;
+}
+
+#title-top {
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 24px;
+	align-items: center;
+}
+
+#hygiene-fill-up,
+#reminders-fill-up,
+#confirmation-fill-up {
+	width: 394px;
+	background: #FFFFFF 0% 0% no-repeat padding-box;
+	box-shadow: 0px 16px 24px #343D561A;
+	border: 1px solid #343D560B;
+	border-radius: 8px;
+	opacity: 1;
+	padding: 0 16px;
+	padding: 8px 16px;
+	min-height: 623px;
+}
+
+#title-top a {
+	letter-spacing: 0px;
+	color: #0ACADC;
+	opacity: 1;
+	font-size: 13px;
+	line-height: 28px;
+	font-family: 'Eina-SemiBold';
+}
+
+#title-top h2 {
+	margin-bottom: 0 !important;
+}
+
+p.inner-content-sub-head {
+	margin: 0;
+	letter-spacing: 0px;
+	color: #363F57;
+	opacity: 1;
+	font-size: 13px;
+	line-height: 18px;
+	font-family: 'Eina';
+}
+
+h4.inner-content-head {
+	letter-spacing: 0px;
+	color: #031926;
+	opacity: 1;
+	margin: 0;
+	margin-top: 2px;
+	font-size: 16px;
+	line-height: 22px;
+	font-family: 'Eina-SemiBold';
+	margin-bottom: 16px;
+}
+
+a.inner-content-link {
+	display: inline-block;
+	letter-spacing: 0px;
+	color: #363F57;
+	opacity: 0.5;
+	font-size: 13px;
+	line-height: 18px;
+	font-family: 'Eina';
+}
+
+.inner-content {
+	border-radius: 30px;
+	cursor: pointer;
+	padding: 24px;
+	min-height: 142px;
+    transition: all 0.5s;
+}
+
+.inner-content:hover {
+	background: rgb(243 244 246 / 50%) 0% 0% no-repeat padding-box;
+}
+
+.inner-content-text {
+	display: inline-block;
+	letter-spacing: 0px;
+	color: #363F57;
+	opacity: 1;
+	font-size: 13px;
+	line-height: 18px;
+	font-family: 'Eina';
+}
+
+div#add-hygiene, 
+div#add-reminders {
     display: none;
-    list-style: none;
-    top: 45px;
-    left: 0;
 }
 
-div#practice-name-group ul#cardName li {
-    cursor: pointer;
-    padding: 10px 8px;
-    letter-spacing: 0px;
-    color: #343D56;
-    font-size: 12px;
-    line-height: 16px;
-    font-family: "Eina02-regular", sans-serif;
-    border-radius: 8px;
-}
-
-div#practice-name-group .form-field.custom-select:after {
+.days-hours-group .form-field:after,
+#practice-name-group .form-field.custom-select:after {
     content: "";
     position: absolute;
-    background-image: url(../img/dropdown-arrow.svg);
+    background-image: url(../assets/icons/common/chevron-down.svg);
     padding: 0;
     right: 16.5px;
     -webkit-transition: all 0.4s ease;
@@ -89,132 +291,7 @@ div#practice-name-group .form-field.custom-select:after {
     background-repeat: no-repeat;
 }
 
-div#all-information {
-    padding: 32px 40px 32px 48px;
-    border-bottom: 1px solid #F3F4F6;
-    opacity: 1;
-}
-
-div#custom-engagement-group-wrapper {
-    border-right: 1px solid #F3F4F6;
-    opacity: 1;
-}
-
-div#run-time-group h6, 
-div#features-group-all h4,
-div#title-top h2 {
-    margin: 0;
-    letter-spacing: 0px;
-    color: #031926;
-    opacity: 1;
-    font-size: 20px;
-    line-height: 27px;
-    font-family: 'Eina-Bold';
-    margin-bottom: 24px;
-}
-
-div#run-timer-box {
-    background: #FFFFFF 0% 0% no-repeat padding-box;
-    box-shadow: 0px 16px 24px #343D561A;
-    border: 1px solid #343D560B;
-    border-radius: 8px;
-    opacity: 1;
-    padding: 32px 40px 35px 40px;
-    width: 327px;
-}
-
-ul#time-zone-d {
-    list-style: none;
-    display: flex;
-    justify-content: space-around;
-}
-
-ul#time-zone-d li {
-}
-
-ul#time-zone-d li span#start-time-zone, 
-ul#time-zone-d li span#end-time-zone {
-    letter-spacing: 0px;
-    color: #363F57;
-    opacity: 0.5;
-    font-size: 13px;
-    line-height: 18px;
-    font-family: 'Eina';
-    display: block;
-    margin-bottom: 8px;
-}
-
-ul#time-zone-d li span#time-display-hr, 
-ul#time-zone-d li span#time-display-hrs {
-    letter-spacing: 0px;
-    color: #363F57;
-    opacity: 1;
-    font-size: 16px;
-    line-height: 22px;
-    font-family: 'Eina-Bold';
-    display: block;
-}
-
-.ba-main {
-    height: 100%;
-}
-
-.body-container {
-    height: 100%;
-}
-
-div#custom-engagement {
-    display: flex;
-}
-
-div#all-informationgroup2 {
-    padding: 32px 40px 32px 48px;
-}
-
-div#features-group-all ul li {
-    list-style: none;
-    margin-bottom: 24px;
-    width: 100%;
-    padding: 32px 40px 32px 40px;
-    background: #FFFFFF 0% 0% no-repeat padding-box;
-    box-shadow: 0px 16px 24px #343D561A;
-    border: 1px solid #343D560B;
-    border-radius: 8px;
-    letter-spacing: 0px;
-    color: #031926;
-    opacity: 1;
-    font-size: 20px;
-    line-height: 27px;
-    font-family: 'Eina-Bold';
-    display: block;
-}
-
-div#features-group-all ul {
-    list-style: none;
-}
-
-div#confirmations-details {
-    padding: 109px 40px 40px 40px;
-}
-
-div#title-top {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 24px;
-    align-items: center;
-}
-
-div#confirmation-fill-up {
-    width: 394px;
-    background: #FFFFFF 0% 0% no-repeat padding-box;
-    box-shadow: 0px 16px 24px #343D561A;
-    border: 1px solid #343D560B;
-    border-radius: 8px;
-    opacity: 1;
-}
-
-div#title-top a {
-    letter-spacing: 0px;
+#title-top a .title {
     color: #0ACADC;
     opacity: 1;
     font-size: 13px;
@@ -222,6 +299,454 @@ div#title-top a {
     font-family: 'Eina-SemiBold';
 }
 
-div#title-top h2 {
-    margin-bottom: 0;
+#time-button a#change-timebb {
+    border: 1px solid #343D56;
+    border-radius: 8px;
+    opacity: 1;
+    display: flex;
+    letter-spacing: 0px;
+    color: #031926;
+    font-size: 14px;
+    line-height: 20px;
+    font-family: 'Eina-SemiBold';
+    text-align: center;
+    min-height: 40px;
+    justify-content: center;
+    align-items: center;
+}
+
+#time-button {
+    margin-top: 32px;
+}
+
+#add-conf-popup {
+    padding: 32px 40px 35px 40px;
+    position: relative;
+}
+
+.popup-header h1 {
+    margin: 0;
+    letter-spacing: 0px;
+    color: #031926;
+    opacity: 1;
+    font-size: 20px;
+    line-height: 27px;
+    font-family: 'Eina-Bold';
+}
+
+#confirmation-header-popup {
+    margin-bottom: 32px;
+}
+
+.confirmation-droupdown-group {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 24px;
+}
+
+.days-hours-group {
+    width: 255px;
+}
+
+.frequency-dayshours-group {
+    width: 255px;
+}
+
+.frequency-dayshours-group .frequency-hours-group {
+    display: none;
+}
+
+.frequency-hours-group .form-field,
+.frequency-days-group .form-field,
+.days-hours-group .form-field {
+    flex: 0 0 100%;
+    max-width: 100%;
+    margin-bottom: 0px;
+    width: 233px;
+    padding: 13px 16px 13px 16px;
+    font-size: 13px;
+    line-height: 18px;
+    letter-spacing: 0px;
+    color: #363F57;
+    font-family: 'Eina02-semibold';
+    height: 45px;
+    position: relative;
+    cursor: pointer;
+    flex: 0 0 100%;
+    max-width: 100%;
+    background: #F3F4F43D 0% 0% no-repeat padding-box;
+    border: 1px solid #EAEBEE;
+    border-radius: 6px;
+    opacity: 1;
+}
+
+.frequency-hours-group .form-field label,
+.frequency-days-group .form-field label,
+.days-hours-group .form-field label {
+    text-align: left;
+    font-size: 13px;
+    letter-spacing: 0px;
+    color: #363F57;
+    opacity: 0.5;
+    line-height: 18px;
+    position: absolute;
+    left: 16px;
+    top: 13px;
+    font-family: "Eina02-regular", sans-serif;
+    left: 16px;
+    top: 12px;
+}
+
+.frequency-hours-group .custom-input h3.selected.data,
+.frequency-days-group .custom-input h3.selected.data,
+.days-hours-group .custom-input h3.selected.data {
+    font-family: 'Eina02-semibold', sans-serif;
+    letter-spacing: 0px;
+    color: #363F57;
+    opacity: 1;
+    font-size: 13px;
+    line-height: 18px;
+    margin: 8px 0 0;
+}
+
+.frequency-hours-group .form-field ul#hours-1,
+.frequency-days-group .form-field ul#days,
+.days-hours-group .form-field ul#days-hours {
+    padding: 9px;
+    background: #fff;
+    position: absolute;
+    z-index: 999;
+    width: 100%;
+    margin: 6px 0 0;
+    box-shadow: 0px 16px 32px #343d5633;
+    border-radius: 8px;
+    display: none; 
+    list-style: none;
+    top: 45px;
+    left: 0;
+}
+
+.frequency-hours-group .form-field ul#hours-1 li,
+.frequency-days-group .form-field ul#days li,
+.days-hours-group .form-field ul#days-hours li {
+    cursor: pointer;
+    padding: 10px 8px;
+    letter-spacing: 0px;
+    color: #343D56;
+    font-size: 12px;
+    line-height: 16px;
+    font-family: "Eina02-regular", sans-serif;
+    border-radius: 8px;
+    transition: all 0.5s;
+}
+
+.frequency-hours-group .form-field ul#hours-1:hover,
+.frequency-days-group .form-field ul#days li:hover,
+#practice-name-group ul#cardName li:hover, 
+.days-hours-group .form-field ul#days-hours li:hover {
+    background: rgb(243 244 246 / 50%) 0% 0% no-repeat padding-box;
+}
+
+.frequency-days-group .form-field ul#days {
+    max-height: 250px;
+    overflow-y: auto;
+}
+
+#confirmation-insert-variable .form-field {
+    margin-bottom: 0px;
+    width: 178px;
+    padding: 11px 24px 11px 24px;
+    font-size: 13px;
+    line-height: 18px;
+    letter-spacing: 0px;
+    color: #363F57;
+    font-family: 'Eina02-semibold';
+    height: 40px;
+    position: relative;
+    cursor: pointer;
+    flex: 0 0 100%;
+    max-width: 100%;
+    background: #F3F4F43D 0% 0% no-repeat padding-box;
+    opacity: 1;
+    border: 1px solid #343D56;
+    border-radius: 16px;
+}
+
+#confirmation-insert-variable .form-field label {
+    text-align: left;
+    font-size: 13px;
+    line-height: 18px;
+    position: absolute;
+    font-family: 'Eina-SemiBold';
+    left: 24px;
+    top: 11px;
+    letter-spacing: 0px;
+    color: #031926;
+    opacity: 1;
+}
+
+#confirmation-insert-variable .form-field h3 {
+    font-family: 'Eina02-semibold', sans-serif;
+    letter-spacing: 0px;
+    color: #363F57;
+    opacity: 1;
+    font-size: 13px;
+    line-height: 18px;
+    margin: 8px 0 0;
+}
+
+#confirmation-insert-variable .form-field ul#insert-variable {
+    padding: 9px;
+    background: #fff;
+    position: absolute;
+    z-index: 999;
+    width: 100%;
+    margin: 6px 0 0;
+    box-shadow: 0px 16px 32px #343d5633;
+    border-radius: 8px;
+    display: none;
+    list-style: none;
+    top: 45px;
+    left: 0;
+}
+
+#confirmation-insert-variable .form-field ul#insert-variable li {
+    cursor: pointer;
+    padding: 10px 8px;
+    letter-spacing: 0px;
+    color: #343D56;
+    font-size: 12px;
+    line-height: 16px;
+    font-family: "Eina02-regular", sans-serif;
+    border-radius: 8px;
+    transition: all 0.5s;
+}
+
+#confirmation-insert-variable .form-field ul#insert-variable li:hover {
+    background: rgb(243 244 246 / 50%) 0% 0% no-repeat padding-box;
+}
+
+#confirmation-insert-variable .form-field:after {
+    content: "";
+    position: absolute;
+    background-image: url(../assets/icons/common/chevron-down.svg);
+    padding: 0;
+    right: 16.5px;
+    -webkit-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+    -webkit-transform-origin: center;
+    transform-origin: center;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    width: 8px;
+    height: 5px;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#insert-variable-group {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+}
+
+#confirmation-insert-variable {
+    margin-bottom: 16px;
+}
+
+#confirmation-insert-variable .form-field {
+    margin-bottom: 0px;
+    width: 178px;
+    padding: 11px 24px 11px 24px;
+    font-size: 13px;
+    line-height: 18px;
+    letter-spacing: 0px;
+    color: #363F57;
+    font-family: 'Eina02-semibold';
+    height: 40px;
+    position: relative;
+    cursor: pointer;
+    flex: 0 0 100%;
+    max-width: 100%;
+    background: #F3F4F43D 0% 0% no-repeat padding-box;
+    opacity: 1;
+    border: 1px solid #343D56;
+    border-radius: 16px;
+}
+
+#confirmation-insert-variable .form-field label {
+    text-align: left;
+    font-size: 13px;
+    line-height: 18px;
+    position: absolute;
+    font-family: 'Eina-SemiBold';
+    left: 24px;
+    top: 11px;
+    letter-spacing: 0px;
+    color: #031926;
+    opacity: 1;
+}
+
+#confirmation-insert-variable .form-field h3 {
+    font-family: 'Eina02-semibold', sans-serif;
+    letter-spacing: 0px;
+    color: #363F57;
+    opacity: 1;
+    font-size: 13px;
+    line-height: 18px;
+    margin: 8px 0 0;
+}
+
+#confirmation-insert-variable .form-field ul#insert-variable {
+    padding: 9px;
+    background: #fff;
+    position: absolute;
+    z-index: 999;
+    width: 100%;
+    margin: 6px 0 0;
+    box-shadow: 0px 16px 32px #343d5633;
+    border-radius: 8px;
+    display: none;
+    list-style: none;
+    top: 45px;
+    left: 0;
+}
+
+#confirmation-insert-variable .form-field ul#insert-variable li {
+    cursor: pointer;
+    padding: 10px 8px;
+    letter-spacing: 0px;
+    color: #343D56;
+    font-size: 12px;
+    line-height: 16px;
+    font-family: "Eina02-regular", sans-serif;
+    border-radius: 8px;
+    transition: all 0.5s;
+}
+
+#confirmation-insert-variable .form-field ul#insert-variable li:hover {
+    background: rgb(243 244 246 / 50%) 0% 0% no-repeat padding-box;
+}
+
+#confirmation-insert-variable .form-field:after {
+    content: "";
+    position: absolute;
+    background-image: url(../assets/icons/common/chevron-down.svg);
+    padding: 0;
+    right: 16.5px;
+    -webkit-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+    -webkit-transform-origin: center;
+    transform-origin: center;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    width: 8px;
+    height: 5px;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.group.group-4 {
+}
+
+#insert-variable-group {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+}
+
+#confirmation-form-textarea {
+    margin-bottom: 32px;
+}
+
+#text-area-group .form-field {
+    margin-bottom: 0px;
+    width: 100%;
+    padding: 33px 16px 13px 16px;
+    font-size: 13px;
+    line-height: 18px;
+    letter-spacing: 0px;
+    color: #363F57;
+    font-family: 'Eina02-semibold';
+    height: 45px;
+    position: relative;
+    cursor: pointer;
+    flex: 0 0 100%;
+    max-width: 100%;
+    background: #F3F4F43D 0% 0% no-repeat padding-box;
+    border: 1px solid #EAEBEE;
+    border-radius: 6px;
+    opacity: 1;
+    min-height: 155px;
+}
+
+#text-area-group .form-field .form-control.select {
+    background-color: transparent;
+    border: none;
+    min-height: 107px;
+    padding: 0;
+    width: 100%;
+    height: auto;
+}
+
+#text-area-group .form-field label {
+    text-align: left;
+    font-size: 13px;
+    letter-spacing: 0px;
+    color: #363F57;
+    opacity: 0.5;
+    line-height: 18px;
+    position: absolute;
+    left: 16px;
+    top: 13px;
+    font-family: "Eina02-regular", sans-serif;
+    left: 16px;
+    top: 12px;
+}
+
+#Confirmation-button #button-cancel {
+    border: 1px solid #343D56;
+    border-radius: 8px;
+    padding: 11px 32px 12px 32px;
+    letter-spacing: 0px;
+    color: #031926;
+    opacity: 1;
+    font-size: 14px;
+    line-height: 20px;
+    font-family: 'Eina-SemiBold';
+    display: inline-block;
+    margin-right: 13px;
+    transition: all .5s;
+}
+
+#Confirmation-button #add-confirmation-button {
+    background: #03C6D8 0% 0% no-repeat padding-box;
+    border-radius: 8px;
+    opacity: 1;
+    padding: 12px 32px 13px 32px;
+    display: inline-block;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+    font-size: 14px;
+    line-height: 20px;
+    font-family: 'Eina-SemiBold';
+    transition: all .5s;
+}
+
+#Confirmation-button #button-cancel:hover{
+background-color: #343D560D;
+}
+
+#Confirmation-button #add-confirmation-button:hover {
+    background-color: #03D0E3;
 }

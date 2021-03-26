@@ -242,6 +242,9 @@
                               <li class="time-update" id="time-update"><span class="start-time" id="start-time-zone">Start Time</span><span class="time-display" id="time-display-hr">12:00 AM CST</span></li>
                               <li class="time-update time-update-2" id="time-update-two"><span class="end-time" id="end-time-zone">Start Time</span><span class="time-display-s" id="time-display-hrs">12:00 AM CST</span></li>
                            </ul>
+                           <div class="change-time-button" id="time-button">
+                              <a href="#" id="change-timebb">Change Time</a>
+                           </div>
                         </div>
                      </div>
                   </div>
@@ -258,16 +261,239 @@
                      </div>
                   </div>
                </div>
-               <!-- ======================= Confirmations Group ================================= -->
+               <!-- =======================  Engagement Right Box Group ================================= -->
                <div class="engagement-right-box" id="confirmations-details">
-                  <div class="confirmation-group" id="add-confirmation">
+                  <!-- =======================  Confirmations Group ================================= -->
+                  <div class="confirmation-group group-tabber-open" id="add-confirmation">
                      <div class="confirmation-title" id="title-top">
                         <h2>Confirmations</h2>
-                        <a href="#" class="confirmation-link"><span class="icon"></span><span class="title">Add Confirmation</span></a>
+                        <a href="#" class="confirmation-link" data-toggle="modal" data-target="#userModal"><span class="icon"></span><span class="title">Add Confirmation</span></a>
                      </div>
                      <div class="confirmation-fill" id="confirmation-fill-up">
                         <div class="confirmation-fill-content" id="confirmation-conten">
-
+                           <div class="inner-content" id="inner-content-1">
+                              <p class="inner-content-sub-head">Auto Invalid Response</p>
+                              <h4 class="inner-content-head">Instant Reply</h4>
+                              <a href="#" class="inner-content-link">Click to add response.</a>
+                           </div>
+                           <div class="inner-content" id="inner-content-2">
+                              <p class="inner-content-sub-head">Auto Response to Reschedule</p>
+                              <h4 class="inner-content-head">Instant Reply</h4>
+                              <a href="#" class="inner-content-link">Click to add response.</a>
+                           </div>
+                           <div class="inner-content" id="inner-content-3">
+                              <p class="inner-content-sub-head">Auto Initial Text</p>
+                              <h4 class="inner-content-head">1 day(s) before at 9:00 AM</h4>
+                              <span class="inner-content-text">Hello (FirstName), you have an appointment on (Appt) with (PracticeName), Reply C to confirm.</span>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <!-- =======================  Hygiene Group ================================= -->
+                  <div class="hygiene-group group-tabber-open" id="add-hygiene">
+                     <div class="hygiene-title" id="title-top">
+                        <h2>Hygiene</h2>
+                        <a href="#" class="hygiene-link" data-toggle="modal" data-target="#userModal2"><span class="icon"></span><span class="title">Add Hygiene</span></a>
+                     </div>
+                     <div class="hygiene-fill" id="hygiene-fill-up">
+                        <div class="hygiene-fill-content" id="hygiene-conten">
+                           <div class="inner-content" id="inner-content-1">
+                              <p class="inner-content-sub-head">Auto Invalid Response</p>
+                              <h4 class="inner-content-head">Instant Reply</h4>
+                              <a href="#" class="inner-content-link">Click to add response.</a>
+                           </div>
+                           <div class="inner-content" id="inner-content-2">
+                              <p class="inner-content-sub-head">Auto Response to Reschedule</p>
+                              <h4 class="inner-content-head">Instant Reply</h4>
+                              <a href="#" class="inner-content-link">Click to add response.</a>
+                           </div>
+                           <div class="inner-content" id="inner-content-3">
+                              <p class="inner-content-sub-head">Auto Initial Text</p>
+                              <h4 class="inner-content-head">1 day(s) before at 9:00 AM</h4>
+                              <span class="inner-content-text">Hello (FirstName), you have an appointment on (Appt) with (PracticeName), Reply C to confirm.</span>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <!-- =======================  Reminders Group ================================= -->
+                  <div class="reminders-group group-tabber-open" id="add-reminders">
+                     <div class="confirmation-title" id="title-top">
+                        <h2>Reminders</h2>
+                        <a href="#" class="reminders-link" data-toggle="modal" data-target="#userModal3"><span class="icon"></span><span class="title">Add Reminders</span></a>
+                     </div>
+                     <div class="reminders-fill" id="reminders-fill-up">
+                        <div class="reminders-fill-content" id="reminders-conten">
+                           <div class="inner-content" id="inner-content-1">
+                              <p class="inner-content-sub-head">Auto Invalid Response</p>
+                              <h4 class="inner-content-head">Instant Reply</h4>
+                              <a href="#" class="inner-content-link">Click to add response.</a>
+                           </div>
+                           <div class="inner-content" id="inner-content-2">
+                              <p class="inner-content-sub-head">Auto Response to Reschedule</p>
+                              <h4 class="inner-content-head">Instant Reply</h4>
+                              <a href="#" class="inner-content-link">Click to add response.</a>
+                           </div>
+                           <div class="inner-content" id="inner-content-3">
+                              <p class="inner-content-sub-head">Auto Initial Text</p>
+                              <h4 class="inner-content-head">1 day(s) before at 9:00 AM</h4>
+                              <span class="inner-content-text">Hello (FirstName), you have an appointment on (Appt) with (PracticeName), Reply C to confirm.</span>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <!-- ========================== Add Confirmation PopUp ============================ -->
+            <div class="modal fade" id="userModal" tabindex="-1" role="dialog" aria-labelledby="userModalLabel" aria-hidden="true">
+               <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                     <div class="add-confirmation-popUp popup-1-module-group" id="add-conf-popup">
+                        <!-- ========================== Add Confirmation PopUp Header ============================ -->
+                        <div class="popup-header confirmation-popup-header" id="confirmation-header-popup">
+                           <!-- ========================== Add Confirmation PopUp Close Icon ============================ -->
+                           <div class="closeIcon">
+                              <img src="assets/img/cross.svg" alt="Cross">
+                           </div>
+                           <!-- ========================== Add Confirmation PopUp Title ============================ -->
+                           <h1>Add Confirmation</h1>
+                        </div>
+                        <!-- ========================== Add Confirmation Form Days or Hours and Frequency ============================ -->
+                        <div class="popup-header-droupdown confirmation-droupdown-group" id="confirmation-droupdown-popup">
+                           <!-- ========================== Add Confirmation Days or Hours Droupdown ============================ -->
+                           <div class="days-hours-group" id="days-hours-group">
+                              <div class="group group-1">
+                                 <div class="form-field custom-select">
+                                    <label for="name" class="form-label">Days or Hours</label>
+                                    <div class="custom-input dropdown-field">
+                                       <h3 class="selected data"></h3>
+                                       <input type="hidden" class="form-control select" autocomplete="off">
+                                       <span class="error">Select a days or hours.</span>
+                                       <ul id="days-hours">
+                                          <li value="Days">Days</li>
+                                          <li value="Hours">Hours</li>
+                                       </ul>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                           <!-- ========================== Add Confirmation Frequency Days Droupdown ============================ -->
+                           <div class="frequency-dayshours-group" id="frequency-dayshours-group">
+                              <!-- ========================== Add Confirmation Frequency Days Droupdown ============================ -->
+                              <div class="frequency-days-group" id="frequency-days-group">
+                                 <div class="group group-2">
+                                    <div class="form-field custom-select">
+                                       <label for="name" class="form-label">Frequency</label>
+                                       <div class="custom-input dropdown-field">
+                                          <h3 class="selected data"></h3>
+                                          <input type="hidden" class="form-control select" autocomplete="off">
+                                          <span class="error">Select a valid frequency.</span>
+                                          <ul id="days">
+                                             <li value="1 day(s)">1 day(s)</li>
+                                             <li value="2 day(s)">2 day(s)</li>
+                                             <li value="3 day(s)">3 day(s)</li>
+                                             <li value="4 day(s)">4 day(s)</li>
+                                             <li value="5 day(s)">5 day(s)</li>
+                                             <li value="6 day(s)">6 day(s)</li>
+                                             <li value="7 day(s)">7 day(s)</li>
+                                             <li value="8 day(s)">8 day(s)</li>
+                                             <li value="9 day(s)">9 day(s)</li>
+                                             <li value="10 day(s)">10 day(s)</li>
+                                             <li value="11 day(s)">11 day(s)</li>
+                                             <li value="12 day(s)">12 day(s)</li>
+                                             <li value="13 day(s)">13 day(s)</li>
+                                             <li value="14 day(s)">14 day(s)</li>
+                                             <li value="15 day(s)">15 day(s)</li>
+                                             <li value="16 day(s)">16 day(s)</li>
+                                             <li value="17 day(s)">17 day(s)</li>
+                                             <li value="18 day(s)">18 day(s)</li>
+                                             <li value="19 day(s)">19 day(s)</li>
+                                             <li value="20 day(s)">20 day(s)</li>
+                                             <li value="21 day(s)">21 day(s)</li>
+                                             <li value="22 day(s)">22 day(s)</li>
+                                             <li value="23 day(s)">23 day(s)</li>
+                                             <li value="24 day(s)">24 day(s)</li>
+                                             <li value="25 day(s)">25 day(s)</li>
+                                             <li value="26 day(s)">26 day(s)</li>
+                                             <li value="27 day(s)">27 day(s)</li>
+                                             <li value="28 day(s)">28 day(s)</li>
+                                             <li value="29 day(s)">29 day(s)</li>
+                                             <li value="30 day(s)">30 day(s)</li>
+                                          </ul>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                              <!-- ========================== Add Confirmation Frequency Hours Droupdown ============================ -->
+                              <div class="frequency-hours-group" id="frequency-hours-group">
+                                 <div class="group group-3">
+                                    <div class="form-field custom-select">
+                                       <label for="name" class="form-label">Frequency</label>
+                                       <div class="custom-input dropdown-field">
+                                          <h3 class="selected data"></h3>
+                                          <input type="hidden" class="form-control select" autocomplete="off">
+                                          <span class="error">Select a valid frequency.</span>
+                                          <ul id="hours-1">
+                                             <li value="1 day(s)">1 day(s)</li>
+                                             <li value="2 day(s)">2 day(s)</li>
+                                             <li value="3 day(s)">3 day(s)</li>
+                                             <li value="4 day(s)">4 day(s)</li>
+                                             <li value="5 day(s)">5 day(s)</li>
+                                             <li value="6 day(s)">6 day(s)</li>
+                                             <li value="7 day(s)">7 day(s)</li>
+                                             <li value="8 day(s)">8 day(s)</li>
+                                             <li value="9 day(s)">9 day(s)</li>
+                                          </ul>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <!-- ========================== Add Confirmation Form Insert Variable Droupdown ============================ -->
+                        <div class="popup-insert-variable confirmation-droupdown-variable" id="confirmation-insert-variable">
+                           <div class="insert-variable-group" id="insert-variable-group">
+                              <div class="group group-4">
+                                 <div class="form-field custom-select">
+                                    <label for="name" class="form-label">Insert Variable</label>
+                                    <div class="custom-input dropdown-field">
+                                       <h3 class="selected data"></h3>
+                                       <input type="hidden" class="form-control select" autocomplete="off">
+                                       <span class="error">Select a insert variable.</span>
+                                       <ul id="insert-variable">
+                                          <li value="*Appt Date*">*Appt Date*</li>
+                                          <li value="*Patient First Name*">*Patient First Name*</li>
+                                          <li value="*Patient Full Name*">*Patient Full Name*</li>
+                                          <li value="*Practice Name*">*Practice Name*</li>
+                                          <li value="*Practice Phone Number*">*Practice Phone Number*</li>
+                                       </ul>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <!-- ========================== Add Confirmation Form Textarea ============================ -->
+                        <div class="popup-form-textarea confirmation-textarea-group" id="confirmation-form-textarea">
+                           <div class="textarea-group" id="text-area-group">
+                              <div class="group group-5">
+                                 <div class="form-field custom-select">
+                                    <label for="name" class="form-label">Type your Message</label>
+                                    <div class="custom-input">
+                                       <input type="textarea" class="form-control select">
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <!-- ========================== Add Confirmation Form Button ============================ -->
+                        <div class="form-button" id="Confirmation-button">
+                           <a href="#" class="for-btn for-btn-primary cancel" id="button-cancel">Cancel</a>
+                           <a href="#" class="for-btn for-btn-primary btn-blue" id="add-confirmation-button">Add Confirmation</a>
+                           <div class="loader">
+                              <svg version="1.1" id="loader-1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="40px" height="40px" viewBox="0 0 50 50" style="enable-background:new 0 0 50 50;" xml:space="preserve">
+                                 <path fill="#000" d="M43.935,25.145c0-10.318-8.364-18.683-18.683-18.683c-10.318,0-18.683,8.365-18.683,18.683h4.068c0-8.071,6.543-14.615,14.615-14.615c8.072,0,14.615,6.543,14.615,14.615H43.935z">
+                                    <animateTransform attributeType="xml" attributeName="transform" type="rotate" from="0 25 25" to="360 25 25" dur="0.6s" repeatCount="indefinite"></animateTransform>
+                                 </path>
+                              </svg>
                            </div>
                         </div>
                      </div>
