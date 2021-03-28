@@ -41,7 +41,7 @@
       <link rel="stylesheet" href="css2/style.css">
       <link rel="stylesheet" href="css2/responsive.css">
       <link rel="stylesheet" href="css2/color-style.css">
-      <link rel="stylesheet" href="css2/spectrum.css">
+      <link rel="stylesheet" href="./style/colorplate.css">
       <link href="NewCSS/masterpage.css" rel="stylesheet">
       <link href="NewCSS/page.css" rel="stylesheet">
       <link href="./style-dashboard/sb-admin.css" rel="stylesheet">
@@ -54,7 +54,7 @@
       <!-- Favicon -->
       <link rel="icon" type="image/x-icon" href="./assets/img/favicon.svg">
       <script src="./js/custom-js/upload-photo.js"></script>
-      <script src="./js/custom-js/spectrum.js"></script>
+      <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/spectrum-colorpicker2/dist/spectrum.min.css">
    </head>
    <body ng-app="axleApp" class="user-page practice-page layout-cell layout-scrollbar">
       <!-- side navbar start-->
@@ -1275,8 +1275,7 @@
                                                 </div>
                                                 <div class="form-field custom-color-input input-color1 custom-filled" id="input-color1">
                                                    <label for="state" class="form-label">Practice Color Scheme</label>
-                                                   <input class="basic-log1 basiclog" type="text" value="#0ACADC">
-                                                   <input type='text' class="custom-color" />
+                                                   <input type='text' class="custom-color" value="#0ACADC"/>
                                                 </div>
                                              </div>
                                              <div class="online-payment-option">
@@ -1354,10 +1353,9 @@
                                                       <span class="error">Enter a Phone number.</span>
                                                    </div>
                                                 </div>
-                                                <div class="form-field custom-color-input input-color2 custom-filled" id="input-color4">
+                                                <div class="form-field custom-color-input input-color2 custom-filled" id="input-color2">
                                                    <label for="state" class="form-label">Practice Color Scheme</label>
-                                                   <input class="basic-log4 basiclog" type="text" value="#0ACADC">
-                                                   <input type='text' class="custom-color" />
+                                                   <input type='text' class="custom-color" value="#0ACADC"/>
                                                 </div>
                                              </div>
                                              <div class="online-payment-option">
@@ -1798,10 +1796,9 @@
                                              <span class="error">Enter a Phone number.</span>
                                           </div>
                                        </div>
-                                       <div class="form-field custom-color-input input-color1 custom-filled" id="input-color2">
+                                       <div class="form-field custom-color-input input-color1 custom-filled" id="input-color4">
                                           <label for="state" class="form-label">Practice Color Scheme</label>
-                                          <input class="basic-log2 basiclog" type="text" value="#0ACADC">
-                                          <input type='text' class="custom-color" />
+                                          <input type='text' class="custom-color" value="#0ACADC"/>
                                        </div>
                                     </div>
                                     <div class="online-payment-option">
@@ -1881,8 +1878,7 @@
                                        </div>
                                        <div class="form-field custom-color-input input-color2 custom-filled" id="input-color3">
                                           <label for="state" class="form-label">Practice Color Scheme</label>
-                                          <input class="basic-log3 basiclog" type="text" value="#0ACADC">
-                                          <input type='text' class="custom-color"/>
+                                          <input type='text' class="custom-color" value="#0ACADC"/>
                                        </div>
                                     </div>
                                     <div class="online-payment-option">
@@ -1917,7 +1913,9 @@
       </main>
       <!-- imports for app and controllers  -->
       <!-- app js for angular modulea -->
+      <script src="https://cdn.jsdelivr.net/npm/spectrum-colorpicker2/dist/spectrum.min.js"></script>
       <script src="./app/practices.js" defer></script>
+      
       <!-- controllers  -->
       <!-- JS and JQuery from small interactions and logics  -->
       <script>
@@ -2214,18 +2212,18 @@
                   $(".basic-log4").val(color.toHexString());
                }
             });
-            $('.awesome .sp-val').click(function(){
-               $('.awesome.sp-container button.sp-choose')[0].click();
-            });
-            $('.awesome2 .sp-val').click(function(){
-               $('.awesome2.sp-container button.sp-choose')[0].click();
-            });
-            $('.awesome3 .sp-val').click(function(){
-               $('.awesome3.sp-container button.sp-choose')[0].click();
-            });
-            $('.awesome4 .sp-val').click(function(){
-               $('.awesome4.sp-container button.sp-choose')[0].click();
-            });
+            // $('.awesome .sp-val').click(function(){
+            //    $('.awesome.sp-container button.sp-choose')[0].click();
+            // });
+            // $('.awesome2 .sp-val').click(function(){
+            //    $('.awesome2.sp-container button.sp-choose')[0].click();
+            // });
+            // $('.awesome3 .sp-val').click(function(){
+            //    $('.awesome3.sp-container button.sp-choose')[0].click();
+            // });
+            // $('.awesome4 .sp-val').click(function(){
+            //    $('.awesome4.sp-container button.sp-choose')[0].click();
+            // });
             
             // ========== Add Popup forword JS =================
             $('#add-practice-popup .form-button .btn-blue').click(function(ele){
@@ -2281,7 +2279,7 @@
             function mailiddropdown() {
                $('#add-technical-info .form-field .form-option-wrapper h4').click(function(ele){
                   ele.stopPropagation();
-                  $(this).next('#add-technical-info .form-custom-dropdown').show();
+                  $(this).next('#add-technical-info .form-custom-dropdown').toggle();
                   $(this).addClass('active');
                   $(this).parent().addClass('custom-filled');
                });
@@ -2302,7 +2300,7 @@
             
                   $('#add-inactive-p .form-field .form-option-wrapper h4').click(function(ele){
                      ele.stopPropagation();
-                     $(this).next('.technical-information-group.active-technical .form-custom-dropdown').show();
+                     $(this).next('.technical-information-group.active-technical .form-custom-dropdown').toggle();
                      $(this).addClass('active');
                      $(this).parent().addClass('custom-filled');
                   });
@@ -2324,7 +2322,7 @@
                   // Add partices Form
                   $('.technical-information.tab-pane .technical-information-group.inactivate-technical .form-field .form-option-wrapper h4').click(function(ele){
                      ele.stopPropagation();
-                     $(this).next('.technical-information-group.inactivate-technical .form-custom-dropdown').show();
+                     $(this).next('.technical-information-group.inactivate-technical .form-custom-dropdown').toggle();
                      $(this).addClass('active');
                   });
                   $('.technical-information.tab-pane .technical-information-group.inactivate-technical .form-field .form-option-wrapper .form-custom-dropdown ul li').click(function(){
@@ -2339,7 +2337,7 @@
                
                   $('.technical-information.tab-pane .technical-information-group.active-technical .form-field .form-option-wrapper h4').click(function(ele){
                      ele.stopPropagation();
-                     $(this).next('.technical-information.tab-pane .technical-information-group.active-technical .form-custom-dropdown').show();
+                     $(this).next('.technical-information.tab-pane .technical-information-group.active-technical .form-custom-dropdown').toggle();
                      $(this).addClass('active');
                   });
                   $('.technical-information.tab-pane .technical-information-group.active-technical .form-field .form-option-wrapper .form-custom-dropdown ul li').click(function(){
@@ -2364,42 +2362,46 @@
                }         
                mailiddropdown ();            
                
-               var e = jQuery.Event("keydown", {
-                  keyCode: 13
-               });
-               $('.basic-log1').keyup(function(){
-                  var values = $(this).val();
-                  if(values.length === 7){
-                     $('.awesome input.sp-input').val(values).focus();
-                     $('.awesome input.sp-input').trigger(e);
-                  }
-               });
-               $('.basic-log2').keyup(function(){
-                  var values = $(this).val();
-                  if(values.length === 7){
-                     $('.awesome2 input.sp-input').val(values).focus();
-                     $('.awesome2 input.sp-input').trigger(e);
-                  }
-               });
-               $('.basic-log3').keyup(function(){
-                  var values = $(this).val();
-                  if(values.length === 7){
-                     $('.awesome3 input.sp-input').val(values).focus();
-                     $('.awesome3 input.sp-input').trigger(e);
-                  }
-               });
-               $('.basic-log4').keyup(function(){
-                  var values = $(this).val();
-                  if(values.length === 7){
-                     $('.awesome4 input.sp-input.focus-visible').val(values).focus();
-                     $('.awesome4 input.sp-input.focus-visible').trigger(e);
-                  }
-               });
+               // var e = jQuery.Event("keydown", {
+               //    keyCode: 13
+               // });
+               // $('.basic-log1').keyup(function(){
+               //    var values = $(this).val();
+               //    if(values.length === 7){
+               //       $('.awesome input.sp-input').val(values).focus();
+               //       $('.awesome input.sp-input').trigger(e);
+               //    }
+               // });
+               // $('.basic-log2').keyup(function(){
+               //    var values = $(this).val();
+               //    if(values.length === 7){
+               //       $('.awesome2 input.sp-input').val(values).focus();
+               //       $('.awesome2 input.sp-input').trigger(e);
+               //    }
+               // });
+               // $('.basic-log3').keyup(function(){
+               //    var values = $(this).val();
+               //    if(values.length === 7){
+               //       $('.awesome3 input.sp-input').val(values).focus();
+               //       $('.awesome3 input.sp-input').trigger(e);
+               //    }
+               // });
+               // $('.basic-log4').keyup(function(){
+               //    var values = $(this).val();
+               //    if(values.length === 7){
+               //       $('.awesome4 input.sp-input.focus-visible').val(values).focus();
+               //       $('.awesome4 input.sp-input.focus-visible').trigger(e);
+               //    }
+               // });
                $('.technical-information-form').click(function(ele){
                   ele.stopPropagation();
                   $('.sp-container').addClass('sp-hidden');
                   $('.sp-replacer').removeClass('sp-active');
                });
+               $('.sp-container.awesome').appendTo('#input-color1');
+               $('.sp-container.awesome2').appendTo('#input-color2');
+               $('.sp-container.awesome3').appendTo('#input-color3');
+               $('.sp-container.awesome4').appendTo('#input-color4');
          });
       </script>
       <script>
@@ -2419,7 +2421,6 @@
             if(scrollbarWidth) {
             document.body.classList.add("layout-scrollbar-obtrusive");
             }
-         
             document.body.removeChild(parent);
          });
          
@@ -2445,25 +2446,14 @@
             $(this).closest('#state-wrapper-group-1').hide();
             $(this).closest('.form-field').removeClass('activeted');
          });
-         jQuery("#inputState").keyup(function () {
-            var filter = jQuery(this).val();
-            jQuery("#state-wrapper-group-1 ul li").each(function () {
-               if (jQuery(this).text().trim().search(new RegExp(filter, "i")) < 0) {
-                     jQuery(this).hide();
-               } else {
-                     jQuery(this).show()
-               }
-            });
-         });
+         
          $('.gernal-profile-form').click(function(ele){
             ele.stopPropagation();
             $('#state-wrapper-group-1').hide();
             $('.state-label').removeClass('activeted');
          });
 
-
          // Add Practice State js
-
          $('#inputState1').click(function(ele){
             ele.stopPropagation();
             $(this).next('#state-wrapper-group-2').show();
@@ -2482,16 +2472,6 @@
                   $this.closest('.form-field').removeClass('show-error');
                }
             }, 0);
-         });
-         jQuery("#inputState1").keyup(function () {
-            var filter = jQuery(this).val();
-            jQuery("#state-wrapper-group-2 ul li").each(function () {
-               if (jQuery(this).text().trim().search(new RegExp(filter, "i")) < 0) {
-                     jQuery(this).hide();
-               } else {
-                     jQuery(this).show()
-               }
-            });
          });
          $('.add-practice-profile-group').click(function(ele){
             ele.stopPropagation();
