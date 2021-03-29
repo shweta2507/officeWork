@@ -165,7 +165,7 @@
 	color: #343D56 !important;
 	font-size: 13px !important;
 	line-height: 18px !important;
-	font-family: 'Eina-Bold' !important;
+	font-family: 'Eina-SemiBold' !important;
 }
 
 
@@ -1427,6 +1427,7 @@ table.ba-table-widget tbody tr td:first-child {
 	width: 76px;
 	top: 51px;
 	display: none;
+	min-width: 76px;
 }
 
 .option-wrapper h4 {
@@ -1855,7 +1856,7 @@ main.ba-main.main-dashboard.pull-right .users-page-content .top-row {
 }
 
 .form-field.search-bar-dr ul#patientName {
-	padding: 9px;
+	padding: 9px 8px;
 	background: #fff;
 	position: absolute;
 	z-index: 999;

@@ -884,11 +884,10 @@ h3#inputState1,
 div#state-wrapper-group-2,
 div#state-wrapper-group-1 {
     position: absolute;
-    top: 100%;
+    bottom: calc(100% + 6px);
     left: 0;
     margin-top: 12px;
     width: 100%;
-    max-height: 400px;
     overflow-y: auto;
     background: #ffffff 0% 0% no-repeat padding-box;
     -webkit-box-shadow: 0px 16px 32px #343d5633;
@@ -896,7 +895,7 @@ div#state-wrapper-group-1 {
     border-radius: 8px;
     padding: 8px;
     z-index: 99;
-    max-height: 250px;
+    max-height: 200px;
     width: 158px;
     display: none;
 }
@@ -991,4 +990,182 @@ div#add-practice-popup .feild-3.feild .form-field.activeted.state-lavel:after,
         180deg
         );
             margin-top: -3px;
+}
+
+.form-field.custom-filled.state-label.activeted h3#inputState,
+.form-field.state-lavel.custom-filled.activeted .custom-input .form-control {
+    border: 2px solid #0ACADC;
+}
+
+div#state-wrapper-group-2, div#state-wrapper-group-1 {
+    max-height: 191px;
+    padding: 3px;
+    padding-right: 2px;
+}
+
+ul#state-name,
+ul#state-name {
+    padding: 5px;
+    padding-right: 2px;
+}
+
+#state-wrapper-group-2 ul,
+div#state-wrapper-group-1 ul {
+    overflow-y: auto;
+    max-height: 175px;
+}
+
+#state-wrapper-group-2,
+div#state-wrapper-group-1 {
+    overflow-y: unset;
+}
+
+#social-media-group,
+#social-media-group-1 {
+    padding-top: 8px;
+}
+
+#social-media-group h6,
+#social-media-group-1 h6 {
+    letter-spacing: 0px;
+    color: #031926;
+    opacity: 1;
+    margin: 0;
+    font-size: 16px;
+    line-height: 22px;
+    font-family: 'Eina-Bold';
+    margin-bottom: 16px;
+}
+
+span.facebook-icon {
+    background: url(../assets/icons/facebook.svg);
+    width: 16px;
+    height: 16px;
+    display: block;
+    position: absolute;
+    right: 16px;
+    top: 14px;
+    background-position: center;
+}
+
+span.linkedin-icon {
+    background: url(../assets/icons/linkedin.svg);
+    width: 15px;
+    height: 16px;
+    display: block;
+    position: absolute;
+    right: 16px;
+    top: 14px;
+    background-position: center;
+}
+
+span.twitter-icon {
+    background: url(../assets/icons/twitter.svg);
+    width: 16px;
+    height: 13px;
+    display: block;
+    position: absolute;
+    right: 16px;
+    top: 16px;
+    background-position: center;
+}
+
+span.instagram-icon {
+    background: url(../assets/icons/Instagram.svg);
+    width: 16px;
+    height: 16px;
+    display: block;
+    position: absolute;
+    right: 16px;
+    top: 14px;
+    background-position: center;
+}
+
+#social-media-group .form-control,
+#social-media-group-1 .form-control {
+    padding-right: 37px;
+}
+
+.sp-container,
+.sp-container.sp-light.sp-alpha-enabled.sp-clear-enabled.sp-palette-buttons-disabled.awesome4 {
+    top: -219.6px !important;
+}
+
+.color-arrow-icon {
+    background-repeat: no-repeat;
+    -webkit-appearance: none;
+    background-image: url(../assets/icons/color-droup.svg);
+    background-size: cover;
+    transition: all .5s;
+    display: block;
+    content: "";
+    height: 5px;
+    width: 8px;
+    right: 16px;
+    top: 20px;
+    position: absolute;
+    background-size: 8px 5px;
+}
+
+.form-field.custom-color-input.input-color1.custom-filled.show-color .color-arrow-icon {
+    -webkit-transform: rotate(
+        180deg
+        );
+            transform: rotate(
+        180deg
+        );
+            margin-top: -3px;
+}
+
+div#add-technical-info {
+    overflow-y: auto;
+    max-height: 422.6px;
+    padding-bottom: 53px;
+    padding-left: 40px;
+    margin-right: 10px;
+}
+
+#add-technical-group #add-technical-form-group .form-button {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 0px 40px 35px 40px;
+    background-color: #fff;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    padding-top: 10px;
+}
+
+#add-technical-group > ul {
+    padding-bottom: 12px;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+div#add-technical-group {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+#add-technical-form-group {
+    padding-right: 24px;
+}
+
+#add-technical-group h3 {
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+#add-technical-form-group .form-button .loader {
+    right: 48px;
+    top: 19px;
+}
+
+div#state-wrapper-group-2 {
+    max-height: 250px;
+}
+
+#state-wrapper-group-2 ul {
+    max-height: 234px;
 }

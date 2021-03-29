@@ -2108,7 +2108,6 @@
             if(scrollbarWidth) {
             document.body.classList.add("layout-scrollbar-obtrusive");
             }
-         
             document.body.removeChild(parent);
          });
          
@@ -2124,8 +2123,7 @@
             ele.stopPropagation();
             $('#patientName').hide();
          })
-         $('.custom-data-show').click(function(ele){
-            ele.stopPropagation();
+         $('html').click(function(){
             $('.option-wrapper .custom-dropdown').hide();
             $('.option-wrapper h4').removeClass('active');
          });
