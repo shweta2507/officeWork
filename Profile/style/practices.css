@@ -383,6 +383,12 @@ span#basic-log {
 	font-family: 'Eina-SemiBold';
 	left: 12px;
 }
+.custom-input h3.form-control {
+    cursor: pointer;
+}
+.option-wrapper.dropup .custom-dropdown.dropdown-menu {
+    top: auto !important;
+}
 input.basiclog {
     border: none !important;
     position: absolute;
@@ -812,7 +818,16 @@ ul.email-provider-g li span {
 .uploadImg2 {
     cursor: pointer;
 }
-
+h3#inputState1,
+#inputState {
+    margin-bottom: 0 !important;
+    letter-spacing: 0px;
+    color: #363F57;
+    opacity: 1;
+    font-size: 13px;
+    line-height: 18px;
+    font-family: 'Eina-SemiBold';
+}
 /*
 #add-practice-popup div#state-wrapper-group-1 {
     position: absolute;

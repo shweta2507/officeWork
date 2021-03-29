@@ -837,7 +837,9 @@ span.active-bar {
 .users-page-content .table-wrapper div#dtBasicExample_length label {
 	font-size: 0;
 }
-
+.option-wrapper.dropup .custom-dropdown.dropdown-menu {
+    top: auto !important;
+}
 .users-page-content .table-wrapper div#dtBasicExample_length label:before {
 	content: "Showing";
 	display: inline-block;

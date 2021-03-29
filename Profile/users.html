@@ -722,9 +722,9 @@
                   </table>
                   <div class="custom-data-show">
                      <div class="show-details">Showing</div>
-                     <div class="option-wrapper">
-                        <h4> 18</h4>
-                        <div class="custom-dropdown">
+                     <div class="option-wrapper dropdown">
+                        <h4 data-toggle='dropdown' class="dropdown-toggle"> 18</h4>
+                        <div class="custom-dropdown dropdown-menu">
                            <ul>
                               <li>18</li>
                               <li>36</li>
@@ -2024,6 +2024,19 @@
                ele.stopPropagation();
                $(this).next('.custom-dropdown').toggle();
                $(this).toggleClass('active');
+               var $ul = $(this).closest('.dropdown').find(".dropdown-menu");
+               var $button = $(this).closest('.dropdown').find(".dropdown-toggle");
+               var ulOffset = $ul.offset();
+               // how much space would be left on the top if the dropdown opened that direction
+               var spaceUp = (ulOffset.top - $button.height() - $ul.height()) - $(window).scrollTop();
+               // how much space is left at the bottom
+               var spaceDown = $(window).scrollTop() + $(window).height() - (ulOffset.top + $ul.height());
+               // switch to dropup only if there is no space at the bottom AND there is space at the top, or there isn't either but it would be still better fit
+               if (spaceDown < 0 && (spaceUp >= 0 || spaceUp > spaceDown))
+                  $(this).parent().addClass("dropup");
+               }).on("hidden.bs.dropdown", ".dropdown", function() {
+               // always reset after close
+               $(this).parent().removeClass("dropup");
             });
             $('.option-wrapper .custom-dropdown ul li').click(function(){
                var dataValue =  $(this).text().trim();

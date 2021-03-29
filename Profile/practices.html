@@ -765,9 +765,9 @@
                   </table>
                   <div class="custom-data-show">
                      <div class="show-details">Showing</div>
-                     <div class="option-wrapper">
-                        <h4> 18</h4>
-                        <div class="custom-dropdown">
+                     <div class="option-wrapper dropdown">
+                        <h4 data-toggle='dropdown' class="dropdown-toggle"> 18</h4>
+                        <div class="custom-dropdown dropdown-menu">
                            <ul>
                               <li>18</li>
                               <li>36</li>
@@ -936,7 +936,7 @@
                                                 <div class="form-field custom-filled state-label">
                                                    <label for="state" class="form-label">State</label>
                                                    <div class="custom-input">
-                                                      <input type="state" class="form-control" id="inputState" name="state" value="Texas (TX)">
+                                                      <h3 class="form-control" id="inputState">Texas (TX)</h3>
                                                       <div class="state-wrapper-group layout-cell layout-scrollbar" id="state-wrapper-group-1">
                                                       <ul id="state-name" class="state-name-droup-down">
                                                          <li value="Alabama (AL)">
@@ -1450,7 +1450,7 @@
                                        <div class="form-field state-lavel">
                                           <label for="state" class="form-label">State</label>
                                           <div class="custom-input">
-                                             <input type="state" class="form-control" id="inputState1" name="state" value="">
+                                             <h3 class="form-control" id="inputState1"></h3>
                                              <div class="state-wrapper-group layout-cell layout-scrollbar" id="state-wrapper-group-2">
                                           <ul id="state-name" class="state-name-droup-down">
                                              <li value="Alabama (AL)">
@@ -2067,16 +2067,25 @@
             $('#userModal .form-button .for-btn.for-btn-primary.cancel, #userModal .closeIcon').click(function(){
                $('.users-page-content .table-wrapper tbody tr[data-target="#userModal"]')[0].click();
             });
-            $('.users-page-content .table-wrapper tbody tr[data-target="#userModal"]').click(function(){
-               $('.form-field').removeClass('show-error');
-               $('.edit-profile.edit-practice').show();
-               $('.upload-img-wrapper').hide();
-            });
+            
           
             $('.option-wrapper h4').click(function(ele){
                ele.stopPropagation();
                $(this).next('.custom-dropdown').toggle();
                $(this).toggleClass('active');
+               var $ul = $(this).closest('.dropdown').find(".dropdown-menu");
+               var $button = $(this).closest('.dropdown').find(".dropdown-toggle");
+               var ulOffset = $ul.offset();
+               // how much space would be left on the top if the dropdown opened that direction
+               var spaceUp = (ulOffset.top - $button.height() - $ul.height()) - $(window).scrollTop();
+               // how much space is left at the bottom
+               var spaceDown = $(window).scrollTop() + $(window).height() - (ulOffset.top + $ul.height());
+               // switch to dropup only if there is no space at the bottom AND there is space at the top, or there isn't either but it would be still better fit
+               if (spaceDown < 0 && (spaceUp >= 0 || spaceUp > spaceDown))
+                  $(this).parent().addClass("dropup");
+               }).on("hidden.bs.dropdown", ".dropdown", function() {
+               // always reset after close
+               $(this).parent().removeClass("dropup");
             });
             $('.option-wrapper .custom-dropdown ul li').click(function(){
                var dataValue =  $(this).text().trim();
@@ -2436,13 +2445,13 @@
          });
          $('#inputState').click(function(ele){
             ele.stopPropagation();
-            $(this).next('#state-wrapper-group-1').show();
+            $(this).next('#state-wrapper-group-1').toggle();
             $(this).closest('.form-field').addClass('activeted');
          });
          $('#state-wrapper-group-1 > ul > li').click(function(ele){
             ele.stopPropagation();
             var currentVal = $(this).attr('value');
-            $(this).closest('.custom-input').find('#inputState').val(currentVal);
+            $(this).closest('.custom-input').find('#inputState').text(currentVal);
             $(this).closest('#state-wrapper-group-1').hide();
             $(this).closest('.form-field').removeClass('activeted');
          });
@@ -2456,18 +2465,27 @@
          // Add Practice State js
          $('#inputState1').click(function(ele){
             ele.stopPropagation();
-            $(this).next('#state-wrapper-group-2').show();
-            $(this).closest('.form-field').addClass('activeted');
+            var $this = $(ele.currentTarget);
+            $(this).next('#state-wrapper-group-2').toggle();
+            $(this).closest('.form-field').addClass('activeted custom-filled');
+         });
+         $('#inputState1').focusout(function(ele){
+            var $this = $(ele.currentTarget);
+            if($this.text().length === 0){
+               $this.closest('form-field').removeClass('custom-filled');
+            } else {
+               $this.closest('form-field').removeClass('custom-filled');
+            }
          });
          $('#state-wrapper-group-2 > ul > li').click(function(ele){
             ele.stopPropagation();
             var $this = $(ele.currentTarget);
             var currentVal = $(this).attr('value');
-            $(this).closest('.custom-input').find('#inputState1').val(currentVal);
+            $(this).closest('.custom-input').find('#inputState1').text(currentVal);
             $(this).closest('#state-wrapper-group-2').hide();
             $(this).closest('.form-field').removeClass('activeted');
             setTimeout(() => {
-               if($('#inputState1').val().length > 0){
+               if($('#inputState1').text().length > 0){
                   $this.closest('.form-field').addClass('custom-filled');
                   $this.closest('.form-field').removeClass('show-error');
                }
@@ -2478,11 +2496,18 @@
             $('#state-wrapper-group-2').hide();
             $('.state-lavel').removeClass('activeted');
          });
-         $('.custom-data-show').click(function(ele){
-            ele.stopPropagation();
+         $('html').click(function(){
             $('.option-wrapper .custom-dropdown').hide();
             $('.option-wrapper h4').removeClass('active');
          });
+         $('.users-page-content .table-wrapper tbody tr > td').click(function(ele){
+               ele.stopPropagation();
+               ele.preventDefault();
+               $('.form-field').removeClass('show-error');
+               $('.edit-profile.edit-practice').show();
+               $('.upload-img-wrapper').hide();
+               $('.users-page-content .table-wrapper tbody tr[data-target="#userModal"]')[0].click();
+            });
       </script>
    </body>
 </html>
