@@ -1839,9 +1839,9 @@
                                              <span class="error">Enter a Phone number.</span>
                                           </div>
                                        </div>
-                                       <div class="form-field custom-color-input input-color1 custom-filled" id="input-color4">
+                                       <div class="form-field custom-color-input input-color1" id="input-color4">
                                           <label for="state" class="form-label">Practice Color Scheme</label>
-                                          <input type='text' class="custom-color" value="#0ACADC"/>
+                                          <input type='text' class="custom-color" value=""/>
                                           <span class="color-arrow-icon"></span>
                                        </div>
                                     </div>
@@ -2296,7 +2296,6 @@
                }
             });
             $("#input-color4 .custom-color").spectrum({
-               color: "#0ACADC",
                allowEmpty:true,
                showInitial: true,
                showInput: true,
@@ -2659,7 +2658,22 @@
                input.attr("type", "password");
                }
          });
-         
+         $("#input-color4 input.custom-color").on("blur input focus", function() {
+               var $field = $(this).closest(".form-field");
+               if (this.value) {
+                  $field.addClass("custom-filled");
+               } else {
+                  $field.removeClass("custom-filled");
+               }
+            });
+            $("#input-color4 input.custom-color").on("focus", function() {
+               var $field = $(this).closest(".form-field");
+               if (this) {
+                  $field.addClass("custom-filled");
+               } else {
+                  $field.removeClass("custom-filled");
+               }
+            });
          
       </script>
    </body>

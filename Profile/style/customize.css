@@ -1428,6 +1428,7 @@ table.ba-table-widget tbody tr td:first-child {
 	top: 51px;
 	display: none;
 	min-width: 76px;
+	border:0;
 }
 
 .option-wrapper h4 {
@@ -1566,7 +1567,7 @@ table.ba-table-widget tbody tr td:first-child {
 }
 
 .edit-practice .profile-group {
-	margin-bottom: 24px;
+	margin-bottom: 18px;
 }
 
 .tabber-wrap.blog-tabber>ul li {
@@ -1605,7 +1606,7 @@ table.ba-table-widget tbody tr td:first-child {
 }
 
 .edit-user-group .profile-group {
-	margin-bottom: 24px;
+    margin-bottom: 18px;
 }
 
 .feature-information-group .ba-input-wrapper.ba-multiselect {
@@ -1986,4 +1987,8 @@ main.ba-main.main-dashboard.pull-right .users-page-content .top-row {
 .user-page .edit-profile.edit-user-group .tabber-wrap.blog-tabber.edit-user-tabber {
 	margin-top: 232px;
 	margin-bottom: 51px;
+}
+
+.dropup .dropdown-menu {
+    margin-bottom: 6px;
 }

@@ -15,7 +15,7 @@
 }
 
 .edit-practice .profile-group {
-	margin-bottom: 24px;
+	margin-bottom: 18px;
 }
 
 .tabber-wrap.blog-tabber ul li {
@@ -1269,3 +1269,20 @@ div#add-technical-info {
     top: 6px !important;
     transition: all 0.2s ease;
 }
+
+#input-color4.form-field label.form-label {
+    z-index: 9;
+    pointer-events: none;
+}
+
+span.sp-original-input-container input.custom-color:focus,
+span.sp-original-input-container input.custom-color {
+    background-color: #F3F4F43D !important;
+}
+
+/*
+#input-color4.form-field span.sp-original-input-container input.custom-color:focus {
+    border: 2px solid #0ACADC !important;
+}
+*/
+
