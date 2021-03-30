@@ -1187,3 +1187,55 @@ div#state-wrapper-group-2 {
     bottom: auto;
     top: calc(100% + -6px);
 }
+
+div#state-wrapper-group-1 {
+    max-height: 250px;
+    top: calc(100% + -6px);
+    bottom: auto;
+    padding: 8px;
+    padding-right: 2px;
+}
+
+div#state-wrapper-group-1 ul {
+    max-height: 244px;
+    padding: 0;
+    padding-right: 2px;
+}
+
+div#tab-0 {
+    padding-right: 31px;
+}
+
+.tabber-content {
+    max-height: 351px;
+    padding-bottom: 85px;
+    padding-right: 0;
+    overflow-y: visible !important;
+}
+
+div#tab-1 {
+    overflow-y: auto;
+    max-height: 330px;
+    padding-right: 25px;
+    padding-bottom: 84px;
+}
+
+div#tab-0 {
+    padding-right: 31px;
+}
+
+.sp-container {
+    top: 52px !important;
+}
+
+div#add-technical-info {
+    overflow-y: auto;
+    max-height: 455.6px;
+    padding-bottom: 85.5px;
+    padding-left: 40px;
+    margin-right: 10px;
+}
+
+.sp-container, .sp-container.sp-light.sp-alpha-enabled.sp-clear-enabled.sp-palette-buttons-disabled.awesome4 {
+    top: 52px !important;
+}

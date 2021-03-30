@@ -855,7 +855,7 @@
                            </div>
                         </div>
                         <!-- =============================== Edit Practice ============================== -->
-                        <div class="edit-profile edit-practice">
+                        <div class="edit-profile edit-practice" id="edit-practice-editing">
                            <div class="edit-profile-fixed-scroll">
                               <div class="closeIcon">
                                  <img src="assets/img/cross.svg" alt="Cross">
@@ -892,7 +892,7 @@
                                  <li class="active"><a>Profile</a></li>
                                  <li><a>Technical</a></li>
                               </ul>
-                              <div class="tabber-content layout-cell layout-scrollbar">
+                              <div class="tabber-content">
                                  <!-- ============================= Practice Tabber HTML ============================ -->
                                  <div class="tab-pane active practice-profile">
                                     <div class="gernal-profile custom-edit-pp practice-profile-group">
@@ -936,7 +936,8 @@
                                                 <div class="form-field custom-filled state-label">
                                                    <label for="state" class="form-label">State</label>
                                                    <div class="custom-input">
-                                                      <h3 class="form-control" id="inputState">Texas (TX)</h3>
+                                                      <!-- <h3 class="form-control" id="inputState">Texas (TX)</h3> -->
+                                                      <input type="state" class="form-control" id="inputState" name="state" autocomplete="off" value="Texas (TX)">
                                                       <div class="state-wrapper-group" id="state-wrapper-group-1">
                                                       <ul id="state-name" class="state-name-droup-down layout-cell layout-scrollbar">
                                                          <li value="Alabama (AL)">
@@ -1218,7 +1219,7 @@
                                     </div>
                                  </div>
                                  <!-- ============================= Technical Tabber HTML ============================ -->
-                                 <div class="tab-pane technical-information" id="tab-2">
+                                 <div class="tab-pane technical-information layout-cell layout-scrollbar" id="tab-2">
                                     <div class="gernal-profile custom-edit-pp technical-information-group inactivate-technical">
                                        <h1>Technical Information</h1>
                                        <div class="gernal-profile-form technical-information-form">
@@ -1491,7 +1492,8 @@
                                        <div class="form-field state-lavel">
                                           <label for="state" class="form-label">State</label>
                                           <div class="custom-input">
-                                             <h3 class="form-control" id="inputState1"></h3>
+                                             <!-- <h3 class="form-control" id="inputState1"></h3> -->
+                                             <input type="state" class="form-control" id="inputState1" autocomplete="off" name="state" value="">
                                              <div class="state-wrapper-group" id="state-wrapper-group-2">
                                           <ul id="state-name" class="state-name-droup-down layout-cell layout-scrollbar">
                                              <li value="Alabama (AL)">
@@ -2184,6 +2186,7 @@
                $('#add-practice').show();
                $('#upload-add-practice').hide();
                $('#add-technical-group').hide();
+               $('.tabber-wrap.blog-tabber > ul li')[0].click();
             });
           
             
@@ -2498,11 +2501,22 @@
          $('#state-wrapper-group-1 > ul > li').click(function(ele){
             ele.stopPropagation();
             var currentVal = $(this).attr('value');
-            $(this).closest('.custom-input').find('#inputState').text(currentVal);
+            $(this).closest('.custom-input').find('#inputState').val(currentVal);
             $(this).closest('#state-wrapper-group-1').hide();
             $(this).closest('.form-field').removeClass('activeted');
          });
-         
+         $("#inputState").keyup(function (ele) {
+            var filter = $(this).val();
+            var $this = $(ele.currentTarget);
+            $this.next('#state-wrapper-group-1').show();
+            $("#state-wrapper-group-1 ul li").each(function () {
+               if ($(this).text().trim().search(new RegExp(filter, "i")) < 0) {
+                     $(this).hide();
+               } else {
+                     $(this).show()
+               }
+            });
+         });
          $('.gernal-profile-form').click(function(ele){
             ele.stopPropagation();
             $('#state-wrapper-group-1').hide();
@@ -2514,22 +2528,22 @@
             ele.stopPropagation();
             var $this = $(ele.currentTarget);
             $(this).next('#state-wrapper-group-2').toggle();
-            if($this.text().length > 0){
+            if($this.val().length > 0){
                $this.closest('.form-field').addClass('custom-filled');
                $this.closest('.form-field').toggleClass('activeted');
             } else {
-               $this.closest('.form-field').toggleClass('activeted custom-filled');
+               $this.closest('.form-field').toggleClass('activeted');
             }
          });
          $('#state-wrapper-group-2 > ul > li').click(function(ele){
             ele.stopPropagation();
             var $this = $(ele.currentTarget);
             var currentVal = $(this).attr('value');
-            $(this).closest('.custom-input').find('#inputState1').text(currentVal);
+            $(this).closest('.custom-input').find('#inputState1').val(currentVal);
             $(this).closest('#state-wrapper-group-2').hide();
             $(this).closest('.form-field').removeClass('activeted');
             setTimeout(() => {
-               if($('#inputState1').text().length > 0){
+               if($('#inputState1').val().length > 0){
                   $this.closest('.form-field').addClass('custom-filled');
                   $this.closest('.form-field').removeClass('show-error');
                } else {
@@ -2537,6 +2551,18 @@
                   $this.closest('.form-field').addClass('show-error');
                }
             }, 0);
+         });
+         $("#inputState1").keyup(function (ele) {
+            var filter = $(this).val();
+            var $this = $(ele.currentTarget);
+            $this.next('#state-wrapper-group-2').show();
+            $("#state-wrapper-group-2 > ul > li").each(function () {
+               if ($(this).text().trim().search(new RegExp(filter, "i")) < 0) {
+                  $(this).hide();
+               } else {
+                  $(this).show()
+               }
+            });
          });
          $('.add-practice-profile-group').click(function(ele){
             ele.stopPropagation();
@@ -2559,6 +2585,9 @@
             $('.edit-profile.edit-practice').show();
             $('.upload-img-wrapper').hide();
             $('.users-page-content .table-wrapper tbody tr[data-target="#userModal"]')[0].click();
+         });
+         $('.users-page-content .table-wrapper tbody tr[data-target="#userModal"]').click(function(){
+            $('.tabber-wrap.blog-tabber > ul li:first-child > a')[0].click();
          });
          $('.custom-color').click(function(ele){
             ele.stopPropagation();
