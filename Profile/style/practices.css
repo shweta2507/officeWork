@@ -301,6 +301,8 @@ span.inactive img {
 	border-radius: 8px;
 	opacity: 1;
 	overflow: visible !important;
+    border: 0 !important;
+    box-shadow: 0px 16px 32px #343d5633 !important;
 }
 
 .custom-input {
@@ -1285,4 +1287,9 @@ span.sp-original-input-container input.custom-color {
     border: 2px solid #0ACADC !important;
 }
 */
+
+#add-technical-group .gernal-profile.custom-edit-pp.technical-information-group.active-technical {
+    padding-left: 40px;
+    padding-right: 40px;
+}
 
