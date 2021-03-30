@@ -927,9 +927,11 @@ div#state-wrapper-group-2 ul li:hover,
 div#state-wrapper-group-1 ul li:hover {
     background-color: rgb(243 244 246 / 50%);
 }
-
+.sp-container {
+    display: none !important;
+}
 div#add-practice-popup .feild-3.feild .form-field.state-lavel:after,
-.form-field.custom-filled.state-label:after {
+.form-field.state-label:after {
     content: "";
     position: absolute;
     background-image: url(../assets/icons/common/chevron-down.svg);
