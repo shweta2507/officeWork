@@ -1083,7 +1083,7 @@ span.instagram-icon {
 
 #social-media-group .form-control,
 #social-media-group-1 .form-control {
-    padding-right: 37px;
+    padding-right: 46px;
 }
 
 .sp-container,
@@ -1168,4 +1168,22 @@ div#state-wrapper-group-2 {
 
 #state-wrapper-group-2 ul {
     max-height: 234px;
+}
+
+.tabber-content {
+    max-height: 351px;
+    padding-bottom: 85px;
+}
+
+#state-wrapper-group-2 ul {
+    padding: 0;
+    padding-right: 2px;
+}
+
+div#state-wrapper-group-2 {
+    max-height: 250px;
+    padding: 8px;
+    padding-right: 2px;
+    bottom: auto;
+    top: calc(100% + -6px);
 }

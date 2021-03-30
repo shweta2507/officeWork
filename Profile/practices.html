@@ -2491,8 +2491,9 @@
          });
          $('#inputState').click(function(ele){
             ele.stopPropagation();
+            var $this = $(ele.currentTarget);
             $(this).next('#state-wrapper-group-1').toggle();
-            $(this).closest('.form-field').addClass('activeted');
+            $(this).closest('.form-field').toggleClass('activeted');
          });
          $('#state-wrapper-group-1 > ul > li').click(function(ele){
             ele.stopPropagation();
@@ -2513,7 +2514,12 @@
             ele.stopPropagation();
             var $this = $(ele.currentTarget);
             $(this).next('#state-wrapper-group-2').toggle();
-            $(this).closest('.form-field').addClass('activeted custom-filled');
+            if($this.text().length > 0){
+               $this.closest('.form-field').addClass('custom-filled');
+               $this.closest('.form-field').toggleClass('activeted');
+            } else {
+               $this.closest('.form-field').toggleClass('activeted custom-filled');
+            }
          });
          $('#state-wrapper-group-2 > ul > li').click(function(ele){
             ele.stopPropagation();
@@ -2563,6 +2569,15 @@
             $('.form-field').removeClass('show-color');
             $('.sp-container').addClass('sp-hidden');
             $('.sp-replacer').removeClass('sp-active');
+         });
+         $("span.toggle").click(function() {
+               $(this).toggleClass("fa-eye-slash");
+               var input = $(this).parent().find('input');
+               if (input.attr("type") == "password") {
+               input.attr("type", "text");
+               } else {
+               input.attr("type", "password");
+               }
          });
       </script>
    </body>
