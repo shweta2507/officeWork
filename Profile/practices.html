@@ -2296,6 +2296,7 @@
                }
             });
             $("#input-color4 .custom-color").spectrum({
+               color:'',
                allowEmpty:true,
                showInitial: true,
                showInput: true,
@@ -2674,7 +2675,37 @@
                   $field.removeClass("custom-filled");
                }
             });
-         
+            var e = jQuery.Event("keydown", {
+                  keyCode: 13
+               });
+               $('#input-color1 .custom-color').keyup(function(){
+                  var values = $(this).val();
+                  if(values.length === 7){
+                     $('.awesome input.sp-input').val(values).focus();
+                     $('.awesome input.sp-input').trigger(e);
+                  }
+               });
+               $('#input-color2 .custom-color').keyup(function(){
+                  var values = $(this).val();
+                  if(values.length === 7){
+                     $('.awesome2 input.sp-input').val(values).focus();
+                     $('.awesome2 input.sp-input').trigger(e);
+                  }
+               });
+               $('#input-color3 .custom-color').keyup(function(){
+                  var values = $(this).val();
+                  if(values.length === 7){
+                     $('.awesome3 input.sp-input').val(values).focus();
+                     $('.awesome3 input.sp-input').trigger(e);
+                  }
+               });
+               $('#input-color4 .custom-color').keyup(function(){
+                  var values = $(this).val();
+                  if(values.length === 7){
+                     $('.awesome4 input.sp-input').val(values).focus();
+                     $('.awesome4 input.sp-input').trigger(e);
+                  }
+               });
       </script>
    </body>
 </html>
