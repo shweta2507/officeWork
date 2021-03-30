@@ -1038,7 +1038,7 @@ div#state-wrapper-group-1 {
 }
 
 span.facebook-icon {
-    background: url(../assets/icons/facebook.svg);
+    background: url(../assets/icons/facebookedit.svg);
     width: 16px;
     height: 16px;
     display: block;
@@ -1046,6 +1046,7 @@ span.facebook-icon {
     right: 16px;
     top: 14px;
     background-position: center;
+    opacity: 0.2;
 }
 
 span.linkedin-icon {
@@ -1057,6 +1058,7 @@ span.linkedin-icon {
     right: 16px;
     top: 14px;
     background-position: center;
+    opacity: 0.2;
 }
 
 span.twitter-icon {
@@ -1068,6 +1070,7 @@ span.twitter-icon {
     right: 16px;
     top: 16px;
     background-position: center;
+    opacity: 0.2;
 }
 
 span.instagram-icon {
@@ -1079,7 +1082,16 @@ span.instagram-icon {
     right: 16px;
     top: 14px;
     background-position: center;
+    opacity: 0.2;
 }
+
+.form-field.custom-filled span.facebook-icon,
+.form-field.custom-filled span.linkedin-icon,
+.form-field.custom-filled span.twitter-icon,
+.form-field.custom-filled span.instagram-icon {
+    opacity: 1;
+}
+
 
 #social-media-group .form-control,
 #social-media-group-1 .form-control {
@@ -1211,6 +1223,7 @@ div#tab-0 {
     padding-bottom: 85px;
     padding-right: 0;
     overflow-y: visible !important;
+    padding-left: 0;
 }
 
 div#tab-1 {
@@ -1218,10 +1231,12 @@ div#tab-1 {
     max-height: 330px;
     padding-right: 25px;
     padding-bottom: 84px;
+    padding-left: 40px;
 }
 
 div#tab-0 {
     padding-right: 31px;
+    padding-left: 40px;
 }
 
 .sp-container {
@@ -1238,4 +1253,16 @@ div#add-technical-info {
 
 .sp-container, .sp-container.sp-light.sp-alpha-enabled.sp-clear-enabled.sp-palette-buttons-disabled.awesome4 {
     top: 52px !important;
+}
+.show-color .sp-container {
+    display: inline-flex !important;
+}
+.form-field.fill2 label.form-label {
+    font-size: 11px;
+    line-height: 15px;
+    color: #363F57;
+    opacity: 0.5;
+    left: 12px;
+    top: 6px !important;
+    transition: all 0.2s ease;
 }

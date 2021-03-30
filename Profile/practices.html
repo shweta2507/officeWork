@@ -2511,9 +2511,9 @@
             $this.next('#state-wrapper-group-1').show();
             $("#state-wrapper-group-1 ul li").each(function () {
                if ($(this).text().trim().search(new RegExp(filter, "i")) < 0) {
-                     $(this).hide();
+                  $(this).hide();
                } else {
-                     $(this).show()
+                  $(this).show()
                }
             });
          });
@@ -2528,9 +2528,11 @@
             ele.stopPropagation();
             var $this = $(ele.currentTarget);
             $(this).next('#state-wrapper-group-2').toggle();
+            $this.closest('.form-field').addClass('custom-filled fill2');
             if($this.val().length > 0){
-               $this.closest('.form-field').addClass('custom-filled');
+               // $this.closest('.form-field').addClass('custom-filled');
                $this.closest('.form-field').toggleClass('activeted');
+               $this.closest('.form-field').addClass('custom-filled fill2');
             } else {
                $this.closest('.form-field').toggleClass('activeted');
             }
@@ -2542,15 +2544,14 @@
             $(this).closest('.custom-input').find('#inputState1').val(currentVal);
             $(this).closest('#state-wrapper-group-2').hide();
             $(this).closest('.form-field').removeClass('activeted');
-            setTimeout(() => {
-               if($('#inputState1').val().length > 0){
-                  $this.closest('.form-field').addClass('custom-filled');
-                  $this.closest('.form-field').removeClass('show-error');
-               } else {
-                  $this.closest('.form-field').removeClass('custom-filled');
-                  $this.closest('.form-field').addClass('show-error');
-               }
-            }, 0);
+            $this.closest('.form-field').addClass('custom-filled fill2');
+            if($('#inputState1').val().length > 0){
+               $this.closest('.form-field').addClass('custom-filled fill2');
+               $this.closest('.form-field').removeClass('show-error');
+            } else {
+               $this.closest('.form-field').removeClass('custom-filled fill2');
+               $this.closest('.form-field').addClass('show-error');
+            }
          });
          $("#inputState1").keyup(function (ele) {
             var filter = $(this).val();
@@ -2568,11 +2569,15 @@
             ele.stopPropagation();
             $('#state-wrapper-group-2').hide();
             $('.state-lavel').removeClass('activeted');
-            if($('#inputState1').text().length === 0){
-               $('#inputState1').closest('.form-field').removeClass('custom-filled');
-            } else {
-               $('#inputState1').closest('.form-field').addClass('custom-filled');
-            }
+            setTimeout(() => {
+               if($('#inputState1').val().length === 0){
+                  $('#inputState1').closest('.form-field').removeClass('custom-filled');
+                  $('#inputState1').closest('.form-field').removeClass('fill2');
+               } else {
+                  $('#inputState1').closest('.form-field').addClass('custom-filled');
+                  $('#inputState1').closest('.form-field').addClass('fill2');
+               }
+            }, 0);
          });
          $('html').click(function(){
             $('.option-wrapper .custom-dropdown').hide();
@@ -2591,7 +2596,21 @@
          });
          $('.custom-color').click(function(ele){
             ele.stopPropagation();
-            $(this).closest('.form-field').toggleClass('show-color');
+            var $this = $(ele.currentTarget);
+            $this.closest('.form-field').toggleClass('show-color');
+            // if($this.closest('.custom-color-input').find('.sp-container').hasClass('sp-hidden') === true) {
+            //    $this.closest('.custom-color-input').find('.sp-container').removeClass('sp-hidden');
+            // } else {
+            //    $this.closest('.custom-color-input').find('.sp-container').addClass('sp-hidden');
+            // }
+            // if($this.closest('.custom-color-input').find('.sp-replacer').hasClass('sp-active') === true) {
+            //    $this.closest('.custom-color-input').find('.sp-replacer').removeClass('sp-active');
+            // } else {
+            //    $this.closest('.custom-color-input').find('.sp-replacer').addClass('sp-active');
+            // }
+         });
+         $('.modal-backdrop, .modal.fade, .closeIcon').click(function(){
+            $('.form-field').removeClass('show-color');
          });
          $('.technical-information-form').click(function(ele){
             ele.stopPropagation();
@@ -2608,6 +2627,8 @@
                input.attr("type", "password");
                }
          });
+         
+         
       </script>
    </body>
 </html>
