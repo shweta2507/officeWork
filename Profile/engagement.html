@@ -261,11 +261,23 @@
                         <h6>Run Time</h6>
                         <div class="run-timer" id="run-timer-box">
                            <ul class="time-zone" id="time-zone-d">
-                              <li class="time-update" id="time-update"><span class="start-time" id="start-time-zone">Start Time</span><span class="time-display" id="time-display-hr">12:00 AM CST</span></li>
-                              <li class="time-update time-update-2" id="time-update-two"><span class="end-time" id="end-time-zone">End Time</span><span class="time-display-s" id="time-display-hrs">12:00 AM CST</span></li>
+                              <li class="time-update" id="time-update">
+                                 <span class="start-time" id="start-time-zone">Start Time</span>
+                                 <span class="time-display" id="time-display-hr"><div id="amount"><span>1</span>:00</div>AM CST</span>
+                                 <div class="time-slider">
+                                    <input type="range"  min="1" max="12" value="1" name="discount_credits" id="discount_credits" />
+                                 </div>
+                              </li>
+                              <li class="time-update time-update-2" id="time-update-two">
+                                 <span class="end-time" id="end-time-zone">End Time</span>
+                                 <span class="time-display-s" id="time-display-hrs"><div id="amount1"><span>1</span>:00</div> AM CST</span>
+                                 <div class="time-slider">
+                                    <input type="range"  min="1" max="12" value="1" name="discount_credits1" id="discount_credits1" />
+                                 </div>
+                              </li>
                            </ul>
                            <div class="change-time-button" id="time-button">
-                              <a href="#" id="change-timebb">Change Time</a>
+                              <a id="change-timebb">Change Time</a>
                            </div>
                         </div>
                      </div>
@@ -574,6 +586,13 @@
             });
             $('.dataTables_length').addClass('bs-select');
             $('.table-wrapper .dataTables_filter').addClass('show-search').appendTo('.top-gutter .search-bar');            
+   
+            $('#discount_credits').on("change mousemove", function() {
+               $(this).closest('#time-update').find('#amount > span').html($(this).val());
+            });
+            $('#discount_credits1').on("change mousemove", function() {
+               $(this).closest('#time-update-two').find('#amount1 > span').html($(this).val());
+            });
          });
       </script>
    </body>
