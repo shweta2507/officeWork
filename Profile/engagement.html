@@ -213,27 +213,49 @@
                <div class="custom-engagement-group" id="custom-engagement-group-wrapper">
                   <div class="engagement-group1" id="all-information">
                      <!-- ======================= Practice Name Droupdown ================================= -->
-                     <div class="practice-name-group" id="practice-name-group">
-                        <div class="group group-1">
-                           <div class="form-field custom-select custom-filled">
-                              <label for="name" class="form-label">Showing</label>
-                              <div class="custom-input dropdown-field">
-                                 <h3 class="selected data">Smile Teeth Dental</h3>
-                                 <input type="hidden" class="form-control select" />
-                                 <ul id="cardName">
-                                    <li value="Smile Teeth Dental">Smile Teeth Dental</li>
-                                    <li value="Fox Creek -Braxtin">Fox Creek -Braxtin</li>
-                                    <li value="Fox Creek - Mountain Ridge">Fox Creek - Mountain Ridge</li>
-                                    <li value="Fox Creek - West Ave">Fox Creek - West Ave</li>
-                                    <li value="Fox Creek - West Minister">Fox Creek - West Minister</li>
-                                    <li value="Graxy Family Dental">Graxy Family Dental</li>
-                                    <li value="Virgina Dentistry">Virgina Dentistry</li>
-                                 </ul>
-                              </div>
-                              <span class="error">Select a practice name.</span>
-                           </div>
+
+
+
+
+                     <div class="top-gutter">
+                        <div class="ba-caption">Showing</div>
+                        <div class="ba-input-wrapper ba-multiselect">
+                            <div class="ba-input-field">
+                                <span ng-show="practiceFilters.length == 0">All Practices</span>
+                                <span ng-show="practiceFilters.length == 1">{{ practiceFilters[0] }}</span>
+                                <span ng-show="practiceFilters.length > 1">
+                                    {{ practiceFilters[0]+' (+' + (practiceFilters.length-1) +')' }}
+                                </span>
+                            </div>
+                            <input type="hidden" class="ba-input-field-value" name="practiceFilters" id="practiceFilters"
+                                ng-model="practiceFilters">
+                            <div class="ba-multiselect-options">
+                                <div class="ba-option" ng-click="selectAllMultiSelect('filterPracticeOptions','practiceFilters' )">
+                                    <span class="ba-checkbox"
+                                        ng-class="{__checked : isChecked('all','filterPracticeOptions','practiceFilters')}"></span>
+                                    <span class="ba-option-label">All Practices</span>
+                                </div>
+                                <div class="ba-option" ng-repeat="option in filterPracticeOptions"
+                                    ng-click="toggleMultiSelect('practiceFilters', option )">
+                                    <span class="ba-checkbox"
+                                        ng-class="{__checked : isChecked(option,'filterPracticeOptions','practiceFilters')}">
+                                    </span>
+                                    <span class="ba-option-label">{{option}}</span>
+                                </div>
+                            </div>
                         </div>
-                     </div>
+                        
+            
+                        
+            
+            
+                        
+                    </div>
+
+
+
+
+
                      <!-- ======================= Run Time ================================= -->
                      <div class="run-time-group" id="run-time-group">
                         <h6>Run Time</h6>
