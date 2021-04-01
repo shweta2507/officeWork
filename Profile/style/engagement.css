@@ -183,7 +183,8 @@ ul#time-zone-d li span#time-display-hrs {
 }
 
 #confirmations-details {
-	padding: 112px 40px 40px 40px;
+    padding: 30px 40px 40px 40px;
+    margin-top: 82px;
 }
 
 #title-top {
@@ -299,10 +300,7 @@ div#frequency-hours-group2 {
     display: none;
 }
 
-<<<<<<< HEAD
-=======
 .frequency-hours-group .form-field:after,
->>>>>>> c8c919cb30b87aa2a543a7747f4113f7d197f812
 .days-hours-group2 .form-field:after,
 .frequency-days-group2 .form-field:after,
 .frequency-hours-group2 .form-field:after,
@@ -342,11 +340,7 @@ div#frequency-hours-group2 {
     font-family: 'Eina-SemiBold';
 }
 
-<<<<<<< HEAD
-#time-button a#save-timebb {
-=======
 #time-button #save-timebb {
->>>>>>> c8c919cb30b87aa2a543a7747f4113f7d197f812
     display: flex;
     font-size: 14px;
     line-height: 20px;
@@ -362,14 +356,9 @@ div#frequency-hours-group2 {
     color: #FFFFFF;
     cursor: pointer;
     display:none;
-<<<<<<< HEAD
-}
-#time-button a#change-timebb{
-=======
     padding-top: 11px;
 }
 #time-button #change-timebb{
->>>>>>> c8c919cb30b87aa2a543a7747f4113f7d197f812
     display: flex;
     font-size: 14px;
     line-height: 20px;
@@ -1074,7 +1063,7 @@ textarea {
 }
 
 #custom-engagement-group-wrapper {
-    padding-top: 80px;
+    margin-top: 80px;
 }
 
 .ba-caption {
@@ -1259,9 +1248,6 @@ font-family: 'Eina-Bold';
 
 .engagement-dashboard .ba-input-wrapper .ba-input-field {
     overflow: visible;
-<<<<<<< HEAD
-}
-=======
 }
 
 #time-button #change-timebb:hover {
@@ -1326,7 +1312,7 @@ font-family: 'Eina-Bold';
     border-radius: 8px;
 }
 
-.engagement-dashboard .ba-input-wrapper .ba-input-field .custom-input.dropdown-field ul li {
+.engagement-dashboard .custom-input.dropdown-field ul li {
     cursor: pointer;
     padding: 10px 8px;
     letter-spacing: 0px;
@@ -1388,4 +1374,69 @@ font-family: 'Eina-Bold';
     right: 0;
     top: 10px;
 }
->>>>>>> c8c919cb30b87aa2a543a7747f4113f7d197f812
+#dental-drop {
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    border: 1px solid #EAEBEE;
+    border-radius: 6px;
+    max-width: 233px;
+    margin-left: 25px;
+    position: relative;
+}
+
+#dental-drop h3.selected.data {
+    padding: 10px 12px;
+    letter-spacing: 0px;
+    color: #343D56;
+    font-size: 12px;
+    opacity: 1;
+    line-height: 14px;
+    font-family: 'Eina-Bold';
+    margin: 0 !important;
+    position: relative;
+    cursor: pointer;
+}
+
+#dental-drop h3.selected.data:after {
+    content: "";
+    position: absolute;
+    background-image: url(../assets/icons/common/chevron-down.svg);
+    padding: 0;
+    right: 16.5px;
+    -webkit-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+    -webkit-transform-origin: center;
+    transform-origin: center;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    width: 8px;
+    height: 5px;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.time-slider {
+    display: none;
+}
+#dental-drop.active {
+    border: 2px solid #0ACADC;
+}
+#dental-drop.active h3.selected.data::after {
+    transform: rotate(180deg);
+    margin-top: -3px;
+}
+.inner-content:before {
+    content: "";
+    display: block;
+    width: 40px;
+    height: 20px;
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    left: auto;
+    cursor: pointer;
+    background-image: url('../assets/icons/toggleOff.svg');
+}
+.inner-content.active:before {
+    background-image: url('../assets/icons/toggleOn.svg');
+}

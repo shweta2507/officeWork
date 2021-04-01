@@ -211,17 +211,13 @@
             <!-- ======================= Practice Name Droupdown ================================= -->
             <div class="top-gutter">
                <div class="ba-caption">Showing</div>
-               <div class="ba-input-wrapper ba-multiselect">
-                  <div class="ba-input-field">
-                     <div class="custom-input dropdown-field" id="dental-drop">
-                        <h3 class="selected data">Smile Teeth Dental</h3>
-                        <input type="hidden" class="form-control select" autocomplete="off">
-                        <ul id="teeth-dental">
-                           <li value="Smile Teeth Dental 1">Smile Teeth Dental 1</li>
-                           <li value="Smile Teeth Dental 2">Smile Teeth Dental 2</li>
-                        </ul>
-                     </div>
-                  </div>
+               <div class="custom-input dropdown-field" id="dental-drop">
+                  <h3 class="selected data">Smile Teeth Dental</h3>
+                  <input type="hidden" class="form-control select" autocomplete="off">
+                  <ul id="teeth-dental">
+                     <li value="Smile Teeth Dental 1">Smile Teeth Dental 1</li>
+                     <li value="Smile Teeth Dental 2">Smile Teeth Dental 2</li>
+                  </ul>
                </div>
             </div>
             <!-- ========================== Engagement Page Content ============================ -->
@@ -236,7 +232,7 @@
                               <li class="time-update" id="time-update">
                                  <span class="start-time" id="start-time-zone">Start Time</span>
                                  <span class="time-display" id="time-display-hr">
-                                    <div id="amount"><span>12</span>:00</div>
+                                    <div id="amount"><span>1</span>:00</div>
                                     AM CST
                                  </span>
                                  <div class="time-slider">
@@ -246,7 +242,7 @@
                               <li class="time-update time-update-2" id="time-update-two">
                                  <span class="end-time" id="end-time-zone">End Time</span>
                                  <span class="time-display-s" id="time-display-hrs">
-                                    <div id="amount1"><span>12</span>:00</div>
+                                    <div id="amount1"><span>1</span>:00</div>
                                     AM CST
                                  </span>
                                  <div class="time-slider">
@@ -255,13 +251,8 @@
                               </li>
                            </ul>
                            <div class="change-time-button" id="time-button">
-<<<<<<< HEAD
-                              <a id="change-timebb">Change Time</a>
-                              <a id="save-timebb">Save Changes</a>
-=======
                               <div id="change-timebb">Change Time</div>
                               <div id="save-timebb">Save Changes</div>
->>>>>>> c8c919cb30b87aa2a543a7747f4113f7d197f812
                            </div>
                         </div>
                      </div>
@@ -1012,23 +1003,6 @@
                                           </ul>
                                        </div>
                                     </div>
-<<<<<<< HEAD
-                                    <!-- ========================== Edit Confirmation Form Textarea ============================ -->
-                                    <div class="popup-form-textarea confirmation-textarea-group" id="confirmation-form-textarea4">
-                                       <div class="textarea-group" id="text-area-group4">
-                                          <div class="group group-5">
-                                             <div class="form-field custom-select">
-                                                <label for="name" class="form-label">Type your Message</label>
-                                                <div class="custom-input">
-                                                   <textarea type="text" class="form-control select">
-                                                      Hi *Patient Full Name*, you have an upcoming appointment on *Appt Date*. Click below to confirm or contact us to reschedule.
-
-                                                      If you have any questions about your appointment, please contact us anytime at *Practice Phone Number* or *Practice Email Address*.
-                                                   </textarea>
-                                                </div>
-                                             </div>
-                                          </div>
-=======
                                  </div>
                               </div>
                               <!-- ========================== Edit Confirmation Frequency Hours Droupdown ============================ -->
@@ -1066,7 +1040,6 @@
                                              <li value="23 hour(s)">23 hour(s)</li>
                                              <li value="24 hour(s)">24 hour(s)</li>
                                           </ul>
->>>>>>> c8c919cb30b87aa2a543a7747f4113f7d197f812
                                        </div>
                                     </div>
                                  </div>
@@ -1328,23 +1301,6 @@
                                           <li value="Hours">Hours</li>
                                        </ul>
                                     </div>
-<<<<<<< HEAD
-                                    <!-- ========================== Edit Reminder Form Textarea ============================ -->
-                                    <div class="popup-form-textarea reminder-textarea-group" id="reminder-form-textarea5">
-                                       <div class="textarea-group" id="text-area-group35">
-                                          <div class="group group-5">
-                                             <div class="form-field custom-select">
-                                                <label for="name" class="form-label">Type your Message</label>
-                                                <div class="custom-input">
-                                                   <textarea type="text" class="form-control select">
-                                                      Hi *Patient Full Name*, you have an upcoming appointment on *Appt Date*. Click below to confirm or contact us to reschedule.
-
-                                                      If you have any questions about your appointment, please contact us anytime at *Practice Phone Number* or *Practice Email Address*.
-                                                   </textarea>
-                                                </div>
-                                             </div>
-                                          </div>
-=======
                                  </div>
                               </div>
                            </div>
@@ -1391,7 +1347,6 @@
                                              <li value="29 day(s)">29 day(s)</li>
                                              <li value="30 day(s)">30 day(s)</li>
                                           </ul>
->>>>>>> c8c919cb30b87aa2a543a7747f4113f7d197f812
                                        </div>
                                     </div>
                                  </div>
@@ -1499,41 +1454,39 @@
       <!-- JS and JQuery from small interactions and logics  -->
       <script>
          $(document).ready(function () {
-             $('.ham-icon').click(function () {
-                 $('.ba-sidenav').toggleClass('expanded-nav')
-                 $('.ba-main').toggleClass('pull-right')
-                 // $('.ba-topnav').toggleClass('pull-right')
-                 $('.ham-icon').toggleClass('_close')
-             })
-             // adding tab index to custom input and popover menus
-             $('.has-flyout').attr('tabindex', '0');
-             $('.ba-input-wrapper').attr('tabindex', '0');
-             $('.ba-filter-select').attr('tabindex', '0');
+            $('.ham-icon').click(function () {
+               $('.ba-sidenav').toggleClass('expanded-nav')
+               $('.ba-main').toggleClass('pull-right')
+               // $('.ba-topnav').toggleClass('pull-right')
+               $('.ham-icon').toggleClass('_close')
+            })
+            // adding tab index to custom input and popover menus
+            $('.has-flyout').attr('tabindex', '0');
 
-             $('.has-flyout').click(function () {
-                 $(this).toggleClass('_show-menu')
-             })
-             $('.has-flyout').on('blur', function () {
-                 $(this).removeClass('_show-menu')
-             })
+            $('.has-flyout').click(function () {
+               $(this).toggleClass('_show-menu')
+            })
+            $('.has-flyout').on('blur', function () {
+               $(this).removeClass('_show-menu')
+            })
 
-             $('.filter-single-select').click(function () {
-                 $(this).toggleClass('_show-options')
-             })
+            $('.filter-single-select').click(function () {
+               $(this).toggleClass('_show-options')
+            })
 
-             $('.filter-single-select').on('blur', function () {
-                 $(this).removeClass('_show-options')
-             })
+            $('.filter-single-select').on('blur', function () {
+               $(this).removeClass('_show-options')
+            })
 
-             $('.ba-topnav-item').click(function () {
-                 $(this).addClass('_active').siblings().removeClass('_active')
-             })
-             $('.filter_pill').click(function () {
-                 $(this).addClass('_active').siblings().removeClass('_active')
-             })
+            $('.ba-topnav-item').click(function () {
+               $(this).addClass('_active').siblings().removeClass('_active')
+            })
+            $('.filter_pill').click(function () {
+               $(this).addClass('_active').siblings().removeClass('_active')
+            })
 
-             // tree-select expand parent
-             $('.ba-option-parent ._parent ._chevron-down').click(function (params) {
+            // tree-select expand parent
+            $('.ba-option-parent ._parent ._chevron-down').click(function (params) {
                $(this).parent().parent().toggleClass('_show-children')
                $(this).parent().parent().siblings().removeClass('_show-children')
             })
@@ -1542,40 +1495,18 @@
             });
             $('.dataTables_length').addClass('bs-select');
             $('.table-wrapper .dataTables_filter').addClass('show-search').appendTo('.top-gutter .search-bar');
-<<<<<<< HEAD
 
-=======
-         
->>>>>>> c8c919cb30b87aa2a543a7747f4113f7d197f812
             $('#discount_credits').on("change mousemove", function() {
                $(this).closest('#time-update').find('#amount > span').html($(this).val());
             });
             $('#discount_credits1').on("change mousemove", function() {
                $(this).closest('#time-update-two').find('#amount1 > span').html($(this).val());
             });
-<<<<<<< HEAD
-
-
 
             // Show dental Js
             $('#dental-drop > h3').click(function(ele){
                ele.stopPropagation();
-               $(this).closest('#dental-drop').find('ul#teeth-dental').toggle();
-            });
-            $('#dental-drop l#teeth-dental ul li').click(function(ele){
-               ele.stopPropagation();
-               var valueText = $(this).text();
-               $(this).closest('#dental-drop').find('h3').text(valueText);
-            });
-
-=======
-         
-         
-         
-            // Show dental Js
-            $('#dental-drop > h3').click(function(ele){
-               ele.stopPropagation();
-               $(this).toggleClass('active');
+               $(this).closest('#dental-drop').toggleClass('active');
                $(this).closest('#dental-drop').find('ul#teeth-dental').toggle();
             });
             $('#dental-drop #teeth-dental li').click(function(ele){
@@ -1585,8 +1516,7 @@
                $('#teeth-dental').hide();
                $(this).closest('#dental-drop').find('h3').removeClass('active');
             });
-         
->>>>>>> c8c919cb30b87aa2a543a7747f4113f7d197f812
+
             // Time Change Functionally
             $('#change-timebb').click(function(ele){
                ele.stopPropagation();
@@ -1600,24 +1530,22 @@
                $('#change-timebb').show();
                $('.time-slider').hide();
             });
-<<<<<<< HEAD
-
-=======
-         
->>>>>>> c8c919cb30b87aa2a543a7747f4113f7d197f812
-            $('.custom-engagement-group').click(function(ele){
+            $('.custom-engagement-group, .ba-main .top-gutter').click(function(ele){
                ele.stopPropagation();
                $('ul#teeth-dental').hide();
+               $('#dental-drop').removeClass('active');
             });
-<<<<<<< HEAD
 
-=======
-         
->>>>>>> c8c919cb30b87aa2a543a7747f4113f7d197f812
             // Email or Text Select
             $('#emails-text-group').click(function(ele){
                ele.stopPropagation();
-               $(this).toggleClass('filled');
+               if($(this).find('h3').text().length>0){
+                  $(this).addClass('filled');
+                  $(this).toggleClass('active');
+               } else {
+                  $(this).removeClass('filled active');
+               }
+               $(this).addClass('filled active');
                $(this).find('#email-text').toggle();
             });
             $('#email-text li').click(function(ele){
@@ -1625,16 +1553,24 @@
                var selectvalues = $(this).attr('value');
                $(this).closest('.custom-input.dropdown-field').find('h3').text(selectvalues);
                $(this).closest('#email-text').hide();
+               $(this).closest('#emails-text-group').removeClass('active');
+               if($(this).closest('.custom-input.dropdown-field').find('h3').text().length > 0 ){
+                  $(this).closest('#emails-text-group').addClass('filled');
+               } else {
+                  $(this).closest('#emails-text-group').removeClass('filled');
+               }
             });
-<<<<<<< HEAD
 
-=======
-         
->>>>>>> c8c919cb30b87aa2a543a7747f4113f7d197f812
             // Day Or Hours Group
             $('#days-hours-group').click(function(ele){
                ele.stopPropagation();
-               $(this).toggleClass('filled');
+               if($(this).find('h3').text().length>0){
+                  $(this).addClass('filled');
+                  $(this).toggleClass('active');
+               } else {
+                  $(this).removeClass('filled active');
+               }
+               $(this).addClass('filled active');
                $(this).find('#days-hours').toggle();
             });
             $('#days-hours li').click(function(ele){
@@ -1642,6 +1578,11 @@
                var selectvalues = $(this).attr('value');
                $(this).closest('.custom-input.dropdown-field').find('h3').text(selectvalues);
                $(this).closest('#days-hours').hide();
+               if($(this).closest('.custom-input.dropdown-field').find('h3').text().length > 0 ){
+                  $(this).closest('#days-hours').addClass('filled');
+               } else {
+                  $(this).closest('#days-hours').removeClass('filled');
+               }
                if(selectvalues === "Days" ){
                   $('#frequency-dayshours-group').addClass('showDaysOption');
                   $('#frequency-dayshours-group').removeClass('showHoursOption');
@@ -1650,15 +1591,17 @@
                   $('#frequency-dayshours-group').removeClass('showDaysOption');
                }
             });
-<<<<<<< HEAD
 
-=======
-         
->>>>>>> c8c919cb30b87aa2a543a7747f4113f7d197f812
             // Day Or Hours Group
             $('#frequency-days-group, #frequency-hours-group').click(function(ele){
                ele.stopPropagation();
-               $(this).toggleClass('filled');
+               if($(this).find('h3').text().length>0){
+                  $(this).addClass('filled');
+                  $(this).toggleClass('active');
+               } else {
+                  $(this).removeClass('filled active');
+               }
+               $(this).addClass('filled active');
                $(this).find('ul').toggle();
             });
             $('#days li').click(function(ele){
@@ -1666,73 +1609,69 @@
                var selectvalues = $(this).attr('value');
                $(this).closest('.custom-input.dropdown-field').find('h3').text(selectvalues);
                $(this).closest('#days').hide();
+               if($(this).closest('.custom-input.dropdown-field').find('h3').text().length > 0 ){
+                  $(this).closest('#frequency-days-group').addClass('filled');
+               } else {
+                  $(this).closest('#frequency-days-group').removeClass('filled');
+               }
             });
             $('#hours-1 li').click(function(ele){
                ele.stopPropagation();
                var selectvalues = $(this).attr('value');
                $(this).closest('.custom-input.dropdown-field').find('h3').text(selectvalues);
                $(this).closest('#hours-1').hide();
+               if($(this).closest('.custom-input.dropdown-field').find('h3').text().length > 0 ){
+                  $(this).closest('#frequency-hours-group').addClass('filled');
+               } else {
+                  $(this).closest('#frequency-hours-group').removeClass('filled');
+               }
             });
-<<<<<<< HEAD
-
-=======
-         
->>>>>>> c8c919cb30b87aa2a543a7747f4113f7d197f812
             $('#add-conf-popup').click(function(ele){
                ele.stopPropagation();
                $('#email-text').hide();
                $('#days-hours').hide();
-               if($('#emails-text-group .form-field.custom-select h3').text().length > 0 || $('#days-hours-group .form-field.custom-select h3').text().length > 0){
+               $('ul#days').hide();
+               $('#days-hours').hide();
+               if($('#emails-text-group .form-field.custom-select h3').text().length > 0 || $('#days-hours-group .form-field.custom-select h3').text().length > 0 || $('#frequency-days-group .form-field.custom-select h3').text().length > 0 || $('#frequency-hours-group .form-field.custom-select h3').text().length > 0){
                   $('#emails-text-group').addClass('filled');
                } else {
                   $('#emails-text-group').removeClass('filled');
                }
             });
-<<<<<<< HEAD
-
-
-
-
-=======
-         
-         
+            $('.inner-content').click(function(ele){
+               ele.stopPropagation();
+               $(this).toggleClass('active');
+            });
             $('#userModal .form-button .for-btn.for-btn-primary.cancel, #userModal .closeIcon').click(function(){
                $('#add-confirmation #title-top a[data-target="#userModal"]')[0].click();
             });
-
             $('#userModal-hygiene .form-button .for-btn.for-btn-primary.cancel, #userModal-hygiene .closeIcon').click(function(){
                $('#add-hygiene #title-top a[data-target="#userModal-hygiene"]')[0].click();
             });
-
             $('#userModal-reminder .form-button .for-btn.for-btn-primary.cancel, #userModal-reminder .closeIcon').click(function(){
                $('#add-reminders #title-top a[data-target="#userModal-reminder"]')[0].click();
             });
-
-
             $('#userModaledit1 .form-button .for-btn.for-btn-primary.cancel, #userModaledit1 .closeIcon').click(function(){
                $('#add-confirmation .inner-content[data-target="#userModaledit1"]')[0].click();
             });
-
             $('#userModal-hygiene-edit1 .form-button .for-btn.for-btn-primary.cancel, #userModal-hygiene-edit1 .closeIcon').click(function(){
                $('#add-hygiene .inner-content[data-target="#userModal-hygiene-edit1"]')[0].click();
             });
-
             $('#userModal-reminder-edit1 .form-button .for-btn.for-btn-primary.cancel, #userModal-reminder-edit1 .closeIcon').click(function(){
                $('#add-reminders .inner-content[data-target="#userModal-reminder-edit1"]')[0].click();
             });
-         
          });
-         
+
          $(document).ready(function(){
             var parent = document.createElement("div");
             parent.setAttribute("style", "width:30px;height:30px;");
             parent.classList.add('scrollbar-test');
-         
+
             var child = document.createElement("div");
             child.setAttribute("style", "width:100%;height:40px");
             parent.appendChild(child);
             document.body.appendChild(parent);
-         
+
             // Measure the child element, if it is not
             // 30px wide the scrollbars are obtrusive.
             var scrollbarWidth = 30 - parent.firstChild.clientWidth;
@@ -1740,7 +1679,6 @@
             document.body.classList.add("layout-scrollbar-obtrusive");
             }
             document.body.removeChild(parent);
->>>>>>> c8c919cb30b87aa2a543a7747f4113f7d197f812
          });
       </script>
    </body>
