@@ -18,7 +18,7 @@
     opacity: 1;
 }
 
-#add-hygiene, 
+#add-hygiene,
 #add-reminders {
     display: none;
 }
@@ -205,6 +205,7 @@ ul#time-zone-d li span#time-display-hrs {
 	padding: 0 16px;
 	padding: 8px 16px;
 	min-height: 623px;
+    padding-right: 8px;
 }
 
 #title-top a {
@@ -298,10 +299,11 @@ div#frequency-hours-group2 {
     display: none;
 }
 
-.days-hours-group2 .form-field:after, 
-.frequency-days-group2 .form-field:after, 
+.frequency-hours-group .form-field:after,
+.days-hours-group2 .form-field:after,
+.frequency-days-group2 .form-field:after,
 .frequency-hours-group2 .form-field:after,
-.emails-text-group2 .form-field:after, 
+.emails-text-group2 .form-field:after,
 .appointment-status-group .form-field:after,
 .frequency-weeks-group .form-field:after,
 .frequency-months-group .form-field:after,
@@ -337,7 +339,7 @@ div#frequency-hours-group2 {
     font-family: 'Eina-SemiBold';
 }
 
-#time-button a#change-timebb {
+#time-button #save-timebb {
     display: flex;
     font-size: 14px;
     line-height: 20px;
@@ -352,9 +354,26 @@ div#frequency-hours-group2 {
     letter-spacing: 0px;
     color: #FFFFFF;
     cursor: pointer;
+    display:none;
+    padding-top: 11px;
+}
+#time-button #change-timebb{
+    display: flex;
+    font-size: 14px;
+    line-height: 20px;
+    font-family: 'Eina-SemiBold';
+    text-align: center;
+    min-height: 45px;
+    justify-content: center;
+    align-items: center;
+    letter-spacing: 0px;
+    color: #031926;
+    cursor: pointer;
+    border: 1px solid #343D56;
+    border-radius: 8px;
 }
 
-#time-button a#change-timebb:hover {
+#time-button #save-timebb:hover {
     background-color: #03D0E3;
 }
 
@@ -461,11 +480,19 @@ div#frequency-hours-group2 {
     opacity: 0.5;
     line-height: 18px;
     position: absolute;
-    left: 16px;
+    left: 12px;
     top: 13px;
     font-family: "Eina02-regular", sans-serif;
-    left: 16px;
-    top: 12px;
+}
+
+.frequency-days-group.filled .form-field label,
+.confirmation-droupdown-group > div.filled .form-field label {
+    font-size: 11px;
+    line-height: 15px;
+    color: #363F57;
+    opacity: 0.5;
+    top: 6px;
+    left: 12px;
 }
 
 .days-hours-group2 .custom-input h3.selected.data,
@@ -498,7 +525,7 @@ div#frequency-hours-group2 {
     margin: 6px 0 0;
     box-shadow: 0px 16px 32px #343d5633;
     border-radius: 8px;
-    display: none; 
+    display: none;
     list-style: none;
     top: 45px;
     left: 0;
@@ -538,7 +565,7 @@ div#frequency-hours-group2 {
 .emails-text-group .form-field ul#email-text li:hover,
 .frequency-hours-group .form-field ul#hours-1 li:hover,
 .frequency-days-group .form-field ul#days li:hover,
-#practice-name-group ul#cardName li:hover, 
+#practice-name-group ul#cardName li:hover,
 .days-hours-group .form-field ul#days-hours li:hover {
     background: rgb(243 244 246 / 50%) 0% 0% no-repeat padding-box;
 }
@@ -768,7 +795,7 @@ div#frequency-hours-group2 {
 .textarea-group .form-field {
     margin-bottom: 0px;
     width: 100%;
-    padding: 33px 16px 13px 16px;
+    padding: 13px 16px 13px 16px;
     font-size: 13px;
     line-height: 18px;
     letter-spacing: 0px;
@@ -813,7 +840,7 @@ div#frequency-hours-group2 {
 .form-button .cancel {
     border: 1px solid #343D56;
     border-radius: 8px;
-    padding: 11px 32px 12px 32px;
+    padding: 11px 31px 12px 31px;
     letter-spacing: 0px;
     color: #031926;
     opacity: 1;
@@ -876,15 +903,15 @@ span.error {
     margin-bottom: 42px !important;
 }
 
-.days-hours-group .form-field.custom-select.active.custom-filled:after, 
+.days-hours-group .form-field.custom-select.active.custom-filled:after,
 #practice-name-group .form-field.custom-select.active.custom-filled:after {
     -webkit-transform: rotate(180deg);
     transform: rotate(180deg);
     margin-top: -3px;
 }
 
-.frequency-hours-group .form-field.show-error, 
-.frequency-days-group .form-field.show-error, 
+.frequency-hours-group .form-field.show-error,
+.frequency-days-group .form-field.show-error,
 .days-hours-group .form-field.show-error {
     margin-bottom: 10px !important;
 }
@@ -936,7 +963,7 @@ textarea {
     resize: none;
   }
 
-  #Confirmation-button .loader {
+  .form-button .loader {
     right: 10px;
 }
 
@@ -1000,7 +1027,7 @@ textarea {
     width: 20px;
     border-radius: 20px;
     cursor: pointer;
-    margin-top: -6px; 
+    margin-top: -6px;
     background-color: #03C6D8 !important;
   }
   .time-slider input[type=range]::-moz-range-thumb {
@@ -1009,13 +1036,14 @@ textarea {
     width: 20px;
     border-radius: 20px;
     cursor: pointer;
-    margin-top: -6px; 
+    margin-top: -6px;
     background-color: #03C6D8 !important;
   }
   .time-slider input[type=range]:focus::-webkit-slider-runnable-track {
     background: #F3F4F43D;
+    border: 1px solid #EAEBEE;
   }
-  
+
   .time-slider input[type=range]::-moz-range-track {
     width: 100%;
     height: 8px;
@@ -1044,9 +1072,9 @@ textarea {
     color: #363f5780;
 }
 
-ul#time-zone-d li span#time-display-hr #amount, 
-ul#time-zone-d li span#time-display-hr #amount span, 
-ul#time-zone-d li span#time-display-hrs #amount1, 
+ul#time-zone-d li span#time-display-hr #amount,
+ul#time-zone-d li span#time-display-hr #amount span,
+ul#time-zone-d li span#time-display-hrs #amount1,
 ul#time-zone-d li span#time-display-hrs #amount1 span {
     letter-spacing: 0px;
     color: #363F57;
@@ -1104,7 +1132,7 @@ ul#time-zone-d li span#time-display-hrs #amount1 span {
 }
 
 
-/* Radio Button styling 
+/* Radio Button styling
 
 .switch {
     position: relative;
@@ -1112,13 +1140,13 @@ ul#time-zone-d li span#time-display-hrs #amount1 span {
     width: 40px;
     height: 20px;
   }
-  
-  .switch input { 
+
+  .switch input {
     opacity: 0;
     width: 0;
     height: 0;
   }
-  
+
   .slider {
     position: absolute;
     cursor: pointer;
@@ -1130,7 +1158,7 @@ ul#time-zone-d li span#time-display-hrs #amount1 span {
     -webkit-transition: .4s;
     transition: .4s;
   }
-  
+
   .slider:before {
     position: absolute;
     content: "";
@@ -1142,26 +1170,26 @@ ul#time-zone-d li span#time-display-hrs #amount1 span {
     -webkit-transition: .4s;
     transition: .4s;
   }
-  
+
   input:checked + .slider {
     background-color: #2196F3;
   }
-  
+
   input:focus + .slider {
     box-shadow: 0 0 1px #2196F3;
   }
-  
+
   input:checked + .slider:before {
     -webkit-transform: translateX(26px);
     -ms-transform: translateX(26px);
     transform: translateX(26px);
   }
-  
-  /* Rounded sliders 
+
+  /* Rounded sliders
   .slider.round {
     border-radius: 34px;
   }
-  
+
   .slider.round:before {
     border-radius: 50%;
   }
@@ -1173,14 +1201,15 @@ ul#time-zone-d li span#time-display-hrs #amount1 span {
   .confirmation-fill-content {
     overflow-y: auto;
     max-height: 604px;
+    padding-right: 1px;
 }
 
 #hygiene-conten .inner-content {
     min-height: unset;
 }
 
-#hygiene-conten .inner-content#inner-content-1 h4.inner-content-head, 
-#hygiene-conten .inner-content#inner-content-2 h4.inner-content-head, 
+#hygiene-conten .inner-content#inner-content-1 h4.inner-content-head,
+#hygiene-conten .inner-content#inner-content-2 h4.inner-content-head,
 #hygiene-conten .inner-content#inner-content-3 h4.inner-content-head {
     margin-bottom: 0;
 }
@@ -1214,4 +1243,133 @@ font-size: 12px;
 line-height: 16px;
 margin: 0;
 font-family: 'Eina-Bold';
+}
+
+.engagement-dashboard .ba-input-wrapper .ba-input-field {
+    overflow: visible;
+}
+
+#time-button #change-timebb:hover {
+    background-color: #343D560D;
+}
+
+.inner-content-text .moreless.more {
+    letter-spacing: 0px;
+    color: #363F57;
+    opacity: 0.5;
+    font-size: 13px;
+    line-height: 18px;
+    font-family: 'Eina';
+}
+
+.inner-content-text a.moreless.less {
+    display: none !important;
+}
+
+.frequency-hours-group.filled .form-field,
+.frequency-days-group.filled .form-field,
+.confirmation-droupdown-group > div.filled .form-field {
+    border: 2px solid #0ACADC;
+}
+
+.popup-header-droupdown .filled .form-field:after {
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
+    margin-top: -3px;
+}
+
+.frequency-dayshours-group.showHoursOption div#frequency-days-group {
+    display: none;
+}
+
+.frequency-dayshours-group.showHoursOption div#frequency-hours-group {
+    display: block;
+}
+
+#frequency-hours-group ul#hours-1 {
+    height: 250px;
+    overflow-y: auto;
+}
+
+.engagement-dashboard .ba-input-wrapper .ba-input-field {
+    position: static;
+}
+
+.ba-main .top-gutter .ba-input-wrapper.ba-multiselect {
+    position: relative;
+}
+
+.engagement-dashboard .ba-input-wrapper .ba-input-field .custom-input.dropdown-field ul {
+    top: 36px;
+    padding: 9px;
+    background: #fff;
+    position: absolute;
+    z-index: 999;
+    width: 100%;
+    margin: 6px 0 0;
+    box-shadow: 0px 16px 32px #343d5633;
+    border-radius: 8px;
+}
+
+.engagement-dashboard .ba-input-wrapper .ba-input-field .custom-input.dropdown-field ul li {
+    cursor: pointer;
+    padding: 10px 8px;
+    letter-spacing: 0px;
+    color: #343D56;
+    font-size: 12px;
+    line-height: 16px;
+    font-family: "Eina02-regular", sans-serif;
+    border-radius: 8px;
+    transition: all 0.5s;
+}
+
+.engagement-dashboard .ba-input-wrapper .ba-input-field .custom-input.dropdown-field ul li:hover {
+    background: rgb(243 244 246 / 50%) 0% 0% no-repeat padding-box;
+}
+
+.popup-form-textarea textarea::-webkit-input-placeholder {
+	/* Chrome/Opera/Safari */
+    font-size: 13px;
+    letter-spacing: 0px;
+    color: #363F57;
+    opacity: 0.5;
+    line-height: 18px;
+    font-family: "Eina02-regular", sans-serif;
+}
+
+.popup-form-textarea textarea::-moz-placeholder {
+	/* Firefox 19+ */
+    font-size: 13px;
+    letter-spacing: 0px;
+    color: #363F57;
+    opacity: 0.5;
+    line-height: 18px;
+    font-family: "Eina02-regular", sans-serif;
+}
+
+.popup-form-textarea textarea:-ms-input-placeholder {
+	/* IE 10+ */
+    font-size: 13px;
+    letter-spacing: 0px;
+    color: #363F57;
+    opacity: 0.5;
+    line-height: 18px;
+    font-family: "Eina02-regular", sans-serif;
+}
+
+.popup-form-textarea textarea:-moz-placeholder {
+	/* Firefox 18- */
+    font-size: 13px;
+    letter-spacing: 0px;
+    color: #363F57;
+    opacity: 0.5;
+    line-height: 18px;
+    font-family: "Eina02-regular", sans-serif;
+}
+
+#add-rem-popup5 .form-button .loader,
+#add-hyg-popup4 .form-button .loader,
+#add-conf-popup2 .form-button .loader {
+    right: 0;
+    top: 10px;
 }
