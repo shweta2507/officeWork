@@ -207,34 +207,27 @@
                </ul>
             </nav>
          </header>
-         <div class="body-container">
+         <div class="body-container engagement-dashboard">
+            <!-- ======================= Practice Name Droupdown ================================= -->
+            <div class="top-gutter">
+               <div class="ba-caption">Showing</div>
+               <div class="ba-input-wrapper ba-multiselect">
+                  <div class="ba-input-field">
+                     <div class="custom-input dropdown-field" id="dental-drop">
+                        <h3 class="selected data">Smile Teeth Dental</h3>
+                        <input type="hidden" class="form-control select" autocomplete="off">
+                        <ul id="teeth-dental">
+                           <li value="Smile Teeth Dental 1">Smile Teeth Dental 1</li>
+                           <li value="Smile Teeth Dental 2">Smile Teeth Dental 2</li>
+                        </ul>
+                     </div>
+                  </div>
+               </div>
+            </div>
             <!-- ========================== Engagement Page Content ============================ -->
             <div class="custom-engagement-wrapper" id="custom-engagement">
                <div class="custom-engagement-group" id="custom-engagement-group-wrapper">
                   <div class="engagement-group1" id="all-information">
-                     <!-- ======================= Practice Name Droupdown ================================= -->
-                     <div class="top-gutter">
-                        <div class="ba-caption">Showing</div>
-                        <div class="ba-input-wrapper ba-multiselect">
-
-
-
-                           <div class="ba-input-field">
-                              <div class="custom-input dropdown-field">
-                                 <h3 class="selected data">Smile Teeth Dental</h3>
-                                 <input type="hidden" class="form-control select" autocomplete="off">
-                                 <ul id="teeth-dental">
-                                    <li value="Smile Teeth Dental 1">Smile Teeth Dental 1</li>
-                                    <li value="Smile Teeth Dental 2">Smile Teeth Dental 2</li>
-                                 </ul>
-                              </div>
-                           </div>
-
-
-
-                          
-                        </div>
-                     </div>
                      <!-- ======================= Run Time ================================= -->
                      <div class="run-time-group" id="run-time-group">
                         <h6>Run Time</h6>
@@ -262,7 +255,8 @@
                               </li>
                            </ul>
                            <div class="change-time-button" id="time-button">
-                              <a id="change-timebb">Save Changes</a>
+                              <a id="change-timebb">Change Time</a>
+                              <a id="save-timebb">Save Changes</a>
                            </div>
                         </div>
                      </div>
@@ -346,7 +340,7 @@
                            <div class="inner-content" id="inner-content-5">
                               <p class="inner-content-sub-head">Auto Response No to Schedule</p>
                               <h4 class="inner-content-head">Instant Reply</h4>
-                              <a href="#" class="inner-content-link">Click to add response.</a>   
+                              <a href="#" class="inner-content-link">Click to add response.</a>
                            </div>
                         </div>
                      </div>
@@ -1093,8 +1087,8 @@
                                                 <label for="name" class="form-label">Type your Message</label>
                                                 <div class="custom-input">
                                                    <textarea type="text" class="form-control select">
-                                                      Hi *Patient Full Name*, you have an upcoming appointment on *Appt Date*. Click below to confirm or contact us to reschedule. 
-                                                      
+                                                      Hi *Patient Full Name*, you have an upcoming appointment on *Appt Date*. Click below to confirm or contact us to reschedule.
+
                                                       If you have any questions about your appointment, please contact us anytime at *Practice Phone Number* or *Practice Email Address*.
                                                    </textarea>
                                                 </div>
@@ -1443,8 +1437,8 @@
                                                 <label for="name" class="form-label">Type your Message</label>
                                                 <div class="custom-input">
                                                    <textarea type="text" class="form-control select">
-                                                      Hi *Patient Full Name*, you have an upcoming appointment on *Appt Date*. Click below to confirm or contact us to reschedule. 
-                                                      
+                                                      Hi *Patient Full Name*, you have an upcoming appointment on *Appt Date*. Click below to confirm or contact us to reschedule.
+
                                                       If you have any questions about your appointment, please contact us anytime at *Practice Phone Number* or *Practice Email Address*.
                                                    </textarea>
                                                 </div>
@@ -1488,29 +1482,29 @@
              $('.has-flyout').attr('tabindex', '0');
              $('.ba-input-wrapper').attr('tabindex', '0');
              $('.ba-filter-select').attr('tabindex', '0');
-         
+
              $('.has-flyout').click(function () {
                  $(this).toggleClass('_show-menu')
              })
              $('.has-flyout').on('blur', function () {
                  $(this).removeClass('_show-menu')
              })
-         
+
              $('.filter-single-select').click(function () {
                  $(this).toggleClass('_show-options')
              })
-         
+
              $('.filter-single-select').on('blur', function () {
                  $(this).removeClass('_show-options')
              })
-         
+
              $('.ba-topnav-item').click(function () {
                  $(this).addClass('_active').siblings().removeClass('_active')
              })
              $('.filter_pill').click(function () {
                  $(this).addClass('_active').siblings().removeClass('_active')
              })
-         
+
              // tree-select expand parent
              $('.ba-option-parent ._parent ._chevron-down').click(function (params) {
                $(this).parent().parent().toggleClass('_show-children')
@@ -1520,14 +1514,113 @@
                   "lengthMenu": [[18, 36, 54, 72, 90, 108], [18, 36, 54, 72, 90, 108]]
             });
             $('.dataTables_length').addClass('bs-select');
-            $('.table-wrapper .dataTables_filter').addClass('show-search').appendTo('.top-gutter .search-bar');            
-         
+            $('.table-wrapper .dataTables_filter').addClass('show-search').appendTo('.top-gutter .search-bar');
+
             $('#discount_credits').on("change mousemove", function() {
                $(this).closest('#time-update').find('#amount > span').html($(this).val());
             });
             $('#discount_credits1').on("change mousemove", function() {
                $(this).closest('#time-update-two').find('#amount1 > span').html($(this).val());
             });
+
+
+
+            // Show dental Js
+            $('#dental-drop > h3').click(function(ele){
+               ele.stopPropagation();
+               $(this).closest('#dental-drop').find('ul#teeth-dental').toggle();
+            });
+            $('#dental-drop l#teeth-dental ul li').click(function(ele){
+               ele.stopPropagation();
+               var valueText = $(this).text();
+               $(this).closest('#dental-drop').find('h3').text(valueText);
+            });
+
+            // Time Change Functionally
+            $('#change-timebb').click(function(ele){
+               ele.stopPropagation();
+               $(this).hide();
+               $('#save-timebb').show();
+               $('.time-slider').show();
+            });
+            $('#save-timebb').click(function(ele){
+               ele.stopPropagation();
+               $(this).hide();
+               $('#change-timebb').show();
+               $('.time-slider').hide();
+            });
+
+            $('.custom-engagement-group').click(function(ele){
+               ele.stopPropagation();
+               $('ul#teeth-dental').hide();
+            });
+
+            // Email or Text Select
+            $('#emails-text-group').click(function(ele){
+               ele.stopPropagation();
+               $(this).toggleClass('filled');
+               $(this).find('#email-text').toggle();
+            });
+            $('#email-text li').click(function(ele){
+               ele.stopPropagation();
+               var selectvalues = $(this).attr('value');
+               $(this).closest('.custom-input.dropdown-field').find('h3').text(selectvalues);
+               $(this).closest('#email-text').hide();
+            });
+
+            // Day Or Hours Group
+            $('#days-hours-group').click(function(ele){
+               ele.stopPropagation();
+               $(this).toggleClass('filled');
+               $(this).find('#days-hours').toggle();
+            });
+            $('#days-hours li').click(function(ele){
+               ele.stopPropagation();
+               var selectvalues = $(this).attr('value');
+               $(this).closest('.custom-input.dropdown-field').find('h3').text(selectvalues);
+               $(this).closest('#days-hours').hide();
+               if(selectvalues === "Days" ){
+                  $('#frequency-dayshours-group').addClass('showDaysOption');
+                  $('#frequency-dayshours-group').removeClass('showHoursOption');
+               } else {
+                  $('#frequency-dayshours-group').addClass('showHoursOption');
+                  $('#frequency-dayshours-group').removeClass('showDaysOption');
+               }
+            });
+
+            // Day Or Hours Group
+            $('#frequency-days-group, #frequency-hours-group').click(function(ele){
+               ele.stopPropagation();
+               $(this).toggleClass('filled');
+               $(this).find('ul').toggle();
+            });
+            $('#days li').click(function(ele){
+               ele.stopPropagation();
+               var selectvalues = $(this).attr('value');
+               $(this).closest('.custom-input.dropdown-field').find('h3').text(selectvalues);
+               $(this).closest('#days').hide();
+            });
+            $('#hours-1 li').click(function(ele){
+               ele.stopPropagation();
+               var selectvalues = $(this).attr('value');
+               $(this).closest('.custom-input.dropdown-field').find('h3').text(selectvalues);
+               $(this).closest('#hours-1').hide();
+            });
+
+            $('#add-conf-popup').click(function(ele){
+               ele.stopPropagation();
+               $('#email-text').hide();
+               $('#days-hours').hide();
+               if($('#emails-text-group .form-field.custom-select h3').text().length > 0 || $('#days-hours-group .form-field.custom-select h3').text().length > 0){
+                  $('#emails-text-group').addClass('filled');
+               } else {
+                  $('#emails-text-group').removeClass('filled');
+               }
+            });
+
+
+
+
          });
       </script>
    </body>
