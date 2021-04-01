@@ -18,6 +18,11 @@
     opacity: 1;
 }
 
+#add-hygiene, 
+#add-reminders {
+    display: none;
+}
+
 #practice-name-group .form-field.custom-select label.form-label {
 	text-align: left;
 	font-size: 13px;
@@ -178,7 +183,7 @@ ul#time-zone-d li span#time-display-hrs {
 }
 
 #confirmations-details {
-	padding: 109px 40px 40px 40px;
+	padding: 112px 40px 40px 40px;
 }
 
 #title-top {
@@ -209,6 +214,15 @@ ul#time-zone-d li span#time-display-hrs {
 	font-size: 13px;
 	line-height: 28px;
 	font-family: 'Eina-SemiBold';
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+            justify-content: center;
 }
 
 #title-top h2 {
@@ -253,6 +267,17 @@ a.inner-content-link {
 	padding: 24px;
 	min-height: 142px;
     transition: all 0.5s;
+    position: relative;
+}
+
+.inner-content:after {
+    border-bottom: 1px solid #F3F4F6;
+    content: "";
+    position: absolute;
+    bottom: 0;
+    width: 86%;
+    left: 25px;
+    right: 0;
 }
 
 .inner-content:hover {
@@ -269,11 +294,19 @@ a.inner-content-link {
 	font-family: 'Eina';
 }
 
-div#add-hygiene, 
-div#add-reminders {
+div#frequency-hours-group2 {
     display: none;
 }
 
+.days-hours-group2 .form-field:after, 
+.frequency-days-group2 .form-field:after, 
+.frequency-hours-group2 .form-field:after,
+.emails-text-group2 .form-field:after, 
+.appointment-status-group .form-field:after,
+.frequency-weeks-group .form-field:after,
+.frequency-months-group .form-field:after,
+.weeks-months-group .form-field:after,
+.emails-text-group .form-field:after,
 .days-hours-group .form-field:after,
 .frequency-days-group .form-field:after,
 #practice-name-group .form-field.custom-select:after {
@@ -305,26 +338,31 @@ div#add-reminders {
 }
 
 #time-button a#change-timebb {
-    border: 1px solid #343D56;
-    border-radius: 8px;
-    opacity: 1;
     display: flex;
-    letter-spacing: 0px;
-    color: #031926;
     font-size: 14px;
     line-height: 20px;
     font-family: 'Eina-SemiBold';
     text-align: center;
-    min-height: 40px;
+    min-height: 45px;
     justify-content: center;
     align-items: center;
+    background: #03C6D8 0% 0% no-repeat padding-box;
+    border-radius: 8px;
+    opacity: 1;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+    cursor: pointer;
+}
+
+#time-button a#change-timebb:hover {
+    background-color: #03D0E3;
 }
 
 #time-button {
     margin-top: 32px;
 }
 
-#add-conf-popup {
+.popup-1-module-group {
     padding: 32px 40px 35px 40px;
     position: relative;
 }
@@ -339,21 +377,31 @@ div#add-reminders {
     font-family: 'Eina-Bold';
 }
 
-#confirmation-header-popup {
+.popup-header {
     margin-bottom: 32px;
 }
 
+.popup-header-droupdown,
+.hygiene-droupdown-group,
 .confirmation-droupdown-group {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: space-between;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+            justify-content: space-between;
     margin-bottom: 24px;
 }
 
-.days-hours-group {
-    width: 255px;
+.confirmation-droupdown-group > div {
+    width: 158px;
 }
 
-.frequency-dayshours-group {
+.days-hours-group2 > div,
+.frequency-dayshours-group2 > div,
+.emails-text-group2 > div,
+.appointment-status-group > div,
+.hygiene-droupdown-group > div {
     width: 255px;
 }
 
@@ -361,6 +409,15 @@ div#add-reminders {
     display: none;
 }
 
+.days-hours-group2 .form-field,
+.frequency-days-group2 .form-field,
+.frequency-hours-group2 .form-field,
+.emails-text-group2 .form-field,
+.appointment-status-group .form-field,
+.frequency-weeks-group .form-field,
+.frequency-months-group .form-field,
+.weeks-months-group .form-field,
+.emails-text-group .form-field,
 .frequency-hours-group .form-field,
 .frequency-days-group .form-field,
 .days-hours-group .form-field {
@@ -385,6 +442,15 @@ div#add-reminders {
     opacity: 1;
 }
 
+.days-hours-group2 .form-field label,
+.frequency-days-group2 .form-field label,
+.frequency-hours-group2 .form-field label,
+.emails-text-group2 .form-field label,
+.appointment-status-group .form-field label,
+.frequency-weeks-group .form-field label,
+.frequency-months-group .form-field label,
+.weeks-months-group .form-field label,
+.emails-text-group .form-field label,
 .frequency-hours-group .form-field label,
 .frequency-days-group .form-field label,
 .days-hours-group .form-field label {
@@ -402,6 +468,15 @@ div#add-reminders {
     top: 12px;
 }
 
+.days-hours-group2 .custom-input h3.selected.data,
+.frequency-days-group2 .custom-input h3.selected.data,
+.frequency-hours-group2 .custom-input h3.selected.data,
+.emails-text-group2 .custom-input h3.selected.data,
+.appointment-status-group .custom-input h3.selected.data,
+.frequency-weeks-group .custom-input h3.selected.data,
+.frequency-months-group .custom-input h3.selected.data,
+.weeks-months-group .custom-input h3.selected.data,
+.emails-text-group .custom-input h3.selected.data,
 .frequency-hours-group .custom-input h3.selected.data,
 .frequency-days-group .custom-input h3.selected.data,
 .days-hours-group .custom-input h3.selected.data {
@@ -414,9 +489,7 @@ div#add-reminders {
     margin: 8px 0 0;
 }
 
-.frequency-hours-group .form-field ul#hours-1,
-.frequency-days-group .form-field ul#days,
-.days-hours-group .form-field ul#days-hours {
+.custom-input.dropdown-field ul {
     padding: 9px;
     background: #fff;
     position: absolute;
@@ -431,6 +504,15 @@ div#add-reminders {
     left: 0;
 }
 
+.days-hours-group2 .form-field ul#days-hours2 li,
+.frequency-days-group2 .form-field ul#days2 li,
+.frequency-hours-group2 .form-field ul#hours-2 li,
+.emails-text-group2 .form-field #emails2-text li,
+.appointment-status-group .form-field #appointment li,
+.frequency-weeks-group .form-field ul#weeks li,
+.frequency-months-group .form-field #months2 li,
+.weeks-months-group .form-field ul#weeks-months li,
+.emails-text-group .form-field ul#email-text li,
 .frequency-hours-group .form-field ul#hours-1 li,
 .frequency-days-group .form-field ul#days li,
 .days-hours-group .form-field ul#days-hours li {
@@ -445,7 +527,16 @@ div#add-reminders {
     transition: all 0.5s;
 }
 
-.frequency-hours-group .form-field ul#hours-1:hover,
+.days-hours-group2 .form-field ul#days-hours2 li:hover,
+.frequency-days-group2 .form-field ul#days2 li:hover,
+.frequency-hours-group2 .form-field ul#hours-2 li:hover,
+.emails-text-group2 .form-field #emails2-text li:hover,
+.appointment-status-group .form-field #appointment li:hover,
+.frequency-weeks-group .form-field ul#weeks li:hover,
+.frequency-months-group .form-field #months2 li:hover,
+.weeks-months-group .form-field ul#weeks-months li:hover,
+.emails-text-group .form-field ul#email-text li:hover,
+.frequency-hours-group .form-field ul#hours-1 li:hover,
 .frequency-days-group .form-field ul#days li:hover,
 #practice-name-group ul#cardName li:hover, 
 .days-hours-group .form-field ul#days-hours li:hover {
@@ -551,7 +642,7 @@ div#add-reminders {
     background-repeat: no-repeat;
 }
 
-#insert-variable-group {
+.insert-variable-group {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -560,11 +651,11 @@ div#add-reminders {
     justify-content: flex-end;
 }
 
-#confirmation-insert-variable {
+.popup-insert-variable {
     margin-bottom: 16px;
 }
 
-#confirmation-insert-variable .form-field {
+.popup-insert-variable .form-field {
     margin-bottom: 0px;
     width: 178px;
     padding: 11px 24px 11px 24px;
@@ -584,7 +675,7 @@ div#add-reminders {
     border-radius: 16px;
 }
 
-#confirmation-insert-variable .form-field label {
+.popup-insert-variable .form-field label {
     text-align: left;
     font-size: 13px;
     line-height: 18px;
@@ -597,17 +688,17 @@ div#add-reminders {
     opacity: 1;
 }
 
-#confirmation-insert-variable .form-field h3 {
+.popup-insert-variable .form-field h3 {
     font-family: 'Eina02-semibold', sans-serif;
     letter-spacing: 0px;
     color: #363F57;
     opacity: 1;
     font-size: 13px;
     line-height: 18px;
-    margin: 8px 0 0;
+    margin: 0;
 }
 
-#confirmation-insert-variable .form-field ul#insert-variable {
+.popup-insert-variable .form-field ul#insert-variable {
     padding: 9px;
     background: #fff;
     position: absolute;
@@ -622,7 +713,7 @@ div#add-reminders {
     left: 0;
 }
 
-#confirmation-insert-variable .form-field ul#insert-variable li {
+.popup-insert-variable .form-field ul#insert-variable li {
     cursor: pointer;
     padding: 10px 8px;
     letter-spacing: 0px;
@@ -634,11 +725,11 @@ div#add-reminders {
     transition: all 0.5s;
 }
 
-#confirmation-insert-variable .form-field ul#insert-variable li:hover {
+.popup-insert-variable .form-field ul#insert-variable li:hover {
     background: rgb(243 244 246 / 50%) 0% 0% no-repeat padding-box;
 }
 
-#confirmation-insert-variable .form-field:after {
+.popup-insert-variable .form-field:after {
     content: "";
     position: absolute;
     background-image: url(../assets/icons/common/chevron-down.svg);
@@ -670,11 +761,11 @@ div#add-reminders {
     justify-content: flex-end;
 }
 
-#confirmation-form-textarea {
+.popup-form-textarea {
     margin-bottom: 32px;
 }
 
-#text-area-group .form-field {
+.textarea-group .form-field {
     margin-bottom: 0px;
     width: 100%;
     padding: 33px 16px 13px 16px;
@@ -695,7 +786,7 @@ div#add-reminders {
     min-height: 155px;
 }
 
-#text-area-group .form-field .form-control.select {
+.textarea-group .form-field .form-control.select {
     background-color: transparent;
     border: none;
     min-height: 107px;
@@ -704,7 +795,7 @@ div#add-reminders {
     height: auto;
 }
 
-#text-area-group .form-field label {
+.textarea-group .form-field label {
     text-align: left;
     font-size: 13px;
     letter-spacing: 0px;
@@ -719,7 +810,7 @@ div#add-reminders {
     top: 12px;
 }
 
-#Confirmation-button #button-cancel {
+.form-button .cancel {
     border: 1px solid #343D56;
     border-radius: 8px;
     padding: 11px 32px 12px 32px;
@@ -734,7 +825,7 @@ div#add-reminders {
     transition: all .5s;
 }
 
-#Confirmation-button #add-confirmation-button {
+.form-button .btn-blue {
     background: #03C6D8 0% 0% no-repeat padding-box;
     border-radius: 8px;
     opacity: 1;
@@ -748,11 +839,11 @@ div#add-reminders {
     transition: all .5s;
 }
 
-#Confirmation-button #button-cancel:hover{
+.form-button .cancel:hover{
 background-color: #343D560D;
 }
 
-#Confirmation-button #add-confirmation-button:hover {
+.form-button .btn-blue:hover {
     background-color: #03D0E3;
 }
 
@@ -814,7 +905,7 @@ span.error {
     display: block;
 }
 
-#practice-name-group .form-field.custom-select.show-error label.form-label {
+.form-field.custom-select.show-error label.form-label {
     color: #FF7596;
     opacity: 1;
 }
@@ -849,10 +940,7 @@ textarea {
     right: 10px;
 }
 
-#insert-variable-group .group.group-4.active .form-field.custom-select,
-.frequency-days-group .form-field.custom-select.custom-filled.active, 
-.days-hours-group .form-field.custom-select.custom-filled.active,
-.frequency-hours-group .form-field.custom-select.custom-filled.active {
+.form-field.custom-select.custom-filled.active {
     border: 2px solid #0ACADC;
 }
 
@@ -939,3 +1027,191 @@ textarea {
   .time-slider input[type=range] {
       margin-top: 14px;
   }
+
+  .ba-main .top-gutter {
+    background-color: rgb(243 244 246 / 50%);
+    padding: 22px 48px;
+}
+
+#custom-engagement-group-wrapper {
+    padding-top: 80px;
+}
+
+.ba-caption {
+    font-size: 12px;
+    font-family: "Eina-Bold";
+    line-height: 16px;
+    color: #363f5780;
+}
+
+ul#time-zone-d li span#time-display-hr #amount, 
+ul#time-zone-d li span#time-display-hr #amount span, 
+ul#time-zone-d li span#time-display-hrs #amount1, 
+ul#time-zone-d li span#time-display-hrs #amount1 span {
+    letter-spacing: 0px;
+    color: #363F57;
+    opacity: 1;
+    font-size: 16px;
+    line-height: 22px;
+    font-family: 'Eina-Bold';
+    display: inline-block;
+}
+
+.time-slider {
+    margin-top: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    outline: none;
+    background-color: transparent !important;
+}
+
+.time-slider input[type=range] {
+    margin-top: 0;
+    background: #F3F4F43D 0% 0% no-repeat padding-box;
+    border: 1px solid #EAEBEE;
+    border-radius: 4px;
+    opacity: 1;
+    height: 8px;
+    width: 105px;
+    background-color: #f3f4f43d !important;
+    outline: none;
+}
+
+#features-group-all ul li span.right-arrow {
+    position: absolute;
+    background-image: url(../assets/icons/right-arrow.svg);
+    width: 9.23px;
+    height: 14.3px;
+    display: block;
+    right: 25px;
+    top: 38.35px;
+}
+
+#features-group-all ul li {
+    position: relative;
+}
+
+#title-top a .icon {
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    margin-right: 6px;
+}
+
+#title-top a .icon img {
+    vertical-align: top;
+}
+
+
+/* Radio Button styling 
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 20px;
+  }
+  
+  .switch input { 
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  input:checked + .slider {
+    background-color: #2196F3;
+  }
+  
+  input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+  }
+  
+  input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+  }
+  
+  /* Rounded sliders 
+  .slider.round {
+    border-radius: 34px;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  }
+
+  */
+
+  .reminders-fill-content,
+  .hygiene-fill-content,
+  .confirmation-fill-content {
+    overflow-y: auto;
+    max-height: 604px;
+}
+
+#hygiene-conten .inner-content {
+    min-height: unset;
+}
+
+#hygiene-conten .inner-content#inner-content-1 h4.inner-content-head, 
+#hygiene-conten .inner-content#inner-content-2 h4.inner-content-head, 
+#hygiene-conten .inner-content#inner-content-3 h4.inner-content-head {
+    margin-bottom: 0;
+}
+
+div#frequency-weeks-group {
+    display: none;
+}
+
+.textarea-group .form-field .form-control.select {
+    font-size: 13px;
+    line-height: 18px;
+    font-family: 'Eina';
+    text-align: left;
+    color: #363F57;
+    overflow: hidden;
+}
+
+div#frequency-weeks-group4 {
+    display: none;
+}
+
+div#frequency-days-group25 {
+    display: none;
+}
+
+.top-gutter .ba-input-wrapper .ba-input-field h3.selected.data {
+    letter-spacing: 0px;
+color: #343D56;
+opacity: 1;
+font-size: 12px;
+line-height: 16px;
+margin: 0;
+font-family: 'Eina-Bold';
+}
