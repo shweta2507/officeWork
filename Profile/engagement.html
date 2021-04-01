@@ -236,7 +236,7 @@
                               <li class="time-update" id="time-update">
                                  <span class="start-time" id="start-time-zone">Start Time</span>
                                  <span class="time-display" id="time-display-hr">
-                                    <div id="amount"><span>1</span>:00</div>
+                                    <div id="amount"><span>12</span>:00</div>
                                     AM CST
                                  </span>
                                  <div class="time-slider">
@@ -246,7 +246,7 @@
                               <li class="time-update time-update-2" id="time-update-two">
                                  <span class="end-time" id="end-time-zone">End Time</span>
                                  <span class="time-display-s" id="time-display-hrs">
-                                    <div id="amount1"><span>1</span>:00</div>
+                                    <div id="amount1"><span>12</span>:00</div>
                                     AM CST
                                  </span>
                                  <div class="time-slider">
@@ -255,8 +255,13 @@
                               </li>
                            </ul>
                            <div class="change-time-button" id="time-button">
+<<<<<<< HEAD
                               <a id="change-timebb">Change Time</a>
                               <a id="save-timebb">Save Changes</a>
+=======
+                              <div id="change-timebb">Change Time</div>
+                              <div id="save-timebb">Save Changes</div>
+>>>>>>> c8c919cb30b87aa2a543a7747f4113f7d197f812
                            </div>
                         </div>
                      </div>
@@ -544,9 +549,9 @@
                            <div class="textarea-group" id="text-area-group">
                               <div class="group group-5">
                                  <div class="form-field custom-select">
-                                    <label for="name" class="form-label">Type your Message</label>
+                                    <!--<label for="name" class="form-label">Type your Message</label>-->
                                     <div class="custom-input">
-                                       <textarea type="text" class="form-control select"></textarea>
+                                       <textarea class="form-control select" placeholder="Type your Message" name="description"></textarea>
                                     </div>
                                  </div>
                               </div>
@@ -679,9 +684,9 @@
                            <div class="textarea-group" id="text-area-group2">
                               <div class="group group-5">
                                  <div class="form-field custom-select">
-                                    <label for="name" class="form-label">Type your Message</label>
+                                   <!-- <label for="name" class="form-label">Type your Message</label>-->
                                     <div class="custom-input">
-                                       <textarea type="text" class="form-control select"></textarea>
+                                       <textarea class="form-control select" placeholder="Type your Message" name="description"></textarea>
                                     </div>
                                  </div>
                               </div>
@@ -888,9 +893,9 @@
                            <div class="textarea-group" id="text-area-group3">
                               <div class="group group-5">
                                  <div class="form-field custom-select">
-                                    <label for="name" class="form-label">Type your Message</label>
+                                   <!-- <label for="name" class="form-label">Type your Message</label>-->
                                     <div class="custom-input">
-                                       <textarea type="text" class="form-control select"></textarea>
+                                       <textarea class="form-control select" placeholder="Type your Message" name="description"></textarea>
                                     </div>
                                  </div>
                               </div>
@@ -912,173 +917,102 @@
                   </div>
                </div>
             </div>
-
-
-
-
-
-
-                        <!-- ========================== Edit Confirmation PopUp ============================ -->
-                        <div class="modal fade" id="userModaledit1" tabindex="-1" role="dialog" aria-labelledby="userModalLabel" aria-hidden="true">
-                           <div class="modal-dialog" role="document">
-                              <div class="modal-content">
-                                 <div class="add-confirmation-popUp popup-1-module-group" id="add-conf-popup2">
-                                    <!-- ========================== Edit Confirmation PopUp Header ============================ -->
-                                    <div class="popup-header confirmation-popup-header" id="confirmation-header-popup2">
-                                       <!-- ========================== Edit Confirmation PopUp Close Icon ============================ -->
-                                       <div class="closeIcon">
-                                          <img src="assets/img/cross.svg" alt="Cross">
-                                       </div>
-                                       <!-- ========================== Edit Confirmation PopUp Title ============================ -->
-                                       <h1>Add Confirmation</h1>
+            <!-- ========================== Edit Confirmation PopUp ============================ -->
+            <div class="modal fade" id="userModaledit1" tabindex="-1" role="dialog" aria-labelledby="userModalLabel" aria-hidden="true">
+               <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                     <div class="add-confirmation-popUp popup-1-module-group" id="add-conf-popup2">
+                        <!-- ========================== Edit Confirmation PopUp Header ============================ -->
+                        <div class="popup-header confirmation-popup-header" id="confirmation-header-popup2">
+                           <!-- ========================== Edit Confirmation PopUp Close Icon ============================ -->
+                           <div class="closeIcon">
+                              <img src="assets/img/cross.svg" alt="Cross">
+                           </div>
+                           <!-- ========================== Edit Confirmation PopUp Title ============================ -->
+                           <h1>Edit Confirmation</h1>
+                        </div>
+                        <!-- ========================== Edit Confirmation Form Days or Hours and Frequency ============================ -->
+                        <div class="popup-header-droupdown confirmation-droupdown-group" id="confirmation-droupdown-popup2">
+                           <!-- ========================== Edit Confirmation Emails or Text Droupdown ============================ -->
+                           <div class="emails-text-group" id="emails-text-group2">
+                              <div class="group group-4">
+                                 <div class="form-field custom-select">
+                                    <label for="name" class="form-label">Email or Text</label>
+                                    <div class="custom-input dropdown-field">
+                                       <h3 class="selected data">Email</h3>
+                                       <input type="hidden" class="form-control select" autocomplete="off">
+                                       <span class="error">Select a email or text.</span>
+                                       <ul id="email-text4">
+                                          <li value="Email">Email</li>
+                                          <li value="Text">Text</li>
+                                       </ul>
                                     </div>
-                                    <!-- ========================== Edit Confirmation Form Days or Hours and Frequency ============================ -->
-                                    <div class="popup-header-droupdown confirmation-droupdown-group" id="confirmation-droupdown-popup2">
-                                       <!-- ========================== Edit Confirmation Emails or Text Droupdown ============================ -->
-                                       <div class="emails-text-group" id="emails-text-group2">
-                                          <div class="group group-4">
-                                             <div class="form-field custom-select">
-                                                <label for="name" class="form-label">Email or Text</label>
-                                                <div class="custom-input dropdown-field">
-                                                   <h3 class="selected data">Email</h3>
-                                                   <input type="hidden" class="form-control select" autocomplete="off">
-                                                   <span class="error">Select a email or text.</span>
-                                                   <ul id="email-text4">
-                                                      <li value="Email">Email</li>
-                                                      <li value="Text">Text</li>
-                                                   </ul>
-                                                </div>
-                                             </div>
-                                          </div>
-                                       </div>
-                                       <!-- ========================== Edit Confirmation Days or Hours Droupdown ============================ -->
-                                       <div class="days-hours-group" id="days-hours-group2">
-                                          <div class="group group-1">
-                                             <div class="form-field custom-select">
-                                                <label for="name" class="form-label">Days or Hours</label>
-                                                <div class="custom-input dropdown-field">
-                                                   <h3 class="selected data">Days</h3>
-                                                   <input type="hidden" class="form-control select" autocomplete="off">
-                                                   <span class="error">Select a days or hours.</span>
-                                                   <ul id="days-hours4">
-                                                      <li value="Days">Days</li>
-                                                      <li value="Hours">Hours</li>
-                                                   </ul>
-                                                </div>
-                                             </div>
-                                          </div>
-                                       </div>
-                                       <!-- ========================== Edit Confirmation Frequency Days Droupdown ============================ -->
-                                       <div class="frequency-dayshours-group" id="frequency-dayshours-group3">
-                                          <!-- ========================== Edit Confirmation Frequency Days Droupdown ============================ -->
-                                          <div class="frequency-days-group" id="frequency-days-group3">
-                                             <div class="group group-2">
-                                                <div class="form-field custom-select">
-                                                   <label for="name" class="form-label">Frequency</label>
-                                                   <div class="custom-input dropdown-field">
-                                                      <h3 class="selected data">30 day(s)</h3>
-                                                      <input type="hidden" class="form-control select" autocomplete="off">
-                                                      <span class="error">Select a valid frequency.</span>
-                                                      <ul id="days4">
-                                                         <li value="1 day(s)">1 day(s)</li>
-                                                         <li value="2 day(s)">2 day(s)</li>
-                                                         <li value="3 day(s)">3 day(s)</li>
-                                                         <li value="4 day(s)">4 day(s)</li>
-                                                         <li value="5 day(s)">5 day(s)</li>
-                                                         <li value="6 day(s)">6 day(s)</li>
-                                                         <li value="7 day(s)">7 day(s)</li>
-                                                         <li value="8 day(s)">8 day(s)</li>
-                                                         <li value="9 day(s)">9 day(s)</li>
-                                                         <li value="10 day(s)">10 day(s)</li>
-                                                         <li value="11 day(s)">11 day(s)</li>
-                                                         <li value="12 day(s)">12 day(s)</li>
-                                                         <li value="13 day(s)">13 day(s)</li>
-                                                         <li value="14 day(s)">14 day(s)</li>
-                                                         <li value="15 day(s)">15 day(s)</li>
-                                                         <li value="16 day(s)">16 day(s)</li>
-                                                         <li value="17 day(s)">17 day(s)</li>
-                                                         <li value="18 day(s)">18 day(s)</li>
-                                                         <li value="19 day(s)">19 day(s)</li>
-                                                         <li value="20 day(s)">20 day(s)</li>
-                                                         <li value="21 day(s)">21 day(s)</li>
-                                                         <li value="22 day(s)">22 day(s)</li>
-                                                         <li value="23 day(s)">23 day(s)</li>
-                                                         <li value="24 day(s)">24 day(s)</li>
-                                                         <li value="25 day(s)">25 day(s)</li>
-                                                         <li value="26 day(s)">26 day(s)</li>
-                                                         <li value="27 day(s)">27 day(s)</li>
-                                                         <li value="28 day(s)">28 day(s)</li>
-                                                         <li value="29 day(s)">29 day(s)</li>
-                                                         <li value="30 day(s)">30 day(s)</li>
-                                                      </ul>
-                                                   </div>
-                                                </div>
-                                             </div>
-                                          </div>
-                                          <!-- ========================== Edit Confirmation Frequency Hours Droupdown ============================ -->
-                                          <div class="frequency-hours-group" id="frequency-hours-group4">
-                                             <div class="group group-3">
-                                                <div class="form-field custom-select">
-                                                   <label for="name" class="form-label">Frequency</label>
-                                                   <div class="custom-input dropdown-field">
-                                                      <h3 class="selected data">24 hour(s)</h3>
-                                                      <input type="hidden" class="form-control select" autocomplete="off">
-                                                      <span class="error">Select a valid hours frequency.</span>
-                                                      <ul id="hours-4">
-                                                         <li value="1 hour(s)">1 hour(s)</li>
-                                                         <li value="2 hour(s)">2 hour(s)</li>
-                                                         <li value="3 hour(s)">3 hour(s)</li>
-                                                         <li value="4 hour(s)">4 hour(s)</li>
-                                                         <li value="5 hour(s)">5 hour(s)</li>
-                                                         <li value="6 hour(s)">6 hour(s)</li>
-                                                         <li value="7 hour(s)">7 hour(s)</li>
-                                                         <li value="8 hour(s)">8 hour(s)</li>
-                                                         <li value="9 hour(s)">9 hour(s)</li>
-                                                         <li value="10 hour(s)">10 hour(s)</li>
-                                                         <li value="11 hour(s)">11 hour(s)</li>
-                                                         <li value="12 hour(s)">12 hour(s)</li>
-                                                         <li value="13 hour(s)">13 hour(s)</li>
-                                                         <li value="14 hour(s)">14 hour(s)</li>
-                                                         <li value="15 hour(s)">15 hour(s)</li>
-                                                         <li value="16 hour(s)">16 hour(s)</li>
-                                                         <li value="17 hour(s)">17 hour(s)</li>
-                                                         <li value="18 hour(s)">18 hour(s)</li>
-                                                         <li value="19 hour(s)">19 hour(s)</li>
-                                                         <li value="20 hour(s)">20 hour(s)</li>
-                                                         <li value="21 hour(s)">21 hour(s)</li>
-                                                         <li value="22 hour(s)">22 hour(s)</li>
-                                                         <li value="23 hour(s)">23 hour(s)</li>
-                                                         <li value="24 hour(s)">24 hour(s)</li>
-                                                      </ul>
-                                                   </div>
-                                                </div>
-                                             </div>
-                                          </div>
+                                 </div>
+                              </div>
+                           </div>
+                           <!-- ========================== Edit Confirmation Days or Hours Droupdown ============================ -->
+                           <div class="days-hours-group" id="days-hours-group2">
+                              <div class="group group-1">
+                                 <div class="form-field custom-select">
+                                    <label for="name" class="form-label">Days or Hours</label>
+                                    <div class="custom-input dropdown-field">
+                                       <h3 class="selected data">Days</h3>
+                                       <input type="hidden" class="form-control select" autocomplete="off">
+                                       <span class="error">Select a days or hours.</span>
+                                       <ul id="days-hours4">
+                                          <li value="Days">Days</li>
+                                          <li value="Hours">Hours</li>
+                                       </ul>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                           <!-- ========================== Edit Confirmation Frequency Days Droupdown ============================ -->
+                           <div class="frequency-dayshours-group" id="frequency-dayshours-group3">
+                              <!-- ========================== Edit Confirmation Frequency Days Droupdown ============================ -->
+                              <div class="frequency-days-group" id="frequency-days-group3">
+                                 <div class="group group-2">
+                                    <div class="form-field custom-select">
+                                       <label for="name" class="form-label">Frequency</label>
+                                       <div class="custom-input dropdown-field">
+                                          <h3 class="selected data">30 day(s)</h3>
+                                          <input type="hidden" class="form-control select" autocomplete="off">
+                                          <span class="error">Select a valid frequency.</span>
+                                          <ul id="days4">
+                                             <li value="1 day(s)">1 day(s)</li>
+                                             <li value="2 day(s)">2 day(s)</li>
+                                             <li value="3 day(s)">3 day(s)</li>
+                                             <li value="4 day(s)">4 day(s)</li>
+                                             <li value="5 day(s)">5 day(s)</li>
+                                             <li value="6 day(s)">6 day(s)</li>
+                                             <li value="7 day(s)">7 day(s)</li>
+                                             <li value="8 day(s)">8 day(s)</li>
+                                             <li value="9 day(s)">9 day(s)</li>
+                                             <li value="10 day(s)">10 day(s)</li>
+                                             <li value="11 day(s)">11 day(s)</li>
+                                             <li value="12 day(s)">12 day(s)</li>
+                                             <li value="13 day(s)">13 day(s)</li>
+                                             <li value="14 day(s)">14 day(s)</li>
+                                             <li value="15 day(s)">15 day(s)</li>
+                                             <li value="16 day(s)">16 day(s)</li>
+                                             <li value="17 day(s)">17 day(s)</li>
+                                             <li value="18 day(s)">18 day(s)</li>
+                                             <li value="19 day(s)">19 day(s)</li>
+                                             <li value="20 day(s)">20 day(s)</li>
+                                             <li value="21 day(s)">21 day(s)</li>
+                                             <li value="22 day(s)">22 day(s)</li>
+                                             <li value="23 day(s)">23 day(s)</li>
+                                             <li value="24 day(s)">24 day(s)</li>
+                                             <li value="25 day(s)">25 day(s)</li>
+                                             <li value="26 day(s)">26 day(s)</li>
+                                             <li value="27 day(s)">27 day(s)</li>
+                                             <li value="28 day(s)">28 day(s)</li>
+                                             <li value="29 day(s)">29 day(s)</li>
+                                             <li value="30 day(s)">30 day(s)</li>
+                                          </ul>
                                        </div>
                                     </div>
-                                    <!-- ========================== Edit Confirmation Form Insert Variable Droupdown ============================ -->
-                                    <div class="popup-insert-variable confirmation-droupdown-variable" id="confirmation-insert-variable4">
-                                       <div class="insert-variable-group" id="insert-variable-group4">
-                                          <div class="group group-4">
-                                             <div class="form-field custom-select">
-                                                <!--<label for="name" class="form-label">Insert Variable</label>-->
-                                                <div class="custom-input dropdown-field">
-                                                   <h3 class="selected data">Insert Variable</h3>
-                                                   <input type="hidden" class="form-control select" autocomplete="off">
-                                                   <span class="error">Select a insert variable.</span>
-                                                   <ul id="insert-variable4">
-                                                      <li value="*Appt Date*">*Appt Date*</li>
-                                                      <li value="*Patient First Name*">*Patient First Name*</li>
-                                                      <li value="*Patient Full Name*">*Patient Full Name*</li>
-                                                      <li value="*Practice Name*">*Practice Name*</li>
-                                                      <li value="*Practice Phone Number*">*Practice Phone Number*</li>
-                                                      <li value="**Practice Email Address**">*Practice Email Address*</li>
-                                                   </ul>
-                                                </div>
-                                             </div>
-                                          </div>
-                                       </div>
-                                    </div>
+<<<<<<< HEAD
                                     <!-- ========================== Edit Confirmation Form Textarea ============================ -->
                                     <div class="popup-form-textarea confirmation-textarea-group" id="confirmation-form-textarea4">
                                        <div class="textarea-group" id="text-area-group4">
@@ -1094,341 +1028,307 @@
                                                 </div>
                                              </div>
                                           </div>
-                                       </div>
-                                    </div>
-                                    <!-- ========================== Edit Confirmation Form Button ============================ -->
-                                    <div class="form-button" id="Confirmation-button4">
-                                       <a href="#" class="for-btn for-btn-primary cancel" id="button-cancel4">Cancel</a>
-                                       <a href="#" class="for-btn for-btn-primary btn-blue" id="add-confirmation-button4">Add Confirmation</a>
-                                       <div class="loader">
-                                          <svg version="1.1" id="loader-1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="40px" height="40px" viewBox="0 0 50 50" style="enable-background:new 0 0 50 50;" xml:space="preserve">
-                                             <path fill="#000" d="M43.935,25.145c0-10.318-8.364-18.683-18.683-18.683c-10.318,0-18.683,8.365-18.683,18.683h4.068c0-8.071,6.543-14.615,14.615-14.615c8.072,0,14.615,6.543,14.615,14.615H43.935z">
-                                                <animateTransform attributeType="xml" attributeName="transform" type="rotate" from="0 25 25" to="360 25 25" dur="0.6s" repeatCount="indefinite"></animateTransform>
-                                             </path>
-                                          </svg>
+=======
+                                 </div>
+                              </div>
+                              <!-- ========================== Edit Confirmation Frequency Hours Droupdown ============================ -->
+                              <div class="frequency-hours-group" id="frequency-hours-group4">
+                                 <div class="group group-3">
+                                    <div class="form-field custom-select">
+                                       <label for="name" class="form-label">Frequency</label>
+                                       <div class="custom-input dropdown-field">
+                                          <h3 class="selected data">24 hour(s)</h3>
+                                          <input type="hidden" class="form-control select" autocomplete="off">
+                                          <span class="error">Select a valid hours frequency.</span>
+                                          <ul id="hours-4">
+                                             <li value="1 hour(s)">1 hour(s)</li>
+                                             <li value="2 hour(s)">2 hour(s)</li>
+                                             <li value="3 hour(s)">3 hour(s)</li>
+                                             <li value="4 hour(s)">4 hour(s)</li>
+                                             <li value="5 hour(s)">5 hour(s)</li>
+                                             <li value="6 hour(s)">6 hour(s)</li>
+                                             <li value="7 hour(s)">7 hour(s)</li>
+                                             <li value="8 hour(s)">8 hour(s)</li>
+                                             <li value="9 hour(s)">9 hour(s)</li>
+                                             <li value="10 hour(s)">10 hour(s)</li>
+                                             <li value="11 hour(s)">11 hour(s)</li>
+                                             <li value="12 hour(s)">12 hour(s)</li>
+                                             <li value="13 hour(s)">13 hour(s)</li>
+                                             <li value="14 hour(s)">14 hour(s)</li>
+                                             <li value="15 hour(s)">15 hour(s)</li>
+                                             <li value="16 hour(s)">16 hour(s)</li>
+                                             <li value="17 hour(s)">17 hour(s)</li>
+                                             <li value="18 hour(s)">18 hour(s)</li>
+                                             <li value="19 hour(s)">19 hour(s)</li>
+                                             <li value="20 hour(s)">20 hour(s)</li>
+                                             <li value="21 hour(s)">21 hour(s)</li>
+                                             <li value="22 hour(s)">22 hour(s)</li>
+                                             <li value="23 hour(s)">23 hour(s)</li>
+                                             <li value="24 hour(s)">24 hour(s)</li>
+                                          </ul>
+>>>>>>> c8c919cb30b87aa2a543a7747f4113f7d197f812
                                        </div>
                                     </div>
                                  </div>
                               </div>
                            </div>
                         </div>
-                        <!-- ========================== Edit Hygiene PopUp ============================ -->
-                        <div class="modal fade" id="userModal-hygiene-edit1" tabindex="-1" role="dialog" aria-labelledby="userModalLabel" aria-hidden="true">
-                           <div class="modal-dialog" role="document">
-                              <div class="modal-content">
-                                 <div class="add-hygiene-popUp popup-1-module-group" id="add-hyg-popup4">
-                                    <!-- ========================== Edit Hygiene PopUp Header ============================ -->
-                                    <div class="popup-header hygiene-popup-header" id="hygiene-header-popup4">
-                                       <!-- ========================== Edit Hygiene PopUp Close Icon ============================ -->
-                                       <div class="closeIcon">
-                                          <img src="assets/img/cross.svg" alt="Cross">
-                                       </div>
-                                       <!-- ========================== Edit Hygiene PopUp Title ============================ -->
-                                       <h1>Add Hygiene</h1>
+                        <!-- ========================== Edit Confirmation Form Insert Variable Droupdown ============================ -->
+                        <div class="popup-insert-variable confirmation-droupdown-variable" id="confirmation-insert-variable4">
+                           <div class="insert-variable-group" id="insert-variable-group4">
+                              <div class="group group-4">
+                                 <div class="form-field custom-select">
+                                    <!--<label for="name" class="form-label">Insert Variable</label>-->
+                                    <div class="custom-input dropdown-field">
+                                       <h3 class="selected data">Insert Variable</h3>
+                                       <input type="hidden" class="form-control select" autocomplete="off">
+                                       <span class="error">Select a insert variable.</span>
+                                       <ul id="insert-variable4">
+                                          <li value="*Appt Date*">*Appt Date*</li>
+                                          <li value="*Patient First Name*">*Patient First Name*</li>
+                                          <li value="*Patient Full Name*">*Patient Full Name*</li>
+                                          <li value="*Practice Name*">*Practice Name*</li>
+                                          <li value="*Practice Phone Number*">*Practice Phone Number*</li>
+                                          <li value="**Practice Email Address**">*Practice Email Address*</li>
+                                       </ul>
                                     </div>
-                                    <!-- ========================== Edit Hygiene Form Days or Hours and Frequency ============================ -->
-                                    <div class="popup-header-droupdown hygiene-droupdown-group" id="hygiene-droupdown-popup4">
-                                       <!-- ========================== Edit Hygiene Emails or Text Droupdown ============================ -->
-                                       <div class="weeks-months-group" id="weeks-months-group4">
-                                          <div class="group group-4">
-                                             <div class="form-field custom-select">
-                                                <label for="name" class="form-label">Weeks or Months</label>
-                                                <div class="custom-input dropdown-field">
-                                                   <h3 class="selected data">Months</h3>
-                                                   <input type="hidden" class="form-control select" autocomplete="off">
-                                                   <span class="error">Select a weeks or months.</span>
-                                                   <ul id="weeks-months4">
-                                                      <li value="Weeks">Weeks</li>
-                                                      <li value="Months">Months</li>
-                                                   </ul>
-                                                </div>
-                                             </div>
-                                          </div>
-                                       </div>
-                                       <!-- ========================== Edit Hygiene Frequency Months Weeks Group Droupdown ============================ -->
-                                       <div class="frequency-weeksmonths-group" id="frequency-weeksmonths-group4">
-                                          <!-- ========================== Edit Hygiene Frequency Months Droupdown ============================ -->
-                                          <div class="frequency-months-group" id="frequency-months-group4">
-                                             <div class="group group-2">
-                                                <div class="form-field custom-select">
-                                                   <label for="name" class="form-label">Frequency</label>
-                                                   <div class="custom-input dropdown-field">
-                                                      <h3 class="selected data">3 month(s)</h3>
-                                                      <input type="hidden" class="form-control select" autocomplete="off">
-                                                      <span class="error">Select a valid frequency.</span>
-                                                      <ul id="months24">
-                                                         <li value="1 month(s)">1 month(s)</li>
-                                                         <li value="2 month(s)">2 month(s)</li>
-                                                         <li value="3 month(s)">3 month(s)</li>
-                                                         <li value="4 month(s)">4 month(s)</li>
-                                                         <li value="5 month(s)">5 month(s)</li>
-                                                         <li value="6 month(s)">6 month(s)</li>
-                                                         <li value="7 month(s)">7 month(s)</li>
-                                                         <li value="8 month(s)">8 month(s)</li>
-                                                         <li value="9 month(s)">9 month(s)</li>
-                                                         <li value="10 month(s)">10 month(s)</li>
-                                                         <li value="11 month(s)">11 month(s)</li>
-                                                         <li value="12 month(s)">12 month(s)</li>
-                                                      </ul>
-                                                   </div>
-                                                </div>
-                                             </div>
-                                          </div>
-                                          <!-- ========================== Edit Hygiene Frequency Weeks Droupdown ============================ -->
-                                          <div class="frequency-weeks-group" id="frequency-weeks-group4">
-                                             <div class="group group-2">
-                                                <div class="form-field custom-select">
-                                                   <label for="name" class="form-label">Frequency</label>
-                                                   <div class="custom-input dropdown-field">
-                                                      <h3 class="selected data">3 week(s)</h3>
-                                                      <input type="hidden" class="form-control select" autocomplete="off">
-                                                      <span class="error">Select a valid frequency.</span>
-                                                      <ul id="weeks4">
-                                                         <li value="1 week(s)">1 week(s)</li>
-                                                         <li value="2 week(s)">2 week(s)</li>
-                                                         <li value="3 week(s)">3 week(s)</li>
-                                                         <li value="4 week(s)">4 week(s)</li>
-                                                      </ul>
-                                                   </div>
-                                                </div>
-                                             </div>
-                                          </div>
-                                       </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <!-- ========================== Edit Confirmation Form Textarea ============================ -->
+                        <div class="popup-form-textarea confirmation-textarea-group" id="confirmation-form-textarea4">
+                           <div class="textarea-group" id="text-area-group4">
+                              <div class="group group-5">
+                                 <div class="form-field custom-select">
+                                    <!--<label for="name" class="form-label">Type your Message</label>-->
+                                    <div class="custom-input">
+                                       <textarea class="form-control select" placeholder="Type your Message" name="description">Hi *Patient Full Name*, you have an upcoming appointment on *Appt Date*. Click below to confirm or contact us to reschedule. If you have any questions about your appointment, please contact us anytime at *Practice Phone Number* or *Practice Email Address*.
+                                       </textarea>
                                     </div>
-                                    <!-- ========================== Edit Hygiene Form Insert Variable Droupdown ============================ -->
-                                    <div class="popup-insert-variable hygiene-droupdown-variable" id="Hygiene-insert-variable4">
-                                       <div class="insert-variable-group" id="insert-variable-group4">
-                                          <div class="group group-4">
-                                             <div class="form-field custom-select">
-                                                <!--<label for="name" class="form-label">Insert Variable</label>-->
-                                                <div class="custom-input dropdown-field">
-                                                   <h3 class="selected data">Insert Variable</h3>
-                                                   <input type="hidden" class="form-control select" autocomplete="off">
-                                                   <span class="error">Select a insert variable.</span>
-                                                   <ul id="insert-variable4">
-                                                      <li value="*Appt Date*">*Appt Date*</li>
-                                                      <li value="*Patient First Name*">*Patient First Name*</li>
-                                                      <li value="*Patient Full Name*">*Patient Full Name*</li>
-                                                      <li value="*Practice Name*">*Practice Name*</li>
-                                                      <li value="*Practice Phone Number*">*Practice Phone Number*</li>
-                                                      <li value="**Practice Email Address**">*Practice Email Address*</li>
-                                                   </ul>
-                                                </div>
-                                             </div>
-                                          </div>
-                                       </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <!-- ========================== Edit Confirmation Form Button ============================ -->
+                        <div class="form-button" id="Confirmation-button4">
+                           <a href="#" class="for-btn for-btn-primary cancel" id="button-cancel4">Cancel</a>
+                           <a href="#" class="for-btn for-btn-primary btn-blue" id="add-confirmation-button4">Save Changes</a>
+                           <div class="loader">
+                              <svg version="1.1" id="loader-1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="40px" height="40px" viewBox="0 0 50 50" style="enable-background:new 0 0 50 50;" xml:space="preserve">
+                                 <path fill="#000" d="M43.935,25.145c0-10.318-8.364-18.683-18.683-18.683c-10.318,0-18.683,8.365-18.683,18.683h4.068c0-8.071,6.543-14.615,14.615-14.615c8.072,0,14.615,6.543,14.615,14.615H43.935z">
+                                    <animateTransform attributeType="xml" attributeName="transform" type="rotate" from="0 25 25" to="360 25 25" dur="0.6s" repeatCount="indefinite"></animateTransform>
+                                 </path>
+                              </svg>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <!-- ========================== Edit Hygiene PopUp ============================ -->
+            <div class="modal fade" id="userModal-hygiene-edit1" tabindex="-1" role="dialog" aria-labelledby="userModalLabel" aria-hidden="true">
+               <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                     <div class="add-hygiene-popUp popup-1-module-group" id="add-hyg-popup4">
+                        <!-- ========================== Edit Hygiene PopUp Header ============================ -->
+                        <div class="popup-header hygiene-popup-header" id="hygiene-header-popup4">
+                           <!-- ========================== Edit Hygiene PopUp Close Icon ============================ -->
+                           <div class="closeIcon">
+                              <img src="assets/img/cross.svg" alt="Cross">
+                           </div>
+                           <!-- ========================== Edit Hygiene PopUp Title ============================ -->
+                           <h1>Edit Hygiene</h1>
+                        </div>
+                        <!-- ========================== Edit Hygiene Form Days or Hours and Frequency ============================ -->
+                        <div class="popup-header-droupdown hygiene-droupdown-group" id="hygiene-droupdown-popup4">
+                           <!-- ========================== Edit Hygiene Emails or Text Droupdown ============================ -->
+                           <div class="weeks-months-group" id="weeks-months-group4">
+                              <div class="group group-4">
+                                 <div class="form-field custom-select">
+                                    <label for="name" class="form-label">Weeks or Months</label>
+                                    <div class="custom-input dropdown-field">
+                                       <h3 class="selected data">Months</h3>
+                                       <input type="hidden" class="form-control select" autocomplete="off">
+                                       <span class="error">Select a weeks or months.</span>
+                                       <ul id="weeks-months4">
+                                          <li value="Weeks">Weeks</li>
+                                          <li value="Months">Months</li>
+                                       </ul>
                                     </div>
-                                    <!-- ========================== Edit Hygiene Form Textarea ============================ -->
-                                    <div class="popup-form-textarea hygiene-textarea-group" id="Hygiene-form-textarea4">
-                                       <div class="textarea-group" id="text-area-group24">
-                                          <div class="group group-5">
-                                             <div class="form-field custom-select">
-                                                <label for="name" class="form-label">Type your Message</label>
-                                                <div class="custom-input">
-                                                   <textarea type="text" class="form-control select">
-                                                      Hello (PatientName), you have an appointment on (Appt) with (PracticeName), For the safety of our patients, we are doing a virtual check in process. Please fill out this covid prescreening prior to arrival for your visit, and call 303-772-9966 once you arrive to check in.
-                                                   </textarea>
-                                                </div>
-                                             </div>
-                                          </div>
+                                 </div>
+                              </div>
+                           </div>
+                           <!-- ========================== Edit Hygiene Frequency Months Weeks Group Droupdown ============================ -->
+                           <div class="frequency-weeksmonths-group" id="frequency-weeksmonths-group4">
+                              <!-- ========================== Edit Hygiene Frequency Months Droupdown ============================ -->
+                              <div class="frequency-months-group" id="frequency-months-group4">
+                                 <div class="group group-2">
+                                    <div class="form-field custom-select">
+                                       <label for="name" class="form-label">Frequency</label>
+                                       <div class="custom-input dropdown-field">
+                                          <h3 class="selected data">3 month(s)</h3>
+                                          <input type="hidden" class="form-control select" autocomplete="off">
+                                          <span class="error">Select a valid frequency.</span>
+                                          <ul id="months24">
+                                             <li value="1 month(s)">1 month(s)</li>
+                                             <li value="2 month(s)">2 month(s)</li>
+                                             <li value="3 month(s)">3 month(s)</li>
+                                             <li value="4 month(s)">4 month(s)</li>
+                                             <li value="5 month(s)">5 month(s)</li>
+                                             <li value="6 month(s)">6 month(s)</li>
+                                             <li value="7 month(s)">7 month(s)</li>
+                                             <li value="8 month(s)">8 month(s)</li>
+                                             <li value="9 month(s)">9 month(s)</li>
+                                             <li value="10 month(s)">10 month(s)</li>
+                                             <li value="11 month(s)">11 month(s)</li>
+                                             <li value="12 month(s)">12 month(s)</li>
+                                          </ul>
                                        </div>
                                     </div>
-                                    <!-- ========================== Edit Hygiene Form Button ============================ -->
-                                    <div class="form-button" id="Hygiene-button4">
-                                       <a href="#" class="for-btn for-btn-primary cancel" id="button-cancel24">Cancel</a>
-                                       <a href="#" class="for-btn for-btn-primary btn-blue" id="add-confirmation-button24">Add Confirmation</a>
-                                       <div class="loader">
-                                          <svg version="1.1" id="loader-1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="40px" height="40px" viewBox="0 0 50 50" style="enable-background:new 0 0 50 50;" xml:space="preserve">
-                                             <path fill="#000" d="M43.935,25.145c0-10.318-8.364-18.683-18.683-18.683c-10.318,0-18.683,8.365-18.683,18.683h4.068c0-8.071,6.543-14.615,14.615-14.615c8.072,0,14.615,6.543,14.615,14.615H43.935z">
-                                                <animateTransform attributeType="xml" attributeName="transform" type="rotate" from="0 25 25" to="360 25 25" dur="0.6s" repeatCount="indefinite"></animateTransform>
-                                             </path>
-                                          </svg>
+                                 </div>
+                              </div>
+                              <!-- ========================== Edit Hygiene Frequency Weeks Droupdown ============================ -->
+                              <div class="frequency-weeks-group" id="frequency-weeks-group4">
+                                 <div class="group group-2">
+                                    <div class="form-field custom-select">
+                                       <label for="name" class="form-label">Frequency</label>
+                                       <div class="custom-input dropdown-field">
+                                          <h3 class="selected data">3 week(s)</h3>
+                                          <input type="hidden" class="form-control select" autocomplete="off">
+                                          <span class="error">Select a valid frequency.</span>
+                                          <ul id="weeks4">
+                                             <li value="1 week(s)">1 week(s)</li>
+                                             <li value="2 week(s)">2 week(s)</li>
+                                             <li value="3 week(s)">3 week(s)</li>
+                                             <li value="4 week(s)">4 week(s)</li>
+                                          </ul>
                                        </div>
                                     </div>
                                  </div>
                               </div>
                            </div>
                         </div>
-                        <!-- ========================== Edit Reminder PopUp ============================ -->
-                        <div class="modal fade" id="userModal-reminder-edit1" tabindex="-1" role="dialog" aria-labelledby="userModalLabel" aria-hidden="true">
-                           <div class="modal-dialog" role="document">
-                              <div class="modal-content">
-                                 <div class="add-reminder-popUp popup-1-module-group" id="add-rem-popup5">
-                                    <!-- ========================== Edit Reminder PopUp Header ============================ -->
-                                    <div class="popup-header reminder-popup-header" id="reminder-header-popup5">
-                                       <!-- ========================== Edit Reminder PopUp Close Icon ============================ -->
-                                       <div class="closeIcon">
-                                          <img src="assets/img/cross.svg" alt="Cross">
-                                       </div>
-                                       <!-- ========================== Edit Reminder PopUp Title ============================ -->
-                                       <h1>Add Reminder</h1>
+                        <!-- ========================== Edit Hygiene Form Insert Variable Droupdown ============================ -->
+                        <div class="popup-insert-variable hygiene-droupdown-variable" id="Hygiene-insert-variable4">
+                           <div class="insert-variable-group" id="insert-variable-group4">
+                              <div class="group group-4">
+                                 <div class="form-field custom-select">
+                                    <!--<label for="name" class="form-label">Insert Variable</label>-->
+                                    <div class="custom-input dropdown-field">
+                                       <h3 class="selected data">Insert Variable</h3>
+                                       <input type="hidden" class="form-control select" autocomplete="off">
+                                       <span class="error">Select a insert variable.</span>
+                                       <ul id="insert-variable4">
+                                          <li value="*Appt Date*">*Appt Date*</li>
+                                          <li value="*Patient First Name*">*Patient First Name*</li>
+                                          <li value="*Patient Full Name*">*Patient Full Name*</li>
+                                          <li value="*Practice Name*">*Practice Name*</li>
+                                          <li value="*Practice Phone Number*">*Practice Phone Number*</li>
+                                          <li value="**Practice Email Address**">*Practice Email Address*</li>
+                                       </ul>
                                     </div>
-                                    <!-- ========================== Edit Reminder Form Days or Hours and Frequency ============================ -->
-                                    <div class="popup-header-droupdown reminder-droupdown-group1" id="reminder-droupdown-popup15">
-                                       <!-- ========================== Edit Reminder Emails or Text Droupdown ============================ -->
-                                       <div class="emails-text-group2" id="emails-text-group25">
-                                          <div class="group group-4">
-                                             <div class="form-field custom-select">
-                                                <label for="name" class="form-label">Email or Text</label>
-                                                <div class="custom-input dropdown-field">
-                                                   <h3 class="selected data">Email</h3>
-                                                   <input type="hidden" class="form-control select" autocomplete="off">
-                                                   <span class="error">Select a email or text.</span>
-                                                   <ul id="emails2-text5">
-                                                      <li value="Email">Email</li>
-                                                      <li value="Months">Text</li>
-                                                   </ul>
-                                                </div>
-                                             </div>
-                                          </div>
-                                       </div>
-                                       <!-- ========================== Edit Reminder Appointment Status Droupdown ============================ -->
-                                       <div class="appointment-status-group" id="appointment-status-group5">
-                                          <div class="group group-2">
-                                             <div class="form-field custom-select">
-                                                <label for="name" class="form-label">Appointment Status</label>
-                                                <div class="custom-input dropdown-field">
-                                                   <h3 class="selected data">Confirmed</h3>
-                                                   <input type="hidden" class="form-control select" autocomplete="off">
-                                                   <span class="error">Select a minimum 1 appointment.</span>
-                                                   <ul id="appointment5">
-                                                      <li value="1 month(s)">Confirmed</li>
-                                                      <li value="2 month(s)">Unconfirmed</li>
-                                                   </ul>
-                                                </div>
-                                             </div>
-                                          </div>
-                                       </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <!-- ========================== Edit Hygiene Form Textarea ============================ -->
+                        <div class="popup-form-textarea hygiene-textarea-group" id="Hygiene-form-textarea4">
+                           <div class="textarea-group" id="text-area-group24">
+                              <div class="group group-5">
+                                 <div class="form-field custom-select">
+                                    <!--<label for="name" class="form-label"></label>-->
+                                    <div class="custom-input">
+                                       <textarea class="form-control select" placeholder="Type your Message" name="description">Hello (PatientName), you have an appointment on (Appt) with (PracticeName), For the safety of our patients, we are doing a virtual check in process. Please fill out this covid prescreening prior to arrival for your visit, and call 303-772-9966 once you arrive to check in.
+                                       </textarea>
                                     </div>
-                                    <div class="popup-header-droupdown reminder-droupdown-group2" id="reminder-droupdown-popup25">
-                                       <!-- ========================== Edit reminder Days or Hours Droupdown ============================ -->
-                                       <div class="days-hours-group2" id="days-hours-group25">
-                                          <div class="group group-1">
-                                             <div class="form-field custom-select">
-                                                <label for="name" class="form-label">Days or Hours</label>
-                                                <div class="custom-input dropdown-field">
-                                                   <h3 class="selected data">Hours</h3>
-                                                   <input type="hidden" class="form-control select" autocomplete="off">
-                                                   <span class="error">Select a days or hours.</span>
-                                                   <ul id="days-hours25">
-                                                      <li value="Days">Days</li>
-                                                      <li value="Hours">Hours</li>
-                                                   </ul>
-                                                </div>
-                                             </div>
-                                          </div>
-                                       </div>
-                                       <!-- ========================== Edit reminder Frequency Days Droupdown ============================ -->
-                                       <div class="frequency-dayshours-group2" id="frequency-dayshours-group25">
-                                          <!-- ========================== Edit reminder Frequency Days Droupdown ============================ -->
-                                          <div class="frequency-days-group2" id="frequency-days-group25">
-                                             <div class="group group-2">
-                                                <div class="form-field custom-select">
-                                                   <label for="name" class="form-label">Frequency</label>
-                                                   <div class="custom-input dropdown-field">
-                                                      <h3 class="selected data">1 day(s)</h3>
-                                                      <input type="hidden" class="form-control select" autocomplete="off">
-                                                      <span class="error">Select a valid frequency.</span>
-                                                      <ul id="days25">
-                                                         <li value="1 day(s)">1 day(s)</li>
-                                                         <li value="2 day(s)">2 day(s)</li>
-                                                         <li value="3 day(s)">3 day(s)</li>
-                                                         <li value="4 day(s)">4 day(s)</li>
-                                                         <li value="5 day(s)">5 day(s)</li>
-                                                         <li value="6 day(s)">6 day(s)</li>
-                                                         <li value="7 day(s)">7 day(s)</li>
-                                                         <li value="8 day(s)">8 day(s)</li>
-                                                         <li value="9 day(s)">9 day(s)</li>
-                                                         <li value="10 day(s)">10 day(s)</li>
-                                                         <li value="11 day(s)">11 day(s)</li>
-                                                         <li value="12 day(s)">12 day(s)</li>
-                                                         <li value="13 day(s)">13 day(s)</li>
-                                                         <li value="14 day(s)">14 day(s)</li>
-                                                         <li value="15 day(s)">15 day(s)</li>
-                                                         <li value="16 day(s)">16 day(s)</li>
-                                                         <li value="17 day(s)">17 day(s)</li>
-                                                         <li value="18 day(s)">18 day(s)</li>
-                                                         <li value="19 day(s)">19 day(s)</li>
-                                                         <li value="20 day(s)">20 day(s)</li>
-                                                         <li value="21 day(s)">21 day(s)</li>
-                                                         <li value="22 day(s)">22 day(s)</li>
-                                                         <li value="23 day(s)">23 day(s)</li>
-                                                         <li value="24 day(s)">24 day(s)</li>
-                                                         <li value="25 day(s)">25 day(s)</li>
-                                                         <li value="26 day(s)">26 day(s)</li>
-                                                         <li value="27 day(s)">27 day(s)</li>
-                                                         <li value="28 day(s)">28 day(s)</li>
-                                                         <li value="29 day(s)">29 day(s)</li>
-                                                         <li value="30 day(s)">30 day(s)</li>
-                                                      </ul>
-                                                   </div>
-                                                </div>
-                                             </div>
-                                          </div>
-                                          <!-- ========================== Edit Confirmation Frequency Hours Droupdown ============================ -->
-                                          <div class="frequency-hours-group2" id="frequency-hours-group25">
-                                             <div class="group group-3">
-                                                <div class="form-field custom-select">
-                                                   <label for="name" class="form-label">Frequency</label>
-                                                   <div class="custom-input dropdown-field">
-                                                      <h3 class="selected data">1 hour(s)</h3>
-                                                      <input type="hidden" class="form-control select" autocomplete="off">
-                                                      <span class="error">Select a valid hours frequency.</span>
-                                                      <ul id="hours-25">
-                                                         <li value="1 hour(s)">1 hour(s)</li>
-                                                         <li value="2 hour(s)">2 hour(s)</li>
-                                                         <li value="3 hour(s)">3 hour(s)</li>
-                                                         <li value="4 hour(s)">4 hour(s)</li>
-                                                         <li value="5 hour(s)">5 hour(s)</li>
-                                                         <li value="6 hour(s)">6 hour(s)</li>
-                                                         <li value="7 hour(s)">7 hour(s)</li>
-                                                         <li value="8 hour(s)">8 hour(s)</li>
-                                                         <li value="9 hour(s)">9 hour(s)</li>
-                                                         <li value="10 hour(s)">10 hour(s)</li>
-                                                         <li value="11 hour(s)">11 hour(s)</li>
-                                                         <li value="12 hour(s)">12 hour(s)</li>
-                                                         <li value="13 hour(s)">13 hour(s)</li>
-                                                         <li value="14 hour(s)">14 hour(s)</li>
-                                                         <li value="15 hour(s)">15 hour(s)</li>
-                                                         <li value="16 hour(s)">16 hour(s)</li>
-                                                         <li value="17 hour(s)">17 hour(s)</li>
-                                                         <li value="18 hour(s)">18 hour(s)</li>
-                                                         <li value="19 hour(s)">19 hour(s)</li>
-                                                         <li value="20 hour(s)">20 hour(s)</li>
-                                                         <li value="21 hour(s)">21 hour(s)</li>
-                                                         <li value="22 hour(s)">22 hour(s)</li>
-                                                         <li value="23 hour(s)">23 hour(s)</li>
-                                                         <li value="24 hour(s)">24 hour(s)</li>
-                                                      </ul>
-                                                   </div>
-                                                </div>
-                                             </div>
-                                          </div>
-                                       </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <!-- ========================== Edit Hygiene Form Button ============================ -->
+                        <div class="form-button" id="Hygiene-button4">
+                           <a href="#" class="for-btn for-btn-primary cancel" id="button-cancel24">Cancel</a>
+                           <a href="#" class="for-btn for-btn-primary btn-blue" id="add-confirmation-button24">Save Changes</a>
+                           <div class="loader">
+                              <svg version="1.1" id="loader-1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="40px" height="40px" viewBox="0 0 50 50" style="enable-background:new 0 0 50 50;" xml:space="preserve">
+                                 <path fill="#000" d="M43.935,25.145c0-10.318-8.364-18.683-18.683-18.683c-10.318,0-18.683,8.365-18.683,18.683h4.068c0-8.071,6.543-14.615,14.615-14.615c8.072,0,14.615,6.543,14.615,14.615H43.935z">
+                                    <animateTransform attributeType="xml" attributeName="transform" type="rotate" from="0 25 25" to="360 25 25" dur="0.6s" repeatCount="indefinite"></animateTransform>
+                                 </path>
+                              </svg>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <!-- ========================== Edit Reminder PopUp ============================ -->
+            <div class="modal fade" id="userModal-reminder-edit1" tabindex="-1" role="dialog" aria-labelledby="userModalLabel" aria-hidden="true">
+               <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                     <div class="add-reminder-popUp popup-1-module-group" id="add-rem-popup5">
+                        <!-- ========================== Edit Reminder PopUp Header ============================ -->
+                        <div class="popup-header reminder-popup-header" id="reminder-header-popup5">
+                           <!-- ========================== Edit Reminder PopUp Close Icon ============================ -->
+                           <div class="closeIcon">
+                              <img src="assets/img/cross.svg" alt="Cross">
+                           </div>
+                           <!-- ========================== Edit Reminder PopUp Title ============================ -->
+                           <h1>Edit Reminder</h1>
+                        </div>
+                        <!-- ========================== Edit Reminder Form Days or Hours and Frequency ============================ -->
+                        <div class="popup-header-droupdown reminder-droupdown-group1" id="reminder-droupdown-popup15">
+                           <!-- ========================== Edit Reminder Emails or Text Droupdown ============================ -->
+                           <div class="emails-text-group2" id="emails-text-group25">
+                              <div class="group group-4">
+                                 <div class="form-field custom-select">
+                                    <label for="name" class="form-label">Email or Text</label>
+                                    <div class="custom-input dropdown-field">
+                                       <h3 class="selected data">Email</h3>
+                                       <input type="hidden" class="form-control select" autocomplete="off">
+                                       <span class="error">Select a email or text.</span>
+                                       <ul id="emails2-text5">
+                                          <li value="Email">Email</li>
+                                          <li value="Months">Text</li>
+                                       </ul>
                                     </div>
-                                    <!-- ========================== Edit Reminder Form Insert Variable Droupdown ============================ -->
-                                    <div class="popup-insert-variable reminder-droupdown-variable" id="reminder-insert-variable5">
-                                       <div class="insert-variable-group" id="insert-variable-group5">
-                                          <div class="group group-4">
-                                             <div class="form-field custom-select">
-                                                <!--<label for="name" class="form-label">Insert Variable</label>-->
-                                                <div class="custom-input dropdown-field">
-                                                   <h3 class="selected data">Insert Variable</h3>
-                                                   <input type="hidden" class="form-control select" autocomplete="off">
-                                                   <span class="error">Select a insert variable.</span>
-                                                   <ul id="insert-variable5">
-                                                      <li value="*Appt Date*">*Appt Date*</li>
-                                                      <li value="*Patient First Name*">*Patient First Name*</li>
-                                                      <li value="*Patient Full Name*">*Patient Full Name*</li>
-                                                      <li value="*Practice Name*">*Practice Name*</li>
-                                                      <li value="*Practice Phone Number*">*Practice Phone Number*</li>
-                                                      <li value="**Practice Email Address**">*Practice Email Address*</li>
-                                                   </ul>
-                                                </div>
-                                             </div>
-                                          </div>
-                                       </div>
+                                 </div>
+                              </div>
+                           </div>
+                           <!-- ========================== Edit Reminder Appointment Status Droupdown ============================ -->
+                           <div class="appointment-status-group" id="appointment-status-group5">
+                              <div class="group group-2">
+                                 <div class="form-field custom-select">
+                                    <label for="name" class="form-label">Appointment Status</label>
+                                    <div class="custom-input dropdown-field">
+                                       <h3 class="selected data">Confirmed</h3>
+                                       <input type="hidden" class="form-control select" autocomplete="off">
+                                       <span class="error">Select a minimum 1 appointment.</span>
+                                       <ul id="appointment5">
+                                          <li value="1 month(s)">Confirmed</li>
+                                          <li value="2 month(s)">Unconfirmed</li>
+                                       </ul>
                                     </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="popup-header-droupdown reminder-droupdown-group2" id="reminder-droupdown-popup25">
+                           <!-- ========================== Edit reminder Days or Hours Droupdown ============================ -->
+                           <div class="days-hours-group2" id="days-hours-group25">
+                              <div class="group group-1">
+                                 <div class="form-field custom-select">
+                                    <label for="name" class="form-label">Days or Hours</label>
+                                    <div class="custom-input dropdown-field">
+                                       <h3 class="selected data">Hours</h3>
+                                       <input type="hidden" class="form-control select" autocomplete="off">
+                                       <span class="error">Select a days or hours.</span>
+                                       <ul id="days-hours25">
+                                          <li value="Days">Days</li>
+                                          <li value="Hours">Hours</li>
+                                       </ul>
+                                    </div>
+<<<<<<< HEAD
                                     <!-- ========================== Edit Reminder Form Textarea ============================ -->
                                     <div class="popup-form-textarea reminder-textarea-group" id="reminder-form-textarea5">
                                        <div class="textarea-group" id="text-area-group35">
@@ -1444,25 +1344,152 @@
                                                 </div>
                                              </div>
                                           </div>
+=======
+                                 </div>
+                              </div>
+                           </div>
+                           <!-- ========================== Edit reminder Frequency Days Droupdown ============================ -->
+                           <div class="frequency-dayshours-group2" id="frequency-dayshours-group25">
+                              <!-- ========================== Edit reminder Frequency Days Droupdown ============================ -->
+                              <div class="frequency-days-group2" id="frequency-days-group25">
+                                 <div class="group group-2">
+                                    <div class="form-field custom-select">
+                                       <label for="name" class="form-label">Frequency</label>
+                                       <div class="custom-input dropdown-field">
+                                          <h3 class="selected data">1 day(s)</h3>
+                                          <input type="hidden" class="form-control select" autocomplete="off">
+                                          <span class="error">Select a valid frequency.</span>
+                                          <ul id="days25">
+                                             <li value="1 day(s)">1 day(s)</li>
+                                             <li value="2 day(s)">2 day(s)</li>
+                                             <li value="3 day(s)">3 day(s)</li>
+                                             <li value="4 day(s)">4 day(s)</li>
+                                             <li value="5 day(s)">5 day(s)</li>
+                                             <li value="6 day(s)">6 day(s)</li>
+                                             <li value="7 day(s)">7 day(s)</li>
+                                             <li value="8 day(s)">8 day(s)</li>
+                                             <li value="9 day(s)">9 day(s)</li>
+                                             <li value="10 day(s)">10 day(s)</li>
+                                             <li value="11 day(s)">11 day(s)</li>
+                                             <li value="12 day(s)">12 day(s)</li>
+                                             <li value="13 day(s)">13 day(s)</li>
+                                             <li value="14 day(s)">14 day(s)</li>
+                                             <li value="15 day(s)">15 day(s)</li>
+                                             <li value="16 day(s)">16 day(s)</li>
+                                             <li value="17 day(s)">17 day(s)</li>
+                                             <li value="18 day(s)">18 day(s)</li>
+                                             <li value="19 day(s)">19 day(s)</li>
+                                             <li value="20 day(s)">20 day(s)</li>
+                                             <li value="21 day(s)">21 day(s)</li>
+                                             <li value="22 day(s)">22 day(s)</li>
+                                             <li value="23 day(s)">23 day(s)</li>
+                                             <li value="24 day(s)">24 day(s)</li>
+                                             <li value="25 day(s)">25 day(s)</li>
+                                             <li value="26 day(s)">26 day(s)</li>
+                                             <li value="27 day(s)">27 day(s)</li>
+                                             <li value="28 day(s)">28 day(s)</li>
+                                             <li value="29 day(s)">29 day(s)</li>
+                                             <li value="30 day(s)">30 day(s)</li>
+                                          </ul>
+>>>>>>> c8c919cb30b87aa2a543a7747f4113f7d197f812
                                        </div>
                                     </div>
-                                    <!-- ========================== Edit Reminder Form Button ============================ -->
-                                    <div class="form-button" id="reminder-button5">
-                                       <a href="#" class="for-btn for-btn-primary cancel" id="button-cancel35">Cancel</a>
-                                       <a href="#" class="for-btn for-btn-primary btn-blue" id="add-confirmation-button35">Add Confirmation</a>
-                                       <div class="loader">
-                                          <svg version="1.1" id="loader-1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="40px" height="40px" viewBox="0 0 50 50" style="enable-background:new 0 0 50 50;" xml:space="preserve">
-                                             <path fill="#000" d="M43.935,25.145c0-10.318-8.364-18.683-18.683-18.683c-10.318,0-18.683,8.365-18.683,18.683h4.068c0-8.071,6.543-14.615,14.615-14.615c8.072,0,14.615,6.543,14.615,14.615H43.935z">
-                                                <animateTransform attributeType="xml" attributeName="transform" type="rotate" from="0 25 25" to="360 25 25" dur="0.6s" repeatCount="indefinite"></animateTransform>
-                                             </path>
-                                          </svg>
+                                 </div>
+                              </div>
+                              <!-- ========================== Edit Confirmation Frequency Hours Droupdown ============================ -->
+                              <div class="frequency-hours-group2" id="frequency-hours-group25">
+                                 <div class="group group-3">
+                                    <div class="form-field custom-select">
+                                       <label for="name" class="form-label">Frequency</label>
+                                       <div class="custom-input dropdown-field">
+                                          <h3 class="selected data">1 hour(s)</h3>
+                                          <input type="hidden" class="form-control select" autocomplete="off">
+                                          <span class="error">Select a valid hours frequency.</span>
+                                          <ul id="hours-25">
+                                             <li value="1 hour(s)">1 hour(s)</li>
+                                             <li value="2 hour(s)">2 hour(s)</li>
+                                             <li value="3 hour(s)">3 hour(s)</li>
+                                             <li value="4 hour(s)">4 hour(s)</li>
+                                             <li value="5 hour(s)">5 hour(s)</li>
+                                             <li value="6 hour(s)">6 hour(s)</li>
+                                             <li value="7 hour(s)">7 hour(s)</li>
+                                             <li value="8 hour(s)">8 hour(s)</li>
+                                             <li value="9 hour(s)">9 hour(s)</li>
+                                             <li value="10 hour(s)">10 hour(s)</li>
+                                             <li value="11 hour(s)">11 hour(s)</li>
+                                             <li value="12 hour(s)">12 hour(s)</li>
+                                             <li value="13 hour(s)">13 hour(s)</li>
+                                             <li value="14 hour(s)">14 hour(s)</li>
+                                             <li value="15 hour(s)">15 hour(s)</li>
+                                             <li value="16 hour(s)">16 hour(s)</li>
+                                             <li value="17 hour(s)">17 hour(s)</li>
+                                             <li value="18 hour(s)">18 hour(s)</li>
+                                             <li value="19 hour(s)">19 hour(s)</li>
+                                             <li value="20 hour(s)">20 hour(s)</li>
+                                             <li value="21 hour(s)">21 hour(s)</li>
+                                             <li value="22 hour(s)">22 hour(s)</li>
+                                             <li value="23 hour(s)">23 hour(s)</li>
+                                             <li value="24 hour(s)">24 hour(s)</li>
+                                          </ul>
                                        </div>
                                     </div>
                                  </div>
                               </div>
                            </div>
                         </div>
-
+                        <!-- ========================== Edit Reminder Form Insert Variable Droupdown ============================ -->
+                        <div class="popup-insert-variable reminder-droupdown-variable" id="reminder-insert-variable5">
+                           <div class="insert-variable-group" id="insert-variable-group5">
+                              <div class="group group-4">
+                                 <div class="form-field custom-select">
+                                    <!--<label for="name" class="form-label">Insert Variable</label>-->
+                                    <div class="custom-input dropdown-field">
+                                       <h3 class="selected data">Insert Variable</h3>
+                                       <input type="hidden" class="form-control select" autocomplete="off">
+                                       <span class="error">Select a insert variable.</span>
+                                       <ul id="insert-variable5">
+                                          <li value="*Appt Date*">*Appt Date*</li>
+                                          <li value="*Patient First Name*">*Patient First Name*</li>
+                                          <li value="*Patient Full Name*">*Patient Full Name*</li>
+                                          <li value="*Practice Name*">*Practice Name*</li>
+                                          <li value="*Practice Phone Number*">*Practice Phone Number*</li>
+                                          <li value="**Practice Email Address**">*Practice Email Address*</li>
+                                       </ul>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <!-- ========================== Edit Reminder Form Textarea ============================ -->
+                        <div class="popup-form-textarea reminder-textarea-group" id="reminder-form-textarea5">
+                           <div class="textarea-group" id="text-area-group35">
+                              <div class="group group-5">
+                                 <div class="form-field custom-select">
+                                    <!--<label for="name" class="form-label">Type your Message</label>-->
+                                    <div class="custom-input">
+                                       <textarea class="form-control select" placeholder="Type your Message" name="description">Hi *Patient Full Name*, you have an upcoming appointment on *Appt Date*. Click below to confirm or contact us to reschedule. If you have any questions about your appointment, please contact us anytime at *Practice Phone Number* or *Practice Email Address*.
+                                       </textarea>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <!-- ========================== Edit Reminder Form Button ============================ -->
+                        <div class="form-button" id="reminder-button5">
+                           <a href="#" class="for-btn for-btn-primary cancel" id="button-cancel35">Cancel</a>
+                           <a href="#" class="for-btn for-btn-primary btn-blue" id="add-confirmation-button35">Save Changes</a>
+                           <div class="loader">
+                              <svg version="1.1" id="loader-1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="40px" height="40px" viewBox="0 0 50 50" style="enable-background:new 0 0 50 50;" xml:space="preserve">
+                                 <path fill="#000" d="M43.935,25.145c0-10.318-8.364-18.683-18.683-18.683c-10.318,0-18.683,8.365-18.683,18.683h4.068c0-8.071,6.543-14.615,14.615-14.615c8.072,0,14.615,6.543,14.615,14.615H43.935z">
+                                    <animateTransform attributeType="xml" attributeName="transform" type="rotate" from="0 25 25" to="360 25 25" dur="0.6s" repeatCount="indefinite"></animateTransform>
+                                 </path>
+                              </svg>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
          </div>
       </main>
       <!-- imports for app and controllers  -->
@@ -1515,13 +1542,18 @@
             });
             $('.dataTables_length').addClass('bs-select');
             $('.table-wrapper .dataTables_filter').addClass('show-search').appendTo('.top-gutter .search-bar');
+<<<<<<< HEAD
 
+=======
+         
+>>>>>>> c8c919cb30b87aa2a543a7747f4113f7d197f812
             $('#discount_credits').on("change mousemove", function() {
                $(this).closest('#time-update').find('#amount > span').html($(this).val());
             });
             $('#discount_credits1').on("change mousemove", function() {
                $(this).closest('#time-update-two').find('#amount1 > span').html($(this).val());
             });
+<<<<<<< HEAD
 
 
 
@@ -1536,6 +1568,25 @@
                $(this).closest('#dental-drop').find('h3').text(valueText);
             });
 
+=======
+         
+         
+         
+            // Show dental Js
+            $('#dental-drop > h3').click(function(ele){
+               ele.stopPropagation();
+               $(this).toggleClass('active');
+               $(this).closest('#dental-drop').find('ul#teeth-dental').toggle();
+            });
+            $('#dental-drop #teeth-dental li').click(function(ele){
+               ele.stopPropagation();
+               var valueText = $(this).text();
+               $(this).closest('#dental-drop').find('h3').text(valueText);
+               $('#teeth-dental').hide();
+               $(this).closest('#dental-drop').find('h3').removeClass('active');
+            });
+         
+>>>>>>> c8c919cb30b87aa2a543a7747f4113f7d197f812
             // Time Change Functionally
             $('#change-timebb').click(function(ele){
                ele.stopPropagation();
@@ -1549,12 +1600,20 @@
                $('#change-timebb').show();
                $('.time-slider').hide();
             });
+<<<<<<< HEAD
 
+=======
+         
+>>>>>>> c8c919cb30b87aa2a543a7747f4113f7d197f812
             $('.custom-engagement-group').click(function(ele){
                ele.stopPropagation();
                $('ul#teeth-dental').hide();
             });
+<<<<<<< HEAD
 
+=======
+         
+>>>>>>> c8c919cb30b87aa2a543a7747f4113f7d197f812
             // Email or Text Select
             $('#emails-text-group').click(function(ele){
                ele.stopPropagation();
@@ -1567,7 +1626,11 @@
                $(this).closest('.custom-input.dropdown-field').find('h3').text(selectvalues);
                $(this).closest('#email-text').hide();
             });
+<<<<<<< HEAD
 
+=======
+         
+>>>>>>> c8c919cb30b87aa2a543a7747f4113f7d197f812
             // Day Or Hours Group
             $('#days-hours-group').click(function(ele){
                ele.stopPropagation();
@@ -1587,7 +1650,11 @@
                   $('#frequency-dayshours-group').removeClass('showDaysOption');
                }
             });
+<<<<<<< HEAD
 
+=======
+         
+>>>>>>> c8c919cb30b87aa2a543a7747f4113f7d197f812
             // Day Or Hours Group
             $('#frequency-days-group, #frequency-hours-group').click(function(ele){
                ele.stopPropagation();
@@ -1606,7 +1673,11 @@
                $(this).closest('.custom-input.dropdown-field').find('h3').text(selectvalues);
                $(this).closest('#hours-1').hide();
             });
+<<<<<<< HEAD
 
+=======
+         
+>>>>>>> c8c919cb30b87aa2a543a7747f4113f7d197f812
             $('#add-conf-popup').click(function(ele){
                ele.stopPropagation();
                $('#email-text').hide();
@@ -1617,10 +1688,59 @@
                   $('#emails-text-group').removeClass('filled');
                }
             });
+<<<<<<< HEAD
 
 
 
 
+=======
+         
+         
+            $('#userModal .form-button .for-btn.for-btn-primary.cancel, #userModal .closeIcon').click(function(){
+               $('#add-confirmation #title-top a[data-target="#userModal"]')[0].click();
+            });
+
+            $('#userModal-hygiene .form-button .for-btn.for-btn-primary.cancel, #userModal-hygiene .closeIcon').click(function(){
+               $('#add-hygiene #title-top a[data-target="#userModal-hygiene"]')[0].click();
+            });
+
+            $('#userModal-reminder .form-button .for-btn.for-btn-primary.cancel, #userModal-reminder .closeIcon').click(function(){
+               $('#add-reminders #title-top a[data-target="#userModal-reminder"]')[0].click();
+            });
+
+
+            $('#userModaledit1 .form-button .for-btn.for-btn-primary.cancel, #userModaledit1 .closeIcon').click(function(){
+               $('#add-confirmation .inner-content[data-target="#userModaledit1"]')[0].click();
+            });
+
+            $('#userModal-hygiene-edit1 .form-button .for-btn.for-btn-primary.cancel, #userModal-hygiene-edit1 .closeIcon').click(function(){
+               $('#add-hygiene .inner-content[data-target="#userModal-hygiene-edit1"]')[0].click();
+            });
+
+            $('#userModal-reminder-edit1 .form-button .for-btn.for-btn-primary.cancel, #userModal-reminder-edit1 .closeIcon').click(function(){
+               $('#add-reminders .inner-content[data-target="#userModal-reminder-edit1"]')[0].click();
+            });
+         
+         });
+         
+         $(document).ready(function(){
+            var parent = document.createElement("div");
+            parent.setAttribute("style", "width:30px;height:30px;");
+            parent.classList.add('scrollbar-test');
+         
+            var child = document.createElement("div");
+            child.setAttribute("style", "width:100%;height:40px");
+            parent.appendChild(child);
+            document.body.appendChild(parent);
+         
+            // Measure the child element, if it is not
+            // 30px wide the scrollbars are obtrusive.
+            var scrollbarWidth = 30 - parent.firstChild.clientWidth;
+            if(scrollbarWidth) {
+            document.body.classList.add("layout-scrollbar-obtrusive");
+            }
+            document.body.removeChild(parent);
+>>>>>>> c8c919cb30b87aa2a543a7747f4113f7d197f812
          });
       </script>
    </body>

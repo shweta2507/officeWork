@@ -205,6 +205,7 @@ ul#time-zone-d li span#time-display-hrs {
 	padding: 0 16px;
 	padding: 8px 16px;
 	min-height: 623px;
+    padding-right: 8px;
 }
 
 #title-top a {
@@ -298,6 +299,10 @@ div#frequency-hours-group2 {
     display: none;
 }
 
+<<<<<<< HEAD
+=======
+.frequency-hours-group .form-field:after,
+>>>>>>> c8c919cb30b87aa2a543a7747f4113f7d197f812
 .days-hours-group2 .form-field:after,
 .frequency-days-group2 .form-field:after,
 .frequency-hours-group2 .form-field:after,
@@ -337,7 +342,11 @@ div#frequency-hours-group2 {
     font-family: 'Eina-SemiBold';
 }
 
+<<<<<<< HEAD
 #time-button a#save-timebb {
+=======
+#time-button #save-timebb {
+>>>>>>> c8c919cb30b87aa2a543a7747f4113f7d197f812
     display: flex;
     font-size: 14px;
     line-height: 20px;
@@ -353,8 +362,14 @@ div#frequency-hours-group2 {
     color: #FFFFFF;
     cursor: pointer;
     display:none;
+<<<<<<< HEAD
 }
 #time-button a#change-timebb{
+=======
+    padding-top: 11px;
+}
+#time-button #change-timebb{
+>>>>>>> c8c919cb30b87aa2a543a7747f4113f7d197f812
     display: flex;
     font-size: 14px;
     line-height: 20px;
@@ -370,7 +385,7 @@ div#frequency-hours-group2 {
     border-radius: 8px;
 }
 
-#time-button a#change-timebb:hover {
+#time-button #save-timebb:hover {
     background-color: #03D0E3;
 }
 
@@ -477,11 +492,19 @@ div#frequency-hours-group2 {
     opacity: 0.5;
     line-height: 18px;
     position: absolute;
-    left: 16px;
+    left: 12px;
     top: 13px;
     font-family: "Eina02-regular", sans-serif;
-    left: 16px;
-    top: 12px;
+}
+
+.frequency-days-group.filled .form-field label,
+.confirmation-droupdown-group > div.filled .form-field label {
+    font-size: 11px;
+    line-height: 15px;
+    color: #363F57;
+    opacity: 0.5;
+    top: 6px;
+    left: 12px;
 }
 
 .days-hours-group2 .custom-input h3.selected.data,
@@ -784,7 +807,7 @@ div#frequency-hours-group2 {
 .textarea-group .form-field {
     margin-bottom: 0px;
     width: 100%;
-    padding: 33px 16px 13px 16px;
+    padding: 13px 16px 13px 16px;
     font-size: 13px;
     line-height: 18px;
     letter-spacing: 0px;
@@ -829,7 +852,7 @@ div#frequency-hours-group2 {
 .form-button .cancel {
     border: 1px solid #343D56;
     border-radius: 8px;
-    padding: 11px 32px 12px 32px;
+    padding: 11px 31px 12px 31px;
     letter-spacing: 0px;
     color: #031926;
     opacity: 1;
@@ -952,7 +975,7 @@ textarea {
     resize: none;
   }
 
-  #Confirmation-button .loader {
+  .form-button .loader {
     right: 10px;
 }
 
@@ -1030,6 +1053,7 @@ textarea {
   }
   .time-slider input[type=range]:focus::-webkit-slider-runnable-track {
     background: #F3F4F43D;
+    border: 1px solid #EAEBEE;
   }
 
   .time-slider input[type=range]::-moz-range-track {
@@ -1189,6 +1213,7 @@ ul#time-zone-d li span#time-display-hrs #amount1 span {
   .confirmation-fill-content {
     overflow-y: auto;
     max-height: 604px;
+    padding-right: 1px;
 }
 
 #hygiene-conten .inner-content {
@@ -1234,4 +1259,133 @@ font-family: 'Eina-Bold';
 
 .engagement-dashboard .ba-input-wrapper .ba-input-field {
     overflow: visible;
+<<<<<<< HEAD
 }
+=======
+}
+
+#time-button #change-timebb:hover {
+    background-color: #343D560D;
+}
+
+.inner-content-text .moreless.more {
+    letter-spacing: 0px;
+    color: #363F57;
+    opacity: 0.5;
+    font-size: 13px;
+    line-height: 18px;
+    font-family: 'Eina';
+}
+
+.inner-content-text a.moreless.less {
+    display: none !important;
+}
+
+.frequency-hours-group.filled .form-field,
+.frequency-days-group.filled .form-field,
+.confirmation-droupdown-group > div.filled .form-field {
+    border: 2px solid #0ACADC;
+}
+
+.popup-header-droupdown .filled .form-field:after {
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
+    margin-top: -3px;
+}
+
+.frequency-dayshours-group.showHoursOption div#frequency-days-group {
+    display: none;
+}
+
+.frequency-dayshours-group.showHoursOption div#frequency-hours-group {
+    display: block;
+}
+
+#frequency-hours-group ul#hours-1 {
+    height: 250px;
+    overflow-y: auto;
+}
+
+.engagement-dashboard .ba-input-wrapper .ba-input-field {
+    position: static;
+}
+
+.ba-main .top-gutter .ba-input-wrapper.ba-multiselect {
+    position: relative;
+}
+
+.engagement-dashboard .ba-input-wrapper .ba-input-field .custom-input.dropdown-field ul {
+    top: 36px;
+    padding: 9px;
+    background: #fff;
+    position: absolute;
+    z-index: 999;
+    width: 100%;
+    margin: 6px 0 0;
+    box-shadow: 0px 16px 32px #343d5633;
+    border-radius: 8px;
+}
+
+.engagement-dashboard .ba-input-wrapper .ba-input-field .custom-input.dropdown-field ul li {
+    cursor: pointer;
+    padding: 10px 8px;
+    letter-spacing: 0px;
+    color: #343D56;
+    font-size: 12px;
+    line-height: 16px;
+    font-family: "Eina02-regular", sans-serif;
+    border-radius: 8px;
+    transition: all 0.5s;
+}
+
+.engagement-dashboard .ba-input-wrapper .ba-input-field .custom-input.dropdown-field ul li:hover {
+    background: rgb(243 244 246 / 50%) 0% 0% no-repeat padding-box;
+}
+
+.popup-form-textarea textarea::-webkit-input-placeholder {
+	/* Chrome/Opera/Safari */
+    font-size: 13px;
+    letter-spacing: 0px;
+    color: #363F57;
+    opacity: 0.5;
+    line-height: 18px;
+    font-family: "Eina02-regular", sans-serif;
+}
+
+.popup-form-textarea textarea::-moz-placeholder {
+	/* Firefox 19+ */
+    font-size: 13px;
+    letter-spacing: 0px;
+    color: #363F57;
+    opacity: 0.5;
+    line-height: 18px;
+    font-family: "Eina02-regular", sans-serif;
+}
+
+.popup-form-textarea textarea:-ms-input-placeholder {
+	/* IE 10+ */
+    font-size: 13px;
+    letter-spacing: 0px;
+    color: #363F57;
+    opacity: 0.5;
+    line-height: 18px;
+    font-family: "Eina02-regular", sans-serif;
+}
+
+.popup-form-textarea textarea:-moz-placeholder {
+	/* Firefox 18- */
+    font-size: 13px;
+    letter-spacing: 0px;
+    color: #363F57;
+    opacity: 0.5;
+    line-height: 18px;
+    font-family: "Eina02-regular", sans-serif;
+}
+
+#add-rem-popup5 .form-button .loader,
+#add-hyg-popup4 .form-button .loader,
+#add-conf-popup2 .form-button .loader {
+    right: 0;
+    top: 10px;
+}
+>>>>>>> c8c919cb30b87aa2a543a7747f4113f7d197f812
