@@ -285,22 +285,22 @@
                               <h4 class="inner-content-head">Instant Reply</h4>
                               <a href="#" class="inner-content-link">Click to add response.</a>
                            </div>
-                           <div class="inner-content" id="inner-content-2">
+                           <div class="inner-content" id="inner-content-2" data-toggle="modal" data-target="#userModaledit1">
                               <p class="inner-content-sub-head">Auto Response to Reschedule</p>
                               <h4 class="inner-content-head">Instant Reply</h4>
                               <a href="#" class="inner-content-link">Click to add response.</a>
                            </div>
-                           <div class="inner-content" id="inner-content-3">
+                           <div class="inner-content" id="inner-content-3" data-toggle="modal" data-target="#userModaledit1">
                               <p class="inner-content-sub-head">Auto Initial Text</p>
                               <h4 class="inner-content-head">1 day(s) before at 9:00 AM</h4>
                               <span class="inner-content-text">Hello (FirstName), you have an appointment on (Appt) with (PracticeName), Reply C to confirm or click the link here to reschedule.</span>
                            </div>
-                           <div class="inner-content" id="inner-content-4">
+                           <div class="inner-content" id="inner-content-4" data-toggle="modal" data-target="#userModaledit1">
                               <p class="inner-content-sub-head">Auto Initial Text</p>
                               <h4 class="inner-content-head">1 day(s) before at 9:00 AM</h4>
                               <span class="inner-content-text">Hello (FirstName), you have an appointment on (Appt) with (PracticeName), Reply C to confirm or click the link here to reschedule.</span>
                            </div>
-                           <div class="inner-content" id="inner-content-5">
+                           <div class="inner-content" id="inner-content-5" data-toggle="modal" data-target="#userModaledit1">
                               <p class="inner-content-sub-head">Auto Initial Text</p>
                               <h4 class="inner-content-head">3 day(s) before at 9:00 AM</h4>
                               <span class="inner-content-text">Hello (FirstName), you have an appointment on (Appt) with (PracticeName), Reply C to confirm or click the link here to reschedule.</span>
@@ -320,20 +320,20 @@
                               <p class="inner-content-sub-head">Return to Pending</p>
                               <h4 class="inner-content-head">After 30 day(s) for 12 total attempts</h4>
                            </div>
-                           <div class="inner-content" id="inner-content-2">
+                           <div class="inner-content" id="inner-content-2" data-toggle="modal" data-target="#userModal-hygiene-edit1">
                               <p class="inner-content-sub-head">Child Duration</p>
                               <h4 class="inner-content-head">30 minutes(s)</h4>
                            </div>
-                           <div class="inner-content" id="inner-content-3">
+                           <div class="inner-content" id="inner-content-3" data-toggle="modal" data-target="#userModal-hygiene-edit1">
                               <p class="inner-content-sub-head">Adult Duration</p>
                               <h4 class="inner-content-head">40 minutes(s)</h4>
                            </div>
-                           <div class="inner-content" id="inner-content-4">
+                           <div class="inner-content" id="inner-content-4" data-toggle="modal" data-target="#userModal-hygiene-edit1">
                               <p class="inner-content-sub-head">Auto Attempt to Schedule</p>
                               <h4 class="inner-content-head">Auto Send</h4>
                               <span class="inner-content-text">Hi, (FirstName) this is, (PatientName) We noticed you are due for a cleaning! Our office recently extended hours to fit your busy schedule. We now offer late evenings and Saturday appointments. PLUS Your insurance works even better in our office now. Your cleaning is at no cost to you!</span>
                            </div>
-                           <div class="inner-content" id="inner-content-5">
+                           <div class="inner-content" id="inner-content-5" data-toggle="modal" data-target="#userModal-hygiene-edit1">
                               <p class="inner-content-sub-head">Auto Response No to Schedule</p>
                               <h4 class="inner-content-head">Instant Reply</h4>
                               <a href="#" class="inner-content-link">Click to add response.</a>
@@ -354,17 +354,17 @@
                               <h4 class="inner-content-head">1 hour(s) before at 9:00 AM</h4>
                               <a href="#" class="inner-content-link">Click to add response.</a>
                            </div>
-                           <div class="inner-content" id="inner-content-2">
+                           <div class="inner-content" id="inner-content-2" data-toggle="modal" data-target="#userModal-reminder-edit1">
                               <p class="inner-content-sub-head">Auto Reminder Email</p>
                               <h4 class="inner-content-head">1 hour(s) before at 9:00 AM</h4>
                               <a href="#" class="inner-content-link">Click to add response.</a>
                            </div>
-                           <div class="inner-content" id="inner-content-3">
+                           <div class="inner-content" id="inner-content-3" data-toggle="modal" data-target="#userModal-reminder-edit1">
                               <p class="inner-content-sub-head">Auto Reminder Text</p>
                               <h4 class="inner-content-head">1 day(s) before at 9:00 AM</h4>
                               <span class="inner-content-text">Hi, (FirstName) this is, (PatientName) We noticed you are due for a cleaning! Our office recently extended hours to fit your busy schedule. We now offer late evenings and Saturday appointments. PLUS Your insurance works even better in our office now. Your cleaning is at no cost to you!</span>
                            </div>
-                           <div class="inner-content" id="inner-content-4">
+                           <div class="inner-content" id="inner-content-4" data-toggle="modal" data-target="#userModal-reminder-edit1">
                               <p class="inner-content-sub-head">Auto Reminder Text</p>
                               <h4 class="inner-content-head">1 day(s) before at 9:00 AM</h4>
                               <span class="inner-content-text">Hello (FirstName), you have an appointment on (Appt) with (PracticeName), Reply C to confirm or click the link here to reschedule.</span>
@@ -2330,6 +2330,16 @@
             $('#userModal-reminder-edit1 .form-button .for-btn.for-btn-primary.cancel, #userModal-reminder-edit1 .closeIcon').click(function(){
                $('#add-reminders .inner-content[data-target="#userModal-reminder-edit1"]')[0].click();
             });
+
+            $("textarea.form-control").on("focus", function() {
+                var $field = $(this).closest(".form-field");
+                if (this) {
+                    $field.addClass("filled2");
+                } else {
+                    $field.removeClass("filled2");
+                }
+            });
+
          });
 
          $(document).ready(function(){
